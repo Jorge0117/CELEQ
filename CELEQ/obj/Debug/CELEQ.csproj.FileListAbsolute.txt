@@ -1,0 +1,14 @@
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\CELEQ.exe.config
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\CELEQ.exe
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\CELEQ.pdb
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csprojAssemblyReference.cache
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Form1.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Properties.Resources.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.GenerateResource.cache
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CoreCompileInputs.cache
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.exe
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.pdb
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.FormReacCris.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Inventario.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.DatosSolicitud.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.AgregarReactivoCristaleria.resources
