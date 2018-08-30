@@ -23,8 +23,8 @@ namespace CELEQ
         {
             dtReactivos.Columns.Add("Nombre");
             dtReactivos.Columns.Add("Pureza");
-            dtReactivos.Columns.Add("Cantidad");
             dtReactivos.Columns.Add("Estante");
+            dtReactivos.Columns.Add("Cantidad Solicitada");
 
             dgvReactivos.DataSource = dtReactivos;
             for(int i = 0; i<4; ++i)
@@ -35,8 +35,7 @@ namespace CELEQ
             dtCristaleria.Columns.Add("Artículo");
             dtCristaleria.Columns.Add("Material");
             dtCristaleria.Columns.Add("Capacidad");
-            //dt.Columns.Add("Artículo");
-            dtCristaleria.Columns.Add("Estante");
+            dtCristaleria.Columns.Add("Cantidad Solicitada");
 
             dgvCristaleria.DataSource = dtCristaleria;
             for(int i=0; i<4; ++i)
@@ -57,14 +56,14 @@ namespace CELEQ
 
         private void butAgRe_Click(object sender, EventArgs e)
         {
-            Inventario inv = new Inventario(0, dgvReactivos);
+            Inventario inv = new Inventario(0, this);
             inv.ShowDialog();
             inv.Dispose();
         }
 
         private void butAgCr_Click(object sender, EventArgs e)
         {
-            Inventario inv = new Inventario(1, dgvCristaleria);
+            Inventario inv = new Inventario(1, this);
             inv.ShowDialog();
             inv.Dispose();
         }

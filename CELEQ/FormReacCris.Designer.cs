@@ -157,12 +157,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvReactivos;
+        public System.Windows.Forms.DataGridView dgvReactivos;
         private System.Windows.Forms.Button butElimReac;
         private System.Windows.Forms.Button butAgRe;
         private System.Windows.Forms.Button butAgCr;
         private System.Windows.Forms.Button butElimCri;
-        private System.Windows.Forms.DataGridView dgvCristaleria;
+        public System.Windows.Forms.DataGridView dgvCristaleria;
         private System.Windows.Forms.Button butRealizarSolicutud;
     }
 }

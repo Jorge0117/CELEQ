@@ -15,11 +15,13 @@ namespace CELEQ
     {
         int tipo;
         AccesoBaseDatos bd;
-        public Inventario(int tipo, DataGridView dgv)
+        FormReacCris formulario;
+        public Inventario(int tipo, FormReacCris formulario)
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
             this.tipo = tipo;
+            this.formulario = formulario;
             //Tipo 0 = Reactivos
             if (tipo == 0)
             {
@@ -29,12 +31,16 @@ namespace CELEQ
             else
             {
                 labelInventario.Text = "Cristalería disponible:";
+                labelUnidad.Text = "unidades";
             }
 
             //En caso de sólo ver inventario
-            if (dgv == null)
+            if (formulario == null)
             {
                 butAgregar.Text = "Agregar nuevo";
+                labelCantidad.Hide();
+                labelUnidad.Hide();
+                numAgregar.Hide();
             }
 
             //Solo permite seleccionar filas en el dgv
@@ -59,6 +65,37 @@ namespace CELEQ
                 cargarTabla("");
                 textBuscar.Text = "";
             }
+            //Se va a agregar a la solicitud
+            else
+            {
+                if (numAgregar.Value > 0)
+                {
+                    if (tipo == 0)
+                    {
+                        //Pasa los datos a la dgv en formReacCris
+                        DataTable dataTable = (DataTable)formulario.dgvReactivos.DataSource;
+                        DataRow row = dataTable.NewRow();
+
+                        //Nombre
+                        row[0] = dgvInventario.SelectedRows[0].Cells[0].Value;
+                        //Pureza
+                        row[1] = dgvInventario.SelectedRows[0].Cells[1].Value;
+                        //Estante
+                        row[2] = dgvInventario.SelectedRows[0].Cells[4].Value;
+                        //Cantidad solicitada
+                        row[3] = numAgregar.Value;
+
+                        dataTable.Rows.Add(row);
+                        dataTable.AcceptChanges();
+
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cantidad solicitada no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void cargarTabla(string filtro)
@@ -75,13 +112,21 @@ namespace CELEQ
                 {
                     consulta = "select * from Reactivo where Nombre like '%" + filtro + "%' or Pureza like '%" +
                         filtro + "%' or Cantidad like '%" + filtro + "%' or Estado like '%" + filtro +
-                        "%' or Estante like '%´" + filtro + "%'"; 
+                        "%' or Estante like '%" + filtro + "%'"; 
                 }
 
             }
             else
             {
-                consulta = "select * from Cristaleria";
+                if (filtro == "")
+                {
+                    consulta = "select * from Cristaleria";
+                }
+                else
+                {
+                    consulta = "select * from Cristaleria where Nombre like '%" + filtro + "%' or Material like '%" +
+                        filtro + "%' or Capacidad like '%" + filtro + "%' or cantidad like '%" + filtro + "%'";
+                }
             }
             try
             {
@@ -104,6 +149,32 @@ namespace CELEQ
         private void Inventario_Load(object sender, EventArgs e)
         {
             cargarTabla("");
+            if (tipo == 0)
+            {
+                cambiarUnidad();
+            }
+        }
+
+        private void cambiarUnidad()
+        {
+            if (dgvInventario.SelectedRows[0].Cells[3].Value.ToString() == "Sólido")
+            {
+                labelUnidad.Text = "g";
+            }
+            else
+            {
+                labelUnidad.Text = "ml";
+            }
+        }
+
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            cargarTabla(textBuscar.Text);
+        }
+
+        private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cambiarUnidad();
         }
     }
 }
