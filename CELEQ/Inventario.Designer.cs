@@ -114,6 +114,11 @@
             // numAgregar
             // 
             this.numAgregar.Location = new System.Drawing.Point(1011, 66);
+            this.numAgregar.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numAgregar.Minimum = new decimal(new int[] {
             1,
             0,
