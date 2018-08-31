@@ -42,11 +42,17 @@ namespace CELEQ
                 labelUnidad.Hide();
                 numAgregar.Hide();
             }
+            else
+            {
+                butModificar.Hide();
+            }
 
             //Solo permite seleccionar filas en el dgv
             dgvInventario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvInventario.MultiSelect = false;
             dgvInventario.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+
+
         }
 
         //Pinta la fila completa en el dgv
@@ -59,7 +65,7 @@ namespace CELEQ
         {
             if (butAgregar.Text == "Agregar nuevo")
             {
-                AgregarReactivoCristaleria arc = new AgregarReactivoCristaleria(tipo);
+                AgregarReactivoCristaleria arc = new AgregarReactivoCristaleria(tipo, null);
                 arc.ShowDialog();
                 arc.Dispose();
                 cargarTabla("");
@@ -216,6 +222,8 @@ namespace CELEQ
             {
                 dgvInventario.Columns[i].Width = dgvInventario.Width / dgvInventario.ColumnCount - 1;
             }
+
+            if (tipo == 0) { dgvInventario.Columns[2].HeaderText = "Cantidad disponible (g/ml)"; } else { dgvInventario.Columns[3].HeaderText = "Cantidad disponible (unidades)"; }
         }
 
         private void Inventario_Load(object sender, EventArgs e)
@@ -233,7 +241,7 @@ namespace CELEQ
             {
                 labelUnidad.Text = "g";
             }
-            else
+            else if(dgvInventario.SelectedRows[0].Cells[3].Value.ToString() == "Líquido")
             {
                 labelUnidad.Text = "ml";
             }
@@ -247,6 +255,14 @@ namespace CELEQ
         private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cambiarUnidad();
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            AgregarReactivoCristaleria arc = new AgregarReactivoCristaleria(tipo, this);
+            arc.ShowDialog();
+            arc.Dispose();
+            cargarTabla("");
         }
     }
 }

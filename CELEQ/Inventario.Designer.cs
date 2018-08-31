@@ -37,6 +37,7 @@
             this.labelCantidad = new System.Windows.Forms.Label();
             this.numAgregar = new System.Windows.Forms.NumericUpDown();
             this.labelUnidad = new System.Windows.Forms.Label();
+            this.butModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAgregar)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // butActualizar
             // 
-            this.butActualizar.Location = new System.Drawing.Point(956, 141);
+            this.butActualizar.Location = new System.Drawing.Point(956, 190);
             this.butActualizar.Name = "butActualizar";
             this.butActualizar.Size = new System.Drawing.Size(197, 43);
             this.butActualizar.TabIndex = 5;
@@ -142,11 +143,22 @@
             this.labelUnidad.TabIndex = 9;
             this.labelUnidad.Text = "g";
             // 
+            // butModificar
+            // 
+            this.butModificar.Location = new System.Drawing.Point(956, 141);
+            this.butModificar.Name = "butModificar";
+            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.TabIndex = 10;
+            this.butModificar.Text = "Modificar";
+            this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.butModificar);
             this.Controls.Add(this.labelUnidad);
             this.Controls.Add(this.numAgregar);
             this.Controls.Add(this.labelCantidad);
@@ -173,7 +185,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelInventario;
-        private System.Windows.Forms.DataGridView dgvInventario;
+        public System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.TextBox textBuscar;
         private System.Windows.Forms.Button butActualizar;
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Label labelCantidad;
         private System.Windows.Forms.NumericUpDown numAgregar;
         private System.Windows.Forms.Label labelUnidad;
+        private System.Windows.Forms.Button butModificar;
     }
 }

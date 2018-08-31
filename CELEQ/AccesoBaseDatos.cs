@@ -179,5 +179,79 @@ namespace CELEQ
                 }
             }
         }
+
+        public int modificarReactivo(string nombreNuevo, string purezaNueva, float cantidad, string estado, string estante,
+            string nombre, string pureza)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("ModificarReactivo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@Pureza", SqlDbType.VarChar).Value = pureza;
+                        cmd.Parameters.Add("@NombreNuevo", SqlDbType.VarChar).Value = nombreNuevo;
+                        cmd.Parameters.Add("@PurezaNueva", SqlDbType.VarChar).Value = purezaNueva;
+                        cmd.Parameters.Add("@Cantidad", SqlDbType.Float).Value = cantidad;
+                        cmd.Parameters.Add("@Estado", SqlDbType.VarChar).Value = estado;
+                        cmd.Parameters.Add("@Estante", SqlDbType.VarChar).Value = estante;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarCristaleria(string nombreNuevo, string materialNuevo, string capacidadNueva, int cantidad,
+            string nombre, string material, string capacidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("modificarCristaleria", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@Material", SqlDbType.VarChar).Value = material;
+                        cmd.Parameters.Add("@Cantidad", SqlDbType.Int).Value = cantidad;
+                        cmd.Parameters.Add("@NombreNuevo", SqlDbType.VarChar).Value = nombreNuevo;
+                        cmd.Parameters.Add("@MaterialNuevo", SqlDbType.VarChar).Value = materialNuevo;
+                        cmd.Parameters.Add("@CapacidadNueva", SqlDbType.VarChar).Value = capacidadNueva;
+                        cmd.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = capacidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
     }
 }
