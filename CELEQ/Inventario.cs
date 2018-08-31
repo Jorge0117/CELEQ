@@ -68,9 +68,9 @@ namespace CELEQ
             //Se va a agregar a la solicitud
             else
             {
-                if (numAgregar.Value > 0)
+                if (tipo == 0)
                 {
-                    if (tipo == 0)
+                    if (numAgregar.Value <= Convert.ToInt32(dgvInventario.SelectedRows[0].Cells[2].Value))
                     {
                         //Pasa los datos a la dgv en formReacCris
                         DataTable dataTable = (DataTable)formulario.dgvReactivos.DataSource;
@@ -85,15 +85,87 @@ namespace CELEQ
                         //Cantidad solicitada
                         row[3] = numAgregar.Value;
 
-                        dataTable.Rows.Add(row);
-                        dataTable.AcceptChanges();
+                        //Revisa si el reactivo ya fue agregado
+                        int i = 0;
+                        int cantidadFIlas = formulario.dgvReactivos.Rows.Count;
+                        bool continuarRevisando = true;
+                        while (i < cantidadFIlas && continuarRevisando)
+                        {
 
-                        this.Close();
+                            if (formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString() == row[0].ToString() ||
+                                formulario.dgvReactivos.Rows[i].Cells[1].Value.ToString() == row[1].ToString())
+                            {
+                                continuarRevisando = false;
+                            }
+                            i++;
+                        }
+                            
+                        if(!continuarRevisando)
+                        {
+                            MessageBox.Show("Este reactivo ya fue agregado a la solicitud previamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            dataTable.Rows.Add(row);
+                            dataTable.AcceptChanges();
+
+                            this.Close();
+                        }                          
+                    }
+                    else
+                    {
+                        MessageBox.Show("La cantidad solicitada es mayor a la cantidad disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                //Cristaleria
                 else
                 {
-                    MessageBox.Show("Cantidad solicitada no válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (numAgregar.Value <= Convert.ToInt32(dgvInventario.SelectedRows[0].Cells[3].Value))
+                    {
+                        //Pasa los datos a la dgv en formReacCris
+                        DataTable dataTable = (DataTable)formulario.dgvCristaleria.DataSource;
+                        DataRow row = dataTable.NewRow();
+
+                        //Nombre
+                        row[0] = dgvInventario.SelectedRows[0].Cells[0].Value;
+                        //Material
+                        row[1] = dgvInventario.SelectedRows[0].Cells[1].Value;
+                        //Capacidad
+                        row[2] = dgvInventario.SelectedRows[0].Cells[2].Value;
+                        //Cantidad solicitada
+                        row[3] = numAgregar.Value;
+
+                        //Revisa si la cristaleria ya fue agregado
+                        int i = 0;
+                        int cantidadFIlas = formulario.dgvCristaleria.Rows.Count;
+                        bool continuarRevisando = true;
+                        while (i < cantidadFIlas && continuarRevisando)
+                        {
+
+                            if (formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString() == row[0].ToString() ||
+                                formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString() == row[1].ToString())
+                            {
+                                continuarRevisando = false;
+                            }
+                            i++;
+                        }
+
+                        if (!continuarRevisando)
+                        {
+                            MessageBox.Show("Este artículo ya fue agregado a la solicitud previamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            dataTable.Rows.Add(row);
+                            dataTable.AcceptChanges();
+
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La cantidad solicitada es mayor a la cantidad disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
