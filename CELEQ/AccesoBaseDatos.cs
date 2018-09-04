@@ -253,5 +253,52 @@ namespace CELEQ
                 }
             }
         }
+
+
+        public string obtenerUltimoIdSolicitud()
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("ultimoAgregado", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
+                        cmd.Parameters.Add("@idSolicitud", SqlDbType.VarChar, 130).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        string value = Convert.ToString(cmd.Parameters["@idSolicitud"].Value);
+
+                        /*Si el procedimiento devuelve 1 es que si se encuentra en la BD*/
+                        if (value == "-1")
+                        {
+                            return "0000";
+                        }
+
+                        /*Si devuelve 0 es que no se encuentra en la BD*/
+                        else
+                        {
+                            return value;
+                        }
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        return "Error generando el numero de solicitud, error: " + ex.Number;
+                    }
+                }
+            }
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.butElimCri.TabIndex = 5;
             this.butElimCri.Text = "Eliminar";
             this.butElimCri.UseVisualStyleBackColor = true;
+            this.butElimCri.Click += new System.EventHandler(this.butElimCri_Click);
             // 
             // dgvCristaleria
             // 
@@ -97,6 +98,7 @@
             this.butElimReac.TabIndex = 2;
             this.butElimReac.Text = "Eliminar";
             this.butElimReac.UseVisualStyleBackColor = true;
+            this.butElimReac.Click += new System.EventHandler(this.butElimReac_Click);
             // 
             // butAgRe
             // 

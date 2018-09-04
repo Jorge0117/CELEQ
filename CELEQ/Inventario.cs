@@ -98,7 +98,7 @@ namespace CELEQ
                         while (i < cantidadFIlas && continuarRevisando)
                         {
 
-                            if (formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString() == row[0].ToString() ||
+                            if (formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString() == row[0].ToString() &&
                                 formulario.dgvReactivos.Rows[i].Cells[1].Value.ToString() == row[1].ToString())
                             {
                                 continuarRevisando = false;
@@ -148,8 +148,9 @@ namespace CELEQ
                         while (i < cantidadFIlas && continuarRevisando)
                         {
 
-                            if (formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString() == row[0].ToString() ||
-                                formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString() == row[1].ToString())
+                            if (formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString() == row[0].ToString() &&
+                                formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString() == row[1].ToString() &&
+                                formulario.dgvCristaleria.Rows[i].Cells[2].Value.ToString() == row[2].ToString())
                             {
                                 continuarRevisando = false;
                             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +43,11 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaSol = new System.Windows.Forms.DateTimePicker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelTimer = new System.Windows.Forms.Label();
+            this.labelIdSolicitud = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +71,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 9);
+            this.label3.Location = new System.Drawing.Point(23, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 2;
@@ -162,21 +167,55 @@
             this.button2.Text = "Aceptar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtpFechaSol
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 154);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 20);
-            this.dateTimePicker1.TabIndex = 15;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 8, 27, 11, 51, 34, 0);
+            this.dtpFechaSol.Enabled = false;
+            this.dtpFechaSol.Location = new System.Drawing.Point(215, 154);
+            this.dtpFechaSol.Name = "dtpFechaSol";
+            this.dtpFechaSol.Size = new System.Drawing.Size(215, 20);
+            this.dtpFechaSol.TabIndex = 15;
+            this.dtpFechaSol.Value = new System.DateTime(2018, 9, 4, 9, 27, 59, 0);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(23, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Tiempo restante: ";
+            // 
+            // labelTimer
+            // 
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.Location = new System.Drawing.Point(118, 9);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(34, 13);
+            this.labelTimer.TabIndex = 17;
+            this.labelTimer.Text = "10:00";
+            // 
+            // labelIdSolicitud
+            // 
+            this.labelIdSolicitud.AutoSize = true;
+            this.labelIdSolicitud.Location = new System.Drawing.Point(119, 31);
+            this.labelIdSolicitud.Name = "labelIdSolicitud";
+            this.labelIdSolicitud.Size = new System.Drawing.Size(35, 13);
+            this.labelIdSolicitud.TabIndex = 18;
+            this.labelIdSolicitud.Text = "####";
             // 
             // DatosSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 311);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.labelIdSolicitud);
+            this.Controls.Add(this.labelTimer);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dtpFechaSol);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);
@@ -197,6 +236,7 @@
             this.Name = "DatosSolicitud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DatosSolicitud";
+            this.Load += new System.EventHandler(this.DatosSolicitud_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +258,10 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaSol;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelTimer;
+        private System.Windows.Forms.Label labelIdSolicitud;
     }
 }

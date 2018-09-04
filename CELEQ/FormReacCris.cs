@@ -12,13 +12,30 @@ namespace CELEQ
 {
     public partial class FormReacCris : Form
     {
-        public FormReacCris()
-        {
-            InitializeComponent();
-        }
+
 
         DataTable dtReactivos = new DataTable();
         DataTable dtCristaleria = new DataTable();
+
+        public FormReacCris()
+        {
+            InitializeComponent();
+
+            //Solo permite seleccionar filas en los dgv
+            dgvReactivos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvReactivos.MultiSelect = false;
+            dgvReactivos.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            dgvCristaleria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCristaleria.MultiSelect = false;
+            dgvCristaleria.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+        }
+
+        //Pinta la fila completa en el dgv
+        private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            e.PaintParts &= ~DataGridViewPaintParts.Focus;
+        }
+
         private void FormReacCris_Load(object sender, EventArgs e)
         {
             dtReactivos.Columns.Add("Nombre");
@@ -70,9 +87,26 @@ namespace CELEQ
 
         private void butRealizarSolicutud_Click(object sender, EventArgs e)
         {
-            DatosSolicitud datosSolicitud = new DatosSolicitud();
-            datosSolicitud.ShowDialog();
-            datosSolicitud.Dispose();
+            if(dgvCristaleria.Rows.Count != 0 || dgvReactivos.Rows.Count != 0)
+            {
+                DatosSolicitud datosSolicitud = new DatosSolicitud();
+                datosSolicitud.ShowDialog();
+                datosSolicitud.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione reactivos o cristalería", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void butElimReac_Click(object sender, EventArgs e)
+        {
+            dgvReactivos.Rows.Remove(dgvReactivos.SelectedRows[0]);
+        }
+
+        private void butElimCri_Click(object sender, EventArgs e)
+        {
+            dgvCristaleria.Rows.Remove(dgvCristaleria.SelectedRows[0]);
         }
     }
 }
