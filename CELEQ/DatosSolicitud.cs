@@ -79,7 +79,7 @@ namespace CELEQ
                         formulario.dgvReactivos.Rows[i].Cells[1].Value.ToString()))
                     {
                         MessageBox.Show("La cantidad de " + formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString() + " no está disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Close();
+                        error = true;
                     }
                 }
 
@@ -89,36 +89,45 @@ namespace CELEQ
                         formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString(), formulario.dgvCristaleria.Rows[i].Cells[2].Value.ToString()))
                     {
                         MessageBox.Show("La cantidad de " + formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString() + " no está disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Close();
+                        error = true;
                     }
                 }
-
-                //Como están disponobles se genera el id y se hace la solicitud
-                string id = generarId(bd.obtenerUltimoIdSolicitud());
-                if(bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, textUnidad.Text) != 1)
+                if (!error)
                 {
-                    MessageBox.Show("Error al crear la solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                }
+                    //Como están disponobles se genera el id y se hace la solicitud
+                    string id = generarId(bd.obtenerUltimoIdSolicitud());
+                    if (bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, textUnidad.Text) != 1)
+                    {
+                        MessageBox.Show("Error al crear la solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        error = true;
+                    }
+                    if (!error)
+                    {
+                        //Se agregan los reactivos
+                        for (int i = 0; i < formulario.dgvReactivos.Rows.Count; ++i)
+                        {
+                            string nombre = formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString();
+                            string pureza = formulario.dgvReactivos.Rows[i].Cells[1].Value.ToString();
+                            float cantidad = (float)Convert.ToDouble(formulario.dgvReactivos.Rows[i].Cells[3].Value.ToString());
+                            bd.agregarSolicitudReactivo(id, nombre, pureza, cantidad);
+                        }
 
-                //Se agregan los reactivos
-                for (int i = 0; i < formulario.dgvReactivos.Rows.Count; ++i)
-                {
-                    string nombre = formulario.dgvReactivos.Rows[i].Cells[0].Value.ToString();
-                    string pureza = formulario.dgvReactivos.Rows[i].Cells[1].Value.ToString();
-                    float cantidad = (float)Convert.ToDouble(formulario.dgvReactivos.Rows[i].Cells[3].Value.ToString());
-                    bd.agregarSolicitudReactivo(id, nombre, pureza, cantidad);
-                }
+                        //Se agregan las critalerias
+                        for (int i = 0; i < formulario.dgvCristaleria.Rows.Count; ++i)
+                        {
+                            string nombre = formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString();
+                            string material = formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString();
+                            string capacidad = formulario.dgvCristaleria.Rows[i].Cells[2].Value.ToString();
+                            int cantidad = Convert.ToInt32(formulario.dgvCristaleria.Rows[i].Cells[3].Value.ToString());
+                            bd.agregarSolicitudCristaleria(id, nombre, material, capacidad, cantidad);
+                        }
 
-                //Se agregan las critalerias
-                for (int i = 0; i < formulario.dgvCristaleria.Rows.Count; ++i)
-                {
-                    string nombre = formulario.dgvCristaleria.Rows[i].Cells[0].Value.ToString();
-                    string material = formulario.dgvCristaleria.Rows[i].Cells[1].Value.ToString();
-                    string capacidad = formulario.dgvCristaleria.Rows[i].Cells[2].Value.ToString();
-                    int cantidad = Convert.ToInt32(formulario.dgvCristaleria.Rows[i].Cells[3].Value.ToString());
-                    bd.agregarSolicitudCristaleria(id, nombre, material, capacidad, cantidad);
-                }
+                        MessageBox.Show("Se realizó la solicitud correctamente", "Solicitud realizada", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        formulario.dgvReactivos.DataSource = null;
+                        formulario.Close();
+                        this.Close();
+                    }
+                }   
             }
         }
 
