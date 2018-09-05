@@ -89,7 +89,7 @@ namespace CELEQ
         {
             if(dgvCristaleria.Rows.Count != 0 || dgvReactivos.Rows.Count != 0)
             {
-                DatosSolicitud datosSolicitud = new DatosSolicitud();
+                DatosSolicitud datosSolicitud = new DatosSolicitud(this);
                 datosSolicitud.ShowDialog();
                 datosSolicitud.Dispose();
             }

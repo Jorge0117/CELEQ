@@ -28,26 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textNombreSol = new System.Windows.Forms.TextBox();
+            this.textNombreEnc = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
+            this.textUnidad = new System.Windows.Forms.TextBox();
+            this.textObservaciones = new System.Windows.Forms.TextBox();
+            this.butCancelar = new System.Windows.Forms.Button();
+            this.butAceptar = new System.Windows.Forms.Button();
             this.dtpFechaSol = new System.Windows.Forms.DateTimePicker();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelTimer = new System.Windows.Forms.Label();
-            this.labelIdSolicitud = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -67,15 +61,6 @@
             this.label2.Size = new System.Drawing.Size(167, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre del encargado (Si aplica):";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Número Solicitud:";
             // 
             // label4
             // 
@@ -113,121 +98,89 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Observaciones:";
             // 
-            // textBox1
+            // textNombreSol
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 20);
-            this.textBox1.TabIndex = 7;
+            this.textNombreSol.Location = new System.Drawing.Point(215, 52);
+            this.textNombreSol.Name = "textNombreSol";
+            this.textNombreSol.Size = new System.Drawing.Size(215, 20);
+            this.textNombreSol.TabIndex = 7;
             // 
-            // textBox2
+            // textNombreEnc
             // 
-            this.textBox2.Location = new System.Drawing.Point(215, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 20);
-            this.textBox2.TabIndex = 8;
+            this.textNombreEnc.Location = new System.Drawing.Point(215, 79);
+            this.textNombreEnc.Name = "textNombreEnc";
+            this.textNombreEnc.Size = new System.Drawing.Size(215, 20);
+            this.textNombreEnc.TabIndex = 8;
             // 
-            // textBox3
+            // textCorreo
             // 
-            this.textBox3.Location = new System.Drawing.Point(215, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 20);
-            this.textBox3.TabIndex = 9;
+            this.textCorreo.Location = new System.Drawing.Point(215, 103);
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(215, 20);
+            this.textCorreo.TabIndex = 9;
             // 
-            // textBox4
+            // textUnidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(215, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 20);
-            this.textBox4.TabIndex = 10;
+            this.textUnidad.Location = new System.Drawing.Point(215, 127);
+            this.textUnidad.Name = "textUnidad";
+            this.textUnidad.Size = new System.Drawing.Size(215, 20);
+            this.textUnidad.TabIndex = 10;
             // 
-            // textBox6
+            // textObservaciones
             // 
-            this.textBox6.Location = new System.Drawing.Point(215, 187);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(215, 78);
-            this.textBox6.TabIndex = 12;
+            this.textObservaciones.Location = new System.Drawing.Point(215, 187);
+            this.textObservaciones.Multiline = true;
+            this.textObservaciones.Name = "textObservaciones";
+            this.textObservaciones.Size = new System.Drawing.Size(215, 78);
+            this.textObservaciones.TabIndex = 12;
             // 
-            // button1
+            // butCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(497, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.butCancelar.Location = new System.Drawing.Point(497, 276);
+            this.butCancelar.Name = "butCancelar";
+            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.TabIndex = 13;
+            this.butCancelar.Text = "Cancelar";
+            this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
-            // button2
+            // butAceptar
             // 
-            this.button2.Location = new System.Drawing.Point(416, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Aceptar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butAceptar.Location = new System.Drawing.Point(416, 276);
+            this.butAceptar.Name = "butAceptar";
+            this.butAceptar.Size = new System.Drawing.Size(75, 23);
+            this.butAceptar.TabIndex = 14;
+            this.butAceptar.Text = "Aceptar";
+            this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // dtpFechaSol
             // 
             this.dtpFechaSol.Enabled = false;
+            this.dtpFechaSol.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaSol.Location = new System.Drawing.Point(215, 154);
             this.dtpFechaSol.Name = "dtpFechaSol";
             this.dtpFechaSol.Size = new System.Drawing.Size(215, 20);
             this.dtpFechaSol.TabIndex = 15;
-            this.dtpFechaSol.Value = new System.DateTime(2018, 9, 4, 9, 27, 59, 0);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Tiempo restante: ";
-            // 
-            // labelTimer
-            // 
-            this.labelTimer.AutoSize = true;
-            this.labelTimer.Location = new System.Drawing.Point(118, 9);
-            this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(34, 13);
-            this.labelTimer.TabIndex = 17;
-            this.labelTimer.Text = "10:00";
-            // 
-            // labelIdSolicitud
-            // 
-            this.labelIdSolicitud.AutoSize = true;
-            this.labelIdSolicitud.Location = new System.Drawing.Point(119, 31);
-            this.labelIdSolicitud.Name = "labelIdSolicitud";
-            this.labelIdSolicitud.Size = new System.Drawing.Size(35, 13);
-            this.labelIdSolicitud.TabIndex = 18;
-            this.labelIdSolicitud.Text = "####";
+            this.dtpFechaSol.Value = new System.DateTime(2018, 9, 5, 0, 0, 0, 0);
             // 
             // DatosSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 311);
-            this.Controls.Add(this.labelIdSolicitud);
-            this.Controls.Add(this.labelTimer);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpFechaSol);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.butAceptar);
+            this.Controls.Add(this.butCancelar);
+            this.Controls.Add(this.textObservaciones);
+            this.Controls.Add(this.textUnidad);
+            this.Controls.Add(this.textCorreo);
+            this.Controls.Add(this.textNombreEnc);
+            this.Controls.Add(this.textNombreSol);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -246,22 +199,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textNombreSol;
+        private System.Windows.Forms.TextBox textNombreEnc;
+        private System.Windows.Forms.TextBox textCorreo;
+        private System.Windows.Forms.TextBox textUnidad;
+        private System.Windows.Forms.TextBox textObservaciones;
+        private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.DateTimePicker dtpFechaSol;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelTimer;
-        private System.Windows.Forms.Label labelIdSolicitud;
     }
 }

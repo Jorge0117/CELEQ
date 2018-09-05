@@ -109,6 +109,21 @@ namespace CELEQ
             return error;
         }
 
+        public float obtenerCantidadReactivos(string nombre, string pureza)
+        {
+            SqlDataReader cantidad = ejecutarConsulta("select cantidad from reactivo where nombre = '" + nombre +
+                "' and pureza = '" + pureza + "'");
+            cantidad.Read();
+            return (float)cantidad.GetDouble(0);
+        }
+
+        public int obtenerCantidadcristaleria(string nombre, string material, string capacidad)
+        {
+            SqlDataReader cantidad = ejecutarConsulta("select cantidad from cristaleria where nombre = '" + nombre +
+                "' and material = '" + material + "' and capacidad = '"+ capacidad +"'");
+            cantidad.Read();
+            return cantidad.GetInt32(0);
+        }
         /*---------------------------------------------------
          * Métodos almacenados
          * -------------------------------------------------*/
@@ -300,5 +315,109 @@ namespace CELEQ
                 }
             }
         }
+
+        public int agregarSolicitud(string idSolicitud, string fechaSol, string nombreSol, string nombreEnc,
+            string correoSol, string unidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarSolicitud", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@Id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@FechSol", SqlDbType.Date).Value = fechaSol;
+                        cmd.Parameters.Add("@nombreSol", SqlDbType.VarChar).Value = nombreSol;
+                        cmd.Parameters.Add("@nombreEnc", SqlDbType.VarChar).Value = nombreEnc;
+                        cmd.Parameters.Add("@correoSol", SqlDbType.VarChar).Value = correoSol;
+                        cmd.Parameters.Add("@Unidad", SqlDbType.VarChar).Value = unidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int agregarSolicitudReactivo(string idSolicitud, string reactivo, string pureza, float cantidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarSolicitudReactivo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@IdSolicitud", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@Reactivo", SqlDbType.VarChar).Value = reactivo;
+                        cmd.Parameters.Add("@Pureza", SqlDbType.VarChar).Value = pureza;
+                        cmd.Parameters.Add("@Cantidad", SqlDbType.Float).Value = cantidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int agregarSolicitudCristaleria(string idSolicitud, string cristaleria, string material, string capacidad, int cantidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarSolicitudCristaleria", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@IdSolicitud", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@Cristaleria", SqlDbType.VarChar).Value = cristaleria;
+                        cmd.Parameters.Add("@Material", SqlDbType.VarChar).Value = material;
+                        cmd.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = capacidad;
+                        cmd.Parameters.Add("@Cantidad", SqlDbType.Int).Value = cantidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }
