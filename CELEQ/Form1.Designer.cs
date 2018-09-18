@@ -79,7 +79,7 @@
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.solicitudesToolStripMenuItem1.Text = "Solicitudes";
             // 
             // reactivosYCristaleríaToolStripMenuItem
@@ -95,20 +95,20 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
             // 
             this.reactivosToolStripMenuItem.Name = "reactivosToolStripMenuItem";
-            this.reactivosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reactivosToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.reactivosToolStripMenuItem.Text = "Reactivos";
             this.reactivosToolStripMenuItem.Click += new System.EventHandler(this.reactivosToolStripMenuItem_Click);
             // 
             // cristaleríaToolStripMenuItem
             // 
             this.cristaleríaToolStripMenuItem.Name = "cristaleríaToolStripMenuItem";
-            this.cristaleríaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cristaleríaToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.cristaleríaToolStripMenuItem.Text = "Cristalería";
             this.cristaleríaToolStripMenuItem.Click += new System.EventHandler(this.cristaleríaToolStripMenuItem_Click);
             // 
@@ -124,6 +124,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -39,5 +39,9 @@ namespace CELEQ
             inventario.ShowDialog();
             inventario.Dispose();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

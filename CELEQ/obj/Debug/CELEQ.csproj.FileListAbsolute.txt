@@ -12,3 +12,10 @@ C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.FormReacCris.resources
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Inventario.resources
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.DatosSolicitud.resources
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.AgregarReactivoCristaleria.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\PdfSharp.Charting.dll
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\PdfSharp.dll
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\PdfSharp.xml
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\PdfSharp.Charting.xml
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CopyComplete

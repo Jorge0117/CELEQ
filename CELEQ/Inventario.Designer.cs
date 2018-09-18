@@ -93,6 +93,7 @@
             this.butActualizar.TabIndex = 5;
             this.butActualizar.Text = "Actualizar";
             this.butActualizar.UseVisualStyleBackColor = true;
+            this.butActualizar.Click += new System.EventHandler(this.butActualizar_Click);
             // 
             // label1
             // 

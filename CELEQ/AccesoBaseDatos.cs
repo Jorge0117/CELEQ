@@ -317,7 +317,7 @@ namespace CELEQ
         }
 
         public int agregarSolicitud(string idSolicitud, string fechaSol, string nombreSol, string nombreEnc,
-            string correoSol, string unidad)
+            string correoSol, string unidad, string observacion)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -334,6 +334,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@nombreEnc", SqlDbType.VarChar).Value = nombreEnc;
                         cmd.Parameters.Add("@correoSol", SqlDbType.VarChar).Value = correoSol;
                         cmd.Parameters.Add("@Unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@Observacion", SqlDbType.VarChar).Value = observacion;
 
                         /*Se abre la conexión*/
                         con.Open();

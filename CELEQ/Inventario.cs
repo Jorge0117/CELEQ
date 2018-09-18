@@ -265,5 +265,11 @@ namespace CELEQ
             arc.Dispose();
             cargarTabla("");
         }
+
+        private void butActualizar_Click(object sender, EventArgs e)
+        {
+            textBuscar.Text = "";
+            cargarTabla("");
+        }
     }
 }

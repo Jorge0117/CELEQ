@@ -42,6 +42,7 @@
             this.butCancelar = new System.Windows.Forms.Button();
             this.butAceptar = new System.Windows.Forms.Button();
             this.dtpFechaSol = new System.Windows.Forms.DateTimePicker();
+            this.saveFilePdf = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -129,6 +130,7 @@
             // textObservaciones
             // 
             this.textObservaciones.Location = new System.Drawing.Point(215, 187);
+            this.textObservaciones.MaxLength = 255;
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(215, 78);
@@ -162,7 +164,11 @@
             this.dtpFechaSol.Name = "dtpFechaSol";
             this.dtpFechaSol.Size = new System.Drawing.Size(215, 20);
             this.dtpFechaSol.TabIndex = 15;
-            this.dtpFechaSol.Value = new System.DateTime(2018, 9, 5, 0, 0, 0, 0);
+            this.dtpFechaSol.Value = new System.DateTime(2018, 9, 12, 0, 0, 0, 0);
+            // 
+            // saveFilePdf
+            // 
+            this.saveFilePdf.DefaultExt = "pdf";
             // 
             // DatosSolicitud
             // 
@@ -211,5 +217,6 @@
         private System.Windows.Forms.Button butCancelar;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.DateTimePicker dtpFechaSol;
+        private System.Windows.Forms.SaveFileDialog saveFilePdf;
     }
 }
