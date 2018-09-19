@@ -12,7 +12,6 @@ namespace CELEQ
 {
     public partial class DatosSolicitud : Form
     {
-        private int segundos = 600;
         AccesoBaseDatos bd;
         FormReacCris formulario;
         Pdf pdf;
@@ -57,6 +56,10 @@ namespace CELEQ
             if(ultimoConsecutivo > 0)
             {
                 numDigitos = Convert.ToInt32(Math.Floor(Math.Log10(ultimoConsecutivo) + 1));
+            }
+            else
+            {
+                numDigitos = 1;
             }
              
             for(int i=0; i<4-numDigitos; ++i)

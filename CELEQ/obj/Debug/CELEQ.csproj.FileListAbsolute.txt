@@ -19,3 +19,4 @@ C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\PdfSharp.Charting.xml
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CopyComplete
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.ListaSolicitudes.resources

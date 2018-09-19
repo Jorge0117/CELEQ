@@ -43,5 +43,12 @@ namespace CELEQ
         private void Form1_Load(object sender, EventArgs e)
         {
         }
+
+        private void solicitudesPendientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaSolicitudes listaSolicitudes = new ListaSolicitudes();
+            listaSolicitudes.ShowDialog();
+            listaSolicitudes.Dispose();
+        }
     }
 }

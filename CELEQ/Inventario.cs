@@ -51,8 +51,6 @@ namespace CELEQ
             dgvInventario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvInventario.MultiSelect = false;
             dgvInventario.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
-
-
         }
 
         //Pinta la fila completa en el dgv
@@ -213,7 +211,10 @@ namespace CELEQ
                 tabla = bd.ejecutarConsultaTabla(consulta);
 
             }
-            catch (SqlException ex) { }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;

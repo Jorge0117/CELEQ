@@ -37,6 +37,9 @@
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reactivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cristaleríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudesPendientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +72,8 @@
             // 
             this.solicitudesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.solicitudesToolStripMenuItem1,
-            this.verInventarioToolStripMenuItem});
+            this.verInventarioToolStripMenuItem,
+            this.verSolicitudesToolStripMenuItem});
             this.solicitudesToolStripMenuItem.Name = "solicitudesToolStripMenuItem";
             this.solicitudesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.solicitudesToolStripMenuItem.Text = "Regencia";
@@ -79,8 +83,8 @@
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
-            this.solicitudesToolStripMenuItem1.Text = "Solicitudes";
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.solicitudesToolStripMenuItem1.Text = "Realizar Solicitud";
             // 
             // reactivosYCristaleríaToolStripMenuItem
             // 
@@ -95,7 +99,7 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
@@ -111,6 +115,28 @@
             this.cristaleríaToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.cristaleríaToolStripMenuItem.Text = "Cristalería";
             this.cristaleríaToolStripMenuItem.Click += new System.EventHandler(this.cristaleríaToolStripMenuItem_Click);
+            // 
+            // verSolicitudesToolStripMenuItem
+            // 
+            this.verSolicitudesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.solicitudesPendientesToolStripMenuItem,
+            this.historialDeSolicitudesToolStripMenuItem});
+            this.verSolicitudesToolStripMenuItem.Name = "verSolicitudesToolStripMenuItem";
+            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem.Text = "Ver Solicitudes";
+            // 
+            // solicitudesPendientesToolStripMenuItem
+            // 
+            this.solicitudesPendientesToolStripMenuItem.Name = "solicitudesPendientesToolStripMenuItem";
+            this.solicitudesPendientesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.solicitudesPendientesToolStripMenuItem.Text = "Solicitudes pendientes";
+            this.solicitudesPendientesToolStripMenuItem.Click += new System.EventHandler(this.solicitudesPendientesToolStripMenuItem_Click);
+            // 
+            // historialDeSolicitudesToolStripMenuItem
+            // 
+            this.historialDeSolicitudesToolStripMenuItem.Name = "historialDeSolicitudesToolStripMenuItem";
+            this.historialDeSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.historialDeSolicitudesToolStripMenuItem.Text = "Historial de solicitudes";
             // 
             // Form1
             // 
@@ -143,6 +169,9 @@
         private System.Windows.Forms.ToolStripMenuItem verInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reactivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cristaleríaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesPendientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialDeSolicitudesToolStripMenuItem;
     }
 }
 

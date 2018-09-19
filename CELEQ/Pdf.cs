@@ -61,8 +61,9 @@ namespace CELEQ
             {
                 gfx.DrawString("Reactivos solicitados:", calibri13, blackBrush, new XRect(20, 160, 100, 20), XStringFormats.TopLeft);
                 posMatCris = 180 + 40 + matrixToTable(matReactivos, 180);
+                posObs = posMatCris;
 
-                if(matCristaleria != null)
+                if (matCristaleria != null)
                 {
                     gfx.DrawString("Cristalería solicitada:", calibri13, blackBrush, new XRect(20, posMatCris - 20, 100, 20), XStringFormats.TopLeft);
                     posObs = posMatCris + 20 + matrixToTable(matCristaleria, posMatCris);
