@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="AccesobdUsuarios.cs" />
     <Compile Include="AgregarReactivoCristaleria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="DatosSolicitud.Designer.cs">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetallesSolicitud.Designer.cs">
+      <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,12 @@
     <Compile Include="ListaSolicitudes.Designer.cs">
       <DependentUpon>ListaSolicitudes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pdf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatosSolicitud.resx">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallesSolicitud.resx">
+      <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -108,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaSolicitudes.resx">
       <DependentUpon>ListaSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

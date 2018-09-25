@@ -14,12 +14,18 @@ namespace CELEQ
     public partial class ListaSolicitudes : Form
     {
         AccesoBaseDatos bd;
-        public ListaSolicitudes()
+        /* 
+        * Tipo 0 = pendientes
+        * Tipo 1 = historial
+        * Tipo 2 = de un usuario
+        */
+        int tipo;
+        public ListaSolicitudes(int tipo)
         {
             InitializeComponent();
 
             bd = new AccesoBaseDatos();
-
+            this.tipo = tipo;
             //Solo permite seleccionar filas en el dgv
             dgvSolicitudes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSolicitudes.MultiSelect = false;
@@ -35,15 +41,17 @@ namespace CELEQ
         private void llenarTabla()
         {
             DataTable tabla = null;
-            try
+            if(tipo == 0)
             {
-                tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad from Solicitud");
+                try
+                {
+                    tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad from Solicitud where Estado = 'Solicitado'");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;
             dgvSolicitudes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
@@ -56,6 +64,14 @@ namespace CELEQ
 
         private void ListaSolicitudes_Load(object sender, EventArgs e)
         {
+            llenarTabla();
+        }
+
+        private void butDetalles_Click(object sender, EventArgs e)
+        {
+            DetallesSolicitud detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString());
+            detallesSolicitud.ShowDialog();
+            detallesSolicitud.Dispose();
             llenarTabla();
         }
     }

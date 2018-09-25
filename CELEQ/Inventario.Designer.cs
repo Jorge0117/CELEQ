@@ -173,6 +173,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inventario";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.Inventario_Load);

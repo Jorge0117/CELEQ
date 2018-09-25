@@ -420,5 +420,69 @@ namespace CELEQ
             }
         }
 
+        public int denegarReactivo(string idSolicitud, string reactivo, string pureza)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("denegarReactivo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@IdSolicitud", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@Reactivo", SqlDbType.VarChar).Value = reactivo;
+                        cmd.Parameters.Add("@Pureza", SqlDbType.VarChar).Value = pureza;
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int denegarCristaleria(string idSolicitud, string cristaleria, string material, string capacidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("denegarCristaleria", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@IdSolicitud", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@Cristaleria", SqlDbType.VarChar).Value = cristaleria;
+                        cmd.Parameters.Add("@Material", SqlDbType.VarChar).Value = material;
+                        cmd.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = capacidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }

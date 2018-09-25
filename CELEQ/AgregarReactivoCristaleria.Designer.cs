@@ -163,6 +163,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarReactivoCristaleria";
+            this.ShowInTaskbar = false;
             this.Text = "AgregarReactivoCristaleria";
             this.Load += new System.EventHandler(this.AgregarReactivoCristaleria_Load);
             this.ResumeLayout(false);

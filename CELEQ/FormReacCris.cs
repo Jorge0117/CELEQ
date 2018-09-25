@@ -12,8 +12,6 @@ namespace CELEQ
 {
     public partial class FormReacCris : Form
     {
-
-
         DataTable dtReactivos = new DataTable();
         DataTable dtCristaleria = new DataTable();
 
@@ -101,12 +99,18 @@ namespace CELEQ
 
         private void butElimReac_Click(object sender, EventArgs e)
         {
-            dgvReactivos.Rows.Remove(dgvReactivos.SelectedRows[0]);
+            if(dgvReactivos.RowCount > 0)
+            {
+                dgvReactivos.Rows.Remove(dgvReactivos.SelectedRows[0]);
+            }
         }
 
         private void butElimCri_Click(object sender, EventArgs e)
         {
-            dgvCristaleria.Rows.Remove(dgvCristaleria.SelectedRows[0]);
+            if(dgvCristaleria.RowCount > 0)
+            {
+                dgvCristaleria.Rows.Remove(dgvCristaleria.SelectedRows[0]);
+            }
         }
     }
 }

@@ -66,6 +66,7 @@
             this.butDetalles.TabIndex = 4;
             this.butDetalles.Text = "Detalles";
             this.butDetalles.UseVisualStyleBackColor = true;
+            this.butDetalles.Click += new System.EventHandler(this.butDetalles_Click);
             // 
             // ListaSolicitudes
             // 
@@ -79,6 +80,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaSolicitudes";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaSolicitudes";
             this.Load += new System.EventHandler(this.ListaSolicitudes_Load);

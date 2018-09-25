@@ -49,7 +49,7 @@
             this.groupBox1.Controls.Add(this.butElimReac);
             this.groupBox1.Controls.Add(this.butAgRe);
             this.groupBox1.Controls.Add(this.dgvReactivos);
-            this.groupBox1.Location = new System.Drawing.Point(51, 12);
+            this.groupBox1.Location = new System.Drawing.Point(50, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1040, 580);
             this.groupBox1.TabIndex = 1;
@@ -126,7 +126,7 @@
             // 
             // butRealizarSolicutud
             // 
-            this.butRealizarSolicutud.Location = new System.Drawing.Point(862, 606);
+            this.butRealizarSolicutud.Location = new System.Drawing.Point(860, 605);
             this.butRealizarSolicutud.Name = "butRealizarSolicutud";
             this.butRealizarSolicutud.Size = new System.Drawing.Size(197, 43);
             this.butRealizarSolicutud.TabIndex = 6;
@@ -145,6 +145,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormReacCris";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReacCris";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormReacCris_FormClosing);

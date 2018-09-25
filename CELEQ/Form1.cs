@@ -42,11 +42,14 @@ namespace CELEQ
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.ShowDialog();
+            login.Dispose();
         }
 
         private void solicitudesPendientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListaSolicitudes listaSolicitudes = new ListaSolicitudes();
+            ListaSolicitudes listaSolicitudes = new ListaSolicitudes(0);
             listaSolicitudes.ShowDialog();
             listaSolicitudes.Dispose();
         }

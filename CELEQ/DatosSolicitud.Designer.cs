@@ -193,6 +193,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DatosSolicitud";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DatosSolicitud";
             this.Load += new System.EventHandler(this.DatosSolicitud_Load);
