@@ -40,10 +40,10 @@
             this.verSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesPendientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelBienv = new System.Windows.Forms.Label();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelBienv = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,15 +143,7 @@
             this.historialDeSolicitudesToolStripMenuItem.Name = "historialDeSolicitudesToolStripMenuItem";
             this.historialDeSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.historialDeSolicitudesToolStripMenuItem.Text = "Historial de solicitudes";
-            // 
-            // labelBienv
-            // 
-            this.labelBienv.AutoSize = true;
-            this.labelBienv.Location = new System.Drawing.Point(12, 33);
-            this.labelBienv.Name = "labelBienv";
-            this.labelBienv.Size = new System.Drawing.Size(63, 13);
-            this.labelBienv.TabIndex = 1;
-            this.labelBienv.Text = "Bienvenido ";
+            this.historialDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.historialDeSolicitudesToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -174,6 +166,15 @@
             this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
             this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
+            // 
+            // labelBienv
+            // 
+            this.labelBienv.AutoSize = true;
+            this.labelBienv.Location = new System.Drawing.Point(12, 33);
+            this.labelBienv.Name = "labelBienv";
+            this.labelBienv.Size = new System.Drawing.Size(63, 13);
+            this.labelBienv.TabIndex = 1;
+            this.labelBienv.Text = "Bienvenido ";
             // 
             // Form1
             // 

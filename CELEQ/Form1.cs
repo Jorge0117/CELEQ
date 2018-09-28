@@ -86,7 +86,14 @@ namespace CELEQ
         private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaUsuarios ls = new ListaUsuarios();
-            ls.Show();
+            ls.ShowDialog();
+            ls.Dispose();
+        }
+
+        private void historialDeSolicitudesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaSolicitudes ls = new ListaSolicitudes(1);
+            ls.ShowDialog();
             ls.Dispose();
         }
     }

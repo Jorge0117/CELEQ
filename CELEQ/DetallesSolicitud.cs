@@ -17,22 +17,38 @@ namespace CELEQ
     {
         AccesoBaseDatos bd;
         string consecutivo;
+        bool readOnly;
         List<int> reacDenegados; //Index de la fila de reactivos denegados
         List<string> motReacDen; //Motivos de la denegación de reactivos. Tienen una relación 1:1
 
         List<int> crisDenegados; //Index de la fila de cristaleria denegados
         List<string> motCrisDen; //Motivos de la denegación de cristaleria. Tienen una relación 1:1
 
-        public DetallesSolicitud(string consecutivo)
+        public DetallesSolicitud(string consecutivo, bool readOnly)
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
             this.consecutivo = consecutivo;
+            this.readOnly = readOnly;
 
-            reacDenegados = new List<int>();
-            motReacDen = new List<string>();
-            crisDenegados = new List<int>();
-            motCrisDen = new List<string>();
+            if (!readOnly)
+            {
+                reacDenegados = new List<int>();
+                motReacDen = new List<string>();
+                crisDenegados = new List<int>();
+                motCrisDen = new List<string>();
+            }
+            else
+            {
+                butAprobarSolicutud.Visible = false;
+                butDenReac.Visible = false;
+                buDenCris.Visible = false;
+                butDenegarSolicitud.Visible = false;
+                textMotDenCris.Visible = false;
+                textMotDenReac.Visible = false;
+                label1.Visible = false;
+                label2.Visible = false;
+            }
 
             dgvReactivos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvReactivos.MultiSelect = false;

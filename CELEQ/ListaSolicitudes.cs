@@ -51,6 +51,16 @@ namespace CELEQ
                 {
                     MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }else if(tipo == 1)
+            {
+                try
+                {
+                    tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad, Estado from Solicitud");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;
@@ -69,7 +79,16 @@ namespace CELEQ
 
         private void butDetalles_Click(object sender, EventArgs e)
         {
-            DetallesSolicitud detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString());
+            DetallesSolicitud detallesSolicitud;
+            if (tipo == 0)
+            {
+                detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), false);
+            }
+            else
+            {
+                detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), true);
+            }
+            
             detallesSolicitud.ShowDialog();
             detallesSolicitud.Dispose();
             llenarTabla();
