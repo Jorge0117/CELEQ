@@ -22,7 +22,7 @@ namespace CELEQ
          Modifica: Agrega en la base de datos un nuevo usuario
          Retorna: 1 si se pudo guardar el nuevo usuario, un número diferente a cero que corresponde al número de error
          si no se pudo insertar*/
-        public int agregarUsuario(string usuario, string password, string correo)
+        public int agregarUsuario(string usuario, string password, string correo, string categoria)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -40,6 +40,8 @@ namespace CELEQ
                         cmd.Parameters.Add("@pLogin", SqlDbType.VarChar).Value = usuario;
                         cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+
 
                         //se prepara el parámetro de retorno del procedimiento almacenado
                         cmd.Parameters.Add("@estado", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -117,6 +119,43 @@ namespace CELEQ
                 }
             }
 
+        }
+
+        public string getCorreo(string usuario)
+        {
+            SqlDataReader correo = ejecutarConsulta("select correo from Usuarios where nombreUsuario = '" + usuario + "'");
+            correo.Read();
+            return correo[0].ToString();
+        }
+
+        public string getCategoria(string usuario)
+        {
+            SqlDataReader correo = ejecutarConsulta("select categoria from Usuarios where nombreUsuario = '" + usuario + "'");
+            correo.Read();
+            return correo[0].ToString();
+        }
+
+        public SqlDataReader ejecutarConsulta(String consulta)
+        {
+            //Prepara una nueva conexión a la bd y la abre
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+
+            sqlConnection.Open();
+
+            SqlDataReader datos = null;
+            SqlCommand comando = null;
+
+            try
+            {
+                //Ejecuta la consulta sql recibida por parámetro y la carga en un datareader
+                comando = new SqlCommand(consulta, sqlConnection);
+                datos = comando.ExecuteReader();
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            return datos;
         }
 
     }

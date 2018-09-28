@@ -45,6 +45,7 @@ namespace CELEQ
         {
             //labelIdSolicitud.Text = generarId(bd.obtenerUltimoIdSolicitud());
             dtpFechaSol.Value = DateTime.Now;
+            textCorreo.Text = Globals.correo;
         }
 
         private string generarId(string idAnterior)

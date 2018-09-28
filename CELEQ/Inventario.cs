@@ -61,6 +61,7 @@ namespace CELEQ
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
+
             if (butAgregar.Text == "Agregar nuevo")
             {
                 AgregarReactivoCristaleria arc = new AgregarReactivoCristaleria(tipo, null);
@@ -230,6 +231,11 @@ namespace CELEQ
 
         private void Inventario_Load(object sender, EventArgs e)
         {
+            if (Globals.categoria == "Estudiante")
+            {
+                butAgregar.Hide();
+                butModificar.Hide();
+            }
             cargarTabla("");
             if (tipo == 0)
             {

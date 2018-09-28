@@ -42,6 +42,9 @@ namespace CELEQ
                     textPureza.Text = inventario.dgvInventario.SelectedRows[0].Cells[1].Value.ToString();
                     textCantidad.Text = inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString();
                     textEstante.Text = inventario.dgvInventario.SelectedRows[0].Cells[4].Value.ToString();
+
+                    textNombre.Enabled = false;
+                    textPureza.Enabled = false;
                 }
                 else
                 {
@@ -49,6 +52,10 @@ namespace CELEQ
                     textEstado.Text = inventario.dgvInventario.SelectedRows[0].Cells[1].Value.ToString();
                     textPureza.Text = inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString();
                     textCantidad.Text = inventario.dgvInventario.SelectedRows[0].Cells[3].Value.ToString();
+
+                    textNombre.Enabled = false;
+                    textEstado.Enabled = false;
+                    textPureza.Enabled = false;
                 }
             }
         }

@@ -22,3 +22,4 @@ C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CopyComplete
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.ListaSolicitudes.resources
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.DetallesSolicitud.resources
 C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Login.resources
+C:\Users\Jorge\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.ListaUsuarios.resources

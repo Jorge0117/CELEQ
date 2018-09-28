@@ -40,6 +40,10 @@
             this.verSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesPendientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelBienv = new System.Windows.Forms.Label();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +51,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.solicitudesToolStripMenuItem});
+            this.solicitudesToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -67,6 +72,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // solicitudesToolStripMenuItem
             // 
@@ -138,11 +144,43 @@
             this.historialDeSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.historialDeSolicitudesToolStripMenuItem.Text = "Historial de solicitudes";
             // 
+            // labelBienv
+            // 
+            this.labelBienv.AutoSize = true;
+            this.labelBienv.Location = new System.Drawing.Point(12, 33);
+            this.labelBienv.Name = "labelBienv";
+            this.labelBienv.Size = new System.Drawing.Size(63, 13);
+            this.labelBienv.TabIndex = 1;
+            this.labelBienv.Text = "Bienvenido ";
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verUsuariosToolStripMenuItem,
+            this.agregarUsuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // verUsuariosToolStripMenuItem
+            // 
+            this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
+            this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
+            // 
+            // agregarUsuariosToolStripMenuItem
+            // 
+            this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
+            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelBienv);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -172,6 +210,10 @@
         private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudesPendientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialDeSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.Label labelBienv;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarUsuariosToolStripMenuItem;
     }
 }
 

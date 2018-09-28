@@ -42,9 +42,33 @@ namespace CELEQ
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            comprobarPermisos();
             Login login = new Login();
             login.ShowDialog();
             login.Dispose();
+            comprobarPermisos();
+            labelBienv.Text += Globals.usuario;
+        }
+
+        private void comprobarPermisos()
+        {
+            if (Globals.categoria != "Administrador")
+            {
+                usuariosToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                usuariosToolStripMenuItem.Visible = true;
+            }
+
+            if (Globals.categoria == "Estudiante")
+            {
+                verSolicitudesToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                verSolicitudesToolStripMenuItem.Visible = true;
+            }
         }
 
         private void solicitudesPendientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,5 +77,25 @@ namespace CELEQ
             listaSolicitudes.ShowDialog();
             listaSolicitudes.Dispose();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaUsuarios ls = new ListaUsuarios();
+            ls.Show();
+            ls.Dispose();
+        }
     }
+
+    public static class Globals
+    {
+        public static string usuario;
+        public static string correo;
+        public static string categoria = "Estudiante";
+    }
+
 }
