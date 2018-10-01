@@ -44,6 +44,7 @@
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
+            this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.solicitudesToolStripMenuItem1.Text = "Realizar Solicitud";
             // 
             // reactivosYCristaleríaToolStripMenuItem
@@ -105,7 +106,7 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
@@ -128,7 +129,7 @@
             this.solicitudesPendientesToolStripMenuItem,
             this.historialDeSolicitudesToolStripMenuItem});
             this.verSolicitudesToolStripMenuItem.Name = "verSolicitudesToolStripMenuItem";
-            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verSolicitudesToolStripMenuItem.Text = "Ver Solicitudes";
             // 
             // solicitudesPendientesToolStripMenuItem
@@ -157,14 +158,14 @@
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
             // agregarUsuariosToolStripMenuItem
             // 
             this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
-            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
             // 
             // labelBienv
@@ -176,11 +177,23 @@
             this.labelBienv.TabIndex = 1;
             this.labelBienv.Text = "Bienvenido ";
             // 
+            // linkLogout
+            // 
+            this.linkLogout.AutoSize = true;
+            this.linkLogout.Location = new System.Drawing.Point(12, 56);
+            this.linkLogout.Name = "linkLogout";
+            this.linkLogout.Size = new System.Drawing.Size(75, 13);
+            this.linkLogout.TabIndex = 2;
+            this.linkLogout.TabStop = true;
+            this.linkLogout.Text = "Salir de sesión";
+            this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLogout);
             this.Controls.Add(this.labelBienv);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -215,6 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarUsuariosToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLogout;
     }
 }
 

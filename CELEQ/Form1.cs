@@ -43,11 +43,13 @@ namespace CELEQ
         private void Form1_Load(object sender, EventArgs e)
         {
             comprobarPermisos();
+            linkLogout.Hide();
             Login login = new Login();
             login.ShowDialog();
             login.Dispose();
             comprobarPermisos();
             labelBienv.Text += Globals.usuario;
+            linkLogout.Show();
         }
 
         private void comprobarPermisos()
@@ -95,6 +97,21 @@ namespace CELEQ
             ListaSolicitudes ls = new ListaSolicitudes(1);
             ls.ShowDialog();
             ls.Dispose();
+        }
+
+        private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Globals.usuario = "";
+            Globals.correo = "";
+            Globals.categoria = "Estudiante";
+            labelBienv.Text = "Bienvenido ";
+            linkLogout.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            login.Dispose();
+            comprobarPermisos();
+            labelBienv.Text += Globals.usuario;
+            linkLogout.Show();
         }
     }
 

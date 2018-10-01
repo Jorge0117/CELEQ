@@ -132,8 +132,13 @@ namespace CELEQ
                         MessageBox.Show("Se realizó la solicitud correctamente", "Solicitud realizada", MessageBoxButtons.OK, MessageBoxIcon.None);
                         //Se genera el pdf
                         saveFilePdf.Filter = "PDF File|*.pdf";
-                        saveFilePdf.FileName = "ComprobanteSolicitud";
-                        saveFilePdf.ShowDialog();
+                        saveFilePdf.FileName = "Comprobante " + id;
+                        if(saveFilePdf.ShowDialog() == DialogResult.Cancel)
+                        {
+                            saveFilePdf.FileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                            saveFilePdf.FileName += "/Comprobante " + id + ".pdf";
+                        }
+                        
                         pdf.imprimirSolicitud(saveFilePdf.FileName, generarMatriz(0), generarMatriz(1), id, textNombreSol.Text, 
                             textUnidad.Text, dtpFechaSol.Value.ToShortDateString(), textCorreo.Text, textObservaciones.Text);
 

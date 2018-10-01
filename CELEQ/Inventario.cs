@@ -231,7 +231,7 @@ namespace CELEQ
 
         private void Inventario_Load(object sender, EventArgs e)
         {
-            if (Globals.categoria == "Estudiante")
+            if (Globals.categoria == "Estudiante" && formulario == null )
             {
                 butAgregar.Hide();
                 butModificar.Hide();
