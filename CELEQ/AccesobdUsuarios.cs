@@ -158,5 +158,22 @@ namespace CELEQ
             return datos;
         }
 
+        public DataTable ejecutarConsultaTabla(String consulta)
+        {
+            //Prepara una nueva conexión a la bd y la abre
+            SqlConnection sqlConnection = new SqlConnection(conexion);
+
+            sqlConnection.Open();
+
+            SqlCommand comando = new SqlCommand(consulta, sqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataTable table = new DataTable();
+
+            dataAdapter.Fill(table);
+
+            return table;
+        }
+
     }
 }

@@ -67,6 +67,7 @@
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(343, 20);
             this.textBuscar.TabIndex = 4;
+            this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // label1
             // 
@@ -94,6 +95,7 @@
             this.butAgregar.TabIndex = 11;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // ListaUsuarios
             // 
@@ -112,6 +114,7 @@
             this.Name = "ListaUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaUsuarios";
+            this.Load += new System.EventHandler(this.ListaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

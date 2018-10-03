@@ -120,6 +120,8 @@ namespace CELEQ
         public static string usuario;
         public static string correo;
         public static string categoria = "Estudiante";
+
+        public static string[] listaCategorias = new string[] { "Estudiante", "Regencia", "Administrador" };
     }
 
 }

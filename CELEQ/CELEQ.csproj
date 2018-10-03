@@ -59,6 +59,12 @@
     <Compile Include="AgregarReactivoCristaleria.Designer.cs">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatosSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarReactivoCristaleria.resx">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosSolicitud.resx">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
