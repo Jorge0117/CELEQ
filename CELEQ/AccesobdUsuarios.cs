@@ -175,5 +175,42 @@ namespace CELEQ
             return table;
         }
 
+        public int modificarUsuario(string usuario, string password, string correo, string categoria)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarUsuario", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }

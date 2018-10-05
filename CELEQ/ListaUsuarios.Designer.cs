@@ -86,6 +86,7 @@
             this.butModificar.TabIndex = 12;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
             // 
             // butAgregar
             // 

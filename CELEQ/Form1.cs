@@ -113,6 +113,13 @@ namespace CELEQ
             labelBienv.Text += Globals.usuario;
             linkLogout.Show();
         }
+
+        private void agregarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarUsuario agregarUsuario = new AgregarUsuario();
+            agregarUsuario.ShowDialog();
+            agregarUsuario.Dispose();
+        }
     }
 
     public static class Globals

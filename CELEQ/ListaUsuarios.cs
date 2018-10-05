@@ -84,6 +84,15 @@ namespace CELEQ
             AgregarUsuario ag = new AgregarUsuario();
             ag.ShowDialog();
             ag.Dispose();
+            llenarTabla();
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            AgregarUsuario ag = new AgregarUsuario(dgvUsuarios.SelectedRows[0]);
+            ag.ShowDialog();
+            ag.Dispose();
+            llenarTabla();
         }
     }
 }

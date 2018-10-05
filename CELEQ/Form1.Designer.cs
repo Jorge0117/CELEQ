@@ -158,15 +158,16 @@
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
             // agregarUsuariosToolStripMenuItem
             // 
             this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
-            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
+            this.agregarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuariosToolStripMenuItem_Click);
             // 
             // labelBienv
             // 

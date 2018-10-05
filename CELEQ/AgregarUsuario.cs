@@ -12,12 +12,13 @@ namespace CELEQ
 {
     public partial class AgregarUsuario : Form
     {
+        DataGridViewRow dgvRow;
         AccesobdUsuarios bd;
-        public AgregarUsuario()
+        public AgregarUsuario(DataGridViewRow dgvw = null)
         {
             InitializeComponent();
             bd = new AccesobdUsuarios();
-
+            dgvRow = dgvw;
         }
 
         private void loadPermisos()
@@ -25,6 +26,13 @@ namespace CELEQ
             foreach (string permiso in Globals.listaCategorias)
             {
                 cbPermisos.Items.Add(permiso);
+                if (dgvRow != null)
+                {
+                    textNombre.Text = dgvRow.Cells[0].Value.ToString();
+                    textNombre.Enabled = false;
+                    textCorreo.Text = dgvRow.Cells[1].Value.ToString();
+                    cbPermisos.Text = dgvRow.Cells[2].Value.ToString();
+                }
             }
         }
 
@@ -45,8 +53,41 @@ namespace CELEQ
             }
             else
             {
-
+                int error;
+                if (dgvRow == null)
+                {
+                    error = bd.agregarUsuario(textNombre.Text, textPass.Text, textCorreo.Text, cbPermisos.Text);
+                    if (error == 1)
+                    {
+                        MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    error = bd.modificarUsuario(textNombre.Text, textPass.Text, textCorreo.Text, cbPermisos.Text);
+                    if (error == 1)
+                    {
+                        MessageBox.Show("Usuario modificado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                
             }
+
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
