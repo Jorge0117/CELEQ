@@ -21,29 +21,10 @@ namespace CELEQ
             bd = new AccesoBaseDatos();
             pdf = new Pdf();
             this.formulario = formulario;
-            //timer1.Interval = 1000;
-            //timer1.Start();
         }
-/*
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            segundos--;
-            int min = segundos / 60;
-            int sec = segundos % 60;
-            string timer;
-            timer = min < 10 ? "0" + min.ToString() + ":" : min.ToString() + ":";
-            timer = sec < 10 ? timer + "0" + sec.ToString() : timer + sec.ToString();
-            labelTimer.Text = timer;
-            if (segundos == 0)
-            {
-                timer1.Stop();
-                this.Close();
-            }
-        }
-*/
+
         private void DatosSolicitud_Load(object sender, EventArgs e)
         {
-            //labelIdSolicitud.Text = generarId(bd.obtenerUltimoIdSolicitud());
             dtpFechaSol.Value = DateTime.Now;
             textCorreo.Text = Globals.correo;
         }
@@ -57,6 +38,11 @@ namespace CELEQ
             if(ultimoConsecutivo > 0)
             {
                 numDigitos = Convert.ToInt32(Math.Floor(Math.Log10(ultimoConsecutivo) + 1));
+                if(ultimoConsecutivo == 9 || ultimoConsecutivo == 99 || ultimoConsecutivo == 999 || ultimoConsecutivo == 9999 || ultimoConsecutivo == 99999
+                    || ultimoConsecutivo == 999999 || ultimoConsecutivo == 9999999)
+                {
+                    numDigitos--;
+                }
             }
             else
             {

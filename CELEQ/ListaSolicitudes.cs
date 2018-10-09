@@ -82,7 +82,7 @@ namespace CELEQ
             DetallesSolicitud detallesSolicitud;
             if (tipo == 0)
             {
-                detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), false);
+                detallesSolicitud = new DetallesSolicitud(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), false, dgvSolicitudes.SelectedRows[0].Cells[4].Value.ToString());
             }
             else
             {

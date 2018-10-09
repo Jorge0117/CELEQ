@@ -16,6 +16,7 @@ namespace CELEQ
     public partial class DetallesSolicitud : Form
     {
         AccesoBaseDatos bd;
+        string correoSolicitante;
         string consecutivo;
         bool readOnly;
         List<int> reacDenegados; //Index de la fila de reactivos denegados
@@ -24,8 +25,9 @@ namespace CELEQ
         List<int> crisDenegados; //Index de la fila de cristaleria denegados
         List<string> motCrisDen; //Motivos de la denegación de cristaleria. Tienen una relación 1:1
 
-        public DetallesSolicitud(string consecutivo, bool readOnly)
+        public DetallesSolicitud(string consecutivo, bool readOnly, string correoSol=null)
         {
+            correoSolicitante = correoSol;
             InitializeComponent();
             bd = new AccesoBaseDatos();
             this.consecutivo = consecutivo;
@@ -238,7 +240,7 @@ namespace CELEQ
 
             //Se envía correo
             //System.IO.File.WriteAllLines(@"C:\Users\Jorge\Desktop\correo.txt", textoCorreo.Split('\n'));
-            enviarCorreo("informatica.celeq@ucr.ac.cr", textoCorreo);
+            enviarCorreo(correoSolicitante, textoCorreo);
 
             //Se cambia el estado
             bd.ejecutarConsulta("update Solicitud set Estado = 'Aceptado', FechaAprobacion = GETDATE() where Id = '" + consecutivo + "'");
@@ -254,7 +256,7 @@ namespace CELEQ
             {
                 bd.ejecutarConsulta("update Solicitud set Estado = 'Denegado' where Id = '" + consecutivo + "'");
                 string textoCorreo = "<b> UNIDAD DE REGENCIA</b> <br><br>Su solicitud con el consecutivo " + consecutivo + " fue denegada.<br>";
-                enviarCorreo("informatica.celeq@ucr.ac.cr", textoCorreo);
+                enviarCorreo(correoSolicitante, textoCorreo);
                 this.Close();
             }
         }
