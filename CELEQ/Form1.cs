@@ -42,6 +42,26 @@ namespace CELEQ
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            int screenWidth = Screen.FromControl(this).Bounds.Width;
+            int screenHeight = Screen.FromControl(this).Bounds.Height;
+
+            //labelUcr.Width = screenWidth / 5;
+            //labelUcr.Height = screenWidth / 27;
+            labelUcr.Font = new Font("Microsoft Sans Serif", screenWidth / 74);
+            labelUcr.Location = new Point(screenWidth/2 - labelUcr.Width/2, (int)(screenHeight * 0.3));
+            //labelCeleq.Width = screenWidth / 3;
+            //labelCeleq.Height = screenWidth / 27;
+            labelCeleq.Font = new Font("Microsoft Sans Serif", screenWidth / 80);
+            labelCeleq.Location = new Point(screenWidth / 2 - labelCeleq.Width / 2, (int)(screenHeight * 0.35));
+            pictureUcr.Width = screenWidth / 15;
+            pictureUcr.Height = screenHeight / 9;
+            pictureUcr.Location = new Point((int)(screenWidth * 0.25), (int)(screenHeight * 0.3));
+            pictureCeleq.Width = screenWidth / 15;
+            pictureCeleq.Height = screenHeight / 9;
+            pictureCeleq.Location = new Point((int)(screenWidth * 0.75 - pictureCeleq.Width), (int)(screenHeight * 0.3));
+            
+
             comprobarPermisos();
             linkLogout.Hide();
             Login login = new Login();
@@ -119,6 +139,11 @@ namespace CELEQ
             AgregarUsuario agregarUsuario = new AgregarUsuario();
             agregarUsuario.ShowDialog();
             agregarUsuario.Dispose();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -145,6 +145,10 @@ namespace CELEQ
         {
             llenarTablas();
 
+            SqlDataReader observaciones = bd.ejecutarConsulta("select Observacion from Solicitud where Id = '" + consecutivo + "'");
+            observaciones.Read();
+            textObserv.Text = observaciones[0].ToString();
+
             //Evita que se pueda cambiar el orden en los dgv
             foreach (DataGridViewColumn column in dgvReactivos.Columns)
             {
@@ -260,5 +264,6 @@ namespace CELEQ
                 this.Close();
             }
         }
+
     }
 }

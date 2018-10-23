@@ -72,6 +72,7 @@
             this.dgvCristaleria.AllowUserToDeleteRows = false;
             this.dgvCristaleria.AllowUserToResizeColumns = false;
             this.dgvCristaleria.AllowUserToResizeRows = false;
+            this.dgvCristaleria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCristaleria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCristaleria.Location = new System.Drawing.Point(58, 325);
             this.dgvCristaleria.Name = "dgvCristaleria";
@@ -116,6 +117,7 @@
             this.dgvReactivos.AllowUserToDeleteRows = false;
             this.dgvReactivos.AllowUserToResizeColumns = false;
             this.dgvReactivos.AllowUserToResizeRows = false;
+            this.dgvReactivos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvReactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReactivos.Location = new System.Drawing.Point(58, 50);
             this.dgvReactivos.Name = "dgvReactivos";
@@ -138,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.butRealizarSolicutud);
             this.Controls.Add(this.groupBox1);

@@ -77,16 +77,16 @@
             this.groupBox1.Controls.Add(this.textPass);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(62, 42);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 169);
+            this.groupBox1.Size = new System.Drawing.Size(462, 135);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(416, 276);
+            this.butAceptar.Location = new System.Drawing.Point(330, 153);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(75, 23);
             this.butAceptar.TabIndex = 16;
@@ -96,7 +96,7 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(497, 276);
+            this.butCancelar.Location = new System.Drawing.Point(411, 153);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(75, 23);
             this.butCancelar.TabIndex = 15;
@@ -108,10 +108,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 311);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(498, 188);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";

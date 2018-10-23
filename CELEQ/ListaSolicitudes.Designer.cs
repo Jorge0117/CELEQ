@@ -40,6 +40,7 @@
             this.dgvSolicitudes.AllowUserToDeleteRows = false;
             this.dgvSolicitudes.AllowUserToResizeColumns = false;
             this.dgvSolicitudes.AllowUserToResizeRows = false;
+            this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(16, 68);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
@@ -72,6 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.butDetalles);
             this.Controls.Add(this.labelSoliciudes);

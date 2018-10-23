@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textObserv = new System.Windows.Forms.TextBox();
             this.textMotDenCris = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textMotDenReac = new System.Windows.Forms.TextBox();
@@ -40,12 +42,14 @@
             this.butAprobarSolicutud = new System.Windows.Forms.Button();
             this.butDenegarSolicitud = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCristaleria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReactivos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.textMotDenCris);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textMotDenReac);
@@ -56,23 +60,42 @@
             this.groupBox1.Controls.Add(this.dgvReactivos);
             this.groupBox1.Location = new System.Drawing.Point(50, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 580);
+            this.groupBox1.Size = new System.Drawing.Size(1226, 668);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reactivos y cristalería solicitados";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textObserv);
+            this.groupBox2.Location = new System.Drawing.Point(58, 519);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(912, 117);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Observaciones";
+            // 
+            // textObserv
+            // 
+            this.textObserv.Location = new System.Drawing.Point(16, 19);
+            this.textObserv.Multiline = true;
+            this.textObserv.Name = "textObserv";
+            this.textObserv.ReadOnly = true;
+            this.textObserv.Size = new System.Drawing.Size(878, 92);
+            this.textObserv.TabIndex = 0;
+            // 
             // textMotDenCris
             // 
-            this.textMotDenCris.Location = new System.Drawing.Point(814, 388);
+            this.textMotDenCris.Location = new System.Drawing.Point(1012, 346);
             this.textMotDenCris.Multiline = true;
             this.textMotDenCris.Name = "textMotDenCris";
-            this.textMotDenCris.Size = new System.Drawing.Size(194, 159);
+            this.textMotDenCris.Size = new System.Drawing.Size(194, 149);
             this.textMotDenCris.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(811, 371);
+            this.label2.Location = new System.Drawing.Point(1009, 375);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 7;
@@ -80,16 +103,16 @@
             // 
             // textMotDenReac
             // 
-            this.textMotDenReac.Location = new System.Drawing.Point(814, 117);
+            this.textMotDenReac.Location = new System.Drawing.Point(1012, 121);
             this.textMotDenReac.Multiline = true;
             this.textMotDenReac.Name = "textMotDenReac";
-            this.textMotDenReac.Size = new System.Drawing.Size(194, 159);
+            this.textMotDenReac.Size = new System.Drawing.Size(194, 137);
             this.textMotDenReac.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(811, 100);
+            this.label1.Location = new System.Drawing.Point(1009, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 5;
@@ -101,17 +124,18 @@
             this.dgvCristaleria.AllowUserToDeleteRows = false;
             this.dgvCristaleria.AllowUserToResizeColumns = false;
             this.dgvCristaleria.AllowUserToResizeRows = false;
+            this.dgvCristaleria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCristaleria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCristaleria.Location = new System.Drawing.Point(58, 325);
+            this.dgvCristaleria.Location = new System.Drawing.Point(58, 297);
             this.dgvCristaleria.Name = "dgvCristaleria";
             this.dgvCristaleria.ReadOnly = true;
             this.dgvCristaleria.RowHeadersVisible = false;
-            this.dgvCristaleria.Size = new System.Drawing.Size(720, 226);
+            this.dgvCristaleria.Size = new System.Drawing.Size(912, 198);
             this.dgvCristaleria.TabIndex = 4;
             // 
             // buDenCris
             // 
-            this.buDenCris.Location = new System.Drawing.Point(811, 325);
+            this.buDenCris.Location = new System.Drawing.Point(1009, 297);
             this.buDenCris.Name = "buDenCris";
             this.buDenCris.Size = new System.Drawing.Size(197, 43);
             this.buDenCris.TabIndex = 3;
@@ -121,7 +145,7 @@
             // 
             // butDenReac
             // 
-            this.butDenReac.Location = new System.Drawing.Point(811, 50);
+            this.butDenReac.Location = new System.Drawing.Point(1009, 54);
             this.butDenReac.Name = "butDenReac";
             this.butDenReac.Size = new System.Drawing.Size(197, 43);
             this.butDenReac.TabIndex = 1;
@@ -135,18 +159,19 @@
             this.dgvReactivos.AllowUserToDeleteRows = false;
             this.dgvReactivos.AllowUserToResizeColumns = false;
             this.dgvReactivos.AllowUserToResizeRows = false;
+            this.dgvReactivos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvReactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReactivos.Location = new System.Drawing.Point(58, 50);
             this.dgvReactivos.MultiSelect = false;
             this.dgvReactivos.Name = "dgvReactivos";
             this.dgvReactivos.ReadOnly = true;
             this.dgvReactivos.RowHeadersVisible = false;
-            this.dgvReactivos.Size = new System.Drawing.Size(720, 226);
+            this.dgvReactivos.Size = new System.Drawing.Size(912, 208);
             this.dgvReactivos.TabIndex = 0;
             // 
             // butAprobarSolicutud
             // 
-            this.butAprobarSolicutud.Location = new System.Drawing.Point(860, 605);
+            this.butAprobarSolicutud.Location = new System.Drawing.Point(1107, 686);
             this.butAprobarSolicutud.Name = "butAprobarSolicutud";
             this.butAprobarSolicutud.Size = new System.Drawing.Size(197, 43);
             this.butAprobarSolicutud.TabIndex = 7;
@@ -156,7 +181,7 @@
             // 
             // butDenegarSolicitud
             // 
-            this.butDenegarSolicitud.Location = new System.Drawing.Point(657, 605);
+            this.butDenegarSolicitud.Location = new System.Drawing.Point(904, 686);
             this.butDenegarSolicitud.Name = "butDenegarSolicitud";
             this.butDenegarSolicitud.Size = new System.Drawing.Size(197, 43);
             this.butDenegarSolicitud.TabIndex = 8;
@@ -168,7 +193,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(1316, 753);
             this.Controls.Add(this.butDenegarSolicitud);
             this.Controls.Add(this.butAprobarSolicutud);
             this.Controls.Add(this.groupBox1);
@@ -181,6 +207,8 @@
             this.Load += new System.EventHandler(this.DetallesSolicitud_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCristaleria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReactivos)).EndInit();
             this.ResumeLayout(false);
@@ -200,5 +228,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textMotDenReac;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textObserv;
     }
 }

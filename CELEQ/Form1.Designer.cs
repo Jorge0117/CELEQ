@@ -45,7 +45,13 @@
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
+            this.labelUcr = new System.Windows.Forms.Label();
+            this.labelCeleq = new System.Windows.Forms.Label();
+            this.pictureCeleq = new System.Windows.Forms.PictureBox();
+            this.pictureUcr = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -56,7 +62,7 @@
             this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(988, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -158,21 +164,21 @@
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
             // agregarUsuariosToolStripMenuItem
             // 
             this.agregarUsuariosToolStripMenuItem.Name = "agregarUsuariosToolStripMenuItem";
-            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
             this.agregarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuariosToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
             this.labelBienv.AutoSize = true;
-            this.labelBienv.Location = new System.Drawing.Point(12, 33);
+            this.labelBienv.Location = new System.Drawing.Point(12, 24);
             this.labelBienv.Name = "labelBienv";
             this.labelBienv.Size = new System.Drawing.Size(63, 13);
             this.labelBienv.TabIndex = 1;
@@ -181,7 +187,7 @@
             // linkLogout
             // 
             this.linkLogout.AutoSize = true;
-            this.linkLogout.Location = new System.Drawing.Point(12, 56);
+            this.linkLogout.Location = new System.Drawing.Point(12, 47);
             this.linkLogout.Name = "linkLogout";
             this.linkLogout.Size = new System.Drawing.Size(75, 13);
             this.linkLogout.TabIndex = 2;
@@ -189,15 +195,62 @@
             this.linkLogout.Text = "Salir de sesión";
             this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
             // 
+            // labelUcr
+            // 
+            this.labelUcr.AutoSize = true;
+            this.labelUcr.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelUcr.Location = new System.Drawing.Point(270, 129);
+            this.labelUcr.Name = "labelUcr";
+            this.labelUcr.Size = new System.Drawing.Size(427, 39);
+            this.labelUcr.TabIndex = 4;
+            this.labelUcr.Text = "Universidad de Costa Rica";
+            // 
+            // labelCeleq
+            // 
+            this.labelCeleq.AutoSize = true;
+            this.labelCeleq.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelCeleq.Location = new System.Drawing.Point(167, 214);
+            this.labelCeleq.Name = "labelCeleq";
+            this.labelCeleq.Size = new System.Drawing.Size(646, 37);
+            this.labelCeleq.TabIndex = 5;
+            this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
+            // 
+            // pictureCeleq
+            // 
+            this.pictureCeleq.Image = global::CELEQ.Properties.Resources.LogoCeleq;
+            this.pictureCeleq.Location = new System.Drawing.Point(846, 129);
+            this.pictureCeleq.Name = "pictureCeleq";
+            this.pictureCeleq.Size = new System.Drawing.Size(130, 140);
+            this.pictureCeleq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCeleq.TabIndex = 7;
+            this.pictureCeleq.TabStop = false;
+            // 
+            // pictureUcr
+            // 
+            this.pictureUcr.Image = global::CELEQ.Properties.Resources.Escdo_UCR;
+            this.pictureUcr.Location = new System.Drawing.Point(12, 129);
+            this.pictureUcr.Name = "pictureUcr";
+            this.pictureUcr.Size = new System.Drawing.Size(130, 140);
+            this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUcr.TabIndex = 6;
+            this.pictureUcr.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.ClientSize = new System.Drawing.Size(988, 564);
+            this.Controls.Add(this.pictureCeleq);
+            this.Controls.Add(this.pictureUcr);
+            this.Controls.Add(this.labelCeleq);
+            this.Controls.Add(this.labelUcr);
             this.Controls.Add(this.linkLogout);
             this.Controls.Add(this.labelBienv);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -206,6 +259,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +285,10 @@
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarUsuariosToolStripMenuItem;
         private System.Windows.Forms.LinkLabel linkLogout;
+        private System.Windows.Forms.Label labelUcr;
+        private System.Windows.Forms.Label labelCeleq;
+        private System.Windows.Forms.PictureBox pictureCeleq;
+        private System.Windows.Forms.PictureBox pictureUcr;
     }
 }
 

@@ -33,15 +33,18 @@ namespace CELEQ
             //Texto
             XFont calibri22B = new XFont("Calibri", 22, XFontStyle.Bold);
             XFont calibri13 = new XFont("Calibri", 13);
+            XFont calibri13B = new XFont("Calibri", 13, XFontStyle.Bold);
             XBrush blackBrush = XBrushes.Black;
             XStringFormat format = new XStringFormat();
             format.Alignment = XStringAlignment.Center;
             //gfx.DrawString("P-05:PC-01:F-03", calibri22B, blackBrush, recEncabezado, format);
             gfx.DrawString("Comprobante de solicitud", calibri22B, blackBrush, recEncabezado, format);
+            format.LineAlignment = XLineAlignment.Center;
+            gfx.DrawString("P-05:PC-01:F-01", calibri13B, blackBrush, recEncabezado, format);
             format.LineAlignment = XLineAlignment.Far;
             gfx.DrawString("Solicitud de reactivos o cristalería de la bodega del CELEQ", calibri13, blackBrush, recEncabezado, format);
             format.LineAlignment = XLineAlignment.Center;
-            gfx.DrawString("Consecutivo: " + consecutivo, calibri13, blackBrush, recConsecutivo, format);
+            gfx.DrawString("Consecutivo: " + consecutivo, calibri13B, blackBrush, recConsecutivo, format);
             //Imagenes
             XImage logoUcr = XImage.FromFile("LogoUcr.png");
             XImage logoCeleq = XImage.FromFile("LogoCeleq.gif");

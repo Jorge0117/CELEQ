@@ -58,6 +58,7 @@
             this.dgvInventario.AllowUserToDeleteRows = false;
             this.dgvInventario.AllowUserToResizeColumns = false;
             this.dgvInventario.AllowUserToResizeRows = false;
+            this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(16, 68);
             this.dgvInventario.Name = "dgvInventario";
@@ -158,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.labelUnidad);
