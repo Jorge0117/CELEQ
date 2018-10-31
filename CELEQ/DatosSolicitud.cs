@@ -89,7 +89,7 @@ namespace CELEQ
                 {
                     //Como están disponobles se genera el id y se hace la solicitud
                     string id = generarId(bd.obtenerUltimoIdSolicitud());
-                    if (bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, textUnidad.Text, textObservaciones.Text) != 1)
+                    if (bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, textUnidad.Text, textObservaciones.Text, Globals.usuario) != 1)
                     {
                         MessageBox.Show("Error al crear la solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         error = true;

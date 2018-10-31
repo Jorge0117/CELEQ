@@ -1,3 +1,4 @@
+use CELEQ
 CREATE TABLE Regente(
 	Nombre		varchar(255),
 	PRIMARY KEY (Nombre)
@@ -15,8 +16,11 @@ CREATE TABLE Solicitud(
 	NombreRegente		varchar(255),
 	Observacion			varchar(255),
 	ultimoAgregado		bit,
-	PRIMARY KEY (Id)
+	UsuarioSolicitante	nvarchar(50),
+	PRIMARY KEY (Id),
+	FOREIGN KEY (UsuarioSolicitante) REFERENCES Usuarios(nombreUsuario)
 )
+
 
 CREATE TABLE Reactivo(
 	Nombre				varchar(255)		NOT NULL,

@@ -60,13 +60,14 @@ namespace CELEQ
             pictureCeleq.Width = screenWidth / 15;
             pictureCeleq.Height = screenHeight / 9;
             pictureCeleq.Location = new Point((int)(screenWidth * 0.75 - pictureCeleq.Width), (int)(screenHeight * 0.3));
-            
 
+            this.Hide();
             comprobarPermisos();
             linkLogout.Hide();
             Login login = new Login();
             login.ShowDialog();
             login.Dispose();
+            this.Show();
             comprobarPermisos();
             labelBienv.Text += Globals.usuario;
             linkLogout.Show();
@@ -74,22 +75,27 @@ namespace CELEQ
 
         private void comprobarPermisos()
         {
-            if (Globals.categoria != "Administrador")
+            
+            if(Globals.categoria == "Administrador")
             {
-                usuariosToolStripMenuItem.Visible = false;
-            }
-            else
-            {
+                regenciaToolStripMenuItem.Visible = true;
+                solicitudesPendientesToolStripMenuItem.Visible = true;
+                historialDeSolicitudesToolStripMenuItem.Visible = true;
                 usuariosToolStripMenuItem.Visible = true;
             }
-
-            if (Globals.categoria == "Estudiante")
+            else if(Globals.categoria == "Regencia")
             {
-                verSolicitudesToolStripMenuItem.Visible = false;
+                regenciaToolStripMenuItem.Visible = true;
+                solicitudesPendientesToolStripMenuItem.Visible = true;
+                historialDeSolicitudesToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = false;
             }
-            else
+            else if(Globals.categoria == "Estudiante")
             {
-                verSolicitudesToolStripMenuItem.Visible = true;
+                regenciaToolStripMenuItem.Visible = true;
+                solicitudesPendientesToolStripMenuItem.Visible = false;
+                historialDeSolicitudesToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
             }
         }
 
@@ -126,12 +132,18 @@ namespace CELEQ
             Globals.categoria = "Estudiante";
             labelBienv.Text = "Bienvenido ";
             linkLogout.Hide();
+            this.Hide();
             Login login = new Login();
+            login.logged = false;
             login.ShowDialog();
+            if(login.logged == true)
+            {
+                this.Show();
+                comprobarPermisos();
+                labelBienv.Text += Globals.usuario;
+                linkLogout.Show();
+            }
             login.Dispose();
-            comprobarPermisos();
-            labelBienv.Text += Globals.usuario;
-            linkLogout.Show();
         }
 
         private void agregarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,9 +153,11 @@ namespace CELEQ
             agregarUsuario.Dispose();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void solicitudesRealizadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ListaSolicitudes ls = new ListaSolicitudes(2);
+            ls.ShowDialog();
+            ls.Dispose();
         }
     }
 

@@ -16,7 +16,7 @@ namespace CELEQ
         //String conexion = "Data Source=10.1.4.55; Initial Catalog=DB_RRAM; Integrated Security=SSPI";
 
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security = false es para utilizar SQL SERVER Authentication*/
-        string conexion = "Data Source=10.90.85.116;User ID=Admin; Password=Adminsql$celeq; Initial Catalog=Regencia; Integrated Security=false";
+        string conexion = "Data Source=10.90.85.116;User ID=Admin; Password=Adminsql$celeq; Initial Catalog=CELEQ; Integrated Security=false";
         
         /**
          * Constructor de la clase
@@ -124,6 +124,167 @@ namespace CELEQ
             cantidad.Read();
             return cantidad.GetInt32(0);
         }
+
+        /* --------------------------------------------------
+         * Usuarios
+         * --------------------------------------------------*/
+
+        /*Método para llamar al procedimiento almacenado que permite agregar un nuevo usuario 
+                 Recibe: el usuario y la contraseña del nuevo usuario así como la cédula del estudiante a quién se asocia ese usuario
+                 Modifica: Agrega en la base de datos un nuevo usuario
+                 Retorna: 1 si se pudo guardar el nuevo usuario, un número diferente a cero que corresponde al número de error
+                 si no se pudo insertar*/
+        public int agregarUsuario(string usuario, string password, string correo, string categoria)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarUsuario", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@pLogin", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
+                        cmd.Parameters.Add("@estado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return Convert.ToInt32(cmd.Parameters["@estado"].Value);
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        /*Método para llamar al procedimiento almacenado para comprobar que un usuario está en la base de datos
+         Recibe: El usuario y contraseña que se desea verificar que está en la base de datos
+         Modifica: Busca el usuario con esa contraseña en la base de datos
+         Retorna: true si está en la base de datos, false sino*/
+        public bool login(string usuario, string password)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("Login", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@pLoginName", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
+                        cmd.Parameters.Add("@isInDB", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        int value = Convert.ToInt32(cmd.Parameters["@isInDB"].Value);
+
+                        /*Si el procedimiento devuelve 1 es que si se encuentra en la BD*/
+                        if (value == 1)
+                        {
+                            return true;
+                        }
+
+                        /*Si devuelve 0 es que no se encuentra en la BD*/
+                        else
+                        {
+                            return false;
+                        }
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+        }
+
+        public string getCorreo(string usuario)
+        {
+            SqlDataReader correo = ejecutarConsulta("select correo from Usuarios where nombreUsuario = '" + usuario + "'");
+            correo.Read();
+            return correo[0].ToString();
+        }
+
+        public string getCategoria(string usuario)
+        {
+            SqlDataReader correo = ejecutarConsulta("select categoria from Usuarios where nombreUsuario = '" + usuario + "'");
+            correo.Read();
+            return correo[0].ToString();
+        }
+
+        public int modificarUsuario(string usuario, string password, string correo, string categoria)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarUsuario", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+            return error;
+        }
+
         /*---------------------------------------------------
          * Métodos almacenados
          * -------------------------------------------------*/
@@ -317,7 +478,7 @@ namespace CELEQ
         }
 
         public int agregarSolicitud(string idSolicitud, string fechaSol, string nombreSol, string nombreEnc,
-            string correoSol, string unidad, string observacion)
+            string correoSol, string unidad, string observacion, string usuario)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -335,6 +496,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@correoSol", SqlDbType.VarChar).Value = correoSol;
                         cmd.Parameters.Add("@Unidad", SqlDbType.VarChar).Value = unidad;
                         cmd.Parameters.Add("@Observacion", SqlDbType.VarChar).Value = observacion;
+                        cmd.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = usuario;
 
                         /*Se abre la conexión*/
                         con.Open();

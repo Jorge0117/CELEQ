@@ -45,13 +45,13 @@ go
 
 
 create procedure agregarSolicitud(@Id varchar (130), @FechSol date, @nombreSol varchar(255), @nombreEnc varchar(255),
-									@correoSol varchar(255), @Unidad varchar(100), @Observacion varchar(255))
+									@correoSol varchar(255), @Unidad varchar(100), @Observacion varchar(255), @usuario nvarchar(50))
 as
 	update Solicitud
 	set ultimoAgregado = 0 where ultimoAgregado = 1
 
 	Insert into Solicitud
-	values(@Id, @FechSol, null, 'Solicitado', @nombreSol, @nombreEnc, @correoSol, @Unidad, null, @Observacion ,1)
+	values(@Id, @FechSol, null, 'Solicitado', @nombreSol, @nombreEnc, @correoSol, @Unidad, null, @Observacion ,1, @usuario)
 
 go
 

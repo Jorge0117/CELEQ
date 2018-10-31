@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
-    <Compile Include="AccesobdUsuarios.cs" />
     <Compile Include="AgregarReactivoCristaleria.cs">
       <SubType>Form</SubType>
     </Compile>

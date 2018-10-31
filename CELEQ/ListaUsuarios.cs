@@ -13,11 +13,11 @@ namespace CELEQ
 {
     public partial class ListaUsuarios : Form
     {
-        AccesobdUsuarios bd;
+        AccesoBaseDatos bd;
         public ListaUsuarios()
         {        
             InitializeComponent();
-            bd = new AccesobdUsuarios();
+            bd = new AccesoBaseDatos();
             //Solo permite seleccionar filas en el dgv
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.MultiSelect = false;

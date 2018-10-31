@@ -31,7 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactivosYCristaleríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@
             this.verSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesPendientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudesRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.solicitudesToolStripMenuItem,
+            this.regenciaToolStripMenuItem,
             this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -81,22 +82,22 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // solicitudesToolStripMenuItem
+            // regenciaToolStripMenuItem
             // 
-            this.solicitudesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regenciaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.solicitudesToolStripMenuItem1,
             this.verInventarioToolStripMenuItem,
             this.verSolicitudesToolStripMenuItem});
-            this.solicitudesToolStripMenuItem.Name = "solicitudesToolStripMenuItem";
-            this.solicitudesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.solicitudesToolStripMenuItem.Text = "Regencia";
+            this.regenciaToolStripMenuItem.Name = "regenciaToolStripMenuItem";
+            this.regenciaToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.regenciaToolStripMenuItem.Text = "Regencia";
             // 
             // solicitudesToolStripMenuItem1
             // 
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.solicitudesToolStripMenuItem1.Text = "Realizar Solicitud";
             // 
             // reactivosYCristaleríaToolStripMenuItem
@@ -112,7 +113,7 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
@@ -133,9 +134,10 @@
             // 
             this.verSolicitudesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.solicitudesPendientesToolStripMenuItem,
-            this.historialDeSolicitudesToolStripMenuItem});
+            this.historialDeSolicitudesToolStripMenuItem,
+            this.solicitudesRealizadasToolStripMenuItem});
             this.verSolicitudesToolStripMenuItem.Name = "verSolicitudesToolStripMenuItem";
-            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verSolicitudesToolStripMenuItem.Text = "Ver Solicitudes";
             // 
             // solicitudesPendientesToolStripMenuItem
@@ -151,6 +153,13 @@
             this.historialDeSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.historialDeSolicitudesToolStripMenuItem.Text = "Historial de solicitudes";
             this.historialDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.historialDeSolicitudesToolStripMenuItem_Click);
+            // 
+            // solicitudesRealizadasToolStripMenuItem
+            // 
+            this.solicitudesRealizadasToolStripMenuItem.Name = "solicitudesRealizadasToolStripMenuItem";
+            this.solicitudesRealizadasToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.solicitudesRealizadasToolStripMenuItem.Text = "Solicitudes realizadas";
+            this.solicitudesRealizadasToolStripMenuItem.Click += new System.EventHandler(this.solicitudesRealizadasToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -269,7 +278,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem solicitudesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reactivosYCristaleríaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -289,6 +298,7 @@
         private System.Windows.Forms.Label labelCeleq;
         private System.Windows.Forms.PictureBox pictureCeleq;
         private System.Windows.Forms.PictureBox pictureUcr;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
     }
 }
 

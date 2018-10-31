@@ -13,11 +13,11 @@ namespace CELEQ
     public partial class AgregarUsuario : Form
     {
         DataGridViewRow dgvRow;
-        AccesobdUsuarios bd;
+        AccesoBaseDatos bd;
         public AgregarUsuario(DataGridViewRow dgvw = null)
         {
             InitializeComponent();
-            bd = new AccesobdUsuarios();
+            bd = new AccesoBaseDatos();
             dgvRow = dgvw;
         }
 

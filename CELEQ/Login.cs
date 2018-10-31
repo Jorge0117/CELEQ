@@ -12,12 +12,12 @@ namespace CELEQ
 {
     public partial class Login : Form
     {
-        AccesobdUsuarios abu;
-        bool logged;
+        AccesoBaseDatos abu;
+        public bool logged;
         public Login()
         {
             InitializeComponent();
-            abu = new AccesobdUsuarios();
+            abu = new AccesoBaseDatos();
             logged = false;
         }
 
