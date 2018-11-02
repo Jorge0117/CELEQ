@@ -38,7 +38,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as Nombre, correo as Correo, Categoria as Categoría from Usuarios");
+                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio', categoria as 'Categoría'  from Usuarios");
                 }
                 catch (SqlException ex)
                 {
@@ -49,8 +49,9 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as Nombre, correo as Correo, Categoria as Categoría from Usuarios where nombreUsuario like '%" +
-                        filtro + "%' or correo like '%" + filtro + "%' or categoria like '%" + filtro + "%'");
+                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio', categoria as 'Categoría'  from Usuarios where nombreUsuario like '%" +
+                        filtro + "%' or correo like '%" + filtro + "%' or categoria like '%" + filtro + "%' or nombre like '%" + filtro + "%' or apellido1 like '%" + filtro +
+                        "%' or apellido2 like '%" + filtro + "%' or unidad like '%" + filtro + "%'");
                 }
                 catch (SqlException ex)
                 {

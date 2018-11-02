@@ -134,7 +134,7 @@ namespace CELEQ
                  Modifica: Agrega en la base de datos un nuevo usuario
                  Retorna: 1 si se pudo guardar el nuevo usuario, un número diferente a cero que corresponde al número de error
                  si no se pudo insertar*/
-        public int agregarUsuario(string usuario, string password, string correo, string categoria)
+        public int agregarUsuario(string usuario, string password, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -153,6 +153,10 @@ namespace CELEQ
                         cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
                         cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
+                        cmd.Parameters.Add("@apellido2", SqlDbType.VarChar).Value = apellido2;
 
 
                         //se prepara el parámetro de retorno del procedimiento almacenado
@@ -247,7 +251,7 @@ namespace CELEQ
             return correo[0].ToString();
         }
 
-        public int modificarUsuario(string usuario, string password, string correo, string categoria)
+        public int modificarUsuario(string usuario, string password, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -266,6 +270,10 @@ namespace CELEQ
                         cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
                         cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
+                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
+                        cmd.Parameters.Add("@apellido2", SqlDbType.VarChar).Value = apellido2;
 
                         /*Se abre la conexión*/
                         con.Open();

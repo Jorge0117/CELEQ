@@ -44,6 +44,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarSolicitudMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
@@ -60,7 +62,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.regenciaToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(988, 24);
@@ -97,7 +100,7 @@
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.solicitudesToolStripMenuItem1.Text = "Realizar Solicitud";
             // 
             // reactivosYCristaleríaToolStripMenuItem
@@ -113,7 +116,7 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
@@ -137,7 +140,7 @@
             this.historialDeSolicitudesToolStripMenuItem,
             this.solicitudesRealizadasToolStripMenuItem});
             this.verSolicitudesToolStripMenuItem.Name = "verSolicitudesToolStripMenuItem";
-            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verSolicitudesToolStripMenuItem.Text = "Ver Solicitudes";
             // 
             // solicitudesPendientesToolStripMenuItem
@@ -183,6 +186,21 @@
             this.agregarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.agregarUsuariosToolStripMenuItem.Text = "Agregar Usuarios";
             this.agregarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuariosToolStripMenuItem_Click);
+            // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarSolicitudMantenimientoToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            // 
+            // realizarSolicitudMantenimientoToolStripMenuItem
+            // 
+            this.realizarSolicitudMantenimientoToolStripMenuItem.Name = "realizarSolicitudMantenimientoToolStripMenuItem";
+            this.realizarSolicitudMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.realizarSolicitudMantenimientoToolStripMenuItem.Text = "Realizar Solicitud";
+            this.realizarSolicitudMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarSolicitudMantenimientoToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -299,6 +317,8 @@
         private System.Windows.Forms.PictureBox pictureCeleq;
         private System.Windows.Forms.PictureBox pictureUcr;
         private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem realizarSolicitudMantenimientoToolStripMenuItem;
     }
 }
 

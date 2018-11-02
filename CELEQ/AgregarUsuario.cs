@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CELEQ
 {
@@ -28,10 +30,17 @@ namespace CELEQ
                 cbPermisos.Items.Add(permiso);
                 if (dgvRow != null)
                 {
-                    textNombre.Text = dgvRow.Cells[0].Value.ToString();
-                    textNombre.Enabled = false;
-                    textCorreo.Text = dgvRow.Cells[1].Value.ToString();
-                    cbPermisos.Text = dgvRow.Cells[2].Value.ToString();
+                    textUsuario.Text = dgvRow.Cells[0].Value.ToString();
+                    textUsuario.Enabled = false;
+                    textCorreo.Text = dgvRow.Cells[2].Value.ToString();
+                    cbPermisos.Text = dgvRow.Cells[4].Value.ToString();
+                    textUnidad.Text = dgvRow.Cells[3].Value.ToString();
+
+                    SqlDataReader nombre = bd.ejecutarConsulta("select nombre, apellido1, apellido2 from usuarios where nombreUsuario = '" + textUsuario.Text + "'");
+                    nombre.Read();
+                    textNombre.Text = nombre[0].ToString();
+                    textApellido1.Text = nombre[1].ToString();
+                    textApellido2.Text = nombre[2].ToString();
                 }
             }
         }
@@ -43,7 +52,8 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            if(textNombre.Text == "" || textPass.Text == "" || textConfirmar.Text == "" || textCorreo.Text == "" || cbPermisos.Text == "")
+            if(textUsuario.Text == "" || textPass.Text == "" || textConfirmar.Text == "" || textCorreo.Text == "" || cbPermisos.Text == "" 
+                || textUnidad.Text == "" || textNombre.Text == "" || textApellido1.Text == "" || textApellido2.Text == "")
             {
                 MessageBox.Show("Porfavor llene los datos requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -56,8 +66,8 @@ namespace CELEQ
                 int error;
                 if (dgvRow == null)
                 {
-                    error = bd.agregarUsuario(textNombre.Text, textPass.Text, textCorreo.Text, cbPermisos.Text);
-                    if (error == 1)
+                    error = bd.agregarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, textUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    if (error == 0)
                     {
                         MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();
@@ -69,8 +79,8 @@ namespace CELEQ
                 }
                 else
                 {
-                    error = bd.modificarUsuario(textNombre.Text, textPass.Text, textCorreo.Text, cbPermisos.Text);
-                    if (error == 1)
+                    error = bd.modificarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, textUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    if (error == 0)
                     {
                         MessageBox.Show("Usuario modificado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();

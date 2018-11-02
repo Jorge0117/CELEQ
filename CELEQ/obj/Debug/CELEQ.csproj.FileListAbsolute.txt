@@ -50,3 +50,4 @@ C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CoreCompileInputs.c
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.csproj.CopyComplete
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.exe
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.pdb
+C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.SolicitudMantenimiento.resources

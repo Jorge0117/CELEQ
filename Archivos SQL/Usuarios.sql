@@ -1,4 +1,4 @@
-use Usuarios
+use CELEQ
 CREATE TABLE dbo.[Usuarios]
 (
 	nombreUsuario NVARCHAR(50)	NOT NULL	PRIMARY KEY,
@@ -8,9 +8,11 @@ CREATE TABLE dbo.[Usuarios]
 	salt UNIQUEIDENTIFIER,
 )
 
+alter table Usuarios add unidad varchar(100), nombre varchar(100), apellido1 varchar(255), apellido2 varchar(255)
+
 
 go
-CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @estado bit OUTPUT)
+CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
 AS
 BEGIN
 	SET NOCOUNT ON
@@ -20,8 +22,8 @@ BEGIN
 	/*Se inserta en la tabla Usuarios los datos de un nuevo usuario, se encripta la contraseña con un HASHBYTES con el algoritmo SHA2_512
 	con la unión del password digitado y el salt (notese que este salt es único para cada usuario sin importar que tengan la misma contraseña,
 	este se almacena diferente para cada uno)*/
-		INSERT INTO dbo.[Usuarios] (correo, nombreUsuario, passwordHash, Salt, Categoria)
-		VALUES(@correo, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt, @categoria)
+		INSERT INTO dbo.[Usuarios] (correo, nombreUsuario, passwordHash, Salt, Categoria, unidad, nombre, apellido1, apellido2)
+		VALUES(@correo, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt, @categoria, @unidad ,@nombre, @apellido1, @apellido2)
 		/*si lacinserción se pudo realizar se devuelve un 1*/
 		SET @estado=1 
 	END TRY
@@ -57,13 +59,18 @@ AS
 	END
 go
 
-create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @correo varchar(255), @categoria varchar(255)) as
+create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
 	begin
-		delete from Usuarios where nombreUsuario = @usuario
-		exec dbo.agregarUsuario @usuario, @pass, @correo, @categoria, 0
+
+		declare @salt uniqueidentifier
+		select @salt = salt from Usuarios where nombreUsuario = @usuario
+
+		update Usuarios
+		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36))), correo = @correo, categoria = @categoria, unidad = @unidad, nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2
+		where nombreUsuario = @usuario
 	end
 go
-drop procedure modificarUsusario
+drop procedure modificarUsuario
 
 exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 0
 

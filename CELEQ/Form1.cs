@@ -66,11 +66,14 @@ namespace CELEQ
             linkLogout.Hide();
             Login login = new Login();
             login.ShowDialog();
+            if (login.logged == true)
+            {
+                this.Show();
+                comprobarPermisos();
+                labelBienv.Text += Globals.usuario;
+                linkLogout.Show();
+            }
             login.Dispose();
-            this.Show();
-            comprobarPermisos();
-            labelBienv.Text += Globals.usuario;
-            linkLogout.Show();
         }
 
         private void comprobarPermisos()
@@ -158,6 +161,13 @@ namespace CELEQ
             ListaSolicitudes ls = new ListaSolicitudes(2);
             ls.ShowDialog();
             ls.Dispose();
+        }
+
+        private void realizarSolicitudMantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SolicitudMantenimiento sl = new SolicitudMantenimiento();
+            sl.ShowDialog();
+            sl.Dispose();
         }
     }
 
