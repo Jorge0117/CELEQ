@@ -58,12 +58,5 @@ namespace CELEQ
             }
         }
 
-        private void Login_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                butAceptar_Click(this, e);
-            }
-        }
     }
 }

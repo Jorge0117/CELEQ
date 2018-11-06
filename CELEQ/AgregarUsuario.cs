@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace CELEQ
@@ -28,20 +27,20 @@ namespace CELEQ
             foreach (string permiso in Globals.listaCategorias)
             {
                 cbPermisos.Items.Add(permiso);
-                if (dgvRow != null)
-                {
-                    textUsuario.Text = dgvRow.Cells[0].Value.ToString();
-                    textUsuario.Enabled = false;
-                    textCorreo.Text = dgvRow.Cells[2].Value.ToString();
-                    cbPermisos.Text = dgvRow.Cells[4].Value.ToString();
-                    textUnidad.Text = dgvRow.Cells[3].Value.ToString();
+            }
+            if (dgvRow != null)
+            {
+                textUsuario.Text = dgvRow.Cells[0].Value.ToString();
+                textUsuario.Enabled = false;
+                textCorreo.Text = dgvRow.Cells[2].Value.ToString();
+                cbPermisos.Text = dgvRow.Cells[4].Value.ToString();
+                textUnidad.Text = dgvRow.Cells[3].Value.ToString();
 
-                    SqlDataReader nombre = bd.ejecutarConsulta("select nombre, apellido1, apellido2 from usuarios where nombreUsuario = '" + textUsuario.Text + "'");
-                    nombre.Read();
-                    textNombre.Text = nombre[0].ToString();
-                    textApellido1.Text = nombre[1].ToString();
-                    textApellido2.Text = nombre[2].ToString();
-                }
+                SqlDataReader nombre = bd.ejecutarConsulta("select nombre, apellido1, apellido2 from usuarios where nombreUsuario = '" + textUsuario.Text + "'");
+                nombre.Read();
+                textNombre.Text = nombre[0].ToString();
+                textApellido1.Text = nombre[1].ToString();
+                textApellido2.Text = nombre[2].ToString();
             }
         }
 

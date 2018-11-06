@@ -654,5 +654,63 @@ namespace CELEQ
             }
         }
 
+        //---------------------------------------------------------------------------------------------
+        //-----------------------------------------Mantenimiento---------------------------------------
+        //---------------------------------------------------------------------------------------------
+
+        public int agregarSolicitudMantenimiento(string idSolicitud, string fecha, string nombreSolicitante, string unidad,
+            string telefono, string contactoAdicional, string urgencia, string areaTrabajo, string lugarTrabajo, string descripcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("CrearSolicitudMantenimiento", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombreSolicitante;
+                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = telefono;
+                        cmd.Parameters.Add("@contactoAdicional", SqlDbType.VarChar).Value = contactoAdicional;
+                        cmd.Parameters.Add("@urgencia", SqlDbType.VarChar).Value = urgencia;
+                        cmd.Parameters.Add("@areaTrabajo", SqlDbType.VarChar).Value = areaTrabajo;
+                        cmd.Parameters.Add("@lugarTrabajo", SqlDbType.VarChar).Value = lugarTrabajo;
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public string ultimaSolicitudMantenimiento(string areaTrabajo)
+        {
+            SqlDataReader consecutivo = ejecutarConsulta("select id from SolicitudMantenimiento where areaTrabajo = '" + areaTrabajo + "' and ultimoAgregado = 1");
+            if (consecutivo.Read())
+            {
+                return consecutivo[0].ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }
