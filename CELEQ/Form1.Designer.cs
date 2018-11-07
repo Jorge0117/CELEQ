@@ -50,6 +50,7 @@
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
+            this.verSolicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -190,7 +191,8 @@
             // mantenimientoToolStripMenuItem
             // 
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.realizarSolicitudMantenimientoToolStripMenuItem});
+            this.realizarSolicitudMantenimientoToolStripMenuItem,
+            this.verSolicitudesToolStripMenuItem1});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -243,6 +245,13 @@
             this.labelCeleq.Size = new System.Drawing.Size(646, 37);
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
+            // 
+            // verSolicitudesToolStripMenuItem1
+            // 
+            this.verSolicitudesToolStripMenuItem1.Name = "verSolicitudesToolStripMenuItem1";
+            this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem1.Text = "Ver Solicitudes";
+            this.verSolicitudesToolStripMenuItem1.Click += new System.EventHandler(this.verSolicitudesToolStripMenuItem1_Click);
             // 
             // pictureCeleq
             // 
@@ -319,6 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarSolicitudMantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem1;
     }
 }
 

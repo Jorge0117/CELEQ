@@ -169,6 +169,13 @@ namespace CELEQ
             sl.ShowDialog();
             sl.Dispose();
         }
+
+        private void verSolicitudesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListaSolicitudMantenimiento lsm = new ListaSolicitudMantenimiento();
+            lsm.ShowDialog();
+            lsm.Dispose();
+        }
     }
 
     public static class Globals
