@@ -3,13 +3,23 @@ CREATE TABLE dbo.[Usuarios]
 (
 	nombreUsuario NVARCHAR(50)	NOT NULL	PRIMARY KEY,
 	correo varchar(255)			NOT NULL,
+	nombre	varchar(100)		NOT NULL,
+	apellido1 varchar(100)		NOT NULL,
+	apellido2 varchar(100)		NOT NULL,
+	unidad varchar(100)			NOT NULL,
 	categoria varchar(255)		NOT NULL,
 	passwordHash BINARY(64)		NOT NULL,
 	salt UNIQUEIDENTIFIER,
+
+	foreign key (unidad) references Unidad(nombre)
 )
 
-alter table Usuarios add unidad varchar(100), nombre varchar(100), apellido1 varchar(255), apellido2 varchar(255)
+drop table Usuarios
 
+create table Unidad
+(
+	nombre varchar(100)		NOT NULL	PRIMARY KEY
+)
 
 go
 CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
@@ -72,7 +82,7 @@ create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @co
 go
 drop procedure modificarUsuario
 
-exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 0
+exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
 
 exec dbo.agregarUsuario 'Admin', 'AdminCeleq', 'informatica.celeq@ucr.ac.cr', 0
 
@@ -80,5 +90,5 @@ exec dbo.agregarUsuario 'Estudiante', 'est', 'estudiante@ucr.ac.cr', 'Estudiante
 
 exec dbo.agregarUsuario 'Regente', 'reg', 'regente@ucr.ac.cr', 'Regencia', 0
 
-
+insert into Unidad values ('UMI')
 go

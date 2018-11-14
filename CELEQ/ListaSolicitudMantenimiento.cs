@@ -78,21 +78,23 @@ namespace CELEQ
 
             textConsecutivo.Text = dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString();
 
-            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select fecha, nombreSolicitante, unidad, telefono, contactoAdicional, urgencia, areaTrabajo, lugarTrabajo, descripcionTrabajo from SolicitudMantenimiento where id ='" +
+            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select fecha, nombreSolicitante, telefono, contactoAdicional, urgencia, areaTrabajo, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
                                                             textConsecutivo.Text + "'");
             datosSolicitud.Read();
 
             textNombre.Text = datosSolicitud[1].ToString();
-            textUnidad.Text = datosSolicitud[2].ToString();
-            textTelefono.Text = datosSolicitud[3].ToString();
-            textContacto.Text = datosSolicitud[4].ToString();
-            textUrgencia.Text = datosSolicitud[5].ToString();
-            textAreaTrabajo.Text = datosSolicitud[6].ToString();
-            textLugarTrabajo.Text = datosSolicitud[7].ToString();
-            textDescripcion.Text = datosSolicitud[8].ToString();
+            textTelefono.Text = datosSolicitud[2].ToString();
+            textContacto.Text = datosSolicitud[3].ToString();
+            textUrgencia.Text = datosSolicitud[4].ToString();
+            textAreaTrabajo.Text = datosSolicitud[5].ToString();
+            textLugarTrabajo.Text = datosSolicitud[6].ToString();
+            textDescripcion.Text = datosSolicitud[7].ToString();
 
+            SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[8] + "'");
+            readerUnidad.Read();
+            textUnidad.Text = readerUnidad[0].ToString();
             comboPersonas.Items.Clear();
-            SqlDataReader personas = bd.ejecutarConsulta("select CONCAT(nombre, ' ', apellido1, ' ', apellido2) from Usuarios");
+            SqlDataReader personas = bd.ejecutarConsulta("select CONCAT(nombre, ' ', apellido1, ' ', apellido2) from Usuarios where unidad = 'UMI'");
             while (personas.Read())
             {
                 comboPersonas.Items.Add(personas[0].ToString());
@@ -150,6 +152,52 @@ namespace CELEQ
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            if (checkBoxAprobado.CheckState == CheckState.Checked)
+            {
+                if (comboPersonas.Text == "")
+                {
+                    MessageBox.Show("Por favor seleccionar una persona encargada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    string[] nombre = comboPersonas.Text.Split(' ');
+                    SqlDataReader usuario = bd.ejecutarConsulta("select nombreUsuario from usuarios where nombre = '" + nombre[0] + "' and apellido1 = '" + nombre[1]
+                        + "' and apellido2 ='" + nombre[2] + "'");
+                    usuario.Read();
+                    if (bd.aprobarSolicitudMantenimiento(textConsecutivo.Text, usuario[0].ToString(), textObservaciones.Text) == 1)
+                    {
+                        MessageBox.Show("Se ha aprobado la solicitud", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        llenarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error aprobando la solicitud", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                if (textObservaciones.Text == "")
+                {
+                    MessageBox.Show("Por favor indique el motivo del rechazo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    if (bd.rechazarSolicitudMantenimiento(textConsecutivo.Text, textObservaciones.Text) == 1)
+                    {
+                        MessageBox.Show("Se ha rechazado la solicitud", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        llenarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error rechazando la solicitud", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

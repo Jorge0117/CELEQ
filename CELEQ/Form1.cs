@@ -176,6 +176,20 @@ namespace CELEQ
             lsm.ShowDialog();
             lsm.Dispose();
         }
+
+        private void unidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unidad unidad = new Unidad();
+            unidad.ShowDialog();
+            unidad.Dispose();
+        }
+
+        private void analizarSolicitudToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnalizarSolicitudMantenimiento asm = new AnalizarSolicitudMantenimiento();
+            asm.ShowDialog();
+            asm.Dispose();
+        }
     }
 
     public static class Globals
@@ -184,7 +198,7 @@ namespace CELEQ
         public static string correo;
         public static string categoria = "Estudiante";
 
-        public static string[] listaCategorias = new string[] { "Estudiante", "Regencia", "Administrador" };
+        public static string[] listaCategorias = new string[] { "Estudiante", "Regencia", "Administrador" , "Dirección", "Mantenimiento"};
     }
 
 }

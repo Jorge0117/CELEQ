@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,11 +47,12 @@
             this.agregarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarSolicitudMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verSolicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
-            this.verSolicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -74,15 +76,23 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.unidadesToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // unidadesToolStripMenuItem
+            // 
+            this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.unidadesToolStripMenuItem.Text = "Unidades";
+            this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -192,7 +202,8 @@
             // 
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.realizarSolicitudMantenimientoToolStripMenuItem,
-            this.verSolicitudesToolStripMenuItem1});
+            this.verSolicitudesToolStripMenuItem1,
+            this.analizarSolicitudToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -203,6 +214,13 @@
             this.realizarSolicitudMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.realizarSolicitudMantenimientoToolStripMenuItem.Text = "Realizar Solicitud";
             this.realizarSolicitudMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarSolicitudMantenimientoToolStripMenuItem_Click);
+            // 
+            // verSolicitudesToolStripMenuItem1
+            // 
+            this.verSolicitudesToolStripMenuItem1.Name = "verSolicitudesToolStripMenuItem1";
+            this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem1.Text = "Ver Solicitudes";
+            this.verSolicitudesToolStripMenuItem1.Click += new System.EventHandler(this.verSolicitudesToolStripMenuItem1_Click);
             // 
             // labelBienv
             // 
@@ -246,12 +264,12 @@
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
-            // verSolicitudesToolStripMenuItem1
+            // analizarSolicitudToolStripMenuItem
             // 
-            this.verSolicitudesToolStripMenuItem1.Name = "verSolicitudesToolStripMenuItem1";
-            this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.verSolicitudesToolStripMenuItem1.Text = "Ver Solicitudes";
-            this.verSolicitudesToolStripMenuItem1.Click += new System.EventHandler(this.verSolicitudesToolStripMenuItem1_Click);
+            this.analizarSolicitudToolStripMenuItem.Name = "analizarSolicitudToolStripMenuItem";
+            this.analizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.analizarSolicitudToolStripMenuItem.Text = "Analizar Solicitud";
+            this.analizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.analizarSolicitudToolStripMenuItem_Click);
             // 
             // pictureCeleq
             // 
@@ -329,6 +347,8 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarSolicitudMantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem analizarSolicitudToolStripMenuItem;
     }
 }
 

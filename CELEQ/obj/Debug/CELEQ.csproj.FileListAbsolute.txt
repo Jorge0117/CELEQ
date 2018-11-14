@@ -52,3 +52,5 @@ C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.exe
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.pdb
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.SolicitudMantenimiento.resources
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.ListaSolicitudMantenimiento.resources
+C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Unidad.resources
+C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.AnalizarSolicitudMantenimiento.resources

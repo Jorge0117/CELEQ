@@ -42,14 +42,14 @@
             this.cbPermisos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textApellido2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textApellido1 = new System.Windows.Forms.TextBox();
-            this.textUnidad = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.comboUnidad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -179,7 +179,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textUnidad);
+            this.groupBox2.Controls.Add(this.comboUnidad);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textNombre);
             this.groupBox2.Controls.Add(this.label6);
@@ -193,6 +193,15 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos personales";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(307, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Unidad o laboratorio:";
             // 
             // textNombre
             // 
@@ -242,21 +251,14 @@
             this.textApellido1.Size = new System.Drawing.Size(419, 20);
             this.textApellido1.TabIndex = 23;
             // 
-            // textUnidad
+            // comboUnidad
             // 
-            this.textUnidad.Location = new System.Drawing.Point(432, 63);
-            this.textUnidad.Name = "textUnidad";
-            this.textUnidad.Size = new System.Drawing.Size(419, 20);
-            this.textUnidad.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(307, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Unidad:";
+            this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboUnidad.FormattingEnabled = true;
+            this.comboUnidad.Location = new System.Drawing.Point(432, 57);
+            this.comboUnidad.Name = "comboUnidad";
+            this.comboUnidad.Size = new System.Drawing.Size(419, 21);
+            this.comboUnidad.TabIndex = 26;
             // 
             // AgregarUsuario
             // 
@@ -304,7 +306,7 @@
         private System.Windows.Forms.TextBox textApellido2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textApellido1;
-        private System.Windows.Forms.TextBox textUnidad;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboUnidad;
     }
 }

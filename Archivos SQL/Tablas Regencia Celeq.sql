@@ -64,3 +64,5 @@ CREATE TABLE SolicitudCristaleria(
 	FOREIGN KEY(NombreCristaleria, Material, Capacidad) REFERENCES Cristaleria(Nombre, Material, Capacidad)
 )
 select * from Solicitud
+
+drop table SolicitudReactivo

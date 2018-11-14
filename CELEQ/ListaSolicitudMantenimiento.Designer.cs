@@ -31,6 +31,12 @@
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.labelSoliciudes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textObservaciones = new System.Windows.Forms.TextBox();
+            this.labelObservaciones = new System.Windows.Forms.Label();
+            this.comboPersonas = new System.Windows.Forms.ComboBox();
+            this.labelPersonaAsignada = new System.Windows.Forms.Label();
+            this.checkBoxRechazar = new System.Windows.Forms.CheckBox();
+            this.checkBoxAprobado = new System.Windows.Forms.CheckBox();
             this.textDescripcion = new System.Windows.Forms.TextBox();
             this.textLugarTrabajo = new System.Windows.Forms.TextBox();
             this.textAreaTrabajo = new System.Windows.Forms.TextBox();
@@ -49,12 +55,6 @@
             this.labelUnidad = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelConsecutivo = new System.Windows.Forms.Label();
-            this.checkBoxAprobado = new System.Windows.Forms.CheckBox();
-            this.checkBoxRechazar = new System.Windows.Forms.CheckBox();
-            this.labelPersonaAsignada = new System.Windows.Forms.Label();
-            this.comboPersonas = new System.Windows.Forms.ComboBox();
-            this.labelObservaciones = new System.Windows.Forms.Label();
-            this.textObservaciones = new System.Windows.Forms.TextBox();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
@@ -119,6 +119,64 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // textObservaciones
+            // 
+            this.textObservaciones.Location = new System.Drawing.Point(226, 472);
+            this.textObservaciones.MaxLength = 500;
+            this.textObservaciones.Multiline = true;
+            this.textObservaciones.Name = "textObservaciones";
+            this.textObservaciones.Size = new System.Drawing.Size(458, 64);
+            this.textObservaciones.TabIndex = 23;
+            // 
+            // labelObservaciones
+            // 
+            this.labelObservaciones.AutoSize = true;
+            this.labelObservaciones.Location = new System.Drawing.Point(71, 475);
+            this.labelObservaciones.Name = "labelObservaciones";
+            this.labelObservaciones.Size = new System.Drawing.Size(81, 13);
+            this.labelObservaciones.TabIndex = 22;
+            this.labelObservaciones.Text = "Observaciones:";
+            // 
+            // comboPersonas
+            // 
+            this.comboPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPersonas.FormattingEnabled = true;
+            this.comboPersonas.Location = new System.Drawing.Point(226, 441);
+            this.comboPersonas.Name = "comboPersonas";
+            this.comboPersonas.Size = new System.Drawing.Size(458, 21);
+            this.comboPersonas.TabIndex = 21;
+            // 
+            // labelPersonaAsignada
+            // 
+            this.labelPersonaAsignada.AutoSize = true;
+            this.labelPersonaAsignada.Location = new System.Drawing.Point(71, 444);
+            this.labelPersonaAsignada.Name = "labelPersonaAsignada";
+            this.labelPersonaAsignada.Size = new System.Drawing.Size(95, 13);
+            this.labelPersonaAsignada.TabIndex = 20;
+            this.labelPersonaAsignada.Text = "Persona asignada:";
+            // 
+            // checkBoxRechazar
+            // 
+            this.checkBoxRechazar.AutoSize = true;
+            this.checkBoxRechazar.Location = new System.Drawing.Point(295, 413);
+            this.checkBoxRechazar.Name = "checkBoxRechazar";
+            this.checkBoxRechazar.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxRechazar.TabIndex = 19;
+            this.checkBoxRechazar.Text = "Rechazar";
+            this.checkBoxRechazar.UseVisualStyleBackColor = true;
+            this.checkBoxRechazar.Click += new System.EventHandler(this.checkBoxRechazar_Click);
+            // 
+            // checkBoxAprobado
+            // 
+            this.checkBoxAprobado.AutoSize = true;
+            this.checkBoxAprobado.Location = new System.Drawing.Point(226, 413);
+            this.checkBoxAprobado.Name = "checkBoxAprobado";
+            this.checkBoxAprobado.Size = new System.Drawing.Size(63, 17);
+            this.checkBoxAprobado.TabIndex = 18;
+            this.checkBoxAprobado.Text = "Aprobar";
+            this.checkBoxAprobado.UseVisualStyleBackColor = true;
+            this.checkBoxAprobado.Click += new System.EventHandler(this.checkBoxAprobado_Click);
             // 
             // textDescripcion
             // 
@@ -244,9 +302,9 @@
             this.labelTelefono.AutoSize = true;
             this.labelTelefono.Location = new System.Drawing.Point(72, 140);
             this.labelTelefono.Name = "labelTelefono";
-            this.labelTelefono.Size = new System.Drawing.Size(110, 13);
+            this.labelTelefono.Size = new System.Drawing.Size(109, 13);
             this.labelTelefono.TabIndex = 3;
-            this.labelTelefono.Text = "Teléfono o extención:";
+            this.labelTelefono.Text = "Teléfono o extensión:";
             // 
             // labelUnidad
             // 
@@ -275,64 +333,6 @@
             this.labelConsecutivo.TabIndex = 0;
             this.labelConsecutivo.Text = "Consecutivo: ";
             // 
-            // checkBoxAprobado
-            // 
-            this.checkBoxAprobado.AutoSize = true;
-            this.checkBoxAprobado.Location = new System.Drawing.Point(226, 413);
-            this.checkBoxAprobado.Name = "checkBoxAprobado";
-            this.checkBoxAprobado.Size = new System.Drawing.Size(63, 17);
-            this.checkBoxAprobado.TabIndex = 18;
-            this.checkBoxAprobado.Text = "Aprobar";
-            this.checkBoxAprobado.UseVisualStyleBackColor = true;
-            this.checkBoxAprobado.Click += new System.EventHandler(this.checkBoxAprobado_Click);
-            // 
-            // checkBoxRechazar
-            // 
-            this.checkBoxRechazar.AutoSize = true;
-            this.checkBoxRechazar.Location = new System.Drawing.Point(295, 413);
-            this.checkBoxRechazar.Name = "checkBoxRechazar";
-            this.checkBoxRechazar.Size = new System.Drawing.Size(72, 17);
-            this.checkBoxRechazar.TabIndex = 19;
-            this.checkBoxRechazar.Text = "Rechazar";
-            this.checkBoxRechazar.UseVisualStyleBackColor = true;
-            this.checkBoxRechazar.Click += new System.EventHandler(this.checkBoxRechazar_Click);
-            // 
-            // labelPersonaAsignada
-            // 
-            this.labelPersonaAsignada.AutoSize = true;
-            this.labelPersonaAsignada.Location = new System.Drawing.Point(71, 444);
-            this.labelPersonaAsignada.Name = "labelPersonaAsignada";
-            this.labelPersonaAsignada.Size = new System.Drawing.Size(95, 13);
-            this.labelPersonaAsignada.TabIndex = 20;
-            this.labelPersonaAsignada.Text = "Persona asignada:";
-            // 
-            // comboPersonas
-            // 
-            this.comboPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPersonas.FormattingEnabled = true;
-            this.comboPersonas.Location = new System.Drawing.Point(226, 441);
-            this.comboPersonas.Name = "comboPersonas";
-            this.comboPersonas.Size = new System.Drawing.Size(458, 21);
-            this.comboPersonas.TabIndex = 21;
-            // 
-            // labelObservaciones
-            // 
-            this.labelObservaciones.AutoSize = true;
-            this.labelObservaciones.Location = new System.Drawing.Point(71, 475);
-            this.labelObservaciones.Name = "labelObservaciones";
-            this.labelObservaciones.Size = new System.Drawing.Size(81, 13);
-            this.labelObservaciones.TabIndex = 22;
-            this.labelObservaciones.Text = "Observaciones:";
-            // 
-            // textObservaciones
-            // 
-            this.textObservaciones.Location = new System.Drawing.Point(226, 472);
-            this.textObservaciones.MaxLength = 500;
-            this.textObservaciones.Multiline = true;
-            this.textObservaciones.Name = "textObservaciones";
-            this.textObservaciones.Size = new System.Drawing.Size(458, 64);
-            this.textObservaciones.TabIndex = 23;
-            // 
             // butAceptar
             // 
             this.butAceptar.Location = new System.Drawing.Point(1016, 627);
@@ -341,6 +341,7 @@
             this.butAceptar.TabIndex = 18;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 

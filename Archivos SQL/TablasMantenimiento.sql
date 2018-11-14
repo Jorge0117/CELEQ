@@ -2,7 +2,6 @@ create table SolicitudMantenimiento(
 	id					varchar(100)		NOT NULL,
 	fecha				date,
 	NombreSolicitante	varchar(255),
-	Unidad				varchar(255),
 	telefono			varchar(11),
 	contactoAdicional	varchar(255),
 	urgencia			varchar(12),
@@ -14,6 +13,7 @@ create table SolicitudMantenimiento(
 	primary key (id)
 )
 
+alter table SolicitudMantenimiento add usuario nvarchar(50) foreign key(usuario) references Usuarios(nombreUsuario)
 create table SolicitudMantenimientoRechazada(
 	idSolicitud			varchar(100)		NOT NULL,
 	motivo				varchar(500),

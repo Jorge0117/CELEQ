@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalizarSolicitudMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalizarSolicitudMantenimiento.Designer.cs">
+      <DependentUpon>AnalizarSolicitudMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="DatosSolicitud.cs">
       <SubType>Form</SubType>
@@ -127,11 +134,20 @@
     <Compile Include="SolicitudMantenimiento.Designer.cs">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad.Designer.cs">
+      <DependentUpon>Unidad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarReactivoCristaleria.resx">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalizarSolicitudMantenimiento.resx">
+      <DependentUpon>AnalizarSolicitudMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosSolicitud.resx">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
@@ -172,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="SolicitudMantenimiento.resx">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad.resx">
+      <DependentUpon>Unidad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

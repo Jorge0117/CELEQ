@@ -246,9 +246,16 @@ namespace CELEQ
 
         public string getCategoria(string usuario)
         {
-            SqlDataReader correo = ejecutarConsulta("select categoria from Usuarios where nombreUsuario = '" + usuario + "'");
-            correo.Read();
-            return correo[0].ToString();
+            SqlDataReader categoria = ejecutarConsulta("select categoria from Usuarios where nombreUsuario = '" + usuario + "'");
+            categoria.Read();
+            return categoria[0].ToString();
+        }
+
+        public string getUnidad(string usuario)
+        {
+            SqlDataReader unidad = ejecutarConsulta("select unidad from Usuarios where nombreUsuario = '" + usuario + "'");
+            unidad.Read();
+            return unidad[0].ToString();
         }
 
         public int modificarUsuario(string usuario, string password, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
@@ -658,8 +665,8 @@ namespace CELEQ
         //-----------------------------------------Mantenimiento---------------------------------------
         //---------------------------------------------------------------------------------------------
 
-        public int agregarSolicitudMantenimiento(string idSolicitud, string fecha, string nombreSolicitante, string unidad,
-            string telefono, string contactoAdicional, string urgencia, string areaTrabajo, string lugarTrabajo, string descripcion)
+        public int agregarSolicitudMantenimiento(string idSolicitud, string fecha, string nombreSolicitante, 
+            string telefono, string contactoAdicional, string urgencia, string areaTrabajo, string lugarTrabajo, string descripcion, string usuario)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -673,13 +680,13 @@ namespace CELEQ
                         cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
                         cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombreSolicitante;
-                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
                         cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = telefono;
                         cmd.Parameters.Add("@contactoAdicional", SqlDbType.VarChar).Value = contactoAdicional;
                         cmd.Parameters.Add("@urgencia", SqlDbType.VarChar).Value = urgencia;
                         cmd.Parameters.Add("@areaTrabajo", SqlDbType.VarChar).Value = areaTrabajo;
                         cmd.Parameters.Add("@lugarTrabajo", SqlDbType.VarChar).Value = lugarTrabajo;
                         cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
 
 
                         /*Se abre la conexión*/
@@ -709,6 +716,69 @@ namespace CELEQ
             else
             {
                 return null;
+            }
+        }
+
+        public int aprobarSolicitudMantenimiento(string idSolicitud, string personaAsignada, string observaciones)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("AprobarSolicitudMantenimiento", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = personaAsignada;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int rechazarSolicitudMantenimiento(string idSolicitud, string motivo)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("RechazarSolicitudMantenimiento", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@motivo", SqlDbType.VarChar).Value = motivo;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
             }
         }
 

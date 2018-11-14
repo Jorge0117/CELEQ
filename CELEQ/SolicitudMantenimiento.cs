@@ -41,15 +41,15 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            if(textNombre.Text == "" || textUnidad.Text == "" || textTelefono.Text == "" || comboUrgencia.Text == ""
+            if(textNombre.Text == "" || textTelefono.Text == "" || comboUrgencia.Text == ""
                 || comboAreaTrabajo.Text == "" || textLugarTrabajo.Text == "" || textDescripcion.Text == "")
             {
                 MessageBox.Show("Por favor llenar los campos requeridos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (bd.agregarSolicitudMantenimiento(generarConsecutivo(comboAreaTrabajo.Text), dateSolicitud.Value.ToShortDateString(), textNombre.Text, textUnidad.Text,
-                    textTelefono.Text, textContacto.Text, comboUrgencia.Text, comboAreaTrabajo.Text, textLugarTrabajo.Text, textDescripcion.Text) == 1)
+                if (bd.agregarSolicitudMantenimiento(generarConsecutivo(comboAreaTrabajo.Text), dateSolicitud.Value.ToShortDateString(), textNombre.Text, 
+                    textTelefono.Text, textContacto.Text, comboUrgencia.Text, comboAreaTrabajo.Text, textLugarTrabajo.Text, textDescripcion.Text, Globals.usuario) == 1)
                 {
                     MessageBox.Show("Se realizó la solicitud correctamente", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
                     this.Close();

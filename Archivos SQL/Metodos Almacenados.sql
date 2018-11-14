@@ -1,4 +1,4 @@
-use Regencia
+use CELEQ
 create procedure AgregarReactivo(@Nombre varchar(255), @Pureza varchar(100), @Cantidad float,
 									@Estado varchar(10), @Estante varchar(10))
 as
