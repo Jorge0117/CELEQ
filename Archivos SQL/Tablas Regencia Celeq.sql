@@ -1,8 +1,4 @@
 use CELEQ
-CREATE TABLE Regente(
-	Nombre		varchar(255),
-	PRIMARY KEY (Nombre)
-)
 
 CREATE TABLE Solicitud(
 	Id					varchar(130)				NOT NULL,

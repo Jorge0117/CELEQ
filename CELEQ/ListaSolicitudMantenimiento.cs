@@ -168,7 +168,7 @@ namespace CELEQ
                     SqlDataReader usuario = bd.ejecutarConsulta("select nombreUsuario from usuarios where nombre = '" + nombre[0] + "' and apellido1 = '" + nombre[1]
                         + "' and apellido2 ='" + nombre[2] + "'");
                     usuario.Read();
-                    if (bd.aprobarSolicitudMantenimiento(textConsecutivo.Text, usuario[0].ToString(), textObservaciones.Text) == 1)
+                    if (bd.aprobarSolicitudMantenimiento(textConsecutivo.Text, DateTime.Now.ToShortDateString(),usuario[0].ToString(), textObservaciones.Text) == 1)
                     {
                         MessageBox.Show("Se ha aprobado la solicitud", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
                         llenarTabla();

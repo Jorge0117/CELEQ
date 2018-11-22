@@ -190,6 +190,13 @@ namespace CELEQ
             asm.ShowDialog();
             asm.Dispose();
         }
+
+        private void finalizarSolicitudToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformeFinalSolicitudes fs = new InformeFinalSolicitudes();
+            fs.ShowDialog();
+            fs.Dispose();
+        }
     }
 
     public static class Globals

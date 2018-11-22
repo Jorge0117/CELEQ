@@ -7,6 +7,8 @@ using System.Configuration;
 // Namespace de acceso a base de datos
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace CELEQ
 {
@@ -75,6 +77,7 @@ namespace CELEQ
 			
 			return table;
         }
+
 
         /*Método para ejecutar un insert, update o delete 
          Recibe: la sentencia sql a ejecutar
@@ -719,7 +722,7 @@ namespace CELEQ
             }
         }
 
-        public int aprobarSolicitudMantenimiento(string idSolicitud, string personaAsignada, string observaciones)
+        public int aprobarSolicitudMantenimiento(string idSolicitud, string fecha, string personaAsignada, string observaciones)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -731,6 +734,7 @@ namespace CELEQ
                         cmd.CommandType = CommandType.StoredProcedure;
                         //Se preparan los parámetros que recibe el procedimiento almacenado
                         cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
                         cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = personaAsignada;
                         cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
 
@@ -781,6 +785,80 @@ namespace CELEQ
                 }
             }
         }
+
+        public int analizarSolicitudMantenimiento(string idSolicitud, string insumo, string costo, string observaciones, FileStream fs, string nombreArch)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("analizarSolicitud", con))
+                {
+                    try
+                    {
+                        byte[] binaryfile = null;
+                        if (nombreArch != null)
+                        {
+                            BinaryFormatter bf = new BinaryFormatter();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                fs.CopyTo(ms);
+                                binaryfile = ms.ToArray();
+                            }
+
+                            cmd.Parameters.Add("@archivo", SqlDbType.VarBinary).Value = binaryfile;
+                            cmd.Parameters.Add("@nombreArchivo", SqlDbType.VarChar).Value = nombreArch;
+
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@archivo", SqlDbType.VarBinary).Value = DBNull.Value;
+                            cmd.Parameters.Add("@nombreArchivo", SqlDbType.VarChar).Value = DBNull.Value;
+                        }
+                        
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@insumos", SqlDbType.VarChar).Value = insumo;
+                        cmd.Parameters.Add("@costo", SqlDbType.VarChar).Value = costo;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
+                        
+                        
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+
+        public byte[] getDocument(string documentId)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlCommand cm = cn.CreateCommand())
+            {
+                cm.CommandText = @"
+            SELECT documento
+            FROM   DocumentosMantenimiento
+            WHERE  id = @Id";
+                cm.Parameters.AddWithValue("@Id", documentId);
+                cn.Open();
+                return cm.ExecuteScalar() as byte[];
+            }
+        }
+
+
+
 
     }
 }

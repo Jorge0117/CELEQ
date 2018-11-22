@@ -48,13 +48,14 @@
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarSolicitudMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verSolicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
-            this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
+            this.finalizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -203,7 +204,8 @@
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.realizarSolicitudMantenimientoToolStripMenuItem,
             this.verSolicitudesToolStripMenuItem1,
-            this.analizarSolicitudToolStripMenuItem});
+            this.analizarSolicitudToolStripMenuItem,
+            this.finalizarSolicitudToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -221,6 +223,13 @@
             this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.verSolicitudesToolStripMenuItem1.Text = "Ver Solicitudes";
             this.verSolicitudesToolStripMenuItem1.Click += new System.EventHandler(this.verSolicitudesToolStripMenuItem1_Click);
+            // 
+            // analizarSolicitudToolStripMenuItem
+            // 
+            this.analizarSolicitudToolStripMenuItem.Name = "analizarSolicitudToolStripMenuItem";
+            this.analizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.analizarSolicitudToolStripMenuItem.Text = "Analizar Solicitud";
+            this.analizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.analizarSolicitudToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -264,13 +273,6 @@
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
-            // analizarSolicitudToolStripMenuItem
-            // 
-            this.analizarSolicitudToolStripMenuItem.Name = "analizarSolicitudToolStripMenuItem";
-            this.analizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.analizarSolicitudToolStripMenuItem.Text = "Analizar Solicitud";
-            this.analizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.analizarSolicitudToolStripMenuItem_Click);
-            // 
             // pictureCeleq
             // 
             this.pictureCeleq.Image = global::CELEQ.Properties.Resources.LogoCeleq;
@@ -290,6 +292,13 @@
             this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
+            // 
+            // finalizarSolicitudToolStripMenuItem
+            // 
+            this.finalizarSolicitudToolStripMenuItem.Name = "finalizarSolicitudToolStripMenuItem";
+            this.finalizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.finalizarSolicitudToolStripMenuItem.Text = "Finalizar Solicitud";
+            this.finalizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.finalizarSolicitudToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -349,6 +358,7 @@
         private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem analizarSolicitudToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finalizarSolicitudToolStripMenuItem;
     }
 }
 

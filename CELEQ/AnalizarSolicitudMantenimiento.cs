@@ -8,15 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CELEQ
 {
     public partial class AnalizarSolicitudMantenimiento : Form
     {
         AccesoBaseDatos bd;
+        string filePath = null;
         public AnalizarSolicitudMantenimiento()
         {
-            InitializeComponent();
             InitializeComponent();
             bd = new AccesoBaseDatos();
 
@@ -39,8 +40,9 @@ namespace CELEQ
             try
             {
                 tabla = bd.ejecutarConsultaTabla("select Id as 'Consecutivo', fecha as 'Fecha de solicitud', urgencia as 'Urgencia' from " +
-                    "SolicitudMantenimiento as s join SolicitudMantenimientoAprobada as sa on s.id = sa.idSolicitud where estado = 'Aprobado' and personaAsignada = '" +
-                    Globals.usuario + "'");
+                     "SolicitudMantenimiento as s join SolicitudMantenimientoAprobada as sa on s.id = sa.idSolicitud where estado = 'Aprobado' and personaAsignada = '" +
+                     Globals.usuario + "'");
+              
             }
             catch (SqlException ex)
             {
@@ -60,6 +62,95 @@ namespace CELEQ
         private void AnalizarSolicitudMantenimiento_Load(object sender, EventArgs e)
         {
             llenarTabla();
+            dgvSolicitudes.ClearSelection();
+            groupBox2.Visible = false;
+            butAceptar.Visible = false;
+
+            labelArchivo.Visible = false;
+            adjuntarFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            adjuntarFileDialog.Filter = "All files (*.*)|*.*";
+            adjuntarFileDialog.FilterIndex = 0;
+            adjuntarFileDialog.RestoreDirectory = true;
+        }
+
+        private void butAdjuntar_Click(object sender, EventArgs e)
+        {
+            if(butAdjuntar.Text == "Adjuntar archivo")
+            {
+                if (adjuntarFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = adjuntarFileDialog.FileName;
+                    labelArchivo.Text = filePath;
+                    labelArchivo.Visible = true;
+                    butAdjuntar.Text = "Eliminar adjunto";
+                }
+            }
+            else
+            {
+                filePath = null;
+                butAdjuntar.Text = "Adjuntar archivo";
+                labelArchivo.Visible = false;
+            }
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();           
+        }
+
+        private void dgvSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            groupBox2.Visible = true;
+            butAceptar.Visible = true;
+
+            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select  nombreSolicitante, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
+                                                            dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+            datosSolicitud.Read();
+
+            textNombre.Text = datosSolicitud[0].ToString();
+            textLugarTrabajo.Text = datosSolicitud[1].ToString();
+            textDescripcion.Text = datosSolicitud[2].ToString();
+
+            SqlDataReader readerObs = bd.ejecutarConsulta("select ObservacionesAprob from SolicitudMantenimientoAprobada where idSolicitud = '" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+            readerObs.Read();
+            textObservacionesAprob.Text = readerObs[0].ToString();
+
+            SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[3] +  "'");
+            readerUnidad.Read();
+            textUnidad.Text = readerUnidad[0].ToString();
+
+            SqlDataReader readerFecha = bd.ejecutarConsulta("select fechaAprobacion from SolicitudMantenimientoAprobada where idSolicitud ='" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+            readerFecha.Read();
+            textFecha.Text = readerFecha[0].ToString();
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            if(textInsumos.Text == "" || textObservacionesAna.Text == "")
+            {
+                MessageBox.Show("Por favor llene los campos necesarios", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);              
+            }
+            else
+            {
+                FileStream fs = null;
+                if (filePath != null)
+                {
+                    fs = File.OpenRead(filePath);
+                }
+                if(bd.analizarSolicitudMantenimiento(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), textInsumos.Text, textCosto.Text, textObservacionesAna.Text, fs, Path.GetFileName(filePath)) == 1)
+                {
+                    MessageBox.Show("Se ha analizado la solicitud de manera correcta", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    llenarTabla();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            
         }
     }
 }
