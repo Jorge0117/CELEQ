@@ -33,6 +33,15 @@ as
 	update SolicitudMantenimientoAprobada set insumos = @insumos, costoEstimado = @costo, observacionesAnalisis = @observaciones, documento = @newid where idSolicitud = @id
 
 go
+
+create procedure finalizarSolicitud(@id varchar(100), @periodo varchar(100), @observaciones varchar(500))
+as
+	update SolicitudMantenimiento set estado = 'Finalizado' where id = @id
+
+	update SolicitudMantenimientoAprobada set periodoEjecucion = @periodo, observacionesFinales = @observaciones where idSolicitud = @id
+
+go
+
 select * from DocumentosMantenimiento
 select cast('sAS' AS varbinary(max))
 drop procedure analizarSolicitud

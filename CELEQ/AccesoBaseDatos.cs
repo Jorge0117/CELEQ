@@ -858,7 +858,37 @@ namespace CELEQ
         }
 
 
+        public int finalizarSolicitudMantenimiento(string idSolicitud, string periodioEjecucion, string observaciones)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("finalizarSolicitud", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = idSolicitud;
+                        cmd.Parameters.Add("@periodo", SqlDbType.VarChar).Value = periodioEjecucion;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
 
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
 
     }
 }

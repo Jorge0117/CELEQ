@@ -278,6 +278,7 @@
             // 
             // comboPeriodo
             // 
+            this.comboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPeriodo.FormattingEnabled = true;
             this.comboPeriodo.Location = new System.Drawing.Point(226, 36);
             this.comboPeriodo.Name = "comboPeriodo";

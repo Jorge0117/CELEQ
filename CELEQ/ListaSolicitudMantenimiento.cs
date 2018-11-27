@@ -73,31 +73,34 @@ namespace CELEQ
         private void dgvSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            checkBoxAprobado.Visible = true;
-            checkBoxRechazar.Visible = true;
-
-            textConsecutivo.Text = dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString();
-
-            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select fecha, nombreSolicitante, telefono, contactoAdicional, urgencia, areaTrabajo, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
-                                                            textConsecutivo.Text + "'");
-            datosSolicitud.Read();
-
-            textNombre.Text = datosSolicitud[1].ToString();
-            textTelefono.Text = datosSolicitud[2].ToString();
-            textContacto.Text = datosSolicitud[3].ToString();
-            textUrgencia.Text = datosSolicitud[4].ToString();
-            textAreaTrabajo.Text = datosSolicitud[5].ToString();
-            textLugarTrabajo.Text = datosSolicitud[6].ToString();
-            textDescripcion.Text = datosSolicitud[7].ToString();
-
-            SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[8] + "'");
-            readerUnidad.Read();
-            textUnidad.Text = readerUnidad[0].ToString();
-            comboPersonas.Items.Clear();
-            SqlDataReader personas = bd.ejecutarConsulta("select CONCAT(nombre, ' ', apellido1, ' ', apellido2) from Usuarios where unidad = 'UMI'");
-            while (personas.Read())
+            if(dgvSolicitudes.SelectedRows.Count > 0)
             {
-                comboPersonas.Items.Add(personas[0].ToString());
+                checkBoxAprobado.Visible = true;
+                checkBoxRechazar.Visible = true;
+
+                textConsecutivo.Text = dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString();
+
+                SqlDataReader datosSolicitud = bd.ejecutarConsulta("select fecha, nombreSolicitante, telefono, contactoAdicional, urgencia, areaTrabajo, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
+                                                                textConsecutivo.Text + "'");
+                datosSolicitud.Read();
+
+                textNombre.Text = datosSolicitud[1].ToString();
+                textTelefono.Text = datosSolicitud[2].ToString();
+                textContacto.Text = datosSolicitud[3].ToString();
+                textUrgencia.Text = datosSolicitud[4].ToString();
+                textAreaTrabajo.Text = datosSolicitud[5].ToString();
+                textLugarTrabajo.Text = datosSolicitud[6].ToString();
+                textDescripcion.Text = datosSolicitud[7].ToString();
+
+                SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[8] + "'");
+                readerUnidad.Read();
+                textUnidad.Text = readerUnidad[0].ToString();
+                comboPersonas.Items.Clear();
+                SqlDataReader personas = bd.ejecutarConsulta("select CONCAT(nombre, ' ', apellido1, ' ', apellido2) from Usuarios where unidad = 'UMI'");
+                while (personas.Read())
+                {
+                    comboPersonas.Items.Add(personas[0].ToString());
+                }
             }
         }
 
@@ -110,6 +113,7 @@ namespace CELEQ
                 labelObservaciones.Text = "Observaciones:";
                 labelObservaciones.Visible = true;
                 comboPersonas.SelectedIndex = -1;
+                textObservaciones.Clear();
                 comboPersonas.Visible = true;
                 textObservaciones.Visible = true;
 
@@ -130,6 +134,8 @@ namespace CELEQ
         {
             if (checkBoxRechazar.CheckState == CheckState.Checked)
             {
+                comboPersonas.SelectedIndex = -1;
+                textObservaciones.Clear();
                 checkBoxAprobado.Checked = false;
                 labelPersonaAsignada.Visible = false;
                 comboPersonas.Visible = false;
@@ -198,6 +204,34 @@ namespace CELEQ
                     }
                 }
             }
+        }
+
+        private void resetForm()
+        {
+            llenarTabla();
+            dgvSolicitudes.ClearSelection();
+            labelPersonaAsignada.Visible = false;
+            labelObservaciones.Visible = false;
+            comboPersonas.Visible = false;
+            textObservaciones.Visible = false;
+            checkBoxAprobado.Visible = false;
+            checkBoxRechazar.Visible = false;
+            butAceptar.Visible = false;
+
+            textConsecutivo.Clear();
+            textNombre.Clear();
+            textUnidad.Clear();
+            textTelefono.Clear();
+            textContacto.Clear();
+            textUrgencia.Clear();
+            textAreaTrabajo.Clear();
+            textLugarTrabajo.Clear();
+            textDescripcion.Clear();
+
+            checkBoxAprobado.Checked = false;
+            checkBoxRechazar.Checked = false;
+            comboPersonas.SelectedIndex = -1;
+            textObservaciones.Clear();
         }
     }
 }

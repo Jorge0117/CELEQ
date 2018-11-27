@@ -101,29 +101,31 @@ namespace CELEQ
 
         private void dgvSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvSolicitudes.SelectedRows.Count > 0)
+            {
+                groupBox2.Visible = true;
+                butAceptar.Visible = true;
 
-            groupBox2.Visible = true;
-            butAceptar.Visible = true;
+                SqlDataReader datosSolicitud = bd.ejecutarConsulta("select  nombreSolicitante, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
+                                                                dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+                datosSolicitud.Read();
 
-            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select  nombreSolicitante, lugarTrabajo, descripcionTrabajo, usuario from SolicitudMantenimiento where id ='" +
-                                                            dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
-            datosSolicitud.Read();
+                textNombre.Text = datosSolicitud[0].ToString();
+                textLugarTrabajo.Text = datosSolicitud[1].ToString();
+                textDescripcion.Text = datosSolicitud[2].ToString();
 
-            textNombre.Text = datosSolicitud[0].ToString();
-            textLugarTrabajo.Text = datosSolicitud[1].ToString();
-            textDescripcion.Text = datosSolicitud[2].ToString();
+                SqlDataReader readerObs = bd.ejecutarConsulta("select ObservacionesAprob from SolicitudMantenimientoAprobada where idSolicitud = '" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+                readerObs.Read();
+                textObservacionesAprob.Text = readerObs[0].ToString();
 
-            SqlDataReader readerObs = bd.ejecutarConsulta("select ObservacionesAprob from SolicitudMantenimientoAprobada where idSolicitud = '" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
-            readerObs.Read();
-            textObservacionesAprob.Text = readerObs[0].ToString();
+                SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[3] + "'");
+                readerUnidad.Read();
+                textUnidad.Text = readerUnidad[0].ToString();
 
-            SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[3] +  "'");
-            readerUnidad.Read();
-            textUnidad.Text = readerUnidad[0].ToString();
-
-            SqlDataReader readerFecha = bd.ejecutarConsulta("select fechaAprobacion from SolicitudMantenimientoAprobada where idSolicitud ='" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
-            readerFecha.Read();
-            textFecha.Text = readerFecha[0].ToString();
+                SqlDataReader readerFecha = bd.ejecutarConsulta("select fechaAprobacion from SolicitudMantenimientoAprobada where idSolicitud ='" + dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+                readerFecha.Read();
+                textFecha.Text = readerFecha[0].ToString();
+            }           
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
@@ -142,7 +144,7 @@ namespace CELEQ
                 if(bd.analizarSolicitudMantenimiento(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), textInsumos.Text, textCosto.Text, textObservacionesAna.Text, fs, Path.GetFileName(filePath)) == 1)
                 {
                     MessageBox.Show("Se ha analizado la solicitud de manera correcta", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
-                    llenarTabla();
+                    resetForm();
                 }
                 else
                 {
@@ -152,5 +154,27 @@ namespace CELEQ
             }
             
         }
+
+        private void resetForm()
+        {
+            llenarTabla();
+            dgvSolicitudes.ClearSelection();
+            groupBox2.Visible = false;
+            butAceptar.Visible = false;
+            labelArchivo.Visible = false;
+
+            textFecha.Clear();
+            textNombre.Clear();
+            textUnidad.Clear();
+            textLugarTrabajo.Clear();
+            textDescripcion.Clear();
+            textObservacionesAprob.Clear();
+
+            textInsumos.Clear();
+            textCosto.Clear();
+            textObservacionesAna.Clear();
+
+        }
+
     }
 }

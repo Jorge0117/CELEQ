@@ -85,42 +85,43 @@ namespace CELEQ
 
         private void dgvSolicitudes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            labelArchivo.Visible = true;
-            butDescargar.Visible = true;
-            groupBox2.Visible = true;
-            butAceptar.Visible = true;
-
-            SqlDataReader datosSolicitud = bd.ejecutarConsulta("select sm.NombreSolicitante, sm.lugarTrabajo, sm.descripcionTrabajo, sma.observacionesAprob, sma.observacionesAnalisis, sm.usuario, sma.documento " +
-                                                            "from SolicitudMantenimiento as sm join SolicitudMantenimientoAprobada as sma on sm.id = sma.idSolicitud where sm.id = '" +
-                                                            dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
-            datosSolicitud.Read();
-
-            textNombre.Text = datosSolicitud[0].ToString();
-            textLugarTrabajo.Text = datosSolicitud[1].ToString();
-            textDescripcion.Text = datosSolicitud[2].ToString();
-            textObservacionesAprob.Text = datosSolicitud[3].ToString();
-            textObservAnalisis.Text = datosSolicitud[4].ToString();
-
-            SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[5] + "'");
-            readerUnidad.Read();
-            textUnidad.Text = readerUnidad[0].ToString();
-
-            if (datosSolicitud[6].ToString() != "")
+            if (dgvSolicitudes.SelectedRows.Count > 0)
             {
-                SqlDataReader readerDocumento = bd.ejecutarConsulta("select id, nombre from DocumentosMantenimiento where id = '" + datosSolicitud[6].ToString() + "'");
-                readerDocumento.Read();
-                idDoc = readerDocumento[0].ToString();
-                labelArchivo.Text = readerDocumento[1].ToString();
+                labelArchivo.Visible = true;
                 butDescargar.Visible = true;
+                groupBox2.Visible = true;
+                butAceptar.Visible = true;
+
+                SqlDataReader datosSolicitud = bd.ejecutarConsulta("select sm.NombreSolicitante, sm.lugarTrabajo, sm.descripcionTrabajo, sma.observacionesAprob, sma.observacionesAnalisis, sm.usuario, sma.documento " +
+                                                                "from SolicitudMantenimiento as sm join SolicitudMantenimientoAprobada as sma on sm.id = sma.idSolicitud where sm.id = '" +
+                                                                dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString() + "'");
+                datosSolicitud.Read();
+
+                textNombre.Text = datosSolicitud[0].ToString();
+                textLugarTrabajo.Text = datosSolicitud[1].ToString();
+                textDescripcion.Text = datosSolicitud[2].ToString();
+                textObservacionesAprob.Text = datosSolicitud[3].ToString();
+                textObservAnalisis.Text = datosSolicitud[4].ToString();
+
+                SqlDataReader readerUnidad = bd.ejecutarConsulta("select unidad from Usuarios where nombreUsuario ='" + datosSolicitud[5] + "'");
+                readerUnidad.Read();
+                textUnidad.Text = readerUnidad[0].ToString();
+
+                if (datosSolicitud[6].ToString() != "")
+                {
+                    SqlDataReader readerDocumento = bd.ejecutarConsulta("select id, nombre from DocumentosMantenimiento where id = '" + datosSolicitud[6].ToString() + "'");
+                    readerDocumento.Read();
+                    idDoc = readerDocumento[0].ToString();
+                    labelArchivo.Text = readerDocumento[1].ToString();
+                    butDescargar.Visible = true;
+                }
+                else
+                {
+                    idDoc = null;
+                    labelArchivo.Text = "Ningún archivo disponible";
+                    butDescargar.Visible = false;
+                }
             }
-            else
-            {
-                idDoc = null;
-                labelArchivo.Text = "Ningún archivo disponible";
-                butDescargar.Visible = false;
-            }
-            
         }
 
         private void butDescargar_Click(object sender, EventArgs e)
@@ -150,7 +151,41 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-
+            if (comboPeriodo.Text == "" || textObservFinales.Text == "")
+            {
+                MessageBox.Show("Por favor llene los campos necesarios", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (bd.finalizarSolicitudMantenimiento(dgvSolicitudes.SelectedRows[0].Cells[0].Value.ToString(), comboPeriodo.Text, textObservFinales.Text) == 1)
+                {
+                    MessageBox.Show("Se ha finalizado la solicitud de manera correcta", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    resetForm();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
+        private void resetForm()
+        {
+            llenarTabla();
+            labelArchivo.Visible = false;
+            butDescargar.Visible = false;
+            groupBox2.Visible = false;
+            butAceptar.Visible = false;
+
+            textNombre.Clear();
+            textUnidad.Clear();
+            textLugarTrabajo.Clear();
+            textDescripcion.Clear();
+            textObservacionesAprob.Clear();
+            textObservAnalisis.Clear();
+            comboPeriodo.SelectedIndex = -1;
+            textObservFinales.Clear();
+        }
+
     }
 }
