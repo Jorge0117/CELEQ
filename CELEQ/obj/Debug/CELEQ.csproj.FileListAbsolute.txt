@@ -55,3 +55,4 @@ C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.ListaSolicitudMantenimient
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Unidad.resources
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.AnalizarSolicitudMantenimiento.resources
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.InformeFinalSolicitudes.resources
+C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.HistoricoSolicitudesMantenimiento.resources

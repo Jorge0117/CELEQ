@@ -63,3 +63,5 @@ select sm.NombreSolicitante, sm.lugarTrabajo, sm.descripcionTrabajo, sma.observa
 select * from DocumentosMantenimiento
 
 select id, nombre from DocumentosMantenimiento where id = '0bf076d5-9f59-431a-8d78-5bc520a8159d'
+
+select * from SolicitudMantenimiento

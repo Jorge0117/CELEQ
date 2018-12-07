@@ -49,13 +49,14 @@
             this.realizarSolicitudMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verSolicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.históricoDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.finalizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -205,7 +206,8 @@
             this.realizarSolicitudMantenimientoToolStripMenuItem,
             this.verSolicitudesToolStripMenuItem1,
             this.analizarSolicitudToolStripMenuItem,
-            this.finalizarSolicitudToolStripMenuItem});
+            this.finalizarSolicitudToolStripMenuItem,
+            this.históricoDeSolicitudesToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
             this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
@@ -213,23 +215,37 @@
             // realizarSolicitudMantenimientoToolStripMenuItem
             // 
             this.realizarSolicitudMantenimientoToolStripMenuItem.Name = "realizarSolicitudMantenimientoToolStripMenuItem";
-            this.realizarSolicitudMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.realizarSolicitudMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.realizarSolicitudMantenimientoToolStripMenuItem.Text = "Realizar Solicitud";
             this.realizarSolicitudMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.realizarSolicitudMantenimientoToolStripMenuItem_Click);
             // 
             // verSolicitudesToolStripMenuItem1
             // 
             this.verSolicitudesToolStripMenuItem1.Name = "verSolicitudesToolStripMenuItem1";
-            this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
             this.verSolicitudesToolStripMenuItem1.Text = "Ver Solicitudes";
             this.verSolicitudesToolStripMenuItem1.Click += new System.EventHandler(this.verSolicitudesToolStripMenuItem1_Click);
             // 
             // analizarSolicitudToolStripMenuItem
             // 
             this.analizarSolicitudToolStripMenuItem.Name = "analizarSolicitudToolStripMenuItem";
-            this.analizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.analizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.analizarSolicitudToolStripMenuItem.Text = "Analizar Solicitud";
             this.analizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.analizarSolicitudToolStripMenuItem_Click);
+            // 
+            // finalizarSolicitudToolStripMenuItem
+            // 
+            this.finalizarSolicitudToolStripMenuItem.Name = "finalizarSolicitudToolStripMenuItem";
+            this.finalizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.finalizarSolicitudToolStripMenuItem.Text = "Finalizar Solicitud";
+            this.finalizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.finalizarSolicitudToolStripMenuItem_Click);
+            // 
+            // históricoDeSolicitudesToolStripMenuItem
+            // 
+            this.históricoDeSolicitudesToolStripMenuItem.Name = "históricoDeSolicitudesToolStripMenuItem";
+            this.históricoDeSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.históricoDeSolicitudesToolStripMenuItem.Text = "Histórico de Solicitudes";
+            this.históricoDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.históricoDeSolicitudesToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -254,22 +270,22 @@
             // labelUcr
             // 
             this.labelUcr.AutoSize = true;
-            this.labelUcr.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUcr.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelUcr.Location = new System.Drawing.Point(270, 129);
             this.labelUcr.Name = "labelUcr";
-            this.labelUcr.Size = new System.Drawing.Size(427, 39);
+            this.labelUcr.Size = new System.Drawing.Size(438, 38);
             this.labelUcr.TabIndex = 4;
             this.labelUcr.Text = "Universidad de Costa Rica";
             // 
             // labelCeleq
             // 
             this.labelCeleq.AutoSize = true;
-            this.labelCeleq.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCeleq.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelCeleq.Location = new System.Drawing.Point(167, 214);
             this.labelCeleq.Name = "labelCeleq";
-            this.labelCeleq.Size = new System.Drawing.Size(646, 37);
+            this.labelCeleq.Size = new System.Drawing.Size(643, 34);
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
@@ -292,13 +308,6 @@
             this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
-            // 
-            // finalizarSolicitudToolStripMenuItem
-            // 
-            this.finalizarSolicitudToolStripMenuItem.Name = "finalizarSolicitudToolStripMenuItem";
-            this.finalizarSolicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.finalizarSolicitudToolStripMenuItem.Text = "Finalizar Solicitud";
-            this.finalizarSolicitudToolStripMenuItem.Click += new System.EventHandler(this.finalizarSolicitudToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -332,17 +341,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem regenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitudesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem reactivosYCristaleríaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verInventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reactivosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cristaleríaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitudesPendientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialDeSolicitudesToolStripMenuItem;
         private System.Windows.Forms.Label labelBienv;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
@@ -352,13 +352,23 @@
         private System.Windows.Forms.Label labelCeleq;
         private System.Windows.Forms.PictureBox pictureCeleq;
         private System.Windows.Forms.PictureBox pictureUcr;
-        private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarSolicitudMantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem analizarSolicitudToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem finalizarSolicitudToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reactivosYCristaleríaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reactivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cristaleríaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesPendientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialDeSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem históricoDeSolicitudesToolStripMenuItem;
     }
 }
 

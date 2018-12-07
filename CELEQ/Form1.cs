@@ -197,6 +197,13 @@ namespace CELEQ
             fs.ShowDialog();
             fs.Dispose();
         }
+
+        private void históricoDeSolicitudesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoricoSolicitudesMantenimiento hsm = new HistoricoSolicitudesMantenimiento();
+            hsm.ShowDialog();
+            hsm.Dispose();
+        }
     }
 
     public static class Globals

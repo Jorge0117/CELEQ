@@ -95,6 +95,12 @@
     <Compile Include="FormReacCris.Designer.cs">
       <DependentUpon>FormReacCris.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoricoSolicitudesMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricoSolicitudesMantenimiento.Designer.cs">
+      <DependentUpon>HistoricoSolicitudesMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformeFinalSolicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReacCris.resx">
       <DependentUpon>FormReacCris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoSolicitudesMantenimiento.resx">
+      <DependentUpon>HistoricoSolicitudesMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformeFinalSolicitudes.resx">
       <DependentUpon>InformeFinalSolicitudes.cs</DependentUpon>
