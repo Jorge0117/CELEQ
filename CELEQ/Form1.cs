@@ -48,11 +48,11 @@ namespace CELEQ
 
             //labelUcr.Width = screenWidth / 5;
             //labelUcr.Height = screenWidth / 27;
-            labelUcr.Font = new Font("Microsoft Sans Serif", screenWidth / 74);
+            labelUcr.Font = new Font("Modern No. 20", screenWidth / 70);
             labelUcr.Location = new Point(screenWidth/2 - labelUcr.Width/2, (int)(screenHeight * 0.3));
             //labelCeleq.Width = screenWidth / 3;
             //labelCeleq.Height = screenWidth / 27;
-            labelCeleq.Font = new Font("Microsoft Sans Serif", screenWidth / 80);
+            labelCeleq.Font = new Font("Modern No. 20", screenWidth / 76);
             labelCeleq.Location = new Point(screenWidth / 2 - labelCeleq.Width / 2, (int)(screenHeight * 0.35));
             pictureUcr.Width = screenWidth / 15;
             pictureUcr.Height = screenHeight / 9;

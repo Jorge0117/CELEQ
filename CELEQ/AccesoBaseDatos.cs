@@ -341,7 +341,7 @@ namespace CELEQ
             }
         }
 
-        public int agregarCristaleria(string nombre, string material, string capacidad, int cantidad)
+        public int agregarCristaleria(string nombre, string material, string capacidad, int cantidad, string caja)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -356,6 +356,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@Material", SqlDbType.VarChar).Value = material;
                         cmd.Parameters.Add("@Cantidad", SqlDbType.Int).Value = cantidad;
                         cmd.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = capacidad;
+                        cmd.Parameters.Add("@Caja", SqlDbType.VarChar).Value = caja;
 
                         /*Se abre la conexión*/
                         con.Open();
@@ -412,7 +413,7 @@ namespace CELEQ
         }
 
         public int modificarCristaleria(string nombreNuevo, string materialNuevo, string capacidadNueva, int cantidad,
-            string nombre, string material, string capacidad)
+            string nombre, string material, string capacidad, string caja)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -430,6 +431,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@MaterialNuevo", SqlDbType.VarChar).Value = materialNuevo;
                         cmd.Parameters.Add("@CapacidadNueva", SqlDbType.VarChar).Value = capacidadNueva;
                         cmd.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = capacidad;
+                        cmd.Parameters.Add("@Caja", SqlDbType.VarChar).Value = caja;
 
                         /*Se abre la conexión*/
                         con.Open();

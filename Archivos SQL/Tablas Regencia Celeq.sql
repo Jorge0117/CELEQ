@@ -36,6 +36,7 @@ CREATE TABLE Cristaleria(
 	PRIMARY KEY(Nombre, Material, Capacidad)
 )
 ALTER TABLE Cristaleria ADD Cantidad int
+ALTER TABLE Cristaleria ADD Caja varchar(5)
 
 CREATE TABLE SolicitudReactivo(
 	IdSolicitud			varchar(130)		NOT NULL,
@@ -45,7 +46,7 @@ CREATE TABLE SolicitudReactivo(
 
 	PRIMARY KEY(IdSolicitud, NombreReactivo),
 	FOREIGN KEY(IdSolicitud) REFERENCES Solicitud(ID),
-	FOREIGN KEY(NombreReactivo, Pureza) REFERENCES Reactivo(Nombre, Pureza)
+	FOREIGN KEY(NombreReactivo, Pureza) REFERENCES Reactivo(Nombre, Pureza) ON UPDATE CASCADE
 )
 
 CREATE TABLE SolicitudCristaleria(
@@ -57,8 +58,9 @@ CREATE TABLE SolicitudCristaleria(
 
 	PRIMARY KEY(IdSolicitud, NombreCristaleria, Material, Capacidad),
 	FOREIGN KEY(IdSolicitud) REFERENCES Solicitud(Id),
-	FOREIGN KEY(NombreCristaleria, Material, Capacidad) REFERENCES Cristaleria(Nombre, Material, Capacidad)
+	FOREIGN KEY(NombreCristaleria, Material, Capacidad) REFERENCES Cristaleria(Nombre, Material, Capacidad) ON UPDATE CASCADE
 )
 select * from Solicitud
 
 drop table SolicitudReactivo
+drop table SolicitudCristaleria

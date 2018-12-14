@@ -28,14 +28,14 @@ namespace CELEQ
             {
                 labelEstado.Text = "Material";
                 labelPureza.Text = "Capacidad";
-                labelEstante.Hide();
-                textEstante.Hide();
+                labelEstante.Text = "Caja";
+                textEstante.MaxLength = 5;
             }
 
             //Si se va a modificar
             if(inventario != null)
             {
-                if(tipo == 0)
+                if (tipo == 0)
                 {
                     textNombre.Text = inventario.dgvInventario.SelectedRows[0].Cells[0].Value.ToString();
                     textEstado.Text = inventario.dgvInventario.SelectedRows[0].Cells[3].Value.ToString();
@@ -43,8 +43,8 @@ namespace CELEQ
                     textCantidad.Text = inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString();
                     textEstante.Text = inventario.dgvInventario.SelectedRows[0].Cells[4].Value.ToString();
 
-                    textNombre.Enabled = false;
-                    textPureza.Enabled = false;
+                    //textNombre.Enabled = false;
+                    //textPureza.Enabled = false;
                 }
                 else
                 {
@@ -52,18 +52,15 @@ namespace CELEQ
                     textEstado.Text = inventario.dgvInventario.SelectedRows[0].Cells[1].Value.ToString();
                     textPureza.Text = inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString();
                     textCantidad.Text = inventario.dgvInventario.SelectedRows[0].Cells[3].Value.ToString();
+                    textEstante.Text = inventario.dgvInventario.SelectedRows[0].Cells[4].Value.ToString();
 
-                    textNombre.Enabled = false;
-                    textEstado.Enabled = false;
-                    textPureza.Enabled = false;
+                    //textNombre.Enabled = false;
+                    //textEstado.Enabled = false;
+                    //textPureza.Enabled = false;
                 }
             }
         }
 
-        private void AgregarReactivoCristaleria_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
@@ -87,7 +84,7 @@ namespace CELEQ
             if (inventario == null)
             {
                 //Falta algún dato
-                if (textNombre.Text == "" || textEstado.Text == "" || textCantidad.Text == "" || textPureza.Text == "" || (tipo == 0 && textEstante.Text == ""))
+                if (textNombre.Text == "" || textEstado.Text == "" || textCantidad.Text == "" || textPureza.Text == "" ||  textEstante.Text == "")
                 {
                     MessageBox.Show("Porfavor llene todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -107,7 +104,7 @@ namespace CELEQ
                     }
                     else
                     {
-                        if (bd.agregarCristaleria(textNombre.Text, textEstado.Text, textPureza.Text, Int32.Parse(textCantidad.Text)) != 1)
+                        if (bd.agregarCristaleria(textNombre.Text, textEstado.Text, textPureza.Text, Int32.Parse(textCantidad.Text), textEstante.Text) != 1)
                         {
                             MessageBox.Show("No se pudo agregar la cristalería", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -137,7 +134,7 @@ namespace CELEQ
                 {
                     if(bd.modificarCristaleria(textNombre.Text, textEstado.Text, textPureza.Text, Int32.Parse(textCantidad.Text), 
                         inventario.dgvInventario.SelectedRows[0].Cells[0].Value.ToString(), inventario.dgvInventario.SelectedRows[0].Cells[1].Value.ToString(),
-                        inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString()) != 1)
+                        inventario.dgvInventario.SelectedRows[0].Cells[2].Value.ToString(), textEstante.Text) != 1)
                     {
                         MessageBox.Show("No se pudo modificar el reactivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

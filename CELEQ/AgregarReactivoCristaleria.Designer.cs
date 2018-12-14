@@ -116,6 +116,7 @@
             // textEstante
             // 
             this.textEstante.Location = new System.Drawing.Point(204, 225);
+            this.textEstante.MaxLength = 10;
             this.textEstante.Name = "textEstante";
             this.textEstante.Size = new System.Drawing.Size(247, 20);
             this.textEstante.TabIndex = 24;
@@ -139,6 +140,11 @@
             // textCantidad
             // 
             this.textCantidad.Location = new System.Drawing.Point(204, 177);
+            this.textCantidad.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.textCantidad.Name = "textCantidad";
             this.textCantidad.Size = new System.Drawing.Size(247, 20);
             this.textCantidad.TabIndex = 27;
@@ -168,7 +174,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarReactivoCristaleria";
-            this.Load += new System.EventHandler(this.AgregarReactivoCristaleria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

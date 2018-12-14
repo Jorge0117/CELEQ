@@ -7,11 +7,12 @@ as
 go
 
 
+
 create procedure AgregarCristaleria(@Nombre varchar(255), @Material varchar(255), @Cantidad int,
-									@Capacidad varchar(255))
+									@Capacidad varchar(255), @Caja varchar(5))
 as
-		Insert into Cristaleria(Nombre, Material, Capacidad, Cantidad)
-		Values(@Nombre, @Material, @Capacidad, @Cantidad)
+		Insert into Cristaleria(Nombre, Material, Capacidad, Cantidad, Caja)
+		Values(@Nombre, @Material, @Capacidad, @Cantidad, @Caja)
 go
 
 create procedure ModificarReactivo(@NombreNuevo varchar(255), @PurezaNueva varchar(100), @Cantidad float,
@@ -23,13 +24,13 @@ as
 go
 
 create procedure ModificarCristaleria(@NombreNuevo varchar(255), @MaterialNuevo varchar(255), @Cantidad int,
-									@CapacidadNueva varchar(255), @Nombre varchar(255), @Material varchar(255), @Capacidad varchar(255))
+									@CapacidadNueva varchar(255), @Nombre varchar(255), @Material varchar(255), @Capacidad varchar(255), @Caja varchar(5))
 as
 		update Cristaleria
-		set Nombre = @NombreNuevo, Material = @MaterialNuevo, Cantidad = @Cantidad, Capacidad = @CapacidadNueva
+		set Nombre = @NombreNuevo, Material = @MaterialNuevo, Cantidad = @Cantidad, Capacidad = @CapacidadNueva, Caja = @Caja
 		where Nombre = @Nombre and Material = @Material and Capacidad = @Capacidad
 
-select * from Reactivo
+select * from Cristaleria
 
 go
 

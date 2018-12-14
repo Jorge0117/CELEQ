@@ -63,10 +63,10 @@
             this.dgvInventario.Location = new System.Drawing.Point(16, 68);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
-            this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.Size = new System.Drawing.Size(900, 553);
             this.dgvInventario.TabIndex = 1;
             this.dgvInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellClick);
+            this.dgvInventario.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInventario_RowPostPaint);
             // 
             // butAgregar
             // 
