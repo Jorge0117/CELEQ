@@ -18,8 +18,11 @@ drop table Usuarios
 
 create table Unidad
 (
-	nombre varchar(100)		NOT NULL	PRIMARY KEY
+	nombre varchar(100)		NOT NULL	PRIMARY KEY,
 )
+
+alter table Unidad add Encargado NVARCHAR(50)
+alter table Unidad add FOREIGN KEY (Encargado) REFERENCES Usuarios(nombreUsuario)
 
 go
 CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
