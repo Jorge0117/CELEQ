@@ -42,6 +42,7 @@
             this.cbPermisos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboUnidad = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.textApellido2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textApellido1 = new System.Windows.Forms.TextBox();
-            this.comboUnidad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -194,6 +194,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos personales";
             // 
+            // comboUnidad
+            // 
+            this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboUnidad.FormattingEnabled = true;
+            this.comboUnidad.Location = new System.Drawing.Point(432, 57);
+            this.comboUnidad.Name = "comboUnidad";
+            this.comboUnidad.Size = new System.Drawing.Size(419, 21);
+            this.comboUnidad.TabIndex = 26;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -209,6 +218,7 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(419, 20);
             this.textNombre.TabIndex = 22;
+            this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
             // 
             // label6
             // 
@@ -250,15 +260,6 @@
             this.textApellido1.Name = "textApellido1";
             this.textApellido1.Size = new System.Drawing.Size(419, 20);
             this.textApellido1.TabIndex = 23;
-            // 
-            // comboUnidad
-            // 
-            this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboUnidad.FormattingEnabled = true;
-            this.comboUnidad.Location = new System.Drawing.Point(432, 57);
-            this.comboUnidad.Name = "comboUnidad";
-            this.comboUnidad.Size = new System.Drawing.Size(419, 21);
-            this.comboUnidad.TabIndex = 26;
             // 
             // AgregarUsuario
             // 

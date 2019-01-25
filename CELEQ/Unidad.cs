@@ -33,7 +33,7 @@ namespace CELEQ
 
             try
             {
-                tabla = bd.ejecutarConsultaTabla("select  nombre as Unidad from unidad");
+                tabla = bd.ejecutarConsultaTabla("select nombre as Unidad from unidad");
             }
             catch (SqlException ex)
             {
@@ -52,18 +52,18 @@ namespace CELEQ
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-            string unidad = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre de la unidad que desea agregar", "Unidad", "");
-            if(unidad != "")
-            {
-                bd.ejecutarConsulta("insert into Unidad values ('" + unidad + "')");
-                MessageBox.Show("Unidad agregada correctamente", "Unidad", MessageBoxButtons.OK, MessageBoxIcon.None);
-                llenarTabla();
-            }
-            else
-            {
-                MessageBox.Show("Por favor digite el nombre de la unidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+            AgregarUnidad ag = new AgregarUnidad();
+            ag.ShowDialog();
+            ag.Dispose();
+            llenarTabla();
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            AgregarUnidad ag = new AgregarUnidad(dgvUnidad.SelectedRows[0]);
+            ag.ShowDialog();
+            ag.Dispose();
+            llenarTabla();
         }
     }
 }

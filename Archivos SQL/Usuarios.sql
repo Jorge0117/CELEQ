@@ -92,6 +92,19 @@ create procedure modificarUnidad(@nombre varchar(100), @encargado nvarchar(50)) 
 	end
 go
 
+CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@estado bit OUTPUT) as
+	BEGIN
+	BEGIN TRY
+		INSERT INTO Unidad VALUES(@nombre, @encargado)
+		SET @estado=1 
+	END TRY
+	BEGIN CATCH
+		/*En cualquier otro caso se devuelve el mensaje de error*/
+		SET @estado=ERROR_MESSAGE()
+	END CATCH
+	END
+GO
+
 drop procedure modificarUsuario
 
 exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
@@ -104,3 +117,7 @@ exec dbo.agregarUsuario 'Regente', 'reg', 'regente@ucr.ac.cr', 'Regencia', 0
 
 insert into Unidad values ('UMI')
 go
+
+
+
+select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios

@@ -105,5 +105,10 @@ namespace CELEQ
         {
             this.Close();
         }
+
+        private void textNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
