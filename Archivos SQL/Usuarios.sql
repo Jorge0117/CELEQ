@@ -21,8 +21,8 @@ create table Unidad
 	nombre varchar(100)		NOT NULL	PRIMARY KEY,
 )
 
-alter table Unidad add Encargado NVARCHAR(50)
-alter table Unidad add FOREIGN KEY (Encargado) REFERENCES Usuarios(nombreUsuario)
+alter table Unidad add encargado NVARCHAR(50)
+alter table Unidad add FOREIGN KEY (encargado) REFERENCES Usuarios(nombreUsuario)
 
 go
 CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
@@ -83,6 +83,15 @@ create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @co
 		where nombreUsuario = @usuario
 	end
 go
+
+create procedure modificarUnidad(@nombre varchar(100), @encargado nvarchar(50)) as
+	begin
+		update Unidad
+		set Unidad.nombre = @nombre, Unidad.encargado = @encargado
+		where Unidad.nombre = @nombre;
+	end
+go
+
 drop procedure modificarUsuario
 
 exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
