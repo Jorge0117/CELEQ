@@ -1,5 +1,5 @@
 use CELEQ
-
+select * from usuarios
 create table designacionAsistencia
 (
 	id				int			IDENTITY(1,1)		primary key,
@@ -15,16 +15,17 @@ create table designacionAsistencia
 	motivoInopia	varchar(500),
 	tramitado		bit,
 	observaciones	varchar(500),
-	carne			varchar(6),
+	idEstudiante	varchar(30),
 	presupuesto		varchar(12),
 
-	foreign key (carne) references estudiante(carne),
+	foreign key (idEstudiante) references estudiante(id),
 	foreign key (presupuesto) references presupuesto(codigo) 
 )
-
+drop table designacionAsistencia
 create table estudiante
 (
-	carne			varchar(6)			NOT NULL		PRIMARY KEY,
+	id				varchar(30)			NOT NULL		PRIMARY KEY,
+	tipoId			varchar(100),
 	nombre			varchar(255),
 	apellido1		varchar(255),
 	apellido2		varchar(255),
@@ -33,7 +34,7 @@ create table estudiante
 	telefonoFijo	varchar(255),
 	carrera			varchar(255)
 )
-
+drop table estudiante
 create table presupuesto
 (
 	codigo			varchar(12)			NOT NULL		PRIMARY KEY,
@@ -56,3 +57,9 @@ create table p9
 
 	foreign key (idDesignacion) references designacionAsistencia(id)
 )
+drop table p9
+select * from unidad
+
+select nombre from unidad
+
+select codigo from presupuesto

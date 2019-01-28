@@ -83,6 +83,12 @@
     <Compile Include="DatosSolicitud.Designer.cs">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designacion.Designer.cs">
+      <DependentUpon>Designacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetallesSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatosSolicitud.resx">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designacion.resx">
+      <DependentUpon>Designacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetallesSolicitud.resx">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>

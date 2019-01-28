@@ -57,3 +57,4 @@ C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.AnalizarSolicitudMantenimi
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.InformeFinalSolicitudes.resources
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.HistoricoSolicitudesMantenimiento.resources
 C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Aranceles.resources
+C:\Users\UMI\source\repos\CELEQ\CELEQ\obj\Debug\CELEQ.Designacion.resources

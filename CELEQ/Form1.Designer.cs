@@ -51,17 +51,18 @@
             this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.históricoDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelBienv = new System.Windows.Forms.Label();
-            this.linkLogout = new System.Windows.Forms.LinkLabel();
-            this.labelUcr = new System.Windows.Forms.Label();
-            this.labelCeleq = new System.Windows.Forms.Label();
             this.regimenBecarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.designacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arancelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelBienv = new System.Windows.Forms.Label();
+            this.linkLogout = new System.Windows.Forms.LinkLabel();
+            this.labelUcr = new System.Windows.Forms.Label();
+            this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
+            this.agregarDesignacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
@@ -253,6 +254,44 @@
             this.históricoDeSolicitudesToolStripMenuItem.Text = "Histórico de Solicitudes";
             this.históricoDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.históricoDeSolicitudesToolStripMenuItem_Click);
             // 
+            // regimenBecarioToolStripMenuItem
+            // 
+            this.regimenBecarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.designacionesToolStripMenuItem,
+            this.arancelesToolStripMenuItem,
+            this.estudiantesToolStripMenuItem,
+            this.presupuestoToolStripMenuItem});
+            this.regimenBecarioToolStripMenuItem.Name = "regimenBecarioToolStripMenuItem";
+            this.regimenBecarioToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.regimenBecarioToolStripMenuItem.Text = "Regimen becario";
+            // 
+            // designacionesToolStripMenuItem
+            // 
+            this.designacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarDesignacionToolStripMenuItem});
+            this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
+            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.designacionesToolStripMenuItem.Text = "Designaciones";
+            // 
+            // arancelesToolStripMenuItem
+            // 
+            this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
+            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arancelesToolStripMenuItem.Text = "Aranceles";
+            this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
+            // 
+            // estudiantesToolStripMenuItem
+            // 
+            this.estudiantesToolStripMenuItem.Name = "estudiantesToolStripMenuItem";
+            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estudiantesToolStripMenuItem.Text = "Estudiantes";
+            // 
+            // presupuestoToolStripMenuItem
+            // 
+            this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presupuestoToolStripMenuItem.Text = "Presupuesto";
+            // 
             // labelBienv
             // 
             this.labelBienv.AutoSize = true;
@@ -295,42 +334,6 @@
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
-            // regimenBecarioToolStripMenuItem
-            // 
-            this.regimenBecarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.designacionesToolStripMenuItem,
-            this.arancelesToolStripMenuItem,
-            this.estudiantesToolStripMenuItem,
-            this.presupuestoToolStripMenuItem});
-            this.regimenBecarioToolStripMenuItem.Name = "regimenBecarioToolStripMenuItem";
-            this.regimenBecarioToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
-            this.regimenBecarioToolStripMenuItem.Text = "Regimen becario";
-            // 
-            // designacionesToolStripMenuItem
-            // 
-            this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
-            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.designacionesToolStripMenuItem.Text = "Designaciones";
-            // 
-            // arancelesToolStripMenuItem
-            // 
-            this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
-            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.arancelesToolStripMenuItem.Text = "Aranceles";
-            this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
-            // 
-            // estudiantesToolStripMenuItem
-            // 
-            this.estudiantesToolStripMenuItem.Name = "estudiantesToolStripMenuItem";
-            this.estudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.estudiantesToolStripMenuItem.Text = "Estudiantes";
-            // 
-            // presupuestoToolStripMenuItem
-            // 
-            this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
-            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.presupuestoToolStripMenuItem.Text = "Presupuesto";
-            // 
             // pictureUcr
             // 
             this.pictureUcr.Image = global::CELEQ.Properties.Resources.Escdo_UCR;
@@ -350,6 +353,13 @@
             this.pictureCeleq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureCeleq.TabIndex = 7;
             this.pictureCeleq.TabStop = false;
+            // 
+            // agregarDesignacionToolStripMenuItem
+            // 
+            this.agregarDesignacionToolStripMenuItem.Name = "agregarDesignacionToolStripMenuItem";
+            this.agregarDesignacionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.agregarDesignacionToolStripMenuItem.Text = "Agregar designacion";
+            this.agregarDesignacionToolStripMenuItem.Click += new System.EventHandler(this.agregarDesignacionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -412,6 +422,7 @@
         private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureUcr;
         private System.Windows.Forms.PictureBox pictureCeleq;
+        private System.Windows.Forms.ToolStripMenuItem agregarDesignacionToolStripMenuItem;
     }
 }
 
