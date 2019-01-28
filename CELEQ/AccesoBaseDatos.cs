@@ -303,7 +303,7 @@ namespace CELEQ
             return error;
         }
 
-        public int modificarUnidad(string nombre, string encargado)
+        public int modificarUnidad(string nombreViejo, string nombre, string encargado)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -318,6 +318,7 @@ namespace CELEQ
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@nombreViejo", SqlDbType.VarChar).Value = nombreViejo;
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
                         cmd.Parameters.Add("@encargado", SqlDbType.VarChar).Value = encargado;
 

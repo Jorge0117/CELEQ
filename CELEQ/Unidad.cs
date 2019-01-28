@@ -18,6 +18,17 @@ namespace CELEQ
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
+
+            //Solo permite seleccionar filas en el dgv
+            dgvUnidad.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUnidad.MultiSelect = false;
+            dgvUnidad.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+        }
+
+        //Pinta la fila completa en el dgv
+        private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
 
@@ -33,7 +44,7 @@ namespace CELEQ
 
             try
             {
-                tabla = bd.ejecutarConsultaTabla("select nombre as Unidad from unidad");
+                tabla = bd.ejecutarConsultaTabla("select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado from unidad U left join Usuarios E ON E.nombreUsuario = U.encargado");
             }
             catch (SqlException ex)
             {

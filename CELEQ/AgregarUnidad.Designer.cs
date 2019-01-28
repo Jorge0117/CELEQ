@@ -58,6 +58,7 @@
             // 
             // comboEncargado
             // 
+            this.comboEncargado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEncargado.FormattingEnabled = true;
             this.comboEncargado.Location = new System.Drawing.Point(222, 70);
             this.comboEncargado.Name = "comboEncargado";
@@ -81,6 +82,7 @@
             this.butAceptar.TabIndex = 23;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -90,6 +92,7 @@
             this.butCancelar.TabIndex = 22;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // AgregarUnidad
             // 

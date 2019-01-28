@@ -24,7 +24,8 @@ namespace CELEQ
 
         private void AgregarUnidad_Load(object sender, EventArgs e)
         {
-            SqlDataReader encargados = bd.ejecutarConsulta("select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios");
+
+            SqlDataReader encargados = bd.ejecutarConsulta("select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios where categoria != 'Estudiante'");
             while (encargados.Read())
             {
                 comboEncargado.Items.Add(encargados[0].ToString());
@@ -32,23 +33,31 @@ namespace CELEQ
 
             if (dgvRow != null)
             {
-                textUnidad.Text = dgvRow.Cells[0].Value.ToString();
-                comboEncargado.Text = dgvRow.Cells[3].Value.ToString();
+                textUnidad.Text = dgvRow.Cells[0].Value.ToString(); 
+                comboEncargado.SelectedIndex = comboEncargado.FindStringExact(dgvRow.Cells[1].Value.ToString());
             }
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
+            string[] nombre;
+            SqlDataReader nombreUsuario;
+            nombreUsuario = null;
+
             if (textUnidad.Text == "" || comboEncargado.Text == "")
             {
                 MessageBox.Show("Porfavor llene los datos requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                nombre = comboEncargado.Text.Split(' ');
+                nombreUsuario = bd.ejecutarConsulta("SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = '" + nombre[0] + "' AND U.apellido1 ='" + nombre[1] + "' AND U.apellido2 ='" + nombre[2] + "' AND categoria != 'Estudiante'");
+                nombreUsuario.Read();
                 int error;
                 if (dgvRow == null)
                 {
-                    error = bd.agregarUnidad(textUnidad.Text, comboEncargado.Text);
+
+                    error = bd.agregarUnidad(textUnidad.Text, nombreUsuario[0].ToString());
                     if (error == 1)
                     {
                         MessageBox.Show("Unidad agregada de manera correcta", "Unidades", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -61,7 +70,7 @@ namespace CELEQ
                 }
                 else
                 {
-                    error = bd.modificarUnidad(textUnidad.Text, comboEncargado.Text);
+                    error = bd.modificarUnidad(dgvRow.Cells[0].Value.ToString(), textUnidad.Text, nombreUsuario[0].ToString());
                     if (error == 0)
                     {
                         MessageBox.Show("Unidad modificada de manera correcta", "Unidades", MessageBoxButtons.OK, MessageBoxIcon.None);

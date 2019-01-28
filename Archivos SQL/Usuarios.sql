@@ -92,6 +92,9 @@ create procedure modificarUnidad(@nombre varchar(100), @encargado nvarchar(50)) 
 	end
 go
 
+
+
+/*Método para agregar una nueva Unidad a la base de datos*/
 CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@estado bit OUTPUT) as
 	BEGIN
 	BEGIN TRY
@@ -121,3 +124,15 @@ go
 
 
 select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios
+
+
+SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Jorge' AND U.apellido1 ='Araya' AND U.apellido2 ='González'
+
+DELETE FROM Unidad WHERE encargado = 'Estiven'
+
+SELECT * FROM Unidad
+SELECT * FROM Usuarios
+
+select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado 
+from unidad U 
+join Usuarios E ON E.nombreUsuario = U.encargado;
