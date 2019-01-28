@@ -72,7 +72,7 @@ AS
 	END
 go
 
-create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
+create procedure modificarUsuario(@usuario Nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
 	begin
 
 		declare @salt uniqueidentifier
@@ -84,11 +84,23 @@ create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @co
 	end
 go
 
-create procedure modificarUnidad(@nombre varchar(100), @encargado nvarchar(50)) as
+create procedure modificarContrasena(@usuario Nvarchar(50), @pass nvarchar(50)) as
+	begin
+
+		declare @salt uniqueidentifier
+		select @salt = salt from Usuarios where nombreUsuario = @usuario
+
+		update Usuarios
+		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36)))
+		where nombreUsuario = @usuario
+	end
+go
+
+create procedure modificarUnidad(@nombreViejo varchar(100), @nombre varchar(100), @encargado nvarchar(50)) as
 	begin
 		update Unidad
 		set Unidad.nombre = @nombre, Unidad.encargado = @encargado
-		where Unidad.nombre = @nombre;
+		where Unidad.nombre = @nombreViejo;
 	end
 go
 
@@ -136,3 +148,7 @@ SELECT * FROM Usuarios
 select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado 
 from unidad U 
 join Usuarios E ON E.nombreUsuario = U.encargado;
+
+SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Estiven' AND U.apellido1 ='Alfaro' AND U.apellido2 ='Gómez' AND categoria != 'Estudiante'
+
+select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado from unidad U left join Usuarios E ON E.nombreUsuario = U.encargado

@@ -95,6 +95,12 @@
     <Compile Include="AgregarUnidad.Designer.cs">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarContra.Designer.cs">
+      <DependentUpon>ModificarContra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReacCris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUnidad.resx">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarContra.resx">
+      <DependentUpon>ModificarContra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReacCris.resx">
       <DependentUpon>FormReacCris.cs</DependentUpon>
