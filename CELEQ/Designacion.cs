@@ -14,6 +14,7 @@ namespace CELEQ
     public partial class Designacion : Form
     {
         AccesoBaseDatos bd;
+        string filePath = null;
         public Designacion()
         {
             InitializeComponent();
@@ -58,6 +59,13 @@ namespace CELEQ
 
             labelMotivo.Visible = false;
             textInopia.Visible = false;
+
+            butDescargar.Visible = false;
+            labelArchivo.Visible = false;
+            adjuntarDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            adjuntarDialog.Filter = "PDF files (*.pdf)|*.pdf";
+            adjuntarDialog.FilterIndex = 0;
+            adjuntarDialog.RestoreDirectory = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

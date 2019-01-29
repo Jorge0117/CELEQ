@@ -77,6 +77,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.butyEliminar = new System.Windows.Forms.Button();
             this.butDescargar = new System.Windows.Forms.Button();
+            this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -640,5 +641,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button butDescargar;
         private System.Windows.Forms.Button butyEliminar;
+        private System.Windows.Forms.OpenFileDialog adjuntarDialog;
     }
 }
