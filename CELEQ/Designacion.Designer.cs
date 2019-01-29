@@ -42,6 +42,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.butDescargar = new System.Windows.Forms.Button();
+            this.butEliminar = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.datefinal = new System.Windows.Forms.DateTimePicker();
+            this.dateInicio = new System.Windows.Forms.DateTimePicker();
+            this.butAdjuntar = new System.Windows.Forms.Button();
             this.comboP9 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -70,13 +77,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateInicio = new System.Windows.Forms.DateTimePicker();
-            this.datefinal = new System.Windows.Forms.DateTimePicker();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.butyEliminar = new System.Windows.Forms.Button();
-            this.butDescargar = new System.Windows.Forms.Button();
             this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -206,12 +206,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.butDescargar);
-            this.groupBox2.Controls.Add(this.butyEliminar);
+            this.groupBox2.Controls.Add(this.butEliminar);
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.datefinal);
             this.groupBox2.Controls.Add(this.dateInicio);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.butAdjuntar);
             this.groupBox2.Controls.Add(this.comboP9);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label18);
@@ -244,6 +244,68 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la designacion";
+            // 
+            // butDescargar
+            // 
+            this.butDescargar.Location = new System.Drawing.Point(640, 261);
+            this.butDescargar.Name = "butDescargar";
+            this.butDescargar.Size = new System.Drawing.Size(75, 23);
+            this.butDescargar.TabIndex = 72;
+            this.butDescargar.Text = "Descargar";
+            this.butDescargar.UseVisualStyleBackColor = true;
+            // 
+            // butEliminar
+            // 
+            this.butEliminar.Location = new System.Drawing.Point(559, 229);
+            this.butEliminar.Name = "butEliminar";
+            this.butEliminar.Size = new System.Drawing.Size(75, 23);
+            this.butEliminar.TabIndex = 71;
+            this.butEliminar.Text = "Eliminar";
+            this.butEliminar.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(310, 360);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(73, 17);
+            this.checkBox2.TabIndex = 70;
+            this.checkBox2.Text = "Tramitado";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(432, 321);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(419, 36);
+            this.textBox7.TabIndex = 15;
+            // 
+            // datefinal
+            // 
+            this.datefinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datefinal.Location = new System.Drawing.Point(696, 295);
+            this.datefinal.Name = "datefinal";
+            this.datefinal.Size = new System.Drawing.Size(155, 20);
+            this.datefinal.TabIndex = 14;
+            // 
+            // dateInicio
+            // 
+            this.dateInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateInicio.Location = new System.Drawing.Point(432, 294);
+            this.dateInicio.Name = "dateInicio";
+            this.dateInicio.Size = new System.Drawing.Size(190, 20);
+            this.dateInicio.TabIndex = 13;
+            // 
+            // butAdjuntar
+            // 
+            this.butAdjuntar.Location = new System.Drawing.Point(640, 229);
+            this.butAdjuntar.Name = "butAdjuntar";
+            this.butAdjuntar.Size = new System.Drawing.Size(75, 23);
+            this.butAdjuntar.TabIndex = 12;
+            this.butAdjuntar.Text = "Adjuntar";
+            this.butAdjuntar.UseVisualStyleBackColor = true;
+            this.butAdjuntar.Click += new System.EventHandler(this.butAdjuntar_Click);
             // 
             // comboP9
             // 
@@ -502,67 +564,6 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(640, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Adjuntar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dateInicio
-            // 
-            this.dateInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateInicio.Location = new System.Drawing.Point(432, 294);
-            this.dateInicio.Name = "dateInicio";
-            this.dateInicio.Size = new System.Drawing.Size(190, 20);
-            this.dateInicio.TabIndex = 13;
-            // 
-            // datefinal
-            // 
-            this.datefinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datefinal.Location = new System.Drawing.Point(696, 295);
-            this.datefinal.Name = "datefinal";
-            this.datefinal.Size = new System.Drawing.Size(155, 20);
-            this.datefinal.TabIndex = 14;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(432, 321);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(419, 36);
-            this.textBox7.TabIndex = 15;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(310, 360);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 70;
-            this.checkBox2.Text = "Tramitado";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // butyEliminar
-            // 
-            this.butyEliminar.Location = new System.Drawing.Point(559, 229);
-            this.butyEliminar.Name = "butyEliminar";
-            this.butyEliminar.Size = new System.Drawing.Size(75, 23);
-            this.butyEliminar.TabIndex = 71;
-            this.butyEliminar.Text = "Eliminar";
-            this.butyEliminar.UseVisualStyleBackColor = true;
-            // 
-            // butDescargar
-            // 
-            this.butDescargar.Location = new System.Drawing.Point(640, 261);
-            this.butDescargar.Name = "butDescargar";
-            this.butDescargar.Size = new System.Drawing.Size(75, 23);
-            this.butDescargar.TabIndex = 72;
-            this.butDescargar.Text = "Descargar";
-            this.butDescargar.UseVisualStyleBackColor = true;
-            // 
             // Designacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,9 +639,9 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DateTimePicker datefinal;
         private System.Windows.Forms.DateTimePicker dateInicio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butAdjuntar;
         private System.Windows.Forms.Button butDescargar;
-        private System.Windows.Forms.Button butyEliminar;
+        private System.Windows.Forms.Button butEliminar;
         private System.Windows.Forms.OpenFileDialog adjuntarDialog;
     }
 }

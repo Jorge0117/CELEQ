@@ -218,6 +218,7 @@ namespace CELEQ
             designacion.ShowDialog();
             designacion.Dispose();
         }
+
     }
 
     public static class Globals

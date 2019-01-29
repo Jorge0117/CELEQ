@@ -85,5 +85,27 @@ namespace CELEQ
                 }      
             }
         }
+
+        private void butAdjuntar_Click(object sender, EventArgs e)
+        {
+            if (butAdjuntar.Text == "Adjuntar archivo")
+            {
+                if (adjuntarDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = adjuntarDialog.FileName;
+                    labelArchivo.Text = filePath;
+                    labelArchivo.Visible = true;
+                    butAdjuntar.Text = "Eliminar adjunto";
+                }
+            }
+            else
+            {
+                filePath = null;
+                butAdjuntar.Text = "Adjuntar archivo";
+                labelArchivo.Visible = false;
+            }
+        }
     }
+
 }
