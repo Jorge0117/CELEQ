@@ -108,6 +108,7 @@
             this.cambiarContra.TabIndex = 13;
             this.cambiarContra.Text = "Cambiar Contraseña";
             this.cambiarContra.UseVisualStyleBackColor = true;
+            this.cambiarContra.Click += new System.EventHandler(this.cambiarContra_Click);
             // 
             // ListaUsuarios
             // 

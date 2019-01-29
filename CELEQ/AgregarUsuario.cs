@@ -68,7 +68,10 @@ namespace CELEQ
                 int error;
                 if (dgvRow == null)
                 {
-                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text); 
+                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    mc.ShowDialog();
+                    mc.Dispose();
+                    mc.Close();
                     /*
                     error = bd.agregarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
                     if (error == 1)

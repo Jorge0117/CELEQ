@@ -78,7 +78,7 @@ namespace CELEQ
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

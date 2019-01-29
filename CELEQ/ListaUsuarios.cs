@@ -98,7 +98,7 @@ namespace CELEQ
 
         private void cambiarContra_Click(object sender, EventArgs e)
         {
-            ModificarContra c = new ModificarContra(dgvUsuarios.SelectedRows[0].Cells[0].ToString());
+            ModificarContra c = new ModificarContra(dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
             c.ShowDialog();
             c.Dispose();
             llenarTabla();

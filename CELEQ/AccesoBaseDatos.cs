@@ -304,7 +304,7 @@ namespace CELEQ
 
         public int modificarContrasena(string usuario, string password)
         {
-            int error = 0;
+            int error = 1;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 

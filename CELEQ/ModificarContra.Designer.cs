@@ -41,9 +41,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nueva contraseña";
+            this.label1.Text = "Contraseña";
             this.label1.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // label2
@@ -51,15 +51,16 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 13);
+            this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Confirmar nueva contraseña";
+            this.label2.Text = "Confirmar Contraseña";
             this.label2.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // nuevaContra
             // 
             this.nuevaContra.Location = new System.Drawing.Point(162, 24);
             this.nuevaContra.Name = "nuevaContra";
+            this.nuevaContra.PasswordChar = '*';
             this.nuevaContra.Size = new System.Drawing.Size(179, 20);
             this.nuevaContra.TabIndex = 2;
             // 
@@ -67,6 +68,7 @@
             // 
             this.confirmarContra.Location = new System.Drawing.Point(162, 57);
             this.confirmarContra.Name = "confirmarContra";
+            this.confirmarContra.PasswordChar = '*';
             this.confirmarContra.Size = new System.Drawing.Size(179, 20);
             this.confirmarContra.TabIndex = 3;
             // 
