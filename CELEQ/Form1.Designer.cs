@@ -51,12 +51,17 @@
             this.analizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.finalizarSolicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.históricoDeSolicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regimenBecarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.designacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarDesignacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
+            this.arancelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -68,7 +73,8 @@
             this.archivoToolStripMenuItem,
             this.regenciaToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.mantenimientoToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem,
+            this.regimenBecarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(988, 24);
@@ -247,6 +253,31 @@
             this.históricoDeSolicitudesToolStripMenuItem.Text = "Histórico de Solicitudes";
             this.históricoDeSolicitudesToolStripMenuItem.Click += new System.EventHandler(this.históricoDeSolicitudesToolStripMenuItem_Click);
             // 
+            // regimenBecarioToolStripMenuItem
+            // 
+            this.regimenBecarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.designacionesToolStripMenuItem,
+            this.arancelesToolStripMenuItem,
+            this.presupuestoToolStripMenuItem});
+            this.regimenBecarioToolStripMenuItem.Name = "regimenBecarioToolStripMenuItem";
+            this.regimenBecarioToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.regimenBecarioToolStripMenuItem.Text = "Regimen Becario";
+            // 
+            // designacionesToolStripMenuItem
+            // 
+            this.designacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarDesignacionToolStripMenuItem});
+            this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
+            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.designacionesToolStripMenuItem.Text = "Designaciones";
+            // 
+            // agregarDesignacionToolStripMenuItem
+            // 
+            this.agregarDesignacionToolStripMenuItem.Name = "agregarDesignacionToolStripMenuItem";
+            this.agregarDesignacionToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.agregarDesignacionToolStripMenuItem.Text = "Agregar Designacion";
+            this.agregarDesignacionToolStripMenuItem.Click += new System.EventHandler(this.agregarDesignacionToolStripMenuItem_Click);
+            // 
             // labelBienv
             // 
             this.labelBienv.AutoSize = true;
@@ -309,6 +340,19 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
+            // arancelesToolStripMenuItem
+            // 
+            this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
+            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arancelesToolStripMenuItem.Text = "Aranceles";
+            this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
+            // 
+            // presupuestoToolStripMenuItem
+            // 
+            this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presupuestoToolStripMenuItem.Text = "Presupuesto";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +413,11 @@
         private System.Windows.Forms.ToolStripMenuItem historialDeSolicitudesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudesRealizadasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem históricoDeSolicitudesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regimenBecarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem designacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarDesignacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arancelesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem;
     }
 }
 

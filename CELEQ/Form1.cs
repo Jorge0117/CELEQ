@@ -204,6 +204,21 @@ namespace CELEQ
             hsm.ShowDialog();
             hsm.Dispose();
         }
+
+        private void arancelesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Aranceles aranceles = new Aranceles();
+            aranceles.ShowDialog();
+            aranceles.Dispose();
+        }
+
+        private void agregarDesignacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Designacion designacion = new Designacion();
+            designacion.ShowDialog();
+            designacion.Dispose();
+        }
+
     }
 
     public static class Globals
