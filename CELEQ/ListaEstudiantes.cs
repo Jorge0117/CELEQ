@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CELEQ
 {
@@ -28,6 +29,34 @@ namespace CELEQ
         private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
+        }
+
+        private void ListaEstudiantes_Load(object sender, EventArgs e)
+        {
+            llenarTabla();
+        }
+
+        private void llenarTabla()
+        {
+            DataTable tabla = null;
+
+            try
+            {
+                tabla = bd.ejecutarConsultaTabla("select E.id as Identificación, E.tipoId as 'Tipo Identificación', CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, E.carrera as Carrera from estudiante E");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = tabla;
+            dgvEstudiantes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvEstudiantes.DataSource = bs;
+            for (int i = 0; i < dgvEstudiantes.ColumnCount; ++i)
+            {
+                dgvEstudiantes.Columns[i].Width = dgvEstudiantes.Width / dgvEstudiantes.ColumnCount - 1;
+            }
         }
 
     }

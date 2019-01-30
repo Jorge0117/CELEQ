@@ -19,3 +19,10 @@ create procedure modificarPresupuesto(@codigoViejo varchar(12), @codigo varchar(
 		where presupuesto.codigo = @codigoViejo;
 	end
 go
+
+create procedure eliminarPresupuesto(@codigo varchar(12)) as
+	begin
+		delete from presupuesto 
+		where presupuesto.codigo = @codigo;
+	end
+go

@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(524, 45);
+            this.label1.Location = new System.Drawing.Point(529, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 11;
@@ -46,7 +46,7 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(573, 42);
+            this.textBuscar.Location = new System.Drawing.Point(578, 44);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(343, 20);
             this.textBuscar.TabIndex = 10;
@@ -55,7 +55,7 @@
             // 
             this.labelEstudiantes.AutoSize = true;
             this.labelEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstudiantes.Location = new System.Drawing.Point(12, 35);
+            this.labelEstudiantes.Location = new System.Drawing.Point(17, 37);
             this.labelEstudiantes.Name = "labelEstudiantes";
             this.labelEstudiantes.Size = new System.Drawing.Size(98, 20);
             this.labelEstudiantes.TabIndex = 9;
@@ -69,7 +69,7 @@
             this.dgvEstudiantes.AllowUserToResizeRows = false;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(16, 68);
+            this.dgvEstudiantes.Location = new System.Drawing.Point(21, 70);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.ReadOnly = true;
             this.dgvEstudiantes.RowHeadersVisible = false;
@@ -86,8 +86,13 @@
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelEstudiantes);
             this.Controls.Add(this.dgvEstudiantes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListaEstudiantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaEstudiantes";
+            this.Load += new System.EventHandler(this.ListaEstudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

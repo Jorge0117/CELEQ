@@ -32,6 +32,7 @@
             this.dgvDesignaciones = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBuscar = new System.Windows.Forms.TextBox();
+            this.butAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDesignaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.dgvDesignaciones.Name = "dgvDesignaciones";
             this.dgvDesignaciones.ReadOnly = true;
             this.dgvDesignaciones.RowHeadersVisible = false;
-            this.dgvDesignaciones.Size = new System.Drawing.Size(1145, 553);
+            this.dgvDesignaciones.Size = new System.Drawing.Size(900, 553);
             this.dgvDesignaciones.TabIndex = 4;
             // 
             // label1
@@ -77,12 +78,22 @@
             this.textBuscar.TabIndex = 18;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
+            // butAgregar
+            // 
+            this.butAgregar.Location = new System.Drawing.Point(1167, 68);
+            this.butAgregar.Name = "butAgregar";
+            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.TabIndex = 20;
+            this.butAgregar.Text = "Agregar";
+            this.butAgregar.UseVisualStyleBackColor = true;
+            // 
             // ListaDesignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1370, 661);
+            this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelDesignaciones);
@@ -106,5 +117,6 @@
         public System.Windows.Forms.DataGridView dgvDesignaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.Button butAgregar;
     }
 }
