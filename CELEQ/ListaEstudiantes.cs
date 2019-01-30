@@ -58,6 +58,5 @@ namespace CELEQ
                 dgvEstudiantes.Columns[i].Width = dgvEstudiantes.Width / dgvEstudiantes.ColumnCount - 1;
             }
         }
-
     }
 }
