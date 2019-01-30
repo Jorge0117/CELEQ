@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CELEQ
 {
@@ -66,6 +67,13 @@ namespace CELEQ
             adjuntarDialog.Filter = "PDF files (*.pdf)|*.pdf";
             adjuntarDialog.FilterIndex = 0;
             adjuntarDialog.RestoreDirectory = true;
+
+            butAdjuntar.Visible = false;
+            butEliminar.Visible = false;
+
+            dateInicio.Value = DateTime.Today;
+            datefinal.Value = dateInicio.Value.AddDays(1);
+            datefinal.MinDate = dateInicio.Value.AddDays(1);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +104,7 @@ namespace CELEQ
                     filePath = adjuntarDialog.FileName;
                     labelArchivo.Text = filePath;
                     labelArchivo.Visible = true;
+                    butDescargar.Visible = true;
                     butAdjuntar.Text = "Eliminar adjunto";
                 }
             }
@@ -104,6 +113,159 @@ namespace CELEQ
                 filePath = null;
                 butAdjuntar.Text = "Adjuntar archivo";
                 labelArchivo.Visible = false;
+                butDescargar.Visible = false;
+            }
+        }
+
+        private void butEliminar_Click(object sender, EventArgs e)
+        {
+            if (comboP9.Items.Contains(comboP9.Text))
+            {
+                comboP9.Items.Remove(comboP9.Text);
+            }
+            comboP9.Text = "";
+            bd.ejecutarConsulta("delete from p9 where numero = '" + comboP9.Text + "'");
+            filePath = null;
+            butAdjuntar.Text = "Adjuntar archivo";
+            labelArchivo.Visible = false;
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dateInicio_ValueChanged(object sender, EventArgs e)
+        {
+            datefinal.MinDate = dateInicio.Value.AddDays(1);
+
+        }
+
+        private void comboP9_TextChanged(object sender, EventArgs e)
+        {
+            if(comboP9.Text != "")
+            {
+                butAdjuntar.Visible = true;
+                butEliminar.Visible = true;
+            }
+            else
+            {
+                butAdjuntar.Visible = false;
+                butEliminar.Visible = false;
+            }
+
+            filePath = null;
+            butAdjuntar.Text = "Adjuntar archivo";
+            labelArchivo.Visible = false;
+            butDescargar.Visible = false;
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            if(comboTipoId.Text == "" || textIdentificacion.Text == "" || textCorreo.Text == "" || textCarrera.Text == "" ||
+                comboResponsable.Text == "" || comboUnidad.Text == "" || comboCiclo.Text == "" ||
+                comboModalidad.Text == "" || comboPresupuesto.Text == "" || textConvocatoria.Text == "")
+            {
+                MessageBox.Show("Por favor llenar los campos requeridos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+
+                //Se revisa si el estdiante está en la base
+                SqlDataReader estudiante = bd.ejecutarConsulta("select id from estudiante where id = '" + textIdentificacion.Text + "'");
+                if (!estudiante.Read())
+                {
+                    //Si no está se agrega
+                    bd.agregarEstudiante(textIdentificacion.Text, comboTipoId.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, textCorreo.Text,
+                        textCelular.Text, textTelefono.Text, textCarrera.Text);
+                }
+                else
+                {
+                    //En caso de que esté, se actualizan los datos en caso de algún cambio
+                    bd.modificarEstudiante(textIdentificacion.Text, comboTipoId.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, textCorreo.Text,
+                        textCelular.Text, textTelefono.Text, textCarrera.Text);
+                }
+
+                //Se calcula el monto mensual de la asistencia
+                int monto;
+                SqlDataReader valorHora;
+                if(comboModalidad.Text == "H.E")
+                {
+                    valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HE'");
+                }
+                else if(comboModalidad.Text == "H.A")
+                {
+                    valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HA'");
+                }
+                else
+                {
+                    valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HP'");
+                }
+
+                valorHora.Read();
+
+                monto = Convert.ToInt32(numHoras.Value) * Convert.ToInt32(valorHora[0]);
+
+                //Se obtiene el nombre de usuario del encargado
+                SqlDataReader nombreUsuario = bd.ejecutarConsulta("select nombreUsuario from usuarios where concat(nombre, ' ', apellido1, ' ', apellido2) = '" + comboResponsable.Text + "'");
+                nombreUsuario.Read();
+
+                int id = bd.agregarDesignacion(numAnno.Value.ToString(), comboCiclo.Text, dateInicio.Value.ToShortDateString(), datefinal.Value.ToShortDateString(),
+                    textConvocatoria.Text, Convert.ToInt32(numHoras.Value), comboModalidad.Text, monto, checkInopia.Checked ? 1 : 0, textInopia.Text,
+                    checkTramitado.Checked ? 1 : 0, textObservaciones.Text, textIdentificacion.Text, comboPresupuesto.Text, nombreUsuario[0].ToString(), comboUnidad.Text);
+
+                if(id == -1)
+                {
+                    MessageBox.Show("Error al crear la designación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    FileStream fs = null;
+                    if (filePath != null)
+                    {
+                        fs = File.OpenRead(filePath);
+                    }
+
+                    bd.agregarP9(Path.GetFileName(filePath), fs, Convert.ToInt32(comboP9.Text), id);
+
+                }
+
+                MessageBox.Show("Se realizado la designación de manera correcta", "Designaciones", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
+            }
+
+        }
+
+        private void textIdentificacion_TextChanged(object sender, EventArgs e)
+        {
+            SqlDataReader estudiante = bd.ejecutarConsulta("select nombre, apellido1, apellido2, correo, celular, telefonofijo, carrera from estudiante where id = '" + textIdentificacion.Text + "' and tipoId ='" + comboTipoId.Text + "'");
+            if (estudiante.Read())
+            {
+                textNombre.Text = estudiante[0].ToString();
+                textApellido1.Text = estudiante[1].ToString();
+                textApellido2.Text = estudiante[2].ToString();
+                textCorreo.Text = estudiante[3].ToString();
+                textCelular.Text = estudiante[4].ToString();
+                textTelefono.Text = estudiante[5].ToString();
+                textCarrera.Text = estudiante[6].ToString();
+
+            }
+        }
+
+
+        private void comboTipoId_TextChanged(object sender, EventArgs e)
+        {
+            SqlDataReader estudiante = bd.ejecutarConsulta("select nombre, apellido1, apellido2, correo, celular, telefonofijo, carrera from estudiante where id = '" + textIdentificacion.Text + "' and tipoId ='" + comboTipoId.Text + "'");
+            if (estudiante.Read())
+            {
+                textNombre.Text = estudiante[0].ToString();
+                textApellido1.Text = estudiante[1].ToString();
+                textApellido2.Text = estudiante[2].ToString();
+                textCorreo.Text = estudiante[3].ToString();
+                textCelular.Text = estudiante[4].ToString();
+                textTelefono.Text = estudiante[5].ToString();
+                textCarrera.Text = estudiante[6].ToString();
+
             }
         }
     }

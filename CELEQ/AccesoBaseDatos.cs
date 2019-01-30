@@ -892,5 +892,191 @@ namespace CELEQ
             }
         }
 
+        //---------------------------------------------------------------------------------------------
+        //-----------------------------------------Designaciones---------------------------------------
+        //---------------------------------------------------------------------------------------------
+
+
+        public int agregarEstudiante(string id, string tipoId, string nombre, string apellido1, string apellido2, string correo, string celular, string telefono, string carrera)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarEstudiante", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+                        cmd.Parameters.Add("@tipoId", SqlDbType.VarChar).Value = tipoId;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
+                        cmd.Parameters.Add("@apellido2", SqlDbType.VarChar).Value = apellido2;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@celular", SqlDbType.VarChar).Value = celular;
+                        cmd.Parameters.Add("@telefonoFijo", SqlDbType.VarChar).Value = telefono;
+                        cmd.Parameters.Add("@carrera", SqlDbType.VarChar).Value = carrera;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarEstudiante(string id, string tipoId, string nombre, string apellido1, string apellido2, string correo, string celular, string telefono, string carrera)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("modificarEstudiante", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+                        cmd.Parameters.Add("@tipoId", SqlDbType.VarChar).Value = tipoId;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
+                        cmd.Parameters.Add("@apellido2", SqlDbType.VarChar).Value = apellido2;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@celular", SqlDbType.VarChar).Value = celular;
+                        cmd.Parameters.Add("@telefonoFijo", SqlDbType.VarChar).Value = telefono;
+                        cmd.Parameters.Add("@carrera", SqlDbType.VarChar).Value = carrera;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int agregarP9(string nombreArch, FileStream arch, int numero, int idDesignacion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarP9", con))
+                {
+                    try
+                    {
+                        byte[] binaryfile = null;
+                        if (nombreArch != null)
+                        {
+                            BinaryFormatter bf = new BinaryFormatter();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                arch.CopyTo(ms);
+                                binaryfile = ms.ToArray();
+                            }
+
+                            cmd.Parameters.Add("@documento", SqlDbType.VarBinary).Value = binaryfile;
+                            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombreArch;
+
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@documento", SqlDbType.VarBinary).Value = DBNull.Value;
+                            cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = DBNull.Value;
+                        }
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero;
+                        cmd.Parameters.Add("@idDesignacion", SqlDbType.Int).Value = idDesignacion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int agregarDesignacion(string ano, string ciclo, string fechaIni, string fechaFin, string convocatoria, int horas, string modalidad,
+            int monto, int inopia, string motivoInopia, int tramitado, string observaciones, string idEstudiante, string presupuesto, string encargado, string unidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("agregarDesignacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@ano", SqlDbType.VarChar).Value = ano;
+                        cmd.Parameters.Add("@ciclo", SqlDbType.VarChar).Value = ciclo;
+                        cmd.Parameters.Add("@fechaIni", SqlDbType.Date).Value = fechaIni;
+                        cmd.Parameters.Add("@fechaFin", SqlDbType.Date).Value = fechaFin;
+                        cmd.Parameters.Add("@convocatoria", SqlDbType.VarChar).Value = convocatoria;
+                        cmd.Parameters.Add("@horas", SqlDbType.Int).Value = horas;
+                        cmd.Parameters.Add("@modalidad", SqlDbType.VarChar).Value = modalidad;
+                        cmd.Parameters.Add("@monto", SqlDbType.Int).Value = monto;
+                        cmd.Parameters.Add("@inopia", SqlDbType.Bit).Value = inopia;
+                        cmd.Parameters.Add("@motivoInopia", SqlDbType.VarChar).Value = motivoInopia;
+                        cmd.Parameters.Add("@tramitado", SqlDbType.Bit).Value = tramitado;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
+                        cmd.Parameters.Add("@idEstudiante", SqlDbType.VarChar).Value = idEstudiante;
+                        cmd.Parameters.Add("@presupuesto", SqlDbType.VarChar).Value = presupuesto;
+                        cmd.Parameters.Add("@encargado", SqlDbType.VarChar).Value = encargado;
+                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+
+                        //Valor de retorno
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        int id = Convert.ToInt32(cmd.Parameters["@id"].Value);
+
+                        return id;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return -1;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textApellido2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textApellido1 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textCarrera = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCelular = new System.Windows.Forms.TextBox();
+            this.textTelefono = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
+            this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.comboTipoId = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,8 +49,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.butDescargar = new System.Windows.Forms.Button();
             this.butEliminar = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.checkTramitado = new System.Windows.Forms.CheckBox();
+            this.textObservaciones = new System.Windows.Forms.TextBox();
             this.datefinal = new System.Windows.Forms.DateTimePicker();
             this.dateInicio = new System.Windows.Forms.DateTimePicker();
             this.butAdjuntar = new System.Windows.Forms.Button();
@@ -57,7 +62,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.labelMotivo = new System.Windows.Forms.Label();
             this.textInopia = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkInopia = new System.Windows.Forms.CheckBox();
             this.textConvocatoria = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.butAgregarPresupuesto = new System.Windows.Forms.Button();
@@ -86,12 +91,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textApellido2);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.textApellido1);
+            this.groupBox1.Controls.Add(this.textNombre);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.textCarrera);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textCelular);
+            this.groupBox1.Controls.Add(this.textTelefono);
+            this.groupBox1.Controls.Add(this.textCorreo);
+            this.groupBox1.Controls.Add(this.textIdentificacion);
             this.groupBox1.Controls.Add(this.comboTipoId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -105,63 +115,105 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del estudiante";
             // 
-            // textBox5
+            // textApellido2
             // 
-            this.textBox5.Location = new System.Drawing.Point(432, 168);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(419, 20);
-            this.textBox5.TabIndex = 5;
+            this.textApellido2.Location = new System.Drawing.Point(736, 80);
+            this.textApellido2.Name = "textApellido2";
+            this.textApellido2.Size = new System.Drawing.Size(115, 20);
+            this.textApellido2.TabIndex = 38;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(557, 83);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 13);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "Apellidos:";
+            // 
+            // textApellido1
+            // 
+            this.textApellido1.Location = new System.Drawing.Point(615, 80);
+            this.textApellido1.Name = "textApellido1";
+            this.textApellido1.Size = new System.Drawing.Size(115, 20);
+            this.textApellido1.TabIndex = 36;
+            // 
+            // textNombre
+            // 
+            this.textNombre.Location = new System.Drawing.Point(432, 80);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(115, 20);
+            this.textNombre.TabIndex = 34;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(307, 83);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Nombre:";
+            // 
+            // textCarrera
+            // 
+            this.textCarrera.Location = new System.Drawing.Point(432, 167);
+            this.textCarrera.Name = "textCarrera";
+            this.textCarrera.Size = new System.Drawing.Size(419, 20);
+            this.textCarrera.TabIndex = 5;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(616, 134);
+            this.label10.Location = new System.Drawing.Point(615, 141);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 32;
             this.label10.Text = "Celular:";
             // 
-            // textBox4
+            // textCelular
             // 
-            this.textBox4.Location = new System.Drawing.Point(664, 131);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(187, 20);
-            this.textBox4.TabIndex = 4;
+            this.textCelular.Location = new System.Drawing.Point(664, 138);
+            this.textCelular.Name = "textCelular";
+            this.textCelular.Size = new System.Drawing.Size(187, 20);
+            this.textCelular.TabIndex = 4;
             // 
-            // textBox3
+            // textTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(432, 131);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 20);
-            this.textBox3.TabIndex = 3;
+            this.textTelefono.Location = new System.Drawing.Point(432, 138);
+            this.textTelefono.Name = "textTelefono";
+            this.textTelefono.Size = new System.Drawing.Size(168, 20);
+            this.textTelefono.TabIndex = 3;
             // 
-            // textBox2
+            // textCorreo
             // 
-            this.textBox2.Location = new System.Drawing.Point(432, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(419, 20);
-            this.textBox2.TabIndex = 2;
+            this.textCorreo.Location = new System.Drawing.Point(432, 109);
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(419, 20);
+            this.textCorreo.TabIndex = 2;
             // 
-            // textBox1
+            // textIdentificacion
             // 
-            this.textBox1.Location = new System.Drawing.Point(432, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(419, 20);
-            this.textBox1.TabIndex = 1;
+            this.textIdentificacion.Location = new System.Drawing.Point(432, 51);
+            this.textIdentificacion.MaxLength = 30;
+            this.textIdentificacion.Name = "textIdentificacion";
+            this.textIdentificacion.Size = new System.Drawing.Size(419, 20);
+            this.textIdentificacion.TabIndex = 1;
+            this.textIdentificacion.TextChanged += new System.EventHandler(this.textIdentificacion_TextChanged);
             // 
             // comboTipoId
             // 
             this.comboTipoId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipoId.FormattingEnabled = true;
-            this.comboTipoId.Location = new System.Drawing.Point(432, 20);
+            this.comboTipoId.Location = new System.Drawing.Point(432, 21);
             this.comboTipoId.Name = "comboTipoId";
             this.comboTipoId.Size = new System.Drawing.Size(419, 21);
             this.comboTipoId.TabIndex = 0;
+            this.comboTipoId.TextChanged += new System.EventHandler(this.comboTipoId_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 23);
+            this.label1.Location = new System.Drawing.Point(307, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 2;
@@ -170,7 +222,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(307, 60);
+            this.label2.Location = new System.Drawing.Point(307, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 18;
@@ -179,7 +231,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 97);
+            this.label3.Location = new System.Drawing.Point(307, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 19;
@@ -188,7 +240,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 134);
+            this.label4.Location = new System.Drawing.Point(307, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 20;
@@ -197,7 +249,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 171);
+            this.label5.Location = new System.Drawing.Point(307, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 21;
@@ -207,8 +259,8 @@
             // 
             this.groupBox2.Controls.Add(this.butDescargar);
             this.groupBox2.Controls.Add(this.butEliminar);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.checkTramitado);
+            this.groupBox2.Controls.Add(this.textObservaciones);
             this.groupBox2.Controls.Add(this.datefinal);
             this.groupBox2.Controls.Add(this.dateInicio);
             this.groupBox2.Controls.Add(this.butAdjuntar);
@@ -220,7 +272,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.labelMotivo);
             this.groupBox2.Controls.Add(this.textInopia);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.checkInopia);
             this.groupBox2.Controls.Add(this.textConvocatoria);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.butAgregarPresupuesto);
@@ -247,39 +299,41 @@
             // 
             // butDescargar
             // 
-            this.butDescargar.Location = new System.Drawing.Point(640, 261);
+            this.butDescargar.Location = new System.Drawing.Point(745, 229);
             this.butDescargar.Name = "butDescargar";
-            this.butDescargar.Size = new System.Drawing.Size(75, 23);
+            this.butDescargar.Size = new System.Drawing.Size(106, 23);
             this.butDescargar.TabIndex = 72;
-            this.butDescargar.Text = "Descargar";
+            this.butDescargar.Text = "Descargar archivo";
             this.butDescargar.UseVisualStyleBackColor = true;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(559, 229);
+            this.butEliminar.Location = new System.Drawing.Point(553, 231);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(75, 23);
             this.butEliminar.TabIndex = 71;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
+            this.butEliminar.Click += new System.EventHandler(this.butEliminar_Click);
             // 
-            // checkBox2
+            // checkTramitado
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(310, 360);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 70;
-            this.checkBox2.Text = "Tramitado";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkTramitado.AutoSize = true;
+            this.checkTramitado.Location = new System.Drawing.Point(310, 360);
+            this.checkTramitado.Name = "checkTramitado";
+            this.checkTramitado.Size = new System.Drawing.Size(73, 17);
+            this.checkTramitado.TabIndex = 70;
+            this.checkTramitado.Text = "Tramitado";
+            this.checkTramitado.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // textObservaciones
             // 
-            this.textBox7.Location = new System.Drawing.Point(432, 321);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(419, 36);
-            this.textBox7.TabIndex = 15;
+            this.textObservaciones.Location = new System.Drawing.Point(432, 321);
+            this.textObservaciones.MaxLength = 500;
+            this.textObservaciones.Multiline = true;
+            this.textObservaciones.Name = "textObservaciones";
+            this.textObservaciones.Size = new System.Drawing.Size(419, 36);
+            this.textObservaciones.TabIndex = 15;
             // 
             // datefinal
             // 
@@ -296,14 +350,15 @@
             this.dateInicio.Name = "dateInicio";
             this.dateInicio.Size = new System.Drawing.Size(190, 20);
             this.dateInicio.TabIndex = 13;
+            this.dateInicio.ValueChanged += new System.EventHandler(this.dateInicio_ValueChanged);
             // 
             // butAdjuntar
             // 
-            this.butAdjuntar.Location = new System.Drawing.Point(640, 229);
+            this.butAdjuntar.Location = new System.Drawing.Point(634, 229);
             this.butAdjuntar.Name = "butAdjuntar";
-            this.butAdjuntar.Size = new System.Drawing.Size(75, 23);
+            this.butAdjuntar.Size = new System.Drawing.Size(105, 23);
             this.butAdjuntar.TabIndex = 12;
-            this.butAdjuntar.Text = "Adjuntar";
+            this.butAdjuntar.Text = "Adjuntar archivo";
             this.butAdjuntar.UseVisualStyleBackColor = true;
             this.butAdjuntar.Click += new System.EventHandler(this.butAdjuntar_Click);
             // 
@@ -312,8 +367,9 @@
             this.comboP9.FormattingEnabled = true;
             this.comboP9.Location = new System.Drawing.Point(432, 231);
             this.comboP9.Name = "comboP9";
-            this.comboP9.Size = new System.Drawing.Size(121, 21);
+            this.comboP9.Size = new System.Drawing.Size(115, 21);
             this.comboP9.TabIndex = 11;
+            this.comboP9.TextChanged += new System.EventHandler(this.comboP9_TextChanged);
             this.comboP9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboP9_KeyDown);
             // 
             // label19
@@ -373,25 +429,27 @@
             // textInopia
             // 
             this.textInopia.Location = new System.Drawing.Point(477, 188);
+            this.textInopia.MaxLength = 500;
             this.textInopia.Multiline = true;
             this.textInopia.Name = "textInopia";
             this.textInopia.Size = new System.Drawing.Size(374, 36);
             this.textInopia.TabIndex = 10;
             // 
-            // checkBox1
+            // checkInopia
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(310, 190);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(55, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Inopia";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkInopia.AutoSize = true;
+            this.checkInopia.Location = new System.Drawing.Point(310, 190);
+            this.checkInopia.Name = "checkInopia";
+            this.checkInopia.Size = new System.Drawing.Size(55, 17);
+            this.checkInopia.TabIndex = 9;
+            this.checkInopia.Text = "Inopia";
+            this.checkInopia.UseVisualStyleBackColor = true;
+            this.checkInopia.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textConvocatoria
             // 
             this.textConvocatoria.Location = new System.Drawing.Point(432, 161);
+            this.textConvocatoria.MaxLength = 10;
             this.textConvocatoria.Name = "textConvocatoria";
             this.textConvocatoria.Size = new System.Drawing.Size(419, 20);
             this.textConvocatoria.TabIndex = 8;
@@ -554,6 +612,7 @@
             this.butAceptar.TabIndex = 2;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -563,6 +622,7 @@
             this.butCancelar.TabIndex = 3;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // Designacion
             // 
@@ -601,12 +661,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textCarrera;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCelular;
+        private System.Windows.Forms.TextBox textTelefono;
+        private System.Windows.Forms.TextBox textCorreo;
+        private System.Windows.Forms.TextBox textIdentificacion;
         private System.Windows.Forms.ComboBox comboTipoId;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
@@ -629,19 +689,24 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelMotivo;
         private System.Windows.Forms.TextBox textInopia;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkInopia;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label labelArchivo;
         private System.Windows.Forms.ComboBox comboP9;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox checkTramitado;
+        private System.Windows.Forms.TextBox textObservaciones;
         private System.Windows.Forms.DateTimePicker datefinal;
         private System.Windows.Forms.DateTimePicker dateInicio;
         private System.Windows.Forms.Button butAdjuntar;
         private System.Windows.Forms.Button butDescargar;
         private System.Windows.Forms.Button butEliminar;
         private System.Windows.Forms.OpenFileDialog adjuntarDialog;
+        private System.Windows.Forms.TextBox textApellido2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textApellido1;
+        private System.Windows.Forms.TextBox textNombre;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -4,12 +4,12 @@ create table designacionAsistencia
 (
 	id				int			IDENTITY(1,1)		primary key,
 	ano				varchar(4),
-	ciclo			varchar(3),
+	ciclo			varchar(10),
 	fechaInicio		date,
 	fechafinal		date,
 	convocatoria	varchar(10),
 	horas			int,
-	modalidad		varchar(3),
+	modalidad		varchar(10),
 	monto			int,
 	inopia			bit,
 	motivoInopia	varchar(500),
@@ -58,8 +58,3 @@ create table p9
 	foreign key (idDesignacion) references designacionAsistencia(id)
 )
 drop table p9
-select * from unidad
-
-select nombre from unidad
-
-select codigo from presupuesto
