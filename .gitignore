@@ -337,6 +337,8 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+CELEQ/obj/Debug/
+
 CELEQ/bin/Debug/
 
 CELEQ/obj/Debug/

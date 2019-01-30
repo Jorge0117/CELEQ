@@ -18,8 +18,11 @@ drop table Usuarios
 
 create table Unidad
 (
-	nombre varchar(100)		NOT NULL	PRIMARY KEY
+	nombre varchar(100)		NOT NULL	PRIMARY KEY,
 )
+
+alter table Unidad add encargado NVARCHAR(50)
+alter table Unidad add FOREIGN KEY (encargado) REFERENCES Usuarios(nombreUsuario)
 
 go
 CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
@@ -69,7 +72,7 @@ AS
 	END
 go
 
-create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
+create procedure modificarUsuario(@usuario Nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
 	begin
 
 		declare @salt uniqueidentifier
@@ -80,7 +83,44 @@ create procedure modificarUsuario(@usuario Nvarchar(50), @pass nvarchar(50), @co
 		where nombreUsuario = @usuario
 	end
 go
-drop procedure modificarUsuario
+
+create procedure modificarContrasena(@usuario Nvarchar(50), @pass nvarchar(50)) as
+	begin
+
+		declare @salt uniqueidentifier
+		select @salt = salt from Usuarios where nombreUsuario = @usuario
+
+		update Usuarios
+		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36)))
+		where nombreUsuario = @usuario
+	end
+go
+
+create procedure modificarUnidad(@nombreViejo varchar(100), @nombre varchar(100), @encargado nvarchar(50)) as
+	begin
+		update Unidad
+		set Unidad.nombre = @nombre, Unidad.encargado = @encargado
+		where Unidad.nombre = @nombreViejo;
+	end
+go
+
+/*Método para agregar una nueva Unidad a la base de datos*/
+CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@estado bit OUTPUT) as
+	BEGIN
+	BEGIN TRY
+		INSERT INTO Unidad VALUES(@nombre, @encargado)
+		SET @estado=1 
+	END TRY
+	BEGIN CATCH
+		/*En cualquier otro caso se devuelve el mensaje de error*/
+		SET @estado=ERROR_MESSAGE()
+	END CATCH
+	END
+GO
+
+insert into presupuesto values('0000','prueba lololdoaskoifjiewufs')
+
+drop procedure agregarPresupuesto
 
 exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
 
@@ -92,3 +132,27 @@ exec dbo.agregarUsuario 'Regente', 'reg', 'regente@ucr.ac.cr', 'Regencia', 0
 
 insert into Unidad values ('UMI')
 go
+
+
+
+select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios
+
+
+SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Jorge' AND U.apellido1 ='Araya' AND U.apellido2 ='González'
+
+DELETE FROM Unidad WHERE encargado = 'Estiven'
+
+select nombre from Unidad
+
+SELECT * FROM Unidad
+SELECT * FROM presupuesto
+
+DELETE FROM Unidad WHERE nombre = 'fewai{sf-bjafdshv,afdshvjzfdshvfds'
+
+select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado 
+from unidad U 
+join Usuarios E ON E.nombreUsuario = U.encargado;
+
+SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Estiven' AND U.apellido1 ='Alfaro' AND U.apellido2 ='Gómez' AND categoria != 'Estudiante'
+
+select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado from unidad U left join Usuarios E ON E.nombreUsuario = U.encargado

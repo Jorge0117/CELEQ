@@ -58,34 +58,30 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            if(textUsuario.Text == "" || textPass.Text == "" || textConfirmar.Text == "" || textCorreo.Text == "" || cbPermisos.Text == "" 
+            if(textUsuario.Text == "" || textCorreo.Text == "" || cbPermisos.Text == "" 
                 || comboUnidad.Text == "" || textNombre.Text == "" || textApellido1.Text == "" || textApellido2.Text == "")
             {
                 MessageBox.Show("Porfavor llene los datos requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (textPass.Text != textConfirmar.Text)
-            {
-                MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 int error;
                 if (dgvRow == null)
                 {
-                    error = bd.agregarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
-                    if (error == 1)
+                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    mc.ShowDialog();
+                    bool cerrar = mc.aceptar;
+                    mc.Dispose();
+                    if (cerrar)
                     {
-                        MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        this.Close();
+                        this.Close(); 
                     }
-                    else
-                    {
-                        MessageBox.Show("Error al agregar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
                 }
                 else
                 {
-                    error = bd.modificarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    
+                    error = bd.modificarUsuario(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
                     if (error == 0)
                     {
                         MessageBox.Show("Usuario modificado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -95,6 +91,7 @@ namespace CELEQ
                     {
                         MessageBox.Show("Error al modificar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    
                 }
                 
             }
@@ -104,6 +101,11 @@ namespace CELEQ
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

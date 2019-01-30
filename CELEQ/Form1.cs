@@ -219,6 +219,19 @@ namespace CELEQ
             designacion.Dispose();
         }
 
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presupuesto p = new Presupuesto();
+            p.ShowDialog();
+            p.Dispose();
+        }
+
+        private void verDesignacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaDesignaciones l = new ListaDesignaciones();
+            l.ShowDialog();
+            l.Dispose();
+        }
     }
 
     public static class Globals

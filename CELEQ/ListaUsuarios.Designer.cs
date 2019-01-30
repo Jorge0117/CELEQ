@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.butModificar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
+            this.cambiarContra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,12 +100,23 @@
             this.butAgregar.UseVisualStyleBackColor = true;
             this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
+            // cambiarContra
+            // 
+            this.cambiarContra.Location = new System.Drawing.Point(955, 166);
+            this.cambiarContra.Name = "cambiarContra";
+            this.cambiarContra.Size = new System.Drawing.Size(197, 43);
+            this.cambiarContra.TabIndex = 13;
+            this.cambiarContra.Text = "Cambiar Contraseña";
+            this.cambiarContra.UseVisualStyleBackColor = true;
+            this.cambiarContra.Click += new System.EventHandler(this.cambiarContra_Click);
+            // 
             // ListaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.cambiarContra);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butModificar;
         private System.Windows.Forms.Button butAgregar;
+        private System.Windows.Forms.Button cambiarContra;
     }
 }

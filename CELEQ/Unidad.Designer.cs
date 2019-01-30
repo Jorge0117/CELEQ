@@ -31,6 +31,7 @@
             this.dgvUnidad = new System.Windows.Forms.DataGridView();
             this.labelSoliciudes = new System.Windows.Forms.Label();
             this.butAgregar = new System.Windows.Forms.Button();
+            this.butModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,12 +70,23 @@
             this.butAgregar.UseVisualStyleBackColor = true;
             this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
+            // butModificar
+            // 
+            this.butModificar.Location = new System.Drawing.Point(950, 137);
+            this.butModificar.Name = "butModificar";
+            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.TabIndex = 6;
+            this.butModificar.Text = "Modificar";
+            this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
+            // 
             // Unidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelSoliciudes);
             this.Controls.Add(this.dgvUnidad);
@@ -97,5 +109,6 @@
         public System.Windows.Forms.DataGridView dgvUnidad;
         private System.Windows.Forms.Label labelSoliciudes;
         private System.Windows.Forms.Button butAgregar;
+        private System.Windows.Forms.Button butModificar;
     }
 }
