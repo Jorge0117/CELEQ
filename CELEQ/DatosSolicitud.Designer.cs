@@ -37,18 +37,18 @@
             this.textNombreSol = new System.Windows.Forms.TextBox();
             this.textNombreEnc = new System.Windows.Forms.TextBox();
             this.textCorreo = new System.Windows.Forms.TextBox();
-            this.textUnidad = new System.Windows.Forms.TextBox();
             this.textObservaciones = new System.Windows.Forms.TextBox();
             this.butCancelar = new System.Windows.Forms.Button();
             this.butAceptar = new System.Windows.Forms.Button();
             this.dtpFechaSol = new System.Windows.Forms.DateTimePicker();
             this.saveFilePdf = new System.Windows.Forms.SaveFileDialog();
+            this.comboUnidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 55);
+            this.label1.Location = new System.Drawing.Point(89, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 82);
+            this.label2.Location = new System.Drawing.Point(89, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 13);
             this.label2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 154);
+            this.label4.Location = new System.Drawing.Point(89, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 106);
+            this.label5.Location = new System.Drawing.Point(89, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 13);
             this.label5.TabIndex = 4;
@@ -84,7 +84,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 130);
+            this.label6.Location = new System.Drawing.Point(89, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 5;
@@ -93,7 +93,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 190);
+            this.label7.Location = new System.Drawing.Point(89, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 6;
@@ -101,47 +101,40 @@
             // 
             // textNombreSol
             // 
-            this.textNombreSol.Location = new System.Drawing.Point(215, 52);
+            this.textNombreSol.Location = new System.Drawing.Point(281, 51);
             this.textNombreSol.Name = "textNombreSol";
             this.textNombreSol.Size = new System.Drawing.Size(215, 20);
-            this.textNombreSol.TabIndex = 7;
+            this.textNombreSol.TabIndex = 0;
             // 
             // textNombreEnc
             // 
-            this.textNombreEnc.Location = new System.Drawing.Point(215, 79);
+            this.textNombreEnc.Location = new System.Drawing.Point(281, 77);
             this.textNombreEnc.Name = "textNombreEnc";
             this.textNombreEnc.Size = new System.Drawing.Size(215, 20);
-            this.textNombreEnc.TabIndex = 8;
+            this.textNombreEnc.TabIndex = 1;
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(215, 103);
+            this.textCorreo.Location = new System.Drawing.Point(281, 103);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(215, 20);
-            this.textCorreo.TabIndex = 9;
-            // 
-            // textUnidad
-            // 
-            this.textUnidad.Location = new System.Drawing.Point(215, 127);
-            this.textUnidad.Name = "textUnidad";
-            this.textUnidad.Size = new System.Drawing.Size(215, 20);
-            this.textUnidad.TabIndex = 10;
+            this.textCorreo.TabIndex = 2;
             // 
             // textObservaciones
             // 
-            this.textObservaciones.Location = new System.Drawing.Point(215, 187);
+            this.textObservaciones.Location = new System.Drawing.Point(281, 182);
             this.textObservaciones.MaxLength = 255;
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(215, 78);
-            this.textObservaciones.TabIndex = 12;
+            this.textObservaciones.TabIndex = 5;
             // 
             // butCancelar
             // 
             this.butCancelar.Location = new System.Drawing.Point(497, 276);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(75, 23);
-            this.butCancelar.TabIndex = 13;
+            this.butCancelar.TabIndex = 7;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
@@ -151,7 +144,7 @@
             this.butAceptar.Location = new System.Drawing.Point(416, 276);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(75, 23);
-            this.butAceptar.TabIndex = 14;
+            this.butAceptar.TabIndex = 6;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
             this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
@@ -160,15 +153,24 @@
             // 
             this.dtpFechaSol.Enabled = false;
             this.dtpFechaSol.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSol.Location = new System.Drawing.Point(215, 154);
+            this.dtpFechaSol.Location = new System.Drawing.Point(281, 156);
             this.dtpFechaSol.Name = "dtpFechaSol";
             this.dtpFechaSol.Size = new System.Drawing.Size(215, 20);
-            this.dtpFechaSol.TabIndex = 15;
+            this.dtpFechaSol.TabIndex = 4;
             this.dtpFechaSol.Value = new System.DateTime(2018, 9, 12, 0, 0, 0, 0);
             // 
             // saveFilePdf
             // 
             this.saveFilePdf.DefaultExt = "pdf";
+            // 
+            // comboUnidad
+            // 
+            this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboUnidad.FormattingEnabled = true;
+            this.comboUnidad.Location = new System.Drawing.Point(281, 129);
+            this.comboUnidad.Name = "comboUnidad";
+            this.comboUnidad.Size = new System.Drawing.Size(215, 21);
+            this.comboUnidad.TabIndex = 3;
             // 
             // DatosSolicitud
             // 
@@ -176,11 +178,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(584, 311);
+            this.Controls.Add(this.comboUnidad);
             this.Controls.Add(this.dtpFechaSol);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.textObservaciones);
-            this.Controls.Add(this.textUnidad);
             this.Controls.Add(this.textCorreo);
             this.Controls.Add(this.textNombreEnc);
             this.Controls.Add(this.textNombreSol);
@@ -214,11 +216,11 @@
         private System.Windows.Forms.TextBox textNombreSol;
         private System.Windows.Forms.TextBox textNombreEnc;
         private System.Windows.Forms.TextBox textCorreo;
-        private System.Windows.Forms.TextBox textUnidad;
         private System.Windows.Forms.TextBox textObservaciones;
         private System.Windows.Forms.Button butCancelar;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.DateTimePicker dtpFechaSol;
         private System.Windows.Forms.SaveFileDialog saveFilePdf;
+        private System.Windows.Forms.ComboBox comboUnidad;
     }
 }

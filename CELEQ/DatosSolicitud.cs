@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CELEQ
 {
@@ -27,6 +28,11 @@ namespace CELEQ
         {
             dtpFechaSol.Value = DateTime.Now;
             textCorreo.Text = Globals.correo;
+            SqlDataReader unidades = bd.ejecutarConsulta("select nombre from Unidad");
+            while (unidades.Read())
+            {
+                comboUnidad.Items.Add(unidades[0].ToString());
+            }
         }
 
         private string generarId(string idAnterior)
@@ -58,7 +64,7 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            if(textNombreSol.Text == "" || textCorreo.Text == "" || textUnidad.Text == "")
+            if(textNombreSol.Text == "" || textCorreo.Text == "" || comboUnidad.Text == "")
             {
                 MessageBox.Show("Falta algún dato obligatorio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -89,7 +95,7 @@ namespace CELEQ
                 {
                     //Como están disponobles se genera el id y se hace la solicitud
                     string id = generarId(bd.obtenerUltimoIdSolicitud());
-                    if (bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, textUnidad.Text, textObservaciones.Text, Globals.usuario) != 1)
+                    if (bd.agregarSolicitud(id, dtpFechaSol.Value.ToShortDateString(), textNombreSol.Text, textNombreEnc.Text, textCorreo.Text, comboUnidad.Text, textObservaciones.Text, Globals.usuario) != 1)
                     {
                         MessageBox.Show("Error al crear la solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         error = true;
@@ -126,7 +132,7 @@ namespace CELEQ
                         }
                         
                         pdf.imprimirSolicitud(saveFilePdf.FileName, generarMatriz(0), generarMatriz(1), id, textNombreSol.Text, 
-                            textUnidad.Text, dtpFechaSol.Value.ToShortDateString(), textCorreo.Text, textObservaciones.Text);
+                            comboUnidad.Text, dtpFechaSol.Value.ToShortDateString(), textCorreo.Text, textObservaciones.Text);
 
                         formulario.dgvReactivos.DataSource = null;
                         formulario.dgvCristaleria.DataSource = null;

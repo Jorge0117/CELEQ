@@ -20,6 +20,7 @@ namespace CELEQ
         string nombre;
         string apellido1;
         string apellido2;
+        public bool aceptar;
         public ModificarContra(string user = null, string mail = null, 
             string perm = null, string unid = null, string name = null, string lastn1 = null, 
             string lastn2 = null)
@@ -43,6 +44,10 @@ namespace CELEQ
             {
                 MessageBox.Show("Las contraseñas no coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (nuevaContra.Text == "" && confirmarContra.Text == "")
+            {
+                MessageBox.Show("Porfavor llene los datos requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 //Se va a agregar
@@ -52,6 +57,7 @@ namespace CELEQ
                     if (error == 1)
                     {
                         MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        aceptar = true;
                         this.Close();
                     }
                     else
@@ -65,6 +71,7 @@ namespace CELEQ
                     if (error == 1)
                     {
                         MessageBox.Show("Contraseña modificada de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        aceptar = true;
                         this.Close();
                     }
                     else
@@ -78,7 +85,13 @@ namespace CELEQ
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
+            aceptar = false;
             this.Close();
+        }
+
+        private void nuevaContra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -375,6 +375,43 @@ namespace CELEQ
             return error;
         }
 
+        public int modificarPresupuesto(string codigoViejo, string codigo, string nombre)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarPresupuesto", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigoViejo", SqlDbType.VarChar).Value = codigoViejo;
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+            return error;
+        }
+
         /*---------------------------------------------------
          * Métodos almacenados
          * -------------------------------------------------*/
@@ -963,6 +1000,7 @@ namespace CELEQ
                 }
             }
         }
+
         public int agregarUnidad(string nombre, string encargado)
         {
             int error = 0;
@@ -1004,5 +1042,84 @@ namespace CELEQ
                 }
             }
         }
+
+        public int agregarPresupuesto(string codigo, string nombre)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarPresupuesto", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
+                        cmd.Parameters.Add("@estado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return Convert.ToInt32(cmd.Parameters["@estado"].Value);
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int eliminarPresupuesto(string codigo)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("eliminarPresupuesto", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        return 1;
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo eliminar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+
     }
 }

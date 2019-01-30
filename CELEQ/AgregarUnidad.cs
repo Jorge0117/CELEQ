@@ -36,6 +36,8 @@ namespace CELEQ
                 textUnidad.Text = dgvRow.Cells[0].Value.ToString(); 
                 comboEncargado.SelectedIndex = comboEncargado.FindStringExact(dgvRow.Cells[1].Value.ToString());
             }
+
+
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace CELEQ
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al modificar unidad\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 

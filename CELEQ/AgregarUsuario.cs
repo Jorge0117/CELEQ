@@ -70,20 +70,13 @@ namespace CELEQ
                 {
                     ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
                     mc.ShowDialog();
+                    bool cerrar = mc.aceptar;
                     mc.Dispose();
-                    mc.Close();
-                    /*
-                    error = bd.agregarUsuario(textUsuario.Text, textPass.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
-                    if (error == 1)
+                    if (cerrar)
                     {
-                        MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        this.Close();
+                        this.Close(); 
                     }
-                    else
-                    {
-                        MessageBox.Show("Error al agregar usuario\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    */
+                    
                 }
                 else
                 {

@@ -63,6 +63,7 @@
             this.nuevaContra.PasswordChar = '*';
             this.nuevaContra.Size = new System.Drawing.Size(179, 20);
             this.nuevaContra.TabIndex = 2;
+            this.nuevaContra.TextChanged += new System.EventHandler(this.nuevaContra_TextChanged);
             // 
             // confirmarContra
             // 
@@ -94,6 +95,7 @@
             // 
             // ModificarContra
             // 
+            this.AcceptButton = this.butAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;

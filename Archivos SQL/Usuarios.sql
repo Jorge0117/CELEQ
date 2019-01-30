@@ -104,8 +104,6 @@ create procedure modificarUnidad(@nombreViejo varchar(100), @nombre varchar(100)
 	end
 go
 
-
-
 /*Método para agregar una nueva Unidad a la base de datos*/
 CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@estado bit OUTPUT) as
 	BEGIN
@@ -120,7 +118,9 @@ CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@es
 	END
 GO
 
-drop procedure modificarUsuario
+insert into presupuesto values('0000','prueba lololdoaskoifjiewufs')
+
+drop procedure agregarPresupuesto
 
 exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
 
@@ -142,8 +142,12 @@ SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Jorge' AND U.apellido1 ='
 
 DELETE FROM Unidad WHERE encargado = 'Estiven'
 
+select nombre from Unidad
+
 SELECT * FROM Unidad
-SELECT * FROM Usuarios
+SELECT * FROM presupuesto
+
+DELETE FROM Unidad WHERE nombre = 'fewai{sf-bjafdshv,afdshvjzfdshvfds'
 
 select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado 
 from unidad U 
