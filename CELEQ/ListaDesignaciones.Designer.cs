@@ -58,13 +58,13 @@
             this.dgvDesignaciones.Name = "dgvDesignaciones";
             this.dgvDesignaciones.ReadOnly = true;
             this.dgvDesignaciones.RowHeadersVisible = false;
-            this.dgvDesignaciones.Size = new System.Drawing.Size(900, 553);
+            this.dgvDesignaciones.Size = new System.Drawing.Size(1078, 553);
             this.dgvDesignaciones.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(769, 45);
+            this.label1.Location = new System.Drawing.Point(702, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 19;
@@ -72,7 +72,7 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(818, 42);
+            this.textBuscar.Location = new System.Drawing.Point(751, 39);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(343, 20);
             this.textBuscar.TabIndex = 18;
@@ -80,11 +80,11 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1167, 68);
+            this.butAgregar.Location = new System.Drawing.Point(1116, 39);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(197, 43);
             this.butAgregar.TabIndex = 20;
-            this.butAgregar.Text = "Agregar";
+            this.butAgregar.Text = "Detalles";
             this.butAgregar.UseVisualStyleBackColor = true;
             // 
             // ListaDesignaciones
@@ -92,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1370, 661);
+            this.ClientSize = new System.Drawing.Size(1324, 661);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
