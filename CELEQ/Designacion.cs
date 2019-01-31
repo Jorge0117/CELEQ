@@ -268,6 +268,38 @@ namespace CELEQ
 
             }
         }
+
+        private void butDescargar_Click(object sender, EventArgs e)
+        {
+
+            if(filePath != null)
+            {
+
+                //Se obtiene el id del documento
+                SqlDataReader documento = bd.ejecutarConsulta("Select id from p9 where numero = '" + comboP9.Text + "'");
+                documento.Read();
+
+                string fileType = Path.GetExtension(filePath);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                saveDialog.FileName = fileName;
+                saveDialog.Filter = "Tipo de archivo (*" + fileType + ")|*" + fileType;
+                saveDialog.DefaultExt = fileType;
+                saveDialog.AddExtension = true;
+                if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                {
+                    FileStream fs = new FileStream(saveDialog.FileName, FileMode.Create);
+                    byte[] byteArray = bd.getDocument(documento[0].ToString());
+                    using (MemoryStream ms = new MemoryStream(byteArray))
+                    {
+                        ms.CopyTo(fs);
+                    }
+                    fs.Close();
+                    MessageBox.Show("Se ha descargado el arcivo correctamente", "Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+            }
+
+        }
     }
 
 }

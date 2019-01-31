@@ -83,6 +83,7 @@
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
             this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -299,12 +300,13 @@
             // 
             // butDescargar
             // 
-            this.butDescargar.Location = new System.Drawing.Point(745, 229);
+            this.butDescargar.Location = new System.Drawing.Point(742, 231);
             this.butDescargar.Name = "butDescargar";
             this.butDescargar.Size = new System.Drawing.Size(106, 23);
             this.butDescargar.TabIndex = 72;
             this.butDescargar.Text = "Descargar archivo";
             this.butDescargar.UseVisualStyleBackColor = true;
+            this.butDescargar.Click += new System.EventHandler(this.butDescargar_Click);
             // 
             // butEliminar
             // 
@@ -354,7 +356,7 @@
             // 
             // butAdjuntar
             // 
-            this.butAdjuntar.Location = new System.Drawing.Point(634, 229);
+            this.butAdjuntar.Location = new System.Drawing.Point(631, 231);
             this.butAdjuntar.Name = "butAdjuntar";
             this.butAdjuntar.Size = new System.Drawing.Size(105, 23);
             this.butAdjuntar.TabIndex = 12;
@@ -708,5 +710,6 @@
         private System.Windows.Forms.TextBox textApellido1;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.SaveFileDialog saveDialog;
     }
 }

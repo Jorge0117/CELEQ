@@ -1306,6 +1306,21 @@ namespace CELEQ
             }
         }
 
+        public byte[] getP9Document(string documentId)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlCommand cm = cn.CreateCommand())
+            {
+                cm.CommandText = @"
+            SELECT documento
+            FROM   p9
+            WHERE  id = @Id";
+                cm.Parameters.AddWithValue("@Id", documentId);
+                cn.Open();
+                return cm.ExecuteScalar() as byte[];
+            }
+        }
+
 
     }
 }
