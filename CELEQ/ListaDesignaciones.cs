@@ -44,8 +44,8 @@ namespace CELEQ
                 try
                 {
                     tabla = bd.ejecutarConsultaTabla("select D.idEstudiante as Identificación, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año," +
-                    " D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto, E.carrera as Carrera, D.encargado as Encargado, D.unidad as Unidad," +
-                    " D.presupuesto as Presupuesto, D.convocatoria as Convocatoria from designacionAsistencia D join estudiante E on D.idEstudiante = E.id");
+                    " D.ciclo as Ciclo, D.modalidad as Modalidad, E.carrera as Carrera, D.encargado as Encargado" +
+                    " from designacionAsistencia D join estudiante E on D.idEstudiante = E.id");
                 }
                 catch (SqlException ex)
                 {
@@ -57,11 +57,11 @@ namespace CELEQ
                 try
                 {
                     tabla = bd.ejecutarConsultaTabla("select D.idEstudiante as Cédula, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año," +
-                    " D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto, E.carrera as Carrera, D.encargado as Encargado, D.unidad as Unidad," +
-                    " D.presupuesto as Presupuesto, D.convocatoria as Convocatoria from designacionAsistencia D join estudiante E on D.idEstudiante = E.id and D.ano like '%"
+                    " D.ciclo as Ciclo, D.modalidad as Modalidad, E.carrera as Carrera, D.encargado as Encargado" +
+                    " from designacionAsistencia D join estudiante E on D.idEstudiante = E.id and D.ano like '%"
                     + filtro + "%' or D.ciclo like '%" + filtro + "%' or D.idEstudiante like '%" + filtro + "%' or CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) like '%" + filtro +
-                    "%' or D.horas like '%" + filtro + "%' or D.modalidad like '%" + filtro + "%' or D.monto like '%" + filtro + "%' or E.carrera like '%" + filtro + "%' or D.encargado like '%" +
-                    filtro + "%' or D.unidad like '%" + filtro + "%'");
+                    "%' or D.modalidad like '%" + filtro + "%' or E.carrera like '%" + filtro + "%' or D.encargado like '%" +
+                    filtro + "%'");
                 }
                 catch (SqlException ex)
                 {

@@ -244,3 +244,10 @@ namespace CELEQ
     }
 
 }
+
+        private void verEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaEstudiantes l = new ListaEstudiantes();
+            l.ShowDialog();
+            l.Dispose();
+        }

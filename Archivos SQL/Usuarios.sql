@@ -144,8 +144,20 @@ DELETE FROM Unidad WHERE encargado = 'Estiven'
 
 select nombre from Unidad
 
-SELECT * FROM Unidad
-SELECT * FROM presupuesto
+SELECT * FROM designacionAsistencia
+SELECT * FROM estudiante
+
+select E.id as Identificación, E.tipoId as 'Tipo Identificación', CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, E.carrera as Carrera from estudiante E
+
+insert into designacionAsistencia(idEstudiante) values(116980153)
+
+select D.idEstudiante as Cédula, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año,
+D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto, E.carrera as Carrera, D.encargado as Encargado, D.unidad as Unidad,
+D.presupuesto as Presupuesto, D.convocatoria as Convocatoria from designacionAsistencia D join estudiante E on D.idEstudiante = E.id
+
+select D.idEstudiante as Cédula, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año,
+D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto from designacionAsistencia D join estudiante E on D.idEstudiante = E.id and D.ano like '%2015"%' or D.ciclo like '%2%'
+
 
 DELETE FROM Unidad WHERE nombre = 'fewai{sf-bjafdshv,afdshvjzfdshvfds'
 

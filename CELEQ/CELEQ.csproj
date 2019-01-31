@@ -131,6 +131,12 @@
     <Compile Include="AgregarUnidad.Designer.cs">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="InformeDesignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeDesignaciones.Designer.cs">
+      <DependentUpon>InformeDesignaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaDesignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,7 @@
     <EmbeddedResource Include="AgregarUnidad.resx">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformeDesignaciones.rdlc" />
     <EmbeddedResource Include="ListaDesignaciones.resx">
       <DependentUpon>ListaDesignaciones.cs</DependentUpon>
     </EmbeddedResource>
