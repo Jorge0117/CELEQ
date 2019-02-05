@@ -47,8 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textResponsable = new System.Windows.Forms.TextBox();
             this.butDescargar = new System.Windows.Forms.Button();
-            this.butEliminar = new System.Windows.Forms.Button();
+            this.butAgregarP9 = new System.Windows.Forms.Button();
             this.checkTramitado = new System.Windows.Forms.CheckBox();
             this.textObservaciones = new System.Windows.Forms.TextBox();
             this.datefinal = new System.Windows.Forms.DateTimePicker();
@@ -78,12 +79,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboUnidad = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboResponsable = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
             this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.checkAdHonorem = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -258,8 +259,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkAdHonorem);
+            this.groupBox2.Controls.Add(this.textResponsable);
             this.groupBox2.Controls.Add(this.butDescargar);
-            this.groupBox2.Controls.Add(this.butEliminar);
+            this.groupBox2.Controls.Add(this.butAgregarP9);
             this.groupBox2.Controls.Add(this.checkTramitado);
             this.groupBox2.Controls.Add(this.textObservaciones);
             this.groupBox2.Controls.Add(this.datefinal);
@@ -289,7 +292,6 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.comboUnidad);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboResponsable);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(13, 227);
             this.groupBox2.Name = "groupBox2";
@@ -297,6 +299,14 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la designacion";
+            // 
+            // textResponsable
+            // 
+            this.textResponsable.Location = new System.Drawing.Point(432, 22);
+            this.textResponsable.MaxLength = 255;
+            this.textResponsable.Name = "textResponsable";
+            this.textResponsable.Size = new System.Drawing.Size(419, 20);
+            this.textResponsable.TabIndex = 73;
             // 
             // butDescargar
             // 
@@ -308,15 +318,15 @@
             this.butDescargar.UseVisualStyleBackColor = true;
             this.butDescargar.Click += new System.EventHandler(this.butDescargar_Click);
             // 
-            // butEliminar
+            // butAgregarP9
             // 
-            this.butEliminar.Location = new System.Drawing.Point(553, 231);
-            this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(75, 23);
-            this.butEliminar.TabIndex = 71;
-            this.butEliminar.Text = "Eliminar";
-            this.butEliminar.UseVisualStyleBackColor = true;
-            this.butEliminar.Click += new System.EventHandler(this.butEliminar_Click);
+            this.butAgregarP9.Location = new System.Drawing.Point(553, 231);
+            this.butAgregarP9.Name = "butAgregarP9";
+            this.butAgregarP9.Size = new System.Drawing.Size(75, 23);
+            this.butAgregarP9.TabIndex = 71;
+            this.butAgregarP9.Text = "Agregar";
+            this.butAgregarP9.UseVisualStyleBackColor = true;
+            this.butAgregarP9.Click += new System.EventHandler(this.butEliminar_Click);
             // 
             // checkTramitado
             // 
@@ -371,6 +381,7 @@
             this.comboP9.Name = "comboP9";
             this.comboP9.Size = new System.Drawing.Size(115, 21);
             this.comboP9.TabIndex = 11;
+            this.comboP9.SelectedIndexChanged += new System.EventHandler(this.comboP9_SelectedIndexChanged);
             this.comboP9.TextChanged += new System.EventHandler(this.comboP9_TextChanged);
             this.comboP9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboP9_KeyDown);
             // 
@@ -415,9 +426,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(307, 234);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(23, 13);
+            this.label16.Size = new System.Drawing.Size(50, 13);
             this.label16.TabIndex = 54;
-            this.label16.Text = "P9:";
+            this.label16.Text = "P9/SHA:";
             // 
             // labelMotivo
             // 
@@ -473,6 +484,7 @@
             this.butAgregarPresupuesto.TabIndex = 7;
             this.butAgregarPresupuesto.Text = "Agregar";
             this.butAgregarPresupuesto.UseVisualStyleBackColor = true;
+            this.butAgregarPresupuesto.Click += new System.EventHandler(this.butAgregarPresupuesto_Click);
             // 
             // comboPresupuesto
             // 
@@ -496,7 +508,7 @@
             // 
             this.numAnno.Location = new System.Drawing.Point(693, 79);
             this.numAnno.Maximum = new decimal(new int[] {
-            20,
+            9999,
             0,
             0,
             0});
@@ -508,7 +520,7 @@
             // 
             this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboModalidad.FormattingEnabled = true;
-            this.comboModalidad.Location = new System.Drawing.Point(693, 105);
+            this.comboModalidad.Location = new System.Drawing.Point(607, 105);
             this.comboModalidad.Name = "comboModalidad";
             this.comboModalidad.Size = new System.Drawing.Size(158, 21);
             this.comboModalidad.TabIndex = 5;
@@ -516,7 +528,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(631, 108);
+            this.label12.Location = new System.Drawing.Point(541, 108);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 43;
@@ -531,7 +543,7 @@
             0,
             0});
             this.numHoras.Name = "numHoras";
-            this.numHoras.Size = new System.Drawing.Size(190, 20);
+            this.numHoras.Size = new System.Drawing.Size(103, 20);
             this.numHoras.TabIndex = 4;
             // 
             // label11
@@ -588,15 +600,6 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Unidad:";
             // 
-            // comboResponsable
-            // 
-            this.comboResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboResponsable.FormattingEnabled = true;
-            this.comboResponsable.Location = new System.Drawing.Point(432, 22);
-            this.comboResponsable.Name = "comboResponsable";
-            this.comboResponsable.Size = new System.Drawing.Size(419, 21);
-            this.comboResponsable.TabIndex = 0;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -625,6 +628,16 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
+            // 
+            // checkAdHonorem
+            // 
+            this.checkAdHonorem.AutoSize = true;
+            this.checkAdHonorem.Location = new System.Drawing.Point(771, 107);
+            this.checkAdHonorem.Name = "checkAdHonorem";
+            this.checkAdHonorem.Size = new System.Drawing.Size(85, 17);
+            this.checkAdHonorem.TabIndex = 74;
+            this.checkAdHonorem.Text = "Ad-Honorem";
+            this.checkAdHonorem.UseVisualStyleBackColor = true;
             // 
             // Designacion
             // 
@@ -672,7 +685,6 @@
         private System.Windows.Forms.ComboBox comboTipoId;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
-        private System.Windows.Forms.ComboBox comboResponsable;
         private System.Windows.Forms.TextBox textConvocatoria;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button butAgregarPresupuesto;
@@ -703,7 +715,7 @@
         private System.Windows.Forms.DateTimePicker dateInicio;
         private System.Windows.Forms.Button butAdjuntar;
         private System.Windows.Forms.Button butDescargar;
-        private System.Windows.Forms.Button butEliminar;
+        private System.Windows.Forms.Button butAgregarP9;
         private System.Windows.Forms.OpenFileDialog adjuntarDialog;
         private System.Windows.Forms.TextBox textApellido2;
         private System.Windows.Forms.Label label21;
@@ -711,5 +723,7 @@
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.SaveFileDialog saveDialog;
+        private System.Windows.Forms.TextBox textResponsable;
+        private System.Windows.Forms.CheckBox checkAdHonorem;
     }
 }

@@ -80,12 +80,13 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1116, 39);
+            this.butAgregar.Location = new System.Drawing.Point(1100, 68);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(197, 43);
             this.butAgregar.TabIndex = 20;
             this.butAgregar.Text = "Detalles";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // ListaDesignaciones
             // 

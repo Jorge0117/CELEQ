@@ -1136,7 +1136,7 @@ namespace CELEQ
         }
 
         public int agregarDesignacion(string ano, string ciclo, string fechaIni, string fechaFin, string convocatoria, int horas, string modalidad,
-            int monto, int inopia, string motivoInopia, int tramitado, string observaciones, string idEstudiante, string presupuesto, string encargado, string unidad)
+            int monto, int inopia, string motivoInopia, int tramitado, string observaciones, string idEstudiante, string presupuesto, string encargado, string unidad, int adHonorem)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -1163,6 +1163,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@presupuesto", SqlDbType.VarChar).Value = presupuesto;
                         cmd.Parameters.Add("@encargado", SqlDbType.VarChar).Value = encargado;
                         cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@adHonorem", SqlDbType.VarChar).Value = adHonorem;
 
                         //Valor de retorno
                         cmd.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -1321,6 +1322,49 @@ namespace CELEQ
             }
         }
 
+        public int modificarDesignacion(int id, string responsable, string unidad, int horas, string fechaFinal, string observaciones, int tramitado)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("editarDesignacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                        cmd.Parameters.Add("@responsable", SqlDbType.VarChar).Value = responsable;
+                        cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
+                        cmd.Parameters.Add("@horas", SqlDbType.Int).Value = horas;
+                        cmd.Parameters.Add("@fechaFinal", SqlDbType.Date).Value = fechaFinal;
+                        cmd.Parameters.Add("@Observaciones", SqlDbType.VarChar).Value = observaciones;
+                        cmd.Parameters.Add("@tramitado", SqlDbType.Bit).Value = tramitado;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
 
     }
 }
