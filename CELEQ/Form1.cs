@@ -239,6 +239,13 @@ namespace CELEQ
             l.ShowDialog();
             l.Dispose();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReporteDesignaciones ifo = new ReporteDesignaciones();
+            ifo.ShowDialog();
+            ifo.Dispose();
+        }
     }
 
     public static class Globals
