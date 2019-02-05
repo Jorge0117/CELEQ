@@ -1084,7 +1084,7 @@ namespace CELEQ
             }
         }
 
-        public int agregarP9(string nombreArch, FileStream arch, int numero, int idDesignacion)
+        public int agregarP9(string nombreArch, FileStream arch, string numero, int idDesignacion)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -1115,7 +1115,7 @@ namespace CELEQ
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         //Se preparan los parámetros que recibe el procedimiento almacenado
-                        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = numero;
+                        cmd.Parameters.Add("@numero", SqlDbType.VarChar).Value = numero;
                         cmd.Parameters.Add("@idDesignacion", SqlDbType.Int).Value = idDesignacion;
 
                         /*Se abre la conexión*/
