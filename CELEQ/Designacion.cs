@@ -257,7 +257,7 @@ namespace CELEQ
                         fs = File.OpenRead(filePath);
                     }
 
-                    bd.agregarP9(Path.GetFileName(filePath), fs, Convert.ToInt32(comboP9.Text), Convert.ToInt32(idDesignacion));
+                    bd.agregarP9(Path.GetFileName(filePath), fs, comboP9.Text, Convert.ToInt32(idDesignacion));
                 }
 
                 agregandoP9 = false;
@@ -286,12 +286,12 @@ namespace CELEQ
                 if (comboP9.Text != "")
                 {
                     butAdjuntar.Visible = true;
-                    butAgregarP9.Visible = true;
+                    //butAgregarP9.Visible = true;
                 }
                 else
                 {
                     butAdjuntar.Visible = false;
-                    butAgregarP9.Visible = false;
+                    //butAgregarP9.Visible = false;
                 }
 
                 filePath = null;
@@ -367,7 +367,7 @@ namespace CELEQ
                             fs = File.OpenRead(filePath);
                         }
 
-                        bd.agregarP9(Path.GetFileName(filePath), fs, Convert.ToInt32(comboP9.Text), id);
+                        bd.agregarP9(Path.GetFileName(filePath), fs, comboP9.Text, id);
 
                     }
 
