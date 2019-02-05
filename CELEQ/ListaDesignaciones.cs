@@ -44,7 +44,7 @@ namespace CELEQ
                 try
                 {
                     tabla = bd.ejecutarConsultaTabla("select D.idEstudiante as Identificación, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año," +
-                    " D.ciclo as Ciclo, D.modalidad as Modalidad, E.carrera as Carrera, D.encargado as Encargado" +
+                    " D.ciclo as Ciclo, D.modalidad as Modalidad, E.carrera as Carrera, D.encargado as Encargado, D.id" +
                     " from designacionAsistencia D join estudiante E on D.idEstudiante = E.id");
                 }
                 catch (SqlException ex)
@@ -73,9 +73,10 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvDesignaciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvDesignaciones.DataSource = bs;
-            for (int i = 0; i < dgvDesignaciones.ColumnCount; ++i)
+            dgvDesignaciones.Columns["id"].Visible = false;
+            for (int i = 0; i < dgvDesignaciones.ColumnCount - 1; ++i)
             {
-                dgvDesignaciones.Columns[i].Width = dgvDesignaciones.Width / dgvDesignaciones.ColumnCount;
+                dgvDesignaciones.Columns[i].Width = dgvDesignaciones.Width / (dgvDesignaciones.ColumnCount - 1);
             }
         }
 
@@ -84,5 +85,11 @@ namespace CELEQ
             llenarTabla(textBuscar.Text);
         }
 
+        private void butAgregar_Click(object sender, EventArgs e)
+        {
+            Designacion designacion = new Designacion(Convert.ToInt32(dgvDesignaciones.SelectedRows[0].Cells[dgvDesignaciones.ColumnCount-1].Value));
+            designacion.ShowDialog();
+            designacion.Dispose();
+        }
     }
 }

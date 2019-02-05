@@ -4,12 +4,12 @@ create table designacionAsistencia
 (
 	id				int			IDENTITY(1,1)		primary key,
 	ano				varchar(4),
-	ciclo			varchar(3),
+	ciclo			varchar(10),
 	fechaInicio		date,
 	fechafinal		date,
 	convocatoria	varchar(10),
 	horas			int,
-	modalidad		varchar(3),
+	modalidad		varchar(10),
 	monto			int,
 	inopia			bit,
 	motivoInopia	varchar(500),
@@ -17,9 +17,13 @@ create table designacionAsistencia
 	observaciones	varchar(500),
 	idEstudiante	varchar(30),
 	presupuesto		varchar(12),
+	encargado		varchar(255),
+	unidad			varchar(100),
+	adHonorem		bit
 
 	foreign key (idEstudiante) references estudiante(id),
-	foreign key (presupuesto) references presupuesto(codigo) 
+	foreign key (presupuesto) references presupuesto(codigo),
+	foreign key (unidad) references unidad(nombre)
 )
 drop table designacionAsistencia
 create table estudiante
@@ -52,14 +56,15 @@ create table p9
 	id				uniqueidentifier		ROWGUIDCOL		NOT NULL UNIQUE,
 	documento		varbinary(max)			FILESTREAM		NULL,
 	nombre			varchar(255),
-	numero			int,
+	numero			varchar(20),
 	idDesignacion	int,
+	ultimoAgregado	bit
 
 	foreign key (idDesignacion) references designacionAsistencia(id)
 )
 drop table p9
-select * from unidad
 
-select nombre from unidad
-
-select codigo from presupuesto
+select * from estudiante
+delete from designacionAsistencia
+select tipoId, nombre, apellido1, apellido2, correo, celular, telefonoFijo, carrera from estudiante where id = '116980153'
+select * from designacionAsistencia
