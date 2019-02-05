@@ -31,42 +31,39 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.repDesignacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repDesignaciones = new CELEQ.RepDesignaciones();
-            this.repDesignacionesTableAdapter = new CELEQ.RepDesignacionesTableAdapters.RepDesignacionesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.repDesignacionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repDesignaciones)).BeginInit();
+            this.RepDesignacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RepDesignacionesDataSet = new CELEQ.RepDesignacionesDataSet();
+            this.RepDesignacionesTableAdapter = new CELEQ.RepDesignacionesDataSetTableAdapters.RepDesignacionesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.repDesignacionesBindingSource;
+            reportDataSource1.Name = "DatasetDesignaciones";
+            reportDataSource1.Value = this.RepDesignacionesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.ReporteDesignaciones.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual;
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // repDesignacionesBindingSource
+            // RepDesignacionesBindingSource
             // 
-            this.repDesignacionesBindingSource.DataMember = "RepDesignaciones";
-            this.repDesignacionesBindingSource.DataSource = this.repDesignaciones;
+            this.RepDesignacionesBindingSource.DataMember = "RepDesignaciones";
+            this.RepDesignacionesBindingSource.DataSource = this.RepDesignacionesDataSet;
             // 
-            // repDesignaciones
+            // RepDesignacionesDataSet
             // 
-            this.repDesignaciones.DataSetName = "RepDesignaciones";
-            this.repDesignaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.RepDesignacionesDataSet.DataSetName = "RepDesignacionesDataSet";
+            this.RepDesignacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // repDesignacionesTableAdapter
+            // RepDesignacionesTableAdapter
             // 
-            this.repDesignacionesTableAdapter.ClearBeforeFill = true;
+            this.RepDesignacionesTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteDesignaciones
             // 
@@ -74,13 +71,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReporteDesignaciones";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteDesignaciones";
             this.Load += new System.EventHandler(this.ReporteDesignaciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.repDesignacionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repDesignaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -88,8 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private RepDesignaciones repDesignaciones;
-        private RepDesignacionesTableAdapters.RepDesignacionesTableAdapter repDesignacionesTableAdapter;
-        private System.Windows.Forms.BindingSource repDesignacionesBindingSource;
+        private System.Windows.Forms.BindingSource RepDesignacionesBindingSource;
+        private RepDesignacionesDataSet RepDesignacionesDataSet;
+        private RepDesignacionesDataSetTableAdapters.RepDesignacionesTableAdapter RepDesignacionesTableAdapter;
     }
 }

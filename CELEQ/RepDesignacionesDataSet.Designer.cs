@@ -20,9 +20,9 @@ namespace CELEQ {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RepDesignaciones")]
+    [global::System.Xml.Serialization.XmlRootAttribute("RepDesignacionesDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class RepDesignaciones : global::System.Data.DataSet {
+    public partial class RepDesignacionesDataSet : global::System.Data.DataSet {
         
         private RepDesignacionesDataTable tableRepDesignaciones;
         
@@ -30,7 +30,7 @@ namespace CELEQ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public RepDesignaciones() {
+        public RepDesignacionesDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CELEQ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected RepDesignaciones(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected RepDesignacionesDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -79,7 +79,7 @@ namespace CELEQ {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RepDesignacionesDataTable _RepDesignaciones {
+        public RepDesignacionesDataTable RepDesignaciones {
             get {
                 return this.tableRepDesignaciones;
             }
@@ -127,7 +127,7 @@ namespace CELEQ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            RepDesignaciones cln = ((RepDesignaciones)(base.Clone()));
+            RepDesignacionesDataSet cln = ((RepDesignacionesDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CELEQ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RepDesignaciones";
+            this.DataSetName = "RepDesignacionesDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RepDesignaciones.xsd";
+            this.Namespace = "http://tempuri.org/RepDesignacionesDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableRepDesignaciones = new RepDesignacionesDataTable();
@@ -210,7 +210,7 @@ namespace CELEQ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerialize_RepDesignaciones() {
+        private bool ShouldSerializeRepDesignaciones() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CELEQ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            RepDesignaciones ds = new RepDesignaciones();
+            RepDesignacionesDataSet ds = new RepDesignacionesDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,6 +281,8 @@ namespace CELEQ {
             
             private global::System.Data.DataColumn columnEstudiante;
             
+            private global::System.Data.DataColumn columnId;
+            
             private global::System.Data.DataColumn columnIdentificación;
             
             private global::System.Data.DataColumn columnModalidad;
@@ -293,9 +295,11 @@ namespace CELEQ {
             
             private global::System.Data.DataColumn columnP9;
             
-            private global::System.Data.DataColumn columnId;
-            
             private global::System.Data.DataColumn columnciclo;
+            
+            private global::System.Data.DataColumn columnano;
+            
+            private global::System.Data.DataColumn columnpresupuesto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -335,6 +339,14 @@ namespace CELEQ {
             public global::System.Data.DataColumn EstudianteColumn {
                 get {
                     return this.columnEstudiante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
                 }
             }
             
@@ -388,17 +400,25 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn cicloColumn {
                 get {
-                    return this.columnId;
+                    return this.columnciclo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn cicloColumn {
+            public global::System.Data.DataColumn anoColumn {
                 get {
-                    return this.columnciclo;
+                    return this.columnano;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn presupuestoColumn {
+                get {
+                    return this.columnpresupuesto;
                 }
             }
             
@@ -439,28 +459,23 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RepDesignacionesRow AddRepDesignacionesRow(string Estudiante, string Identificación, string Modalidad, int Horas, string Responsable, string Unidad, string P9, int Id, string ciclo) {
+            public RepDesignacionesRow AddRepDesignacionesRow(string Estudiante, int Id, string Identificación, string Modalidad, int Horas, string Responsable, string Unidad, string P9, string ciclo, string ano, string presupuesto) {
                 RepDesignacionesRow rowRepDesignacionesRow = ((RepDesignacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Estudiante,
+                        Id,
                         Identificación,
                         Modalidad,
                         Horas,
                         Responsable,
                         Unidad,
                         P9,
-                        Id,
-                        ciclo};
+                        ciclo,
+                        ano,
+                        presupuesto};
                 rowRepDesignacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRepDesignacionesRow);
                 return rowRepDesignacionesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RepDesignacionesRow FindByIdentificación(string Identificación) {
-                return ((RepDesignacionesRow)(this.Rows.Find(new object[] {
-                            Identificación})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -481,14 +496,16 @@ namespace CELEQ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnEstudiante = base.Columns["Estudiante"];
+                this.columnId = base.Columns["Id"];
                 this.columnIdentificación = base.Columns["Identificación"];
                 this.columnModalidad = base.Columns["Modalidad"];
                 this.columnHoras = base.Columns["Horas"];
                 this.columnResponsable = base.Columns["Responsable"];
                 this.columnUnidad = base.Columns["Unidad"];
                 this.columnP9 = base.Columns["P9"];
-                this.columnId = base.Columns["Id"];
                 this.columnciclo = base.Columns["ciclo"];
+                this.columnano = base.Columns["ano"];
+                this.columnpresupuesto = base.Columns["presupuesto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -496,6 +513,8 @@ namespace CELEQ {
             private void InitClass() {
                 this.columnEstudiante = new global::System.Data.DataColumn("Estudiante", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstudiante);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
                 this.columnIdentificación = new global::System.Data.DataColumn("Identificación", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdentificación);
                 this.columnModalidad = new global::System.Data.DataColumn("Modalidad", typeof(string), null, global::System.Data.MappingType.Element);
@@ -508,25 +527,27 @@ namespace CELEQ {
                 base.Columns.Add(this.columnUnidad);
                 this.columnP9 = new global::System.Data.DataColumn("P9", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnP9);
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
                 this.columnciclo = new global::System.Data.DataColumn("ciclo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnciclo);
+                this.columnano = new global::System.Data.DataColumn("ano", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnano);
+                this.columnpresupuesto = new global::System.Data.DataColumn("presupuesto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresupuesto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdentificación}, true));
+                                this.columnId}, false));
                 this.columnEstudiante.ReadOnly = true;
                 this.columnEstudiante.MaxLength = 767;
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
                 this.columnIdentificación.AllowDBNull = false;
-                this.columnIdentificación.Unique = true;
                 this.columnIdentificación.MaxLength = 30;
                 this.columnModalidad.MaxLength = 10;
                 this.columnResponsable.MaxLength = 255;
                 this.columnUnidad.MaxLength = 100;
                 this.columnP9.MaxLength = 20;
-                this.columnId.AllowDBNull = false;
                 this.columnciclo.MaxLength = 10;
-                this.ExtendedProperties.Add("Generator_TablePropName", "_RepDesignaciones");
-                this.ExtendedProperties.Add("Generator_UserTableName", "RepDesignaciones");
+                this.columnano.MaxLength = 4;
+                this.columnpresupuesto.MaxLength = 12;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -594,7 +615,7 @@ namespace CELEQ {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                RepDesignaciones ds = new RepDesignaciones();
+                RepDesignacionesDataSet ds = new RepDesignacionesDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -680,6 +701,17 @@ namespace CELEQ {
                 }
                 set {
                     this[this.tableRepDesignaciones.EstudianteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableRepDesignaciones.IdColumn]));
+                }
+                set {
+                    this[this.tableRepDesignaciones.IdColumn] = value;
                 }
             }
             
@@ -776,17 +808,6 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableRepDesignaciones.IdColumn]));
-                }
-                set {
-                    this[this.tableRepDesignaciones.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ciclo {
                 get {
                     try {
@@ -798,6 +819,38 @@ namespace CELEQ {
                 }
                 set {
                     this[this.tableRepDesignaciones.cicloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ano {
+                get {
+                    try {
+                        return ((string)(this[this.tableRepDesignaciones.anoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ano\' in table \'RepDesignaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRepDesignaciones.anoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string presupuesto {
+                get {
+                    try {
+                        return ((string)(this[this.tableRepDesignaciones.presupuestoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'presupuesto\' in table \'RepDesignaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRepDesignaciones.presupuestoColumn] = value;
                 }
             }
             
@@ -884,6 +937,30 @@ namespace CELEQ {
             public void SetcicloNull() {
                 this[this.tableRepDesignaciones.cicloColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsanoNull() {
+                return this.IsNull(this.tableRepDesignaciones.anoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetanoNull() {
+                this[this.tableRepDesignaciones.anoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspresupuestoNull() {
+                return this.IsNull(this.tableRepDesignaciones.presupuestoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpresupuestoNull() {
+                this[this.tableRepDesignaciones.presupuestoColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -921,7 +998,7 @@ namespace CELEQ {
         }
     }
 }
-namespace CELEQ.RepDesignacionesTableAdapters {
+namespace CELEQ.RepDesignacionesDataSetTableAdapters {
     
     
     /// <summary>
@@ -1046,14 +1123,16 @@ namespace CELEQ.RepDesignacionesTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "RepDesignaciones";
             tableMapping.ColumnMappings.Add("Estudiante", "Estudiante");
+            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Identificación", "Identificación");
             tableMapping.ColumnMappings.Add("Modalidad", "Modalidad");
             tableMapping.ColumnMappings.Add("Horas", "Horas");
             tableMapping.ColumnMappings.Add("Responsable", "Responsable");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");
             tableMapping.ColumnMappings.Add("P9", "P9");
-            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("ciclo", "ciclo");
+            tableMapping.ColumnMappings.Add("ano", "ano");
+            tableMapping.ColumnMappings.Add("presupuesto", "presupuesto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1070,9 +1149,8 @@ namespace CELEQ.RepDesignacionesTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT R.Estudiante, R.Identificación, R.Modalidad, R.Horas, R.Responsable, R.Uni" +
-                "dad, R.P9, R.Id, R.ciclo FROM RepDesignaciones AS R INNER JOIN designacionAsiste" +
-                "ncia AS D ON R.Id = D.id WHERE (D.ano = @ano)";
+            this._commandCollection[0].CommandText = "SELECT Estudiante, Id, Identificación, Modalidad, Horas, Responsable, Unidad, P9," +
+                " ciclo, ano, presupuesto FROM RepDesignaciones WHERE (ano = @ano)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ano", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1081,7 +1159,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RepDesignaciones.RepDesignacionesDataTable dataTable, string ano) {
+        public virtual int Fill(RepDesignacionesDataSet.RepDesignacionesDataTable dataTable, string ano) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ano == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1100,7 +1178,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RepDesignaciones.RepDesignacionesDataTable GetData(string ano) {
+        public virtual RepDesignacionesDataSet.RepDesignacionesDataTable GetData(string ano) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ano == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1108,7 +1186,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ano));
             }
-            RepDesignaciones.RepDesignacionesDataTable dataTable = new RepDesignaciones.RepDesignacionesDataTable();
+            RepDesignacionesDataSet.RepDesignacionesDataTable dataTable = new RepDesignacionesDataSet.RepDesignacionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1182,7 +1260,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(RepDesignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(RepDesignacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1192,7 +1270,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(RepDesignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(RepDesignacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1202,7 +1280,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(RepDesignaciones dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(RepDesignacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1236,7 +1314,7 @@ namespace CELEQ.RepDesignacionesTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(RepDesignaciones dataSet) {
+        public virtual int UpdateAll(RepDesignacionesDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

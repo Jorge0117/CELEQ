@@ -19,9 +19,10 @@ namespace CELEQ
 
         private void ReporteDesignaciones_Load(object sender, EventArgs e)
         {
-            this.repDesignacionesTableAdapter.Fill(repDesignaciones._RepDesignaciones,"2018");
+            // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
+            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones,"2018");
+
             this.reportViewer1.RefreshReport();
         }
-
     }
 }
