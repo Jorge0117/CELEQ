@@ -30,10 +30,10 @@ as
 	update designacionAsistencia set encargado = @responsable, unidad = @unidad, horas = @horas, fechafinal = @fechaFinal, observaciones = @Observaciones, tramitado = @tramitado where id = @id
 go
 
-create procedure agregarP9(@documento varbinary(max), @nombre varchar(255), @numero int, @idDesignacion int)
+create procedure agregarP9(@documento varbinary(max), @nombre varchar(255), @numero varchar(20), @idDesignacion int)
 as
-	update p9 set ultimoAgregado = 0 where 
-	declare @id uniqueidentifier = newid()idDesignacion = @idDesignacion
+	update p9 set ultimoAgregado = 0 where idDesignacion = @idDesignacion 
+	declare @id uniqueidentifier = newid()
 	insert into p9 values(@id, @documento, @nombre, @numero, @idDesignacion, 1)
 go
 drop procedure agregarP9

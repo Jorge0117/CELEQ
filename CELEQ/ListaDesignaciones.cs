@@ -90,6 +90,7 @@ namespace CELEQ
             Designacion designacion = new Designacion(Convert.ToInt32(dgvDesignaciones.SelectedRows[0].Cells[dgvDesignaciones.ColumnCount-1].Value));
             designacion.ShowDialog();
             designacion.Dispose();
+            llenarTabla();
         }
     }
 }

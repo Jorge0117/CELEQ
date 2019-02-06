@@ -51,6 +51,12 @@ namespace CELEQ
                     comboUnidad.Items.Add(unidades[0].ToString());
                 }
 
+                SqlDataReader responsables = bd.ejecutarConsulta("select nombre from responsable");
+                while (responsables.Read())
+                {
+                    comboResponsables.Items.Add(responsables[0].ToString());
+                }
+
 
                 //Si se va a agregar
                 if (idDesignacion == null)
@@ -123,7 +129,7 @@ namespace CELEQ
                     textObservaciones.Text = datosDesignacion[10].ToString();
                     comboPresupuesto.Items.Add(datosDesignacion[11].ToString());
                     comboPresupuesto.SelectedIndex = 0;
-                    textResponsable.Text = datosDesignacion[12].ToString();
+                    comboResponsables.SelectedIndex = comboResponsables.FindStringExact(datosDesignacion[12].ToString());
                     comboUnidad.SelectedIndex = comboUnidad.FindStringExact(datosDesignacion[13].ToString());
 
                     if (Convert.ToInt32(datosDesignacion[14]) == 1)
@@ -146,7 +152,7 @@ namespace CELEQ
 
                     textObservaciones.Enabled = false;
                     comboPresupuesto.Enabled = false;
-                    textResponsable.Enabled = false;
+                    comboResponsables.Enabled = false;
                     comboUnidad.Enabled = false;
                     checkAdHonorem.Enabled = false;
 
@@ -245,6 +251,7 @@ namespace CELEQ
                 butDescargar.Visible = true;
                 labelArchivo.Text = "";
                 butAdjuntar.Visible = true;
+                butAceptar.Enabled = false;
             }
             else
             {
@@ -259,7 +266,7 @@ namespace CELEQ
 
                     bd.agregarP9(Path.GetFileName(filePath), fs, comboP9.Text, Convert.ToInt32(idDesignacion));
                 }
-
+                butAceptar.Enabled = true;
                 agregandoP9 = false;
                 butAdjuntar.Text = "Descargar archivo";
 
@@ -307,7 +314,7 @@ namespace CELEQ
             if (idDesignacion == null)
             {
                 if (comboTipoId.Text == "" || textIdentificacion.Text == "" || textCorreo.Text == "" || textCarrera.Text == "" ||
-                textResponsable.Text == "" || comboUnidad.Text == "" || comboCiclo.Text == "" ||
+                comboResponsables.Text == "" || comboUnidad.Text == "" || comboCiclo.Text == "" ||
                 comboModalidad.Text == "" || comboPresupuesto.Text == "" || textConvocatoria.Text == "" || comboP9.Text == "")
                 {
                     MessageBox.Show("Por favor llenar los campos requeridos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -332,27 +339,35 @@ namespace CELEQ
 
                     //Se calcula el monto mensual de la asistencia
                     int monto;
-                    SqlDataReader valorHora;
-                    if (comboModalidad.Text == "H.E")
+                    if(checkAdHonorem.Checked == false)
                     {
-                        valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HE'");
-                    }
-                    else if (comboModalidad.Text == "H.A")
-                    {
-                        valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HA'");
+                        SqlDataReader valorHora;
+                        if (comboModalidad.Text == "H.E")
+                        {
+                            valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HE'");
+                        }
+                        else if (comboModalidad.Text == "H.A")
+                        {
+                            valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HA'");
+                        }
+                        else
+                        {
+                            valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HP'");
+                        }
+
+                        valorHora.Read();
+
+                        monto = Convert.ToInt32(numHoras.Value) * Convert.ToInt32(valorHora[0]);
                     }
                     else
                     {
-                        valorHora = bd.ejecutarConsulta("select monto from montoHoras where tipo = 'HP'");
+                        monto = 0;
                     }
-
-                    valorHora.Read();
-
-                    monto = Convert.ToInt32(numHoras.Value) * Convert.ToInt32(valorHora[0]);
+                    
 
                     int id = bd.agregarDesignacion(numAnno.Value.ToString(), comboCiclo.Text, dateInicio.Value.ToShortDateString(), datefinal.Value.ToShortDateString(),
                         textConvocatoria.Text, Convert.ToInt32(numHoras.Value), comboModalidad.Text, monto, checkInopia.Checked ? 1 : 0, textInopia.Text,
-                        checkTramitado.Checked ? 1 : 0, textObservaciones.Text, textIdentificacion.Text, comboPresupuesto.Text, textResponsable.Text, comboUnidad.Text,
+                        checkTramitado.Checked ? 1 : 0, textObservaciones.Text, textIdentificacion.Text, comboPresupuesto.Text, comboResponsables.Text, comboUnidad.Text,
                         checkAdHonorem.Checked ? 1 : 0);
 
                     if (id == -1)
@@ -381,7 +396,7 @@ namespace CELEQ
                 if (butAceptar.Text == "Modificar")
                 {
 
-                    textResponsable.Enabled = true;
+                    comboResponsables.Enabled = true;
                     comboUnidad.Enabled = true;
                     numHoras.Enabled = true;
                     datefinal.Enabled = true;
@@ -393,15 +408,15 @@ namespace CELEQ
                 }
                 else
                 {
-                    textResponsable.Enabled = false;
+                    comboResponsables.Enabled = false;
                     comboUnidad.Enabled = false;
                     numHoras.Enabled = false;
                     datefinal.Enabled = false;
                     textObservaciones.Enabled = false;
                     checkTramitado.Enabled = false;
-                    if(textResponsable.Text != "" && comboUnidad.Text != "" && numHoras.Value != 0)
+                    if(comboResponsables.Text != "" && comboUnidad.Text != "" && numHoras.Value != 0)
                     {
-                        if(bd.modificarDesignacion(Convert.ToInt32(idDesignacion), textResponsable.Text, comboUnidad.Text,
+                        if(bd.modificarDesignacion(Convert.ToInt32(idDesignacion), comboResponsables.Text, comboUnidad.Text,
                         Convert.ToInt32(numHoras.Value), datefinal.Value.ToShortDateString(), textObservaciones.Text, checkTramitado.Checked ? 1 : 0) == 0)
                         {
                             MessageBox.Show("Se modificó la designación de manera correcta", "Designaciones", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -492,7 +507,7 @@ namespace CELEQ
             {
                 agregandoP9 = false;
                 butDescargar.Text = "Descargar archivo";
-
+                butAceptar.Enabled = true;
                 comboP9.Items.Clear();
                 cargarP9();
             }
@@ -557,6 +572,7 @@ namespace CELEQ
                 labelArchivo.Text = archP9[0].ToString();
 
             }
+            butAceptar.Enabled = true;
             butAdjuntar.Visible = false;
             if(labelArchivo.Text == "")
             {

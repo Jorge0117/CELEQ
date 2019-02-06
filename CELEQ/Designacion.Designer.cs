@@ -47,7 +47,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textResponsable = new System.Windows.Forms.TextBox();
             this.butDescargar = new System.Windows.Forms.Button();
             this.butAgregarP9 = new System.Windows.Forms.Button();
             this.checkTramitado = new System.Windows.Forms.CheckBox();
@@ -85,6 +84,7 @@
             this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.checkAdHonorem = new System.Windows.Forms.CheckBox();
+            this.comboResponsables = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -259,8 +259,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboResponsables);
             this.groupBox2.Controls.Add(this.checkAdHonorem);
-            this.groupBox2.Controls.Add(this.textResponsable);
             this.groupBox2.Controls.Add(this.butDescargar);
             this.groupBox2.Controls.Add(this.butAgregarP9);
             this.groupBox2.Controls.Add(this.checkTramitado);
@@ -299,14 +299,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la designacion";
-            // 
-            // textResponsable
-            // 
-            this.textResponsable.Location = new System.Drawing.Point(432, 22);
-            this.textResponsable.MaxLength = 255;
-            this.textResponsable.Name = "textResponsable";
-            this.textResponsable.Size = new System.Drawing.Size(419, 20);
-            this.textResponsable.TabIndex = 73;
             // 
             // butDescargar
             // 
@@ -639,6 +631,15 @@
             this.checkAdHonorem.Text = "Ad-Honorem";
             this.checkAdHonorem.UseVisualStyleBackColor = true;
             // 
+            // comboResponsables
+            // 
+            this.comboResponsables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboResponsables.FormattingEnabled = true;
+            this.comboResponsables.Location = new System.Drawing.Point(431, 22);
+            this.comboResponsables.Name = "comboResponsables";
+            this.comboResponsables.Size = new System.Drawing.Size(419, 21);
+            this.comboResponsables.TabIndex = 75;
+            // 
             // Designacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,7 +724,7 @@
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.SaveFileDialog saveDialog;
-        private System.Windows.Forms.TextBox textResponsable;
         private System.Windows.Forms.CheckBox checkAdHonorem;
+        private System.Windows.Forms.ComboBox comboResponsables;
     }
 }

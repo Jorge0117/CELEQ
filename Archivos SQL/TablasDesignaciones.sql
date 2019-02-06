@@ -17,13 +17,14 @@ create table designacionAsistencia
 	observaciones	varchar(500),
 	idEstudiante	varchar(30),
 	presupuesto		varchar(12),
-	encargado		varchar(255),
+	encargado		varchar(100),
 	unidad			varchar(100),
 	adHonorem		bit
 
 	foreign key (idEstudiante) references estudiante(id),
 	foreign key (presupuesto) references presupuesto(codigo),
-	foreign key (unidad) references unidad(nombre)
+	foreign key (unidad) references unidad(nombre),
+	foreign key (encargado) references responsable(nombre)
 )
 drop table designacionAsistencia
 create table estudiante
@@ -64,7 +65,15 @@ create table p9
 )
 drop table p9
 
+create table responsable
+(
+	nombre		varchar(100)		primary key
+)
+
 select * from estudiante
 delete from designacionAsistencia
 select tipoId, nombre, apellido1, apellido2, correo, celular, telefonoFijo, carrera from estudiante where id = '116980153'
 select * from designacionAsistencia
+
+select * from responsable
+insert into responsable values('Daniel Chavarría')
