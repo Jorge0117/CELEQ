@@ -1056,7 +1056,7 @@
             <Top>0.14111cm</Top>
             <Left>0.41838cm</Left>
             <Height>5.4cm</Height>
-            <Width>17.84721cm</Width>
+            <Width>17.84719cm</Width>
             <Visibility>
               <Hidden>=CountRows() = 0</Hidden>
             </Visibility>

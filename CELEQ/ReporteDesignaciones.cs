@@ -13,8 +13,12 @@ namespace CELEQ
 {
     public partial class ReporteDesignaciones : Form
     {
-        public ReporteDesignaciones()
+        string ano;
+        string ciclo;
+        public ReporteDesignaciones(string a, string c)
         {
+            ano = a;
+            ciclo = c;
             InitializeComponent();
 
         }
@@ -22,10 +26,10 @@ namespace CELEQ
         private void ReporteDesignaciones_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones,"2018","III");
+            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones,ano,ciclo);
             ReportParameter[] parametros = new ReportParameter[2];
-            parametros[0] = new ReportParameter("ciclo", "III");
-            parametros[1] = new ReportParameter("ano", "2018");
+            parametros[0] = new ReportParameter("ciclo", ciclo);
+            parametros[1] = new ReportParameter("ano", ano);
             this.reportViewer1.LocalReport.SetParameters(parametros);
             this.reportViewer1.RefreshReport();
         }

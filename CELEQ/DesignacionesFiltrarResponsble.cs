@@ -12,15 +12,19 @@ namespace CELEQ
 {
     public partial class DesignacionesFiltrarResponsble : Form
     {
-        public DesignacionesFiltrarResponsble()
+        string ano;
+        string ciclo;
+        public DesignacionesFiltrarResponsble(string a, string c)
         {
+            ano = a;
+            ciclo = c;
             InitializeComponent();
         }
 
         private void DesignacionesFiltrarResponsble_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, "2018");
+            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, ano,ciclo);
 
             this.reportViewer1.RefreshReport();
 
