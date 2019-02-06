@@ -113,6 +113,12 @@
     <Compile Include="Designacion.Designer.cs">
       <DependentUpon>Designacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignacionesFiltrarResponsble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignacionesFiltrarResponsble.Designer.cs">
+      <DependentUpon>DesignacionesFiltrarResponsble.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetallesSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,10 @@
     <EmbeddedResource Include="Designacion.resx">
       <DependentUpon>Designacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DesignacionesFiltrarResponsble.resx">
+      <DependentUpon>DesignacionesFiltrarResponsble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignacionesReporteResponsables.rdlc" />
     <EmbeddedResource Include="DetallesSolicitud.resx">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </EmbeddedResource>

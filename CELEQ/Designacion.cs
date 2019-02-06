@@ -520,6 +520,7 @@ namespace CELEQ
             ag.ShowDialog();
             ag.Dispose();
 
+            comboPresupuesto.Items.Clear();
             SqlDataReader presupuestos = bd.ejecutarConsulta("select codigo from presupuesto");
             while (presupuestos.Read())
             {

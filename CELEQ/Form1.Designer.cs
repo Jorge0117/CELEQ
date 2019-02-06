@@ -64,7 +64,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -262,7 +262,8 @@
             this.designacionesToolStripMenuItem,
             this.arancelesToolStripMenuItem,
             this.presupuestoToolStripMenuItem,
-            this.verEstudiantesToolStripMenuItem});
+            this.verEstudiantesToolStripMenuItem,
+            this.generarReporteToolStripMenuItem});
             this.regimenBecarioToolStripMenuItem.Name = "regimenBecarioToolStripMenuItem";
             this.regimenBecarioToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.regimenBecarioToolStripMenuItem.Text = "Regimen Becario";
@@ -273,7 +274,7 @@
             this.agregarDesignacionToolStripMenuItem,
             this.verDesignacionesToolStripMenuItem});
             this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
-            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.designacionesToolStripMenuItem.Text = "Designaciones";
             // 
             // agregarDesignacionToolStripMenuItem
@@ -293,21 +294,21 @@
             // arancelesToolStripMenuItem
             // 
             this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
-            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.arancelesToolStripMenuItem.Text = "Aranceles";
             this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
             // 
             // presupuestoToolStripMenuItem
             // 
             this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
-            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.presupuestoToolStripMenuItem.Text = "Presupuesto";
             this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
             // 
             // verEstudiantesToolStripMenuItem
             // 
             this.verEstudiantesToolStripMenuItem.Name = "verEstudiantesToolStripMenuItem";
-            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verEstudiantesToolStripMenuItem.Text = "Ver Estudiantes";
             this.verEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.verEstudiantesToolStripMenuItem_Click);
             // 
@@ -373,15 +374,12 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
-            // button2
+            // generarReporteToolStripMenuItem
             // 
-            this.button2.Location = new System.Drawing.Point(277, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(461, 229);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
+            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
+            this.generarReporteToolStripMenuItem.Click += new System.EventHandler(this.generarReporteToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -389,7 +387,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(988, 564);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureCeleq);
             this.Controls.Add(this.pictureUcr);
             this.Controls.Add(this.labelCeleq);
@@ -451,7 +448,7 @@
         private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verDesignacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verEstudiantesToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem generarReporteToolStripMenuItem;
     }
 }
 

@@ -85,6 +85,7 @@
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
             this.checkAdHonorem = new System.Windows.Forms.CheckBox();
             this.comboResponsables = new System.Windows.Forms.ComboBox();
+            this.butAgregarResponsable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -259,6 +260,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.butAgregarResponsable);
             this.groupBox2.Controls.Add(this.comboResponsables);
             this.groupBox2.Controls.Add(this.checkAdHonorem);
             this.groupBox2.Controls.Add(this.butDescargar);
@@ -470,7 +472,7 @@
             // 
             // butAgregarPresupuesto
             // 
-            this.butAgregarPresupuesto.Location = new System.Drawing.Point(776, 131);
+            this.butAgregarPresupuesto.Location = new System.Drawing.Point(776, 132);
             this.butAgregarPresupuesto.Name = "butAgregarPresupuesto";
             this.butAgregarPresupuesto.Size = new System.Drawing.Size(75, 23);
             this.butAgregarPresupuesto.TabIndex = 7;
@@ -637,8 +639,17 @@
             this.comboResponsables.FormattingEnabled = true;
             this.comboResponsables.Location = new System.Drawing.Point(431, 22);
             this.comboResponsables.Name = "comboResponsables";
-            this.comboResponsables.Size = new System.Drawing.Size(419, 21);
+            this.comboResponsables.Size = new System.Drawing.Size(339, 21);
             this.comboResponsables.TabIndex = 75;
+            // 
+            // butAgregarResponsable
+            // 
+            this.butAgregarResponsable.Location = new System.Drawing.Point(776, 22);
+            this.butAgregarResponsable.Name = "butAgregarResponsable";
+            this.butAgregarResponsable.Size = new System.Drawing.Size(75, 23);
+            this.butAgregarResponsable.TabIndex = 76;
+            this.butAgregarResponsable.Text = "Agregar";
+            this.butAgregarResponsable.UseVisualStyleBackColor = true;
             // 
             // Designacion
             // 
@@ -726,5 +737,6 @@
         private System.Windows.Forms.SaveFileDialog saveDialog;
         private System.Windows.Forms.CheckBox checkAdHonorem;
         private System.Windows.Forms.ComboBox comboResponsables;
+        private System.Windows.Forms.Button butAgregarResponsable;
     }
 }
