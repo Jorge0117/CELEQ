@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CELEQ
 {
-    public partial class InformeDesignaciones : Form
+    public partial class GenerarReporteDesignaciones : Form
     {
-        public InformeDesignaciones()
+        public GenerarReporteDesignaciones()
         {
             InitializeComponent();
         }
