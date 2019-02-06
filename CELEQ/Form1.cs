@@ -240,11 +240,11 @@ namespace CELEQ
             l.Dispose();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void generarReporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReporteDesignaciones ifo = new ReporteDesignaciones();
-            ifo.ShowDialog();
-            ifo.Dispose();
+            GenerarReporteDesignaciones reporteDesignaciones = new GenerarReporteDesignaciones();
+            reporteDesignaciones.ShowDialog();
+            reporteDesignaciones.Dispose();
         }
     }
 
