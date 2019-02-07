@@ -125,6 +125,12 @@
     <Compile Include="DetallesSolicitud.Designer.cs">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encargados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encargados.Designer.cs">
+      <DependentUpon>Encargados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     <EmbeddedResource Include="DesignacionesReporteResponsables.rdlc" />
     <EmbeddedResource Include="DetallesSolicitud.resx">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encargados.resx">
+      <DependentUpon>Encargados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

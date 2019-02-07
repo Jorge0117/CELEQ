@@ -253,6 +253,13 @@ namespace CELEQ
             r.ShowDialog();
             r.Dispose();
         }
+
+        private void responsablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Encargados en = new Encargados();
+            en.ShowDialog();
+            en.Dispose();
+        }
     }
 
     public static class Globals
