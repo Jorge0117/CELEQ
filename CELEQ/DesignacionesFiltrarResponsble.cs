@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace CELEQ
 {
@@ -23,11 +24,14 @@ namespace CELEQ
 
         private void DesignacionesFiltrarResponsble_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, ano,ciclo);
+            // TODO: This line of code loads data into the 'RepDesignacionesResponsable.RepDesignaciones' table. You can move, or remove it, as needed.
+            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesResponsable.RepDesignaciones, "2018", "III");
+            ReportParameter[] parameter = new ReportParameter[2];
+            parameter[0] = new ReportParameter("ano", "2018");
+            parameter[1] = new ReportParameter("ciclo", "III");
+            this.reportViewer1.LocalReport.SetParameters(parameter);
 
             this.reportViewer1.RefreshReport();
-
         }
     }
 }

@@ -29,33 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.RepDesignacionesDataSet = new CELEQ.RepDesignacionesDataSet();
+            this.RepDesignacionesResponsable = new CELEQ.RepDesignacionesResponsable();
             this.RepDesignacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RepDesignacionesTableAdapter = new CELEQ.RepDesignacionesDataSetTableAdapters.RepDesignacionesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesDataSet)).BeginInit();
+            this.RepDesignacionesTableAdapter = new CELEQ.RepDesignacionesResponsableTableAdapters.RepDesignacionesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesResponsable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.DesignacionesReporteResponsables.rdlc";
+            reportDataSource1.Name = "DataSetResponsable";
+            reportDataSource1.Value = this.RepDesignacionesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.ReporteDesignacionesResponsable.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // RepDesignacionesDataSet
+            // RepDesignacionesResponsable
             // 
-            this.RepDesignacionesDataSet.DataSetName = "RepDesignacionesDataSet";
-            this.RepDesignacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.RepDesignacionesResponsable.DataSetName = "RepDesignacionesResponsable";
+            this.RepDesignacionesResponsable.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RepDesignacionesBindingSource
             // 
             this.RepDesignacionesBindingSource.DataMember = "RepDesignaciones";
-            this.RepDesignacionesBindingSource.DataSource = this.RepDesignacionesDataSet;
+            this.RepDesignacionesBindingSource.DataSource = this.RepDesignacionesResponsable;
             // 
             // RepDesignacionesTableAdapter
             // 
@@ -70,7 +74,7 @@
             this.Name = "DesignacionesFiltrarResponsble";
             this.Text = "DesignacionesFiltrarResponsble";
             this.Load += new System.EventHandler(this.DesignacionesFiltrarResponsble_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesResponsable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepDesignacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -80,7 +84,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource RepDesignacionesBindingSource;
-        private RepDesignacionesDataSet RepDesignacionesDataSet;
-        private RepDesignacionesDataSetTableAdapters.RepDesignacionesTableAdapter RepDesignacionesTableAdapter;
+        private RepDesignacionesResponsable RepDesignacionesResponsable;
+        private RepDesignacionesResponsableTableAdapters.RepDesignacionesTableAdapter RepDesignacionesTableAdapter;
     }
 }
