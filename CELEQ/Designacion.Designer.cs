@@ -47,6 +47,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.butAgregarResponsable = new System.Windows.Forms.Button();
+            this.comboResponsables = new System.Windows.Forms.ComboBox();
+            this.checkAdHonorem = new System.Windows.Forms.CheckBox();
             this.butDescargar = new System.Windows.Forms.Button();
             this.butAgregarP9 = new System.Windows.Forms.Button();
             this.checkTramitado = new System.Windows.Forms.CheckBox();
@@ -83,9 +86,6 @@
             this.butCancelar = new System.Windows.Forms.Button();
             this.adjuntarDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.checkAdHonorem = new System.Windows.Forms.CheckBox();
-            this.comboResponsables = new System.Windows.Forms.ComboBox();
-            this.butAgregarResponsable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAnno)).BeginInit();
@@ -301,6 +301,35 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la designacion";
+            // 
+            // butAgregarResponsable
+            // 
+            this.butAgregarResponsable.Location = new System.Drawing.Point(776, 22);
+            this.butAgregarResponsable.Name = "butAgregarResponsable";
+            this.butAgregarResponsable.Size = new System.Drawing.Size(75, 23);
+            this.butAgregarResponsable.TabIndex = 76;
+            this.butAgregarResponsable.Text = "Agregar";
+            this.butAgregarResponsable.UseVisualStyleBackColor = true;
+            this.butAgregarResponsable.Click += new System.EventHandler(this.butAgregarResponsable_Click);
+            // 
+            // comboResponsables
+            // 
+            this.comboResponsables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboResponsables.FormattingEnabled = true;
+            this.comboResponsables.Location = new System.Drawing.Point(431, 22);
+            this.comboResponsables.Name = "comboResponsables";
+            this.comboResponsables.Size = new System.Drawing.Size(339, 21);
+            this.comboResponsables.TabIndex = 75;
+            // 
+            // checkAdHonorem
+            // 
+            this.checkAdHonorem.AutoSize = true;
+            this.checkAdHonorem.Location = new System.Drawing.Point(771, 107);
+            this.checkAdHonorem.Name = "checkAdHonorem";
+            this.checkAdHonorem.Size = new System.Drawing.Size(85, 17);
+            this.checkAdHonorem.TabIndex = 74;
+            this.checkAdHonorem.Text = "Ad-Honorem";
+            this.checkAdHonorem.UseVisualStyleBackColor = true;
             // 
             // butDescargar
             // 
@@ -622,34 +651,6 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
-            // 
-            // checkAdHonorem
-            // 
-            this.checkAdHonorem.AutoSize = true;
-            this.checkAdHonorem.Location = new System.Drawing.Point(771, 107);
-            this.checkAdHonorem.Name = "checkAdHonorem";
-            this.checkAdHonorem.Size = new System.Drawing.Size(85, 17);
-            this.checkAdHonorem.TabIndex = 74;
-            this.checkAdHonorem.Text = "Ad-Honorem";
-            this.checkAdHonorem.UseVisualStyleBackColor = true;
-            // 
-            // comboResponsables
-            // 
-            this.comboResponsables.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboResponsables.FormattingEnabled = true;
-            this.comboResponsables.Location = new System.Drawing.Point(431, 22);
-            this.comboResponsables.Name = "comboResponsables";
-            this.comboResponsables.Size = new System.Drawing.Size(339, 21);
-            this.comboResponsables.TabIndex = 75;
-            // 
-            // butAgregarResponsable
-            // 
-            this.butAgregarResponsable.Location = new System.Drawing.Point(776, 22);
-            this.butAgregarResponsable.Name = "butAgregarResponsable";
-            this.butAgregarResponsable.Size = new System.Drawing.Size(75, 23);
-            this.butAgregarResponsable.TabIndex = 76;
-            this.butAgregarResponsable.Text = "Agregar";
-            this.butAgregarResponsable.UseVisualStyleBackColor = true;
             // 
             // Designacion
             // 

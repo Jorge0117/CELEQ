@@ -20,9 +20,9 @@ namespace CELEQ
             bd = new AccesoBaseDatos();
 
             //Solo permite seleccionar filas en el dgv
-            dgvUnidad.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUnidad.MultiSelect = false;
-            dgvUnidad.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            dgvResponsables.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvResponsables.MultiSelect = false;
+            dgvResponsables.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
         }
 
         //Pinta la fila completa en el dgv
@@ -52,11 +52,11 @@ namespace CELEQ
 
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;
-            dgvUnidad.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            dgvUnidad.DataSource = bs;
-            for (int i = 0; i < dgvUnidad.ColumnCount; ++i)
+            dgvResponsables.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvResponsables.DataSource = bs;
+            for (int i = 0; i < dgvResponsables.ColumnCount; ++i)
             {
-                dgvUnidad.Columns[i].Width = dgvUnidad.Width / dgvUnidad.ColumnCount - 1;
+                dgvResponsables.Columns[i].Width = dgvResponsables.Width / dgvResponsables.ColumnCount - 1;
             }
         }
 
@@ -77,8 +77,38 @@ namespace CELEQ
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-            
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
+            int error = bd.modificarResponsable(dgvResponsables.SelectedRows[0].Cells[0].Value.ToString(), encargado);
+            if (error == 0)
+            {
+                MessageBox.Show("Responsable modificado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                llenarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Error al modificar responsable\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void butEliminar_Click(object sender, EventArgs e)
+        {
+            string nombre = dgvResponsables.SelectedRows[0].Cells[0].Value.ToString();
+            int error = bd.eliminarResponsable(nombre);
+            if (dgvResponsables.RowCount > 0)
+            {
+                if (MessageBox.Show("¿Seguro que quiere borrar el responsable?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    dgvResponsables.Rows.Remove(dgvResponsables.SelectedRows[0]);
+                }
+            }
+            if (error == 1)
+            {
+                MessageBox.Show("Respo0nsable eliminado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar responsable\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

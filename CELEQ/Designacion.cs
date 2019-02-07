@@ -584,6 +584,25 @@ namespace CELEQ
                 butDescargar.Visible = true;
             }
         }
+
+        private void butAgregarResponsable_Click(object sender, EventArgs e)
+        {
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
+            if (encargado != "")
+            {
+                bd.ejecutarConsulta("insert into responsable values ('" + encargado + "')");
+                MessageBox.Show("Responsable agregado correctamente", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                SqlDataReader responsables = bd.ejecutarConsulta("select nombre from responsable");
+                while (responsables.Read())
+                {
+                    comboResponsables.Items.Add(responsables[0].ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor digite el nombre del responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }
