@@ -229,13 +229,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReporteDesignacionesPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RepDesignacionesResponsable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteDesignaciones.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteDesignacionesPresupuesto.Designer.cs">
       <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
