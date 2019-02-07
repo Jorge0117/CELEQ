@@ -44,6 +44,7 @@
             this.butModificar.TabIndex = 10;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
             // 
             // butAgregar
             // 
@@ -53,6 +54,7 @@
             this.butAgregar.TabIndex = 9;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // labelEncargados
             // 
@@ -60,9 +62,9 @@
             this.labelEncargados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEncargados.Location = new System.Drawing.Point(25, 37);
             this.labelEncargados.Name = "labelEncargados";
-            this.labelEncargados.Size = new System.Drawing.Size(95, 20);
+            this.labelEncargados.Size = new System.Drawing.Size(111, 20);
             this.labelEncargados.TabIndex = 8;
-            this.labelEncargados.Text = "Encargados";
+            this.labelEncargados.Text = "Responsables";
             // 
             // dgvUnidad
             // 
@@ -102,7 +104,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Encargados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Encargados";
+            this.Text = "Responsable";
             this.Load += new System.EventHandler(this.Encargados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnidad)).EndInit();
             this.ResumeLayout(false);

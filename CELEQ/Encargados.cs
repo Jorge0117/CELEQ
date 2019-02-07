@@ -60,5 +60,25 @@ namespace CELEQ
             }
         }
 
+        private void butAgregar_Click(object sender, EventArgs e)
+        {
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
+            if (encargado != "")
+            {
+                bd.ejecutarConsulta("insert into responsable values ('" + encargado + "')");
+                MessageBox.Show("Responsable agregado correctamente", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                llenarTabla();
+            }
+            else
+            {
+                MessageBox.Show("Por favor digite el nombre del responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
