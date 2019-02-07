@@ -46,7 +46,7 @@ namespace CELEQ
                         ciclo = "II I.C";
                     else if (checkcicloIII.Checked)
                         ciclo = "III";
-                    ReporteDesignaciones rd = new ReporteDesignaciones(numAno.Text,ciclo);
+                    ReporteDesignacionesPresupuesto rd = new ReporteDesignacionesPresupuesto(numAno.Text,ciclo);
                     rd.ShowDialog();
                     rd.Dispose();
                 }

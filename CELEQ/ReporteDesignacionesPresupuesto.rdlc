@@ -7,11 +7,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6b9c6421-59d6-46a8-a065-1b44f957cf06</rd:DataSourceID>
+      <rd:DataSourceID>73bdc3eb-7774-4c6d-959a-b5d94530503b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatasetDesignaciones">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>RepDesignacionesDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -89,13 +89,13 @@
                   <Width>1.81334cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.67854cm</Width>
+                  <Width>1.30812cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.36129cm</Width>
+                  <Width>2.91217cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.10313cm</Width>
+                  <Width>1.6798cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.31479cm</Width>
@@ -129,7 +129,9 @@
                               <Style>None</Style>
                             </Border>
                             <BottomBorder>
+                              <Color>Black</Color>
                               <Style>Solid</Style>
+                              <Width>1.5pt</Width>
                             </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -226,7 +228,9 @@
                               <Style>None</Style>
                             </Border>
                             <BottomBorder>
+                              <Color>Black</Color>
                               <Style>Solid</Style>
+                              <Width>1.25pt</Width>
                             </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1043,7 +1047,7 @@
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
-            <DataSetName>DatasetDesignaciones</DataSetName>
+            <DataSetName>DataSet1</DataSetName>
             <Filters>
               <Filter>
                 <FilterExpression>=Fields!ciclo.Value</FilterExpression>
@@ -1053,10 +1057,9 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>0.14111cm</Top>
-            <Left>0.41838cm</Left>
+            <Left>0.08852cm</Left>
             <Height>5.4cm</Height>
-            <Width>17.84719cm</Width>
+            <Width>16.60432cm</Width>
             <Visibility>
               <Hidden>=CountRows() = 0</Hidden>
             </Visibility>
@@ -1067,18 +1070,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>6.74437cm</Height>
-        <Style>
-          <Border>
-            <Style>None</Style>
-            <Width>0.5pt</Width>
-          </Border>
-        </Style>
+        <Height>2.12598in</Height>
+        <Style />
       </Body>
-      <Width>18.68397cm</Width>
+      <Width>6.66907in</Width>
       <Page>
         <PageHeader>
-          <Height>2.44009cm</Height>
+          <Height>2.79576cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1133,7 +1131,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>3.54035cm</Left>
+              <Top>0.42623cm</Top>
+              <Left>2.52306cm</Left>
               <Height>2.11377cm</Height>
               <Width>11.57853cm</Width>
               <Style>
@@ -1150,6 +1149,7 @@
               <Source>Embedded</Source>
               <Value>EscdoUCR</Value>
               <Sizing>FitProportional</Sizing>
+              <Top>0.42623cm</Top>
               <Height>2.36953cm</Height>
               <Width>2.34667cm</Width>
               <ZIndex>1</ZIndex>
@@ -1163,7 +1163,8 @@
               <Source>Embedded</Source>
               <Value>LogoCeleq</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>16.40346cm</Left>
+              <Top>0.42623cm</Top>
+              <Left>14.43707cm</Left>
               <Height>2.33426cm</Height>
               <Width>2.25577cm</Width>
               <ZIndex>2</ZIndex>
@@ -1180,23 +1181,23 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>27.94cm</PageHeight>
-        <PageWidth>21.59cm</PageWidth>
-        <LeftMargin>1.5cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1cm</BottomMargin>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="ciclo">
+    <ReportParameter Name="ano">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="ano">
+    <ReportParameter Name="ciclo">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1209,12 +1210,12 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ciclo</ParameterName>
+          <ParameterName>ano</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ano</ParameterName>
+          <ParameterName>ciclo</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1335,5 +1336,5 @@ I1cdETemoJVKARcYwXYpVhHaONdzue3DKMCLcjMD/hVDaABfJaBiZBcsq7GPys0CuYhBxaslcdfcru1P
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e42cd6d3-7724-4eef-bab0-afd96d9393e2</rd:ReportID>
+  <rd:ReportID>af14c818-af73-42c1-8860-dcd3e900c0dd</rd:ReportID>
 </Report>

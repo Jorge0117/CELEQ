@@ -223,11 +223,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReporteDesignaciones.cs">
+    <Compile Include="ReporteDesignacionesPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteDesignaciones.Designer.cs">
-      <DependentUpon>ReporteDesignaciones.cs</DependentUpon>
+    <Compile Include="ReporteDesignacionesPresupuesto.Designer.cs">
+      <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="SolicitudMantenimiento.cs">
       <SubType>Form</SubType>
@@ -325,9 +325,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReporteDesignaciones.rdlc" />
-    <EmbeddedResource Include="ReporteDesignaciones.resx">
-      <DependentUpon>ReporteDesignaciones.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteDesignacionesPresupuesto.rdlc" />
+    <EmbeddedResource Include="ReporteDesignacionesPresupuesto.resx">
+      <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SolicitudMantenimiento.resx">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>

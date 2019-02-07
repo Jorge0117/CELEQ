@@ -246,6 +246,13 @@ namespace CELEQ
             reporteDesignaciones.ShowDialog();
             reporteDesignaciones.Dispose();
         }
+
+        private void pruebaReportePresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteDesignacionesPresupuesto r = new ReporteDesignacionesPresupuesto("2018", "III");
+            r.ShowDialog();
+            r.Dispose();
+        }
     }
 
     public static class Globals
