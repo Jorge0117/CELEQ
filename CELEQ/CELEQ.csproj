@@ -223,6 +223,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RepDesignacionesResponsable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReporteDesignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +334,7 @@
     <EmbeddedResource Include="ReporteDesignaciones.resx">
       <DependentUpon>ReporteDesignaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDesignacionesResponsable.rdlc" />
     <EmbeddedResource Include="SolicitudMantenimiento.resx">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,6 +342,7 @@
       <DependentUpon>Unidad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RepDesignacionesResponsable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -368,6 +375,17 @@
     <None Include="RepDesignacionesDataSet.xss">
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </None>
+    <None Include="RepDesignacionesResponsable.xsc">
+      <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
+    </None>
+    <None Include="RepDesignacionesResponsable.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepDesignacionesResponsable.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepDesignacionesResponsable.xss">
+      <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
+    </None>
     <None Include="Resources\firma-promocional-celeste.png" />
   </ItemGroup>
   <ItemGroup>
@@ -391,5 +409,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
