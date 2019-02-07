@@ -13,8 +13,12 @@ namespace CELEQ
 {
     public partial class DesignacionesFiltrarResponsble : Form
     {
-        public DesignacionesFiltrarResponsble()
+        string ano;
+        string ciclo;
+        public DesignacionesFiltrarResponsble(string a, string c)
         {
+            ano = a;
+            ciclo = c;
             InitializeComponent();
         }
 

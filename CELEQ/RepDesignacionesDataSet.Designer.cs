@@ -1150,22 +1150,30 @@ namespace CELEQ.RepDesignacionesDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Estudiante, Id, Identificación, Modalidad, Horas, Responsable, Unidad, P9," +
-                " ciclo, ano, presupuesto FROM RepDesignaciones WHERE (ano = @ano)";
+                " ciclo, ano, presupuesto FROM RepDesignaciones WHERE (ano = @ano) AND (ciclo = @" +
+                "ciclo)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ano", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciclo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ciclo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(RepDesignacionesDataSet.RepDesignacionesDataTable dataTable, string ano) {
+        public virtual int Fill(RepDesignacionesDataSet.RepDesignacionesDataTable dataTable, string ano, string ciclo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ano == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ano));
+            }
+            if ((ciclo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ciclo));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1178,13 +1186,19 @@ namespace CELEQ.RepDesignacionesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual RepDesignacionesDataSet.RepDesignacionesDataTable GetData(string ano) {
+        public virtual RepDesignacionesDataSet.RepDesignacionesDataTable GetData(string ano, string ciclo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ano == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ano));
+            }
+            if ((ciclo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ciclo));
             }
             RepDesignacionesDataSet.RepDesignacionesDataTable dataTable = new RepDesignacionesDataSet.RepDesignacionesDataTable();
             this.Adapter.Fill(dataTable);

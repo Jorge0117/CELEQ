@@ -141,6 +141,11 @@
             // numAno
             // 
             this.numAno.Location = new System.Drawing.Point(94, 19);
+            this.numAno.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.numAno.Name = "numAno";
             this.numAno.Size = new System.Drawing.Size(63, 20);
             this.numAno.TabIndex = 11;

@@ -125,6 +125,12 @@
     <Compile Include="DetallesSolicitud.Designer.cs">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encargados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encargados.Designer.cs">
+      <DependentUpon>Encargados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,16 +229,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReporteDesignacionesPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RepDesignacionesResponsable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReporteDesignaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteDesignaciones.Designer.cs">
-      <DependentUpon>ReporteDesignaciones.cs</DependentUpon>
+    <Compile Include="ReporteDesignacionesPresupuesto.Designer.cs">
+      <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="SolicitudMantenimiento.cs">
       <SubType>Form</SubType>
@@ -274,6 +280,9 @@
     <EmbeddedResource Include="DesignacionesReporteResponsables.rdlc" />
     <EmbeddedResource Include="DetallesSolicitud.resx">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encargados.resx">
+      <DependentUpon>Encargados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -330,9 +339,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReporteDesignaciones.rdlc" />
-    <EmbeddedResource Include="ReporteDesignaciones.resx">
-      <DependentUpon>ReporteDesignaciones.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteDesignacionesPresupuesto.rdlc" />
+    <EmbeddedResource Include="ReporteDesignacionesPresupuesto.resx">
+      <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDesignacionesResponsable.rdlc" />
     <EmbeddedResource Include="SolicitudMantenimiento.resx">

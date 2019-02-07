@@ -33,8 +33,23 @@ namespace CELEQ
             }
             else
             {
-                DesignacionesFiltrarResponsble filtrarResponsble = new DesignacionesFiltrarResponsble();
-                filtrarResponsble.ShowDialog();
+                if (comboFiltro.Text == "Presupuesto")
+                {
+                    string ciclo = "";
+                    if (checkCicloI.Checked)
+                        ciclo = "I";
+                    else if (checkCicloIIC.Checked)
+                        ciclo = "I I.C";
+                    else if (checkCicloII.Checked)
+                        ciclo = "II";
+                    else if (checkCicloIIIC.Checked)
+                        ciclo = "II I.C";
+                    else if (checkcicloIII.Checked)
+                        ciclo = "III";
+                    ReporteDesignacionesPresupuesto rd = new ReporteDesignacionesPresupuesto(numAno.Text,ciclo);
+                    rd.ShowDialog();
+                    rd.Dispose();
+                }
             }
         }
     }
