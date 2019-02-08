@@ -62,52 +62,57 @@ namespace CELEQ
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
-            if (encargado != "")
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", " ");
+            if (encargado != " " && encargado != "")
             {
                 bd.ejecutarConsulta("insert into responsable values ('" + encargado + "')");
                 MessageBox.Show("Responsable agregado correctamente", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
                 llenarTabla();
             }
-            else
+            else if (encargado == " ")
             {
                 MessageBox.Show("Por favor digite el nombre del responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
             }
         }
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", " ");
             int error = bd.modificarResponsable(dgvResponsables.SelectedRows[0].Cells[0].Value.ToString(), encargado);
             if (error == 0)
             {
                 MessageBox.Show("Responsable modificado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
                 llenarTabla();
             }
-            else
+            else if (encargado == " ")
             {
                 MessageBox.Show("Error al modificar responsable\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
             }
         }
 
         private void butEliminar_Click(object sender, EventArgs e)
         {
-            string nombre = dgvResponsables.SelectedRows[0].Cells[0].Value.ToString();
-            int error = bd.eliminarResponsable(nombre);
             if (dgvResponsables.RowCount > 0)
             {
                 if (MessageBox.Show("¿Seguro que quiere borrar el responsable?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    dgvResponsables.Rows.Remove(dgvResponsables.SelectedRows[0]);
+                    string nombre = dgvResponsables.SelectedRows[0].Cells[0].Value.ToString();
+                    if (bd.eliminarResponsable(nombre) == 0)
+                    {
+                        MessageBox.Show("Responsable eliminado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        llenarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } 
                 }
-            }
-            if (error == 1)
-            {
-                MessageBox.Show("Respo0nsable eliminado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else
-            {
-                MessageBox.Show("Error al eliminar responsable\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
