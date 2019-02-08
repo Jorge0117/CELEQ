@@ -103,7 +103,7 @@ namespace CELEQ
                 if (MessageBox.Show("¿Seguro que quiere borrar el responsable?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string nombre = dgvResponsables.SelectedRows[0].Cells[0].Value.ToString();
-                    if (bd.eliminarResponsable(nombre) == 0)
+                    if (bd.eliminarResponsable(nombre) == 1)
                     {
                         MessageBox.Show("Responsable eliminado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
                         llenarTabla();
