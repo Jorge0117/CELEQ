@@ -301,6 +301,12 @@ namespace CELEQ {
             
             private global::System.Data.DataColumn columnano;
             
+            private global::System.Data.DataColumn columnMonto;
+            
+            private global::System.Data.DataColumn columnfechaInicio;
+            
+            private global::System.Data.DataColumn columnfechafinal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public RepDesignacionesDataTable() {
@@ -424,6 +430,30 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MontoColumn {
+                get {
+                    return this.columnMonto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fechaInicioColumn {
+                get {
+                    return this.columnfechaInicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn fechafinalColumn {
+                get {
+                    return this.columnfechafinal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +489,7 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RepDesignacionesRow AddRepDesignacionesRow(string Estudiante, int Id, string Identificación, string Modalidad, int Horas, string Responsable, string Unidad, string P9, string presupuesto, string ciclo, string ano) {
+            public RepDesignacionesRow AddRepDesignacionesRow(string Estudiante, int Id, string Identificación, string Modalidad, int Horas, string Responsable, string Unidad, string P9, string presupuesto, string ciclo, string ano, int Monto, System.DateTime fechaInicio, System.DateTime fechafinal) {
                 RepDesignacionesRow rowRepDesignacionesRow = ((RepDesignacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Estudiante,
@@ -472,7 +502,10 @@ namespace CELEQ {
                         P9,
                         presupuesto,
                         ciclo,
-                        ano};
+                        ano,
+                        Monto,
+                        fechaInicio,
+                        fechafinal};
                 rowRepDesignacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRepDesignacionesRow);
                 return rowRepDesignacionesRow;
@@ -506,6 +539,9 @@ namespace CELEQ {
                 this.columnpresupuesto = base.Columns["presupuesto"];
                 this.columnciclo = base.Columns["ciclo"];
                 this.columnano = base.Columns["ano"];
+                this.columnMonto = base.Columns["Monto"];
+                this.columnfechaInicio = base.Columns["fechaInicio"];
+                this.columnfechafinal = base.Columns["fechafinal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +569,12 @@ namespace CELEQ {
                 base.Columns.Add(this.columnciclo);
                 this.columnano = new global::System.Data.DataColumn("ano", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnano);
+                this.columnMonto = new global::System.Data.DataColumn("Monto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonto);
+                this.columnfechaInicio = new global::System.Data.DataColumn("fechaInicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaInicio);
+                this.columnfechafinal = new global::System.Data.DataColumn("fechafinal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechafinal);
                 this.columnEstudiante.ReadOnly = true;
                 this.columnEstudiante.MaxLength = 767;
                 this.columnId.AllowDBNull = false;
@@ -853,6 +895,54 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Monto {
+                get {
+                    try {
+                        return ((int)(this[this.tableRepDesignaciones.MontoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Monto\' in table \'RepDesignaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRepDesignaciones.MontoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fechaInicio {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRepDesignaciones.fechaInicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fechaInicio\' in table \'RepDesignaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRepDesignaciones.fechaInicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime fechafinal {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRepDesignaciones.fechafinalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fechafinal\' in table \'RepDesignaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRepDesignaciones.fechafinalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEstudianteNull() {
                 return this.IsNull(this.tableRepDesignaciones.EstudianteColumn);
             }
@@ -957,6 +1047,42 @@ namespace CELEQ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetanoNull() {
                 this[this.tableRepDesignaciones.anoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMontoNull() {
+                return this.IsNull(this.tableRepDesignaciones.MontoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMontoNull() {
+                this[this.tableRepDesignaciones.MontoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfechaInicioNull() {
+                return this.IsNull(this.tableRepDesignaciones.fechaInicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfechaInicioNull() {
+                this[this.tableRepDesignaciones.fechaInicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfechafinalNull() {
+                return this.IsNull(this.tableRepDesignaciones.fechafinalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfechafinalNull() {
+                this[this.tableRepDesignaciones.fechafinalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1130,6 +1256,9 @@ namespace CELEQ.RepDesignacionesResponsableTableAdapters {
             tableMapping.ColumnMappings.Add("presupuesto", "presupuesto");
             tableMapping.ColumnMappings.Add("ciclo", "ciclo");
             tableMapping.ColumnMappings.Add("ano", "ano");
+            tableMapping.ColumnMappings.Add("Monto", "Monto");
+            tableMapping.ColumnMappings.Add("fechaInicio", "fechaInicio");
+            tableMapping.ColumnMappings.Add("fechafinal", "fechafinal");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1146,9 +1275,9 @@ namespace CELEQ.RepDesignacionesResponsableTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Estudiante, Id, Identificación, Modalidad, Horas, Responsable, Unid" +
-                "ad, P9, presupuesto, ciclo, ano\r\nFROM            RepDesignaciones\r\nWHERE        " +
-                "(ano = @ano) AND (ciclo = @ciclo)";
+            this._commandCollection[0].CommandText = "SELECT Estudiante, Id, Identificación, Modalidad, Horas, Responsable, Unidad, P9," +
+                " presupuesto, ciclo, ano, Monto, fechaInicio, fechafinal FROM RepDesignaciones W" +
+                "HERE (ano = @ano) AND (ciclo = @ciclo)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ano", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ano", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciclo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ciclo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
