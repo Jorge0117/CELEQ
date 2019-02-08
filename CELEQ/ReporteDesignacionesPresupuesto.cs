@@ -25,7 +25,7 @@ namespace CELEQ
         private void ReporteDesignacionesPresupuesto_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo);
+            this.RepDesignacionesTableAdapter.FillBy(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo,"0000");
             ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("ciclo", ciclo);
             parametros[1] = new ReportParameter("ano", ano);
