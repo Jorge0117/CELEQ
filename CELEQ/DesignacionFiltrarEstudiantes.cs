@@ -11,18 +11,18 @@ using Microsoft.Reporting.WinForms;
 
 namespace CELEQ
 {
-    public partial class DesignacionesFiltrarResponsble : Form
+    public partial class DesignacionFiltrarEstudiantes : Form
     {
         string ano;
         string ciclo;
-        public DesignacionesFiltrarResponsble(string a, string c)
+        public DesignacionFiltrarEstudiantes(string a, string c)
         {
             ano = a;
             ciclo = c;
             InitializeComponent();
         }
 
-        private void DesignacionesFiltrarResponsble_Load(object sender, EventArgs e)
+        private void DesignacionFiltrarEstudiantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesResponsable.RepDesignaciones' table. You can move, or remove it, as needed.
             this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesResponsable.RepDesignaciones, ano, ciclo);
@@ -31,6 +31,7 @@ namespace CELEQ
             parameter[1] = new ReportParameter("ciclo", ciclo);
             this.reportViewer1.LocalReport.SetParameters(parameter);
 
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }

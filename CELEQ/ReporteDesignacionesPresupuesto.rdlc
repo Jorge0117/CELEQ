@@ -86,7 +86,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.81334cm</Width>
+                  <Width>1.77772cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.30812cm</Width>
@@ -990,9 +990,9 @@
               </Filter>
             </Filters>
             <Top>0.17639cm</Top>
-            <Left>0.08818cm</Left>
+            <Left>0.08852cm</Left>
             <Height>4.2cm</Height>
-            <Width>16.60432cm</Width>
+            <Width>16.5687cm</Width>
             <Visibility>
               <Hidden>=CountRows() = 0</Hidden>
             </Visibility>
@@ -1006,10 +1006,10 @@
         <Height>2.0497in</Height>
         <Style />
       </Body>
-      <Width>6.60657in</Width>
+      <Width>6.66907in</Width>
       <Page>
         <PageHeader>
-          <Height>2.50183cm</Height>
+          <Height>2.51065cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1022,9 +1022,9 @@
                     <TextRun>
                       <Value>U N I V E R S I D A D  D E  C O S T A  R I C A</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1037,9 +1037,9 @@
                     <TextRun>
                       <Value>CENTRO DE ELECTROQUÍMICA Y ENERGÍA QUÍMICA (CELEQ)</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1052,9 +1052,9 @@
                     <TextRun>
                       <Value>INFORME DE DESIGNACIONES</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1067,9 +1067,9 @@
                     <TextRun>
                       <Value />
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1079,9 +1079,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>2.60108cm</Left>
+              <Left>2.05563cm</Left>
               <Height>2.33426cm</Height>
-              <Width>11.57853cm</Width>
+              <Width>12.7254cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1096,6 +1096,7 @@
               <Source>Embedded</Source>
               <Value>EscdoUCR</Value>
               <Sizing>FitProportional</Sizing>
+              <Top>0.00882cm</Top>
               <Height>2.36953cm</Height>
               <Width>2.34667cm</Width>
               <ZIndex>1</ZIndex>
@@ -1109,7 +1110,8 @@
               <Source>Embedded</Source>
               <Value>LogoCeleq</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>14.43707cm</Left>
+              <Top>0.00882cm</Top>
+              <Left>14.68367cm</Left>
               <Height>2.33426cm</Height>
               <Width>2.25577cm</Width>
               <ZIndex>2</ZIndex>
@@ -1128,7 +1130,7 @@
                     <TextRun>
                       <Value>=Parameters!ciclo.Value + " ciclo de " + Parameters!ano.Value</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1140,7 +1142,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.51377cm</Top>
+              <Top>1.52259cm</Top>
               <Left>6.55826cm</Left>
               <Height>0.6cm</Height>
               <Width>3.82292cm</Width>

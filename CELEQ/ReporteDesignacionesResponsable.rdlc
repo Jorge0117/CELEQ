@@ -1030,9 +1030,9 @@
                     <TextRun>
                       <Value>U N I V E R S I D A D  D E  C O S T A  R I C A</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1045,9 +1045,9 @@
                     <TextRun>
                       <Value>CENTRO DE ELECTROQUÍMICA Y ENERGÍA QUÍMICA (CELEQ)</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1060,9 +1060,9 @@
                     <TextRun>
                       <Value>INFORME DE DESIGNACIONES</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1073,9 +1073,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.09553cm</Top>
-              <Left>2.84056cm</Left>
+              <Left>2.34667cm</Left>
               <Height>2.11377cm</Height>
-              <Width>11.57853cm</Width>
+              <Width>12.82207cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1124,8 +1124,9 @@
                     <TextRun>
                       <Value>=Parameters!ciclo.Value + " ciclo de " + Parameters!ano.Value</Value>
                       <Style>
-                        <FontFamily>Modern No. 20</FontFamily>
+                        <FontFamily>times New Roman</FontFamily>
                         <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>

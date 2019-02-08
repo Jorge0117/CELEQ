@@ -78,6 +78,7 @@
             this.checkCicloI.TabIndex = 4;
             this.checkCicloI.Text = "I";
             this.checkCicloI.UseVisualStyleBackColor = true;
+            this.checkCicloI.CheckedChanged += new System.EventHandler(this.checkCicloI_CheckedChanged);
             // 
             // checkCicloIIC
             // 
@@ -88,6 +89,7 @@
             this.checkCicloIIC.TabIndex = 5;
             this.checkCicloIIC.Text = "I I.C";
             this.checkCicloIIC.UseVisualStyleBackColor = true;
+            this.checkCicloIIC.CheckedChanged += new System.EventHandler(this.checkCicloIIC_CheckedChanged);
             // 
             // checkCicloII
             // 
@@ -98,6 +100,7 @@
             this.checkCicloII.TabIndex = 6;
             this.checkCicloII.Text = "II";
             this.checkCicloII.UseVisualStyleBackColor = true;
+            this.checkCicloII.CheckedChanged += new System.EventHandler(this.checkCicloII_CheckedChanged);
             // 
             // checkCicloIIIC
             // 
@@ -108,6 +111,7 @@
             this.checkCicloIIIC.TabIndex = 7;
             this.checkCicloIIIC.Text = "II I.C";
             this.checkCicloIIIC.UseVisualStyleBackColor = true;
+            this.checkCicloIIIC.CheckedChanged += new System.EventHandler(this.checkCicloIIIC_CheckedChanged);
             // 
             // checkcicloIII
             // 
@@ -118,6 +122,7 @@
             this.checkcicloIII.TabIndex = 8;
             this.checkcicloIII.Text = "III";
             this.checkcicloIII.UseVisualStyleBackColor = true;
+            this.checkcicloIII.CheckedChanged += new System.EventHandler(this.checkcicloIII_CheckedChanged);
             // 
             // butGenerarReporte
             // 

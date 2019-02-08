@@ -58,13 +58,13 @@
             this.arancelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -274,7 +274,7 @@
             this.agregarDesignacionToolStripMenuItem,
             this.verDesignacionesToolStripMenuItem});
             this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
-            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.designacionesToolStripMenuItem.Text = "Designaciones";
             // 
             // agregarDesignacionToolStripMenuItem
@@ -294,23 +294,30 @@
             // arancelesToolStripMenuItem
             // 
             this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
-            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.arancelesToolStripMenuItem.Text = "Aranceles";
             this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
             // 
             // presupuestoToolStripMenuItem
             // 
             this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
-            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.presupuestoToolStripMenuItem.Text = "Presupuesto";
             this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
             // 
             // verEstudiantesToolStripMenuItem
             // 
             this.verEstudiantesToolStripMenuItem.Name = "verEstudiantesToolStripMenuItem";
-            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.verEstudiantesToolStripMenuItem.Text = "Ver Estudiantes";
             this.verEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.verEstudiantesToolStripMenuItem_Click);
+            // 
+            // generarReporteToolStripMenuItem
+            // 
+            this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
+            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
+            this.generarReporteToolStripMenuItem.Click += new System.EventHandler(this.generarReporteToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -335,22 +342,22 @@
             // labelUcr
             // 
             this.labelUcr.AutoSize = true;
-            this.labelUcr.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUcr.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelUcr.Location = new System.Drawing.Point(270, 129);
             this.labelUcr.Name = "labelUcr";
-            this.labelUcr.Size = new System.Drawing.Size(438, 38);
+            this.labelUcr.Size = new System.Drawing.Size(437, 42);
             this.labelUcr.TabIndex = 4;
             this.labelUcr.Text = "Universidad de Costa Rica";
             // 
             // labelCeleq
             // 
             this.labelCeleq.AutoSize = true;
-            this.labelCeleq.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCeleq.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelCeleq.Location = new System.Drawing.Point(167, 214);
             this.labelCeleq.Name = "labelCeleq";
-            this.labelCeleq.Size = new System.Drawing.Size(643, 34);
+            this.labelCeleq.Size = new System.Drawing.Size(632, 36);
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
@@ -373,13 +380,6 @@
             this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
-            // 
-            // generarReporteToolStripMenuItem
-            // 
-            this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
-            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
-            this.generarReporteToolStripMenuItem.Click += new System.EventHandler(this.generarReporteToolStripMenuItem_Click);
             // 
             // Form1
             // 

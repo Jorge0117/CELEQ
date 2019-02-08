@@ -31,7 +31,6 @@ namespace CELEQ
         {
             try
             {
-
                 labelMotivo.Visible = false;
                 textInopia.Visible = false;
 
