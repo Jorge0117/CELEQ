@@ -260,6 +260,7 @@ namespace CELEQ
             en.ShowDialog();
             en.Dispose();
         }
+
     }
 
     public static class Globals

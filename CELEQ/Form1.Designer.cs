@@ -65,6 +65,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
+            this.responsablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -263,7 +264,8 @@
             this.arancelesToolStripMenuItem,
             this.presupuestoToolStripMenuItem,
             this.verEstudiantesToolStripMenuItem,
-            this.generarReporteToolStripMenuItem});
+            this.generarReporteToolStripMenuItem,
+            this.responsablesToolStripMenuItem});
             this.regimenBecarioToolStripMenuItem.Name = "regimenBecarioToolStripMenuItem";
             this.regimenBecarioToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.regimenBecarioToolStripMenuItem.Text = "Regimen Becario";
@@ -381,6 +383,13 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
+            // responsablesToolStripMenuItem
+            // 
+            this.responsablesToolStripMenuItem.Name = "responsablesToolStripMenuItem";
+            this.responsablesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.responsablesToolStripMenuItem.Text = "Responsables";
+            this.responsablesToolStripMenuItem.Click += new System.EventHandler(this.responsablesToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,6 +458,7 @@
         private System.Windows.Forms.ToolStripMenuItem verDesignacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verEstudiantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarReporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem responsablesToolStripMenuItem;
     }
 }
 

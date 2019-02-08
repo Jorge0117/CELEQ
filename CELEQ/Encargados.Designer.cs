@@ -31,14 +31,14 @@
             this.butModificar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
             this.labelEncargados = new System.Windows.Forms.Label();
-            this.dgvUnidad = new System.Windows.Forms.DataGridView();
+            this.dgvResponsables = new System.Windows.Forms.DataGridView();
             this.butEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsables)).BeginInit();
             this.SuspendLayout();
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(963, 139);
+            this.butModificar.Location = new System.Drawing.Point(963, 119);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(197, 43);
             this.butModificar.TabIndex = 10;
@@ -66,29 +66,30 @@
             this.labelEncargados.TabIndex = 8;
             this.labelEncargados.Text = "Responsables";
             // 
-            // dgvUnidad
+            // dgvResponsables
             // 
-            this.dgvUnidad.AllowUserToAddRows = false;
-            this.dgvUnidad.AllowUserToDeleteRows = false;
-            this.dgvUnidad.AllowUserToResizeColumns = false;
-            this.dgvUnidad.AllowUserToResizeRows = false;
-            this.dgvUnidad.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnidad.Location = new System.Drawing.Point(29, 70);
-            this.dgvUnidad.Name = "dgvUnidad";
-            this.dgvUnidad.ReadOnly = true;
-            this.dgvUnidad.RowHeadersVisible = false;
-            this.dgvUnidad.Size = new System.Drawing.Size(900, 553);
-            this.dgvUnidad.TabIndex = 7;
+            this.dgvResponsables.AllowUserToAddRows = false;
+            this.dgvResponsables.AllowUserToDeleteRows = false;
+            this.dgvResponsables.AllowUserToResizeColumns = false;
+            this.dgvResponsables.AllowUserToResizeRows = false;
+            this.dgvResponsables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvResponsables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsables.Location = new System.Drawing.Point(29, 70);
+            this.dgvResponsables.Name = "dgvResponsables";
+            this.dgvResponsables.ReadOnly = true;
+            this.dgvResponsables.RowHeadersVisible = false;
+            this.dgvResponsables.Size = new System.Drawing.Size(900, 553);
+            this.dgvResponsables.TabIndex = 7;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(963, 200);
+            this.butEliminar.Location = new System.Drawing.Point(963, 168);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(197, 43);
             this.butEliminar.TabIndex = 11;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
+            this.butEliminar.Click += new System.EventHandler(this.butEliminar_Click);
             // 
             // Encargados
             // 
@@ -100,13 +101,13 @@
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelEncargados);
-            this.Controls.Add(this.dgvUnidad);
+            this.Controls.Add(this.dgvResponsables);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Encargados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Responsable";
             this.Load += new System.EventHandler(this.Encargados_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsables)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Button butModificar;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Label labelEncargados;
-        public System.Windows.Forms.DataGridView dgvUnidad;
+        public System.Windows.Forms.DataGridView dgvResponsables;
         private System.Windows.Forms.Button butEliminar;
     }
 }

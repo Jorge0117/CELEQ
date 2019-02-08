@@ -20,9 +20,9 @@ namespace CELEQ
             bd = new AccesoBaseDatos();
 
             //Solo permite seleccionar filas en el dgv
-            dgvUnidad.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUnidad.MultiSelect = false;
-            dgvUnidad.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            dgvResponsables.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvResponsables.MultiSelect = false;
+            dgvResponsables.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
         }
 
         //Pinta la fila completa en el dgv
@@ -52,33 +52,68 @@ namespace CELEQ
 
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;
-            dgvUnidad.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            dgvUnidad.DataSource = bs;
-            for (int i = 0; i < dgvUnidad.ColumnCount; ++i)
+            dgvResponsables.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvResponsables.DataSource = bs;
+            for (int i = 0; i < dgvResponsables.ColumnCount; ++i)
             {
-                dgvUnidad.Columns[i].Width = dgvUnidad.Width / dgvUnidad.ColumnCount - 1;
+                dgvResponsables.Columns[i].Width = dgvResponsables.Width / dgvResponsables.ColumnCount - 1;
             }
         }
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", "");
-            if (encargado != "")
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", " ");
+            if (encargado != " " && encargado != "")
             {
                 bd.ejecutarConsulta("insert into responsable values ('" + encargado + "')");
                 MessageBox.Show("Responsable agregado correctamente", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
                 llenarTabla();
             }
-            else
+            else if (encargado == " ")
             {
                 MessageBox.Show("Por favor digite el nombre del responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
             }
         }
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-            
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", " ");
+            int error = bd.modificarResponsable(dgvResponsables.SelectedRows[0].Cells[0].Value.ToString(), encargado);
+            if (error == 0)
+            {
+                MessageBox.Show("Responsable modificado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                llenarTabla();
+            }
+            else if (encargado == " ")
+            {
+                MessageBox.Show("Error al modificar responsable\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+            }
         }
 
+        private void butEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvResponsables.RowCount > 0)
+            {
+                if (MessageBox.Show("¿Seguro que quiere borrar el responsable?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string nombre = dgvResponsables.SelectedRows[0].Cells[0].Value.ToString();
+                    if (bd.eliminarResponsable(nombre) == 0)
+                    {
+                        MessageBox.Show("Responsable eliminado de manera correcta", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        llenarTabla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar responsable", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } 
+                }
+            }
+        }
     }
 }
