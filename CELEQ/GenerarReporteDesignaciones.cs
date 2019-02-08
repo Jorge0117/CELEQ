@@ -22,6 +22,8 @@ namespace CELEQ
             comboFiltro.Items.Add("Presupuesto");
             comboFiltro.Items.Add("Encargado");
             comboFiltro.Items.Add("Estudiante");
+
+            numAno.Value = DateTime.Today.Year;
         }
 
         private void butGenerarReporte_Click(object sender, EventArgs e)
@@ -33,23 +35,90 @@ namespace CELEQ
             }
             else
             {
+                string ciclo = "";
+                if (checkCicloI.Checked)
+                    ciclo = "I";
+                else if (checkCicloIIC.Checked)
+                    ciclo = "I I.C";
+                else if (checkCicloII.Checked)
+                    ciclo = "II";
+                else if (checkCicloIIIC.Checked)
+                    ciclo = "II I.C";
+                else if (checkcicloIII.Checked)
+                    ciclo = "III";
+
                 if (comboFiltro.Text == "Presupuesto")
                 {
-                    string ciclo = "";
-                    if (checkCicloI.Checked)
-                        ciclo = "I";
-                    else if (checkCicloIIC.Checked)
-                        ciclo = "I I.C";
-                    else if (checkCicloII.Checked)
-                        ciclo = "II";
-                    else if (checkCicloIIIC.Checked)
-                        ciclo = "II I.C";
-                    else if (checkcicloIII.Checked)
-                        ciclo = "III";
                     ReporteDesignacionesPresupuesto rd = new ReporteDesignacionesPresupuesto(numAno.Text,ciclo);
                     rd.ShowDialog();
                     rd.Dispose();
+                }else if(comboFiltro.Text == "Encargado")
+                {
+                    DesignacionesFiltrarResponsble dfr = new DesignacionesFiltrarResponsble(numAno.Text, ciclo);
+                    dfr.ShowDialog();
+                    dfr.Dispose();
                 }
+                else
+                {
+                    DesignacionFiltrarEstudiantes dfe = new DesignacionFiltrarEstudiantes(numAno.Text, ciclo);
+                    dfe.ShowDialog();
+                    dfe.Dispose();
+                }
+            }
+        }
+
+        private void checkCicloI_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkCicloI.Checked == true)
+            {
+                checkCicloIIC.Checked = false;
+                checkCicloII.Checked = false;
+                checkCicloIIIC.Checked = false;
+                checkcicloIII.Checked = false;
+            }
+        }
+
+        private void checkCicloIIC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCicloIIC.Checked == true)
+            {
+                checkCicloI.Checked = false;
+                checkCicloII.Checked = false;
+                checkCicloIIIC.Checked = false;
+                checkcicloIII.Checked = false;
+            }
+        }
+
+        private void checkCicloII_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCicloII.Checked == true)
+            {
+                checkCicloI.Checked = false;
+                checkCicloIIC.Checked = false;
+                checkCicloIIIC.Checked = false;
+                checkcicloIII.Checked = false;
+            }
+        }
+
+        private void checkCicloIIIC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCicloIIIC.Checked == true)
+            {
+                checkCicloI.Checked = false;
+                checkCicloIIC.Checked = false;
+                checkCicloII.Checked = false;
+                checkcicloIII.Checked = false;
+            }
+        }
+
+        private void checkcicloIII_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkcicloIII.Checked == true)
+            {
+                checkCicloI.Checked = false;
+                checkCicloIIC.Checked = false;
+                checkCicloII.Checked = false;
+                checkCicloIIIC.Checked = false;
             }
         }
     }

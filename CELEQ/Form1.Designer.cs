@@ -344,22 +344,22 @@
             // labelUcr
             // 
             this.labelUcr.AutoSize = true;
-            this.labelUcr.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUcr.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelUcr.Location = new System.Drawing.Point(270, 129);
             this.labelUcr.Name = "labelUcr";
-            this.labelUcr.Size = new System.Drawing.Size(438, 38);
+            this.labelUcr.Size = new System.Drawing.Size(437, 42);
             this.labelUcr.TabIndex = 4;
             this.labelUcr.Text = "Universidad de Costa Rica";
             // 
             // labelCeleq
             // 
             this.labelCeleq.AutoSize = true;
-            this.labelCeleq.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCeleq.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.labelCeleq.Location = new System.Drawing.Point(167, 214);
             this.labelCeleq.Name = "labelCeleq";
-            this.labelCeleq.Size = new System.Drawing.Size(643, 34);
+            this.labelCeleq.Size = new System.Drawing.Size(632, 36);
             this.labelCeleq.TabIndex = 5;
             this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
             // 
