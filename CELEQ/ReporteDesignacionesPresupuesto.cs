@@ -15,17 +15,26 @@ namespace CELEQ
     {
         string ano;
         string ciclo;
-        public ReporteDesignacionesPresupuesto(string a, string c)
+        string ver;
+        public ReporteDesignacionesPresupuesto(string a, string c, string v)
         {
             ano = a;
             ciclo = c;
+            ver = v;
             InitializeComponent();
         }
 
         private void ReporteDesignacionesPresupuesto_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            this.RepDesignacionesTableAdapter.FillBy(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo,"0000");
+            if (ver == "Todos")
+            {
+                this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo);
+            }
+            else
+            {
+                this.RepDesignacionesTableAdapter.FillBy(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo, ver);
+            }
             ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("ciclo", ciclo);
             parametros[1] = new ReportParameter("ano", ano);
