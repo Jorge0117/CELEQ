@@ -34,6 +34,7 @@ namespace CELEQ
 
         private void Encargados_Load(object sender, EventArgs e)
         {
+
             llenarTabla();
         }
 
@@ -80,7 +81,7 @@ namespace CELEQ
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre del responsable", "Responsable", " ");
+            string encargado = Microsoft.VisualBasic.Interaction.InputBox("Modifique el nombre del responsable", "Responsable", dgvResponsables.SelectedRows[0].Cells[0].Value.ToString());
             int error = bd.modificarResponsable(dgvResponsables.SelectedRows[0].Cells[0].Value.ToString(), encargado);
             if (error == 0)
             {
