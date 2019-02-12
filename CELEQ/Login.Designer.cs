@@ -28,61 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textUsuario = new System.Windows.Forms.TextBox();
-            this.textPass = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
+            this.textUsuario = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña:";
-            // 
-            // textUsuario
-            // 
-            this.textUsuario.Location = new System.Drawing.Point(119, 42);
-            this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(302, 20);
-            this.textUsuario.TabIndex = 2;
-            // 
-            // textPass
-            // 
-            this.textPass.Location = new System.Drawing.Point(119, 82);
-            this.textPass.Name = "textPass";
-            this.textPass.PasswordChar = '*';
-            this.textPass.Size = new System.Drawing.Size(302, 20);
-            this.textPass.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textPass);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 135);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
             // 
             // butAceptar
             // 
@@ -103,6 +57,51 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
+            // 
+            // textUsuario
+            // 
+            this.textUsuario.Location = new System.Drawing.Point(119, 42);
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.Size = new System.Drawing.Size(302, 20);
+            this.textUsuario.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Contraseña:";
+            // 
+            // textPass
+            // 
+            this.textPass.Location = new System.Drawing.Point(119, 82);
+            this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
+            this.textPass.Size = new System.Drawing.Size(302, 20);
+            this.textPass.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textPass);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textUsuario);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(462, 135);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
             // 
             // Login
             // 
@@ -130,13 +129,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textUsuario;
-        private System.Windows.Forms.TextBox textPass;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.TextBox textUsuario;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

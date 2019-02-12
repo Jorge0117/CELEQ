@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CELEQ
 {
     public partial class GenerarReporteDesignaciones : Form
     {
+        AccesoBaseDatos bd;
         public GenerarReporteDesignaciones()
         {
+            bd = new AccesoBaseDatos();
             InitializeComponent();
         }
 
@@ -24,6 +27,9 @@ namespace CELEQ
             comboFiltro.Items.Add("Estudiante");
 
             numAno.Value = DateTime.Today.Year;
+
+            comboVer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboVer.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void butGenerarReporte_Click(object sender, EventArgs e)
@@ -119,6 +125,37 @@ namespace CELEQ
                 checkCicloIIC.Checked = false;
                 checkCicloII.Checked = false;
                 checkCicloIIIC.Checked = false;
+            }
+        }
+
+
+        private void comboFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboVer.Items.Clear();
+            comboVer.Items.Add("Todos");
+            if (comboFiltro.Text == "Presupuesto")
+            {
+                SqlDataReader presupuestos = bd.ejecutarConsulta("select codigo from presupuesto");
+                while (presupuestos.Read())
+                {  
+                    comboVer.Items.Add(presupuestos[0].ToString());
+                }
+            }
+            else if (comboFiltro.Text == "Encargado")
+            {
+                SqlDataReader encargados = bd.ejecutarConsulta("select nombre from responsable");
+                while (encargados.Read())
+                {
+                    comboVer.Items.Add(encargados[0].ToString());
+                }
+            }
+            else if (comboFiltro.Text == "Estudiante")
+            {
+                SqlDataReader estudiantes = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from estudiante");
+                while (estudiantes.Read())
+                {
+                    comboVer.Items.Add(estudiantes[0].ToString());
+                }
             }
         }
     }

@@ -38,7 +38,7 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(963, 119);
+            this.butModificar.Location = new System.Drawing.Point(475, 119);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(197, 43);
             this.butModificar.TabIndex = 10;
@@ -48,7 +48,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(963, 70);
+            this.butAgregar.Location = new System.Drawing.Point(475, 70);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(197, 43);
             this.butAgregar.TabIndex = 9;
@@ -78,12 +78,12 @@
             this.dgvResponsables.Name = "dgvResponsables";
             this.dgvResponsables.ReadOnly = true;
             this.dgvResponsables.RowHeadersVisible = false;
-            this.dgvResponsables.Size = new System.Drawing.Size(900, 553);
+            this.dgvResponsables.Size = new System.Drawing.Size(395, 358);
             this.dgvResponsables.TabIndex = 7;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(963, 168);
+            this.butEliminar.Location = new System.Drawing.Point(475, 168);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(197, 43);
             this.butEliminar.TabIndex = 11;
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(715, 461);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);

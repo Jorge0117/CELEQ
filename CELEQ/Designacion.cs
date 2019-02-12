@@ -592,6 +592,7 @@ namespace CELEQ
                 bd.ejecutarConsulta("insert into responsable values ('" + encargado + "')");
                 MessageBox.Show("Responsable agregado correctamente", "Responsable", MessageBoxButtons.OK, MessageBoxIcon.None);
                 SqlDataReader responsables = bd.ejecutarConsulta("select nombre from responsable");
+                comboResponsables.Items.Clear();
                 while (responsables.Read())
                 {
                     comboResponsables.Items.Add(responsables[0].ToString());

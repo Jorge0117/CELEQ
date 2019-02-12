@@ -57,6 +57,5 @@ namespace CELEQ
                 Application.Exit();
             }
         }
-
     }
 }
