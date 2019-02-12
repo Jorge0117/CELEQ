@@ -39,6 +39,8 @@
             this.butGenerarReporte = new System.Windows.Forms.Button();
             this.comboFiltro = new System.Windows.Forms.ComboBox();
             this.numAno = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboVer = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numAno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +128,7 @@
             // 
             // butGenerarReporte
             // 
-            this.butGenerarReporte.Location = new System.Drawing.Point(178, 87);
+            this.butGenerarReporte.Location = new System.Drawing.Point(286, 93);
             this.butGenerarReporte.Name = "butGenerarReporte";
             this.butGenerarReporte.Size = new System.Drawing.Size(111, 23);
             this.butGenerarReporte.TabIndex = 9;
@@ -142,6 +144,7 @@
             this.comboFiltro.Name = "comboFiltro";
             this.comboFiltro.Size = new System.Drawing.Size(159, 21);
             this.comboFiltro.TabIndex = 10;
+            this.comboFiltro.SelectedIndexChanged += new System.EventHandler(this.comboFiltro_SelectedIndexChanged);
             // 
             // numAno
             // 
@@ -155,12 +158,31 @@
             this.numAno.Size = new System.Drawing.Size(63, 20);
             this.numAno.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Ver:";
+            // 
+            // comboVer
+            // 
+            this.comboVer.FormattingEnabled = true;
+            this.comboVer.Location = new System.Drawing.Point(100, 95);
+            this.comboVer.Name = "comboVer";
+            this.comboVer.Size = new System.Drawing.Size(180, 21);
+            this.comboVer.TabIndex = 13;
+            // 
             // GenerarReporteDesignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(465, 128);
+            this.Controls.Add(this.comboVer);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.numAno);
             this.Controls.Add(this.comboFiltro);
             this.Controls.Add(this.butGenerarReporte);
@@ -199,5 +221,7 @@
         private System.Windows.Forms.Button butGenerarReporte;
         private System.Windows.Forms.ComboBox comboFiltro;
         private System.Windows.Forms.NumericUpDown numAno;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboVer;
     }
 }
