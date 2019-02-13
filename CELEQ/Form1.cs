@@ -84,21 +84,18 @@ namespace CELEQ
                 regenciaToolStripMenuItem.Visible = true;
                 solicitudesPendientesToolStripMenuItem.Visible = true;
                 historialDeSolicitudesToolStripMenuItem.Visible = true;
-                usuariosToolStripMenuItem.Visible = true;
             }
             else if(Globals.categoria == "Regencia")
             {
                 regenciaToolStripMenuItem.Visible = true;
                 solicitudesPendientesToolStripMenuItem.Visible = true;
                 historialDeSolicitudesToolStripMenuItem.Visible = true;
-                usuariosToolStripMenuItem.Visible = false;
             }
             else if(Globals.categoria == "Estudiante")
             {
                 regenciaToolStripMenuItem.Visible = true;
                 solicitudesPendientesToolStripMenuItem.Visible = false;
                 historialDeSolicitudesToolStripMenuItem.Visible = false;
-                usuariosToolStripMenuItem.Visible = false;
             }
         }
 

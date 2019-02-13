@@ -16,7 +16,7 @@ namespace CELEQ
         string ano;
         string ciclo;
         string ver;
-        public ReporteDesignacionesPresupuesto(string a, string c, string v)
+        public ReporteDesignacionesPresupuesto(string a, string c, string v = null)
         {
             ano = a;
             ciclo = c;
@@ -27,7 +27,7 @@ namespace CELEQ
         private void ReporteDesignacionesPresupuesto_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'RepDesignacionesDataSet.RepDesignaciones' table. You can move, or remove it, as needed.
-            if (ver == "Todos")
+            if (ver == null)
             {
                 this.RepDesignacionesTableAdapter.Fill(this.RepDesignacionesDataSet.RepDesignaciones, ano, ciclo);
             }

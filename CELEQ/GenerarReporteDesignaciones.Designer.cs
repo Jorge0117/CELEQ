@@ -77,7 +77,7 @@
             this.checkCicloI.Location = new System.Drawing.Point(204, 21);
             this.checkCicloI.Name = "checkCicloI";
             this.checkCicloI.Size = new System.Drawing.Size(29, 17);
-            this.checkCicloI.TabIndex = 4;
+            this.checkCicloI.TabIndex = 1;
             this.checkCicloI.Text = "I";
             this.checkCicloI.UseVisualStyleBackColor = true;
             this.checkCicloI.CheckedChanged += new System.EventHandler(this.checkCicloI_CheckedChanged);
@@ -88,7 +88,7 @@
             this.checkCicloIIC.Location = new System.Drawing.Point(239, 21);
             this.checkCicloIIC.Name = "checkCicloIIC";
             this.checkCicloIIC.Size = new System.Drawing.Size(45, 17);
-            this.checkCicloIIC.TabIndex = 5;
+            this.checkCicloIIC.TabIndex = 2;
             this.checkCicloIIC.Text = "I I.C";
             this.checkCicloIIC.UseVisualStyleBackColor = true;
             this.checkCicloIIC.CheckedChanged += new System.EventHandler(this.checkCicloIIC_CheckedChanged);
@@ -99,7 +99,7 @@
             this.checkCicloII.Location = new System.Drawing.Point(284, 21);
             this.checkCicloII.Name = "checkCicloII";
             this.checkCicloII.Size = new System.Drawing.Size(32, 17);
-            this.checkCicloII.TabIndex = 6;
+            this.checkCicloII.TabIndex = 3;
             this.checkCicloII.Text = "II";
             this.checkCicloII.UseVisualStyleBackColor = true;
             this.checkCicloII.CheckedChanged += new System.EventHandler(this.checkCicloII_CheckedChanged);
@@ -110,7 +110,7 @@
             this.checkCicloIIIC.Location = new System.Drawing.Point(322, 21);
             this.checkCicloIIIC.Name = "checkCicloIIIC";
             this.checkCicloIIIC.Size = new System.Drawing.Size(48, 17);
-            this.checkCicloIIIC.TabIndex = 7;
+            this.checkCicloIIIC.TabIndex = 4;
             this.checkCicloIIIC.Text = "II I.C";
             this.checkCicloIIIC.UseVisualStyleBackColor = true;
             this.checkCicloIIIC.CheckedChanged += new System.EventHandler(this.checkCicloIIIC_CheckedChanged);
@@ -121,7 +121,7 @@
             this.checkcicloIII.Location = new System.Drawing.Point(370, 21);
             this.checkcicloIII.Name = "checkcicloIII";
             this.checkcicloIII.Size = new System.Drawing.Size(35, 17);
-            this.checkcicloIII.TabIndex = 8;
+            this.checkcicloIII.TabIndex = 5;
             this.checkcicloIII.Text = "III";
             this.checkcicloIII.UseVisualStyleBackColor = true;
             this.checkcicloIII.CheckedChanged += new System.EventHandler(this.checkcicloIII_CheckedChanged);
@@ -131,7 +131,7 @@
             this.butGenerarReporte.Location = new System.Drawing.Point(286, 93);
             this.butGenerarReporte.Name = "butGenerarReporte";
             this.butGenerarReporte.Size = new System.Drawing.Size(111, 23);
-            this.butGenerarReporte.TabIndex = 9;
+            this.butGenerarReporte.TabIndex = 8;
             this.butGenerarReporte.Text = "Generar Reporte";
             this.butGenerarReporte.UseVisualStyleBackColor = true;
             this.butGenerarReporte.Click += new System.EventHandler(this.butGenerarReporte_Click);
@@ -143,7 +143,7 @@
             this.comboFiltro.Location = new System.Drawing.Point(182, 54);
             this.comboFiltro.Name = "comboFiltro";
             this.comboFiltro.Size = new System.Drawing.Size(159, 21);
-            this.comboFiltro.TabIndex = 10;
+            this.comboFiltro.TabIndex = 6;
             this.comboFiltro.SelectedIndexChanged += new System.EventHandler(this.comboFiltro_SelectedIndexChanged);
             // 
             // numAno
@@ -156,7 +156,7 @@
             0});
             this.numAno.Name = "numAno";
             this.numAno.Size = new System.Drawing.Size(63, 20);
-            this.numAno.TabIndex = 11;
+            this.numAno.TabIndex = 0;
             // 
             // label4
             // 
@@ -173,10 +173,11 @@
             this.comboVer.Location = new System.Drawing.Point(100, 95);
             this.comboVer.Name = "comboVer";
             this.comboVer.Size = new System.Drawing.Size(180, 21);
-            this.comboVer.TabIndex = 13;
+            this.comboVer.TabIndex = 7;
             // 
             // GenerarReporteDesignaciones
             // 
+            this.AcceptButton = this.butGenerarReporte;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
