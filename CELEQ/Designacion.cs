@@ -276,7 +276,141 @@ namespace CELEQ
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(idDesignacion != null && butAceptar.Text == "Aceptar")
+            {
+                try
+                {
+                    comboResponsables.Items.Clear();
+                    comboUnidad.Items.Clear();
+                    comboPresupuesto.Items.Clear();
+                    comboModalidad.Items.Clear();
+                    comboCiclo.Items.Clear();
+                    comboP9.Items.Clear();
+
+                    labelMotivo.Visible = false;
+                    textInopia.Visible = false;
+
+                    adjuntarDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    adjuntarDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                    adjuntarDialog.FilterIndex = 0;
+                    adjuntarDialog.RestoreDirectory = true;
+
+                    saveDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    saveDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                    saveDialog.FilterIndex = 0;
+                    saveDialog.RestoreDirectory = true;
+
+                    SqlDataReader unidades = bd.ejecutarConsulta("select nombre from unidad");
+                    while (unidades.Read())
+                    {
+                        comboUnidad.Items.Add(unidades[0].ToString());
+                    }
+
+                    SqlDataReader responsables = bd.ejecutarConsulta("select nombre from responsable");
+                    while (responsables.Read())
+                    {
+                        comboResponsables.Items.Add(responsables[0].ToString());
+                    }
+
+                    butAceptar.Text = "Modificar";
+                    butAgregarPresupuesto.Visible = false;
+
+                    SqlDataReader datosDesignacion = bd.ejecutarConsulta("select ano, ciclo, fechainicio, fechafinal, convocatoria, horas, modalidad, inopia, " +
+                        "motivoInopia, tramitado, observaciones, presupuesto, encargado, unidad, idestudiante, adHonorem from designacionasistencia where id = " + idDesignacion);
+
+                    datosDesignacion.Read();
+                    numAnno.Value = Convert.ToDecimal(datosDesignacion[0]);
+                    comboCiclo.Items.Add(datosDesignacion[1].ToString());
+                    comboCiclo.SelectedIndex = 0;
+                    dateInicio.Value = DateTime.Parse(datosDesignacion[2].ToString());
+                    datefinal.Value = DateTime.Parse(datosDesignacion[3].ToString());
+                    textConvocatoria.Text = datosDesignacion[4].ToString();
+                    numHoras.Value = Convert.ToDecimal(datosDesignacion[5].ToString());
+                    comboModalidad.Items.Add(datosDesignacion[6].ToString());
+                    comboModalidad.SelectedIndex = 0;
+
+                    if (Convert.ToInt32(datosDesignacion[7]) == 1)
+                    {
+                        checkInopia.Checked = true;
+                        textInopia.Visible = true;
+                        labelMotivo.Visible = true;
+                        textInopia.Text = datosDesignacion[8].ToString();
+                    }
+
+                    if (Convert.ToInt32(datosDesignacion[9]) == 1)
+                    {
+                        checkTramitado.Checked = true;
+                    }
+
+                    textObservaciones.Text = datosDesignacion[10].ToString();
+                    comboPresupuesto.Items.Add(datosDesignacion[11].ToString());
+                    comboPresupuesto.SelectedIndex = 0;
+                    comboResponsables.SelectedIndex = comboResponsables.FindStringExact(datosDesignacion[12].ToString());
+                    comboUnidad.SelectedIndex = comboUnidad.FindStringExact(datosDesignacion[13].ToString());
+
+                    if (Convert.ToInt32(datosDesignacion[14]) == 1)
+                    {
+                        checkAdHonorem.Checked = true;
+                    }
+
+                    numAnno.Enabled = false;
+                    comboCiclo.Enabled = false;
+                    dateInicio.Enabled = false;
+                    datefinal.Enabled = false;
+                    textConvocatoria.Enabled = false;
+                    numHoras.Enabled = false;
+                    comboModalidad.Enabled = false;
+
+                    checkInopia.Enabled = false;
+                    textInopia.Enabled = false;
+                    textInopia.Enabled = false;
+                    checkTramitado.Enabled = false;
+
+                    textObservaciones.Enabled = false;
+                    comboPresupuesto.Enabled = false;
+                    comboResponsables.Enabled = false;
+                    comboUnidad.Enabled = false;
+                    checkAdHonorem.Enabled = false;
+
+
+                    string idEstudiante = datosDesignacion[14].ToString();
+                    textIdentificacion.Text = idEstudiante;
+
+                    SqlDataReader datosEstudiante = bd.ejecutarConsulta("select tipoId, nombre, apellido1, apellido2, correo, celular, telefonoFijo, carrera from estudiante where id = '" + idEstudiante + "'");
+                    datosEstudiante.Read();
+                    comboTipoId.Items.Add(datosEstudiante[0].ToString());
+                    comboTipoId.SelectedIndex = 0;
+                    textNombre.Text = datosEstudiante[1].ToString();
+                    textApellido1.Text = datosEstudiante[2].ToString();
+                    textApellido2.Text = datosEstudiante[3].ToString();
+                    textCorreo.Text = datosEstudiante[4].ToString();
+                    textCelular.Text = datosEstudiante[5].ToString();
+                    textTelefono.Text = datosEstudiante[6].ToString();
+                    textCarrera.Text = datosEstudiante[7].ToString();
+
+                    textIdentificacion.Enabled = false;
+                    comboTipoId.Enabled = false;
+                    textNombre.Enabled = false;
+                    textApellido1.Enabled = false;
+                    textApellido2.Enabled = false;
+                    textCorreo.Enabled = false;
+                    textCelular.Enabled = false;
+                    textTelefono.Enabled = false;
+                    textCarrera.Enabled = false;
+
+                    cargarP9();
+                }
+                catch
+                {
+                    MessageBox.Show("Ha ocurrido un error al cargar la designación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
 
         private void dateInicio_ValueChanged(object sender, EventArgs e)

@@ -34,13 +34,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(330, 153);
+            this.butAceptar.Location = new System.Drawing.Point(141, 90);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(75, 23);
             this.butAceptar.TabIndex = 16;
@@ -50,7 +48,7 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(411, 153);
+            this.butCancelar.Location = new System.Drawing.Point(222, 90);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(75, 23);
             this.butCancelar.TabIndex = 15;
@@ -60,15 +58,15 @@
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(119, 42);
+            this.textUsuario.Location = new System.Drawing.Point(111, 19);
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(302, 20);
+            this.textUsuario.Size = new System.Drawing.Size(186, 20);
             this.textUsuario.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 85);
+            this.label2.Location = new System.Drawing.Point(36, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
@@ -76,45 +74,33 @@
             // 
             // textPass
             // 
-            this.textPass.Location = new System.Drawing.Point(119, 82);
+            this.textPass.Location = new System.Drawing.Point(111, 59);
             this.textPass.Name = "textPass";
             this.textPass.PasswordChar = '*';
-            this.textPass.Size = new System.Drawing.Size(302, 20);
+            this.textPass.Size = new System.Drawing.Size(186, 20);
             this.textPass.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 45);
+            this.label1.Location = new System.Drawing.Point(36, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textPass);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 135);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AcceptButton = this.butAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(498, 188);
+            this.ClientSize = new System.Drawing.Size(332, 125);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.butAceptar);
+            this.Controls.Add(this.textPass);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.butCancelar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.textUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -122,9 +108,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +120,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -123,7 +123,7 @@
             this.textApellido2.Location = new System.Drawing.Point(736, 80);
             this.textApellido2.Name = "textApellido2";
             this.textApellido2.Size = new System.Drawing.Size(115, 20);
-            this.textApellido2.TabIndex = 38;
+            this.textApellido2.TabIndex = 4;
             // 
             // label21
             // 
@@ -139,14 +139,14 @@
             this.textApellido1.Location = new System.Drawing.Point(615, 80);
             this.textApellido1.Name = "textApellido1";
             this.textApellido1.Size = new System.Drawing.Size(115, 20);
-            this.textApellido1.TabIndex = 36;
+            this.textApellido1.TabIndex = 3;
             // 
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(432, 80);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(115, 20);
-            this.textNombre.TabIndex = 34;
+            this.textNombre.TabIndex = 2;
             // 
             // label15
             // 
@@ -162,7 +162,7 @@
             this.textCarrera.Location = new System.Drawing.Point(432, 167);
             this.textCarrera.Name = "textCarrera";
             this.textCarrera.Size = new System.Drawing.Size(419, 20);
-            this.textCarrera.TabIndex = 5;
+            this.textCarrera.TabIndex = 8;
             // 
             // label10
             // 
@@ -178,21 +178,21 @@
             this.textCelular.Location = new System.Drawing.Point(664, 138);
             this.textCelular.Name = "textCelular";
             this.textCelular.Size = new System.Drawing.Size(187, 20);
-            this.textCelular.TabIndex = 4;
+            this.textCelular.TabIndex = 7;
             // 
             // textTelefono
             // 
             this.textTelefono.Location = new System.Drawing.Point(432, 138);
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.Size = new System.Drawing.Size(168, 20);
-            this.textTelefono.TabIndex = 3;
+            this.textTelefono.TabIndex = 6;
             // 
             // textCorreo
             // 
             this.textCorreo.Location = new System.Drawing.Point(432, 109);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(419, 20);
-            this.textCorreo.TabIndex = 2;
+            this.textCorreo.TabIndex = 5;
             // 
             // textIdentificacion
             // 
@@ -245,9 +245,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(307, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Teléfono:";
+            this.label4.Text = "Teléfono fijo:";
             // 
             // label5
             // 
@@ -307,7 +307,7 @@
             this.butAgregarResponsable.Location = new System.Drawing.Point(776, 22);
             this.butAgregarResponsable.Name = "butAgregarResponsable";
             this.butAgregarResponsable.Size = new System.Drawing.Size(75, 23);
-            this.butAgregarResponsable.TabIndex = 76;
+            this.butAgregarResponsable.TabIndex = 1;
             this.butAgregarResponsable.Text = "Agregar";
             this.butAgregarResponsable.UseVisualStyleBackColor = true;
             this.butAgregarResponsable.Click += new System.EventHandler(this.butAgregarResponsable_Click);
@@ -319,7 +319,7 @@
             this.comboResponsables.Location = new System.Drawing.Point(431, 22);
             this.comboResponsables.Name = "comboResponsables";
             this.comboResponsables.Size = new System.Drawing.Size(339, 21);
-            this.comboResponsables.TabIndex = 75;
+            this.comboResponsables.TabIndex = 0;
             // 
             // checkAdHonorem
             // 
@@ -327,7 +327,7 @@
             this.checkAdHonorem.Location = new System.Drawing.Point(771, 107);
             this.checkAdHonorem.Name = "checkAdHonorem";
             this.checkAdHonorem.Size = new System.Drawing.Size(85, 17);
-            this.checkAdHonorem.TabIndex = 74;
+            this.checkAdHonorem.TabIndex = 7;
             this.checkAdHonorem.Text = "Ad-Honorem";
             this.checkAdHonorem.UseVisualStyleBackColor = true;
             // 
@@ -336,7 +336,7 @@
             this.butDescargar.Location = new System.Drawing.Point(742, 231);
             this.butDescargar.Name = "butDescargar";
             this.butDescargar.Size = new System.Drawing.Size(106, 23);
-            this.butDescargar.TabIndex = 72;
+            this.butDescargar.TabIndex = 16;
             this.butDescargar.Text = "Descargar archivo";
             this.butDescargar.UseVisualStyleBackColor = true;
             this.butDescargar.Click += new System.EventHandler(this.butDescargar_Click);
@@ -346,7 +346,7 @@
             this.butAgregarP9.Location = new System.Drawing.Point(553, 231);
             this.butAgregarP9.Name = "butAgregarP9";
             this.butAgregarP9.Size = new System.Drawing.Size(75, 23);
-            this.butAgregarP9.TabIndex = 71;
+            this.butAgregarP9.TabIndex = 14;
             this.butAgregarP9.Text = "Agregar";
             this.butAgregarP9.UseVisualStyleBackColor = true;
             this.butAgregarP9.Click += new System.EventHandler(this.butEliminar_Click);
@@ -357,7 +357,7 @@
             this.checkTramitado.Location = new System.Drawing.Point(310, 360);
             this.checkTramitado.Name = "checkTramitado";
             this.checkTramitado.Size = new System.Drawing.Size(73, 17);
-            this.checkTramitado.TabIndex = 70;
+            this.checkTramitado.TabIndex = 20;
             this.checkTramitado.Text = "Tramitado";
             this.checkTramitado.UseVisualStyleBackColor = true;
             // 
@@ -368,7 +368,7 @@
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(419, 36);
-            this.textObservaciones.TabIndex = 15;
+            this.textObservaciones.TabIndex = 19;
             // 
             // datefinal
             // 
@@ -376,7 +376,7 @@
             this.datefinal.Location = new System.Drawing.Point(696, 295);
             this.datefinal.Name = "datefinal";
             this.datefinal.Size = new System.Drawing.Size(155, 20);
-            this.datefinal.TabIndex = 14;
+            this.datefinal.TabIndex = 18;
             // 
             // dateInicio
             // 
@@ -384,7 +384,7 @@
             this.dateInicio.Location = new System.Drawing.Point(432, 294);
             this.dateInicio.Name = "dateInicio";
             this.dateInicio.Size = new System.Drawing.Size(190, 20);
-            this.dateInicio.TabIndex = 13;
+            this.dateInicio.TabIndex = 17;
             this.dateInicio.ValueChanged += new System.EventHandler(this.dateInicio_ValueChanged);
             // 
             // butAdjuntar
@@ -392,7 +392,7 @@
             this.butAdjuntar.Location = new System.Drawing.Point(631, 231);
             this.butAdjuntar.Name = "butAdjuntar";
             this.butAdjuntar.Size = new System.Drawing.Size(105, 23);
-            this.butAdjuntar.TabIndex = 12;
+            this.butAdjuntar.TabIndex = 15;
             this.butAdjuntar.Text = "Adjuntar archivo";
             this.butAdjuntar.UseVisualStyleBackColor = true;
             this.butAdjuntar.Click += new System.EventHandler(this.butAdjuntar_Click);
@@ -403,7 +403,7 @@
             this.comboP9.Location = new System.Drawing.Point(432, 231);
             this.comboP9.Name = "comboP9";
             this.comboP9.Size = new System.Drawing.Size(115, 21);
-            this.comboP9.TabIndex = 11;
+            this.comboP9.TabIndex = 13;
             this.comboP9.SelectedIndexChanged += new System.EventHandler(this.comboP9_SelectedIndexChanged);
             this.comboP9.TextChanged += new System.EventHandler(this.comboP9_TextChanged);
             this.comboP9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboP9_KeyDown);
@@ -469,7 +469,7 @@
             this.textInopia.Multiline = true;
             this.textInopia.Name = "textInopia";
             this.textInopia.Size = new System.Drawing.Size(374, 36);
-            this.textInopia.TabIndex = 10;
+            this.textInopia.TabIndex = 12;
             // 
             // checkInopia
             // 
@@ -477,7 +477,7 @@
             this.checkInopia.Location = new System.Drawing.Point(310, 190);
             this.checkInopia.Name = "checkInopia";
             this.checkInopia.Size = new System.Drawing.Size(55, 17);
-            this.checkInopia.TabIndex = 9;
+            this.checkInopia.TabIndex = 11;
             this.checkInopia.Text = "Inopia";
             this.checkInopia.UseVisualStyleBackColor = true;
             this.checkInopia.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -488,7 +488,7 @@
             this.textConvocatoria.MaxLength = 10;
             this.textConvocatoria.Name = "textConvocatoria";
             this.textConvocatoria.Size = new System.Drawing.Size(419, 20);
-            this.textConvocatoria.TabIndex = 8;
+            this.textConvocatoria.TabIndex = 10;
             // 
             // label14
             // 
@@ -504,7 +504,7 @@
             this.butAgregarPresupuesto.Location = new System.Drawing.Point(776, 132);
             this.butAgregarPresupuesto.Name = "butAgregarPresupuesto";
             this.butAgregarPresupuesto.Size = new System.Drawing.Size(75, 23);
-            this.butAgregarPresupuesto.TabIndex = 7;
+            this.butAgregarPresupuesto.TabIndex = 9;
             this.butAgregarPresupuesto.Text = "Agregar";
             this.butAgregarPresupuesto.UseVisualStyleBackColor = true;
             this.butAgregarPresupuesto.Click += new System.EventHandler(this.butAgregarPresupuesto_Click);
@@ -516,7 +516,7 @@
             this.comboPresupuesto.Location = new System.Drawing.Point(432, 133);
             this.comboPresupuesto.Name = "comboPresupuesto";
             this.comboPresupuesto.Size = new System.Drawing.Size(338, 21);
-            this.comboPresupuesto.TabIndex = 6;
+            this.comboPresupuesto.TabIndex = 8;
             // 
             // label13
             // 
@@ -537,7 +537,7 @@
             0});
             this.numAnno.Name = "numAnno";
             this.numAnno.Size = new System.Drawing.Size(158, 20);
-            this.numAnno.TabIndex = 3;
+            this.numAnno.TabIndex = 4;
             // 
             // comboModalidad
             // 
@@ -546,7 +546,7 @@
             this.comboModalidad.Location = new System.Drawing.Point(607, 105);
             this.comboModalidad.Name = "comboModalidad";
             this.comboModalidad.Size = new System.Drawing.Size(158, 21);
-            this.comboModalidad.TabIndex = 5;
+            this.comboModalidad.TabIndex = 6;
             // 
             // label12
             // 
@@ -567,7 +567,7 @@
             0});
             this.numHoras.Name = "numHoras";
             this.numHoras.Size = new System.Drawing.Size(103, 20);
-            this.numHoras.TabIndex = 4;
+            this.numHoras.TabIndex = 5;
             // 
             // label11
             // 
@@ -594,7 +594,7 @@
             this.comboCiclo.Location = new System.Drawing.Point(432, 78);
             this.comboCiclo.Name = "comboCiclo";
             this.comboCiclo.Size = new System.Drawing.Size(190, 21);
-            this.comboCiclo.TabIndex = 2;
+            this.comboCiclo.TabIndex = 3;
             // 
             // label7
             // 
@@ -612,7 +612,7 @@
             this.comboUnidad.Location = new System.Drawing.Point(432, 50);
             this.comboUnidad.Name = "comboUnidad";
             this.comboUnidad.Size = new System.Drawing.Size(419, 21);
-            this.comboUnidad.TabIndex = 1;
+            this.comboUnidad.TabIndex = 2;
             // 
             // label6
             // 
@@ -654,6 +654,7 @@
             // 
             // Designacion
             // 
+            this.AcceptButton = this.butAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;

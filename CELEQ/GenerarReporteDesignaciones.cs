@@ -55,18 +55,47 @@ namespace CELEQ
 
                 if (comboFiltro.Text == "Presupuesto")
                 {
-                    ReporteDesignacionesPresupuesto rd = new ReporteDesignacionesPresupuesto(numAno.Text,ciclo);
+                    ReporteDesignacionesPresupuesto rd;
+                    if (comboVer.Text == "Todos")
+                    {
+                        rd = new ReporteDesignacionesPresupuesto(numAno.Text, ciclo);
+                        
+                    }
+                    else
+                    {
+                        rd = new ReporteDesignacionesPresupuesto(numAno.Text, ciclo, comboVer.Text);
+                    }
                     rd.ShowDialog();
                     rd.Dispose();
-                }else if(comboFiltro.Text == "Encargado")
+
+                }
+                else if(comboFiltro.Text == "Encargado")
                 {
-                    DesignacionesFiltrarResponsble dfr = new DesignacionesFiltrarResponsble(numAno.Text, ciclo);
+                    DesignacionesFiltrarResponsble dfr;
+                    if (comboVer.Text == "Todos")
+                    {
+                        dfr = new DesignacionesFiltrarResponsble(numAno.Text, ciclo);
+                    }
+                    else
+                    {
+                        dfr = new DesignacionesFiltrarResponsble(numAno.Text, ciclo, comboVer.Text);
+                    }
+                        
                     dfr.ShowDialog();
                     dfr.Dispose();
                 }
                 else
                 {
-                    DesignacionFiltrarEstudiantes dfe = new DesignacionFiltrarEstudiantes(numAno.Text, ciclo);
+                    DesignacionFiltrarEstudiantes dfe;
+                    if(comboVer.Text == "Todos")
+                    {
+                        dfe = new DesignacionFiltrarEstudiantes(numAno.Text, ciclo);
+                    }
+                    else
+                    {
+                        dfe = new DesignacionFiltrarEstudiantes(numAno.Text, ciclo, comboVer.Text);
+                    }
+                    
                     dfe.ShowDialog();
                     dfe.Dispose();
                 }
