@@ -258,6 +258,12 @@ namespace CELEQ
             en.Dispose();
         }
 
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cotizacion cotizacion = new Cotizacion();
+            cotizacion.ShowDialog();
+            cotizacion.Dispose();
+        }
     }
 
     public static class Globals
