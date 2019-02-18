@@ -39,9 +39,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(16, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Contraseña";
             this.label1.Click += new System.EventHandler(this.butAceptar_Click);
@@ -49,35 +50,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 58);
+            this.label2.Location = new System.Drawing.Point(16, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.Size = new System.Drawing.Size(137, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Confirmar Contraseña";
             this.label2.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // nuevaContra
             // 
-            this.nuevaContra.Location = new System.Drawing.Point(162, 24);
+            this.nuevaContra.Location = new System.Drawing.Point(216, 30);
+            this.nuevaContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nuevaContra.Name = "nuevaContra";
             this.nuevaContra.PasswordChar = '*';
-            this.nuevaContra.Size = new System.Drawing.Size(179, 20);
+            this.nuevaContra.Size = new System.Drawing.Size(237, 22);
             this.nuevaContra.TabIndex = 2;
             this.nuevaContra.TextChanged += new System.EventHandler(this.nuevaContra_TextChanged);
             // 
             // confirmarContra
             // 
-            this.confirmarContra.Location = new System.Drawing.Point(162, 57);
+            this.confirmarContra.Location = new System.Drawing.Point(216, 70);
+            this.confirmarContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmarContra.Name = "confirmarContra";
             this.confirmarContra.PasswordChar = '*';
-            this.confirmarContra.Size = new System.Drawing.Size(179, 20);
+            this.confirmarContra.Size = new System.Drawing.Size(237, 22);
             this.confirmarContra.TabIndex = 3;
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(214, 92);
+            this.butAceptar.Location = new System.Drawing.Point(285, 113);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAceptar.Name = "butAceptar";
-            this.butAceptar.Size = new System.Drawing.Size(75, 23);
+            this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 18;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
@@ -85,9 +90,10 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(295, 92);
+            this.butCancelar.Location = new System.Drawing.Point(393, 113);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 17;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
@@ -96,17 +102,19 @@
             // ModificarContra
             // 
             this.AcceptButton = this.butAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(382, 127);
+            this.ClientSize = new System.Drawing.Size(509, 156);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.confirmarContra);
             this.Controls.Add(this.nuevaContra);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ModificarContra";

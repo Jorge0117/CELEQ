@@ -38,24 +38,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(529, 47);
+            this.label1.Location = new System.Drawing.Point(705, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Buscar:";
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(578, 44);
+            this.textBuscar.Location = new System.Drawing.Point(771, 54);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(343, 20);
+            this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 10;
             // 
             // labelEstudiantes
             // 
             this.labelEstudiantes.AutoSize = true;
             this.labelEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstudiantes.Location = new System.Drawing.Point(17, 37);
+            this.labelEstudiantes.Location = new System.Drawing.Point(23, 46);
+            this.labelEstudiantes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEstudiantes.Name = "labelEstudiantes";
             this.labelEstudiantes.Size = new System.Drawing.Size(98, 20);
             this.labelEstudiantes.TabIndex = 9;
@@ -69,24 +72,27 @@
             this.dgvEstudiantes.AllowUserToResizeRows = false;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(21, 70);
+            this.dgvEstudiantes.Location = new System.Drawing.Point(28, 86);
+            this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.ReadOnly = true;
             this.dgvEstudiantes.RowHeadersVisible = false;
-            this.dgvEstudiantes.Size = new System.Drawing.Size(900, 553);
+            this.dgvEstudiantes.Size = new System.Drawing.Size(1200, 681);
             this.dgvEstudiantes.TabIndex = 8;
             // 
             // ListaEstudiantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(939, 661);
+            this.ClientSize = new System.Drawing.Size(1252, 814);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelEstudiantes);
             this.Controls.Add(this.dgvEstudiantes);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaEstudiantes";

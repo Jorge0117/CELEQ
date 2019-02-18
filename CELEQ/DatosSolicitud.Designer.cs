@@ -48,92 +48,103 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 54);
+            this.label1.Location = new System.Drawing.Point(119, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.Size = new System.Drawing.Size(145, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del solicitante:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 81);
+            this.label2.Location = new System.Drawing.Point(119, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 13);
+            this.label2.Size = new System.Drawing.Size(214, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre del encargado (Si aplica):";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(89, 162);
+            this.label4.Location = new System.Drawing.Point(119, 199);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha de la solicitud:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 108);
+            this.label5.Location = new System.Drawing.Point(119, 133);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.Size = new System.Drawing.Size(137, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo del solicitante:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(89, 135);
+            this.label6.Location = new System.Drawing.Point(119, 166);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.Size = new System.Drawing.Size(131, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Unidad o laboratorio";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(89, 189);
+            this.label7.Location = new System.Drawing.Point(119, 233);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.Size = new System.Drawing.Size(103, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Observaciones:";
             // 
             // textNombreSol
             // 
-            this.textNombreSol.Location = new System.Drawing.Point(281, 51);
+            this.textNombreSol.Location = new System.Drawing.Point(375, 63);
+            this.textNombreSol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNombreSol.Name = "textNombreSol";
-            this.textNombreSol.Size = new System.Drawing.Size(215, 20);
+            this.textNombreSol.Size = new System.Drawing.Size(285, 22);
             this.textNombreSol.TabIndex = 0;
             // 
             // textNombreEnc
             // 
-            this.textNombreEnc.Location = new System.Drawing.Point(281, 77);
+            this.textNombreEnc.Location = new System.Drawing.Point(375, 95);
+            this.textNombreEnc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNombreEnc.Name = "textNombreEnc";
-            this.textNombreEnc.Size = new System.Drawing.Size(215, 20);
+            this.textNombreEnc.Size = new System.Drawing.Size(285, 22);
             this.textNombreEnc.TabIndex = 1;
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(281, 103);
+            this.textCorreo.Location = new System.Drawing.Point(375, 127);
+            this.textCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(215, 20);
+            this.textCorreo.Size = new System.Drawing.Size(285, 22);
             this.textCorreo.TabIndex = 2;
             // 
             // textObservaciones
             // 
-            this.textObservaciones.Location = new System.Drawing.Point(281, 182);
+            this.textObservaciones.Location = new System.Drawing.Point(375, 224);
+            this.textObservaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textObservaciones.MaxLength = 255;
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
-            this.textObservaciones.Size = new System.Drawing.Size(215, 78);
+            this.textObservaciones.Size = new System.Drawing.Size(285, 95);
             this.textObservaciones.TabIndex = 5;
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(497, 276);
+            this.butCancelar.Location = new System.Drawing.Point(663, 340);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 7;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
@@ -141,9 +152,10 @@
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(416, 276);
+            this.butAceptar.Location = new System.Drawing.Point(555, 340);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAceptar.Name = "butAceptar";
-            this.butAceptar.Size = new System.Drawing.Size(75, 23);
+            this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 6;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
@@ -153,9 +165,10 @@
             // 
             this.dtpFechaSol.Enabled = false;
             this.dtpFechaSol.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSol.Location = new System.Drawing.Point(281, 156);
+            this.dtpFechaSol.Location = new System.Drawing.Point(375, 192);
+            this.dtpFechaSol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaSol.Name = "dtpFechaSol";
-            this.dtpFechaSol.Size = new System.Drawing.Size(215, 20);
+            this.dtpFechaSol.Size = new System.Drawing.Size(285, 22);
             this.dtpFechaSol.TabIndex = 4;
             this.dtpFechaSol.Value = new System.DateTime(2018, 9, 12, 0, 0, 0, 0);
             // 
@@ -167,17 +180,18 @@
             // 
             this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboUnidad.FormattingEnabled = true;
-            this.comboUnidad.Location = new System.Drawing.Point(281, 129);
+            this.comboUnidad.Location = new System.Drawing.Point(375, 159);
+            this.comboUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboUnidad.Name = "comboUnidad";
-            this.comboUnidad.Size = new System.Drawing.Size(215, 21);
+            this.comboUnidad.Size = new System.Drawing.Size(285, 24);
             this.comboUnidad.TabIndex = 3;
             // 
             // DatosSolicitud
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(584, 311);
+            this.ClientSize = new System.Drawing.Size(779, 383);
             this.Controls.Add(this.comboUnidad);
             this.Controls.Add(this.dtpFechaSol);
             this.Controls.Add(this.butAceptar);
@@ -192,7 +206,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DatosSolicitud";

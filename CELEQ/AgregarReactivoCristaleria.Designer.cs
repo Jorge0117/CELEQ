@@ -45,9 +45,10 @@
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(416, 276);
+            this.butAceptar.Location = new System.Drawing.Point(555, 340);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAceptar.Name = "butAceptar";
-            this.butAceptar.Size = new System.Drawing.Size(75, 23);
+            this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 16;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
@@ -55,9 +56,10 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(497, 276);
+            this.butCancelar.Location = new System.Drawing.Point(663, 340);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 15;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
@@ -66,95 +68,105 @@
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(134, 32);
+            this.labelNombre.Location = new System.Drawing.Point(179, 39);
+            this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(47, 13);
+            this.labelNombre.Size = new System.Drawing.Size(60, 16);
             this.labelNombre.TabIndex = 17;
             this.labelNombre.Text = "Nombre:";
             // 
             // labelPureza
             // 
             this.labelPureza.AutoSize = true;
-            this.labelPureza.Location = new System.Drawing.Point(134, 130);
+            this.labelPureza.Location = new System.Drawing.Point(179, 160);
+            this.labelPureza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPureza.Name = "labelPureza";
-            this.labelPureza.Size = new System.Drawing.Size(43, 13);
+            this.labelPureza.Size = new System.Drawing.Size(53, 16);
             this.labelPureza.TabIndex = 18;
             this.labelPureza.Text = "Pureza:";
             // 
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(134, 179);
+            this.labelCantidad.Location = new System.Drawing.Point(179, 220);
+            this.labelCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCantidad.Name = "labelCantidad";
-            this.labelCantidad.Size = new System.Drawing.Size(52, 13);
+            this.labelCantidad.Size = new System.Drawing.Size(65, 16);
             this.labelCantidad.TabIndex = 19;
             this.labelCantidad.Text = "Cantidad:";
             // 
             // labelEstante
             // 
             this.labelEstante.AutoSize = true;
-            this.labelEstante.Location = new System.Drawing.Point(134, 228);
+            this.labelEstante.Location = new System.Drawing.Point(179, 281);
+            this.labelEstante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEstante.Name = "labelEstante";
-            this.labelEstante.Size = new System.Drawing.Size(46, 13);
+            this.labelEstante.Size = new System.Drawing.Size(56, 16);
             this.labelEstante.TabIndex = 20;
             this.labelEstante.Text = "Estante:";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(204, 29);
+            this.textNombre.Location = new System.Drawing.Point(272, 36);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(247, 20);
+            this.textNombre.Size = new System.Drawing.Size(328, 22);
             this.textNombre.TabIndex = 21;
             // 
             // textPureza
             // 
-            this.textPureza.Location = new System.Drawing.Point(204, 127);
+            this.textPureza.Location = new System.Drawing.Point(272, 156);
+            this.textPureza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPureza.Name = "textPureza";
-            this.textPureza.Size = new System.Drawing.Size(247, 20);
+            this.textPureza.Size = new System.Drawing.Size(328, 22);
             this.textPureza.TabIndex = 22;
             // 
             // textEstante
             // 
-            this.textEstante.Location = new System.Drawing.Point(204, 225);
+            this.textEstante.Location = new System.Drawing.Point(272, 277);
+            this.textEstante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textEstante.MaxLength = 10;
             this.textEstante.Name = "textEstante";
-            this.textEstante.Size = new System.Drawing.Size(247, 20);
+            this.textEstante.Size = new System.Drawing.Size(328, 22);
             this.textEstante.TabIndex = 24;
             // 
             // textEstado
             // 
-            this.textEstado.Location = new System.Drawing.Point(204, 78);
+            this.textEstado.Location = new System.Drawing.Point(272, 96);
+            this.textEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textEstado.Name = "textEstado";
-            this.textEstado.Size = new System.Drawing.Size(247, 20);
+            this.textEstado.Size = new System.Drawing.Size(328, 22);
             this.textEstado.TabIndex = 26;
             // 
             // labelEstado
             // 
             this.labelEstado.AutoSize = true;
-            this.labelEstado.Location = new System.Drawing.Point(134, 81);
+            this.labelEstado.Location = new System.Drawing.Point(179, 100);
+            this.labelEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(43, 13);
+            this.labelEstado.Size = new System.Drawing.Size(54, 16);
             this.labelEstado.TabIndex = 25;
             this.labelEstado.Text = "Estado:";
             // 
             // textCantidad
             // 
-            this.textCantidad.Location = new System.Drawing.Point(204, 177);
+            this.textCantidad.Location = new System.Drawing.Point(272, 218);
+            this.textCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textCantidad.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.textCantidad.Name = "textCantidad";
-            this.textCantidad.Size = new System.Drawing.Size(247, 20);
+            this.textCantidad.Size = new System.Drawing.Size(329, 22);
             this.textCantidad.TabIndex = 27;
             // 
             // AgregarReactivoCristaleria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(584, 311);
+            this.ClientSize = new System.Drawing.Size(779, 383);
             this.Controls.Add(this.textCantidad);
             this.Controls.Add(this.textEstado);
             this.Controls.Add(this.labelEstado);
@@ -167,7 +179,9 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarReactivoCristaleria";

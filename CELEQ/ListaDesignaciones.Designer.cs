@@ -40,7 +40,8 @@
             // 
             this.labelDesignaciones.AutoSize = true;
             this.labelDesignaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDesignaciones.Location = new System.Drawing.Point(12, 35);
+            this.labelDesignaciones.Location = new System.Drawing.Point(16, 43);
+            this.labelDesignaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDesignaciones.Name = "labelDesignaciones";
             this.labelDesignaciones.Size = new System.Drawing.Size(114, 20);
             this.labelDesignaciones.TabIndex = 5;
@@ -54,35 +55,39 @@
             this.dgvDesignaciones.AllowUserToResizeRows = false;
             this.dgvDesignaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDesignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDesignaciones.Location = new System.Drawing.Point(16, 68);
+            this.dgvDesignaciones.Location = new System.Drawing.Point(21, 84);
+            this.dgvDesignaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDesignaciones.Name = "dgvDesignaciones";
             this.dgvDesignaciones.ReadOnly = true;
             this.dgvDesignaciones.RowHeadersVisible = false;
-            this.dgvDesignaciones.Size = new System.Drawing.Size(1078, 553);
+            this.dgvDesignaciones.Size = new System.Drawing.Size(1437, 681);
             this.dgvDesignaciones.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(702, 42);
+            this.label1.Location = new System.Drawing.Point(936, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Buscar:";
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(751, 39);
+            this.textBuscar.Location = new System.Drawing.Point(1001, 48);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(343, 20);
+            this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 18;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1100, 68);
+            this.butAgregar.Location = new System.Drawing.Point(1467, 84);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 20;
             this.butAgregar.Text = "Detalles";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -90,16 +95,18 @@
             // 
             // ListaDesignaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1324, 661);
+            this.ClientSize = new System.Drawing.Size(1765, 814);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelDesignaciones);
             this.Controls.Add(this.dgvDesignaciones);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaDesignaciones";

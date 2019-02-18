@@ -46,7 +46,8 @@
             // 
             this.labelInventario.AutoSize = true;
             this.labelInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInventario.Location = new System.Drawing.Point(12, 35);
+            this.labelInventario.Location = new System.Drawing.Point(16, 43);
+            this.labelInventario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelInventario.Name = "labelInventario";
             this.labelInventario.Size = new System.Drawing.Size(111, 20);
             this.labelInventario.TabIndex = 0;
@@ -60,19 +61,21 @@
             this.dgvInventario.AllowUserToResizeRows = false;
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(16, 68);
+            this.dgvInventario.Location = new System.Drawing.Point(21, 84);
+            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
-            this.dgvInventario.Size = new System.Drawing.Size(900, 553);
+            this.dgvInventario.Size = new System.Drawing.Size(1200, 681);
             this.dgvInventario.TabIndex = 1;
             this.dgvInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellClick);
             this.dgvInventario.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInventario_RowPostPaint);
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(956, 92);
+            this.butAgregar.Location = new System.Drawing.Point(1275, 113);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 2;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -80,17 +83,19 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(573, 42);
+            this.textBuscar.Location = new System.Drawing.Point(764, 52);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(343, 20);
+            this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 3;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // butActualizar
             // 
-            this.butActualizar.Location = new System.Drawing.Point(956, 190);
+            this.butActualizar.Location = new System.Drawing.Point(1275, 234);
+            this.butActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butActualizar.Name = "butActualizar";
-            this.butActualizar.Size = new System.Drawing.Size(197, 43);
+            this.butActualizar.Size = new System.Drawing.Size(263, 53);
             this.butActualizar.TabIndex = 5;
             this.butActualizar.Text = "Actualizar";
             this.butActualizar.UseVisualStyleBackColor = true;
@@ -99,24 +104,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(524, 45);
+            this.label1.Location = new System.Drawing.Point(699, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Buscar:";
             // 
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(953, 68);
+            this.labelCantidad.Location = new System.Drawing.Point(1271, 84);
+            this.labelCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCantidad.Name = "labelCantidad";
-            this.labelCantidad.Size = new System.Drawing.Size(52, 13);
+            this.labelCantidad.Size = new System.Drawing.Size(65, 16);
             this.labelCantidad.TabIndex = 7;
             this.labelCantidad.Text = "Cantidad:";
             // 
             // numAgregar
             // 
-            this.numAgregar.Location = new System.Drawing.Point(1011, 66);
+            this.numAgregar.Location = new System.Drawing.Point(1348, 81);
+            this.numAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numAgregar.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -128,7 +136,7 @@
             0,
             0});
             this.numAgregar.Name = "numAgregar";
-            this.numAgregar.Size = new System.Drawing.Size(95, 20);
+            this.numAgregar.Size = new System.Drawing.Size(127, 22);
             this.numAgregar.TabIndex = 8;
             this.numAgregar.Value = new decimal(new int[] {
             1,
@@ -139,17 +147,19 @@
             // labelUnidad
             // 
             this.labelUnidad.AutoSize = true;
-            this.labelUnidad.Location = new System.Drawing.Point(1108, 68);
+            this.labelUnidad.Location = new System.Drawing.Point(1477, 84);
+            this.labelUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUnidad.Name = "labelUnidad";
-            this.labelUnidad.Size = new System.Drawing.Size(13, 13);
+            this.labelUnidad.Size = new System.Drawing.Size(16, 16);
             this.labelUnidad.TabIndex = 9;
             this.labelUnidad.Text = "g";
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(956, 141);
+            this.butModificar.Location = new System.Drawing.Point(1275, 174);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 10;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -157,10 +167,10 @@
             // 
             // Inventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.labelUnidad);
             this.Controls.Add(this.numAgregar);
@@ -171,7 +181,9 @@
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.labelInventario);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inventario";

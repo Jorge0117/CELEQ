@@ -52,9 +52,10 @@
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(1017, 566);
+            this.butAceptar.Location = new System.Drawing.Point(1356, 697);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAceptar.Name = "butAceptar";
-            this.butAceptar.Size = new System.Drawing.Size(75, 23);
+            this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 16;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
@@ -62,9 +63,10 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(1098, 566);
+            this.butCancelar.Location = new System.Drawing.Point(1464, 697);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 15;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
@@ -73,51 +75,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(307, 41);
+            this.label1.Location = new System.Drawing.Point(409, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Nombre de usuario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 86);
+            this.label4.Location = new System.Drawing.Point(409, 106);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 20;
             this.label4.Text = "Correo electónico:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 139);
+            this.label5.Location = new System.Drawing.Point(409, 171);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 21;
             this.label5.Text = "Permisos:";
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(432, 38);
+            this.textUsuario.Location = new System.Drawing.Point(576, 47);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(419, 20);
+            this.textUsuario.Size = new System.Drawing.Size(557, 22);
             this.textUsuario.TabIndex = 22;
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(432, 86);
+            this.textCorreo.Location = new System.Drawing.Point(576, 106);
+            this.textCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(419, 20);
+            this.textCorreo.Size = new System.Drawing.Size(557, 22);
             this.textCorreo.TabIndex = 25;
             // 
             // cbPermisos
             // 
             this.cbPermisos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPermisos.FormattingEnabled = true;
-            this.cbPermisos.Location = new System.Drawing.Point(432, 136);
+            this.cbPermisos.Location = new System.Drawing.Point(576, 167);
+            this.cbPermisos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPermisos.Name = "cbPermisos";
-            this.cbPermisos.Size = new System.Drawing.Size(419, 21);
+            this.cbPermisos.Size = new System.Drawing.Size(557, 24);
             this.cbPermisos.TabIndex = 26;
             // 
             // groupBox1
@@ -128,9 +136,11 @@
             this.groupBox1.Controls.Add(this.textCorreo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(17, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1159, 208);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1545, 256);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la cuenta";
@@ -145,9 +155,11 @@
             this.groupBox2.Controls.Add(this.textApellido2);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textApellido1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 247);
+            this.groupBox2.Location = new System.Drawing.Point(17, 304);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1159, 301);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1545, 370);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos personales";
@@ -156,79 +168,89 @@
             // 
             this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboUnidad.FormattingEnabled = true;
-            this.comboUnidad.Location = new System.Drawing.Point(432, 57);
+            this.comboUnidad.Location = new System.Drawing.Point(576, 70);
+            this.comboUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboUnidad.Name = "comboUnidad";
-            this.comboUnidad.Size = new System.Drawing.Size(419, 21);
+            this.comboUnidad.Size = new System.Drawing.Size(557, 24);
             this.comboUnidad.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(307, 66);
+            this.label9.Location = new System.Drawing.Point(409, 81);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 13);
+            this.label9.Size = new System.Drawing.Size(134, 16);
             this.label9.TabIndex = 25;
             this.label9.Text = "Unidad o laboratorio:";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(432, 114);
+            this.textNombre.Location = new System.Drawing.Point(576, 140);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(419, 20);
+            this.textNombre.Size = new System.Drawing.Size(557, 22);
             this.textNombre.TabIndex = 22;
             this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(307, 117);
+            this.label6.Location = new System.Drawing.Point(409, 144);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 17;
             this.label6.Text = "Nombre:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(307, 168);
+            this.label7.Location = new System.Drawing.Point(409, 207);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(102, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Primer apellido:";
             // 
             // textApellido2
             // 
-            this.textApellido2.Location = new System.Drawing.Point(432, 216);
+            this.textApellido2.Location = new System.Drawing.Point(576, 266);
+            this.textApellido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textApellido2.Name = "textApellido2";
-            this.textApellido2.Size = new System.Drawing.Size(419, 20);
+            this.textApellido2.Size = new System.Drawing.Size(557, 22);
             this.textApellido2.TabIndex = 24;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(307, 219);
+            this.label8.Location = new System.Drawing.Point(409, 270);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.Size = new System.Drawing.Size(121, 16);
             this.label8.TabIndex = 19;
             this.label8.Text = "Segundo apelllido:";
             // 
             // textApellido1
             // 
-            this.textApellido1.Location = new System.Drawing.Point(432, 165);
+            this.textApellido1.Location = new System.Drawing.Point(576, 203);
+            this.textApellido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textApellido1.Name = "textApellido1";
-            this.textApellido1.Size = new System.Drawing.Size(419, 20);
+            this.textApellido1.Size = new System.Drawing.Size(557, 22);
             this.textApellido1.TabIndex = 23;
             // 
             // AgregarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 605);
+            this.ClientSize = new System.Drawing.Size(1579, 745);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarUsuario";
