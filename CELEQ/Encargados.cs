@@ -34,7 +34,6 @@ namespace CELEQ
 
         private void Encargados_Load(object sender, EventArgs e)
         {
-
             llenarTabla();
         }
 
