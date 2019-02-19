@@ -22,22 +22,37 @@ namespace CELEQ
 
         private void Aranceles_Load(object sender, EventArgs e)
         {
-            SqlDataReader montos = bd.ejecutarConsulta("select monto from montoHoras");
-            montos.Read();
-            numericEst.Value = Int32.Parse(montos[0].ToString());
-            montos.Read();
-            numericAsi.Value = Int32.Parse(montos[0].ToString());
-            montos.Read();
-            numericPos.Value = Int32.Parse(montos[0].ToString());
+            try
+            {
+                SqlDataReader montos = bd.ejecutarConsulta("select monto from montoHoras");
+                montos.Read();
+                numericEst.Value = Int32.Parse(montos[0].ToString());
+                montos.Read();
+                numericAsi.Value = Int32.Parse(montos[0].ToString());
+                montos.Read();
+                numericPos.Value = Int32.Parse(montos[0].ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error cargando los aranceles", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            bd.ejecutarConsulta("Update montoHoras set monto = " + numericEst.Value + " where tipo = 'HE'");
-            bd.ejecutarConsulta("Update montoHoras set monto = " + numericAsi.Value + " where tipo = 'HA'");
-            bd.ejecutarConsulta("Update montoHoras set monto = " + numericPos.Value + " where tipo = 'HP'");
+            try
+            {
+                bd.ejecutarConsulta("Update montoHoras set monto = " + numericEst.Value + " where tipo = 'HE'");
+                bd.ejecutarConsulta("Update montoHoras set monto = " + numericAsi.Value + " where tipo = 'HA'");
+                bd.ejecutarConsulta("Update montoHoras set monto = " + numericPos.Value + " where tipo = 'HP'");
 
-            MessageBox.Show("Se ha cambiado los montos de las horas", "Aranceles", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Se ha cambiado los montos de las horas", "Aranceles", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error modificando los aranceles", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.Close();
         }
 

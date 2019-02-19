@@ -41,7 +41,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 24);
+            this.label1.Location = new System.Drawing.Point(22, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 64);
+            this.label2.Location = new System.Drawing.Point(22, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
@@ -60,26 +60,26 @@
             // 
             // codigoText
             // 
-            this.codigoText.Location = new System.Drawing.Point(92, 21);
+            this.codigoText.Location = new System.Drawing.Point(82, 14);
             this.codigoText.Margin = new System.Windows.Forms.Padding(4);
             this.codigoText.MaxLength = 12;
             this.codigoText.Name = "codigoText";
-            this.codigoText.Size = new System.Drawing.Size(211, 22);
+            this.codigoText.Size = new System.Drawing.Size(191, 22);
             this.codigoText.TabIndex = 2;
             // 
             // nombreText
             // 
-            this.nombreText.Location = new System.Drawing.Point(92, 61);
+            this.nombreText.Location = new System.Drawing.Point(82, 54);
             this.nombreText.Margin = new System.Windows.Forms.Padding(4);
-            this.nombreText.MaxLength = 255;
+            this.nombreText.MaxLength = 560;
             this.nombreText.Multiline = true;
             this.nombreText.Name = "nombreText";
-            this.nombreText.Size = new System.Drawing.Size(211, 63);
+            this.nombreText.Size = new System.Drawing.Size(342, 92);
             this.nombreText.TabIndex = 3;
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(173, 164);
+            this.butAceptar.Location = new System.Drawing.Point(254, 179);
             this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
@@ -90,7 +90,7 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(281, 164);
+            this.butCancelar.Location = new System.Drawing.Point(362, 179);
             this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
@@ -105,9 +105,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.nombreText);
             this.groupBox1.Controls.Add(this.codigoText);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(14, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 145);
+            this.groupBox1.Size = new System.Drawing.Size(446, 160);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(399, 204);
+            this.ClientSize = new System.Drawing.Size(475, 213);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.groupBox1);

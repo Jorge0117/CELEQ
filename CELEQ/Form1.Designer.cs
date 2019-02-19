@@ -69,6 +69,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
+            this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -336,7 +337,8 @@
             // vínculoExternoToolStripMenuItem
             // 
             this.vínculoExternoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cotizacionesToolStripMenuItem});
+            this.cotizacionesToolStripMenuItem,
+            this.preciosParaGirasToolStripMenuItem});
             this.vínculoExternoToolStripMenuItem.Name = "vínculoExternoToolStripMenuItem";
             this.vínculoExternoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.vínculoExternoToolStripMenuItem.Text = "Vínculo Externo";
@@ -346,7 +348,7 @@
             this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem});
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
             // 
             // agregarToolStripMenuItem
@@ -424,6 +426,13 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
+            // preciosParaGirasToolStripMenuItem
+            // 
+            this.preciosParaGirasToolStripMenuItem.Name = "preciosParaGirasToolStripMenuItem";
+            this.preciosParaGirasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.preciosParaGirasToolStripMenuItem.Text = "Precios para giras";
+            this.preciosParaGirasToolStripMenuItem.Click += new System.EventHandler(this.preciosParaGirasToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,6 +507,7 @@
         private System.Windows.Forms.ToolStripMenuItem vínculoExternoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preciosParaGirasToolStripMenuItem;
     }
 }
 

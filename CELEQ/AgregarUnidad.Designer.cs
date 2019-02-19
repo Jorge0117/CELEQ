@@ -48,7 +48,6 @@
             this.textUnidad.Name = "textUnidad";
             this.textUnidad.Size = new System.Drawing.Size(178, 22);
             this.textUnidad.TabIndex = 0;
-            this.textUnidad.TextChanged += new System.EventHandler(this.nombreUnidad_TextChanged);
             // 
             // label1
             // 
@@ -59,7 +58,6 @@
             this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nombre de Unidad:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboEncargado
             // 
@@ -70,7 +68,6 @@
             this.comboEncargado.Name = "comboEncargado";
             this.comboEncargado.Size = new System.Drawing.Size(178, 24);
             this.comboEncargado.TabIndex = 20;
-            this.comboEncargado.SelectedIndexChanged += new System.EventHandler(this.comboEncargado_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -81,7 +78,6 @@
             this.label2.Size = new System.Drawing.Size(158, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "Encargado de la Unidad:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // butAceptar
             // 
