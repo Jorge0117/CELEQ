@@ -71,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="AgregarLocalizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarLocalizacion.Designer.cs">
+      <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="ListaEstudiantes.Designer.cs">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Localizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Localizaciones.Designer.cs">
+      <DependentUpon>Localizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +277,9 @@
     <Compile Include="Unidad.Designer.cs">
       <DependentUpon>Unidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarLocalizacion.resx">
+      <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarPresupuesto.resx">
       <DependentUpon>AgregarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localizaciones.resx">
+      <DependentUpon>Localizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarContra.resx">
       <DependentUpon>ModificarContra.cs</DependentUpon>

@@ -60,7 +60,7 @@ select * from montoHoras
 
 select monto from montoHoras where tipo = 'HE'
 /*M�todo para agregar un nuevo presupuesto a la base de datos*/
-CREATE PROCEDURE agregarPresupuesto(@codigo varchar(12), @nombre varchar(255),@estado bit OUTPUT) as
+CREATE PROCEDURE agregarPresupuesto(@codigo varchar(12), @nombre varchar(560),@estado bit OUTPUT) as
 	BEGIN
 	BEGIN TRY
 		INSERT INTO presupuesto VALUES(@codigo, @nombre)
@@ -73,7 +73,10 @@ CREATE PROCEDURE agregarPresupuesto(@codigo varchar(12), @nombre varchar(255),@e
 	END
 GO
 
-create procedure modificarPresupuesto(@codigoViejo varchar(12), @codigo varchar(12), @nombre varchar(255)) as
+drop procedure agregarPresupuesto
+drop procedure modificarPresupuesto
+
+create procedure modificarPresupuesto(@codigoViejo varchar(12), @codigo varchar(12), @nombre varchar(560)) as
 	begin
 		update presupuesto
 		set presupuesto.codigo = @codigo, presupuesto.nombre = @nombre

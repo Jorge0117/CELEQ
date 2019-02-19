@@ -76,14 +76,15 @@ CREATE TABLE Analisis
 
 CREATE TABLE Localizaciones
 (
-	id				INT		IDENTITY(1,1)	PRIMARY KEY,
 	provincia		VARCHAR(100),
 	canton			VARCHAR(100),
+	localidad		VARCHAR(100),
 	distancia		FLOAT,
-	hospedaje		FLOAT
+	hospedaje		FLOAT,
+	PRIMARY KEY(provincia,canton,localidad)
 )   
 
-CREATE TABLE Viaticos
+CREATE TABLE precioGiras
 (
 	id					INT		IDENTITY(1,1)	PRIMARY KEY,
 	valorKilometro		FLOAT,

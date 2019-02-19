@@ -1443,5 +1443,131 @@ namespace CELEQ
         }
 
 
+        //////////////////////////////////////////////// COTIZACIONES /////////////////////////////////////////////////////////////
+
+        public int agregarLocalizacion(string provincia, string canton, string localidad, decimal distancia, decimal hospedaje)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarLocalizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@provincia", SqlDbType.VarChar).Value = provincia;
+                        cmd.Parameters.Add("@canton", SqlDbType.VarChar).Value = canton;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
+                        cmd.Parameters.Add("@distancia", SqlDbType.Float).Value = distancia;
+                        cmd.Parameters.Add("@hospedaje", SqlDbType.Float).Value = hospedaje;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarLocalizacion(string vProvincia, string vCanton, string vLocalidad, string provincia, string canton, string localidad, decimal distancia, decimal hospedaje)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarLocalizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@vProvincia", SqlDbType.VarChar).Value = vProvincia;
+                        cmd.Parameters.Add("@vCanton", SqlDbType.VarChar).Value = vCanton;
+                        cmd.Parameters.Add("@vLocalidad", SqlDbType.VarChar).Value = vLocalidad;
+                        cmd.Parameters.Add("@provincia", SqlDbType.VarChar).Value = provincia;
+                        cmd.Parameters.Add("@canton", SqlDbType.VarChar).Value = canton;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
+                        cmd.Parameters.Add("@distancia", SqlDbType.Float).Value = distancia;
+                        cmd.Parameters.Add("@hospedaje", SqlDbType.Float).Value = hospedaje;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int eliminarLocalizacion(string provincia, string canton, string localidad)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("eliminarLocalizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@provincia", SqlDbType.VarChar).Value = provincia;
+                        cmd.Parameters.Add("@canton", SqlDbType.VarChar).Value = canton;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }

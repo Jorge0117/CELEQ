@@ -37,7 +37,7 @@ namespace CELEQ
 
             try
             {
-                tabla = bd.ejecutarConsultaTabla("select provincia as Provincia, canton as Cantón, distancia as Distancia, hospedaje as Hospedaje from Localizaciones");
+                tabla = bd.ejecutarConsultaTabla("select provincia as Provincia, canton as Cantón, localidad as Localidad, distancia as Distancia, hospedaje as Hospedaje from Localizaciones");
             }
             catch (SqlException ex)
             {
@@ -61,12 +61,14 @@ namespace CELEQ
 
         private void butEliminar_Click(object sender, EventArgs e)
         {
+            string provincia = dgvLocalizaciones.SelectedRows[0].Cells[0].Value.ToString();
+            string canton = dgvLocalizaciones.SelectedRows[0].Cells[1].Value.ToString();
+            string localidad = dgvLocalizaciones.SelectedRows[0].Cells[2].Value.ToString();
             if (dgvLocalizaciones.RowCount > 0)
             {
                 if (MessageBox.Show("¿Seguro que quiere borrar la localización?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string nombre = dgvLocalizaciones.SelectedRows[0].Cells[0].Value.ToString();
-                    if (bd.eliminarResponsable(nombre) == 1)
+                    if (bd.eliminarLocalizacion(provincia, canton, localidad) == 0)
                     {
                         MessageBox.Show("Localización eliminada de manera correcta", "Localizaciones", MessageBoxButtons.OK, MessageBoxIcon.None);
                         llenarTabla();

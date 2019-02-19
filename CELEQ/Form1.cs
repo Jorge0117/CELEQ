@@ -264,6 +264,13 @@ namespace CELEQ
             cotizacion.ShowDialog();
             cotizacion.Dispose();
         }
+
+        private void localizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Localizaciones l = new Localizaciones();
+            l.ShowDialog();
+            l.Dispose();    
+        }
     }
 
     public static class Globals
