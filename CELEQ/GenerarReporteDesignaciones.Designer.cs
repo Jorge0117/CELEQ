@@ -78,7 +78,7 @@
             // 
             this.checkCicloI.AutoSize = true;
             this.checkCicloI.Location = new System.Drawing.Point(272, 26);
-            this.checkCicloI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkCicloI.Margin = new System.Windows.Forms.Padding(4);
             this.checkCicloI.Name = "checkCicloI";
             this.checkCicloI.Size = new System.Drawing.Size(30, 20);
             this.checkCicloI.TabIndex = 1;
@@ -90,7 +90,7 @@
             // 
             this.checkCicloIIC.AutoSize = true;
             this.checkCicloIIC.Location = new System.Drawing.Point(319, 26);
-            this.checkCicloIIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkCicloIIC.Margin = new System.Windows.Forms.Padding(4);
             this.checkCicloIIC.Name = "checkCicloIIC";
             this.checkCicloIIC.Size = new System.Drawing.Size(48, 20);
             this.checkCicloIIC.TabIndex = 2;
@@ -102,7 +102,7 @@
             // 
             this.checkCicloII.AutoSize = true;
             this.checkCicloII.Location = new System.Drawing.Point(379, 26);
-            this.checkCicloII.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkCicloII.Margin = new System.Windows.Forms.Padding(4);
             this.checkCicloII.Name = "checkCicloII";
             this.checkCicloII.Size = new System.Drawing.Size(33, 20);
             this.checkCicloII.TabIndex = 3;
@@ -114,7 +114,7 @@
             // 
             this.checkCicloIIIC.AutoSize = true;
             this.checkCicloIIIC.Location = new System.Drawing.Point(429, 26);
-            this.checkCicloIIIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkCicloIIIC.Margin = new System.Windows.Forms.Padding(4);
             this.checkCicloIIIC.Name = "checkCicloIIIC";
             this.checkCicloIIIC.Size = new System.Drawing.Size(51, 20);
             this.checkCicloIIIC.TabIndex = 4;
@@ -126,7 +126,7 @@
             // 
             this.checkcicloIII.AutoSize = true;
             this.checkcicloIII.Location = new System.Drawing.Point(493, 26);
-            this.checkcicloIII.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkcicloIII.Margin = new System.Windows.Forms.Padding(4);
             this.checkcicloIII.Name = "checkcicloIII";
             this.checkcicloIII.Size = new System.Drawing.Size(36, 20);
             this.checkcicloIII.TabIndex = 5;
@@ -137,7 +137,7 @@
             // butGenerarReporte
             // 
             this.butGenerarReporte.Location = new System.Drawing.Point(381, 114);
-            this.butGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butGenerarReporte.Margin = new System.Windows.Forms.Padding(4);
             this.butGenerarReporte.Name = "butGenerarReporte";
             this.butGenerarReporte.Size = new System.Drawing.Size(148, 28);
             this.butGenerarReporte.TabIndex = 8;
@@ -150,7 +150,7 @@
             this.comboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboFiltro.FormattingEnabled = true;
             this.comboFiltro.Location = new System.Drawing.Point(243, 66);
-            this.comboFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.comboFiltro.Name = "comboFiltro";
             this.comboFiltro.Size = new System.Drawing.Size(211, 24);
             this.comboFiltro.TabIndex = 6;
@@ -159,7 +159,7 @@
             // numAno
             // 
             this.numAno.Location = new System.Drawing.Point(125, 23);
-            this.numAno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numAno.Margin = new System.Windows.Forms.Padding(4);
             this.numAno.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -183,7 +183,7 @@
             // 
             this.comboVer.FormattingEnabled = true;
             this.comboVer.Location = new System.Drawing.Point(133, 117);
-            this.comboVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboVer.Margin = new System.Windows.Forms.Padding(4);
             this.comboVer.Name = "comboVer";
             this.comboVer.Size = new System.Drawing.Size(239, 24);
             this.comboVer.TabIndex = 7;
@@ -193,7 +193,7 @@
             this.AcceptButton = this.butGenerarReporte;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(620, 158);
             this.Controls.Add(this.comboVer);
             this.Controls.Add(this.label4);
@@ -210,7 +210,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GenerarReporteDesignaciones";

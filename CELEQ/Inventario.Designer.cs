@@ -62,7 +62,7 @@
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(21, 84);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
             this.dgvInventario.Size = new System.Drawing.Size(1200, 681);
@@ -73,7 +73,7 @@
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(1275, 113);
-            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 2;
@@ -84,7 +84,7 @@
             // textBuscar
             // 
             this.textBuscar.Location = new System.Drawing.Point(764, 52);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 3;
@@ -93,7 +93,7 @@
             // butActualizar
             // 
             this.butActualizar.Location = new System.Drawing.Point(1275, 234);
-            this.butActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.butActualizar.Name = "butActualizar";
             this.butActualizar.Size = new System.Drawing.Size(263, 53);
             this.butActualizar.TabIndex = 5;
@@ -124,7 +124,7 @@
             // numAgregar
             // 
             this.numAgregar.Location = new System.Drawing.Point(1348, 81);
-            this.numAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.numAgregar.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -157,7 +157,7 @@
             // butModificar
             // 
             this.butModificar.Location = new System.Drawing.Point(1275, 174);
-            this.butModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 10;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.labelUnidad);
@@ -183,7 +183,7 @@
             this.Controls.Add(this.labelInventario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inventario";

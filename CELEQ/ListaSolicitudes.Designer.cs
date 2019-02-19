@@ -43,7 +43,7 @@
             this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(21, 84);
-            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
@@ -64,7 +64,7 @@
             // butDetalles
             // 
             this.butDetalles.Location = new System.Drawing.Point(1267, 84);
-            this.butDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.butDetalles.Name = "butDetalles";
             this.butDetalles.Size = new System.Drawing.Size(263, 53);
             this.butDetalles.TabIndex = 4;
@@ -76,14 +76,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butDetalles);
             this.Controls.Add(this.labelSoliciudes);
             this.Controls.Add(this.dgvSolicitudes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaSolicitudes";

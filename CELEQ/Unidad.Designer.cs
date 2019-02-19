@@ -44,7 +44,7 @@
             this.dgvUnidad.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnidad.Location = new System.Drawing.Point(21, 84);
-            this.dgvUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUnidad.Name = "dgvUnidad";
             this.dgvUnidad.ReadOnly = true;
             this.dgvUnidad.RowHeadersVisible = false;
@@ -65,7 +65,7 @@
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(1267, 84);
-            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 5;
@@ -76,7 +76,7 @@
             // butModificar
             // 
             this.butModificar.Location = new System.Drawing.Point(1267, 169);
-            this.butModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
@@ -96,7 +96,7 @@
             this.Controls.Add(this.dgvUnidad);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Unidad";

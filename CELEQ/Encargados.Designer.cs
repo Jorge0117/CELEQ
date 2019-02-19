@@ -39,7 +39,7 @@
             // butModificar
             // 
             this.butModificar.Location = new System.Drawing.Point(633, 146);
-            this.butModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 10;
@@ -50,7 +50,7 @@
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(633, 86);
-            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 9;
@@ -78,7 +78,7 @@
             this.dgvResponsables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvResponsables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsables.Location = new System.Drawing.Point(39, 86);
-            this.dgvResponsables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvResponsables.Margin = new System.Windows.Forms.Padding(4);
             this.dgvResponsables.Name = "dgvResponsables";
             this.dgvResponsables.ReadOnly = true;
             this.dgvResponsables.RowHeadersVisible = false;
@@ -88,7 +88,7 @@
             // butEliminar
             // 
             this.butEliminar.Location = new System.Drawing.Point(633, 207);
-            this.butEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(263, 53);
             this.butEliminar.TabIndex = 11;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(953, 567);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
@@ -109,7 +109,7 @@
             this.Controls.Add(this.dgvResponsables);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Encargados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Responsable";

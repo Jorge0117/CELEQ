@@ -48,8 +48,8 @@
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(381, 235);
-            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAceptar.Location = new System.Drawing.Point(333, 206);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 16;
@@ -59,8 +59,8 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(489, 235);
-            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancelar.Location = new System.Drawing.Point(441, 206);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 15;
@@ -72,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 38);
+            this.label1.Location = new System.Drawing.Point(43, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 15);
@@ -83,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 96);
+            this.label2.Location = new System.Drawing.Point(43, 81);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 15);
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 154);
+            this.label3.Location = new System.Drawing.Point(43, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 15);
@@ -103,8 +103,8 @@
             // 
             // numericEst
             // 
-            this.numericEst.Location = new System.Drawing.Point(359, 36);
-            this.numericEst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericEst.Location = new System.Drawing.Point(274, 29);
+            this.numericEst.Margin = new System.Windows.Forms.Padding(4);
             this.numericEst.Maximum = new decimal(new int[] {
             1661992959,
             1808227885,
@@ -116,8 +116,8 @@
             // 
             // numericAsi
             // 
-            this.numericAsi.Location = new System.Drawing.Point(359, 94);
-            this.numericAsi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericAsi.Location = new System.Drawing.Point(274, 79);
+            this.numericAsi.Margin = new System.Windows.Forms.Padding(4);
             this.numericAsi.Maximum = new decimal(new int[] {
             1661992959,
             1808227885,
@@ -129,8 +129,8 @@
             // 
             // numericPos
             // 
-            this.numericPos.Location = new System.Drawing.Point(359, 151);
-            this.numericPos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericPos.Location = new System.Drawing.Point(274, 128);
+            this.numericPos.Margin = new System.Windows.Forms.Padding(4);
             this.numericPos.Maximum = new decimal(new int[] {
             1661992959,
             1808227885,
@@ -153,10 +153,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(573, 208);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(477, 178);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Monto por hora";
@@ -165,7 +165,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(336, 154);
+            this.label6.Location = new System.Drawing.Point(251, 130);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 15);
@@ -176,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 96);
+            this.label5.Location = new System.Drawing.Point(251, 81);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 15);
@@ -187,7 +187,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 38);
+            this.label4.Location = new System.Drawing.Point(251, 31);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(16, 15);
@@ -198,14 +198,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(605, 278);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(554, 246);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Aranceles";

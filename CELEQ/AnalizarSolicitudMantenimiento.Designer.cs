@@ -87,9 +87,9 @@
             this.groupBox1.Controls.Add(this.labelUnidad);
             this.groupBox1.Controls.Add(this.labelNombre);
             this.groupBox1.Location = new System.Drawing.Point(499, 76);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1064, 401);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -98,7 +98,7 @@
             // textFecha
             // 
             this.textFecha.Location = new System.Drawing.Point(303, 27);
-            this.textFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textFecha.Margin = new System.Windows.Forms.Padding(4);
             this.textFecha.Name = "textFecha";
             this.textFecha.ReadOnly = true;
             this.textFecha.Size = new System.Drawing.Size(609, 22);
@@ -117,7 +117,7 @@
             // textObservacionesAprob
             // 
             this.textObservacionesAprob.Location = new System.Drawing.Point(303, 303);
-            this.textObservacionesAprob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservacionesAprob.Margin = new System.Windows.Forms.Padding(4);
             this.textObservacionesAprob.MaxLength = 500;
             this.textObservacionesAprob.Multiline = true;
             this.textObservacionesAprob.Name = "textObservacionesAprob";
@@ -138,7 +138,7 @@
             // textDescripcion
             // 
             this.textDescripcion.Location = new System.Drawing.Point(303, 219);
-            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.textDescripcion.MaxLength = 500;
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -149,7 +149,7 @@
             // textLugarTrabajo
             // 
             this.textLugarTrabajo.Location = new System.Drawing.Point(303, 171);
-            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.textLugarTrabajo.Name = "textLugarTrabajo";
             this.textLugarTrabajo.ReadOnly = true;
             this.textLugarTrabajo.Size = new System.Drawing.Size(609, 22);
@@ -158,7 +158,7 @@
             // textUnidad
             // 
             this.textUnidad.Location = new System.Drawing.Point(303, 123);
-            this.textUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textUnidad.Name = "textUnidad";
             this.textUnidad.ReadOnly = true;
             this.textUnidad.Size = new System.Drawing.Size(609, 22);
@@ -167,7 +167,7 @@
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(303, 75);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textNombre.Name = "textNombre";
             this.textNombre.ReadOnly = true;
             this.textNombre.Size = new System.Drawing.Size(609, 22);
@@ -216,7 +216,7 @@
             // butAceptar
             // 
             this.butAceptar.Location = new System.Drawing.Point(1355, 772);
-            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 20;
@@ -227,7 +227,7 @@
             // butCancelar
             // 
             this.butCancelar.Location = new System.Drawing.Point(1463, 772);
-            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 19;
@@ -247,9 +247,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(499, 485);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1064, 279);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
@@ -258,7 +258,7 @@
             // textCosto
             // 
             this.textCosto.Location = new System.Drawing.Point(333, 117);
-            this.textCosto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCosto.Margin = new System.Windows.Forms.Padding(4);
             this.textCosto.MaxLength = 100;
             this.textCosto.Name = "textCosto";
             this.textCosto.Size = new System.Drawing.Size(577, 22);
@@ -277,7 +277,7 @@
             // butAdjuntar
             // 
             this.butAdjuntar.Location = new System.Drawing.Point(333, 239);
-            this.butAdjuntar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAdjuntar.Margin = new System.Windows.Forms.Padding(4);
             this.butAdjuntar.Name = "butAdjuntar";
             this.butAdjuntar.Size = new System.Drawing.Size(133, 28);
             this.butAdjuntar.TabIndex = 25;
@@ -298,7 +298,7 @@
             // textObservacionesAna
             // 
             this.textObservacionesAna.Location = new System.Drawing.Point(333, 158);
-            this.textObservacionesAna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservacionesAna.Margin = new System.Windows.Forms.Padding(4);
             this.textObservacionesAna.MaxLength = 500;
             this.textObservacionesAna.Multiline = true;
             this.textObservacionesAna.Name = "textObservacionesAna";
@@ -308,7 +308,7 @@
             // textInsumos
             // 
             this.textInsumos.Location = new System.Drawing.Point(333, 28);
-            this.textInsumos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textInsumos.Margin = new System.Windows.Forms.Padding(4);
             this.textInsumos.MaxLength = 500;
             this.textInsumos.Multiline = true;
             this.textInsumos.Name = "textInsumos";
@@ -354,7 +354,7 @@
             this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(16, 76);
-            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
@@ -366,7 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.dgvSolicitudes);
             this.Controls.Add(this.groupBox2);
@@ -376,7 +376,7 @@
             this.Controls.Add(this.labelSoliciudes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AnalizarSolicitudMantenimiento";

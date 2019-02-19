@@ -56,7 +56,7 @@
             this.dgvDesignaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDesignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDesignaciones.Location = new System.Drawing.Point(21, 84);
-            this.dgvDesignaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDesignaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDesignaciones.Name = "dgvDesignaciones";
             this.dgvDesignaciones.ReadOnly = true;
             this.dgvDesignaciones.RowHeadersVisible = false;
@@ -76,7 +76,7 @@
             // textBuscar
             // 
             this.textBuscar.Location = new System.Drawing.Point(1001, 48);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 18;
@@ -85,7 +85,7 @@
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(1467, 84);
-            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 20;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1765, 814);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
@@ -106,7 +106,7 @@
             this.Controls.Add(this.dgvDesignaciones);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaDesignaciones";

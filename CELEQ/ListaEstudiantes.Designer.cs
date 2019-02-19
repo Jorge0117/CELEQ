@@ -48,7 +48,7 @@
             // textBuscar
             // 
             this.textBuscar.Location = new System.Drawing.Point(771, 54);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 10;
@@ -73,7 +73,7 @@
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Location = new System.Drawing.Point(28, 86);
-            this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.ReadOnly = true;
             this.dgvEstudiantes.RowHeadersVisible = false;
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1252, 814);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
@@ -92,7 +92,7 @@
             this.Controls.Add(this.dgvEstudiantes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaEstudiantes";

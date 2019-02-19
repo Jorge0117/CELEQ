@@ -68,7 +68,7 @@
             this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(16, 76);
-            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
@@ -105,9 +105,9 @@
             this.groupBox1.Controls.Add(this.labelUnidad);
             this.groupBox1.Controls.Add(this.labelNombre);
             this.groupBox1.Location = new System.Drawing.Point(499, 76);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1064, 448);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -126,7 +126,7 @@
             // textObservAnalisis
             // 
             this.textObservAnalisis.Location = new System.Drawing.Point(301, 326);
-            this.textObservAnalisis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservAnalisis.Margin = new System.Windows.Forms.Padding(4);
             this.textObservAnalisis.MaxLength = 500;
             this.textObservAnalisis.Multiline = true;
             this.textObservAnalisis.Name = "textObservAnalisis";
@@ -137,7 +137,7 @@
             // butDescargar
             // 
             this.butDescargar.Location = new System.Drawing.Point(779, 406);
-            this.butDescargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDescargar.Margin = new System.Windows.Forms.Padding(4);
             this.butDescargar.Name = "butDescargar";
             this.butDescargar.Size = new System.Drawing.Size(133, 28);
             this.butDescargar.TabIndex = 25;
@@ -148,7 +148,7 @@
             // textObservacionesAprob
             // 
             this.textObservacionesAprob.Location = new System.Drawing.Point(301, 240);
-            this.textObservacionesAprob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservacionesAprob.Margin = new System.Windows.Forms.Padding(4);
             this.textObservacionesAprob.MaxLength = 500;
             this.textObservacionesAprob.Multiline = true;
             this.textObservacionesAprob.Name = "textObservacionesAprob";
@@ -189,7 +189,7 @@
             // textDescripcion
             // 
             this.textDescripcion.Location = new System.Drawing.Point(301, 153);
-            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.textDescripcion.MaxLength = 500;
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -200,7 +200,7 @@
             // textLugarTrabajo
             // 
             this.textLugarTrabajo.Location = new System.Drawing.Point(301, 111);
-            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.textLugarTrabajo.Name = "textLugarTrabajo";
             this.textLugarTrabajo.ReadOnly = true;
             this.textLugarTrabajo.Size = new System.Drawing.Size(609, 22);
@@ -209,7 +209,7 @@
             // textUnidad
             // 
             this.textUnidad.Location = new System.Drawing.Point(301, 63);
-            this.textUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textUnidad.Name = "textUnidad";
             this.textUnidad.ReadOnly = true;
             this.textUnidad.Size = new System.Drawing.Size(609, 22);
@@ -218,7 +218,7 @@
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(301, 15);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textNombre.Name = "textNombre";
             this.textNombre.ReadOnly = true;
             this.textNombre.Size = new System.Drawing.Size(609, 22);
@@ -271,9 +271,9 @@
             this.groupBox2.Controls.Add(this.comboPeriodo);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(499, 532);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1064, 233);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
@@ -282,7 +282,7 @@
             // textObservFinales
             // 
             this.textObservFinales.Location = new System.Drawing.Point(301, 106);
-            this.textObservFinales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservFinales.Margin = new System.Windows.Forms.Padding(4);
             this.textObservFinales.MaxLength = 500;
             this.textObservFinales.Multiline = true;
             this.textObservFinales.Name = "textObservFinales";
@@ -304,7 +304,7 @@
             this.comboPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPeriodo.FormattingEnabled = true;
             this.comboPeriodo.Location = new System.Drawing.Point(301, 44);
-            this.comboPeriodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboPeriodo.Margin = new System.Windows.Forms.Padding(4);
             this.comboPeriodo.Name = "comboPeriodo";
             this.comboPeriodo.Size = new System.Drawing.Size(609, 24);
             this.comboPeriodo.TabIndex = 1;
@@ -322,7 +322,7 @@
             // butAceptar
             // 
             this.butAceptar.Location = new System.Drawing.Point(1355, 772);
-            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 27;
@@ -333,7 +333,7 @@
             // butCancelar
             // 
             this.butCancelar.Location = new System.Drawing.Point(1463, 772);
-            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 26;
@@ -345,7 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
@@ -355,7 +355,7 @@
             this.Controls.Add(this.dgvSolicitudes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InformeFinalSolicitudes";

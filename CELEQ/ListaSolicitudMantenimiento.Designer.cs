@@ -70,7 +70,7 @@
             this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(21, 84);
-            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
@@ -116,9 +116,9 @@
             this.groupBox1.Controls.Add(this.labelNombre);
             this.groupBox1.Controls.Add(this.labelConsecutivo);
             this.groupBox1.Location = new System.Drawing.Point(499, 76);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1064, 688);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -127,7 +127,7 @@
             // textObservaciones
             // 
             this.textObservaciones.Location = new System.Drawing.Point(301, 581);
-            this.textObservaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObservaciones.Margin = new System.Windows.Forms.Padding(4);
             this.textObservaciones.MaxLength = 500;
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
@@ -149,7 +149,7 @@
             this.comboPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPersonas.FormattingEnabled = true;
             this.comboPersonas.Location = new System.Drawing.Point(301, 543);
-            this.comboPersonas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboPersonas.Margin = new System.Windows.Forms.Padding(4);
             this.comboPersonas.Name = "comboPersonas";
             this.comboPersonas.Size = new System.Drawing.Size(609, 24);
             this.comboPersonas.TabIndex = 21;
@@ -168,7 +168,7 @@
             // 
             this.checkBoxRechazar.AutoSize = true;
             this.checkBoxRechazar.Location = new System.Drawing.Point(393, 508);
-            this.checkBoxRechazar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxRechazar.Name = "checkBoxRechazar";
             this.checkBoxRechazar.Size = new System.Drawing.Size(85, 20);
             this.checkBoxRechazar.TabIndex = 19;
@@ -180,7 +180,7 @@
             // 
             this.checkBoxAprobado.AutoSize = true;
             this.checkBoxAprobado.Location = new System.Drawing.Point(301, 508);
-            this.checkBoxAprobado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxAprobado.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxAprobado.Name = "checkBoxAprobado";
             this.checkBoxAprobado.Size = new System.Drawing.Size(76, 20);
             this.checkBoxAprobado.TabIndex = 18;
@@ -191,7 +191,7 @@
             // textDescripcion
             // 
             this.textDescripcion.Location = new System.Drawing.Point(301, 415);
-            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.textDescripcion.MaxLength = 500;
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -202,7 +202,7 @@
             // textLugarTrabajo
             // 
             this.textLugarTrabajo.Location = new System.Drawing.Point(301, 366);
-            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textLugarTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.textLugarTrabajo.Name = "textLugarTrabajo";
             this.textLugarTrabajo.ReadOnly = true;
             this.textLugarTrabajo.Size = new System.Drawing.Size(609, 22);
@@ -211,7 +211,7 @@
             // textAreaTrabajo
             // 
             this.textAreaTrabajo.Location = new System.Drawing.Point(301, 316);
-            this.textAreaTrabajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textAreaTrabajo.Margin = new System.Windows.Forms.Padding(4);
             this.textAreaTrabajo.Name = "textAreaTrabajo";
             this.textAreaTrabajo.ReadOnly = true;
             this.textAreaTrabajo.Size = new System.Drawing.Size(609, 22);
@@ -220,7 +220,7 @@
             // textUrgencia
             // 
             this.textUrgencia.Location = new System.Drawing.Point(301, 267);
-            this.textUrgencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUrgencia.Margin = new System.Windows.Forms.Padding(4);
             this.textUrgencia.Name = "textUrgencia";
             this.textUrgencia.ReadOnly = true;
             this.textUrgencia.Size = new System.Drawing.Size(609, 22);
@@ -229,7 +229,7 @@
             // textContacto
             // 
             this.textContacto.Location = new System.Drawing.Point(301, 218);
-            this.textContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textContacto.Margin = new System.Windows.Forms.Padding(4);
             this.textContacto.Name = "textContacto";
             this.textContacto.ReadOnly = true;
             this.textContacto.Size = new System.Drawing.Size(609, 22);
@@ -238,7 +238,7 @@
             // textTelefono
             // 
             this.textTelefono.Location = new System.Drawing.Point(301, 169);
-            this.textTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.ReadOnly = true;
             this.textTelefono.Size = new System.Drawing.Size(609, 22);
@@ -247,7 +247,7 @@
             // textUnidad
             // 
             this.textUnidad.Location = new System.Drawing.Point(301, 119);
-            this.textUnidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textUnidad.Name = "textUnidad";
             this.textUnidad.ReadOnly = true;
             this.textUnidad.Size = new System.Drawing.Size(609, 22);
@@ -256,7 +256,7 @@
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(301, 70);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textNombre.Name = "textNombre";
             this.textNombre.ReadOnly = true;
             this.textNombre.Size = new System.Drawing.Size(609, 22);
@@ -265,7 +265,7 @@
             // textConsecutivo
             // 
             this.textConsecutivo.Location = new System.Drawing.Point(301, 21);
-            this.textConsecutivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textConsecutivo.Margin = new System.Windows.Forms.Padding(4);
             this.textConsecutivo.Name = "textConsecutivo";
             this.textConsecutivo.ReadOnly = true;
             this.textConsecutivo.Size = new System.Drawing.Size(609, 22);
@@ -364,7 +364,7 @@
             // butAceptar
             // 
             this.butAceptar.Location = new System.Drawing.Point(1355, 772);
-            this.butAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
             this.butAceptar.TabIndex = 18;
@@ -375,7 +375,7 @@
             // butCancelar
             // 
             this.butCancelar.Location = new System.Drawing.Point(1463, 772);
-            this.butCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
             this.butCancelar.TabIndex = 17;
@@ -387,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.butCancelar);
@@ -396,7 +396,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaSolicitudMantenimiento";

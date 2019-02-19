@@ -382,7 +382,7 @@
             // 
             this.labelUcr.AutoSize = true;
             this.labelUcr.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelUcr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(164)))));
             this.labelUcr.Location = new System.Drawing.Point(360, 159);
             this.labelUcr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUcr.Name = "labelUcr";
@@ -394,7 +394,7 @@
             // 
             this.labelCeleq.AutoSize = true;
             this.labelCeleq.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.labelCeleq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(164)))));
             this.labelCeleq.Location = new System.Drawing.Point(223, 263);
             this.labelCeleq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCeleq.Name = "labelCeleq";
@@ -406,7 +406,7 @@
             // 
             this.pictureCeleq.Image = global::CELEQ.Properties.Resources.LogoCeleq;
             this.pictureCeleq.Location = new System.Drawing.Point(1128, 159);
-            this.pictureCeleq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureCeleq.Margin = new System.Windows.Forms.Padding(4);
             this.pictureCeleq.Name = "pictureCeleq";
             this.pictureCeleq.Size = new System.Drawing.Size(173, 172);
             this.pictureCeleq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -417,7 +417,7 @@
             // 
             this.pictureUcr.Image = global::CELEQ.Properties.Resources.Escdo_UCR;
             this.pictureUcr.Location = new System.Drawing.Point(16, 159);
-            this.pictureUcr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureUcr.Margin = new System.Windows.Forms.Padding(4);
             this.pictureUcr.Name = "pictureUcr";
             this.pictureUcr.Size = new System.Drawing.Size(173, 172);
             this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -428,7 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1317, 694);
             this.Controls.Add(this.pictureCeleq);
             this.Controls.Add(this.pictureUcr);
@@ -440,7 +440,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";

@@ -59,9 +59,9 @@
             this.groupBox1.Controls.Add(this.butDenReac);
             this.groupBox1.Controls.Add(this.dgvReactivos);
             this.groupBox1.Location = new System.Drawing.Point(67, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1635, 822);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -71,9 +71,9 @@
             // 
             this.groupBox2.Controls.Add(this.textObserv);
             this.groupBox2.Location = new System.Drawing.Point(77, 639);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1216, 144);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -82,7 +82,7 @@
             // textObserv
             // 
             this.textObserv.Location = new System.Drawing.Point(21, 23);
-            this.textObserv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textObserv.Margin = new System.Windows.Forms.Padding(4);
             this.textObserv.Multiline = true;
             this.textObserv.Name = "textObserv";
             this.textObserv.ReadOnly = true;
@@ -92,7 +92,7 @@
             // textMotDenCris
             // 
             this.textMotDenCris.Location = new System.Drawing.Point(1349, 426);
-            this.textMotDenCris.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textMotDenCris.Margin = new System.Windows.Forms.Padding(4);
             this.textMotDenCris.Multiline = true;
             this.textMotDenCris.Name = "textMotDenCris";
             this.textMotDenCris.Size = new System.Drawing.Size(257, 182);
@@ -111,7 +111,7 @@
             // textMotDenReac
             // 
             this.textMotDenReac.Location = new System.Drawing.Point(1349, 149);
-            this.textMotDenReac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textMotDenReac.Margin = new System.Windows.Forms.Padding(4);
             this.textMotDenReac.Multiline = true;
             this.textMotDenReac.Name = "textMotDenReac";
             this.textMotDenReac.Size = new System.Drawing.Size(257, 168);
@@ -136,7 +136,7 @@
             this.dgvCristaleria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCristaleria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCristaleria.Location = new System.Drawing.Point(77, 366);
-            this.dgvCristaleria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCristaleria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCristaleria.Name = "dgvCristaleria";
             this.dgvCristaleria.ReadOnly = true;
             this.dgvCristaleria.RowHeadersVisible = false;
@@ -146,7 +146,7 @@
             // buDenCris
             // 
             this.buDenCris.Location = new System.Drawing.Point(1345, 366);
-            this.buDenCris.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buDenCris.Margin = new System.Windows.Forms.Padding(4);
             this.buDenCris.Name = "buDenCris";
             this.buDenCris.Size = new System.Drawing.Size(263, 53);
             this.buDenCris.TabIndex = 3;
@@ -157,7 +157,7 @@
             // butDenReac
             // 
             this.butDenReac.Location = new System.Drawing.Point(1345, 66);
-            this.butDenReac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDenReac.Margin = new System.Windows.Forms.Padding(4);
             this.butDenReac.Name = "butDenReac";
             this.butDenReac.Size = new System.Drawing.Size(263, 53);
             this.butDenReac.TabIndex = 1;
@@ -174,7 +174,7 @@
             this.dgvReactivos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvReactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReactivos.Location = new System.Drawing.Point(77, 62);
-            this.dgvReactivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvReactivos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReactivos.MultiSelect = false;
             this.dgvReactivos.Name = "dgvReactivos";
             this.dgvReactivos.ReadOnly = true;
@@ -185,7 +185,7 @@
             // butAprobarSolicutud
             // 
             this.butAprobarSolicutud.Location = new System.Drawing.Point(1476, 844);
-            this.butAprobarSolicutud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAprobarSolicutud.Margin = new System.Windows.Forms.Padding(4);
             this.butAprobarSolicutud.Name = "butAprobarSolicutud";
             this.butAprobarSolicutud.Size = new System.Drawing.Size(263, 53);
             this.butAprobarSolicutud.TabIndex = 7;
@@ -196,7 +196,7 @@
             // butDenegarSolicitud
             // 
             this.butDenegarSolicitud.Location = new System.Drawing.Point(1205, 844);
-            this.butDenegarSolicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDenegarSolicitud.Margin = new System.Windows.Forms.Padding(4);
             this.butDenegarSolicitud.Name = "butDenegarSolicitud";
             this.butDenegarSolicitud.Size = new System.Drawing.Size(263, 53);
             this.butDenegarSolicitud.TabIndex = 8;
@@ -208,13 +208,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1755, 927);
             this.Controls.Add(this.butDenegarSolicitud);
             this.Controls.Add(this.butAprobarSolicutud);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DetallesSolicitud";
