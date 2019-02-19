@@ -40,9 +40,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(965, 119);
+            this.butModificar.Location = new System.Drawing.Point(1287, 146);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 19;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(965, 70);
+            this.butAgregar.Location = new System.Drawing.Point(1287, 86);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 18;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -61,17 +63,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(534, 47);
+            this.label1.Location = new System.Drawing.Point(712, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(53, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Buscar:";
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(583, 44);
+            this.textBuscar.Location = new System.Drawing.Point(777, 54);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(343, 20);
+            this.textBuscar.Size = new System.Drawing.Size(456, 22);
             this.textBuscar.TabIndex = 16;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
@@ -79,7 +83,8 @@
             // 
             this.labelPresupuestos.AutoSize = true;
             this.labelPresupuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPresupuestos.Location = new System.Drawing.Point(22, 37);
+            this.labelPresupuestos.Location = new System.Drawing.Point(29, 46);
+            this.labelPresupuestos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPresupuestos.Name = "labelPresupuestos";
             this.labelPresupuestos.Size = new System.Drawing.Size(111, 20);
             this.labelPresupuestos.TabIndex = 15;
@@ -93,18 +98,20 @@
             this.dgvPresupuesto.AllowUserToResizeRows = false;
             this.dgvPresupuesto.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPresupuesto.Location = new System.Drawing.Point(26, 70);
+            this.dgvPresupuesto.Location = new System.Drawing.Point(35, 86);
+            this.dgvPresupuesto.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPresupuesto.Name = "dgvPresupuesto";
             this.dgvPresupuesto.ReadOnly = true;
             this.dgvPresupuesto.RowHeadersVisible = false;
-            this.dgvPresupuesto.Size = new System.Drawing.Size(900, 553);
+            this.dgvPresupuesto.Size = new System.Drawing.Size(1200, 681);
             this.dgvPresupuesto.TabIndex = 14;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(965, 168);
+            this.butEliminar.Location = new System.Drawing.Point(1287, 207);
+            this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(197, 43);
+            this.butEliminar.Size = new System.Drawing.Size(263, 53);
             this.butEliminar.TabIndex = 20;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
@@ -112,9 +119,10 @@
             // 
             // Presupuesto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
@@ -122,6 +130,8 @@
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelPresupuestos);
             this.Controls.Add(this.dgvPresupuesto);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Presupuesto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presupuesto";

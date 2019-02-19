@@ -42,18 +42,20 @@
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(16, 68);
+            this.dgvSolicitudes.Location = new System.Drawing.Point(21, 84);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersVisible = false;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(900, 553);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(1200, 681);
             this.dgvSolicitudes.TabIndex = 2;
             // 
             // labelSoliciudes
             // 
             this.labelSoliciudes.AutoSize = true;
             this.labelSoliciudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSoliciudes.Location = new System.Drawing.Point(12, 35);
+            this.labelSoliciudes.Location = new System.Drawing.Point(16, 43);
+            this.labelSoliciudes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSoliciudes.Name = "labelSoliciudes";
             this.labelSoliciudes.Size = new System.Drawing.Size(86, 20);
             this.labelSoliciudes.TabIndex = 3;
@@ -61,9 +63,10 @@
             // 
             // butDetalles
             // 
-            this.butDetalles.Location = new System.Drawing.Point(950, 68);
+            this.butDetalles.Location = new System.Drawing.Point(1267, 84);
+            this.butDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.butDetalles.Name = "butDetalles";
-            this.butDetalles.Size = new System.Drawing.Size(197, 43);
+            this.butDetalles.Size = new System.Drawing.Size(263, 53);
             this.butDetalles.TabIndex = 4;
             this.butDetalles.Text = "Detalles";
             this.butDetalles.UseVisualStyleBackColor = true;
@@ -71,14 +74,16 @@
             // 
             // ListaSolicitudes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butDetalles);
             this.Controls.Add(this.labelSoliciudes);
             this.Controls.Add(this.dgvSolicitudes);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaSolicitudes";

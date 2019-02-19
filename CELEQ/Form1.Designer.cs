@@ -31,10 +31,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reactivosYCristaleríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,15 +60,15 @@
             this.arancelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vínculoExternoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.vínculoExternoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -84,7 +84,8 @@
             this.vínculoExternoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(988, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1317, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,13 +105,6 @@
             this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.unidadesToolStripMenuItem.Text = "Unidades";
             this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
@@ -135,6 +129,13 @@
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // regenciaToolStripMenuItem
             // 
             this.regenciaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,7 +151,7 @@
             this.solicitudesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reactivosYCristaleríaToolStripMenuItem});
             this.solicitudesToolStripMenuItem1.Name = "solicitudesToolStripMenuItem1";
-            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.solicitudesToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
             this.solicitudesToolStripMenuItem1.Text = "Realizar Solicitud";
             // 
             // reactivosYCristaleríaToolStripMenuItem
@@ -166,7 +167,7 @@
             this.reactivosToolStripMenuItem,
             this.cristaleríaToolStripMenuItem});
             this.verInventarioToolStripMenuItem.Name = "verInventarioToolStripMenuItem";
-            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verInventarioToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verInventarioToolStripMenuItem.Text = "Ver inventario";
             // 
             // reactivosToolStripMenuItem
@@ -190,7 +191,7 @@
             this.historialDeSolicitudesToolStripMenuItem,
             this.solicitudesRealizadasToolStripMenuItem});
             this.verSolicitudesToolStripMenuItem.Name = "verSolicitudesToolStripMenuItem";
-            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSolicitudesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.verSolicitudesToolStripMenuItem.Text = "Ver Solicitudes";
             // 
             // solicitudesPendientesToolStripMenuItem
@@ -277,7 +278,7 @@
             // presupuestoToolStripMenuItem
             // 
             this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
-            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.presupuestoToolStripMenuItem.Text = "Presupuesto";
             this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
             // 
@@ -287,7 +288,7 @@
             this.agregarDesignacionToolStripMenuItem,
             this.verDesignacionesToolStripMenuItem});
             this.designacionesToolStripMenuItem.Name = "designacionesToolStripMenuItem";
-            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.designacionesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.designacionesToolStripMenuItem.Text = "Designaciones";
             // 
             // agregarDesignacionToolStripMenuItem
@@ -307,92 +308,30 @@
             // responsablesToolStripMenuItem
             // 
             this.responsablesToolStripMenuItem.Name = "responsablesToolStripMenuItem";
-            this.responsablesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.responsablesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.responsablesToolStripMenuItem.Text = "Responsables";
             this.responsablesToolStripMenuItem.Click += new System.EventHandler(this.responsablesToolStripMenuItem_Click);
             // 
             // arancelesToolStripMenuItem
             // 
             this.arancelesToolStripMenuItem.Name = "arancelesToolStripMenuItem";
-            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arancelesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.arancelesToolStripMenuItem.Text = "Aranceles";
             this.arancelesToolStripMenuItem.Click += new System.EventHandler(this.arancelesToolStripMenuItem_Click);
             // 
             // verEstudiantesToolStripMenuItem
             // 
             this.verEstudiantesToolStripMenuItem.Name = "verEstudiantesToolStripMenuItem";
-            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.verEstudiantesToolStripMenuItem.Text = "Estudiantes";
             this.verEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.verEstudiantesToolStripMenuItem_Click);
             // 
             // generarReporteToolStripMenuItem
             // 
             this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
-            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
             this.generarReporteToolStripMenuItem.Click += new System.EventHandler(this.generarReporteToolStripMenuItem_Click);
-            // 
-            // labelBienv
-            // 
-            this.labelBienv.AutoSize = true;
-            this.labelBienv.Location = new System.Drawing.Point(12, 24);
-            this.labelBienv.Name = "labelBienv";
-            this.labelBienv.Size = new System.Drawing.Size(63, 13);
-            this.labelBienv.TabIndex = 1;
-            this.labelBienv.Text = "Bienvenido ";
-            // 
-            // linkLogout
-            // 
-            this.linkLogout.AutoSize = true;
-            this.linkLogout.Location = new System.Drawing.Point(12, 47);
-            this.linkLogout.Name = "linkLogout";
-            this.linkLogout.Size = new System.Drawing.Size(75, 13);
-            this.linkLogout.TabIndex = 2;
-            this.linkLogout.TabStop = true;
-            this.linkLogout.Text = "Salir de sesión";
-            this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
-            // 
-            // labelUcr
-            // 
-            this.labelUcr.AutoSize = true;
-            this.labelUcr.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUcr.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.labelUcr.Location = new System.Drawing.Point(270, 129);
-            this.labelUcr.Name = "labelUcr";
-            this.labelUcr.Size = new System.Drawing.Size(437, 42);
-            this.labelUcr.TabIndex = 4;
-            this.labelUcr.Text = "Universidad de Costa Rica";
-            // 
-            // labelCeleq
-            // 
-            this.labelCeleq.AutoSize = true;
-            this.labelCeleq.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCeleq.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.labelCeleq.Location = new System.Drawing.Point(167, 214);
-            this.labelCeleq.Name = "labelCeleq";
-            this.labelCeleq.Size = new System.Drawing.Size(632, 36);
-            this.labelCeleq.TabIndex = 5;
-            this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
-            // 
-            // pictureCeleq
-            // 
-            this.pictureCeleq.Image = global::CELEQ.Properties.Resources.LogoCeleq;
-            this.pictureCeleq.Location = new System.Drawing.Point(846, 129);
-            this.pictureCeleq.Name = "pictureCeleq";
-            this.pictureCeleq.Size = new System.Drawing.Size(130, 140);
-            this.pictureCeleq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureCeleq.TabIndex = 7;
-            this.pictureCeleq.TabStop = false;
-            // 
-            // pictureUcr
-            // 
-            this.pictureUcr.Image = global::CELEQ.Properties.Resources.Escdo_UCR;
-            this.pictureUcr.Location = new System.Drawing.Point(12, 129);
-            this.pictureUcr.Name = "pictureUcr";
-            this.pictureUcr.Size = new System.Drawing.Size(130, 140);
-            this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureUcr.TabIndex = 6;
-            this.pictureUcr.TabStop = false;
             // 
             // vínculoExternoToolStripMenuItem
             // 
@@ -407,22 +346,90 @@
             this.cotizacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem});
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
             // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
+            // labelBienv
+            // 
+            this.labelBienv.AutoSize = true;
+            this.labelBienv.Location = new System.Drawing.Point(16, 30);
+            this.labelBienv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelBienv.Name = "labelBienv";
+            this.labelBienv.Size = new System.Drawing.Size(79, 16);
+            this.labelBienv.TabIndex = 1;
+            this.labelBienv.Text = "Bienvenido ";
+            // 
+            // linkLogout
+            // 
+            this.linkLogout.AutoSize = true;
+            this.linkLogout.Location = new System.Drawing.Point(16, 58);
+            this.linkLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLogout.Name = "linkLogout";
+            this.linkLogout.Size = new System.Drawing.Size(97, 16);
+            this.linkLogout.TabIndex = 2;
+            this.linkLogout.TabStop = true;
+            this.linkLogout.Text = "Salir de sesión";
+            this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
+            // 
+            // labelUcr
+            // 
+            this.labelUcr.AutoSize = true;
+            this.labelUcr.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUcr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(164)))));
+            this.labelUcr.Location = new System.Drawing.Point(360, 159);
+            this.labelUcr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUcr.Name = "labelUcr";
+            this.labelUcr.Size = new System.Drawing.Size(437, 42);
+            this.labelUcr.TabIndex = 4;
+            this.labelUcr.Text = "Universidad de Costa Rica";
+            // 
+            // labelCeleq
+            // 
+            this.labelCeleq.AutoSize = true;
+            this.labelCeleq.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCeleq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(164)))));
+            this.labelCeleq.Location = new System.Drawing.Point(223, 263);
+            this.labelCeleq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCeleq.Name = "labelCeleq";
+            this.labelCeleq.Size = new System.Drawing.Size(632, 36);
+            this.labelCeleq.TabIndex = 5;
+            this.labelCeleq.Text = "Centro de Electroquímica y Energía Química";
+            // 
+            // pictureCeleq
+            // 
+            this.pictureCeleq.Image = global::CELEQ.Properties.Resources.LogoCeleq;
+            this.pictureCeleq.Location = new System.Drawing.Point(1128, 159);
+            this.pictureCeleq.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureCeleq.Name = "pictureCeleq";
+            this.pictureCeleq.Size = new System.Drawing.Size(173, 172);
+            this.pictureCeleq.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCeleq.TabIndex = 7;
+            this.pictureCeleq.TabStop = false;
+            // 
+            // pictureUcr
+            // 
+            this.pictureUcr.Image = global::CELEQ.Properties.Resources.Escdo_UCR;
+            this.pictureUcr.Location = new System.Drawing.Point(16, 159);
+            this.pictureUcr.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureUcr.Name = "pictureUcr";
+            this.pictureUcr.Size = new System.Drawing.Size(173, 172);
+            this.pictureUcr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUcr.TabIndex = 6;
+            this.pictureUcr.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(988, 564);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1317, 694);
             this.Controls.Add(this.pictureCeleq);
             this.Controls.Add(this.pictureUcr);
             this.Controls.Add(this.labelCeleq);
@@ -430,8 +437,10 @@
             this.Controls.Add(this.linkLogout);
             this.Controls.Add(this.labelBienv);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";

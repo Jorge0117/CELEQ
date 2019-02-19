@@ -38,7 +38,7 @@
             // 
             // butAceptar
             // 
-            this.butAceptar.Location = new System.Drawing.Point(141, 90);
+            this.butAceptar.Location = new System.Drawing.Point(172, 90);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(75, 23);
             this.butAceptar.TabIndex = 16;
@@ -48,7 +48,7 @@
             // 
             // butCancelar
             // 
-            this.butCancelar.Location = new System.Drawing.Point(222, 90);
+            this.butCancelar.Location = new System.Drawing.Point(253, 90);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(75, 23);
             this.butCancelar.TabIndex = 15;
@@ -58,34 +58,34 @@
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(111, 19);
+            this.textUsuario.Location = new System.Drawing.Point(142, 22);
             this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Size = new System.Drawing.Size(186, 20);
+            this.textUsuario.Size = new System.Drawing.Size(186, 22);
             this.textUsuario.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 62);
+            this.label2.Location = new System.Drawing.Point(37, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             // 
             // textPass
             // 
-            this.textPass.Location = new System.Drawing.Point(111, 59);
+            this.textPass.Location = new System.Drawing.Point(142, 59);
             this.textPass.Name = "textPass";
             this.textPass.PasswordChar = '*';
-            this.textPass.Size = new System.Drawing.Size(186, 20);
+            this.textPass.Size = new System.Drawing.Size(186, 22);
             this.textPass.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 22);
+            this.label1.Location = new System.Drawing.Point(37, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
@@ -93,14 +93,15 @@
             // 
             this.AcceptButton = this.butAceptar;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(332, 125);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(364, 125);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butAceptar);
             this.Controls.Add(this.textPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.textUsuario);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

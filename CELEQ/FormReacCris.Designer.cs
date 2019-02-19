@@ -49,18 +49,21 @@
             this.groupBox1.Controls.Add(this.butElimReac);
             this.groupBox1.Controls.Add(this.butAgRe);
             this.groupBox1.Controls.Add(this.dgvReactivos);
-            this.groupBox1.Location = new System.Drawing.Point(50, 12);
+            this.groupBox1.Location = new System.Drawing.Point(67, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 580);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1387, 714);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solicitudes";
             // 
             // butElimCri
             // 
-            this.butElimCri.Location = new System.Drawing.Point(811, 374);
+            this.butElimCri.Location = new System.Drawing.Point(1081, 460);
+            this.butElimCri.Margin = new System.Windows.Forms.Padding(4);
             this.butElimCri.Name = "butElimCri";
-            this.butElimCri.Size = new System.Drawing.Size(197, 43);
+            this.butElimCri.Size = new System.Drawing.Size(263, 53);
             this.butElimCri.TabIndex = 5;
             this.butElimCri.Text = "Eliminar";
             this.butElimCri.UseVisualStyleBackColor = true;
@@ -74,18 +77,20 @@
             this.dgvCristaleria.AllowUserToResizeRows = false;
             this.dgvCristaleria.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCristaleria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCristaleria.Location = new System.Drawing.Point(58, 325);
+            this.dgvCristaleria.Location = new System.Drawing.Point(77, 400);
+            this.dgvCristaleria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCristaleria.Name = "dgvCristaleria";
             this.dgvCristaleria.ReadOnly = true;
             this.dgvCristaleria.RowHeadersVisible = false;
-            this.dgvCristaleria.Size = new System.Drawing.Size(720, 226);
+            this.dgvCristaleria.Size = new System.Drawing.Size(960, 278);
             this.dgvCristaleria.TabIndex = 4;
             // 
             // butAgCr
             // 
-            this.butAgCr.Location = new System.Drawing.Point(811, 325);
+            this.butAgCr.Location = new System.Drawing.Point(1081, 400);
+            this.butAgCr.Margin = new System.Windows.Forms.Padding(4);
             this.butAgCr.Name = "butAgCr";
-            this.butAgCr.Size = new System.Drawing.Size(197, 43);
+            this.butAgCr.Size = new System.Drawing.Size(263, 53);
             this.butAgCr.TabIndex = 3;
             this.butAgCr.Text = "Agregar Cristalería";
             this.butAgCr.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // 
             // butElimReac
             // 
-            this.butElimReac.Location = new System.Drawing.Point(811, 99);
+            this.butElimReac.Location = new System.Drawing.Point(1081, 122);
+            this.butElimReac.Margin = new System.Windows.Forms.Padding(4);
             this.butElimReac.Name = "butElimReac";
-            this.butElimReac.Size = new System.Drawing.Size(197, 43);
+            this.butElimReac.Size = new System.Drawing.Size(263, 53);
             this.butElimReac.TabIndex = 2;
             this.butElimReac.Text = "Eliminar";
             this.butElimReac.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@
             // 
             // butAgRe
             // 
-            this.butAgRe.Location = new System.Drawing.Point(811, 50);
+            this.butAgRe.Location = new System.Drawing.Point(1081, 62);
+            this.butAgRe.Margin = new System.Windows.Forms.Padding(4);
             this.butAgRe.Name = "butAgRe";
-            this.butAgRe.Size = new System.Drawing.Size(197, 43);
+            this.butAgRe.Size = new System.Drawing.Size(263, 53);
             this.butAgRe.TabIndex = 1;
             this.butAgRe.Text = "Agregar Reactivo";
             this.butAgRe.UseVisualStyleBackColor = true;
@@ -119,18 +126,20 @@
             this.dgvReactivos.AllowUserToResizeRows = false;
             this.dgvReactivos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvReactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReactivos.Location = new System.Drawing.Point(58, 50);
+            this.dgvReactivos.Location = new System.Drawing.Point(77, 62);
+            this.dgvReactivos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReactivos.Name = "dgvReactivos";
             this.dgvReactivos.ReadOnly = true;
             this.dgvReactivos.RowHeadersVisible = false;
-            this.dgvReactivos.Size = new System.Drawing.Size(720, 226);
+            this.dgvReactivos.Size = new System.Drawing.Size(960, 278);
             this.dgvReactivos.TabIndex = 0;
             // 
             // butRealizarSolicutud
             // 
-            this.butRealizarSolicutud.Location = new System.Drawing.Point(860, 605);
+            this.butRealizarSolicutud.Location = new System.Drawing.Point(1147, 745);
+            this.butRealizarSolicutud.Margin = new System.Windows.Forms.Padding(4);
             this.butRealizarSolicutud.Name = "butRealizarSolicutud";
-            this.butRealizarSolicutud.Size = new System.Drawing.Size(197, 43);
+            this.butRealizarSolicutud.Size = new System.Drawing.Size(263, 53);
             this.butRealizarSolicutud.TabIndex = 6;
             this.butRealizarSolicutud.Text = "Continuar con Solicitud";
             this.butRealizarSolicutud.UseVisualStyleBackColor = true;
@@ -138,13 +147,15 @@
             // 
             // FormReacCris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butRealizarSolicutud);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormReacCris";

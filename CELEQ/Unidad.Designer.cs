@@ -43,18 +43,20 @@
             this.dgvUnidad.AllowUserToResizeRows = false;
             this.dgvUnidad.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnidad.Location = new System.Drawing.Point(16, 68);
+            this.dgvUnidad.Location = new System.Drawing.Point(21, 84);
+            this.dgvUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUnidad.Name = "dgvUnidad";
             this.dgvUnidad.ReadOnly = true;
             this.dgvUnidad.RowHeadersVisible = false;
-            this.dgvUnidad.Size = new System.Drawing.Size(900, 553);
+            this.dgvUnidad.Size = new System.Drawing.Size(1200, 681);
             this.dgvUnidad.TabIndex = 3;
             // 
             // labelSoliciudes
             // 
             this.labelSoliciudes.AutoSize = true;
             this.labelSoliciudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSoliciudes.Location = new System.Drawing.Point(12, 35);
+            this.labelSoliciudes.Location = new System.Drawing.Point(16, 43);
+            this.labelSoliciudes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSoliciudes.Name = "labelSoliciudes";
             this.labelSoliciudes.Size = new System.Drawing.Size(77, 20);
             this.labelSoliciudes.TabIndex = 4;
@@ -62,9 +64,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(950, 68);
+            this.butAgregar.Location = new System.Drawing.Point(1267, 84);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 5;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(950, 137);
+            this.butModificar.Location = new System.Drawing.Point(1267, 169);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 6;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -82,15 +86,17 @@
             // 
             // Unidad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelSoliciudes);
             this.Controls.Add(this.dgvUnidad);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Unidad";

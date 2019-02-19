@@ -38,9 +38,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(475, 119);
+            this.butModificar.Location = new System.Drawing.Point(633, 146);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(197, 43);
+            this.butModificar.Size = new System.Drawing.Size(263, 53);
             this.butModificar.TabIndex = 10;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(475, 70);
+            this.butAgregar.Location = new System.Drawing.Point(633, 86);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(197, 43);
+            this.butAgregar.Size = new System.Drawing.Size(263, 53);
             this.butAgregar.TabIndex = 9;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -60,7 +62,8 @@
             // 
             this.labelEncargados.AutoSize = true;
             this.labelEncargados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEncargados.Location = new System.Drawing.Point(25, 37);
+            this.labelEncargados.Location = new System.Drawing.Point(33, 46);
+            this.labelEncargados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEncargados.Name = "labelEncargados";
             this.labelEncargados.Size = new System.Drawing.Size(111, 20);
             this.labelEncargados.TabIndex = 8;
@@ -74,18 +77,20 @@
             this.dgvResponsables.AllowUserToResizeRows = false;
             this.dgvResponsables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvResponsables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResponsables.Location = new System.Drawing.Point(29, 70);
+            this.dgvResponsables.Location = new System.Drawing.Point(39, 86);
+            this.dgvResponsables.Margin = new System.Windows.Forms.Padding(4);
             this.dgvResponsables.Name = "dgvResponsables";
             this.dgvResponsables.ReadOnly = true;
             this.dgvResponsables.RowHeadersVisible = false;
-            this.dgvResponsables.Size = new System.Drawing.Size(395, 358);
+            this.dgvResponsables.Size = new System.Drawing.Size(527, 441);
             this.dgvResponsables.TabIndex = 7;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(475, 168);
+            this.butEliminar.Location = new System.Drawing.Point(633, 207);
+            this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(197, 43);
+            this.butEliminar.Size = new System.Drawing.Size(263, 53);
             this.butEliminar.TabIndex = 11;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
@@ -93,16 +98,18 @@
             // 
             // Encargados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(715, 461);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
+            this.ClientSize = new System.Drawing.Size(953, 567);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelEncargados);
             this.Controls.Add(this.dgvResponsables);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Encargados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Responsable";
