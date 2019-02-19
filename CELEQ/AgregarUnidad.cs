@@ -93,29 +93,5 @@ namespace CELEQ
             this.Close();
         }
 
-        private void comboEncargado_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nombreUnidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboEncargado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
