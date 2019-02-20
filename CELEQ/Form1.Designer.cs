@@ -63,13 +63,14 @@
             this.vínculoExternoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -338,7 +339,8 @@
             // 
             this.vínculoExternoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cotizacionesToolStripMenuItem,
-            this.preciosParaGirasToolStripMenuItem});
+            this.preciosParaGirasToolStripMenuItem,
+            this.localizacionesToolStripMenuItem});
             this.vínculoExternoToolStripMenuItem.Name = "vínculoExternoToolStripMenuItem";
             this.vínculoExternoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.vínculoExternoToolStripMenuItem.Text = "Vínculo Externo";
@@ -357,6 +359,13 @@
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // preciosParaGirasToolStripMenuItem
+            // 
+            this.preciosParaGirasToolStripMenuItem.Name = "preciosParaGirasToolStripMenuItem";
+            this.preciosParaGirasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.preciosParaGirasToolStripMenuItem.Text = "Precios para giras";
+            this.preciosParaGirasToolStripMenuItem.Click += new System.EventHandler(this.preciosParaGirasToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -426,12 +435,12 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
-            // preciosParaGirasToolStripMenuItem
+            // localizacionesToolStripMenuItem
             // 
-            this.preciosParaGirasToolStripMenuItem.Name = "preciosParaGirasToolStripMenuItem";
-            this.preciosParaGirasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.preciosParaGirasToolStripMenuItem.Text = "Precios para giras";
-            this.preciosParaGirasToolStripMenuItem.Click += new System.EventHandler(this.preciosParaGirasToolStripMenuItem_Click);
+            this.localizacionesToolStripMenuItem.Name = "localizacionesToolStripMenuItem";
+            this.localizacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.localizacionesToolStripMenuItem.Text = "Localizaciones";
+            this.localizacionesToolStripMenuItem.Click += new System.EventHandler(this.localizacionesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -508,6 +517,7 @@
         private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preciosParaGirasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem localizacionesToolStripMenuItem;
     }
 }
 
