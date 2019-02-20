@@ -119,6 +119,8 @@ namespace CELEQ
         private void Presupuesto_Load(object sender, EventArgs e)
         {
             llenarTabla();
+            dgvPresupuesto.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvPresupuesto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
     }

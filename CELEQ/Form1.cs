@@ -265,6 +265,13 @@ namespace CELEQ
             cotizacion.Dispose();
         }
 
+        private void preciosParaGirasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PreciosGiras preciosGiras = new PreciosGiras();
+            preciosGiras.ShowDialog();
+            preciosGiras.Dispose();
+        }
+
         private void localizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Localizaciones l = new Localizaciones();

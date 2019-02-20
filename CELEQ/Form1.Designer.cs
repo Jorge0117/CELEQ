@@ -63,6 +63,7 @@
             this.vínculoExternoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.labelUcr = new System.Windows.Forms.Label();
@@ -338,6 +339,7 @@
             // 
             this.vínculoExternoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cotizacionesToolStripMenuItem,
+            this.preciosParaGirasToolStripMenuItem,
             this.localizacionesToolStripMenuItem});
             this.vínculoExternoToolStripMenuItem.Name = "vínculoExternoToolStripMenuItem";
             this.vínculoExternoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
@@ -357,6 +359,13 @@
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // preciosParaGirasToolStripMenuItem
+            // 
+            this.preciosParaGirasToolStripMenuItem.Name = "preciosParaGirasToolStripMenuItem";
+            this.preciosParaGirasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.preciosParaGirasToolStripMenuItem.Text = "Precios para giras";
+            this.preciosParaGirasToolStripMenuItem.Click += new System.EventHandler(this.preciosParaGirasToolStripMenuItem_Click);
             // 
             // labelBienv
             // 
@@ -507,6 +516,7 @@
         private System.Windows.Forms.ToolStripMenuItem vínculoExternoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preciosParaGirasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localizacionesToolStripMenuItem;
     }
 }

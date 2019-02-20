@@ -277,6 +277,12 @@
     <Compile Include="Unidad.Designer.cs">
       <DependentUpon>Unidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreciosGiras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreciosGiras.Designer.cs">
+      <DependentUpon>PreciosGiras.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad.resx">
       <DependentUpon>Unidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreciosGiras.resx">
+      <DependentUpon>PreciosGiras.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RepDesignacionesResponsable.datasource" />
