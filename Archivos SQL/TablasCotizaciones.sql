@@ -5,8 +5,16 @@ CREATE TABLE Cliente
 	telefono2	VARCHAR(255),
 	correo		VARCHAR(255),
 	fax			VARCHAR(255),
-	direccion	VARCHAR(255),
-	atencionDe	VARCHAR(255)						
+	direccion	VARCHAR(255)						
+)
+
+CREATE TABLE ContactoCotizacion
+(
+	nombreCliente		VARCHAR(255),
+	atencionDe			VARCHAR(255)
+	PRIMARY KEY(nombreCliente, atencionDe)
+
+	FOREIGN KEY(nombreCliente)	REFERENCES Cliente(nombre)
 )
 
 CREATE TABLE Cotizacion
