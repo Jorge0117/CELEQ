@@ -46,7 +46,7 @@
             // 
             this.labelInventario.AutoSize = true;
             this.labelInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInventario.Location = new System.Drawing.Point(16, 43);
+            this.labelInventario.Location = new System.Drawing.Point(15, 30);
             this.labelInventario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelInventario.Name = "labelInventario";
             this.labelInventario.Size = new System.Drawing.Size(111, 20);
@@ -61,21 +61,21 @@
             this.dgvInventario.AllowUserToResizeRows = false;
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(21, 84);
+            this.dgvInventario.Location = new System.Drawing.Point(20, 71);
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
-            this.dgvInventario.Size = new System.Drawing.Size(1200, 681);
+            this.dgvInventario.Size = new System.Drawing.Size(947, 410);
             this.dgvInventario.TabIndex = 1;
             this.dgvInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellClick);
             this.dgvInventario.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvInventario_RowPostPaint);
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1275, 113);
+            this.butAgregar.Location = new System.Drawing.Point(975, 105);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 2;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -83,19 +83,19 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(764, 52);
+            this.textBuscar.Location = new System.Drawing.Point(580, 41);
             this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(456, 22);
+            this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 3;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // butActualizar
             // 
-            this.butActualizar.Location = new System.Drawing.Point(1275, 234);
+            this.butActualizar.Location = new System.Drawing.Point(975, 197);
             this.butActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.butActualizar.Name = "butActualizar";
-            this.butActualizar.Size = new System.Drawing.Size(263, 53);
+            this.butActualizar.Size = new System.Drawing.Size(167, 38);
             this.butActualizar.TabIndex = 5;
             this.butActualizar.Text = "Actualizar";
             this.butActualizar.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(699, 55);
+            this.label1.Location = new System.Drawing.Point(515, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -114,7 +114,7 @@
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(1271, 84);
+            this.labelCantidad.Location = new System.Drawing.Point(975, 71);
             this.labelCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCantidad.Name = "labelCantidad";
             this.labelCantidad.Size = new System.Drawing.Size(65, 16);
@@ -123,7 +123,7 @@
             // 
             // numAgregar
             // 
-            this.numAgregar.Location = new System.Drawing.Point(1348, 81);
+            this.numAgregar.Location = new System.Drawing.Point(1048, 69);
             this.numAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.numAgregar.Maximum = new decimal(new int[] {
             1000000,
@@ -136,7 +136,7 @@
             0,
             0});
             this.numAgregar.Name = "numAgregar";
-            this.numAgregar.Size = new System.Drawing.Size(127, 22);
+            this.numAgregar.Size = new System.Drawing.Size(94, 22);
             this.numAgregar.TabIndex = 8;
             this.numAgregar.Value = new decimal(new int[] {
             1,
@@ -147,7 +147,7 @@
             // labelUnidad
             // 
             this.labelUnidad.AutoSize = true;
-            this.labelUnidad.Location = new System.Drawing.Point(1477, 84);
+            this.labelUnidad.Location = new System.Drawing.Point(1144, 71);
             this.labelUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUnidad.Name = "labelUnidad";
             this.labelUnidad.Size = new System.Drawing.Size(16, 16);
@@ -156,10 +156,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(1275, 174);
+            this.butModificar.Location = new System.Drawing.Point(975, 151);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(263, 53);
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
             this.butModificar.TabIndex = 10;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1579, 814);
+            this.ClientSize = new System.Drawing.Size(1174, 511);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.labelUnidad);
             this.Controls.Add(this.numAgregar);

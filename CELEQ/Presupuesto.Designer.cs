@@ -40,10 +40,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(1287, 146);
+            this.butModificar.Location = new System.Drawing.Point(984, 116);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(263, 53);
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
             this.butModificar.TabIndex = 19;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1287, 86);
+            this.butAgregar.Location = new System.Drawing.Point(984, 70);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 18;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(712, 58);
+            this.label1.Location = new System.Drawing.Point(524, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -72,10 +72,10 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(777, 54);
+            this.textBuscar.Location = new System.Drawing.Point(589, 40);
             this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(456, 22);
+            this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 16;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
@@ -83,7 +83,7 @@
             // 
             this.labelPresupuestos.AutoSize = true;
             this.labelPresupuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPresupuestos.Location = new System.Drawing.Point(29, 46);
+            this.labelPresupuestos.Location = new System.Drawing.Point(23, 30);
             this.labelPresupuestos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPresupuestos.Name = "labelPresupuestos";
             this.labelPresupuestos.Size = new System.Drawing.Size(111, 20);
@@ -98,20 +98,20 @@
             this.dgvPresupuesto.AllowUserToResizeRows = false;
             this.dgvPresupuesto.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPresupuesto.Location = new System.Drawing.Point(35, 86);
+            this.dgvPresupuesto.Location = new System.Drawing.Point(29, 70);
             this.dgvPresupuesto.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPresupuesto.Name = "dgvPresupuesto";
             this.dgvPresupuesto.ReadOnly = true;
             this.dgvPresupuesto.RowHeadersVisible = false;
-            this.dgvPresupuesto.Size = new System.Drawing.Size(1200, 681);
+            this.dgvPresupuesto.Size = new System.Drawing.Size(947, 410);
             this.dgvPresupuesto.TabIndex = 14;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(1287, 207);
+            this.butEliminar.Location = new System.Drawing.Point(984, 162);
             this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(263, 53);
+            this.butEliminar.Size = new System.Drawing.Size(167, 38);
             this.butEliminar.TabIndex = 20;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1579, 814);
+            this.ClientSize = new System.Drawing.Size(1174, 511);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);

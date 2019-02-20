@@ -1368,6 +1368,44 @@ namespace CELEQ
 
 
         /*RESPONSABLES*/
+        public int agregarResponsable(string nombre)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarResponsable", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
         public int modificarResponsable(string nombreViejo, string nombreNuevo)
         {
             int error = 0;
@@ -1430,7 +1468,7 @@ namespace CELEQ
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
 
-                        return 1;
+                        return 0;
                     }
                     catch (SqlException ex)
                     {

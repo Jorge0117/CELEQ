@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(705, 58);
+            this.label1.Location = new System.Drawing.Point(536, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -47,17 +47,17 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(771, 54);
+            this.textBuscar.Location = new System.Drawing.Point(597, 40);
             this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(456, 22);
+            this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 10;
             // 
             // labelEstudiantes
             // 
             this.labelEstudiantes.AutoSize = true;
             this.labelEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstudiantes.Location = new System.Drawing.Point(23, 46);
+            this.labelEstudiantes.Location = new System.Drawing.Point(32, 30);
             this.labelEstudiantes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEstudiantes.Name = "labelEstudiantes";
             this.labelEstudiantes.Size = new System.Drawing.Size(98, 20);
@@ -72,12 +72,12 @@
             this.dgvEstudiantes.AllowUserToResizeRows = false;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(28, 86);
+            this.dgvEstudiantes.Location = new System.Drawing.Point(37, 70);
             this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.ReadOnly = true;
             this.dgvEstudiantes.RowHeadersVisible = false;
-            this.dgvEstudiantes.Size = new System.Drawing.Size(1200, 681);
+            this.dgvEstudiantes.Size = new System.Drawing.Size(947, 410);
             this.dgvEstudiantes.TabIndex = 8;
             // 
             // ListaEstudiantes
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1252, 814);
+            this.ClientSize = new System.Drawing.Size(1017, 511);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.labelEstudiantes);

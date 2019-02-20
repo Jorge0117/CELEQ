@@ -44,31 +44,31 @@
             this.dgvLocalizaciones.AllowUserToResizeRows = false;
             this.dgvLocalizaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvLocalizaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalizaciones.Location = new System.Drawing.Point(35, 88);
-            this.dgvLocalizaciones.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvLocalizaciones.Location = new System.Drawing.Point(28, 71);
+            this.dgvLocalizaciones.Margin = new System.Windows.Forms.Padding(5);
             this.dgvLocalizaciones.Name = "dgvLocalizaciones";
             this.dgvLocalizaciones.ReadOnly = true;
             this.dgvLocalizaciones.RowHeadersVisible = false;
-            this.dgvLocalizaciones.Size = new System.Drawing.Size(1080, 701);
+            this.dgvLocalizaciones.Size = new System.Drawing.Size(947, 410);
             this.dgvLocalizaciones.TabIndex = 4;
             // 
             // labelLocalizaciones
             // 
             this.labelLocalizaciones.AutoSize = true;
             this.labelLocalizaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLocalizaciones.Location = new System.Drawing.Point(31, 47);
+            this.labelLocalizaciones.Location = new System.Drawing.Point(24, 30);
             this.labelLocalizaciones.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelLocalizaciones.Name = "labelLocalizaciones";
-            this.labelLocalizaciones.Size = new System.Drawing.Size(113, 20);
+            this.labelLocalizaciones.Size = new System.Drawing.Size(117, 20);
             this.labelLocalizaciones.TabIndex = 5;
-            this.labelLocalizaciones.Text = "Localizaciones";
+            this.labelLocalizaciones.Text = "Localizaciones:";
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(1139, 209);
+            this.butEliminar.Location = new System.Drawing.Point(984, 163);
             this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(263, 53);
+            this.butEliminar.Size = new System.Drawing.Size(167, 38);
             this.butEliminar.TabIndex = 20;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(1139, 148);
+            this.butModificar.Location = new System.Drawing.Point(984, 117);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(263, 53);
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
             this.butModificar.TabIndex = 19;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1139, 88);
+            this.butAgregar.Location = new System.Drawing.Point(984, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 18;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -101,14 +101,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1435, 821);
+            this.ClientSize = new System.Drawing.Size(1174, 511);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelLocalizaciones);
             this.Controls.Add(this.dgvLocalizaciones);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Localizaciones";

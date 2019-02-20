@@ -77,6 +77,12 @@
     <Compile Include="AgregarClienteCotizacion.Designer.cs">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarEncargado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEncargado.Designer.cs">
+      <DependentUpon>AgregarEncargado.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarLocalizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </Compile>
     <EmbeddedResource Include="AgregarClienteCotizacion.resx">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarEncargado.resx">
+      <DependentUpon>AgregarEncargado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
