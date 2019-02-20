@@ -1,4 +1,4 @@
-CREATE TABLE Cliente
+CREATE TABLE ClienteCotizacion
 (
 	nombre		VARCHAR(255)	PRIMARY KEY NOT NULL,
 	telefono	VARCHAR(255),
@@ -14,7 +14,7 @@ CREATE TABLE ContactoCotizacion
 	atencionDe			VARCHAR(255)
 	PRIMARY KEY(nombreCliente, atencionDe)
 
-	FOREIGN KEY(nombreCliente)	REFERENCES Cliente(nombre)
+	FOREIGN KEY(nombreCliente)	REFERENCES ClienteCotizacion(nombre)
 )
 
 CREATE TABLE Cotizacion
@@ -35,7 +35,7 @@ CREATE TABLE Cotizacion
 	cliente			VARCHAR(255)
 
 	FOREIGN KEY(cotizador)	REFERENCES Usuarios(nombreUsuario),
-	FOREIGN KEY(cliente)	REFERENCES Cliente(nombre)
+	FOREIGN KEY(cliente)	REFERENCES ClienteCotizacion(nombre)
 )
 
 CREATE TABLE Gira
@@ -99,3 +99,4 @@ CREATE TABLE precioGiras
 	valorTecnico		FLOAT,
 	valorProfesional	FLOAT
 )
+

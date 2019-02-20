@@ -71,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="AgregarClienteCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarClienteCotizacion.Designer.cs">
+      <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarLocalizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,12 @@
     </Compile>
     <Compile Include="GenerarReporteDesignaciones.Designer.cs">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientesCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaClientesCotizacion.Designer.cs">
+      <DependentUpon>ListaClientesCotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaDesignaciones.cs">
       <SubType>Form</SubType>
@@ -283,6 +295,9 @@
     <Compile Include="PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarClienteCotizacion.resx">
+      <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarReporteDesignaciones.resx">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaClientesCotizacion.resx">
+      <DependentUpon>ListaClientesCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaDesignaciones.resx">
       <DependentUpon>ListaDesignaciones.cs</DependentUpon>
