@@ -71,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="AgregarEncargado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEncargado.Designer.cs">
+      <DependentUpon>AgregarEncargado.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarLocalizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     <Compile Include="PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarEncargado.resx">
+      <DependentUpon>AgregarEncargado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </EmbeddedResource>

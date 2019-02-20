@@ -84,6 +84,12 @@ create procedure modificarPresupuesto(@codigoViejo varchar(12), @codigo varchar(
 	end
 go
 
+CREATE PROCEDURE agregarResponsable(@nombre VARCHAR(100)) AS
+	BEGIN
+		INSERT INTO responsable VALUES(@nombre)
+	END
+GO
+
 
 select getDate()
 select * from p9

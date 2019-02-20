@@ -38,10 +38,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(633, 146);
+            this.butModificar.Location = new System.Drawing.Point(565, 118);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(263, 53);
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
             this.butModificar.TabIndex = 10;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -49,10 +49,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(633, 86);
+            this.butAgregar.Location = new System.Drawing.Point(565, 72);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 9;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -62,12 +62,12 @@
             // 
             this.labelEncargados.AutoSize = true;
             this.labelEncargados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEncargados.Location = new System.Drawing.Point(33, 46);
+            this.labelEncargados.Location = new System.Drawing.Point(24, 32);
             this.labelEncargados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEncargados.Name = "labelEncargados";
-            this.labelEncargados.Size = new System.Drawing.Size(111, 20);
+            this.labelEncargados.Size = new System.Drawing.Size(115, 20);
             this.labelEncargados.TabIndex = 8;
-            this.labelEncargados.Text = "Responsables";
+            this.labelEncargados.Text = "Responsables:";
             // 
             // dgvResponsables
             // 
@@ -77,20 +77,20 @@
             this.dgvResponsables.AllowUserToResizeRows = false;
             this.dgvResponsables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvResponsables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResponsables.Location = new System.Drawing.Point(39, 86);
+            this.dgvResponsables.Location = new System.Drawing.Point(30, 72);
             this.dgvResponsables.Margin = new System.Windows.Forms.Padding(4);
             this.dgvResponsables.Name = "dgvResponsables";
             this.dgvResponsables.ReadOnly = true;
             this.dgvResponsables.RowHeadersVisible = false;
-            this.dgvResponsables.Size = new System.Drawing.Size(527, 441);
+            this.dgvResponsables.Size = new System.Drawing.Size(527, 269);
             this.dgvResponsables.TabIndex = 7;
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(633, 207);
+            this.butEliminar.Location = new System.Drawing.Point(565, 164);
             this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
-            this.butEliminar.Size = new System.Drawing.Size(263, 53);
+            this.butEliminar.Size = new System.Drawing.Size(167, 38);
             this.butEliminar.TabIndex = 11;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(953, 567);
+            this.ClientSize = new System.Drawing.Size(757, 372);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);

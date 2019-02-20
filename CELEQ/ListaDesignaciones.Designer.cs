@@ -40,7 +40,7 @@
             // 
             this.labelDesignaciones.AutoSize = true;
             this.labelDesignaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDesignaciones.Location = new System.Drawing.Point(16, 43);
+            this.labelDesignaciones.Location = new System.Drawing.Point(24, 30);
             this.labelDesignaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDesignaciones.Name = "labelDesignaciones";
             this.labelDesignaciones.Size = new System.Drawing.Size(114, 20);
@@ -55,18 +55,18 @@
             this.dgvDesignaciones.AllowUserToResizeRows = false;
             this.dgvDesignaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDesignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDesignaciones.Location = new System.Drawing.Point(21, 84);
+            this.dgvDesignaciones.Location = new System.Drawing.Point(29, 71);
             this.dgvDesignaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDesignaciones.Name = "dgvDesignaciones";
             this.dgvDesignaciones.ReadOnly = true;
             this.dgvDesignaciones.RowHeadersVisible = false;
-            this.dgvDesignaciones.Size = new System.Drawing.Size(1437, 681);
+            this.dgvDesignaciones.Size = new System.Drawing.Size(947, 410);
             this.dgvDesignaciones.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(936, 52);
+            this.label1.Location = new System.Drawing.Point(524, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -75,19 +75,19 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(1001, 48);
+            this.textBuscar.Location = new System.Drawing.Point(589, 41);
             this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(456, 22);
+            this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 18;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1467, 84);
+            this.butAgregar.Location = new System.Drawing.Point(984, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 20;
             this.butAgregar.Text = "Detalles";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1684, 814);
+            this.ClientSize = new System.Drawing.Size(1174, 511);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);
