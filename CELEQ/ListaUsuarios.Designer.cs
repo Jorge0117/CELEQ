@@ -46,19 +46,19 @@
             this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Location = new System.Drawing.Point(21, 84);
+            this.dgvUsuarios.Location = new System.Drawing.Point(29, 71);
             this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersVisible = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(1200, 681);
+            this.dgvUsuarios.Size = new System.Drawing.Size(947, 410);
             this.dgvUsuarios.TabIndex = 2;
             // 
             // labelUsuarios
             // 
             this.labelUsuarios.AutoSize = true;
             this.labelUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuarios.Location = new System.Drawing.Point(16, 43);
+            this.labelUsuarios.Location = new System.Drawing.Point(24, 30);
             this.labelUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsuarios.Name = "labelUsuarios";
             this.labelUsuarios.Size = new System.Drawing.Size(76, 20);
@@ -67,17 +67,17 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(764, 52);
+            this.textBuscar.Location = new System.Drawing.Point(589, 36);
             this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(456, 22);
+            this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 4;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(699, 55);
+            this.label1.Location = new System.Drawing.Point(528, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -86,10 +86,10 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(1273, 144);
+            this.butModificar.Location = new System.Drawing.Point(984, 117);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
-            this.butModificar.Size = new System.Drawing.Size(263, 53);
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
             this.butModificar.TabIndex = 12;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(1273, 84);
+            this.butAgregar.Location = new System.Drawing.Point(984, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
-            this.butAgregar.Size = new System.Drawing.Size(263, 53);
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
             this.butAgregar.TabIndex = 11;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
@@ -108,10 +108,10 @@
             // 
             // cambiarContra
             // 
-            this.cambiarContra.Location = new System.Drawing.Point(1273, 204);
+            this.cambiarContra.Location = new System.Drawing.Point(984, 163);
             this.cambiarContra.Margin = new System.Windows.Forms.Padding(4);
             this.cambiarContra.Name = "cambiarContra";
-            this.cambiarContra.Size = new System.Drawing.Size(263, 53);
+            this.cambiarContra.Size = new System.Drawing.Size(167, 38);
             this.cambiarContra.TabIndex = 13;
             this.cambiarContra.Text = "Cambiar Contraseña";
             this.cambiarContra.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1579, 814);
+            this.ClientSize = new System.Drawing.Size(1174, 511);
             this.Controls.Add(this.cambiarContra);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
