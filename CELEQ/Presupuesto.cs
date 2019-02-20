@@ -91,14 +91,20 @@ namespace CELEQ
 
         private void butEliminar_Click(object sender, EventArgs e)
         {
-            string codigo = dgvPresupuesto.SelectedRows[0].Cells[0].Value.ToString();
-            int error = bd.eliminarPresupuesto(codigo);
+            string codigo;
+            int error = 0; 
             if (dgvPresupuesto.RowCount > 0)
             {
+                codigo = dgvPresupuesto.SelectedRows[0].Cells[0].Value.ToString();
                 if (MessageBox.Show("¿Seguro que quiere borrar el presupuesto?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    error = bd.eliminarPresupuesto(codigo);
                     dgvPresupuesto.Rows.Remove(dgvPresupuesto.SelectedRows[0]);
                 }
+            }
+            else
+            {
+                MessageBox.Show("No existe ningún elemento para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (error == 1)
             {

@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1765, 814);
+            this.ClientSize = new System.Drawing.Size(1684, 814);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBuscar);

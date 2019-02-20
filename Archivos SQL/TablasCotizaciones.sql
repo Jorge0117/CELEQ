@@ -5,8 +5,16 @@ CREATE TABLE Cliente
 	telefono2	VARCHAR(255),
 	correo		VARCHAR(255),
 	fax			VARCHAR(255),
-	direccion	VARCHAR(255),
-	atencionDe	VARCHAR(255)						
+	direccion	VARCHAR(255)						
+)
+
+CREATE TABLE ContactoCotizacion
+(
+	nombreCliente		VARCHAR(255),
+	atencionDe			VARCHAR(255)
+	PRIMARY KEY(nombreCliente, atencionDe)
+
+	FOREIGN KEY(nombreCliente)	REFERENCES Cliente(nombre)
 )
 
 CREATE TABLE Cotizacion
@@ -76,14 +84,15 @@ CREATE TABLE Analisis
 
 CREATE TABLE Localizaciones
 (
-	id				INT		IDENTITY(1,1)	PRIMARY KEY,
 	provincia		VARCHAR(100),
 	canton			VARCHAR(100),
+	localidad		VARCHAR(100),
 	distancia		FLOAT,
-	hospedaje		FLOAT
+	hospedaje		FLOAT,
+	PRIMARY KEY(provincia,canton,localidad)
 )   
 
-CREATE TABLE Viaticos
+CREATE TABLE precioGiras
 (
 	id					INT		IDENTITY(1,1)	PRIMARY KEY,
 	valorKilometro		FLOAT,

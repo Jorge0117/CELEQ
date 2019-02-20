@@ -43,8 +43,10 @@ drop table estudiante
 create table presupuesto
 (
 	codigo			varchar(12)			NOT NULL		PRIMARY KEY,
-	nombre			varchar(255)
+	nombre			varchar(560)
 )
+
+select * from Localizaciones
 
 create table montoHoras
 (
