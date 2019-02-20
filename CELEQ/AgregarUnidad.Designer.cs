@@ -42,11 +42,11 @@
             // textUnidad
             // 
             this.textUnidad.BackColor = System.Drawing.SystemColors.Window;
-            this.textUnidad.Location = new System.Drawing.Point(255, 17);
+            this.textUnidad.Location = new System.Drawing.Point(190, 17);
             this.textUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.textUnidad.MaxLength = 100;
             this.textUnidad.Name = "textUnidad";
-            this.textUnidad.Size = new System.Drawing.Size(178, 22);
+            this.textUnidad.Size = new System.Drawing.Size(243, 22);
             this.textUnidad.TabIndex = 0;
             // 
             // label1
@@ -63,10 +63,10 @@
             // 
             this.comboEncargado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboEncargado.FormattingEnabled = true;
-            this.comboEncargado.Location = new System.Drawing.Point(255, 62);
+            this.comboEncargado.Location = new System.Drawing.Point(190, 62);
             this.comboEncargado.Margin = new System.Windows.Forms.Padding(4);
             this.comboEncargado.Name = "comboEncargado";
-            this.comboEncargado.Size = new System.Drawing.Size(178, 24);
+            this.comboEncargado.Size = new System.Drawing.Size(243, 24);
             this.comboEncargado.TabIndex = 20;
             // 
             // label2
