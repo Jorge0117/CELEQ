@@ -127,6 +127,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarPresupuesto";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarPresupuesto";
             this.Load += new System.EventHandler(this.AgregarPresupuesto_Load);
