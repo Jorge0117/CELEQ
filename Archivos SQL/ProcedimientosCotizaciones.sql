@@ -19,7 +19,13 @@ BEGIN
 END
 GO
 
-DELETE FROM Localizaciones
-WHERE provincia = 'Alajuela' AND canton = 'Grecia' AND localidad = 'Grecia'
+create procedure agregarClienteCotizacion(@nombre varchar(255), @telefono1 varchar(20), @telefono2 varchar(20), @correo varchar(255), @fax varchar(20), @direccion varchar(255), @contacto varchar(255))
+as
+	insert into ClienteCotizacion values(@nombre, @telefono1, @telefono2, @correo, @fax, @direccion)
+	insert into ContactoCotizacion values(@nombre, @contacto)
+go
 
-select * from Localizaciones
+create procedure agregarcontactoCotizacion(@nombre varchar(255), @contacto varchar(255))
+as
+	insert into ContactoCotizacion values(@nombre, @contacto)
+go

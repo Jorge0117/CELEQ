@@ -73,6 +73,7 @@
             this.butModificar.TabIndex = 15;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
             // 
             // butAgregar
             // 
@@ -118,7 +119,7 @@
             this.Controls.Add(this.dgvClientes);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListaClientesCotizacion";

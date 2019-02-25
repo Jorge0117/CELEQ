@@ -38,7 +38,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombre as 'Cliente', telefono as 'Telefono principal', telefono2 as 'Otro telefono', correo as 'Correo', fax as 'Fax', direccion as 'Direccion', atencionDe as 'Atención de' from ClienteCotizacion as cl join ContactoCotizacion as co on cl.nombre = co.nombreCliente");
+                    tabla = bd.ejecutarConsultaTabla("select nombre as 'Cliente', telefono as 'Teléfono 1', telefono2 as 'Teléfono 2', correo as 'Correo', fax as 'Fax', direccion as 'Direccion', atencionDe as 'Atención de' from ClienteCotizacion as cl join ContactoCotizacion as co on cl.nombre = co.nombreCliente");
                 }
                 catch (SqlException ex)
                 {
@@ -49,7 +49,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombre as 'Cliente', telefono as 'Telefono principal', telefono2 as 'Otro telefono', correo as 'Correo', fax as 'Fax', direccion as 'Direccion', atencionDe as 'Atención de' from ClienteCotizacion as cl join ContactoCotizacion as co on cl.nombre = co.nombreCliente where " +
+                    tabla = bd.ejecutarConsultaTabla("select nombre as 'Cliente', telefono as 'Teléfono 1', telefono2 as 'teléfono 2', correo as 'Correo', fax as 'Fax', direccion as 'Direccion', atencionDe as 'Atención de' from ClienteCotizacion as cl join ContactoCotizacion as co on cl.nombre = co.nombreCliente where " +
                         "nombre like '%" + filtro + "%' or telefono like '%" + filtro + "%' or telefono2 like '%" + filtro + "%' or correo like '%" + filtro + "%' or fax like '%" + filtro + "%' or direccion like '%" + filtro + "%' or atencionDe like '%" + filtro + "%'");
                 }
                 catch (SqlException ex)
@@ -84,6 +84,19 @@ namespace CELEQ
             AgregarClienteCotizacion acc = new AgregarClienteCotizacion();
             acc.ShowDialog();
             acc.Dispose();
+            llenarTabla();
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            if(dgvClientes.RowCount > 0)
+            {
+                AgregarClienteCotizacion acc = new AgregarClienteCotizacion(dgvClientes.SelectedRows[0].Cells[0].Value.ToString());
+                acc.ShowDialog();
+                acc.Dispose();
+                llenarTabla();
+            }
+            
         }
     }
 }
