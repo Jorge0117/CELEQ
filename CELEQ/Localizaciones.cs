@@ -33,6 +33,7 @@ namespace CELEQ
 
         private void llenarTabla()
         {
+            
             DataTable tabla = null;
 
             try
@@ -48,9 +49,22 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvLocalizaciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvLocalizaciones.DataSource = bs;
-            for (int i = 0; i < dgvLocalizaciones.ColumnCount; ++i)
+            int tamCelda = dgvLocalizaciones.Width / 5;
+            dgvLocalizaciones.Columns[0].Width = tamCelda + 10;
+            dgvLocalizaciones.Columns[1].Width = tamCelda + 15;
+            dgvLocalizaciones.Columns[2].Width = tamCelda + 15;
+            dgvLocalizaciones.Columns[3].Width = tamCelda - 40;
+            dgvLocalizaciones.Columns[4].Width = tamCelda - 2;
+
+            if (dgvLocalizaciones.Rows.Count > 0)
             {
-                dgvLocalizaciones.Columns[i].Width = dgvLocalizaciones.Width / dgvLocalizaciones.ColumnCount - 1;
+                butModificar.Enabled = true;
+                butEliminar.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                butEliminar.Enabled = false;
             }
         }
 

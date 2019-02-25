@@ -54,9 +54,17 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvResponsables.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvResponsables.DataSource = bs;
-            for (int i = 0; i < dgvResponsables.ColumnCount; ++i)
+            dgvResponsables.Columns[0].Width = dgvResponsables.Width - 3;
+
+            if (dgvResponsables.Rows.Count > 0)
             {
-                dgvResponsables.Columns[i].Width = dgvResponsables.Width / dgvResponsables.ColumnCount - 1;
+                butModificar.Enabled = true;
+                butEliminar.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                butEliminar.Enabled = false;
             }
         }
 

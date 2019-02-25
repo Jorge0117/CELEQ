@@ -58,6 +58,10 @@ namespace CELEQ
             dgvUnidad.Columns[0].Width = dgvUnidad.Width / 3;
             dgvUnidad.Columns[1].Width = dgvUnidad.Width - dgvUnidad.Width / 3 - 3;
 
+            if (dgvUnidad.Rows.Count > 0)
+                butModificar.Enabled = true;
+            else
+                butModificar.Enabled = false;
         }
 
         private void butAgregar_Click(object sender, EventArgs e)
@@ -70,10 +74,13 @@ namespace CELEQ
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-            AgregarUnidad ag = new AgregarUnidad(dgvUnidad.SelectedRows[0]);
-            ag.ShowDialog();
-            ag.Dispose();
-            llenarTabla();
+            if (dgvUnidad.Rows.Count > 0)
+            {
+                AgregarUnidad ag = new AgregarUnidad(dgvUnidad.SelectedRows[0]);
+                ag.ShowDialog();
+                ag.Dispose();
+                llenarTabla();
+            }
         }
     }
 }

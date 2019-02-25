@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboLocalidad = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.numericHospedaje = new System.Windows.Forms.NumericUpDown();
             this.numericDistancia = new System.Windows.Forms.NumericUpDown();
             this.comboCanton = new System.Windows.Forms.ComboBox();
@@ -39,8 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboLocalidad = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericHospedaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDistancia)).BeginInit();
@@ -48,6 +50,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboLocalidad);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.numericHospedaje);
@@ -63,6 +67,23 @@
             this.groupBox1.Size = new System.Drawing.Size(444, 203);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboLocalidad
+            // 
+            this.comboLocalidad.FormattingEnabled = true;
+            this.comboLocalidad.Location = new System.Drawing.Point(183, 90);
+            this.comboLocalidad.Name = "comboLocalidad";
+            this.comboLocalidad.Size = new System.Drawing.Size(196, 24);
+            this.comboLocalidad.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(65, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Localidad:";
             // 
             // numericHospedaje
             // 
@@ -164,22 +185,23 @@
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Localidad:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(162, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "₡";
             // 
-            // comboLocalidad
+            // label7
             // 
-            this.comboLocalidad.FormattingEnabled = true;
-            this.comboLocalidad.Location = new System.Drawing.Point(183, 90);
-            this.comboLocalidad.Name = "comboLocalidad";
-            this.comboLocalidad.Size = new System.Drawing.Size(196, 24);
-            this.comboLocalidad.TabIndex = 9;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(309, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "kilómetros";
             // 
             // AgregarLocalizacion
             // 
@@ -224,5 +246,7 @@
         private System.Windows.Forms.Button butCancelar;
         private System.Windows.Forms.ComboBox comboLocalidad;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

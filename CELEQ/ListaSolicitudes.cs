@@ -45,7 +45,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad from Solicitud where Estado = 'Solicitado'");
+                    tabla = bd.ejecutarConsultaTabla("select Id as Consecutivo, FechaSolicitud as 'Fecha de Solicitud', NombreSolicitante as 'Nombre de Solicitante', NombreEncargado as 'Nombre de Encargado', CorreoSolicitante as 'Correo de Solicitante', Unidad from Solicitud where Estado = 'Solicitado'");
                 }
                 catch (SqlException ex)
                 {
@@ -56,7 +56,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad, Estado from Solicitud");
+                    tabla = bd.ejecutarConsultaTabla("select Id as Consecutivo, FechaSolicitud as 'Fecha de Solicitud', NombreSolicitante as 'Nombre de Solicitante', NombreEncargado as 'Nombre de Encargado', CorreoSolicitante as 'Correo de Solicitante', Unidad, Estado from Solicitud");
                 }
                 catch (SqlException ex)
                 {
@@ -67,7 +67,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select Id, FechaSolicitud, NombreSolicitante, NombreEncargado, CorreoSolicitante, Unidad, Estado from Solicitud where usuarioSolicitante = '" + Globals.usuario + "'");
+                    tabla = bd.ejecutarConsultaTabla("select Id as Consecutivo, FechaSolicitud as 'Fecha de Solicitud', NombreSolicitante as 'Nombre de Solicitante', NombreEncargado as 'Nombre de Encargado', CorreoSolicitante as 'Correo de Solicitante', Unidad, Estado from Solicitud where usuarioSolicitante = '" + Globals.usuario + "'");
                 }
                 catch (SqlException ex)
                 {
@@ -79,9 +79,34 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvSolicitudes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvSolicitudes.DataSource = bs;
-            for (int i = 0; i < dgvSolicitudes.ColumnCount; ++i)
+            int tamano = dgvSolicitudes.Width / dgvSolicitudes.ColumnCount;
+            if (tipo == 0)
             {
-                dgvSolicitudes.Columns[i].Width = dgvSolicitudes.Width / dgvSolicitudes.ColumnCount - 1;
+                dgvSolicitudes.Columns[0].Width = tamano;
+                dgvSolicitudes.Columns[1].Width = tamano - 21;
+                dgvSolicitudes.Columns[2].Width = tamano + 10;
+                dgvSolicitudes.Columns[3].Width = tamano + 10;
+                dgvSolicitudes.Columns[4].Width = tamano + 10;
+                dgvSolicitudes.Columns[5].Width = tamano - 7;
+            }
+            else
+            {
+                dgvSolicitudes.Columns[0].Width = tamano;
+                dgvSolicitudes.Columns[1].Width = tamano;
+                dgvSolicitudes.Columns[2].Width = tamano + 9;
+                dgvSolicitudes.Columns[3].Width = tamano + 8;
+                dgvSolicitudes.Columns[4].Width = tamano + 15;
+                dgvSolicitudes.Columns[5].Width = tamano - 6;
+                dgvSolicitudes.Columns[6].Width = tamano - 28;
+            }
+
+            if (dgvSolicitudes.Rows.Count > 0)
+            {
+                butDetalles.Enabled = true;
+            }
+            else
+            {
+                butDetalles.Enabled = false;
             }
         }
 

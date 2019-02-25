@@ -36,13 +36,19 @@ namespace CELEQ
             llenarTabla();
         }
 
-        private void llenarTabla()
+        private void llenarTabla(string filtro = null)
         {
             DataTable tabla = null;
 
             try
             {
-                tabla = bd.ejecutarConsultaTabla("select E.id as Identificación, E.tipoId as 'Tipo Identificación', CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, E.carrera as Carrera from estudiante E");
+                if(filtro == "")
+                    tabla = bd.ejecutarConsultaTabla("select E.id as Identificación, E.tipoId as 'Tipo Identificación', CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, E.carrera as Carrera from estudiante E");
+                else
+                    tabla = bd.ejecutarConsultaTabla("select E.id as Identificación, E.tipoId as 'Tipo Identificación'," +
+                        " CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, " +
+                        "E.carrera as Carrera from estudiante E where id like '%" + filtro + "%' or tipoId like '%" + filtro + "%' or CONCAT(nombre, ' ', apellido1, ' ', apellido2) like '%" + filtro +
+                        "%' or carrera like '%" + filtro + "%'");
             }
             catch (SqlException ex)
             {
@@ -53,10 +59,16 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvEstudiantes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvEstudiantes.DataSource = bs;
-            for (int i = 0; i < dgvEstudiantes.ColumnCount; ++i)
-            {
-                dgvEstudiantes.Columns[i].Width = dgvEstudiantes.Width / dgvEstudiantes.ColumnCount - 1;
-            }
+            int tamano = dgvEstudiantes.Width / 4;
+            dgvEstudiantes.Columns[0].Width = tamano;
+            dgvEstudiantes.Columns[1].Width = tamano - 6;
+            dgvEstudiantes.Columns[2].Width = tamano;
+            dgvEstudiantes.Columns[3].Width = tamano + 6;
+        }
+
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            llenarTabla(textBuscar.Text);
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelInventario = new System.Windows.Forms.Label();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.butAgregar = new System.Windows.Forms.Button();
@@ -60,6 +61,14 @@
             this.dgvInventario.AllowUserToResizeColumns = false;
             this.dgvInventario.AllowUserToResizeRows = false;
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(20, 71);
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
@@ -72,7 +81,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(975, 105);
+            this.butAgregar.Location = new System.Drawing.Point(975, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(167, 38);
@@ -92,7 +101,7 @@
             // 
             // butActualizar
             // 
-            this.butActualizar.Location = new System.Drawing.Point(975, 197);
+            this.butActualizar.Location = new System.Drawing.Point(975, 163);
             this.butActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.butActualizar.Name = "butActualizar";
             this.butActualizar.Size = new System.Drawing.Size(167, 38);
@@ -114,7 +123,7 @@
             // labelCantidad
             // 
             this.labelCantidad.AutoSize = true;
-            this.labelCantidad.Location = new System.Drawing.Point(975, 71);
+            this.labelCantidad.Location = new System.Drawing.Point(975, 44);
             this.labelCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCantidad.Name = "labelCantidad";
             this.labelCantidad.Size = new System.Drawing.Size(65, 16);
@@ -123,7 +132,7 @@
             // 
             // numAgregar
             // 
-            this.numAgregar.Location = new System.Drawing.Point(1048, 69);
+            this.numAgregar.Location = new System.Drawing.Point(1048, 42);
             this.numAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.numAgregar.Maximum = new decimal(new int[] {
             1000000,
@@ -147,7 +156,7 @@
             // labelUnidad
             // 
             this.labelUnidad.AutoSize = true;
-            this.labelUnidad.Location = new System.Drawing.Point(1144, 71);
+            this.labelUnidad.Location = new System.Drawing.Point(1144, 44);
             this.labelUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUnidad.Name = "labelUnidad";
             this.labelUnidad.Size = new System.Drawing.Size(16, 16);
@@ -156,7 +165,7 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(975, 151);
+            this.butModificar.Location = new System.Drawing.Point(975, 117);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(167, 38);
