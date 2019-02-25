@@ -117,5 +117,11 @@ namespace CELEQ
             llenarTabla();
         }
 
+        private void butPermisos_Click(object sender, EventArgs e)
+        {
+            Permisos p = new Permisos(dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
+            p.ShowDialog();
+            p.Dispose();
+        }
     }
 }
