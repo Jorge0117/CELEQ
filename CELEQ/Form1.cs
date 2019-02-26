@@ -285,6 +285,7 @@ namespace CELEQ
             lcc.ShowDialog();
             lcc.Dispose();
         }
+
     }
 
     public static class Globals
