@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUnidad = new System.Windows.Forms.DataGridView();
             this.labelSoliciudes = new System.Windows.Forms.Label();
             this.butAgregar = new System.Windows.Forms.Button();
@@ -42,13 +43,21 @@
             this.dgvUnidad.AllowUserToResizeColumns = false;
             this.dgvUnidad.AllowUserToResizeRows = false;
             this.dgvUnidad.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUnidad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnidad.Location = new System.Drawing.Point(29, 71);
             this.dgvUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUnidad.Name = "dgvUnidad";
             this.dgvUnidad.ReadOnly = true;
             this.dgvUnidad.RowHeadersVisible = false;
-            this.dgvUnidad.Size = new System.Drawing.Size(947, 410);
+            this.dgvUnidad.Size = new System.Drawing.Size(613, 410);
             this.dgvUnidad.TabIndex = 3;
             // 
             // labelSoliciudes
@@ -64,7 +73,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(984, 71);
+            this.butAgregar.Location = new System.Drawing.Point(650, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(167, 38);
@@ -75,7 +84,7 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(984, 117);
+            this.butModificar.Location = new System.Drawing.Point(650, 117);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(167, 38);
@@ -89,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1174, 511);
+            this.ClientSize = new System.Drawing.Size(839, 511);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelSoliciudes);

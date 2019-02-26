@@ -221,12 +221,26 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvInventario.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvInventario.DataSource = bs;
-            for (int i = 0; i < dgvInventario.ColumnCount; ++i)
-            {
-                dgvInventario.Columns[i].Width = dgvInventario.Width / dgvInventario.ColumnCount - 1;
-            }
+            int tamano = dgvInventario.Width / 5;
+
+            dgvInventario.Columns[0].Width = tamano + 67;
+            dgvInventario.Columns[1].Width = tamano - 25;
+            dgvInventario.Columns[2].Width = tamano;
+            dgvInventario.Columns[3].Width = tamano - 50;
+            dgvInventario.Columns[4].Width = tamano - 50;
 
             if (tipo == 0) { dgvInventario.Columns[2].HeaderText = "Cantidad disponible (g/ml)"; } else { dgvInventario.Columns[3].HeaderText = "Cantidad disponible (unidades)"; }
+
+            if (dgvInventario.Rows.Count > 0)
+            {
+                butModificar.Enabled = true;
+                butActualizar.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                butActualizar.Enabled = false;
+            }
         }
 
         private void Inventario_Load(object sender, EventArgs e)

@@ -63,9 +63,20 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvPresupuesto.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvPresupuesto.DataSource = bs;
-            int tamano = dgvPresupuesto.Width / 7;
+            int tamano = dgvPresupuesto.Width / 9;
             dgvPresupuesto.Columns[0].Width = tamano;
-            dgvPresupuesto.Columns[1].Width = dgvPresupuesto.Width - tamano;
+            dgvPresupuesto.Columns[1].Width = dgvPresupuesto.Width - tamano - 3;
+
+            if (dgvPresupuesto.Rows.Count > 0)
+            {
+                butModificar.Enabled = true;
+                butEliminar.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                butEliminar.Enabled = false;
+            }
         }
 
         private void textBuscar_KeyUp(object sender, KeyEventArgs e)

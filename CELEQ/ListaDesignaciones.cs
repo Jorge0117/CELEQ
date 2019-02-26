@@ -74,9 +74,22 @@ namespace CELEQ
             dgvDesignaciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvDesignaciones.DataSource = bs;
             dgvDesignaciones.Columns["id"].Visible = false;
-            for (int i = 0; i < dgvDesignaciones.ColumnCount - 1; ++i)
+            int tamano = dgvDesignaciones.Width / 7;
+            dgvDesignaciones.Columns[0].Width = tamano;
+            dgvDesignaciones.Columns[1].Width = tamano + 20;
+            dgvDesignaciones.Columns[2].Width = tamano - 20;
+            dgvDesignaciones.Columns[3].Width = tamano - 20;
+            dgvDesignaciones.Columns[4].Width = tamano - 20;
+            dgvDesignaciones.Columns[5].Width = tamano + 20;
+            dgvDesignaciones.Columns[6].Width = tamano + 19;
+
+            if (dgvDesignaciones.Rows.Count > 0)
             {
-                dgvDesignaciones.Columns[i].Width = dgvDesignaciones.Width / (dgvDesignaciones.ColumnCount - 1);
+                butDetalles.Enabled = true;
+            }
+            else
+            {
+                butDetalles.Enabled = false;
             }
         }
 
@@ -85,12 +98,15 @@ namespace CELEQ
             llenarTabla(textBuscar.Text);
         }
 
-        private void butAgregar_Click(object sender, EventArgs e)
+        private void butDetalles_Click(object sender, EventArgs e)
         {
-            Designacion designacion = new Designacion(Convert.ToInt32(dgvDesignaciones.SelectedRows[0].Cells[dgvDesignaciones.ColumnCount-1].Value));
-            designacion.ShowDialog();
-            designacion.Dispose();
-            llenarTabla();
+            if (dgvDesignaciones.Rows.Count > 0)
+            {
+                Designacion designacion = new Designacion(Convert.ToInt32(dgvDesignaciones.SelectedRows[0].Cells[dgvDesignaciones.ColumnCount - 1].Value));
+                designacion.ShowDialog();
+                designacion.Dispose();
+                llenarTabla();
+            }
         }
     }
 }

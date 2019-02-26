@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.labelEstudiantes = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 10;
+            this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // labelEstudiantes
             // 
@@ -71,6 +73,14 @@
             this.dgvEstudiantes.AllowUserToResizeColumns = false;
             this.dgvEstudiantes.AllowUserToResizeRows = false;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Location = new System.Drawing.Point(37, 70);
             this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4);

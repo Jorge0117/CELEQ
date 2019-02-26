@@ -64,9 +64,24 @@ namespace CELEQ
             bs.DataSource = tabla;
             dgvUsuarios.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvUsuarios.DataSource = bs;
-            for (int i = 0; i < dgvUsuarios.ColumnCount; ++i)
+            int tamCelda = dgvUsuarios.Width / 5;
+            dgvUsuarios.Columns[0].Width = tamCelda -20;
+            dgvUsuarios.Columns[1].Width = tamCelda + 35;
+            dgvUsuarios.Columns[2].Width = tamCelda + 34;
+            dgvUsuarios.Columns[3].Width = tamCelda - 25;
+            dgvUsuarios.Columns[4].Width = tamCelda - 25;
+
+            if (dgvUsuarios.Rows.Count > 0)
             {
-                dgvUsuarios.Columns[i].Width = dgvUsuarios.Width / dgvUsuarios.ColumnCount - 1;
+                butModificar.Enabled = true;
+                cambiarContra.Enabled = true;
+                butPermisos.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                cambiarContra.Enabled = false;
+                butPermisos.Enabled = false;
             }
         }
 
@@ -104,5 +119,11 @@ namespace CELEQ
             llenarTabla();
         }
 
+        private void butPermisos_Click(object sender, EventArgs e)
+        {
+            Permisos p = new Permisos(dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
+            p.ShowDialog();
+            p.Dispose();
+        }
     }
 }

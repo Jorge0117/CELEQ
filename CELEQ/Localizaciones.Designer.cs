@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLocalizaciones = new System.Windows.Forms.DataGridView();
             this.labelLocalizaciones = new System.Windows.Forms.Label();
             this.butEliminar = new System.Windows.Forms.Button();
@@ -42,14 +44,24 @@
             this.dgvLocalizaciones.AllowUserToDeleteRows = false;
             this.dgvLocalizaciones.AllowUserToResizeColumns = false;
             this.dgvLocalizaciones.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvLocalizaciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLocalizaciones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLocalizaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLocalizaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocalizaciones.Location = new System.Drawing.Point(28, 71);
             this.dgvLocalizaciones.Margin = new System.Windows.Forms.Padding(5);
             this.dgvLocalizaciones.Name = "dgvLocalizaciones";
             this.dgvLocalizaciones.ReadOnly = true;
             this.dgvLocalizaciones.RowHeadersVisible = false;
-            this.dgvLocalizaciones.Size = new System.Drawing.Size(947, 410);
+            this.dgvLocalizaciones.Size = new System.Drawing.Size(676, 410);
             this.dgvLocalizaciones.TabIndex = 4;
             // 
             // labelLocalizaciones
@@ -65,7 +77,7 @@
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(984, 163);
+            this.butEliminar.Location = new System.Drawing.Point(713, 163);
             this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(167, 38);
@@ -76,7 +88,7 @@
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(984, 117);
+            this.butModificar.Location = new System.Drawing.Point(713, 117);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(167, 38);
@@ -87,7 +99,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(984, 71);
+            this.butAgregar.Location = new System.Drawing.Point(713, 71);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(167, 38);
@@ -101,13 +113,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1174, 511);
+            this.ClientSize = new System.Drawing.Size(905, 511);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.labelLocalizaciones);
             this.Controls.Add(this.dgvLocalizaciones);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
