@@ -15,6 +15,7 @@ namespace CELEQ
     {
         AccesoBaseDatos bd;
         DataTable r;
+        string user;
         public Permisos(string usuario = null)
         {
             bd = new AccesoBaseDatos();
@@ -28,6 +29,7 @@ namespace CELEQ
                     listPermisos.SetItemCheckState(i - 1, CheckState.Checked);
                 }
             }
+            user = usuario;
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace CELEQ
                     i++;
                 }
             }
-                bd.actualizarDatos("update permisos set " + campos);
+                bd.actualizarDatos("update permisos set " + campos + "where usuario = '" + user + "'");
             this.Close();
         }
 
