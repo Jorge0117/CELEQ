@@ -101,6 +101,16 @@ CREATE TABLE precioGiras
 	valorProfesional	FLOAT
 )
 
+CREATE TABLE CotizacionAnalisis
+(
+	consecutivo		VARCHAR(100)	NOT NULL,
+	idAnalisis		VARCHAR(255)	NOT NULL,
+
+	PRIMARY KEY(consecutivo,idAnalisis),
+	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
+	FOREIGN KEY(idAnalisis)		REFERENCES Analisis(descripcion)
+)
+
 select * from ClienteCotizacion
 
 select telefono, telefono2, correo, fax, direccion from ClienteCotizacion
