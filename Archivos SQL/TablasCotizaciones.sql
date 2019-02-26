@@ -1,22 +1,23 @@
-CREATE TABLE Cliente
+CREATE TABLE ClienteCotizacion
 (
 	nombre		VARCHAR(255)	PRIMARY KEY NOT NULL,
-	telefono	VARCHAR(255),
-	telefono2	VARCHAR(255),
+	telefono	VARCHAR(20),
+	telefono2	VARCHAR(20),
 	correo		VARCHAR(255),
-	fax			VARCHAR(255),
+	fax			VARCHAR(20),
 	direccion	VARCHAR(255)						
 )
-
+drop table ClienteCotizacion
 CREATE TABLE ContactoCotizacion
 (
 	nombreCliente		VARCHAR(255),
-	atencionDe			VARCHAR(255)
+	atencionDe			VARCHAR(255),
+	ultimoAgregado		BIT
 	PRIMARY KEY(nombreCliente, atencionDe)
 
-	FOREIGN KEY(nombreCliente)	REFERENCES Cliente(nombre)
+	FOREIGN KEY(nombreCliente)	REFERENCES ClienteCotizacion(nombre) on update cascade
 )
-
+drop table ContactoCotizacion
 CREATE TABLE Cotizacion
 (
 	consecutivo		VARCHAR(100)	PRIMARY KEY NOT NULL,
@@ -35,9 +36,9 @@ CREATE TABLE Cotizacion
 	cliente			VARCHAR(255)
 
 	FOREIGN KEY(cotizador)	REFERENCES Usuarios(nombreUsuario),
-	FOREIGN KEY(cliente)	REFERENCES Cliente(nombre)
+	FOREIGN KEY(cliente)	REFERENCES ClienteCotizacion(nombre)
 )
-
+drop table Cotizacion
 CREATE TABLE Gira
 (
 	id						INT		IDENTITY(1,1)	PRIMARY KEY,
@@ -52,7 +53,7 @@ CREATE TABLE Gira
 
 	FOREIGN KEY(idCotizacion)	REFERENCES Cotizacion(consecutivo)	
 )
-
+drop table Gira
 CREATE TABLE tipoAnalisis
 (
 	tipo	VARCHAR(100)	PRIMARY KEY NOT NULL
@@ -99,3 +100,7 @@ CREATE TABLE precioGiras
 	valorTecnico		FLOAT,
 	valorProfesional	FLOAT
 )
+
+select * from ClienteCotizacion
+
+select telefono, telefono2, correo, fax, direccion from ClienteCotizacion

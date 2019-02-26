@@ -279,6 +279,13 @@ namespace CELEQ
             l.Dispose();    
         }
 
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaClientesCotizacion lcc = new ListaClientesCotizacion();
+            lcc.ShowDialog();
+            lcc.Dispose();
+        }
+
     }
 
     public static class Globals
