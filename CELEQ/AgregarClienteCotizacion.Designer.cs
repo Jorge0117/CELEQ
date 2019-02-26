@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textAtencion = new System.Windows.Forms.TextBox();
             this.butAgregarEncargado = new System.Windows.Forms.Button();
             this.textCorreo = new System.Windows.Forms.TextBox();
             this.textTelefono2 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.textAtencion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,9 +71,18 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1008, 274);
-            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
+            // 
+            // textAtencion
+            // 
+            this.textAtencion.Location = new System.Drawing.Point(353, 70);
+            this.textAtencion.Margin = new System.Windows.Forms.Padding(4);
+            this.textAtencion.MaxLength = 255;
+            this.textAtencion.Name = "textAtencion";
+            this.textAtencion.Size = new System.Drawing.Size(466, 22);
+            this.textAtencion.TabIndex = 4;
             // 
             // butAgregarEncargado
             // 
@@ -81,7 +90,7 @@
             this.butAgregarEncargado.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregarEncargado.Name = "butAgregarEncargado";
             this.butAgregarEncargado.Size = new System.Drawing.Size(100, 25);
-            this.butAgregarEncargado.TabIndex = 31;
+            this.butAgregarEncargado.TabIndex = 5;
             this.butAgregarEncargado.Text = "Agregar";
             this.butAgregarEncargado.UseVisualStyleBackColor = true;
             this.butAgregarEncargado.Click += new System.EventHandler(this.butAgregarEncargado_Click);
@@ -93,7 +102,7 @@
             this.textCorreo.MaxLength = 255;
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(272, 22);
-            this.textCorreo.TabIndex = 32;
+            this.textCorreo.TabIndex = 10;
             // 
             // textTelefono2
             // 
@@ -102,7 +111,7 @@
             this.textTelefono2.MaxLength = 20;
             this.textTelefono2.Name = "textTelefono2";
             this.textTelefono2.Size = new System.Drawing.Size(132, 22);
-            this.textTelefono2.TabIndex = 31;
+            this.textTelefono2.TabIndex = 8;
             // 
             // textFax
             // 
@@ -111,7 +120,7 @@
             this.textFax.MaxLength = 20;
             this.textFax.Name = "textFax";
             this.textFax.Size = new System.Drawing.Size(142, 22);
-            this.textFax.TabIndex = 30;
+            this.textFax.TabIndex = 9;
             // 
             // textTelefono1
             // 
@@ -120,7 +129,7 @@
             this.textTelefono1.MaxLength = 20;
             this.textTelefono1.Name = "textTelefono1";
             this.textTelefono1.Size = new System.Drawing.Size(132, 22);
-            this.textTelefono1.TabIndex = 28;
+            this.textTelefono1.TabIndex = 7;
             // 
             // textDireccion
             // 
@@ -130,7 +139,7 @@
             this.textDireccion.Multiline = true;
             this.textDireccion.Name = "textDireccion";
             this.textDireccion.Size = new System.Drawing.Size(466, 56);
-            this.textDireccion.TabIndex = 27;
+            this.textDireccion.TabIndex = 6;
             // 
             // comboAtencion
             // 
@@ -139,7 +148,7 @@
             this.comboAtencion.Location = new System.Drawing.Point(353, 70);
             this.comboAtencion.Name = "comboAtencion";
             this.comboAtencion.Size = new System.Drawing.Size(359, 24);
-            this.comboAtencion.TabIndex = 26;
+            this.comboAtencion.TabIndex = 3;
             // 
             // label6
             // 
@@ -178,7 +187,7 @@
             this.textCliente.MaxLength = 255;
             this.textCliente.Name = "textCliente";
             this.textCliente.Size = new System.Drawing.Size(466, 22);
-            this.textCliente.TabIndex = 22;
+            this.textCliente.TabIndex = 0;
             // 
             // label1
             // 
@@ -216,7 +225,7 @@
             this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
-            this.butAceptar.TabIndex = 30;
+            this.butAceptar.TabIndex = 1;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
             this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
@@ -227,18 +236,10 @@
             this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
-            this.butCancelar.TabIndex = 29;
+            this.butCancelar.TabIndex = 2;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
-            // 
-            // textAtencion
-            // 
-            this.textAtencion.Location = new System.Drawing.Point(353, 70);
-            this.textAtencion.Margin = new System.Windows.Forms.Padding(4);
-            this.textAtencion.MaxLength = 255;
-            this.textAtencion.Name = "textAtencion";
-            this.textAtencion.Size = new System.Drawing.Size(466, 22);
-            this.textAtencion.TabIndex = 33;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // AgregarClienteCotizacion
             // 

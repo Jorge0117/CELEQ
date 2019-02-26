@@ -25,9 +25,21 @@ namespace CELEQ
 
         private void butAgregarEncargado_Click(object sender, EventArgs e)
         {
-            AgregarContactoCotizacion acc = new AgregarContactoCotizacion();
+            AgregarContactoCotizacion acc = new AgregarContactoCotizacion(nombreCliente);
             acc.ShowDialog();
             acc.Dispose();
+
+
+            comboAtencion.Items.Clear();
+            SqlDataReader contactos = bd.ejecutarConsulta("select atencionDe, ultimoAgregado from ContactoCotizacion where nombreCliente = '" + nombreCliente + "'");
+            while (contactos.Read())
+            {
+                comboAtencion.Items.Add(contactos[0]);
+                if (contactos[1].ToString() == "True")
+                {
+                    comboAtencion.SelectedIndex = comboAtencion.FindStringExact(contactos[0].ToString());
+                }
+            }
         }
 
         private void AgregarClienteCotizacion_Load(object sender, EventArgs e)
@@ -49,7 +61,15 @@ namespace CELEQ
                 textFax.Text = datos[3].ToString();
                 textDireccion.Text = datos[4].ToString();
 
-
+                SqlDataReader contactos = bd.ejecutarConsulta("select atencionDe, ultimoAgregado from ContactoCotizacion where nombreCliente = '" + nombreCliente + "'");
+                while (contactos.Read())
+                {
+                    comboAtencion.Items.Add(contactos[0].ToString());
+                    if(contactos[1].ToString() == "True")
+                    {
+                        comboAtencion.SelectedIndex = comboAtencion.FindStringExact(contactos[0].ToString());
+                    }
+                }
                 
             }
         }
@@ -75,6 +95,30 @@ namespace CELEQ
                     }
                 }
             }
+            else
+            {
+                if (textCliente.Text == "" || textDireccion.Text == "" || (textTelefono1.Text == "" && textTelefono2.Text == "") || textCorreo.Text == "")
+                {
+                    MessageBox.Show("Por favor llenar los campos requeridos", "Cotizacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    if (bd.modificarClienteCotizacion(nombreCliente, textCliente.Text, textTelefono1.Text, textTelefono2.Text, textCorreo.Text, textFax.Text, textDireccion.Text, comboAtencion.Text) == 0)
+                    {
+                        MessageBox.Show("Se ha modificado el cliente de manera correcta", "Cotizacion", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error agregando el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1665,7 +1665,51 @@ namespace CELEQ
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         //Se preparan los parámetros que recibe el procedimiento almacenado
-                        cmd.Parameters.Add("@cliente", SqlDbType.VarChar).Value = cliente;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = cliente;
+                        cmd.Parameters.Add("@contacto", SqlDbType.VarChar).Value = contacto;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarClienteCotizacion(string clienteAnterior, string clienteNuevo, string telefono1, string telefono2, string correo, string fax, string direccion, string contacto)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarClienteCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@nombreAnterior", SqlDbType.VarChar).Value = clienteAnterior;
+                        cmd.Parameters.Add("@nombreNuevo", SqlDbType.VarChar).Value = clienteNuevo;
+                        cmd.Parameters.Add("@telefono1", SqlDbType.VarChar).Value = telefono1;
+                        cmd.Parameters.Add("@telefono2", SqlDbType.VarChar).Value = telefono2;
+                        cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
+                        cmd.Parameters.Add("@fax", SqlDbType.VarChar).Value = fax;
+                        cmd.Parameters.Add("@direccion", SqlDbType.VarChar).Value = direccion;
                         cmd.Parameters.Add("@contacto", SqlDbType.VarChar).Value = contacto;
 
                         /*Se abre la conexión*/

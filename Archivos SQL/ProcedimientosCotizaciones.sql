@@ -22,10 +22,31 @@ GO
 create procedure agregarClienteCotizacion(@nombre varchar(255), @telefono1 varchar(20), @telefono2 varchar(20), @correo varchar(255), @fax varchar(20), @direccion varchar(255), @contacto varchar(255))
 as
 	insert into ClienteCotizacion values(@nombre, @telefono1, @telefono2, @correo, @fax, @direccion)
-	insert into ContactoCotizacion values(@nombre, @contacto)
+	insert into ContactoCotizacion values(@nombre, @contacto, 1)
 go
 
 create procedure agregarcontactoCotizacion(@nombre varchar(255), @contacto varchar(255))
 as
-	insert into ContactoCotizacion values(@nombre, @contacto)
+	update ContactoCotizacion set ultimoAgregado = 0 where nombreCliente = @nombre
+	insert into ContactoCotizacion values(@nombre, @contacto, 1)
 go
+
+create procedure modificarClienteCotizacion(@nombreAnterior varchar(255), @nombreNuevo varchar(255), @telefono1 varchar(20), @telefono2 varchar(20), @correo varchar(255), @fax varchar(20), @direccion varchar(255), @contacto varchar(255))
+ as
+
+	update ClienteCotizacion set nombre = @nombreNuevo, telefono = @telefono1, telefono2 = @telefono2, correo = @correo, fax = @fax, direccion = @direccion where nombre = @nombreAnterior
+	update ContactoCotizacion set ultimoAgregado = 0 where nombreCliente = @nombreNuevo
+	update ContactoCotizacion set ultimoAgregado = 1 where nombreCliente = @nombreAnterior and atencionDe = @contacto
+go
+
+
+drop procedure modificarClienteCotizacion
+select * from ClienteCotizacion
+select * from ContactoCotizacion
+
+update ContactoCotizacion set ultimoAgregado = 1 where atencionDe = 'Jorge'
+
+update ContactoCotizacion set ultimoAgregado = 1 where nombreCliente = 'dsadsa' and atencionDe = 'Daniel'
+
+delete from ContactoCotizacion
+delete from ClienteCotizacion

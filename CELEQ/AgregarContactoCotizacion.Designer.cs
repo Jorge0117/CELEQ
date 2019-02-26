@@ -32,18 +32,18 @@
             this.textContacto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboCliente = new System.Windows.Forms.ComboBox();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
+            this.textCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textCliente);
             this.groupBox1.Controls.Add(this.textContacto);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboCliente);
             this.groupBox1.Location = new System.Drawing.Point(43, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(457, 102);
@@ -80,16 +80,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Nombre del cliente:";
             // 
-            // comboCliente
-            // 
-            this.comboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboCliente.FormattingEnabled = true;
-            this.comboCliente.Location = new System.Drawing.Point(213, 62);
-            this.comboCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.comboCliente.Name = "comboCliente";
-            this.comboCliente.Size = new System.Drawing.Size(220, 24);
-            this.comboCliente.TabIndex = 20;
-            // 
             // butAceptar
             // 
             this.butAceptar.Location = new System.Drawing.Point(322, 121);
@@ -99,6 +89,7 @@
             this.butAceptar.TabIndex = 27;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -109,6 +100,18 @@
             this.butCancelar.TabIndex = 26;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
+            // 
+            // textCliente
+            // 
+            this.textCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.textCliente.Location = new System.Drawing.Point(213, 62);
+            this.textCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.textCliente.MaxLength = 100;
+            this.textCliente.Name = "textCliente";
+            this.textCliente.ReadOnly = true;
+            this.textCliente.Size = new System.Drawing.Size(220, 22);
+            this.textCliente.TabIndex = 22;
             // 
             // AgregarContactoCotizacion
             // 
@@ -121,13 +124,14 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarContactoCotizacion";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarContactoCotizacion";
+            this.Load += new System.EventHandler(this.AgregarContactoCotizacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -140,8 +144,8 @@
         private System.Windows.Forms.TextBox textContacto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboCliente;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.TextBox textCliente;
     }
 }

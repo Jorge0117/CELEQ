@@ -11,10 +11,11 @@ drop table ClienteCotizacion
 CREATE TABLE ContactoCotizacion
 (
 	nombreCliente		VARCHAR(255),
-	atencionDe			VARCHAR(255)
+	atencionDe			VARCHAR(255),
+	ultimoAgregado		BIT
 	PRIMARY KEY(nombreCliente, atencionDe)
 
-	FOREIGN KEY(nombreCliente)	REFERENCES ClienteCotizacion(nombre)
+	FOREIGN KEY(nombreCliente)	REFERENCES ClienteCotizacion(nombre) on update cascade
 )
 drop table ContactoCotizacion
 CREATE TABLE Cotizacion
