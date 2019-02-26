@@ -39,14 +39,17 @@ BEGIN
 		VALUES(@correo, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt, @categoria, @unidad ,@nombre, @apellido1, @apellido2)
 		/*si lacinserción se pudo realizar se devuelve un 1*/
 		SET @estado=1 
+		INSERT INTO permisos(usuario) values(@pLogin)
 	END TRY
 	BEGIN CATCH
 		/*En cualquier otro caso se devuelve el mensaje de error*/
 		SET @estado=ERROR_MESSAGE()
 	END CATCH
 END
-
 go
+
+drop procedure agregarUsuario
+
 CREATE PROCEDURE dbo.Login(@pLoginName NVARCHAR(50), @pPassword NVARCHAR(50), @isInDb bit=0 OUTPUT)
 AS
 	BEGIN

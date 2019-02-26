@@ -75,11 +75,13 @@ namespace CELEQ
             {
                 butModificar.Enabled = true;
                 cambiarContra.Enabled = true;
+                butPermisos.Enabled = true;
             }
             else
             {
                 butModificar.Enabled = false;
                 cambiarContra.Enabled = false;
+                butPermisos.Enabled = false;
             }
         }
 
