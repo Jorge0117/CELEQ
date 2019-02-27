@@ -33,5 +33,16 @@ namespace CELEQ.Properties {
                 return ((string)(this["CELEQConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndic" +
+            "adoresEconomicos.asmx")]
+        public string CELEQ_banco_wsIndicadoresEconomicos {
+            get {
+                return ((string)(this["CELEQ_banco_wsIndicadoresEconomicos"]));
+            }
+        }
     }
 }

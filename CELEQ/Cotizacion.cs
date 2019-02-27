@@ -122,30 +122,33 @@ namespace CELEQ
 
         private void butCalcular_Click(object sender, EventArgs e)
         {
-            SqlDataReader dist = bd.ejecutarConsulta("select distancia, hospedaje from Localizaciones where provincia = '" + comboProvincia.Text + "' and canton = '" +
+            SqlDataReader local = bd.ejecutarConsulta("select distancia, hospedaje from Localizaciones where provincia = '" + comboProvincia.Text + "' and canton = '" +
             comboCanton.Text + "' and localidad = '" + comboLocalidad.Text + "'");
-            dist.Read();
-            float distancia = float.Parse(dist[0].ToString());
+            local.Read();
+            float distancia = float.Parse(local[0].ToString());
+            float hospedaje = float.Parse(local[1].ToString());
 
-            float hospedaje = float.Parse(dist[1].ToString());
-
-            SqlDataReader pKil = bd.ejecutarConsulta("select valorKilometro from precioGiras");
-            pKil.Read();
-            float precioK = float.Parse(pKil[0].ToString());
-
-            SqlDataReader pTec = bd.ejecutarConsulta("select valorTecnico from precioGiras");
-            pTec.Read();
-            float precioTecnico = float.Parse(pTec[0].ToString());
-
-            SqlDataReader pProf = bd.ejecutarConsulta("select valorProfesional from precioGiras");
-            pProf.Read();
-            float precioProfesional = float.Parse(pProf[0].ToString());
+            SqlDataReader gira = bd.ejecutarConsulta("select valorKilometro, valorTecnico, valorProfesional from precioGiras");
+            gira.Read();
+            float precioK = float.Parse(gira[0].ToString());
+            float precioTecnico = float.Parse(gira[1].ToString());
+            float precioProfesional = float.Parse(gira[2].ToString());
 
             float horasViaje = (((distancia * 2) / 80) * float.Parse("1,25"));
             float profesional = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioProfesional * float.Parse(numProfesionales.Value.ToString());
             float tecnico = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioTecnico * float.Parse(numTecnicos.Value.ToString());
 
-            textTotalGira.Text = ( (distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / 545) ).ToString();
+            //Se obtiene el valor de compra del dolar del banco central
+            //CODIGOS:
+            //Compra dolar = 317, Venta dolar = 318
+            //Libra = 330
+            //Euro = 333
+            //Falta el IMEC de feriados prrro :'v
+            banco.wsIndicadoresEconomicos cliente = new banco.wsIndicadoresEconomicos();
+            DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"),DateTime.Now.ToString("dd/MM/yyyy"), "Daniel Chavarría","N");
+            float dolar = float.Parse(tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
+
+            textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
         }
 
     }

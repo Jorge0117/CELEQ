@@ -59,6 +59,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -283,6 +285,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCotizacion.Designer.cs">
+      <DependentUpon>ReporteCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteDesignacionesPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +320,11 @@
     </Compile>
     <Compile Include="PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\banco\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AgregarClienteCotizacion.resx">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
@@ -425,6 +438,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReporteCotizacion.rdlc" />
+    <EmbeddedResource Include="ReporteCotizacion.resx">
+      <DependentUpon>ReporteCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteDesignacionesPresupuesto.rdlc" />
     <EmbeddedResource Include="ReporteDesignacionesPresupuesto.resx">
       <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
@@ -451,6 +468,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\banco\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\banco\wsIndicadoresEconomicos.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -507,7 +529,26 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Web References\banco\wsIndicadoresEconomicos.disco" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\banco\</RelPath>
+      <UpdateFromURL>http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CELEQ_banco_wsIndicadoresEconomicos</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
