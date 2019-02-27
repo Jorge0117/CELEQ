@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=SERVER03;Initial Catalog=CELEQ;Persist Security Info=True;User ID=Admin;Password=Adminsql$celeq</Value>
     </Setting>
+    <Setting Name="CELEQ_banco_wsIndicadoresEconomicos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

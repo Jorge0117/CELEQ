@@ -42,7 +42,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textCorreo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textAtencion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textFax = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,6 +72,8 @@
             this.butAnalisis = new System.Windows.Forms.Button();
             this.dgvAnalisis = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboLocalidad = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.textTotalGira = new System.Windows.Forms.TextBox();
             this.butCalcular = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -120,6 +121,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
+            this.comboAtencion = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -231,12 +233,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboAtencion);
             this.groupBox2.Controls.Add(this.butAgregar);
             this.groupBox2.Controls.Add(this.textDireccion);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textCorreo);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textAtencion);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textFax);
             this.groupBox2.Controls.Add(this.label6);
@@ -263,6 +265,7 @@
             this.butAgregar.TabIndex = 13;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // textDireccion
             // 
@@ -301,15 +304,6 @@
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Correo:";
-            // 
-            // textAtencion
-            // 
-            this.textAtencion.Location = new System.Drawing.Point(723, 17);
-            this.textAtencion.Margin = new System.Windows.Forms.Padding(4);
-            this.textAtencion.Name = "textAtencion";
-            this.textAtencion.ReadOnly = true;
-            this.textAtencion.Size = new System.Drawing.Size(339, 22);
-            this.textAtencion.TabIndex = 8;
             // 
             // label7
             // 
@@ -377,6 +371,7 @@
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(372, 24);
             this.comboCliente.TabIndex = 1;
+            this.comboCliente.TextChanged += new System.EventHandler(this.comboCliente_TextChanged);
             // 
             // label4
             // 
@@ -617,6 +612,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.comboLocalidad);
+            this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.textTotalGira);
             this.groupBox6.Controls.Add(this.butCalcular);
             this.groupBox6.Controls.Add(this.label22);
@@ -641,9 +638,29 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Cálculo de costos operativos de giras";
             // 
+            // comboLocalidad
+            // 
+            this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLocalidad.FormattingEnabled = true;
+            this.comboLocalidad.Location = new System.Drawing.Point(203, 151);
+            this.comboLocalidad.Margin = new System.Windows.Forms.Padding(4);
+            this.comboLocalidad.Name = "comboLocalidad";
+            this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
+            this.comboLocalidad.TabIndex = 36;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(20, 88);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(133, 16);
+            this.label35.TabIndex = 37;
+            this.label35.Text = "Provincia de destino:";
+            // 
             // textTotalGira
             // 
-            this.textTotalGira.Location = new System.Drawing.Point(395, 187);
+            this.textTotalGira.Location = new System.Drawing.Point(395, 184);
             this.textTotalGira.Margin = new System.Windows.Forms.Padding(4);
             this.textTotalGira.Name = "textTotalGira";
             this.textTotalGira.Size = new System.Drawing.Size(92, 22);
@@ -651,18 +668,19 @@
             // 
             // butCalcular
             // 
-            this.butCalcular.Location = new System.Drawing.Point(247, 186);
+            this.butCalcular.Location = new System.Drawing.Point(249, 181);
             this.butCalcular.Margin = new System.Windows.Forms.Padding(4);
             this.butCalcular.Name = "butCalcular";
             this.butCalcular.Size = new System.Drawing.Size(115, 28);
             this.butCalcular.TabIndex = 35;
             this.butCalcular.Text = "Calcular total";
             this.butCalcular.UseVisualStyleBackColor = true;
+            this.butCalcular.Click += new System.EventHandler(this.butCalcular_Click);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(376, 191);
+            this.label22.Location = new System.Drawing.Point(372, 187);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(15, 16);
@@ -673,45 +691,47 @@
             // 
             this.comboCanton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCanton.FormattingEnabled = true;
-            this.comboCanton.Location = new System.Drawing.Point(204, 150);
+            this.comboCanton.Location = new System.Drawing.Point(203, 118);
             this.comboCanton.Margin = new System.Windows.Forms.Padding(4);
             this.comboCanton.Name = "comboCanton";
             this.comboCanton.Size = new System.Drawing.Size(283, 24);
             this.comboCanton.TabIndex = 32;
+            this.comboCanton.TextChanged += new System.EventHandler(this.comboCanton_TextChanged);
             // 
             // comboProvincia
             // 
             this.comboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProvincia.FormattingEnabled = true;
-            this.comboProvincia.Location = new System.Drawing.Point(204, 111);
+            this.comboProvincia.Location = new System.Drawing.Point(203, 85);
             this.comboProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboProvincia.Name = "comboProvincia";
             this.comboProvincia.Size = new System.Drawing.Size(283, 24);
             this.comboProvincia.TabIndex = 23;
+            this.comboProvincia.TextChanged += new System.EventHandler(this.comboProvincia_TextChanged);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(24, 154);
+            this.label21.Location = new System.Drawing.Point(20, 154);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(119, 16);
+            this.label21.Size = new System.Drawing.Size(137, 16);
             this.label21.TabIndex = 31;
-            this.label21.Text = "Cantón de destino:";
+            this.label21.Text = "Localidad de destino:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(21, 114);
+            this.label20.Location = new System.Drawing.Point(20, 121);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(133, 16);
+            this.label20.Size = new System.Drawing.Size(119, 16);
             this.label20.TabIndex = 30;
-            this.label20.Text = "Provincia de destino:";
+            this.label20.Text = "Cantón de destino:";
             // 
             // numHoras
             // 
-            this.numHoras.Location = new System.Drawing.Point(436, 34);
+            this.numHoras.Location = new System.Drawing.Point(435, 23);
             this.numHoras.Margin = new System.Windows.Forms.Padding(4);
             this.numHoras.Name = "numHoras";
             this.numHoras.Size = new System.Drawing.Size(52, 22);
@@ -719,7 +739,7 @@
             // 
             // numNoches
             // 
-            this.numNoches.Location = new System.Drawing.Point(436, 73);
+            this.numNoches.Location = new System.Drawing.Point(435, 54);
             this.numNoches.Margin = new System.Windows.Forms.Padding(4);
             this.numNoches.Name = "numNoches";
             this.numNoches.Size = new System.Drawing.Size(52, 22);
@@ -728,7 +748,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(276, 75);
+            this.label19.Location = new System.Drawing.Point(277, 56);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(150, 16);
@@ -738,7 +758,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(276, 37);
+            this.label18.Location = new System.Drawing.Point(277, 25);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(126, 16);
@@ -747,7 +767,7 @@
             // 
             // numTecnicos
             // 
-            this.numTecnicos.Location = new System.Drawing.Point(204, 73);
+            this.numTecnicos.Location = new System.Drawing.Point(203, 54);
             this.numTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.numTecnicos.Name = "numTecnicos";
             this.numTecnicos.Size = new System.Drawing.Size(52, 22);
@@ -756,7 +776,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(21, 78);
+            this.label17.Location = new System.Drawing.Point(20, 56);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(137, 16);
@@ -765,7 +785,7 @@
             // 
             // numProfesionales
             // 
-            this.numProfesionales.Location = new System.Drawing.Point(204, 34);
+            this.numProfesionales.Location = new System.Drawing.Point(203, 23);
             this.numProfesionales.Margin = new System.Windows.Forms.Padding(4);
             this.numProfesionales.Name = "numProfesionales";
             this.numProfesionales.Size = new System.Drawing.Size(52, 22);
@@ -774,7 +794,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(20, 37);
+            this.label16.Location = new System.Drawing.Point(20, 25);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(169, 16);
@@ -1118,6 +1138,16 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             // 
+            // comboAtencion
+            // 
+            this.comboAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAtencion.FormattingEnabled = true;
+            this.comboAtencion.Location = new System.Drawing.Point(723, 18);
+            this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAtencion.Name = "comboAtencion";
+            this.comboAtencion.Size = new System.Drawing.Size(339, 24);
+            this.comboAtencion.TabIndex = 14;
+            // 
             // Cotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1144,6 +1174,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cotizacion";
+            this.Load += new System.EventHandler(this.Cotizacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1190,7 +1221,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textCorreo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textAtencion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textFax;
         private System.Windows.Forms.Label label6;
@@ -1269,5 +1299,8 @@
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
         private System.Windows.Forms.Button butAgregar;
+        private System.Windows.Forms.ComboBox comboLocalidad;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox comboAtencion;
     }
 }

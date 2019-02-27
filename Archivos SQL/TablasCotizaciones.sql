@@ -22,7 +22,7 @@ CREATE TABLE Cotizacion
 (
 	consecutivo		VARCHAR(100)	PRIMARY KEY NOT NULL,
 	licitacion		BIT,
-	observaciones	VARCHAR(255),
+	observaciones	VARCHAR(600),
 	precioMuestreo	FLOAT,
 	descuento		FLOAT,
 	gastosAdm		FLOAT,
@@ -101,6 +101,21 @@ CREATE TABLE precioGiras
 	valorProfesional	FLOAT
 )
 
-select * from ClienteCotizacion
+CREATE TABLE CotizacionAnalisis
+(
+	consecutivo		VARCHAR(100)	NOT NULL,
+	idAnalisis		VARCHAR(255)	NOT NULL,
 
-select telefono, telefono2, correo, fax, direccion from ClienteCotizacion
+	PRIMARY KEY(consecutivo,idAnalisis),
+	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
+	FOREIGN KEY(idAnalisis)		REFERENCES Analisis(descripcion)
+)
+drop table CotizacionAnalisis
+
+CREATE TABLE Feriados
+(
+	descripcion		VARCHAR(200)	PRIMARY KEY,
+	fechaInicio		DATE,
+	fechaFinal		DATE
+)
+drop table Feriados

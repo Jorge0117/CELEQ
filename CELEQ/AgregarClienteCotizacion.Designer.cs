@@ -276,7 +276,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textCliente;
+        public System.Windows.Forms.TextBox textCliente;
         private System.Windows.Forms.TextBox textCorreo;
         private System.Windows.Forms.TextBox textTelefono2;
         private System.Windows.Forms.TextBox textFax;
