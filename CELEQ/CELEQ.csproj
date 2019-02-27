@@ -71,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="AgregarAnalisisCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarAnalisisCotizacion.Designer.cs">
+      <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarClienteCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="GenerarReporteDesignaciones.Designer.cs">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaAnalisisCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaAnalisisCotizacion.Designer.cs">
+      <DependentUpon>ListaAnalisisCotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaClientesCotizacion.cs">
       <SubType>Form</SubType>
@@ -313,6 +325,9 @@
     <Compile Include="PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarAnalisisCotizacion.resx">
+      <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarClienteCotizacion.resx">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarReporteDesignaciones.resx">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaAnalisisCotizacion.resx">
+      <DependentUpon>ListaAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClientesCotizacion.resx">
       <DependentUpon>ListaClientesCotizacion.cs</DependentUpon>
@@ -508,6 +526,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -286,6 +286,12 @@ namespace CELEQ
             lcc.Dispose();
         }
 
+        private void análisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaAnalisisCotizacion la = new ListaAnalisisCotizacion();
+            la.ShowDialog();
+            la.Dispose();
+        }
     }
 
     public static class Globals

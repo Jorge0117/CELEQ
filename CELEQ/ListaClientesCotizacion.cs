@@ -17,7 +17,8 @@ namespace CELEQ
         AccesoBaseDatos bd;
         public ListaClientesCotizacion()
         {
-            InitializeComponent();bd = new AccesoBaseDatos();
+            InitializeComponent();
+            bd = new AccesoBaseDatos();
             //Solo permite seleccionar filas en el dgv
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvClientes.MultiSelect = false;
