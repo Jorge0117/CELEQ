@@ -37,6 +37,7 @@
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboAtencion = new System.Windows.Forms.ComboBox();
             this.butAgregar = new System.Windows.Forms.Button();
             this.textDireccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -121,7 +122,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.comboAtencion = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -255,6 +255,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Cliente";
+            // 
+            // comboAtencion
+            // 
+            this.comboAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAtencion.FormattingEnabled = true;
+            this.comboAtencion.Location = new System.Drawing.Point(723, 18);
+            this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAtencion.Name = "comboAtencion";
+            this.comboAtencion.Size = new System.Drawing.Size(339, 24);
+            this.comboAtencion.TabIndex = 14;
             // 
             // butAgregar
             // 
@@ -647,6 +657,7 @@
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
             this.comboLocalidad.TabIndex = 36;
+            this.comboLocalidad.TextChanged += new System.EventHandler(this.comboLocalidad_TextChanged);
             // 
             // label35
             // 
@@ -1137,16 +1148,6 @@
             this.butCancelar.TabIndex = 17;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
-            // 
-            // comboAtencion
-            // 
-            this.comboAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAtencion.FormattingEnabled = true;
-            this.comboAtencion.Location = new System.Drawing.Point(723, 18);
-            this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
-            this.comboAtencion.Name = "comboAtencion";
-            this.comboAtencion.Size = new System.Drawing.Size(339, 24);
-            this.comboAtencion.TabIndex = 14;
             // 
             // Cotizacion
             // 

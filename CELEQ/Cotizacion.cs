@@ -34,6 +34,7 @@ namespace CELEQ
                 comboCliente.Items.Add(clientes[0].ToString());
             }
             textTotalGira.Enabled = false;
+            butCalcular.Enabled = false;
         }
 
         private void comboProvincia_TextChanged(object sender, EventArgs e)
@@ -151,5 +152,9 @@ namespace CELEQ
             textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
         }
 
+        private void comboLocalidad_TextChanged(object sender, EventArgs e)
+        {
+            butCalcular.Enabled = true;
+        }
     }
 }
