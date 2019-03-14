@@ -175,6 +175,12 @@
     <Compile Include="Encargados.Designer.cs">
       <DependentUpon>Encargados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feriados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feriados.Designer.cs">
+      <DependentUpon>Feriados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Encargados.resx">
       <DependentUpon>Encargados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feriados.resx">
+      <DependentUpon>Feriados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

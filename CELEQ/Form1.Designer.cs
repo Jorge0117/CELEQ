@@ -75,6 +75,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
+            this.feriadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -87,7 +88,8 @@
             this.regenciaToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
             this.regimenBecarioToolStripMenuItem,
-            this.vínculoExternoToolStripMenuItem});
+            this.vínculoExternoToolStripMenuItem,
+            this.feriadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -476,6 +478,13 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
+            // feriadosToolStripMenuItem
+            // 
+            this.feriadosToolStripMenuItem.Name = "feriadosToolStripMenuItem";
+            this.feriadosToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.feriadosToolStripMenuItem.Text = "Feriados";
+            this.feriadosToolStripMenuItem.Click += new System.EventHandler(this.feriadosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -556,6 +565,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem;
     }
 }
 

@@ -292,6 +292,13 @@ namespace CELEQ
             la.ShowDialog();
             la.Dispose();
         }
+
+        private void feriadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Feriados f = new Feriados();
+            f.ShowDialog();
+            f.Dispose();
+        }
     }
 
     public static class Globals
