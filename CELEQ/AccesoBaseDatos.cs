@@ -1775,7 +1775,7 @@ namespace CELEQ
             }
         }
 
-        public int modificarFeriado(string descripcionV, string descripcionN, string fechaI, string fechaF)
+        public int modificarFeriado(int id, string descripcion, string fechaI, string fechaF)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -1783,15 +1783,15 @@ namespace CELEQ
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
                  * de segundo parámetro recibe el sqlConnection
                 */
-                using (SqlCommand cmd = new SqlCommand("agregarFeriado", con))
+                using (SqlCommand cmd = new SqlCommand("modificarFeriado", con))
                 {
                     try
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         //Se preparan los parámetros que recibe el procedimiento almacenado
-                        cmd.Parameters.Add("@descripcionV", SqlDbType.VarChar).Value = descripcionV;
-                        cmd.Parameters.Add("@descripcionN", SqlDbType.VarChar).Value = descripcionN;
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
                         cmd.Parameters.Add("@fechaI", SqlDbType.Date).Value = fechaI;
                         cmd.Parameters.Add("@fechaF", SqlDbType.Date).Value = fechaF;
 
@@ -1816,7 +1816,7 @@ namespace CELEQ
             }
         }
 
-        public int eliminarFeriado(string descripcion)
+        public int eliminarFeriado(int id)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -1831,7 +1831,7 @@ namespace CELEQ
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         //Se preparan los parámetros que recibe el procedimiento almacenado
-                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
 
                         /*Se abre la conexión*/

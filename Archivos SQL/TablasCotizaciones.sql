@@ -114,8 +114,13 @@ drop table CotizacionAnalisis
 
 CREATE TABLE Feriados
 (
-	descripcion		VARCHAR(200)	PRIMARY KEY,
+	id					INT		IDENTITY(1,1)	PRIMARY KEY,
+	descripcion		VARCHAR(200),
 	fechaInicio		DATE,
 	fechaFinal		DATE
 )
 drop table Feriados
+
+insert into Feriados VALUES('Día 1','2019/04/03', '2019/04/03')
+insert into Feriados VALUES('Día 2','2019/04/03', '2019/04/15')
+
