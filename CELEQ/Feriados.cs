@@ -55,84 +55,19 @@ namespace CELEQ
             dgvFeriados.DataSource = bs;
             dgvFeriados.Columns["id"].Visible = false;
 
-            dgvFeriados.Columns[0].Width = dgvFeriados.Width / 2 - 1;
-            dgvFeriados.Columns[1].Width = dgvFeriados.Width / 2 - 1;
+            dgvFeriados.Columns[1].Width = dgvFeriados.Width / 2 + 120;
+            dgvFeriados.Columns[2].Width = dgvFeriados.Width  / 2 - 122;
 
-            if (dgvFeriados.Rows.Count > 0 || (dgvFeriados.Rows.Count == 1 && dgvFeriados.Rows[0].Cells[0].Value.ToString() == null))
+            if (dgvFeriados.Rows.Count > 0)
             {
                 butEliminar.Enabled = true;
+                butModificar.Enabled = true;
             }
             else
             {
                 butEliminar.Enabled = false;
+                butModificar.Enabled = false;
             }
-        }
-
-        DateTimePicker oDateTimePicker;
-
-        private void dgvFeriados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                //Initialized a new DateTimePicker Control  
-                oDateTimePicker = new DateTimePicker();
-
-                //Adding DateTimePicker control into DataGridView   
-                dgvFeriados.Controls.Add(oDateTimePicker);
-
-                // Setting the format (i.e. 2014-10-10)  
-                oDateTimePicker.Format = DateTimePickerFormat.Short;
-
-                // It returns the retangular area that represents the Display area for a cell  
-                Rectangle oRectangle = dgvFeriados.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-
-                //Setting area for DateTimePicker Control  
-                oDateTimePicker.Size = new Size(oRectangle.Width, oRectangle.Height);
-
-                // Setting Location  
-                oDateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-
-                // An event attached to dateTimePicker1 which is fired when any date is selected.
-                oDateTimePicker.TextChanged += new EventHandler(DateTimePickerChange);
-
-                // An event attached to dateTimePicker1 which is fired when DateTimeControl is closed.
-                oDateTimePicker.CloseUp += new EventHandler(DateTimePickerClose);
-
-                // Now make it visible  
-                oDateTimePicker.Visible = true;
-            }
-        }
-
-        private void DateTimePickerChange(object sender, EventArgs e)
-        {
-            dgvFeriados.CurrentCell.Value = oDateTimePicker.Value.ToShortDateString();
-            if (dgvFeriados.CurrentRow.Cells[0].Value.ToString() == "")
-            {
-                if (dgvFeriados.CurrentRow.Cells[1].Value.ToString() != "")
-                {
-                    if (bd.agregarFeriado(dgvFeriados.CurrentRow.Cells[1].Value.ToString(), oDateTimePicker.Value.ToShortDateString(), oDateTimePicker.Value.ToShortDateString()) == 0)
-                    {
-                        MessageBox.Show("Feriado agregado correctamente");
-                        llenarTabla();
-                    }
-                    else
-                        MessageBox.Show("Error al eliminar feriado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                    MessageBox.Show("Digite primero la descripción del feriado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if (dgvFeriados.CurrentRow.Cells[0].Value.ToString() != "")
-            {
-                if (bd.modificarFeriado(Convert.ToInt32(dgvFeriados.CurrentRow.Cells[0].Value.ToString()), dgvFeriados.CurrentRow.Cells[1].Value.ToString(), oDateTimePicker.Value.ToShortDateString(), oDateTimePicker.Value.ToShortDateString()) == 0)
-                    MessageBox.Show("Feriado modificado correctamente");
-                else
-                    MessageBox.Show("Error al modificar feriado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void DateTimePickerClose(object sender, EventArgs e)
-        {
-            oDateTimePicker.Visible = false;
         }
 
         private void butEliminar_Click(object sender, EventArgs e)
@@ -141,18 +76,34 @@ namespace CELEQ
             {
                 if (MessageBox.Show("¿Seguro que quiere borrar el feriado?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    int pb = Convert.ToInt32(dgvFeriados.SelectedRows[0].Cells[0].Value.ToString());
                     if (bd.eliminarFeriado(Convert.ToInt32(dgvFeriados.SelectedRows[0].Cells[0].Value.ToString())) == 0)
                     {
                         MessageBox.Show("Feriado eliminado de manera correcta", "Feriados", MessageBoxButtons.OK, MessageBoxIcon.None);
-                        llenarTabla();
                     }
                     else
                     {
                         MessageBox.Show("Error al eliminar feriado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                llenarTabla();
             }
         }
+
+        private void butAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarFeriado f = new AgregarFeriado();
+            f.ShowDialog();
+            f.Dispose();
+            llenarTabla();
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            AgregarFeriado f = new AgregarFeriado(dgvFeriados.SelectedRows[0]);
+            f.ShowDialog();
+            f.Dispose();
+            llenarTabla();
+        }
+
     }
 }

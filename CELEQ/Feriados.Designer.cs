@@ -32,11 +32,14 @@
             this.dgvFeriados = new System.Windows.Forms.DataGridView();
             this.labelFeriados = new System.Windows.Forms.Label();
             this.butEliminar = new System.Windows.Forms.Button();
+            this.butAgregar = new System.Windows.Forms.Button();
+            this.butModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeriados)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFeriados
             // 
+            this.dgvFeriados.AllowUserToAddRows = false;
             this.dgvFeriados.AllowUserToDeleteRows = false;
             this.dgvFeriados.AllowUserToResizeColumns = false;
             this.dgvFeriados.AllowUserToResizeRows = false;
@@ -54,9 +57,8 @@
             this.dgvFeriados.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFeriados.Name = "dgvFeriados";
             this.dgvFeriados.RowHeadersVisible = false;
-            this.dgvFeriados.Size = new System.Drawing.Size(415, 334);
+            this.dgvFeriados.Size = new System.Drawing.Size(497, 334);
             this.dgvFeriados.TabIndex = 4;
-            this.dgvFeriados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeriados_CellClick);
             // 
             // labelFeriados
             // 
@@ -71,7 +73,7 @@
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(451, 54);
+            this.butEliminar.Location = new System.Drawing.Point(533, 146);
             this.butEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(167, 38);
@@ -80,13 +82,37 @@
             this.butEliminar.UseVisualStyleBackColor = true;
             this.butEliminar.Click += new System.EventHandler(this.butEliminar_Click);
             // 
+            // butAgregar
+            // 
+            this.butAgregar.Location = new System.Drawing.Point(533, 54);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.butAgregar.Name = "butAgregar";
+            this.butAgregar.Size = new System.Drawing.Size(167, 38);
+            this.butAgregar.TabIndex = 10;
+            this.butAgregar.Text = "Agregar";
+            this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
+            // 
+            // butModificar
+            // 
+            this.butModificar.Location = new System.Drawing.Point(533, 100);
+            this.butModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.butModificar.Name = "butModificar";
+            this.butModificar.Size = new System.Drawing.Size(167, 38);
+            this.butModificar.TabIndex = 11;
+            this.butModificar.Text = "Modificar";
+            this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
+            // 
             // Feriados
             // 
             this.AccessibleName = "0";
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(634, 416);
+            this.ClientSize = new System.Drawing.Size(713, 416);
+            this.Controls.Add(this.butModificar);
+            this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.butEliminar);
             this.Controls.Add(this.labelFeriados);
             this.Controls.Add(this.dgvFeriados);
@@ -111,5 +137,7 @@
         public System.Windows.Forms.DataGridView dgvFeriados;
         private System.Windows.Forms.Label labelFeriados;
         private System.Windows.Forms.Button butEliminar;
+        private System.Windows.Forms.Button butAgregar;
+        private System.Windows.Forms.Button butModificar;
     }
 }

@@ -104,11 +104,12 @@ CREATE TABLE precioGiras
 CREATE TABLE CotizacionAnalisis
 (
 	consecutivo		VARCHAR(100)	NOT NULL,
-	idAnalisis		VARCHAR(255)	NOT NULL,
+	descripcion		VARCHAR(255)	NOT NULL,
+	tipoAnalisis	VARCHAR(100)	NOT NULL,
 
-	PRIMARY KEY(consecutivo,idAnalisis),
+	PRIMARY KEY(consecutivo,descripcion,tipoAnalisis),
 	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
-	FOREIGN KEY(idAnalisis)		REFERENCES Analisis(descripcion)
+	FOREIGN KEY(descripcion, tipoAnalisis)		REFERENCES	Analisis(descripcion, tipoAnalisis),
 )
 drop table CotizacionAnalisis
 

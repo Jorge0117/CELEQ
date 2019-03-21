@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Net.NetworkInformation;
 
 namespace CELEQ
 {
     public partial class Cotizacion : Form
     {
+        float dolar;
         AccesoBaseDatos bd;
         public Cotizacion()
         {
@@ -121,6 +123,8 @@ namespace CELEQ
             textDireccion.Enabled = false;
         }
 
+        
+
         private void butCalcular_Click(object sender, EventArgs e)
         {
             SqlDataReader local = bd.ejecutarConsulta("select distancia, hospedaje from Localizaciones where provincia = '" + comboProvincia.Text + "' and canton = '" +
@@ -144,11 +148,13 @@ namespace CELEQ
             //Compra dolar = 317, Venta dolar = 318
             //Libra = 330
             //Euro = 333
-            //Falta el IMEC de feriados prrro :'v
-            banco.wsIndicadoresEconomicos cliente = new banco.wsIndicadoresEconomicos();
-            DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"),DateTime.Now.ToString("dd/MM/yyyy"), "Daniel Chavarría","N");
-            float dolar = float.Parse(tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
-
+            bool connection = NetworkInterface.GetIsNetworkAvailable();
+            if (connection == true)
+            {
+                banco.wsIndicadoresEconomicos cliente = new banco.wsIndicadoresEconomicos();
+                DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"), "Daniel Chavarría", "N");
+                dolar = float.Parse(tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
+            }
             textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
         }
 

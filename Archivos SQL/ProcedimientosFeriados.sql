@@ -5,19 +5,22 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE modificarFeriado(@descripcionV VARCHAR(200), @descripcionN VARCHAR(200), @fechaI DATE, @fechaF DATE)
+CREATE PROCEDURE modificarFeriado(@id INT, @descripcion VARCHAR(200), @fechaI DATE, @fechaF DATE)
 AS
 BEGIN
 	UPDATE Feriados
-	SET descripcion = @descripcionN, fechaInicio = @fechaI, fechaFinal = @fechaF
-	WHERE descripcion = @descripcionV
+	SET descripcion = @descripcion, fechaInicio = @fechaI, fechaFinal = @fechaF
+	WHERE id = @id
 END
 GO
 
-CREATE PROCEDURE eliminarFeriado(@descripcion VARCHAR(200))
+CREATE PROCEDURE eliminarFeriado(@id INT)
 AS
 BEGIN
 	DELETE FROM Feriados
-	WHERE descripcion = @descripcion
+	WHERE id = @id
 END
 GO
+drop procedure eliminarFeriado
+
+select * from Feriados
