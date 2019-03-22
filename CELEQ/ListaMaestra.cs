@@ -23,6 +23,7 @@ namespace CELEQ
             dgvListaM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListaM.MultiSelect = false;
             dgvListaM.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            comboOpcionMostrar.Text = "Vigentes";
         }
 
         //Pinta la fila completa en el dgv
@@ -31,17 +32,17 @@ namespace CELEQ
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        private void llenarTabla()
+        private void llenarTabla(string categoria = null, string filtro = null)
         {
 
             DataTable tabla = null;
 
             try
             {
-                if(comboOpcionMostrar.Text == "Todos")
+                if(categoria == "Todos")
                     tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra");
                 else
-                    tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestraActual");
+                    tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra where masNuevo = 1");
             }
             catch (SqlException ex)
             {
@@ -53,12 +54,12 @@ namespace CELEQ
             dgvListaM.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvListaM.DataSource = bs;
             int tamCelda = dgvListaM.Width / 4;
-            dgvListaM.Columns[0].Width = tamCelda -50;
-            dgvListaM.Columns[1].Width = tamCelda -60;
-            dgvListaM.Columns[2].Width = tamCelda + 153;
-            dgvListaM.Columns[3].Width = tamCelda - 40;
+            dgvListaM.Columns[0].Width = tamCelda -48;
+            dgvListaM.Columns[1].Width = tamCelda -120;
+            dgvListaM.Columns[2].Width = tamCelda + 253;
+            dgvListaM.Columns[3].Width = tamCelda - 85;
 
-            if (dgvListaM.Rows.Count > 0)
+            if (dgvListaM.Rows.Count > 0 && comboOpcionMostrar.Text == "Vigentes")
             {
                 butModificar.Enabled = true;
                 butActualizar.Enabled = true;
@@ -77,18 +78,36 @@ namespace CELEQ
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-
+            AgregarListaMaestra alm = new AgregarListaMaestra();
+            alm.ShowDialog();
+            alm.Dispose();
+            llenarTabla(comboOpcionMostrar.Text);
         }
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-
+            AgregarListaMaestra alm = new AgregarListaMaestra(dgvListaM.SelectedRows[0]);
+            alm.ShowDialog();
+            alm.Dispose();
+            llenarTabla(comboOpcionMostrar.Text);
         }
 
         private void butActualizar_Click(object sender, EventArgs e)
         {
-
+            AgregarListaMaestra alm = new AgregarListaMaestra(dgvListaM.SelectedRows[0],true);
+            alm.ShowDialog();
+            alm.Dispose();
+            llenarTabla(comboOpcionMostrar.Text);
         }
 
+        private void comboOpcionMostrar_TextChanged(object sender, EventArgs e)
+        {
+            llenarTabla(comboOpcionMostrar.Text, textBuscar.Text);
+        }
+
+        private void textBuscar_TextChanged(object sender, EventArgs e)
+        {
+            llenarTabla(comboOpcionMostrar.Text, textBuscar.Text)
+        }
     }
 }

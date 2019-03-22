@@ -33,21 +33,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textCodigo = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
+            this.textVersion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textVersion);
+            this.groupBox1.Controls.Add(this.dateTimePickerFecha);
+            this.groupBox1.Controls.Add(this.textNombre);
+            this.groupBox1.Controls.Add(this.textCodigo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -96,33 +96,26 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha entrada en vigencia:";
             // 
-            // textBox1
+            // textCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(208, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 22);
-            this.textBox1.TabIndex = 4;
+            this.textCodigo.Location = new System.Drawing.Point(208, 23);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Size = new System.Drawing.Size(241, 22);
+            this.textCodigo.TabIndex = 4;
             // 
-            // textBox2
+            // textNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 22);
-            this.textBox2.TabIndex = 5;
+            this.textNombre.Location = new System.Drawing.Point(208, 81);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(241, 22);
+            this.textNombre.TabIndex = 6;
             // 
-            // textBox3
+            // dateTimePickerFecha
             // 
-            this.textBox3.Location = new System.Drawing.Point(208, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 22);
-            this.textBox3.TabIndex = 6;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(208, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 22);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(208, 114);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(241, 22);
+            this.dateTimePickerFecha.TabIndex = 7;
             // 
             // butAceptar
             // 
@@ -133,6 +126,7 @@
             this.butAceptar.TabIndex = 7;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -143,6 +137,15 @@
             this.butCancelar.TabIndex = 8;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
+            // 
+            // textVersion
+            // 
+            this.textVersion.Location = new System.Drawing.Point(208, 51);
+            this.textVersion.MaxLength = 10;
+            this.textVersion.Name = "textVersion";
+            this.textVersion.Size = new System.Drawing.Size(241, 22);
+            this.textVersion.TabIndex = 8;
             // 
             // AgregarListaMaestra
             // 
@@ -162,6 +165,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarListaMaestra";
+            this.Load += new System.EventHandler(this.AgregarListaMaestra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,15 +175,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private System.Windows.Forms.TextBox textNombre;
+        private System.Windows.Forms.TextBox textCodigo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butAceptar;
         private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.TextBox textVersion;
     }
 }

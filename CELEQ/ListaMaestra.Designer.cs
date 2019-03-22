@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.comboOpcionMostrar = new System.Windows.Forms.ComboBox();
             this.dgvListaM = new System.Windows.Forms.DataGridView();
@@ -44,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 57);
+            this.label1.Location = new System.Drawing.Point(368, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 0;
@@ -52,14 +54,16 @@
             // 
             // comboOpcionMostrar
             // 
+            this.comboOpcionMostrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboOpcionMostrar.FormattingEnabled = true;
             this.comboOpcionMostrar.Items.AddRange(new object[] {
             "Vigentes",
             "Todos"});
-            this.comboOpcionMostrar.Location = new System.Drawing.Point(282, 54);
+            this.comboOpcionMostrar.Location = new System.Drawing.Point(430, 55);
             this.comboOpcionMostrar.Name = "comboOpcionMostrar";
             this.comboOpcionMostrar.Size = new System.Drawing.Size(144, 24);
             this.comboOpcionMostrar.TabIndex = 1;
+            this.comboOpcionMostrar.TextChanged += new System.EventHandler(this.comboOpcionMostrar_TextChanged);
             // 
             // dgvListaM
             // 
@@ -67,6 +71,8 @@
             this.dgvListaM.AllowUserToDeleteRows = false;
             this.dgvListaM.AllowUserToResizeColumns = false;
             this.dgvListaM.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaM.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
@@ -77,12 +83,20 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListaM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaM.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaM.Location = new System.Drawing.Point(52, 85);
             this.dgvListaM.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaM.Name = "dgvListaM";
             this.dgvListaM.ReadOnly = true;
             this.dgvListaM.RowHeadersVisible = false;
-            this.dgvListaM.Size = new System.Drawing.Size(613, 410);
+            this.dgvListaM.Size = new System.Drawing.Size(835, 410);
             this.dgvListaM.TabIndex = 4;
             // 
             // labelSoliciudes
@@ -98,18 +112,18 @@
             // 
             // butActualizar
             // 
-            this.butActualizar.Location = new System.Drawing.Point(673, 177);
+            this.butActualizar.Location = new System.Drawing.Point(895, 177);
             this.butActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.butActualizar.Name = "butActualizar";
             this.butActualizar.Size = new System.Drawing.Size(167, 38);
             this.butActualizar.TabIndex = 23;
-            this.butActualizar.Text = "Actualizar";
+            this.butActualizar.Text = "Actualizar Versión";
             this.butActualizar.UseVisualStyleBackColor = true;
             this.butActualizar.Click += new System.EventHandler(this.butActualizar_Click);
             // 
             // butModificar
             // 
-            this.butModificar.Location = new System.Drawing.Point(673, 131);
+            this.butModificar.Location = new System.Drawing.Point(895, 131);
             this.butModificar.Margin = new System.Windows.Forms.Padding(4);
             this.butModificar.Name = "butModificar";
             this.butModificar.Size = new System.Drawing.Size(167, 38);
@@ -120,7 +134,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(673, 85);
+            this.butAgregar.Location = new System.Drawing.Point(895, 85);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(167, 38);
@@ -132,7 +146,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(448, 57);
+            this.label2.Location = new System.Drawing.Point(596, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 24;
@@ -140,17 +154,18 @@
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(508, 57);
+            this.textBuscar.Location = new System.Drawing.Point(648, 54);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(157, 22);
+            this.textBuscar.Size = new System.Drawing.Size(239, 22);
             this.textBuscar.TabIndex = 25;
+            this.textBuscar.TextChanged += new System.EventHandler(this.textBuscar_TextChanged);
             // 
             // ListaMaestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(861, 534);
+            this.ClientSize = new System.Drawing.Size(1073, 534);
             this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.butActualizar);

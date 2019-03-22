@@ -299,6 +299,13 @@ namespace CELEQ
             f.ShowDialog();
             f.Dispose();
         }
+
+        private void listaMaestraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaMaestra l = new ListaMaestra();
+            l.ShowDialog();
+            l.Dispose();
+        }
     }
 
     public static class Globals

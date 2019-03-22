@@ -68,6 +68,7 @@
             this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feriadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
@@ -75,7 +76,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.feriadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaMaestraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -89,7 +90,8 @@
             this.mantenimientoToolStripMenuItem,
             this.regimenBecarioToolStripMenuItem,
             this.vínculoExternoToolStripMenuItem,
-            this.feriadosToolStripMenuItem});
+            this.feriadosToolStripMenuItem,
+            this.listaMaestraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -403,6 +405,13 @@
             this.análisisToolStripMenuItem.Text = "Análisis";
             this.análisisToolStripMenuItem.Click += new System.EventHandler(this.análisisToolStripMenuItem_Click);
             // 
+            // feriadosToolStripMenuItem
+            // 
+            this.feriadosToolStripMenuItem.Name = "feriadosToolStripMenuItem";
+            this.feriadosToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.feriadosToolStripMenuItem.Text = "Feriados";
+            this.feriadosToolStripMenuItem.Click += new System.EventHandler(this.feriadosToolStripMenuItem_Click);
+            // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
@@ -478,12 +487,12 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
-            // feriadosToolStripMenuItem
+            // listaMaestraToolStripMenuItem
             // 
-            this.feriadosToolStripMenuItem.Name = "feriadosToolStripMenuItem";
-            this.feriadosToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.feriadosToolStripMenuItem.Text = "Feriados";
-            this.feriadosToolStripMenuItem.Click += new System.EventHandler(this.feriadosToolStripMenuItem_Click);
+            this.listaMaestraToolStripMenuItem.Name = "listaMaestraToolStripMenuItem";
+            this.listaMaestraToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.listaMaestraToolStripMenuItem.Text = "Lista Maestra";
+            this.listaMaestraToolStripMenuItem.Click += new System.EventHandler(this.listaMaestraToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -566,6 +575,7 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaMaestraToolStripMenuItem;
     }
 }
 
