@@ -15,25 +15,80 @@ namespace CELEQ
     public partial class Cotizacion : Form
     {
         AccesoBaseDatos bd;
+        string tipoMuestra;
         public Cotizacion()
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
+
+            numDescuento.Controls.RemoveAt(0);
+            numGastosAdm.Controls.RemoveAt(0);
+            numSaldoFavor.Controls.RemoveAt(0);
+
+            //Solo permite seleccionar filas en el dgv
+            dgvAnalisis.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnalisis.MultiSelect = false;
+            dgvAnalisis.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+        }
+
+        //Pinta la fila completa en el dgv
+        private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
         private void Cotizacion_Load(object sender, EventArgs e)
         {
-            SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
-            while(provincias.Read())
+            try
             {
-                comboProvincia.Items.Add(provincias[0].ToString());
+                SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
+                while (provincias.Read())
+                {
+                    comboProvincia.Items.Add(provincias[0].ToString());
+                }
+                SqlDataReader clientes = bd.ejecutarConsulta("select nombre from clienteCotizacion");
+                while (clientes.Read())
+                {
+                    comboCliente.Items.Add(clientes[0].ToString());
+                }
+                textTotalGira.Enabled = false;
+
+                SqlDataReader tipoMuestra = bd.ejecutarConsulta("select tipo from tipoAnalisis");
+                while (tipoMuestra.Read())
+                {
+                    comboTipoMuestra.Items.Add(tipoMuestra[0].ToString());
+                }
+
+                textMuestra.Enabled = false;
+                numericMuestras.Enabled = false;
+                numericDias.Enabled = false;
+                numericCantidad.Enabled = false;
+                comboUnidad.Enabled = false;
+                butAnalisis.Enabled = false;
+                butMetales.Enabled = false;
+                butTexto.Enabled = false;
+                butBorrar.Enabled = false;
+
+                dgvAnalisis.Columns.Add("descripcion", "Análisis");
+                dgvAnalisis.Columns.Add("metodo", "Método");
+                dgvAnalisis.Columns.Add("precio", "Precio");
+
+                for (int i = 0; i < dgvAnalisis.ColumnCount; ++i)
+                {
+                    dgvAnalisis.Columns[i].Width = dgvAnalisis.Width / dgvAnalisis.ColumnCount - 1;
+                }
+
+                textPrecioUnitario.Text = "0";
+                textPrecioMuestreo.Text = "0";
+                textSubtotal.Text = "0";
+                textDescuento.Text = "0";
+                textGastos.Text = "0";
+                textTotal.Text = "0";
             }
-            SqlDataReader clientes = bd.ejecutarConsulta("select nombre from clienteCotizacion");
-            while(clientes.Read())
+            catch
             {
-                comboCliente.Items.Add(clientes[0].ToString());
+                MessageBox.Show("Ha ocurrido un error al cargar la cotizacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            textTotalGira.Enabled = false;
         }
 
         private void comboProvincia_TextChanged(object sender, EventArgs e)
@@ -151,5 +206,70 @@ namespace CELEQ
             textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
         }
 
+        private void comboTipoMuestra_TextChanged(object sender, EventArgs e)
+        {
+            textMuestra.Enabled = true;
+            numericMuestras.Enabled = true;
+            numericDias.Enabled = true;
+            numericCantidad.Enabled = true;
+            comboUnidad.Enabled = true;
+            butAnalisis.Enabled = true;
+            butMetales.Enabled = true;
+            butTexto.Enabled = true;
+            butBorrar.Enabled = true;
+
+            tipoMuestra = comboTipoMuestra.Text;
+        }
+
+        private void butAnalisis_Click(object sender, EventArgs e)
+        {
+            SeleccionarAnalisisCotizacion sac = new SeleccionarAnalisisCotizacion(comboTipoMuestra.Text);
+            sac.ShowDialog();
+            DataGridViewRow row = sac.getRow();
+            if (row != null)
+            {
+                dgvAnalisis.Rows.Add(row);
+                textPrecioUnitario.Text = Convert.ToString(float.Parse(textPrecioUnitario.Text) + float.Parse(row.Cells[2].Value.ToString().Remove(0, 1)));
+                calcularPrecio();
+            }
+            sac.Dispose();
+        }
+
+        private void butMetales_Click(object sender, EventArgs e)
+        {
+            SeleccionarAnalisisCotizacion sac = new SeleccionarAnalisisCotizacion(null);
+            sac.ShowDialog();
+            DataGridViewRow row = sac.getRow();
+            if (row != null)
+                dgvAnalisis.Rows.Add(sac.getRow());
+            sac.Dispose();
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void butBorrar_Click(object sender, EventArgs e)
+        {
+            if(dgvAnalisis.SelectedRows.Count > 0)
+            {
+                dgvAnalisis.Rows.Remove(dgvAnalisis.SelectedRows[0]);
+            }
+        }
+
+        private void calcularPrecio()
+        {
+            float total = float.Parse(textPrecioUnitario.Text) + float.Parse(textPrecioMuestreo.Text);
+            textSubtotal.Text = Convert.ToString(total);
+
+            textDescuento.Text = Convert.ToString(((float)numDescuento.Value / 100) * total);
+            textGastos.Text = Convert.ToString(((float)numGastosAdm.Value / 100) * total);
+
+            total -= float.Parse(textDescuento.Text);
+            total += float.Parse(textGastos.Text);
+            total -= (float)numSaldoFavor.Value;
+            textTotal.Text = Convert.ToString(total);
+        }
     }
 }

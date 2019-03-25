@@ -22,7 +22,7 @@ CREATE TABLE Cotizacion
 (
 	consecutivo		VARCHAR(100)	PRIMARY KEY NOT NULL,
 	licitacion		BIT,
-	observaciones	VARCHAR(600),
+	observaciones	VARCHAR(255),
 	precioMuestreo	FLOAT,
 	descuento		FLOAT,
 	gastosAdm		FLOAT,
@@ -58,7 +58,7 @@ CREATE TABLE tipoAnalisis
 (
 	tipo	VARCHAR(100)	PRIMARY KEY NOT NULL
 )
-
+drop table tipoAnalisis
 CREATE TABLE Muestra
 (
 	id					INT		IDENTITY(1,1)	PRIMARY KEY,
@@ -71,18 +71,19 @@ CREATE TABLE Muestra
 
 	FOREIGN KEY(tipoAnalisis) REFERENCES tipoAnalisis(tipo)
 )
-
+drop table Muestra
 CREATE TABLE Analisis
 (
-	descripcion			VARCHAR(255)	PRIMARY KEY NOT NULL,
+	descripcion			VARCHAR(255),
+	tipoAnalisis		VARCHAR(100),
 	metodo				VARCHAR(255),
 	precio				INT,
-	acreditacion		TINYINT,
-	tipoAnalisis		VARCHAR(100)
+	acreditacion		TINYINT
 
+	PRIMARY KEY(descripcion, tipoAnalisis)
 	FOREIGN KEY(tipoAnalisis) REFERENCES tipoAnalisis(tipo)
 )
-
+drop table Analisis
 CREATE TABLE Localizaciones
 (
 	provincia		VARCHAR(100),
@@ -101,21 +102,7 @@ CREATE TABLE precioGiras
 	valorProfesional	FLOAT
 )
 
-CREATE TABLE CotizacionAnalisis
-(
-	consecutivo		VARCHAR(100)	NOT NULL,
-	idAnalisis		VARCHAR(255)	NOT NULL,
-
-	PRIMARY KEY(consecutivo,idAnalisis),
-	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
-	FOREIGN KEY(idAnalisis)		REFERENCES Analisis(descripcion)
-)
-drop table CotizacionAnalisis
-
-CREATE TABLE Feriados
-(
-	descripcion		VARCHAR(200)	PRIMARY KEY,
-	fechaInicio		DATE,
-	fechaFinal		DATE
-)
-drop table Feriados
+select tipo from tipoAnalisis
+insert into tipoAnalisis values ('lo')
+delete from tipoAnalisis
+select * from analisis

@@ -1732,5 +1732,126 @@ namespace CELEQ
             }
         }
 
+        public int agregarAnalisisCotizacion(string descripcion, string metodo, int precio, int acreditacion, string tipoAnalisis)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarAnalisisCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@metodo", SqlDbType.VarChar).Value = metodo;
+                        cmd.Parameters.Add("@precio", SqlDbType.VarChar).Value = precio;
+                        cmd.Parameters.Add("@acreditacion", SqlDbType.VarChar).Value = acreditacion;
+                        cmd.Parameters.Add("@tipoanalisis", SqlDbType.VarChar).Value = tipoAnalisis;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarAnalisisCotizacion(string descripcionNueva, string descripcionVieja, string metodo, int precio, int acreditacion, string tipoAnalisis)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarAnalisisCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcionNueva", SqlDbType.VarChar).Value = descripcionNueva;
+                        cmd.Parameters.Add("@descripcionVieja", SqlDbType.VarChar).Value = descripcionVieja;
+                        cmd.Parameters.Add("@metodo", SqlDbType.VarChar).Value = metodo;
+                        cmd.Parameters.Add("@precio", SqlDbType.VarChar).Value = precio;
+                        cmd.Parameters.Add("@acreditacion", SqlDbType.VarChar).Value = acreditacion;
+                        cmd.Parameters.Add("@tipoanalisis", SqlDbType.VarChar).Value = tipoAnalisis;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int eliminarAnalisisCotizacion(string descripcion, string tipoAnalisis)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("eliminarAnalisisCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@tipoAnalisis", SqlDbType.VarChar).Value = tipoAnalisis;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }

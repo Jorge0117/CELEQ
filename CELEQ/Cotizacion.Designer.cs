@@ -37,6 +37,7 @@
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboAtencion = new System.Windows.Forms.ComboBox();
             this.butAgregar = new System.Windows.Forms.Button();
             this.textDireccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -97,12 +98,6 @@
             this.numGastosAdm = new System.Windows.Forms.NumericUpDown();
             this.numDescuento = new System.Windows.Forms.NumericUpDown();
             this.textTotal = new System.Windows.Forms.TextBox();
-            this.textSaldoFavor = new System.Windows.Forms.TextBox();
-            this.textGastos = new System.Windows.Forms.TextBox();
-            this.textDescuento = new System.Windows.Forms.TextBox();
-            this.textSubtotal = new System.Windows.Forms.TextBox();
-            this.textPrecioMuestreo = new System.Windows.Forms.TextBox();
-            this.textPrecioUnitario = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -121,7 +116,12 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.comboAtencion = new System.Windows.Forms.ComboBox();
+            this.textGastos = new System.Windows.Forms.TextBox();
+            this.textDescuento = new System.Windows.Forms.TextBox();
+            this.textSubtotal = new System.Windows.Forms.TextBox();
+            this.textPrecioMuestreo = new System.Windows.Forms.TextBox();
+            this.textPrecioUnitario = new System.Windows.Forms.TextBox();
+            this.numSaldoFavor = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -141,6 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numGastosAdm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).BeginInit();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -255,6 +256,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Cliente";
+            // 
+            // comboAtencion
+            // 
+            this.comboAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAtencion.FormattingEnabled = true;
+            this.comboAtencion.Location = new System.Drawing.Point(723, 18);
+            this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
+            this.comboAtencion.Name = "comboAtencion";
+            this.comboAtencion.Size = new System.Drawing.Size(339, 24);
+            this.comboAtencion.TabIndex = 14;
             // 
             // butAgregar
             // 
@@ -530,6 +541,7 @@
             this.comboTipoMuestra.Name = "comboTipoMuestra";
             this.comboTipoMuestra.Size = new System.Drawing.Size(164, 24);
             this.comboTipoMuestra.TabIndex = 13;
+            this.comboTipoMuestra.TextChanged += new System.EventHandler(this.comboTipoMuestra_TextChanged);
             // 
             // label10
             // 
@@ -567,6 +579,7 @@
             this.butBorrar.TabIndex = 4;
             this.butBorrar.Text = "Borrar";
             this.butBorrar.UseVisualStyleBackColor = true;
+            this.butBorrar.Click += new System.EventHandler(this.butBorrar_Click);
             // 
             // butTexto
             // 
@@ -589,6 +602,7 @@
             this.butMetales.TabIndex = 2;
             this.butMetales.Text = "Metales";
             this.butMetales.UseVisualStyleBackColor = true;
+            this.butMetales.Click += new System.EventHandler(this.butMetales_Click);
             // 
             // butAnalisis
             // 
@@ -600,13 +614,23 @@
             this.butAnalisis.TabIndex = 1;
             this.butAnalisis.Text = "Análisis";
             this.butAnalisis.UseVisualStyleBackColor = true;
+            this.butAnalisis.Click += new System.EventHandler(this.butAnalisis_Click);
             // 
             // dgvAnalisis
             // 
+            this.dgvAnalisis.AllowUserToAddRows = false;
+            this.dgvAnalisis.AllowUserToDeleteRows = false;
+            this.dgvAnalisis.AllowUserToOrderColumns = true;
+            this.dgvAnalisis.AllowUserToResizeColumns = false;
+            this.dgvAnalisis.AllowUserToResizeRows = false;
+            this.dgvAnalisis.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvAnalisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAnalisis.Location = new System.Drawing.Point(144, 20);
             this.dgvAnalisis.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAnalisis.Name = "dgvAnalisis";
+            this.dgvAnalisis.ReadOnly = true;
+            this.dgvAnalisis.RowHeadersVisible = false;
+            this.dgvAnalisis.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAnalisis.Size = new System.Drawing.Size(1207, 219);
             this.dgvAnalisis.TabIndex = 0;
             // 
@@ -848,10 +872,10 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.numSaldoFavor);
             this.groupBox8.Controls.Add(this.numGastosAdm);
             this.groupBox8.Controls.Add(this.numDescuento);
             this.groupBox8.Controls.Add(this.textTotal);
-            this.groupBox8.Controls.Add(this.textSaldoFavor);
             this.groupBox8.Controls.Add(this.textGastos);
             this.groupBox8.Controls.Add(this.textDescuento);
             this.groupBox8.Controls.Add(this.textSubtotal);
@@ -897,60 +921,6 @@
             this.textTotal.ReadOnly = true;
             this.textTotal.Size = new System.Drawing.Size(169, 22);
             this.textTotal.TabIndex = 13;
-            // 
-            // textSaldoFavor
-            // 
-            this.textSaldoFavor.Location = new System.Drawing.Point(196, 155);
-            this.textSaldoFavor.Margin = new System.Windows.Forms.Padding(4);
-            this.textSaldoFavor.Name = "textSaldoFavor";
-            this.textSaldoFavor.ReadOnly = true;
-            this.textSaldoFavor.Size = new System.Drawing.Size(169, 22);
-            this.textSaldoFavor.TabIndex = 12;
-            // 
-            // textGastos
-            // 
-            this.textGastos.Location = new System.Drawing.Point(196, 128);
-            this.textGastos.Margin = new System.Windows.Forms.Padding(4);
-            this.textGastos.Name = "textGastos";
-            this.textGastos.ReadOnly = true;
-            this.textGastos.Size = new System.Drawing.Size(169, 22);
-            this.textGastos.TabIndex = 11;
-            // 
-            // textDescuento
-            // 
-            this.textDescuento.Location = new System.Drawing.Point(196, 101);
-            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
-            this.textDescuento.Name = "textDescuento";
-            this.textDescuento.ReadOnly = true;
-            this.textDescuento.Size = new System.Drawing.Size(169, 22);
-            this.textDescuento.TabIndex = 10;
-            // 
-            // textSubtotal
-            // 
-            this.textSubtotal.Location = new System.Drawing.Point(196, 74);
-            this.textSubtotal.Margin = new System.Windows.Forms.Padding(4);
-            this.textSubtotal.Name = "textSubtotal";
-            this.textSubtotal.ReadOnly = true;
-            this.textSubtotal.Size = new System.Drawing.Size(169, 22);
-            this.textSubtotal.TabIndex = 9;
-            // 
-            // textPrecioMuestreo
-            // 
-            this.textPrecioMuestreo.Location = new System.Drawing.Point(196, 47);
-            this.textPrecioMuestreo.Margin = new System.Windows.Forms.Padding(4);
-            this.textPrecioMuestreo.Name = "textPrecioMuestreo";
-            this.textPrecioMuestreo.ReadOnly = true;
-            this.textPrecioMuestreo.Size = new System.Drawing.Size(169, 22);
-            this.textPrecioMuestreo.TabIndex = 8;
-            // 
-            // textPrecioUnitario
-            // 
-            this.textPrecioUnitario.Location = new System.Drawing.Point(196, 20);
-            this.textPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
-            this.textPrecioUnitario.Name = "textPrecioUnitario";
-            this.textPrecioUnitario.ReadOnly = true;
-            this.textPrecioUnitario.Size = new System.Drawing.Size(169, 22);
-            this.textPrecioUnitario.TabIndex = 7;
             // 
             // label30
             // 
@@ -1137,16 +1107,65 @@
             this.butCancelar.TabIndex = 17;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
-            // comboAtencion
+            // textGastos
             // 
-            this.comboAtencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAtencion.FormattingEnabled = true;
-            this.comboAtencion.Location = new System.Drawing.Point(723, 18);
-            this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
-            this.comboAtencion.Name = "comboAtencion";
-            this.comboAtencion.Size = new System.Drawing.Size(339, 24);
-            this.comboAtencion.TabIndex = 14;
+            this.textGastos.Location = new System.Drawing.Point(196, 128);
+            this.textGastos.Margin = new System.Windows.Forms.Padding(4);
+            this.textGastos.Name = "textGastos";
+            this.textGastos.ReadOnly = true;
+            this.textGastos.Size = new System.Drawing.Size(169, 22);
+            this.textGastos.TabIndex = 11;
+            // 
+            // textDescuento
+            // 
+            this.textDescuento.Location = new System.Drawing.Point(196, 101);
+            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.textDescuento.Name = "textDescuento";
+            this.textDescuento.ReadOnly = true;
+            this.textDescuento.Size = new System.Drawing.Size(169, 22);
+            this.textDescuento.TabIndex = 10;
+            // 
+            // textSubtotal
+            // 
+            this.textSubtotal.Location = new System.Drawing.Point(196, 74);
+            this.textSubtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textSubtotal.Name = "textSubtotal";
+            this.textSubtotal.ReadOnly = true;
+            this.textSubtotal.Size = new System.Drawing.Size(169, 22);
+            this.textSubtotal.TabIndex = 9;
+            // 
+            // textPrecioMuestreo
+            // 
+            this.textPrecioMuestreo.Location = new System.Drawing.Point(196, 47);
+            this.textPrecioMuestreo.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioMuestreo.Name = "textPrecioMuestreo";
+            this.textPrecioMuestreo.ReadOnly = true;
+            this.textPrecioMuestreo.Size = new System.Drawing.Size(169, 22);
+            this.textPrecioMuestreo.TabIndex = 8;
+            // 
+            // textPrecioUnitario
+            // 
+            this.textPrecioUnitario.Location = new System.Drawing.Point(196, 20);
+            this.textPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioUnitario.Name = "textPrecioUnitario";
+            this.textPrecioUnitario.ReadOnly = true;
+            this.textPrecioUnitario.Size = new System.Drawing.Size(169, 22);
+            this.textPrecioUnitario.TabIndex = 7;
+            // 
+            // numSaldoFavor
+            // 
+            this.numSaldoFavor.Location = new System.Drawing.Point(196, 154);
+            this.numSaldoFavor.Margin = new System.Windows.Forms.Padding(4);
+            this.numSaldoFavor.Maximum = new decimal(new int[] {
+            1569325055,
+            23283064,
+            0,
+            0});
+            this.numSaldoFavor.Name = "numSaldoFavor";
+            this.numSaldoFavor.Size = new System.Drawing.Size(171, 22);
+            this.numSaldoFavor.TabIndex = 38;
             // 
             // Cotizacion
             // 
@@ -1202,6 +1221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1274,12 +1294,6 @@
         private System.Windows.Forms.NumericUpDown numGastosAdm;
         private System.Windows.Forms.NumericUpDown numDescuento;
         private System.Windows.Forms.TextBox textTotal;
-        private System.Windows.Forms.TextBox textSaldoFavor;
-        private System.Windows.Forms.TextBox textGastos;
-        private System.Windows.Forms.TextBox textDescuento;
-        private System.Windows.Forms.TextBox textSubtotal;
-        private System.Windows.Forms.TextBox textPrecioMuestreo;
-        private System.Windows.Forms.TextBox textPrecioUnitario;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
@@ -1302,5 +1316,11 @@
         private System.Windows.Forms.ComboBox comboLocalidad;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.ComboBox comboAtencion;
+        private System.Windows.Forms.NumericUpDown numSaldoFavor;
+        private System.Windows.Forms.TextBox textGastos;
+        private System.Windows.Forms.TextBox textDescuento;
+        private System.Windows.Forms.TextBox textSubtotal;
+        private System.Windows.Forms.TextBox textPrecioMuestreo;
+        private System.Windows.Forms.TextBox textPrecioUnitario;
     }
 }
