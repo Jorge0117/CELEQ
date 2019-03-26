@@ -293,22 +293,22 @@ namespace CELEQ
             la.Dispose();
         }
 
-        private void feriadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Feriados f = new Feriados();
-            f.ShowDialog();
-            f.Dispose();
-        }
-
         private void listaMaestraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaMaestra l = new ListaMaestra();
             l.ShowDialog();
             l.Dispose();
         }
-    }
 
-    public static class Globals
+		private void feriadosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Feriados f = new Feriados();
+			f.ShowDialog();
+			f.Dispose();
+		}
+	}
+
+	public static class Globals
     {
         public static string usuario;
         public static string correo;
