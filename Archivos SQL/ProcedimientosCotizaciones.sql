@@ -56,3 +56,7 @@ go
 
 select tipo from tipoAnalisis
 select * from Analisis
+
+select descripcion as 'Análisis', metodo as 'Método', concat('$', precio) as 'Precio' from Analisis where tipoAnalisis = 'Aceites y grasas'
+
+select * from Cotizacion

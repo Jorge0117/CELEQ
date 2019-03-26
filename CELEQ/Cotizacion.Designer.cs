@@ -95,9 +95,15 @@
             this.label23 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.numSaldoFavor = new System.Windows.Forms.NumericUpDown();
             this.numGastosAdm = new System.Windows.Forms.NumericUpDown();
             this.numDescuento = new System.Windows.Forms.NumericUpDown();
             this.textTotal = new System.Windows.Forms.TextBox();
+            this.textGastos = new System.Windows.Forms.TextBox();
+            this.textDescuento = new System.Windows.Forms.TextBox();
+            this.textSubtotal = new System.Windows.Forms.TextBox();
+            this.textPrecioMuestreo = new System.Windows.Forms.TextBox();
+            this.textPrecioUnitario = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -116,12 +122,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.textGastos = new System.Windows.Forms.TextBox();
-            this.textDescuento = new System.Windows.Forms.TextBox();
-            this.textSubtotal = new System.Windows.Forms.TextBox();
-            this.textPrecioMuestreo = new System.Windows.Forms.TextBox();
-            this.textPrecioUnitario = new System.Windows.Forms.TextBox();
-            this.numSaldoFavor = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -138,10 +138,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numProfesionales)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGastosAdm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).BeginInit();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -897,6 +897,21 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Precio";
             // 
+            // numSaldoFavor
+            // 
+            this.numSaldoFavor.DecimalPlaces = 2;
+            this.numSaldoFavor.Location = new System.Drawing.Point(196, 154);
+            this.numSaldoFavor.Margin = new System.Windows.Forms.Padding(4);
+            this.numSaldoFavor.Maximum = new decimal(new int[] {
+            1569325055,
+            23283064,
+            0,
+            0});
+            this.numSaldoFavor.Name = "numSaldoFavor";
+            this.numSaldoFavor.Size = new System.Drawing.Size(171, 22);
+            this.numSaldoFavor.TabIndex = 38;
+            this.numSaldoFavor.ValueChanged += new System.EventHandler(this.numSaldoFavor_ValueChanged);
+            // 
             // numGastosAdm
             // 
             this.numGastosAdm.Location = new System.Drawing.Point(136, 128);
@@ -904,6 +919,7 @@
             this.numGastosAdm.Name = "numGastosAdm";
             this.numGastosAdm.Size = new System.Drawing.Size(52, 22);
             this.numGastosAdm.TabIndex = 37;
+            this.numGastosAdm.ValueChanged += new System.EventHandler(this.numGastosAdm_ValueChanged);
             // 
             // numDescuento
             // 
@@ -912,6 +928,7 @@
             this.numDescuento.Name = "numDescuento";
             this.numDescuento.Size = new System.Drawing.Size(52, 22);
             this.numDescuento.TabIndex = 36;
+            this.numDescuento.ValueChanged += new System.EventHandler(this.numDescuento_ValueChanged);
             // 
             // textTotal
             // 
@@ -921,6 +938,51 @@
             this.textTotal.ReadOnly = true;
             this.textTotal.Size = new System.Drawing.Size(169, 22);
             this.textTotal.TabIndex = 13;
+            // 
+            // textGastos
+            // 
+            this.textGastos.Location = new System.Drawing.Point(196, 128);
+            this.textGastos.Margin = new System.Windows.Forms.Padding(4);
+            this.textGastos.Name = "textGastos";
+            this.textGastos.ReadOnly = true;
+            this.textGastos.Size = new System.Drawing.Size(169, 22);
+            this.textGastos.TabIndex = 11;
+            // 
+            // textDescuento
+            // 
+            this.textDescuento.Location = new System.Drawing.Point(196, 101);
+            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.textDescuento.Name = "textDescuento";
+            this.textDescuento.ReadOnly = true;
+            this.textDescuento.Size = new System.Drawing.Size(169, 22);
+            this.textDescuento.TabIndex = 10;
+            // 
+            // textSubtotal
+            // 
+            this.textSubtotal.Location = new System.Drawing.Point(196, 74);
+            this.textSubtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textSubtotal.Name = "textSubtotal";
+            this.textSubtotal.ReadOnly = true;
+            this.textSubtotal.Size = new System.Drawing.Size(169, 22);
+            this.textSubtotal.TabIndex = 9;
+            // 
+            // textPrecioMuestreo
+            // 
+            this.textPrecioMuestreo.Location = new System.Drawing.Point(196, 47);
+            this.textPrecioMuestreo.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioMuestreo.Name = "textPrecioMuestreo";
+            this.textPrecioMuestreo.ReadOnly = true;
+            this.textPrecioMuestreo.Size = new System.Drawing.Size(169, 22);
+            this.textPrecioMuestreo.TabIndex = 8;
+            // 
+            // textPrecioUnitario
+            // 
+            this.textPrecioUnitario.Location = new System.Drawing.Point(196, 20);
+            this.textPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioUnitario.Name = "textPrecioUnitario";
+            this.textPrecioUnitario.ReadOnly = true;
+            this.textPrecioUnitario.Size = new System.Drawing.Size(169, 22);
+            this.textPrecioUnitario.TabIndex = 7;
             // 
             // label30
             // 
@@ -1109,64 +1171,6 @@
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
-            // textGastos
-            // 
-            this.textGastos.Location = new System.Drawing.Point(196, 128);
-            this.textGastos.Margin = new System.Windows.Forms.Padding(4);
-            this.textGastos.Name = "textGastos";
-            this.textGastos.ReadOnly = true;
-            this.textGastos.Size = new System.Drawing.Size(169, 22);
-            this.textGastos.TabIndex = 11;
-            // 
-            // textDescuento
-            // 
-            this.textDescuento.Location = new System.Drawing.Point(196, 101);
-            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
-            this.textDescuento.Name = "textDescuento";
-            this.textDescuento.ReadOnly = true;
-            this.textDescuento.Size = new System.Drawing.Size(169, 22);
-            this.textDescuento.TabIndex = 10;
-            // 
-            // textSubtotal
-            // 
-            this.textSubtotal.Location = new System.Drawing.Point(196, 74);
-            this.textSubtotal.Margin = new System.Windows.Forms.Padding(4);
-            this.textSubtotal.Name = "textSubtotal";
-            this.textSubtotal.ReadOnly = true;
-            this.textSubtotal.Size = new System.Drawing.Size(169, 22);
-            this.textSubtotal.TabIndex = 9;
-            // 
-            // textPrecioMuestreo
-            // 
-            this.textPrecioMuestreo.Location = new System.Drawing.Point(196, 47);
-            this.textPrecioMuestreo.Margin = new System.Windows.Forms.Padding(4);
-            this.textPrecioMuestreo.Name = "textPrecioMuestreo";
-            this.textPrecioMuestreo.ReadOnly = true;
-            this.textPrecioMuestreo.Size = new System.Drawing.Size(169, 22);
-            this.textPrecioMuestreo.TabIndex = 8;
-            // 
-            // textPrecioUnitario
-            // 
-            this.textPrecioUnitario.Location = new System.Drawing.Point(196, 20);
-            this.textPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
-            this.textPrecioUnitario.Name = "textPrecioUnitario";
-            this.textPrecioUnitario.ReadOnly = true;
-            this.textPrecioUnitario.Size = new System.Drawing.Size(169, 22);
-            this.textPrecioUnitario.TabIndex = 7;
-            // 
-            // numSaldoFavor
-            // 
-            this.numSaldoFavor.Location = new System.Drawing.Point(196, 154);
-            this.numSaldoFavor.Margin = new System.Windows.Forms.Padding(4);
-            this.numSaldoFavor.Maximum = new decimal(new int[] {
-            1569325055,
-            23283064,
-            0,
-            0});
-            this.numSaldoFavor.Name = "numSaldoFavor";
-            this.numSaldoFavor.Size = new System.Drawing.Size(171, 22);
-            this.numSaldoFavor.TabIndex = 38;
-            // 
             // Cotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1217,11 +1221,11 @@
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGastosAdm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDescuento)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSaldoFavor)).EndInit();
             this.ResumeLayout(false);
 
         }

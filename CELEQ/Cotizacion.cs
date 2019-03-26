@@ -219,6 +219,17 @@ namespace CELEQ
             butBorrar.Enabled = true;
 
             tipoMuestra = comboTipoMuestra.Text;
+
+            do
+            {
+                foreach (DataGridViewRow row in dgvAnalisis.Rows)
+                {
+                    dgvAnalisis.Rows.Remove(row);
+                }
+            } while (dgvAnalisis.Rows.Count > 0);
+
+            textPrecioUnitario.Text = "0";
+            calcularPrecio();
         }
 
         private void butAnalisis_Click(object sender, EventArgs e)
@@ -241,7 +252,11 @@ namespace CELEQ
             sac.ShowDialog();
             DataGridViewRow row = sac.getRow();
             if (row != null)
+            {
                 dgvAnalisis.Rows.Add(sac.getRow());
+                textPrecioUnitario.Text = Convert.ToString(float.Parse(textPrecioUnitario.Text) + float.Parse(row.Cells[2].Value.ToString().Remove(0, 1)));
+                calcularPrecio();
+            }
             sac.Dispose();
         }
 
@@ -254,7 +269,10 @@ namespace CELEQ
         {
             if(dgvAnalisis.SelectedRows.Count > 0)
             {
-                dgvAnalisis.Rows.Remove(dgvAnalisis.SelectedRows[0]);
+                DataGridViewRow row = dgvAnalisis.SelectedRows[0];
+                textPrecioUnitario.Text = Convert.ToString(float.Parse(textPrecioUnitario.Text) - float.Parse(row.Cells[2].Value.ToString().Remove(0, 1)));
+                calcularPrecio();
+                dgvAnalisis.Rows.Remove(row);
             }
         }
 
@@ -270,6 +288,21 @@ namespace CELEQ
             total += float.Parse(textGastos.Text);
             total -= (float)numSaldoFavor.Value;
             textTotal.Text = Convert.ToString(total);
+        }
+
+        private void numDescuento_ValueChanged(object sender, EventArgs e)
+        {
+            calcularPrecio();
+        }
+
+        private void numGastosAdm_ValueChanged(object sender, EventArgs e)
+        {
+            calcularPrecio();
+        }
+
+        private void numSaldoFavor_ValueChanged(object sender, EventArgs e)
+        {
+            calcularPrecio();
         }
     }
 }

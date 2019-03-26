@@ -104,13 +104,15 @@ namespace CELEQ
 
         private void dgvAnalisis_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            returnRow = dgvAnalisis.SelectedRows[0];
+            if (dgvAnalisis.SelectedRows.Count > 0)
+                returnRow = dgvAnalisis.SelectedRows[0];
             this.Close();
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            returnRow = dgvAnalisis.SelectedRows[0];
+            if(dgvAnalisis.SelectedRows.Count > 0)
+                returnRow = dgvAnalisis.SelectedRows[0];
             this.Close();
         }
 
