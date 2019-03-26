@@ -1853,5 +1853,256 @@ namespace CELEQ
             }
         }
 
+
+        ////////////////////////////////  FERIADOS  /////////////////////////////////////////////////////
+
+        public int agregarFeriado(string descripcion, string fechaI, string fechaF)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarFeriado", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@fechaI", SqlDbType.Date).Value = fechaI;
+                        cmd.Parameters.Add("@fechaF", SqlDbType.Date).Value = fechaF;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarFeriado(int id, string descripcion, string fechaI, string fechaF)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarFeriado", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@fechaI", SqlDbType.Date).Value = fechaI;
+                        cmd.Parameters.Add("@fechaF", SqlDbType.Date).Value = fechaF;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int eliminarFeriado(int id)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("eliminarFeriado", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+
+        /////////////////////////////// Lista Maestra /////////////////////////////////////////////////////////////////////////
+
+        public int agregarListaMaestra(string codigo, string version, string nombre, string fecha)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarListaMaestra", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                        cmd.Parameters.Add("@version", SqlDbType.VarChar).Value = version;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@fechaEV", SqlDbType.Date).Value = fecha;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int modificarListaMaestra(string codigo, string codigoN, string version, string versionN, string nombre, string fecha)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarListaMaestra", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                        cmd.Parameters.Add("@codigoN", SqlDbType.VarChar).Value = codigoN;
+                        cmd.Parameters.Add("@version", SqlDbType.VarChar).Value = version;
+                        cmd.Parameters.Add("@versionN", SqlDbType.VarChar).Value = versionN;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@fechaEV", SqlDbType.Date).Value = fecha;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int actualizarEnListaMaestra(string codigo, string versionv, string version, string nombre, string fecha)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("actualizarEnListaMaestra", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar).Value = codigo;
+                        cmd.Parameters.Add("@versionv", SqlDbType.VarChar).Value = versionv;
+                        cmd.Parameters.Add("@version", SqlDbType.VarChar).Value = version;
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+                        cmd.Parameters.Add("@fechaEV", SqlDbType.Date).Value = fecha;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -102,7 +102,27 @@ CREATE TABLE precioGiras
 	valorProfesional	FLOAT
 )
 
-select tipo from tipoAnalisis
-insert into tipoAnalisis values ('lo')
-delete from tipoAnalisis
-select * from analisis
+CREATE TABLE CotizacionAnalisis
+(
+	consecutivo		VARCHAR(100)	NOT NULL,
+	descripcion		VARCHAR(255)	NOT NULL,
+	tipoAnalisis	VARCHAR(100)	NOT NULL,
+
+	PRIMARY KEY(consecutivo,descripcion,tipoAnalisis),
+	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
+	FOREIGN KEY(descripcion, tipoAnalisis)		REFERENCES	Analisis(descripcion, tipoAnalisis),
+)
+drop table CotizacionAnalisis
+
+CREATE TABLE Feriados
+(
+	id					INT		IDENTITY(1,1)	PRIMARY KEY,
+	descripcion		VARCHAR(200),
+	fechaInicio		DATE,
+	fechaFinal		DATE
+)
+drop table Feriados
+
+insert into Feriados VALUES('D�a 1','2019/04/03', '2019/04/03')
+insert into Feriados VALUES('D�a 2','2019/04/03', '2019/04/15')
+

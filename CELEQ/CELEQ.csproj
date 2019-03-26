@@ -97,6 +97,18 @@
     <Compile Include="AgregarEncargado.Designer.cs">
       <DependentUpon>AgregarEncargado.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarFeriado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarFeriado.Designer.cs">
+      <DependentUpon>AgregarFeriado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarListaMaestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarListaMaestra.Designer.cs">
+      <DependentUpon>AgregarListaMaestra.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarLocalizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,12 @@
     <Compile Include="Encargados.Designer.cs">
       <DependentUpon>Encargados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feriados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feriados.Designer.cs">
+      <DependentUpon>Feriados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +234,12 @@
     </Compile>
     <Compile Include="ListaEstudiantes.Designer.cs">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMaestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMaestra.Designer.cs">
+      <DependentUpon>ListaMaestra.cs</DependentUpon>
     </Compile>
     <Compile Include="Localizaciones.cs">
       <SubType>Form</SubType>
@@ -356,6 +380,12 @@
     <EmbeddedResource Include="AgregarEncargado.resx">
       <DependentUpon>AgregarEncargado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarFeriado.resx">
+      <DependentUpon>AgregarFeriado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarListaMaestra.resx">
+      <DependentUpon>AgregarListaMaestra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +425,9 @@
     <EmbeddedResource Include="Encargados.resx">
       <DependentUpon>Encargados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Feriados.resx">
+      <DependentUpon>Feriados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMaestra.resx">
+      <DependentUpon>ListaMaestra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Localizaciones.resx">
       <DependentUpon>Localizaciones.cs</DependentUpon>

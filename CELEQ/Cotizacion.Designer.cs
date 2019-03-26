@@ -671,6 +671,7 @@
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
             this.comboLocalidad.TabIndex = 36;
+            this.comboLocalidad.TextChanged += new System.EventHandler(this.comboLocalidad_TextChanged);
             // 
             // label35
             // 
