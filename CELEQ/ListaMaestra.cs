@@ -32,18 +32,24 @@ namespace CELEQ
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
-        private void llenarTabla(string categoria = null, string filtro = null)
+        private void llenarTabla(string categoria = "Vigentes", string filtro = "")
         {
 
             DataTable tabla = null;
 
             try
             {
-                if(categoria == "Todos")
+                if(categoria == "Todos" && filtro == "")
                     tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra");
-                else
-                    tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra where masNuevo = 1");
-            }
+                else if(categoria == "Todos" && filtro != "")
+					tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra where " +
+					"Codigo like '%" + filtro + "%' or ver like '%" + filtro + "%' or Nombre like '%" + filtro + "%'");
+				else if(categoria == "Vigentes" && filtro == "")
+					tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra where masNuevo = 1");
+				else if (categoria == "Vigentes" && filtro != "")
+					tabla = bd.ejecutarConsultaTabla("select Codigo as Código, ver as Versión, Nombre, FechaEntV as 'Entrada en vigencia' from ListaMaestra where masNuevo = 1 and (" +
+					"Codigo like '%" + filtro + "%' or ver like '%" + filtro + "%' or Nombre like '%" + filtro + "%')");
+			}
             catch (SqlException ex)
             {
                 MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,9 +111,9 @@ namespace CELEQ
             llenarTabla(comboOpcionMostrar.Text, textBuscar.Text);
         }
 
-        private void textBuscar_TextChanged(object sender, EventArgs e)
-        {
-            llenarTabla(comboOpcionMostrar.Text, textBuscar.Text)
-        }
-    }
+		private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+		{
+			llenarTabla(comboOpcionMostrar.Text, textBuscar.Text);
+		}
+	}
 }
