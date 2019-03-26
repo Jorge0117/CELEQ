@@ -39,14 +39,24 @@ create procedure modificarClienteCotizacion(@nombreAnterior varchar(255), @nombr
 	update ContactoCotizacion set ultimoAgregado = 1 where nombreCliente = @nombreAnterior and atencionDe = @contacto
 go
 
+create procedure agregarAnalisisCotizacion(@descripcion varchar(255), @metodo varchar(255), @precio int, @acreditacion tinyint, @tipoanalisis varchar(100))
+as
+	insert into Analisis values(@descripcion, @tipoanalisis, @metodo, @precio, @acreditacion)
+go
 
-drop procedure modificarClienteCotizacion
-select * from ClienteCotizacion
-select * from ContactoCotizacion
+create procedure modificarAnalisisCotizacion(@descripcionNueva varchar(255), @descripcionVieja varchar(255), @metodo varchar(255), @precio int, @acreditacion tinyint, @tipoanalisis varchar(100))
+as
+	update Analisis set descripcion = @descripcionNueva, metodo = @metodo, precio = @precio, acreditacion = @acreditacion where descripcion = @descripcionVieja and tipoAnalisis = @tipoanalisis
+go
 
-update ContactoCotizacion set ultimoAgregado = 1 where atencionDe = 'Jorge'
+create procedure eliminarAnalisisCotizacion(@descripcion varchar(255), @tipoAnalisis varchar(100))
+as
+	delete from Analisis where descripcion = @descripcion and tipoAnalisis = @tipoAnalisis
+go
 
-update ContactoCotizacion set ultimoAgregado = 1 where nombreCliente = 'dsadsa' and atencionDe = 'Daniel'
+select tipo from tipoAnalisis
+select * from Analisis
 
-delete from ContactoCotizacion
-delete from ClienteCotizacion
+select descripcion as 'Análisis', metodo as 'Método', concat('$', precio) as 'Precio' from Analisis where tipoAnalisis = 'Aceites y grasas'
+
+select * from Cotizacion

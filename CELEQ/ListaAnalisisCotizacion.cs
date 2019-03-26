@@ -19,9 +19,9 @@ namespace CELEQ
             InitializeComponent();
             bd = new AccesoBaseDatos();
             //Solo permite seleccionar filas en el dgv
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.MultiSelect = false;
-            dgvClientes.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            dgvAnalisis.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnalisis.MultiSelect = false;
+            dgvAnalisis.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
         }
 
         //Pinta la fila completa en el dgv
@@ -41,23 +41,29 @@ namespace CELEQ
             }
             else
             {
-                try
+                if (comboTipoAnalisis.Text != "")
                 {
-                    string agregado = comboTipoAnalisis.Text;
-                    comboTipoAnalisis.DropDownStyle = ComboBoxStyle.DropDownList;
-                    butEliminarTipo.Text = "Eliminar";
-                    butAgregarTipo.Text = "Agregar";
+                    try
+                    {
+                        string agregado = comboTipoAnalisis.Text;
+                        comboTipoAnalisis.DropDownStyle = ComboBoxStyle.DropDownList;
+                        butEliminarTipo.Text = "Eliminar";
+                        butAgregarTipo.Text = "Agregar";
 
-                    bd.ejecutarConsulta("insert into tipoAnalisis values ('" + agregado + "')");
-                    llenarComboBox();
-                    comboTipoAnalisis.SelectedIndex = comboTipoAnalisis.FindStringExact(agregado);
+                        bd.ejecutarConsulta("insert into tipoAnalisis values ('" + agregado + "')");
+                        llenarComboBox();
+                        comboTipoAnalisis.SelectedIndex = comboTipoAnalisis.FindStringExact(agregado);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ha ocurrido un error agregando el tipo de análisis", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Ha ocurrido un error agregando el tipo de análisis", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
+                    MessageBox.Show("Por favor llenar el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
             
         }
@@ -89,6 +95,40 @@ namespace CELEQ
             
         }
 
+        private void llenarDataGridView(string tipo)
+        {
+            DataTable tabla = null;
+
+            try
+            {
+                tabla = bd.ejecutarConsultaTabla("select descripcion as 'Descripción', metodo as 'Método', precio as 'Precio', acreditacion as 'Acreditacion' from Analisis where tipoAnalisis = '" + tipo + "'");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error cargando la tabla.\nError número " + ex.Number, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = tabla;
+            dgvAnalisis.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dgvAnalisis.DataSource = bs;
+            for (int i = 0; i < dgvAnalisis.ColumnCount; ++i)
+            {
+                dgvAnalisis.Columns[i].Width = dgvAnalisis.Width / dgvAnalisis.ColumnCount - 1;
+            }
+
+            if (dgvAnalisis.Rows.Count > 0)
+            {
+                butModificar.Enabled = true;
+                butEliminar.Enabled = true;
+            }
+            else
+            {
+                butModificar.Enabled = false;
+                butEliminar.Enabled = false;
+            }
+              
+        }
 
         private void comboTipoAnalisis_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -110,6 +150,8 @@ namespace CELEQ
                 butAgregar.Enabled = true;
                 butModificar.Enabled = true;
                 butEliminar.Enabled = true;
+
+                llenarDataGridView(comboTipoAnalisis.Text);
             }
         }
 
@@ -155,6 +197,29 @@ namespace CELEQ
             AgregarAnalisisCotizacion agregar = new AgregarAnalisisCotizacion(comboTipoAnalisis.Text);
             agregar.ShowDialog();
             agregar.Dispose();
+            llenarDataGridView(comboTipoAnalisis.Text);
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            AgregarAnalisisCotizacion agregar = new AgregarAnalisisCotizacion(comboTipoAnalisis.Text, dgvAnalisis.SelectedRows[0].Cells[0].Value.ToString());
+            agregar.ShowDialog();
+            agregar.Dispose();
+            llenarDataGridView(comboTipoAnalisis.Text);
+        }
+
+        private void butEliminar_Click(object sender, EventArgs e)
+        {
+            if(bd.eliminarAnalisisCotizacion(dgvAnalisis.SelectedRows[0].Cells[0].Value.ToString(), comboTipoAnalisis.Text) == 0)
+            {
+                MessageBox.Show("Se ha eliminado el análisis de manera correcta", "Análisis", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("No se puede eliminar debido a que este análisis ya se ha utilizado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            llenarDataGridView(comboTipoAnalisis.Text);
         }
     }
 }

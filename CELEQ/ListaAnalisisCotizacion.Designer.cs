@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelUsuarios = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvAnalisis = new System.Windows.Forms.DataGridView();
             this.butModificar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +37,7 @@
             this.butAgregarTipo = new System.Windows.Forms.Button();
             this.butEliminarTipo = new System.Windows.Forms.Button();
             this.butEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnalisis)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsuarios
@@ -51,21 +51,21 @@
             this.labelUsuarios.TabIndex = 5;
             this.labelUsuarios.Text = "Análisis:";
             // 
-            // dgvClientes
+            // dgvAnalisis
             // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AllowUserToResizeColumns = false;
-            this.dgvClientes.AllowUserToResizeRows = false;
-            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(29, 71);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.RowHeadersVisible = false;
-            this.dgvClientes.Size = new System.Drawing.Size(947, 410);
-            this.dgvClientes.TabIndex = 6;
+            this.dgvAnalisis.AllowUserToAddRows = false;
+            this.dgvAnalisis.AllowUserToDeleteRows = false;
+            this.dgvAnalisis.AllowUserToResizeColumns = false;
+            this.dgvAnalisis.AllowUserToResizeRows = false;
+            this.dgvAnalisis.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvAnalisis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnalisis.Location = new System.Drawing.Point(29, 71);
+            this.dgvAnalisis.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAnalisis.Name = "dgvAnalisis";
+            this.dgvAnalisis.ReadOnly = true;
+            this.dgvAnalisis.RowHeadersVisible = false;
+            this.dgvAnalisis.Size = new System.Drawing.Size(947, 410);
+            this.dgvAnalisis.TabIndex = 6;
             // 
             // butModificar
             // 
@@ -76,6 +76,7 @@
             this.butModificar.TabIndex = 20;
             this.butModificar.Text = "Modificar";
             this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
             // 
             // butAgregar
             // 
@@ -136,6 +137,7 @@
             this.butEliminar.TabIndex = 25;
             this.butEliminar.Text = "Eliminar";
             this.butEliminar.UseVisualStyleBackColor = true;
+            this.butEliminar.Click += new System.EventHandler(this.butEliminar_Click);
             // 
             // ListaAnalisisCotizacion
             // 
@@ -150,7 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvAnalisis);
             this.Controls.Add(this.labelUsuarios);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -162,7 +164,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListaAnalisis";
             this.Load += new System.EventHandler(this.ListaAnalisis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnalisis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +173,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelUsuarios;
-        public System.Windows.Forms.DataGridView dgvClientes;
+        public System.Windows.Forms.DataGridView dgvAnalisis;
         private System.Windows.Forms.Button butModificar;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Label label1;
