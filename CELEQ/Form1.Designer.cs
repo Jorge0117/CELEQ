@@ -68,6 +68,7 @@
 			this.preciosParaGirasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.localizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.análisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.feriadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.listaMaestraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.labelBienv = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
 			this.labelCeleq = new System.Windows.Forms.Label();
 			this.pictureCeleq = new System.Windows.Forms.PictureBox();
 			this.pictureUcr = new System.Windows.Forms.PictureBox();
-			this.feriadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -356,7 +356,7 @@
             this.preciosParaGirasToolStripMenuItem,
             this.localizacionesToolStripMenuItem,
             this.análisisToolStripMenuItem,
-            this.feriadosToolStripMenuItem1});
+            this.feriadosToolStripMenuItem});
 			this.vínculoExternoToolStripMenuItem.Name = "vínculoExternoToolStripMenuItem";
 			this.vínculoExternoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
 			this.vínculoExternoToolStripMenuItem.Text = "Vínculo Externo";
@@ -404,6 +404,13 @@
 			this.análisisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.análisisToolStripMenuItem.Text = "Análisis";
 			this.análisisToolStripMenuItem.Click += new System.EventHandler(this.análisisToolStripMenuItem_Click);
+			// 
+			// feriadosToolStripMenuItem
+			// 
+			this.feriadosToolStripMenuItem.Name = "feriadosToolStripMenuItem";
+			this.feriadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.feriadosToolStripMenuItem.Text = "Feriados";
+			this.feriadosToolStripMenuItem.Click += new System.EventHandler(this.feriadosToolStripMenuItem_Click);
 			// 
 			// listaMaestraToolStripMenuItem
 			// 
@@ -487,13 +494,6 @@
 			this.pictureUcr.TabIndex = 6;
 			this.pictureUcr.TabStop = false;
 			// 
-			// feriadosToolStripMenuItem
-			// 
-			this.feriadosToolStripMenuItem1.Name = "feriadosToolStripMenuItem";
-			this.feriadosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.feriadosToolStripMenuItem1.Text = "Feriados";
-			this.feriadosToolStripMenuItem1.Click += new System.EventHandler(this.feriadosToolStripMenuItem_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -575,7 +575,7 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaMaestraToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem;
 	}
 }
 
