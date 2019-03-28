@@ -2083,17 +2083,22 @@ namespace CELEQ
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
                         cmd.Parameters.Add("@fechaEV", SqlDbType.Date).Value = fecha;
 
+						//Valor de retorno
+						cmd.Parameters.Add("@resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                        /*Se abre la conexión*/
-                        con.Open();
+
+						/*Se abre la conexión*/
+						con.Open();
 
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
 
-                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
-                        return error;
+						/*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+						int resultado = Convert.ToInt32(cmd.Parameters["@resultado"].Value);
 
-                    }
+						return resultado;
+
+					}
                     catch (SqlException ex)
                     {
                         /*Se capta el número de error si no se pudo insertar*/

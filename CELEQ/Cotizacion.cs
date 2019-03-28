@@ -104,6 +104,7 @@ namespace CELEQ
             {
                 comboCanton.Items.Add(cantones[0].ToString());
             }
+			butCalcular.Enabled = false;
         }
 
         private void comboCanton_TextChanged(object sender, EventArgs e)
@@ -114,7 +115,8 @@ namespace CELEQ
             {
                 comboLocalidad.Items.Add(localidades[0].ToString());
             }
-        }
+			butCalcular.Enabled = false;
+		}
 
         private void comboCliente_TextChanged(object sender, EventArgs e)
         {
@@ -216,7 +218,7 @@ namespace CELEQ
 
         private void comboLocalidad_TextChanged(object sender, EventArgs e)
         {
-            butCalcular.Enabled = true;
+			butCalcular.Enabled = true;
         }
         private void comboTipoMuestra_TextChanged(object sender, EventArgs e)
         {
@@ -316,5 +318,6 @@ namespace CELEQ
         {
             calcularPrecio();
         }
-    }
+
+	}
 }

@@ -14,13 +14,20 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE actualizarEnListaMaestra(@codigo VARCHAR(100), @versionV VARCHAR(10), @version VARCHAR(10), @nombre VARCHAR(500), @fechaEV DATE)
+CREATE PROCEDURE actualizarEnListaMaestra(@codigo VARCHAR(100), @versionV VARCHAR(10), @version VARCHAR(10), @nombre VARCHAR(500), @fechaEV DATE, @resultado TINYINT OUTPUT)
 AS 
 BEGIN
-	insert into listaMaestra VALUES(@codigo, @version, @nombre, @fechaEV,1)
-	update listaMaestra
-	set masNuevo = 0
-	where codigo = @codigo and ver = @versionV
+	SET @resultado = 0
+	IF NOT EXISTS (SELECT * FROM listaMaestra 
+                   WHERE codigo = @codigo
+                   AND ver = @version)
+	BEGIN
+		insert into listaMaestra VALUES(@codigo, @version, @nombre, @fechaEV,1)
+		update listaMaestra
+		set masNuevo = 0
+		where codigo = @codigo and ver = @versionV
+		SET @resultado = 1
+   END
 END
 GO 
 
