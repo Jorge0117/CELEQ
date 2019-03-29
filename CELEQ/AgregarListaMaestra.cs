@@ -37,6 +37,11 @@ namespace CELEQ
                     textCodigo.Enabled = false;
                     textNombre.Enabled = false;
                 }
+				else
+				{
+					textVersion.Enabled = false;
+					dateTimePickerFecha.Enabled = false;
+				}
             }
         }
 

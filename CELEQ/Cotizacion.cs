@@ -156,29 +156,31 @@ namespace CELEQ
             {
                 comboCliente.Items.Add(clientes[0].ToString());
             }
-            
-            SqlDataReader datos = bd.ejecutarConsulta("select C.telefono, C.telefono2, C.correo, C.fax, C.direccion from ClienteCotizacion C where nombre = '" + cliente + "'");
-            SqlDataReader atencion = bd.ejecutarConsulta("select atencionDe, ultimoAgregado from contactoCotizacion where nombreCliente = '" + cliente + "'");
-            while (atencion.Read())
-            {
-                comboAtencion.Items.Add(atencion[0].ToString());
-                if (atencion[1].ToString() == "True")
-                {
-                    comboAtencion.SelectedIndex = comboAtencion.FindStringExact(atencion[0].ToString());
-                }
-            }
-            datos.Read();
-            comboCliente.SelectedIndex = comboCliente.FindStringExact(cliente);
-            textTelefono1.Text = datos[0].ToString();
-            textTelefono1.Enabled = false;
-            textTelefono2.Text = datos[1].ToString();
-            textTelefono2.Enabled = false;
-            textCorreo.Text = datos[2].ToString();
-            textCorreo.Enabled = false;
-            textFax.Text = datos[3].ToString();
-            textFax.Enabled = false;
-            textDireccion.Text = datos[4].ToString();
-            textDireccion.Enabled = false;
+			if (a.cancelar == false)
+			{
+				SqlDataReader datos = bd.ejecutarConsulta("select C.telefono, C.telefono2, C.correo, C.fax, C.direccion from ClienteCotizacion C where nombre = '" + cliente + "'");
+				SqlDataReader atencion = bd.ejecutarConsulta("select atencionDe, ultimoAgregado from contactoCotizacion where nombreCliente = '" + cliente + "'");
+				while (atencion.Read())
+				{
+					comboAtencion.Items.Add(atencion[0].ToString());
+					if (atencion[1].ToString() == "True")
+					{
+						comboAtencion.SelectedIndex = comboAtencion.FindStringExact(atencion[0].ToString());
+					}
+				}
+				datos.Read();
+				comboCliente.SelectedIndex = comboCliente.FindStringExact(cliente);
+				textTelefono1.Text = datos[0].ToString();
+				textTelefono1.Enabled = false;
+				textTelefono2.Text = datos[1].ToString();
+				textTelefono2.Enabled = false;
+				textCorreo.Text = datos[2].ToString();
+				textCorreo.Enabled = false;
+				textFax.Text = datos[3].ToString();
+				textFax.Enabled = false;
+				textDireccion.Text = datos[4].ToString();
+				textDireccion.Enabled = false;
+			}
         }
 
         

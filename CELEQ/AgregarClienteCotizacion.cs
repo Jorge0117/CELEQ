@@ -16,12 +16,15 @@ namespace CELEQ
     {
         AccesoBaseDatos bd;
         string nombreCliente;
+		public bool cancelar;
         public AgregarClienteCotizacion(string cliente = null)
         {
             InitializeComponent();
             nombreCliente = cliente;
             bd = new AccesoBaseDatos();
-        }
+			cancelar = false;
+
+		}
 
         private void butAgregarEncargado_Click(object sender, EventArgs e)
         {
@@ -127,6 +130,7 @@ namespace CELEQ
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+			cancelar = true;
         }
     }
 }
