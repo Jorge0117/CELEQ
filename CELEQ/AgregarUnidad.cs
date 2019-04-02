@@ -52,8 +52,7 @@ namespace CELEQ
             }
             else
             {
-                nombre = comboEncargado.Text.Split(' ');
-                nombreUsuario = bd.ejecutarConsulta("SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = '" + nombre[0] + "' AND U.apellido1 ='" + nombre[1] + "' AND U.apellido2 ='" + nombre[2] + "' AND categoria != 'Estudiante'");
+                nombreUsuario = bd.ejecutarConsulta("SELECT nombreUsuario FROM Usuarios U WHERE CONCAT(U.nombre, ' ', U.apellido1, ' ', U.apellido2) = '" + comboEncargado.Text + "' AND categoria != 'Estudiante'");
                 nombreUsuario.Read();
                 int error;
                 if (dgvRow == null)
