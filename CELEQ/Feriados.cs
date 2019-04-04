@@ -34,6 +34,14 @@ namespace CELEQ
         private void Feriados_Load(object sender, EventArgs e)
         {
             llenarTabla();
+
+            SqlDataReader semanaSanta = bd.ejecutarConsulta("select fechaInicio, fechaFinal from feriados where descripcion = 'Semana Santa'");
+            if (semanaSanta.Read())
+            {
+
+                textInicio.Text = DateTime.Parse(semanaSanta[0].ToString()).ToShortDateString();
+                textFin.Text = DateTime.Parse(semanaSanta[1].ToString()).ToShortDateString();
+            }
         }
 
         private void llenarTabla()
@@ -105,5 +113,72 @@ namespace CELEQ
             llenarTabla();
         }
 
+        void calcularSemanaSanta(int ano)
+        {
+            if (ano < 1900 || ano > 2100)
+            {
+                MessageBox.Show("No se puede calcular semana santa en el año actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int a, b, c, d, e, m, n, dia, mes;
+                m = 24;
+                n = 5;
+                a = ano % 19;
+                b = ano % 4;
+                c = ano % 7;
+                d = (19 * a + m) % 30;
+                e = (2 * b + 4 * c + 6 * d + n) % 7;
+
+                if (d + e < 10)
+                {
+                    mes = 3;
+                    dia = d + e + 22;
+                }
+                else
+                {
+                    mes = 4;
+                    dia = d + e - 9;
+                }
+
+                if (dia == 26 && mes == 4)
+                {
+                    dia = 19;
+                }
+                else if (dia == 25 && mes == 4 && d == 28 && e == 6 && a > 10)
+                {
+                    dia = 18;
+                }
+                /*
+                Console.WriteLine(mes);
+                Console.WriteLine(dia);
+                */
+                DateTime fin = new DateTime(ano, mes, dia);
+                DateTime inicio = fin.AddDays(-7);
+
+                SqlDataReader semanaSanta = bd.ejecutarConsulta("select id from feriados where descripcion = 'Semana Santa'");
+                if (semanaSanta.Read())
+                {
+
+                    bd.eliminarFeriado(Convert.ToInt32(semanaSanta[0].ToString()));
+                }
+
+                if (bd.agregarFeriado("Semana Santa", inicio.ToShortDateString(), fin.ToShortDateString()) != 0)
+                {
+                    MessageBox.Show("Error al agregar semana santa", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    textInicio.Text = inicio.ToShortDateString();
+                    textFin.Text = fin.ToShortDateString();
+                }
+
+            }
+        }
+
+        private void butCalcular_Click(object sender, EventArgs e)
+        {
+            calcularSemanaSanta(DateTime.Now.Year);
+        }
     }
 }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkColon = new System.Windows.Forms.CheckBox();
-            this.checkDolar = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textCotizador = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
@@ -73,6 +70,7 @@
             this.butAnalisis = new System.Windows.Forms.Button();
             this.dgvAnalisis = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkGira = new System.Windows.Forms.CheckBox();
             this.comboLocalidad = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.textTotalGira = new System.Windows.Forms.TextBox();
@@ -146,9 +144,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkColon);
-            this.groupBox1.Controls.Add(this.checkDolar);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textCotizador);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimeFecha);
@@ -161,42 +156,9 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // checkColon
-            // 
-            this.checkColon.AutoSize = true;
-            this.checkColon.Location = new System.Drawing.Point(992, 16);
-            this.checkColon.Margin = new System.Windows.Forms.Padding(4);
-            this.checkColon.Name = "checkColon";
-            this.checkColon.Size = new System.Drawing.Size(36, 20);
-            this.checkColon.TabIndex = 6;
-            this.checkColon.Text = "₡";
-            this.checkColon.UseVisualStyleBackColor = true;
-            // 
-            // checkDolar
-            // 
-            this.checkDolar.AutoSize = true;
-            this.checkDolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDolar.Location = new System.Drawing.Point(939, 14);
-            this.checkDolar.Margin = new System.Windows.Forms.Padding(4);
-            this.checkDolar.Name = "checkDolar";
-            this.checkDolar.Size = new System.Drawing.Size(34, 20);
-            this.checkDolar.TabIndex = 5;
-            this.checkDolar.Text = "$";
-            this.checkDolar.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(867, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Moneda:";
-            // 
             // textCotizador
             // 
-            this.textCotizador.Location = new System.Drawing.Point(435, 14);
+            this.textCotizador.Location = new System.Drawing.Point(382, 14);
             this.textCotizador.Margin = new System.Windows.Forms.Padding(4);
             this.textCotizador.Name = "textCotizador";
             this.textCotizador.ReadOnly = true;
@@ -206,7 +168,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(355, 17);
+            this.label2.Location = new System.Drawing.Point(302, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 16);
@@ -216,7 +178,7 @@
             // dateTimeFecha
             // 
             this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeFecha.Location = new System.Drawing.Point(168, 14);
+            this.dateTimeFecha.Location = new System.Drawing.Point(141, 15);
             this.dateTimeFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(143, 22);
@@ -225,7 +187,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 16);
+            this.label1.Location = new System.Drawing.Point(9, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 16);
@@ -636,6 +598,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.checkGira);
             this.groupBox6.Controls.Add(this.comboLocalidad);
             this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.textTotalGira);
@@ -660,23 +623,32 @@
             this.groupBox6.Size = new System.Drawing.Size(507, 222);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Cálculo de costos operativos de giras";
+            // 
+            // checkGira
+            // 
+            this.checkGira.AutoSize = true;
+            this.checkGira.Location = new System.Drawing.Point(23, 17);
+            this.checkGira.Name = "checkGira";
+            this.checkGira.Size = new System.Drawing.Size(109, 20);
+            this.checkGira.TabIndex = 39;
+            this.checkGira.Text = "Requiere gira";
+            this.checkGira.UseVisualStyleBackColor = true;
+            this.checkGira.CheckedChanged += new System.EventHandler(this.checkGira_CheckedChanged);
             // 
             // comboLocalidad
             // 
             this.comboLocalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLocalidad.FormattingEnabled = true;
-            this.comboLocalidad.Location = new System.Drawing.Point(203, 151);
+            this.comboLocalidad.Location = new System.Drawing.Point(203, 157);
             this.comboLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
             this.comboLocalidad.TabIndex = 36;
-            this.comboLocalidad.TextChanged += new System.EventHandler(this.comboLocalidad_TextChanged);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(20, 88);
+            this.label35.Location = new System.Drawing.Point(20, 98);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(133, 16);
@@ -685,7 +657,7 @@
             // 
             // textTotalGira
             // 
-            this.textTotalGira.Location = new System.Drawing.Point(395, 184);
+            this.textTotalGira.Location = new System.Drawing.Point(395, 188);
             this.textTotalGira.Margin = new System.Windows.Forms.Padding(4);
             this.textTotalGira.Name = "textTotalGira";
             this.textTotalGira.Size = new System.Drawing.Size(92, 22);
@@ -693,7 +665,7 @@
             // 
             // butCalcular
             // 
-            this.butCalcular.Location = new System.Drawing.Point(249, 181);
+            this.butCalcular.Location = new System.Drawing.Point(249, 185);
             this.butCalcular.Margin = new System.Windows.Forms.Padding(4);
             this.butCalcular.Name = "butCalcular";
             this.butCalcular.Size = new System.Drawing.Size(115, 28);
@@ -705,7 +677,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(372, 187);
+            this.label22.Location = new System.Drawing.Point(372, 191);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(15, 16);
@@ -716,7 +688,7 @@
             // 
             this.comboCanton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCanton.FormattingEnabled = true;
-            this.comboCanton.Location = new System.Drawing.Point(203, 118);
+            this.comboCanton.Location = new System.Drawing.Point(203, 126);
             this.comboCanton.Margin = new System.Windows.Forms.Padding(4);
             this.comboCanton.Name = "comboCanton";
             this.comboCanton.Size = new System.Drawing.Size(283, 24);
@@ -727,7 +699,7 @@
             // 
             this.comboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProvincia.FormattingEnabled = true;
-            this.comboProvincia.Location = new System.Drawing.Point(203, 85);
+            this.comboProvincia.Location = new System.Drawing.Point(203, 95);
             this.comboProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboProvincia.Name = "comboProvincia";
             this.comboProvincia.Size = new System.Drawing.Size(283, 24);
@@ -737,7 +709,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(20, 154);
+            this.label21.Location = new System.Drawing.Point(20, 160);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(137, 16);
@@ -747,7 +719,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 121);
+            this.label20.Location = new System.Drawing.Point(20, 129);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(119, 16);
@@ -756,7 +728,7 @@
             // 
             // numHoras
             // 
-            this.numHoras.Location = new System.Drawing.Point(435, 23);
+            this.numHoras.Location = new System.Drawing.Point(435, 39);
             this.numHoras.Margin = new System.Windows.Forms.Padding(4);
             this.numHoras.Name = "numHoras";
             this.numHoras.Size = new System.Drawing.Size(52, 22);
@@ -764,7 +736,7 @@
             // 
             // numNoches
             // 
-            this.numNoches.Location = new System.Drawing.Point(435, 54);
+            this.numNoches.Location = new System.Drawing.Point(435, 68);
             this.numNoches.Margin = new System.Windows.Forms.Padding(4);
             this.numNoches.Name = "numNoches";
             this.numNoches.Size = new System.Drawing.Size(52, 22);
@@ -773,7 +745,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(277, 56);
+            this.label19.Location = new System.Drawing.Point(277, 70);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(150, 16);
@@ -783,7 +755,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(277, 25);
+            this.label18.Location = new System.Drawing.Point(277, 41);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(126, 16);
@@ -792,7 +764,7 @@
             // 
             // numTecnicos
             // 
-            this.numTecnicos.Location = new System.Drawing.Point(203, 54);
+            this.numTecnicos.Location = new System.Drawing.Point(203, 68);
             this.numTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.numTecnicos.Name = "numTecnicos";
             this.numTecnicos.Size = new System.Drawing.Size(52, 22);
@@ -801,7 +773,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 56);
+            this.label17.Location = new System.Drawing.Point(20, 70);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(137, 16);
@@ -810,7 +782,7 @@
             // 
             // numProfesionales
             // 
-            this.numProfesionales.Location = new System.Drawing.Point(203, 23);
+            this.numProfesionales.Location = new System.Drawing.Point(203, 39);
             this.numProfesionales.Margin = new System.Windows.Forms.Padding(4);
             this.numProfesionales.Name = "numProfesionales";
             this.numProfesionales.Size = new System.Drawing.Size(52, 22);
@@ -819,7 +791,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(20, 25);
+            this.label16.Location = new System.Drawing.Point(20, 41);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(169, 16);
@@ -1197,7 +1169,7 @@
             this.Name = "Cotizacion";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cotizacion";
+            this.Text = "Cotización";
             this.Load += new System.EventHandler(this.Cotizacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1234,9 +1206,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkColon;
-        private System.Windows.Forms.CheckBox checkDolar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textCotizador;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
@@ -1327,5 +1296,6 @@
         private System.Windows.Forms.TextBox textSubtotal;
         private System.Windows.Forms.TextBox textPrecioMuestreo;
         private System.Windows.Forms.TextBox textPrecioUnitario;
+        private System.Windows.Forms.CheckBox checkGira;
     }
 }

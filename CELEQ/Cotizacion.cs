@@ -43,6 +43,13 @@ namespace CELEQ
         {
             try
             {
+                SqlDataReader cotizador = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario ='" + Globals.usuario + "'");
+                cotizador.Read();
+
+                comboUnidad.Items.Add("ml");
+                comboUnidad.Items.Add("g");
+
+                textCotizador.Text = cotizador[0].ToString();
                 SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
                 while (provincias.Read())
                 {
@@ -86,13 +93,23 @@ namespace CELEQ
                 textDescuento.Text = "0";
                 textGastos.Text = "0";
                 textTotal.Text = "0";
+
+                textTotalGira.Enabled = false;
+                numProfesionales.Enabled = false;
+                numHoras.Enabled = false;
+                numTecnicos.Enabled = false;
+                numNoches.Enabled = false;
+                comboProvincia.Enabled = false;
+                comboCanton.Enabled = false;
+                comboLocalidad.Enabled = false;
+                butCalcular.Enabled = false;
             }
             catch
             {
                 MessageBox.Show("Ha ocurrido un error al cargar la cotizacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
             }
-            textTotalGira.Enabled = false;
-            butCalcular.Enabled = false;
+            
         }
 
         private void comboProvincia_TextChanged(object sender, EventArgs e)
@@ -183,41 +200,47 @@ namespace CELEQ
 
         private void butCalcular_Click(object sender, EventArgs e)
         {
-            SqlDataReader local = bd.ejecutarConsulta("select distancia, hospedaje from Localizaciones where provincia = '" + comboProvincia.Text + "' and canton = '" +
-            comboCanton.Text + "' and localidad = '" + comboLocalidad.Text + "'");
-            local.Read();
-            float distancia = float.Parse(local[0].ToString());
-            float hospedaje = float.Parse(local[1].ToString());
-
-            SqlDataReader gira = bd.ejecutarConsulta("select valorKilometro, valorTecnico, valorProfesional from precioGiras");
-            gira.Read();
-            float precioK = float.Parse(gira[0].ToString());
-            float precioTecnico = float.Parse(gira[1].ToString());
-            float precioProfesional = float.Parse(gira[2].ToString());
-
-            float horasViaje = (((distancia * 2) / 80) * float.Parse("1,25"));
-            float profesional = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioProfesional * float.Parse(numProfesionales.Value.ToString());
-            float tecnico = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioTecnico * float.Parse(numTecnicos.Value.ToString());
-
-            //Se obtiene el valor de compra del dolar del banco central
-            //CODIGOS:
-            //Compra dolar = 317, Venta dolar = 318
-            //Libra = 330
-            //Euro = 333
-            bool connection = NetworkInterface.GetIsNetworkAvailable();
-            if (connection == true)
+            if (comboProvincia.Text == "" || comboCanton.Text == "" || comboLocalidad.Text == "")
             {
-                banco.wsIndicadoresEconomicos cliente = new banco.wsIndicadoresEconomicos();
-                DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"), "Daniel Chavarría", "N");
-                dolar = float.Parse(tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
+                MessageBox.Show("Por favor llene los campos necesarios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
+            else
+            {
+                SqlDataReader local = bd.ejecutarConsulta("select distancia, hospedaje from Localizaciones where provincia = '" + comboProvincia.Text + "' and canton = '" +
+                comboCanton.Text + "' and localidad = '" + comboLocalidad.Text + "'");
+                local.Read();
+                float distancia = float.Parse(local[0].ToString());
+                float hospedaje = float.Parse(local[1].ToString());
+
+                SqlDataReader gira = bd.ejecutarConsulta("select valorKilometro, valorTecnico, valorProfesional from precioGiras");
+                gira.Read();
+                float precioK = float.Parse(gira[0].ToString());
+                float precioTecnico = float.Parse(gira[1].ToString());
+                float precioProfesional = float.Parse(gira[2].ToString());
+
+                float horasViaje = (((distancia * 2) / 80) * float.Parse("1,25"));
+                float profesional = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioProfesional * float.Parse(numProfesionales.Value.ToString());
+                float tecnico = (float.Parse(numHoras.Value.ToString()) + horasViaje) * precioTecnico * float.Parse(numTecnicos.Value.ToString());
+
+                //Se obtiene el valor de compra del dolar del banco central
+                //CODIGOS:
+                //Compra dolar = 317, Venta dolar = 318
+                //Libra = 330
+                //Euro = 333
+                bool connection = NetworkInterface.GetIsNetworkAvailable();
+                if (connection == true)
+                {
+                    banco.wsIndicadoresEconomicos cliente = new banco.wsIndicadoresEconomicos();
+                    DataSet tipoCambio = cliente.ObtenerIndicadoresEconomicos("317", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"), "Daniel Chavarría", "N");
+                    dolar = float.Parse(tipoCambio.Tables[0].Rows[0].ItemArray[2].ToString());
+                }
+                textTotalGira.Text = ((distancia * 2 * precioK) + profesional + tecnico + ((hospedaje * float.Parse(numNoches.Value.ToString())) / dolar)).ToString();
+
+                textPrecioMuestreo.Text = textTotalGira.Text;
+                calcularPrecio();
+            }
         }
 
-        private void comboLocalidad_TextChanged(object sender, EventArgs e)
-        {
-            butCalcular.Enabled = true;
-        }
         private void comboTipoMuestra_TextChanged(object sender, EventArgs e)
         {
             textMuestra.Enabled = true;
@@ -316,5 +339,47 @@ namespace CELEQ
         {
             calcularPrecio();
         }
+
+        private void checkGira_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkGira.Checked == true)
+            {
+                textTotalGira.Enabled = true;
+                numProfesionales.Enabled = true;
+                numHoras.Enabled = true;
+                numTecnicos.Enabled = true;
+                numNoches.Enabled = true;
+                comboProvincia.Enabled = true;
+                comboCanton.Enabled = true;
+                comboLocalidad.Enabled = true;
+                butCalcular.Enabled = true;
+            }
+            else
+            {
+                textTotalGira.Enabled = false;
+                numProfesionales.Enabled = false;
+                numHoras.Enabled = false;
+                numTecnicos.Enabled = false;
+                numNoches.Enabled = false;
+                comboProvincia.Enabled = false;
+                comboCanton.Enabled = false;
+                comboLocalidad.Enabled = false;
+                butCalcular.Enabled = false;
+
+                textTotalGira.Text = "";
+                numProfesionales.Value = 0;
+                numHoras.Value = 0;
+                numTecnicos.Value = 0;
+                numNoches.Value = 0;
+                comboProvincia.SelectedIndex = -1;
+                comboCanton.SelectedIndex = -1;
+                comboLocalidad.SelectedIndex = -1;
+
+                textPrecioMuestreo.Text = "0";
+                calcularPrecio();
+            }
+            
+        }
+
     }
 }
