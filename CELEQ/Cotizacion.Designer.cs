@@ -411,14 +411,21 @@
             this.comboUnidad.Name = "comboUnidad";
             this.comboUnidad.Size = new System.Drawing.Size(71, 24);
             this.comboUnidad.TabIndex = 22;
+            this.comboUnidad.SelectedIndexChanged += new System.EventHandler(this.comboUnidad_SelectedIndexChanged);
             // 
             // numericCantidad
             // 
             this.numericCantidad.Location = new System.Drawing.Point(1216, 17);
             this.numericCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.numericCantidad.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericCantidad.Name = "numericCantidad";
             this.numericCantidad.Size = new System.Drawing.Size(52, 22);
             this.numericCantidad.TabIndex = 21;
+            this.numericCantidad.ValueChanged += new System.EventHandler(this.numericCantidad_ValueChanged);
             // 
             // label15
             // 
@@ -447,6 +454,7 @@
             this.numericDias.Name = "numericDias";
             this.numericDias.Size = new System.Drawing.Size(52, 22);
             this.numericDias.TabIndex = 18;
+            this.numericDias.ValueChanged += new System.EventHandler(this.numericDias_ValueChanged);
             // 
             // label13
             // 
@@ -465,6 +473,7 @@
             this.numericMuestras.Name = "numericMuestras";
             this.numericMuestras.Size = new System.Drawing.Size(52, 22);
             this.numericMuestras.TabIndex = 16;
+            this.numericMuestras.ValueChanged += new System.EventHandler(this.numericMuestras_ValueChanged);
             // 
             // label12
             // 
@@ -483,6 +492,7 @@
             this.textMuestra.Name = "textMuestra";
             this.textMuestra.Size = new System.Drawing.Size(139, 22);
             this.textMuestra.TabIndex = 13;
+            this.textMuestra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textMuestra_KeyUp);
             // 
             // label11
             // 

@@ -46,6 +46,8 @@
             this.textApellido2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textApellido1 = new System.Windows.Forms.TextBox();
+            this.puesto = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 37);
+            this.label1.Location = new System.Drawing.Point(188, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 16);
@@ -85,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(192, 88);
+            this.label4.Location = new System.Drawing.Point(192, 80);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 16);
@@ -95,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(192, 141);
+            this.label5.Location = new System.Drawing.Point(192, 133);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 16);
@@ -104,7 +106,7 @@
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(355, 34);
+            this.textUsuario.Location = new System.Drawing.Point(355, 26);
             this.textUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(466, 22);
@@ -112,7 +114,7 @@
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(355, 85);
+            this.textCorreo.Location = new System.Drawing.Point(355, 77);
             this.textCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(466, 22);
@@ -122,7 +124,7 @@
             // 
             this.cbPermisos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPermisos.FormattingEnabled = true;
-            this.cbPermisos.Location = new System.Drawing.Point(355, 138);
+            this.cbPermisos.Location = new System.Drawing.Point(355, 130);
             this.cbPermisos.Margin = new System.Windows.Forms.Padding(4);
             this.cbPermisos.Name = "cbPermisos";
             this.cbPermisos.Size = new System.Drawing.Size(466, 24);
@@ -140,13 +142,15 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1008, 197);
+            this.groupBox1.Size = new System.Drawing.Size(1008, 181);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la cuenta";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.puesto);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.comboUnidad);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textNombre);
@@ -155,11 +159,11 @@
             this.groupBox2.Controls.Add(this.textApellido2);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textApellido1);
-            this.groupBox2.Location = new System.Drawing.Point(39, 221);
+            this.groupBox2.Location = new System.Drawing.Point(39, 205);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1008, 308);
+            this.groupBox2.Size = new System.Drawing.Size(1008, 324);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos personales";
@@ -168,7 +172,7 @@
             // 
             this.comboUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboUnidad.FormattingEnabled = true;
-            this.comboUnidad.Location = new System.Drawing.Point(355, 57);
+            this.comboUnidad.Location = new System.Drawing.Point(355, 33);
             this.comboUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.comboUnidad.Name = "comboUnidad";
             this.comboUnidad.Size = new System.Drawing.Size(466, 24);
@@ -177,7 +181,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(188, 60);
+            this.label9.Location = new System.Drawing.Point(188, 36);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(134, 16);
@@ -186,7 +190,7 @@
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(355, 119);
+            this.textNombre.Location = new System.Drawing.Point(355, 145);
             this.textNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(466, 22);
@@ -196,7 +200,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(188, 122);
+            this.label6.Location = new System.Drawing.Point(188, 148);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 16);
@@ -206,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(188, 177);
+            this.label7.Location = new System.Drawing.Point(188, 202);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 16);
@@ -215,7 +219,7 @@
             // 
             // textApellido2
             // 
-            this.textApellido2.Location = new System.Drawing.Point(355, 229);
+            this.textApellido2.Location = new System.Drawing.Point(355, 253);
             this.textApellido2.Margin = new System.Windows.Forms.Padding(4);
             this.textApellido2.Name = "textApellido2";
             this.textApellido2.Size = new System.Drawing.Size(466, 22);
@@ -224,7 +228,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(188, 232);
+            this.label8.Location = new System.Drawing.Point(188, 256);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 16);
@@ -233,11 +237,31 @@
             // 
             // textApellido1
             // 
-            this.textApellido1.Location = new System.Drawing.Point(355, 174);
+            this.textApellido1.Location = new System.Drawing.Point(355, 199);
             this.textApellido1.Margin = new System.Windows.Forms.Padding(4);
             this.textApellido1.Name = "textApellido1";
             this.textApellido1.Size = new System.Drawing.Size(466, 22);
             this.textApellido1.TabIndex = 23;
+            // 
+            // puesto
+            // 
+            this.puesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.puesto.FormattingEnabled = true;
+            this.puesto.Location = new System.Drawing.Point(355, 89);
+            this.puesto.Margin = new System.Windows.Forms.Padding(4);
+            this.puesto.Name = "puesto";
+            this.puesto.Size = new System.Drawing.Size(466, 24);
+            this.puesto.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(188, 92);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Puesto:";
             // 
             // AgregarUsuario
             // 
@@ -285,5 +309,7 @@
         private System.Windows.Forms.TextBox textApellido1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboUnidad;
+        private System.Windows.Forms.ComboBox puesto;
+        private System.Windows.Forms.Label label2;
     }
 }

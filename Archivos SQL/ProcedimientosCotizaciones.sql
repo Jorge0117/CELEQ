@@ -60,3 +60,59 @@ select * from Analisis
 select descripcion as 'Análisis', metodo as 'Método', concat('$', precio) as 'Precio' from Analisis where tipoAnalisis = 'Aceites y grasas'
 
 select * from Cotizacion
+
+
+
+go
+create trigger consecutivoCotizacion
+on Cotizacion
+instead of Insert
+AS
+
+declare @id int
+declare @anno int
+declare @licitacion bit
+declare @observaciones varchar(600)
+declare @precioMuestreo float
+declare @descuento float
+declare @gastosAdm float
+declare @fechaLimite date
+declare @fechaSolicitud date
+declare @fechaRespuesta date
+declare @saldoAfavor float
+declare @granTotal float
+declare @moneda char(1)
+declare @cotizador nvarchar(50)
+declare @cliente varchar(255)
+declare @precioMuestra float
+declare @diasEntregaRes int
+
+select @anno = anno from inserted
+
+select @licitacion = licitacion from inserted
+select @observaciones = observaciones from inserted
+select @precioMuestreo = precioMuestreo from inserted
+select @descuento = descuento from inserted
+select @gastosAdm = gastosAdm from inserted
+select @fechaLimite = fechaLimite from inserted
+select @fechaSolicitud = fechaSolicitud from inserted
+select @fechaRespuesta = fechaRespuesta from inserted
+select @saldoAfavor = saldoAfavor from inserted
+select @granTotal  = granTotal  from inserted
+select @moneda = moneda from inserted
+select @cotizador  = cotizador  from inserted
+select @cliente  = cliente  from inserted
+select @precioMuestra  = precioMuestra  from inserted
+select @diasEntregaRes = diasEntregaRes from inserted
+
+if not exists (select id, anno from Cotizacion where anno = @anno)
+	set @id = 1
+else
+	select @id =  max(id)+1 from Cotizacion where anno = @anno
+
+insert into Cotizacion values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
+@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes)
+
+go
+
+insert into Cotizacion values(0, 2019, 0, 'hola', 50, 7, 15, '2019-01-05', '2019-01-01', '2019-01-05', 0, 500, 'd', 'jorge', '5utrsutrs', 43, 4)

@@ -43,6 +43,7 @@ namespace CELEQ
         {
             try
             {
+                textConsecutivo.Text = ("####-####");
                 SqlDataReader cotizador = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario ='" + Globals.usuario + "'");
                 cotizador.Read();
 
@@ -381,5 +382,52 @@ namespace CELEQ
             
         }
 
+        private void generarObservaciones()
+        {
+            if(textMuestra.Text != "" && numericMuestras.Value > 0 && numericCantidad.Value > 0 && comboUnidad.Text != "")
+            {
+                string observaciones = "";
+                if(numericMuestras.Value == 1)
+                {
+                    observaciones += "Esta cotización corresponde a una muestra de " + textMuestra.Text + "." + Environment.NewLine;
+                }
+                else
+                {
+                    observaciones += "Esta cotización corresponde a " + numericMuestras.Value.ToString() + " muestras de " + textMuestra.Text + "." + Environment.NewLine;
+                }
+                
+                observaciones += "Para los ensayos se requiere al menos " + numericCantidad.Value.ToString() + comboUnidad.Text + " de muestra." + Environment.NewLine;
+                observaciones += "La fecha de entrega de resultados puede variar en función de la fecha de recepción de las muestras y del volumen " +
+                    "de trabajo que en ese momento se tenga." + Environment.NewLine;
+
+                textObservaciones.Text = observaciones;
+
+            }
+        }
+
+        private void textMuestra_KeyUp(object sender, KeyEventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericMuestras_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericDias_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void comboUnidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
     }
 }
