@@ -306,9 +306,16 @@ namespace CELEQ
 			f.ShowDialog();
 			f.Dispose();
 		}
-	}
 
-	public static class Globals
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaPuestos puestos = new ListaPuestos(false);
+            puestos.ShowDialog();
+            puestos.Dispose();
+        }
+    }
+
+    public static class Globals
     {
         public static string usuario;
         public static string correo;

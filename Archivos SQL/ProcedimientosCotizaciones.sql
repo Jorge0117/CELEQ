@@ -115,4 +115,21 @@ insert into Cotizacion values(@id, @anno, @licitacion, @observaciones, @precioMu
 
 go
 
-insert into Cotizacion values(0, 2019, 0, 'hola', 50, 7, 15, '2019-01-05', '2019-01-01', '2019-01-05', 0, 500, 'd', 'jorge', '5utrsutrs', 43, 4)
+delete from CotizacionAnalisis
+delete from Cotizacion
+select * from Cotizacion order by anno, id
+insert into Cotizacion values(0, 2021, 0, 'hola', 50, 7, 15, '2019-01-05', '2019-01-01', '2019-01-05', 0, 500, 'd', 'jorge', '5utrsutrs', 43, 4)
+
+select * from ClienteCotizacion
+insert into ContactoCotizacion values('5utrsutrs', 'Jorge', 1)
+insert into ContactoCotizacion values('ewdew', 'Jorge', 1) 
+insert into ContactoCotizacion values('jajajajaja', 'Jorge', 1) 
+insert into ContactoCotizacion values('lol', 'Jorge', 1) 
+insert into ContactoCotizacion values('thicc', 'Jorge', 1) 
+insert into ContactoCotizacion values('xipaom', 'Jorge', 1) 
+select * from ContactoCotizacion
+delete from ClienteCotizacion
+
+select * from puestos
+
+insert into puestos values('Técnico')

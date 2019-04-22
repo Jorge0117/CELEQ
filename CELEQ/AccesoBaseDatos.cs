@@ -240,6 +240,40 @@ namespace CELEQ
 
         }
 
+        public int agregarPuestoUsuario(string usuario, string puesto)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarPuestoUsuario", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@puesto", SqlDbType.VarChar).Value = puesto;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                    }
+                    return error;
+                }
+            }
+        }
+
         public string getCorreo(string usuario)
         {
             SqlDataReader correo = ejecutarConsulta("select correo from Usuarios where nombreUsuario = '" + usuario + "'");
@@ -261,7 +295,7 @@ namespace CELEQ
             return unidad[0].ToString();
         }
 
-        public int modificarUsuario(string usuario, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
+        public int modificarUsuario(string usuario, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2, List<string> puestos)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -289,6 +323,14 @@ namespace CELEQ
 
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
+
+                        //Se borran los puestos anteriores
+                        ejecutarConsulta("delete from puestosUsuarios where nombreUsuario ='" + usuario + "'");
+
+                        foreach (string puesto in puestos)
+                        {
+                            agregarPuestoUsuario(usuario, puesto);
+                        }
 
                     }
                     catch (SqlException ex)
