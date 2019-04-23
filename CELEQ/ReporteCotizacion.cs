@@ -19,6 +19,9 @@ namespace CELEQ
 
         private void ReporteCotizacion_Load(object sender, EventArgs e)
         {
+            this.vistaAnalisisTableAdapter.FillBy(this.CotizacionDataSet.vistaAnalisis, 1, 2019);
+
+            this.vistaCotizacionTableAdapter.FillBy(this.CotizacionDataSet.vistaCotizacion, 1, 2019);
 
             this.reportViewer1.RefreshReport();
         }

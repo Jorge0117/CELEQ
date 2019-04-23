@@ -151,6 +151,11 @@
     <Compile Include="Cotizacion.Designer.cs">
       <DependentUpon>Cotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CotizacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatosSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +525,17 @@
     <EmbeddedResource Include="PreciosGiras.resx">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CotizacionDataSet.xsc">
+      <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CotizacionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CotizacionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CotizacionDataSet.xss">
+      <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RepDesignacionesResponsable.datasource" />
     <None Include="Properties\Settings.settings">

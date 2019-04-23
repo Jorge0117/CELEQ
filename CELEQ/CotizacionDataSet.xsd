@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CotizacionDataSet" targetNamespace="http://tempuri.org/CotizacionDataSet.xsd" xmlns:mstns="http://tempuri.org/CotizacionDataSet.xsd" xmlns="http://tempuri.org/CotizacionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CELEQConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CELEQConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CELEQ.Properties.Settings.GlobalReference.Default.CELEQConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vistaCotizacionTableAdapter" GeneratorDataComponentClassName="vistaCotizacionTableAdapter" Name="vistaCotizacion" UserDataComponentName="vistaCotizacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CELEQConnectionString (Settings)" DbObjectName="CELEQ.dbo.vistaCotizacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id, anno, precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEntregaRes, granTotal, observaciones FROM dbo.vistaCotizacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="telefono2" DataSetColumn="telefono2" />
+              <Mapping SourceColumn="correo" DataSetColumn="correo" />
+              <Mapping SourceColumn="atencionDe" DataSetColumn="atencionDe" />
+              <Mapping SourceColumn="numeroMuestras" DataSetColumn="numeroMuestras" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="anno" DataSetColumn="anno" />
+              <Mapping SourceColumn="precioMuestreo" DataSetColumn="precioMuestreo" />
+              <Mapping SourceColumn="precioMuestra" DataSetColumn="precioMuestra" />
+              <Mapping SourceColumn="descuento" DataSetColumn="descuento" />
+              <Mapping SourceColumn="gastosAdm" DataSetColumn="gastosAdm" />
+              <Mapping SourceColumn="saldoAfavor" DataSetColumn="saldoAfavor" />
+              <Mapping SourceColumn="diasEntregaRes" DataSetColumn="diasEntregaRes" />
+              <Mapping SourceColumn="granTotal" DataSetColumn="granTotal" />
+              <Mapping SourceColumn="observaciones" DataSetColumn="observaciones" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CELEQConnectionString (Settings)" DbObjectName="CELEQ.dbo.vistaCotizacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id, anno, precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEntregaRes, granTotal, observaciones
+FROM            vistaCotizacion
+WHERE        (id = @id) AND (anno = @anno)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="CELEQ.dbo.vistaCotizacion" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="anno" ColumnName="anno" DataSourceName="CELEQ.dbo.vistaCotizacion" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@anno" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="anno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vistaAnalisisTableAdapter" GeneratorDataComponentClassName="vistaAnalisisTableAdapter" Name="vistaAnalisis" UserDataComponentName="vistaAnalisisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CELEQConnectionString (Settings)" DbObjectName="CELEQ.dbo.vistaAnalisis" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, anno, descripcion, metodo, precio FROM dbo.vistaAnalisis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="anno" DataSetColumn="anno" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="metodo" DataSetColumn="metodo" />
+              <Mapping SourceColumn="precio" DataSetColumn="precio" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CELEQConnectionString (Settings)" DbObjectName="CELEQ.dbo.vistaAnalisis" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, anno, descripcion, metodo, precio
+FROM            vistaAnalisis
+WHERE        (id = @id) AND (anno = @anno)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="CELEQ.dbo.vistaAnalisis" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="anno" ColumnName="anno" DataSourceName="CELEQ.dbo.vistaAnalisis" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@anno" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="anno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CotizacionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CotizacionDataSet" msprop:Generator_UserDSName="CotizacionDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vistaCotizacion" msprop:Generator_TableClassName="vistaCotizacionDataTable" msprop:Generator_TableVarName="tablevistaCotizacion" msprop:Generator_TablePropName="vistaCotizacion" msprop:Generator_RowDeletingName="vistaCotizacionRowDeleting" msprop:Generator_RowChangingName="vistaCotizacionRowChanging" msprop:Generator_RowEvHandlerName="vistaCotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vistaCotizacionRowDeleted" msprop:Generator_UserTableName="vistaCotizacion" msprop:Generator_RowChangedName="vistaCotizacionRowChanged" msprop:Generator_RowEvArgName="vistaCotizacionRowChangeEvent" msprop:Generator_RowClassName="vistaCotizacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono2" msprop:Generator_ColumnVarNameInTable="columntelefono2" msprop:Generator_ColumnPropNameInRow="telefono2" msprop:Generator_ColumnPropNameInTable="telefono2Column" msprop:Generator_UserColumnName="telefono2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="correo" msprop:Generator_ColumnVarNameInTable="columncorreo" msprop:Generator_ColumnPropNameInRow="correo" msprop:Generator_ColumnPropNameInTable="correoColumn" msprop:Generator_UserColumnName="correo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="atencionDe" msprop:Generator_ColumnVarNameInTable="columnatencionDe" msprop:Generator_ColumnPropNameInRow="atencionDe" msprop:Generator_ColumnPropNameInTable="atencionDeColumn" msprop:Generator_UserColumnName="atencionDe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numeroMuestras" msprop:Generator_ColumnVarNameInTable="columnnumeroMuestras" msprop:Generator_ColumnPropNameInRow="numeroMuestras" msprop:Generator_ColumnPropNameInTable="numeroMuestrasColumn" msprop:Generator_UserColumnName="numeroMuestras" type="xs:int" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="anno" msprop:Generator_ColumnVarNameInTable="columnanno" msprop:Generator_ColumnPropNameInRow="anno" msprop:Generator_ColumnPropNameInTable="annoColumn" msprop:Generator_UserColumnName="anno" type="xs:int" />
+              <xs:element name="precioMuestreo" msprop:Generator_ColumnVarNameInTable="columnprecioMuestreo" msprop:Generator_ColumnPropNameInRow="precioMuestreo" msprop:Generator_ColumnPropNameInTable="precioMuestreoColumn" msprop:Generator_UserColumnName="precioMuestreo" type="xs:double" minOccurs="0" />
+              <xs:element name="precioMuestra" msprop:Generator_ColumnVarNameInTable="columnprecioMuestra" msprop:Generator_ColumnPropNameInRow="precioMuestra" msprop:Generator_ColumnPropNameInTable="precioMuestraColumn" msprop:Generator_UserColumnName="precioMuestra" type="xs:double" minOccurs="0" />
+              <xs:element name="descuento" msprop:Generator_ColumnVarNameInTable="columndescuento" msprop:Generator_ColumnPropNameInRow="descuento" msprop:Generator_ColumnPropNameInTable="descuentoColumn" msprop:Generator_UserColumnName="descuento" type="xs:double" minOccurs="0" />
+              <xs:element name="gastosAdm" msprop:Generator_ColumnVarNameInTable="columngastosAdm" msprop:Generator_ColumnPropNameInRow="gastosAdm" msprop:Generator_ColumnPropNameInTable="gastosAdmColumn" msprop:Generator_UserColumnName="gastosAdm" type="xs:double" minOccurs="0" />
+              <xs:element name="saldoAfavor" msprop:Generator_ColumnVarNameInTable="columnsaldoAfavor" msprop:Generator_ColumnPropNameInRow="saldoAfavor" msprop:Generator_ColumnPropNameInTable="saldoAfavorColumn" msprop:Generator_UserColumnName="saldoAfavor" type="xs:double" minOccurs="0" />
+              <xs:element name="diasEntregaRes" msprop:Generator_ColumnVarNameInTable="columndiasEntregaRes" msprop:Generator_ColumnPropNameInRow="diasEntregaRes" msprop:Generator_ColumnPropNameInTable="diasEntregaResColumn" msprop:Generator_UserColumnName="diasEntregaRes" type="xs:int" minOccurs="0" />
+              <xs:element name="granTotal" msprop:Generator_ColumnVarNameInTable="columngranTotal" msprop:Generator_ColumnPropNameInRow="granTotal" msprop:Generator_ColumnPropNameInTable="granTotalColumn" msprop:Generator_UserColumnName="granTotal" type="xs:double" minOccurs="0" />
+              <xs:element name="observaciones" msprop:Generator_ColumnVarNameInTable="columnobservaciones" msprop:Generator_ColumnPropNameInRow="observaciones" msprop:Generator_ColumnPropNameInTable="observacionesColumn" msprop:Generator_UserColumnName="observaciones" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="600" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vistaAnalisis" msprop:Generator_TableClassName="vistaAnalisisDataTable" msprop:Generator_TableVarName="tablevistaAnalisis" msprop:Generator_TablePropName="vistaAnalisis" msprop:Generator_RowDeletingName="vistaAnalisisRowDeleting" msprop:Generator_RowChangingName="vistaAnalisisRowChanging" msprop:Generator_RowEvHandlerName="vistaAnalisisRowChangeEventHandler" msprop:Generator_RowDeletedName="vistaAnalisisRowDeleted" msprop:Generator_UserTableName="vistaAnalisis" msprop:Generator_RowChangedName="vistaAnalisisRowChanged" msprop:Generator_RowEvArgName="vistaAnalisisRowChangeEvent" msprop:Generator_RowClassName="vistaAnalisisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="anno" msprop:Generator_ColumnVarNameInTable="columnanno" msprop:Generator_ColumnPropNameInRow="anno" msprop:Generator_ColumnPropNameInTable="annoColumn" msprop:Generator_UserColumnName="anno" type="xs:int" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="metodo" msprop:Generator_ColumnVarNameInTable="columnmetodo" msprop:Generator_ColumnPropNameInRow="metodo" msprop:Generator_ColumnPropNameInTable="metodoColumn" msprop:Generator_UserColumnName="metodo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

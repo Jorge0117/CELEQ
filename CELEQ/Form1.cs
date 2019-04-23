@@ -306,9 +306,16 @@ namespace CELEQ
 			f.ShowDialog();
 			f.Dispose();
 		}
-	}
 
-	public static class Globals
+        private void repCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteCotizacion r = new ReporteCotizacion();
+            r.ShowDialog();
+            r.Dispose();
+        }
+    }
+
+    public static class Globals
     {
         public static string usuario;
         public static string correo;
