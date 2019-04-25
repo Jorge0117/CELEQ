@@ -37,6 +37,11 @@ namespace CELEQ
                     textCodigo.Enabled = false;
                     textNombre.Enabled = false;
                 }
+				else
+				{
+					textVersion.Enabled = false;
+					dateTimePickerFecha.Enabled = false;
+				}
             }
         }
 
@@ -77,7 +82,9 @@ namespace CELEQ
                 else
                 {
                     error = bd.actualizarEnListaMaestra(dgvRow.Cells[0].Value.ToString(), dgvRow.Cells[1].Value.ToString(), textVersion.Text, dgvRow.Cells[2].Value.ToString(), dateTimePickerFecha.Value.ToShortDateString());
-                    if (error == 0)
+                    if(error == 0)
+						MessageBox.Show("El formulario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					else if (error == 1)
                     {
                         MessageBox.Show("Formulario actualizado de manera correcta", "Localizaciones", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();

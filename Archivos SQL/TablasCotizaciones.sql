@@ -20,7 +20,8 @@ CREATE TABLE ContactoCotizacion
 drop table ContactoCotizacion
 CREATE TABLE Cotizacion
 (
-	consecutivo		VARCHAR(100)	PRIMARY KEY NOT NULL,
+	id				INT		PRIMARY KEY NOT NULL,
+	anno			INT,
 	licitacion		BIT,
 	observaciones	VARCHAR(255),
 	precioMuestreo	FLOAT,
@@ -33,7 +34,9 @@ CREATE TABLE Cotizacion
 	granTotal		FLOAT,
 	moneda			CHAR,
 	cotizador		NVARCHAR(50),
-	cliente			VARCHAR(255)
+	cliente			VARCHAR(255),
+	precioMuestra	FLOAT,
+	diasEntregaRes	INT,
 
 	FOREIGN KEY(cotizador)	REFERENCES Usuarios(nombreUsuario),
 	FOREIGN KEY(cliente)	REFERENCES ClienteCotizacion(nombre)
@@ -49,9 +52,9 @@ CREATE TABLE Gira
 	gastoTotal				FLOAT,
 	provincia				VARCHAR(100),
 	localidad				VARCHAR(100),
-	idCotizacion			VARCHAR(100)
+	idCotizacion			INT
 
-	FOREIGN KEY(idCotizacion)	REFERENCES Cotizacion(consecutivo)	
+	FOREIGN KEY(idCotizacion)	REFERENCES Cotizacion(id)	
 )
 drop table Gira
 CREATE TABLE tipoAnalisis
@@ -104,12 +107,13 @@ CREATE TABLE precioGiras
 
 CREATE TABLE CotizacionAnalisis
 (
-	consecutivo		VARCHAR(100)	NOT NULL,
+	idCotizacion	INT				NOT NULL,
+	annoCotizacion	INT			NOT NULL,
 	descripcion		VARCHAR(255)	NOT NULL,
 	tipoAnalisis	VARCHAR(100)	NOT NULL,
 
-	PRIMARY KEY(consecutivo,descripcion,tipoAnalisis),
-	FOREIGN KEY(consecutivo)	REFERENCES	Cotizacion(consecutivo),
+	PRIMARY KEY(idCotizacion,descripcion,tipoAnalisis),
+	FOREIGN KEY(idCotizacion)	REFERENCES	Cotizacion(id),
 	FOREIGN KEY(descripcion, tipoAnalisis)		REFERENCES	Analisis(descripcion, tipoAnalisis),
 )
 drop table CotizacionAnalisis

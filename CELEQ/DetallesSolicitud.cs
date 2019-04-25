@@ -44,7 +44,7 @@ namespace CELEQ
             {
                 butAprobarSolicutud.Visible = false;
                 butDenReac.Visible = false;
-                buDenCris.Visible = false;
+                butDenCris.Visible = false;
                 butDenegarSolicitud.Visible = false;
                 textMotDenCris.Visible = false;
                 textMotDenReac.Visible = false;
@@ -93,20 +93,21 @@ namespace CELEQ
             bsR.DataSource = tablaReac;
             dgvReactivos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvReactivos.DataSource = bsR;
-            for (int i = 0; i < dgvReactivos.ColumnCount; ++i)
-            {
-                dgvReactivos.Columns[i].Width = dgvReactivos.Width / dgvReactivos.ColumnCount - 1;
-            }
+
+			dgvReactivos.Columns[0].Width = dgvReactivos.Width / 3 + 200;
+			dgvReactivos.Columns[1].Width = dgvReactivos.Width / 3 - 101;
+			dgvReactivos.Columns[2].Width = dgvReactivos.Width / 3 - 102;
 
             BindingSource bsC = new BindingSource();
             bsC.DataSource = tablaCris;
             dgvCristaleria.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvCristaleria.DataSource = bsC;
-            for (int i = 0; i < dgvCristaleria.ColumnCount; ++i)
-            {
-                dgvCristaleria.Columns[i].Width = dgvCristaleria.Width / dgvCristaleria.ColumnCount - 1;
-            }
-        }
+
+			dgvCristaleria.Columns[0].Width = dgvCristaleria.Width / 4 + 52;
+			dgvCristaleria.Columns[1].Width = dgvCristaleria.Width / 4 + 50;
+			dgvCristaleria.Columns[2].Width = dgvCristaleria.Width / 4 - 52;
+			dgvCristaleria.Columns[3].Width = dgvCristaleria.Width / 4 - 51;
+		}
 
         private void enviarCorreo(string correoUsuario, string texto)
         {
