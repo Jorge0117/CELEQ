@@ -104,6 +104,18 @@ namespace CELEQ
                 comboCanton.Enabled = false;
                 comboLocalidad.Enabled = false;
                 butCalcular.Enabled = false;
+
+                SqlDataReader quimicos = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Químico'");
+                while (quimicos.Read())
+                {
+                    comboQuimico.Items.Add(quimicos[0].ToString());
+                }
+
+                SqlDataReader firmantes = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Director' or p.puesto = 'Subdirector'");
+                while (firmantes.Read())
+                {
+                    comboFirmantes.Items.Add(firmantes[0].ToString());
+                }
             }
             catch
             {
@@ -428,6 +440,21 @@ namespace CELEQ
         private void comboUnidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             generarObservaciones();
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            if (bd.agregarCotizacion(0, DateTime.Now.Year, checkBoxLicitacion.Checked ? 1:0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text), 
+                float.Parse(textDescuento.Text), float.Parse(textGastos.Text),dateTimeFecha.Value.ToShortTimeString(), dateTimeFechaSolicitud.Value.ToShortTimeString(), 
+                dateTimeFechaRespuesta.Value.ToShortTimeString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', textCotizador.Text, comboCliente.Text,
+                float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days) == 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

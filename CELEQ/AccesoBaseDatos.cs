@@ -1774,6 +1774,62 @@ namespace CELEQ
             }
         }
 
+        public int agregarCotizacion(int id, int anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
+            float gastosAdm, string fechaLimite, string fechaSolicitud, string fechaRespuesta, float saldoAfavor,
+            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarsCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+                        cmd.Parameters.Add("@anno", SqlDbType.VarChar).Value = anno;
+                        cmd.Parameters.Add("@licitacion", SqlDbType.VarChar).Value = licitacion;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
+                        cmd.Parameters.Add("@precioMuestreo", SqlDbType.VarChar).Value =  precioMuestreo;
+                        cmd.Parameters.Add("@descuento", SqlDbType.VarChar).Value = descuento;
+                        cmd.Parameters.Add("@gastosAdm", SqlDbType.VarChar).Value = gastosAdm;
+                        cmd.Parameters.Add("@fechaLimite", SqlDbType.VarChar).Value = fechaLimite;
+                        cmd.Parameters.Add("@fechaSolicitud", SqlDbType.VarChar).Value = fechaSolicitud;
+                        cmd.Parameters.Add("@fechaRespuesta", SqlDbType.VarChar).Value = fechaRespuesta;
+                        cmd.Parameters.Add("@saldoAfavor", SqlDbType.VarChar).Value = saldoAfavor;
+                        cmd.Parameters.Add("@granTotal", SqlDbType.VarChar).Value = granTotal;
+                        cmd.Parameters.Add("@moneda", SqlDbType.VarChar).Value = moneda;
+                        cmd.Parameters.Add("@cotizador", SqlDbType.VarChar).Value = cotizador;
+                        cmd.Parameters.Add("@cliente", SqlDbType.VarChar).Value = cliente;
+                        cmd.Parameters.Add("@precioMuestra", SqlDbType.VarChar).Value = precioMuestra;
+                        cmd.Parameters.Add("@diasEntregaRes", SqlDbType.VarChar).Value = diasEntregaRes;
+
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
         public int agregarAnalisisCotizacion(string descripcion, string metodo, int precio, int acreditacion, string tipoAnalisis)
         {
             int error = 0;

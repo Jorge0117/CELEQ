@@ -91,7 +91,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textObservaciones = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxLicitacion = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.numSaldoFavor = new System.Windows.Forms.NumericUpDown();
             this.numGastosAdm = new System.Windows.Forms.NumericUpDown();
@@ -110,7 +110,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboFirmantes = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.dateTimeFechaRespuesta = new System.Windows.Forms.DateTimePicker();
             this.label33 = new System.Windows.Forms.Label();
@@ -812,7 +812,7 @@
             // 
             this.groupBox7.Controls.Add(this.textObservaciones);
             this.groupBox7.Controls.Add(this.label23);
-            this.groupBox7.Controls.Add(this.checkBox1);
+            this.groupBox7.Controls.Add(this.checkBoxLicitacion);
             this.groupBox7.Location = new System.Drawing.Point(621, 492);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
@@ -841,17 +841,17 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Observaciones que se incluiran en la cotización:";
             // 
-            // checkBox1
+            // checkBoxLicitacion
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(19, 23);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(299, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "¿Se requiere la cotización para una licitación?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxLicitacion.AutoSize = true;
+            this.checkBoxLicitacion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxLicitacion.Location = new System.Drawing.Point(19, 23);
+            this.checkBoxLicitacion.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxLicitacion.Name = "checkBoxLicitacion";
+            this.checkBoxLicitacion.Size = new System.Drawing.Size(299, 20);
+            this.checkBoxLicitacion.TabIndex = 0;
+            this.checkBoxLicitacion.Text = "¿Se requiere la cotización para una licitación?";
+            this.checkBoxLicitacion.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -1039,7 +1039,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.comboBox1);
+            this.groupBox9.Controls.Add(this.comboFirmantes);
             this.groupBox9.Controls.Add(this.label34);
             this.groupBox9.Controls.Add(this.dateTimeFechaRespuesta);
             this.groupBox9.Controls.Add(this.label33);
@@ -1055,15 +1055,15 @@
             this.groupBox9.TabIndex = 8;
             this.groupBox9.TabStop = false;
             // 
-            // comboBox1
+            // comboFirmantes
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1151, 16);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 24);
-            this.comboBox1.TabIndex = 42;
+            this.comboFirmantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFirmantes.FormattingEnabled = true;
+            this.comboFirmantes.Location = new System.Drawing.Point(1151, 16);
+            this.comboFirmantes.Margin = new System.Windows.Forms.Padding(4);
+            this.comboFirmantes.Name = "comboFirmantes";
+            this.comboFirmantes.Size = new System.Drawing.Size(189, 24);
+            this.comboFirmantes.TabIndex = 42;
             // 
             // label34
             // 
@@ -1142,6 +1142,7 @@
             this.butAceptar.TabIndex = 18;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -1273,7 +1274,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox textObservaciones;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxLicitacion;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.NumericUpDown numGastosAdm;
         private System.Windows.Forms.NumericUpDown numDescuento;
@@ -1286,7 +1287,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboFirmantes;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DateTimePicker dateTimeFechaRespuesta;
         private System.Windows.Forms.Label label33;

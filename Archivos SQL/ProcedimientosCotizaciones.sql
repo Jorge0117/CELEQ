@@ -54,16 +54,23 @@ as
 	delete from Analisis where descripcion = @descripcion and tipoAnalisis = @tipoAnalisis
 go
 
+create procedure agregarsCotizacion(@id int, @anno int, @licitacion bit, @observaciones varchar(600), @precioMuestreo float ,@descuento float, 
+									@gastosAdm float, @fechaLimite date, @fechaSolicitud date, @fechaRespuesta date, @saldoAfavor float ,@granTotal float, @moneda char(1),
+									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int)
+as 
+	insert into Cotizacion values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
+									@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes)
+go
+
 select tipo from tipoAnalisis
 select * from Analisis
 
 select descripcion as 'Análisis', metodo as 'Método', concat('$', precio) as 'Precio' from Analisis where tipoAnalisis = 'Aceites y grasas'
 
 select * from Cotizacion
-
-
-
 go
+
+
 create trigger consecutivoCotizacion
 on Cotizacion
 instead of Insert
