@@ -313,13 +313,13 @@ namespace CELEQ
             puestos.ShowDialog();
             puestos.Dispose();
         }
-        private void repCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void reporteCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReporteCotizacion r = new ReporteCotizacion();
             r.ShowDialog();
             r.Dispose();
         }
-
     }
 
     public static class Globals
