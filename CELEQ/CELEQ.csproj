@@ -121,6 +121,12 @@
     <Compile Include="AgregarPresupuesto.Designer.cs">
       <DependentUpon>AgregarPresupuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarPuesto.Designer.cs">
+      <DependentUpon>AgregarPuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarReactivoCristaleria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,12 @@
     </Compile>
     <Compile Include="ListaMaestra.Designer.cs">
       <DependentUpon>ListaMaestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPuestos.Designer.cs">
+      <DependentUpon>ListaPuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="Localizaciones.cs">
       <SubType>Form</SubType>
@@ -397,6 +409,9 @@
     <EmbeddedResource Include="AgregarPresupuesto.resx">
       <DependentUpon>AgregarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarPuesto.resx">
+      <DependentUpon>AgregarPuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarReactivoCristaleria.resx">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaMaestra.resx">
       <DependentUpon>ListaMaestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPuestos.resx">
+      <DependentUpon>ListaPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Localizaciones.resx">
       <DependentUpon>Localizaciones.cs</DependentUpon>

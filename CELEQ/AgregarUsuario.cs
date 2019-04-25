@@ -20,10 +20,24 @@ namespace CELEQ
             InitializeComponent();
             bd = new AccesoBaseDatos();
             dgvRow = dgvw;
+
+            //Solo permite seleccionar filas en el dgv
+            dgvPuestos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPuestos.MultiSelect = false;
+            dgvPuestos.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
         }
 
-        private void loadPermisos()
+        //Pinta la fila completa en el dgv
+        private void dgv_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
+            e.PaintParts &= ~DataGridViewPaintParts.Focus;
+        }
+
+
+        private void AgregarUsuario_Load(object sender, EventArgs e)
+        {
+            dgvPuestos.Columns.Add("puesto", "Puesto");
+            dgvPuestos.Columns[0].Width = dgvPuestos.Width -1;
             foreach (string permiso in Globals.listaCategorias)
             {
                 cbPermisos.Items.Add(permiso);
@@ -48,18 +62,20 @@ namespace CELEQ
                 textNombre.Text = nombre[0].ToString();
                 textApellido1.Text = nombre[1].ToString();
                 textApellido2.Text = nombre[2].ToString();
-            }
-        }
 
-        private void AgregarUsuario_Load(object sender, EventArgs e)
-        {
-            loadPermisos();
+                SqlDataReader puestos = bd.ejecutarConsulta("select puesto from puestosUsuarios where nombreUsuario = '" + textUsuario.Text + "'");
+                while (puestos.Read())
+                {
+                    dgvPuestos.Rows.Add(puestos[0]);
+                }
+            }
         }
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
             if(textUsuario.Text == "" || textCorreo.Text == "" || cbPermisos.Text == "" 
-                || comboUnidad.Text == "" || textNombre.Text == "" || textApellido1.Text == "" || textApellido2.Text == "")
+                || comboUnidad.Text == "" || textNombre.Text == "" || textApellido1.Text == "" || 
+                textApellido2.Text == "" || dgvPuestos.Rows.Count == 0)
             {
                 MessageBox.Show("Porfavor llene los datos requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -68,7 +84,12 @@ namespace CELEQ
                 int error;
                 if (dgvRow == null)
                 {
-                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    List<string> puestos = new List<string>();
+                    foreach(DataGridViewRow row in dgvPuestos.Rows)
+                    {
+                        puestos.Add(row.Cells[0].Value.ToString());
+                    }
+                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
                     mc.ShowDialog();
                     bool cerrar = mc.aceptar;
                     mc.Dispose();
@@ -80,8 +101,13 @@ namespace CELEQ
                 }
                 else
                 {
-                    
-                    error = bd.modificarUsuario(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text);
+                    List<string> puestos = new List<string>();
+                    foreach (DataGridViewRow row in dgvPuestos.Rows)
+                    {
+                        puestos.Add(row.Cells[0].Value.ToString());
+                    }
+
+                    error = bd.modificarUsuario(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
                     if (error == 0)
                     {
                         MessageBox.Show("Usuario modificado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -103,9 +129,25 @@ namespace CELEQ
             this.Close();
         }
 
-        private void textNombre_TextChanged(object sender, EventArgs e)
+        private void butAgregarPuesto_Click(object sender, EventArgs e)
         {
+            ListaPuestos puestos = new ListaPuestos(true);
+            puestos.ShowDialog();
+            DataGridViewRow row = puestos.getRow();
+            if (row != null)
+            {
+                dgvPuestos.Rows.Add(row);
+            }
+            puestos.Dispose();
+        }
 
+        private void butEliminarPuesto_Click(object sender, EventArgs e)
+        {
+            if (dgvPuestos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgvPuestos.SelectedRows[0];
+                dgvPuestos.Rows.Remove(row);
+            }
         }
     }
 }

@@ -21,9 +21,11 @@ namespace CELEQ
         string apellido1;
         string apellido2;
         public bool aceptar;
+        List<string> puestos;
+
         public ModificarContra(string user = null, string mail = null, 
             string perm = null, string unid = null, string name = null, string lastn1 = null, 
-            string lastn2 = null)
+            string lastn2 = null, List<string> puestos = null)
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
@@ -35,6 +37,7 @@ namespace CELEQ
             nombre = name;
             apellido1 = lastn1;
             apellido2 = lastn2;
+            this.puestos = puestos;
 
         }
 
@@ -56,6 +59,11 @@ namespace CELEQ
                     int error = bd.agregarUsuario(usuario, nuevaContra.Text, correo, permisos, unidad, nombre, apellido1, apellido2);
                     if (error == 1)
                     {
+                        for(int i = 0; i<puestos.Count; ++i)
+                        {
+                            bd.agregarPuestoUsuario(usuario, puestos[i]);
+                        }
+
                         MessageBox.Show("Usuario agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
                         aceptar = true;
                         this.Close();

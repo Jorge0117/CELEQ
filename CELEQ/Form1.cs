@@ -307,12 +307,19 @@ namespace CELEQ
 			f.Dispose();
 		}
 
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaPuestos puestos = new ListaPuestos(false);
+            puestos.ShowDialog();
+            puestos.Dispose();
+        }
         private void repCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReporteCotizacion r = new ReporteCotizacion();
             r.ShowDialog();
             r.Dispose();
         }
+
     }
 
     public static class Globals

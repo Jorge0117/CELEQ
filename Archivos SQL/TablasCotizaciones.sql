@@ -132,4 +132,4 @@ insert into Feriados VALUES('D�a 2','2019/04/03', '2019/04/15')
 
 select fechaInicio, fechaFinal from feriados where descripcion = 'Semana Santa'
 
-select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario = 'jorge'
+select* from Feriados

@@ -24,6 +24,20 @@ create table Unidad
 alter table Unidad add encargado NVARCHAR(50)
 alter table Unidad add FOREIGN KEY (encargado) REFERENCES Usuarios(nombreUsuario)
 
+create table puestos
+(
+	puesto varchar(100)		NOT NULL	PRIMARY KEY
+)
+
+create table puestosUsuarios
+(
+	nombreUsuario NVARCHAR(50),
+	puesto varchar(100),
+
+	primary key (nombreUsuario, puesto),
+	foreign key(nombreUsuario) references Usuarios(nombreUsuario),
+	foreign key(puesto) references puestos(puesto)
+)
 go
 CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
 AS
@@ -121,53 +135,14 @@ CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@es
 	END
 GO
 
-insert into presupuesto values('0000','prueba lololdoaskoifjiewufs')
 
-drop procedure agregarPresupuesto
-
-exec dbo.agregarUsuario 'jorge', 'jor', 'jorgea1177@gmail.com', 'Administrador', 'UMI', 'Jorge', 'Araya', 'González', 0
-
-exec dbo.agregarUsuario 'Admin', 'AdminCeleq', 'informatica.celeq@ucr.ac.cr', 0
-
-exec dbo.agregarUsuario 'Estudiante', 'est', 'estudiante@ucr.ac.cr', 'Estudiante', 0
-
-exec dbo.agregarUsuario 'Regente', 'reg', 'regente@ucr.ac.cr', 'Regencia', 0
-
-insert into Unidad values ('UMI')
+create procedure agregarPuestoUsuario(@usuario nvarchar(50), @puesto varchar(10)) as
+begin
+	insert into puestosUsuarios values(@usuario, @puesto)
+end
 go
 
+select * from puestosUsuarios
 
+insert into puestosUsuarios values ('fcjg', 'Químico') 
 
-select CONCAT(nombre , ' ' , apellido1 , ' ' , apellido2) as Encargado from Usuarios
-
-
-SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Jorge' AND U.apellido1 ='Araya' AND U.apellido2 ='González'
-
-DELETE FROM Unidad WHERE encargado = 'Estiven'
-
-select nombre from Unidad
-
-SELECT * FROM designacionAsistencia
-SELECT * FROM estudiante
-
-select E.id as Identificación, E.tipoId as 'Tipo Identificación', CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, E.carrera as Carrera from estudiante E
-
-insert into designacionAsistencia(idEstudiante) values(116980153)
-
-select D.idEstudiante as Cédula, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año,
-D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto, E.carrera as Carrera, D.encargado as Encargado, D.unidad as Unidad,
-D.presupuesto as Presupuesto, D.convocatoria as Convocatoria from designacionAsistencia D join estudiante E on D.idEstudiante = E.id
-
-select D.idEstudiante as Cédula, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Nombre, D.ano as Año,
-D.ciclo as Ciclo, D.horas as Horas, D.modalidad as Modalidad, D.monto as Monto from designacionAsistencia D join estudiante E on D.idEstudiante = E.id and D.ano like '%2015"%' or D.ciclo like '%2%'
-
-
-DELETE FROM Unidad WHERE nombre = 'fewai{sf-bjafdshv,afdshvjzfdshvfds'
-
-select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado 
-from unidad U 
-join Usuarios E ON E.nombreUsuario = U.encargado;
-
-SELECT nombreUsuario FROM Usuarios U WHERE U.nombre = 'Estiven' AND U.apellido1 ='Alfaro' AND U.apellido2 ='Gómez' AND categoria != 'Estudiante'
-
-select U.nombre as Unidad, CONCAT(E.nombre, ' ', E.apellido1, ' ', E.apellido2) as Encargado from unidad U left join Usuarios E ON E.nombreUsuario = U.encargado

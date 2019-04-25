@@ -54,9 +54,89 @@ as
 	delete from Analisis where descripcion = @descripcion and tipoAnalisis = @tipoAnalisis
 go
 
+create procedure agregarsCotizacion(@id int, @anno int, @licitacion bit, @observaciones varchar(600), @precioMuestreo float ,@descuento float, 
+									@gastosAdm float, @fechaLimite date, @fechaSolicitud date, @fechaRespuesta date, @saldoAfavor float ,@granTotal float, @moneda char(1),
+									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int)
+as 
+	insert into Cotizacion values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
+									@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes)
+go
+
 select tipo from tipoAnalisis
 select * from Analisis
 
 select descripcion as 'Análisis', metodo as 'Método', concat('$', precio) as 'Precio' from Analisis where tipoAnalisis = 'Aceites y grasas'
 
 select * from Cotizacion
+go
+
+
+create trigger consecutivoCotizacion
+on Cotizacion
+instead of Insert
+AS
+
+declare @id int
+declare @anno int
+declare @licitacion bit
+declare @observaciones varchar(600)
+declare @precioMuestreo float
+declare @descuento float
+declare @gastosAdm float
+declare @fechaLimite date
+declare @fechaSolicitud date
+declare @fechaRespuesta date
+declare @saldoAfavor float
+declare @granTotal float
+declare @moneda char(1)
+declare @cotizador nvarchar(50)
+declare @cliente varchar(255)
+declare @precioMuestra float
+declare @diasEntregaRes int
+
+select @anno = anno from inserted
+
+select @licitacion = licitacion from inserted
+select @observaciones = observaciones from inserted
+select @precioMuestreo = precioMuestreo from inserted
+select @descuento = descuento from inserted
+select @gastosAdm = gastosAdm from inserted
+select @fechaLimite = fechaLimite from inserted
+select @fechaSolicitud = fechaSolicitud from inserted
+select @fechaRespuesta = fechaRespuesta from inserted
+select @saldoAfavor = saldoAfavor from inserted
+select @granTotal  = granTotal  from inserted
+select @moneda = moneda from inserted
+select @cotizador  = cotizador  from inserted
+select @cliente  = cliente  from inserted
+select @precioMuestra  = precioMuestra  from inserted
+select @diasEntregaRes = diasEntregaRes from inserted
+
+if not exists (select id, anno from Cotizacion where anno = @anno)
+	set @id = 1
+else
+	select @id =  max(id)+1 from Cotizacion where anno = @anno
+
+insert into Cotizacion values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
+@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes)
+
+go
+
+delete from CotizacionAnalisis
+delete from Cotizacion
+select * from Cotizacion order by anno, id
+insert into Cotizacion values(0, 2021, 0, 'hola', 50, 7, 15, '2019-01-05', '2019-01-01', '2019-01-05', 0, 500, 'd', 'jorge', '5utrsutrs', 43, 4)
+
+select * from ClienteCotizacion
+insert into ContactoCotizacion values('5utrsutrs', 'Jorge', 1)
+insert into ContactoCotizacion values('ewdew', 'Jorge', 1) 
+insert into ContactoCotizacion values('jajajajaja', 'Jorge', 1) 
+insert into ContactoCotizacion values('lol', 'Jorge', 1) 
+insert into ContactoCotizacion values('thicc', 'Jorge', 1) 
+insert into ContactoCotizacion values('xipaom', 'Jorge', 1) 
+select * from ContactoCotizacion
+delete from ClienteCotizacion
+
+select * from puestos
+
+insert into puestos values('Técnico')

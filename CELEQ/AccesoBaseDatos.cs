@@ -240,6 +240,40 @@ namespace CELEQ
 
         }
 
+        public int agregarPuestoUsuario(string usuario, string puesto)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarPuestoUsuario", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@puesto", SqlDbType.VarChar).Value = puesto;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                    }
+                    return error;
+                }
+            }
+        }
+
         public string getCorreo(string usuario)
         {
             SqlDataReader correo = ejecutarConsulta("select correo from Usuarios where nombreUsuario = '" + usuario + "'");
@@ -261,7 +295,7 @@ namespace CELEQ
             return unidad[0].ToString();
         }
 
-        public int modificarUsuario(string usuario, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
+        public int modificarUsuario(string usuario, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2, List<string> puestos)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -289,6 +323,14 @@ namespace CELEQ
 
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
+
+                        //Se borran los puestos anteriores
+                        ejecutarConsulta("delete from puestosUsuarios where nombreUsuario ='" + usuario + "'");
+
+                        foreach (string puesto in puestos)
+                        {
+                            agregarPuestoUsuario(usuario, puesto);
+                        }
 
                     }
                     catch (SqlException ex)
@@ -1711,6 +1753,62 @@ namespace CELEQ
                         cmd.Parameters.Add("@fax", SqlDbType.VarChar).Value = fax;
                         cmd.Parameters.Add("@direccion", SqlDbType.VarChar).Value = direccion;
                         cmd.Parameters.Add("@contacto", SqlDbType.VarChar).Value = contacto;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+        public int agregarCotizacion(int id, int anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
+            float gastosAdm, string fechaLimite, string fechaSolicitud, string fechaRespuesta, float saldoAfavor,
+            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarsCotizacion", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+                        cmd.Parameters.Add("@anno", SqlDbType.VarChar).Value = anno;
+                        cmd.Parameters.Add("@licitacion", SqlDbType.VarChar).Value = licitacion;
+                        cmd.Parameters.Add("@observaciones", SqlDbType.VarChar).Value = observaciones;
+                        cmd.Parameters.Add("@precioMuestreo", SqlDbType.VarChar).Value =  precioMuestreo;
+                        cmd.Parameters.Add("@descuento", SqlDbType.VarChar).Value = descuento;
+                        cmd.Parameters.Add("@gastosAdm", SqlDbType.VarChar).Value = gastosAdm;
+                        cmd.Parameters.Add("@fechaLimite", SqlDbType.VarChar).Value = fechaLimite;
+                        cmd.Parameters.Add("@fechaSolicitud", SqlDbType.VarChar).Value = fechaSolicitud;
+                        cmd.Parameters.Add("@fechaRespuesta", SqlDbType.VarChar).Value = fechaRespuesta;
+                        cmd.Parameters.Add("@saldoAfavor", SqlDbType.VarChar).Value = saldoAfavor;
+                        cmd.Parameters.Add("@granTotal", SqlDbType.VarChar).Value = granTotal;
+                        cmd.Parameters.Add("@moneda", SqlDbType.VarChar).Value = moneda;
+                        cmd.Parameters.Add("@cotizador", SqlDbType.VarChar).Value = cotizador;
+                        cmd.Parameters.Add("@cliente", SqlDbType.VarChar).Value = cliente;
+                        cmd.Parameters.Add("@precioMuestra", SqlDbType.VarChar).Value = precioMuestra;
+                        cmd.Parameters.Add("@diasEntregaRes", SqlDbType.VarChar).Value = diasEntregaRes;
+
 
                         /*Se abre la conexión*/
                         con.Open();

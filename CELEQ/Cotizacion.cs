@@ -43,6 +43,7 @@ namespace CELEQ
         {
             try
             {
+                textConsecutivo.Text = ("####-####");
                 SqlDataReader cotizador = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario ='" + Globals.usuario + "'");
                 cotizador.Read();
 
@@ -103,6 +104,18 @@ namespace CELEQ
                 comboCanton.Enabled = false;
                 comboLocalidad.Enabled = false;
                 butCalcular.Enabled = false;
+
+                SqlDataReader quimicos = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Químico'");
+                while (quimicos.Read())
+                {
+                    comboQuimico.Items.Add(quimicos[0].ToString());
+                }
+
+                SqlDataReader firmantes = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Director' or p.puesto = 'Subdirector'");
+                while (firmantes.Read())
+                {
+                    comboFirmantes.Items.Add(firmantes[0].ToString());
+                }
             }
             catch
             {
@@ -389,5 +402,67 @@ namespace CELEQ
             
         }
 
+        private void generarObservaciones()
+        {
+            if(textMuestra.Text != "" && numericMuestras.Value > 0 && numericCantidad.Value > 0 && comboUnidad.Text != "")
+            {
+                string observaciones = "";
+                if(numericMuestras.Value == 1)
+                {
+                    observaciones += "Esta cotización corresponde a una muestra de " + textMuestra.Text + "." + Environment.NewLine;
+                }
+                else
+                {
+                    observaciones += "Esta cotización corresponde a " + numericMuestras.Value.ToString() + " muestras de " + textMuestra.Text + "." + Environment.NewLine;
+                }
+                
+                observaciones += "Para los ensayos se requiere al menos " + numericCantidad.Value.ToString() + comboUnidad.Text + " de muestra." + Environment.NewLine;
+                observaciones += "La fecha de entrega de resultados puede variar en función de la fecha de recepción de las muestras y del volumen " +
+                    "de trabajo que en ese momento se tenga." + Environment.NewLine;
+
+                textObservaciones.Text = observaciones;
+
+            }
+        }
+
+        private void textMuestra_KeyUp(object sender, KeyEventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericMuestras_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericDias_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void numericCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void comboUnidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generarObservaciones();
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            if (bd.agregarCotizacion(0, DateTime.Now.Year, checkBoxLicitacion.Checked ? 1:0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text), 
+                float.Parse(textDescuento.Text), float.Parse(textGastos.Text),dateTimeFecha.Value.ToShortTimeString(), dateTimeFechaSolicitud.Value.ToShortTimeString(), 
+                dateTimeFechaRespuesta.Value.ToShortTimeString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', textCotizador.Text, comboCliente.Text,
+                float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days) == 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
