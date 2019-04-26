@@ -136,11 +136,13 @@ CREATE PROCEDURE agregarUnidad(@nombre varchar(100), @encargado nvarchar(50),@es
 GO
 
 
-create procedure agregarPuestoUsuario(@usuario nvarchar(50), @puesto varchar(10)) as
+create procedure agregarPuestoUsuario(@usuario nvarchar(50), @puesto varchar(100)) as
 begin
 	insert into puestosUsuarios values(@usuario, @puesto)
 end
 go
+
+drop procedure agregarPuestoUsuario
 
 select * from puestosUsuarios
 
