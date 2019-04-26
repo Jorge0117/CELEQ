@@ -314,12 +314,6 @@ namespace CELEQ
             puestos.Dispose();
         }
 
-        private void reporteCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ReporteCotizacion r = new ReporteCotizacion();
-            r.ShowDialog();
-            r.Dispose();
-        }
     }
 
     public static class Globals

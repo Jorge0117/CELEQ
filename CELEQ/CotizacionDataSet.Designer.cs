@@ -346,6 +346,8 @@ namespace CELEQ {
             
             private global::System.Data.DataColumn columnobservaciones;
             
+            private global::System.Data.DataColumn columnsubTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vistaCotizacionDataTable() {
@@ -509,6 +511,14 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn subTotalColumn {
+                get {
+                    return this.columnsubTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -560,7 +570,8 @@ namespace CELEQ {
                         double saldoAfavor, 
                         int diasEntregaRes, 
                         double granTotal, 
-                        string observaciones) {
+                        string observaciones, 
+                        double subTotal) {
                 vistaCotizacionRow rowvistaCotizacionRow = ((vistaCotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nombre,
@@ -578,7 +589,8 @@ namespace CELEQ {
                         saldoAfavor,
                         diasEntregaRes,
                         granTotal,
-                        observaciones};
+                        observaciones,
+                        subTotal};
                 rowvistaCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvistaCotizacionRow);
                 return rowvistaCotizacionRow;
@@ -617,6 +629,7 @@ namespace CELEQ {
                 this.columndiasEntregaRes = base.Columns["diasEntregaRes"];
                 this.columngranTotal = base.Columns["granTotal"];
                 this.columnobservaciones = base.Columns["observaciones"];
+                this.columnsubTotal = base.Columns["subTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -654,6 +667,8 @@ namespace CELEQ {
                 base.Columns.Add(this.columngranTotal);
                 this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobservaciones);
+                this.columnsubTotal = new global::System.Data.DataColumn("subTotal", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubTotal);
                 this.columnnombre.AllowDBNull = false;
                 this.columnnombre.MaxLength = 255;
                 this.columntelefono.MaxLength = 20;
@@ -1350,6 +1365,22 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double subTotal {
+                get {
+                    try {
+                        return ((double)(this[this.tablevistaCotizacion.subTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subTotal\' in table \'vistaCotizacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevistaCotizacion.subTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IstelefonoNull() {
                 return this.IsNull(this.tablevistaCotizacion.telefonoColumn);
             }
@@ -1490,6 +1521,18 @@ namespace CELEQ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetobservacionesNull() {
                 this[this.tablevistaCotizacion.observacionesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssubTotalNull() {
+                return this.IsNull(this.tablevistaCotizacion.subTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsubTotalNull() {
+                this[this.tablevistaCotizacion.subTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1806,6 +1849,7 @@ namespace CELEQ.CotizacionDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("diasEntregaRes", "diasEntregaRes");
             tableMapping.ColumnMappings.Add("granTotal", "granTotal");
             tableMapping.ColumnMappings.Add("observaciones", "observaciones");
+            tableMapping.ColumnMappings.Add("subTotal", "subTotal");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1822,15 +1866,16 @@ namespace CELEQ.CotizacionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id, anno," +
-                " precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEntregaRe" +
-                "s, granTotal, observaciones FROM dbo.vistaCotizacion";
+            this._commandCollection[0].CommandText = "SELECT        nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id" +
+                ", anno, precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEn" +
+                "tregaRes, granTotal, observaciones, subTotal\r\nFROM            vistaCotizacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id, anno, precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEntregaRes, granTotal, observaciones
-FROM            vistaCotizacion
-WHERE        (id = @id) AND (anno = @anno)";
+            this._commandCollection[1].CommandText = "SELECT anno, atencionDe, correo, descuento, diasEntregaRes, gastosAdm, granTotal," +
+                " id, nombre, numeroMuestras, observaciones, precioMuestra, precioMuestreo, saldo" +
+                "Afavor, subTotal, telefono, telefono2 FROM vistaCotizacion WHERE (id = @id) AND " +
+                "(anno = @anno)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@anno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "anno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

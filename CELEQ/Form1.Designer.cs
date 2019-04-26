@@ -71,7 +71,6 @@
             this.análisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feriadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaMaestraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelBienv = new System.Windows.Forms.Label();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
@@ -92,8 +91,7 @@
             this.mantenimientoToolStripMenuItem,
             this.regimenBecarioToolStripMenuItem,
             this.vínculoExternoToolStripMenuItem,
-            this.listaMaestraToolStripMenuItem,
-            this.reporteCotizacionToolStripMenuItem});
+            this.listaMaestraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -115,14 +113,14 @@
             // unidadesToolStripMenuItem
             // 
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
-            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.unidadesToolStripMenuItem.Text = "Unidades";
             this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
             // 
             // puestosToolStripMenuItem
             // 
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
-            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
             this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
@@ -133,7 +131,7 @@
             this.consultarToolStripMenuItem,
             this.rolesToolStripMenuItem});
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // verUsuariosToolStripMenuItem1
@@ -159,7 +157,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -430,13 +428,6 @@
             this.listaMaestraToolStripMenuItem.Text = "Lista Maestra";
             this.listaMaestraToolStripMenuItem.Click += new System.EventHandler(this.listaMaestraToolStripMenuItem_Click);
             // 
-            // reporteCotizacionToolStripMenuItem
-            // 
-            this.reporteCotizacionToolStripMenuItem.Name = "reporteCotizacionToolStripMenuItem";
-            this.reporteCotizacionToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.reporteCotizacionToolStripMenuItem.Text = "repCotizacion";
-            this.reporteCotizacionToolStripMenuItem.Click += new System.EventHandler(this.reporteCotizacionToolStripMenuItem_Click);
-            // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
@@ -596,7 +587,6 @@
 		private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repCotizacionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteCotizacionToolStripMenuItem;
     }
 }
 

@@ -31,16 +31,39 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.vistaCotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CotizacionDataSet = new CELEQ.CotizacionDataSet();
+            this.vistaAnalisisTableAdapter = new CELEQ.CotizacionDataSetTableAdapters.vistaAnalisisTableAdapter();
             this.vistaCotizacionTableAdapter = new CELEQ.CotizacionDataSetTableAdapters.vistaCotizacionTableAdapter();
             this.vistaAnalisisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vistaAnalisisTableAdapter = new CELEQ.CotizacionDataSetTableAdapters.vistaAnalisisTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).BeginInit();
+            this.CotizacionDataSet = new CELEQ.CotizacionDataSet();
+            this.vistaCotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vistaAnalisisTableAdapter
+            // 
+            this.vistaAnalisisTableAdapter.ClearBeforeFill = true;
+            // 
+            // vistaCotizacionTableAdapter
+            // 
+            this.vistaCotizacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // vistaAnalisisBindingSource
+            // 
+            this.vistaAnalisisBindingSource.DataMember = "vistaAnalisis";
+            this.vistaAnalisisBindingSource.DataSource = this.CotizacionDataSet;
+            // 
+            // CotizacionDataSet
+            // 
+            this.CotizacionDataSet.DataSetName = "CotizacionDataSet";
+            this.CotizacionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vistaCotizacionBindingSource
+            // 
+            this.vistaCotizacionBindingSource.DataMember = "vistaCotizacion";
+            this.vistaCotizacionBindingSource.DataSource = this.CotizacionDataSet;
             // 
             // reportViewer1
             // 
@@ -58,29 +81,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // vistaCotizacionBindingSource
-            // 
-            this.vistaCotizacionBindingSource.DataMember = "vistaCotizacion";
-            this.vistaCotizacionBindingSource.DataSource = this.CotizacionDataSet;
-            // 
-            // CotizacionDataSet
-            // 
-            this.CotizacionDataSet.DataSetName = "CotizacionDataSet";
-            this.CotizacionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vistaCotizacionTableAdapter
-            // 
-            this.vistaCotizacionTableAdapter.ClearBeforeFill = true;
-            // 
-            // vistaAnalisisBindingSource
-            // 
-            this.vistaAnalisisBindingSource.DataMember = "vistaAnalisis";
-            this.vistaAnalisisBindingSource.DataSource = this.CotizacionDataSet;
-            // 
-            // vistaAnalisisTableAdapter
-            // 
-            this.vistaAnalisisTableAdapter.ClearBeforeFill = true;
-            // 
             // ReporteCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,20 +90,20 @@
             this.Name = "ReporteCotizacion";
             this.Text = "ReporteCotizacion";
             this.Load += new System.EventHandler(this.ReporteCotizacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource vistaCotizacionBindingSource;
-        private CotizacionDataSet CotizacionDataSet;
+        private CotizacionDataSetTableAdapters.vistaAnalisisTableAdapter vistaAnalisisTableAdapter;
         private CotizacionDataSetTableAdapters.vistaCotizacionTableAdapter vistaCotizacionTableAdapter;
         private System.Windows.Forms.BindingSource vistaAnalisisBindingSource;
-        private CotizacionDataSetTableAdapters.vistaAnalisisTableAdapter vistaAnalisisTableAdapter;
+        private CotizacionDataSet CotizacionDataSet;
+        private System.Windows.Forms.BindingSource vistaCotizacionBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

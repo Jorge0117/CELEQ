@@ -452,17 +452,20 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            if (bd.agregarCotizacion(0, DateTime.Now.Year, checkBoxLicitacion.Checked ? 1:0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text), 
+            /*if (bd.agregarCotizacion(0, DateTime.Now.Year, checkBoxLicitacion.Checked ? 1:0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text), 
                 float.Parse(textDescuento.Text), float.Parse(textGastos.Text),dateTimeFecha.Value.ToShortTimeString(), dateTimeFechaSolicitud.Value.ToShortTimeString(), 
                 dateTimeFechaRespuesta.Value.ToShortTimeString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', textCotizador.Text, comboCliente.Text,
                 float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days) == 0)
             {
-
+        
             }
             else
             {
                 MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+            ReporteCotizacion r = new ReporteCotizacion(1, 2019, "P-03:F01 Versión 01 Fecha: 25/04/2019", "CELEQ-1418-2018","COTIZACIÓN");
+            r.ShowDialog();
+            r.Dispose();
         }
     }
 }

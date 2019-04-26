@@ -70,9 +70,10 @@ CREATE TABLE Muestra
 	sellada				BIT,
 	numeroMuestras		INT,
 	cantidadNecesaria	VARCHAR(50),
-	tipoAnalisis		VARCHAR(100)
+	idCotizacion		INT,
+	annoCotizacion		INT,
 
-	FOREIGN KEY(tipoAnalisis) REFERENCES tipoAnalisis(tipo)
+	FOREIGN KEY(idCotizacion,annoCotizacion) REFERENCES Cotizacion(id,anno)
 )
 drop table Muestra
 CREATE TABLE Analisis
