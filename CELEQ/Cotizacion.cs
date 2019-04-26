@@ -472,7 +472,7 @@ namespace CELEQ
                 foreach(DataGridViewRow analisis in dgvAnalisis.Rows)
                 {
                     bd.ejecutarConsulta("insert into CotizacionAnalisis values(" + id + ", " + anno + ", '" + 
-                        analisis.Cells[0].Value.ToString() + "', '" + analisis.Cells[1].Value.ToString() + "')");
+                        analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
                 }
 
                 ReporteCotizacion reporte = new ReporteCotizacion();
