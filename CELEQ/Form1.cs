@@ -313,6 +313,7 @@ namespace CELEQ
             puestos.ShowDialog();
             puestos.Dispose();
         }
+
     }
 
     public static class Globals

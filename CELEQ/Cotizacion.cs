@@ -482,7 +482,10 @@ namespace CELEQ
             else
             {
                 MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+            ReporteCotizacion r = new ReporteCotizacion(1, 2019, "P-03:F01 Versión 01 Fecha: 25/04/2019", "CELEQ-1418-2018","COTIZACIÓN");
+            r.ShowDialog();
+            r.Dispose();
         }
     }
 }
