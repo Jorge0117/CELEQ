@@ -475,17 +475,14 @@ namespace CELEQ
                         analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
                 }
 
-                ReporteCotizacion reporte = new ReporteCotizacion();
-                reporte.ShowDialog();
-                reporte.Dispose();
+                ReporteCotizacion r = new ReporteCotizacion(id, anno, "P-03:F01 Versión 01 Fecha: 25/04/2019", "CELEQ-1418-2018", "COTIZACIÓN", Convert.ToInt32(numGastosAdm.Value), Convert.ToInt32(numDescuento.Value));
+                r.ShowDialog();
+                r.Dispose();
             }
             else
             {
                 MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
-            ReporteCotizacion r = new ReporteCotizacion(1, 2019, "P-03:F01 Versión 01 Fecha: 25/04/2019", "CELEQ-1418-2018","COTIZACIÓN");
-            r.ShowDialog();
-            r.Dispose();
+            }
         }
     }
 }

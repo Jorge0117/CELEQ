@@ -15,16 +15,20 @@ namespace CELEQ
     {
         int id;
         int anno;
-        string versionD;
+        string versionDocumento;
         string consecutivo;
-        string nd;
-        public ReporteCotizacion(int i, int a, string v, string c, string n)
+        string nombreDocumento;
+        int gastosAdmin;
+        int descuento;
+        public ReporteCotizacion(int id, int anno, string versionDocumento, string consecutivo, string nombreDocumento, int gastosAdmin, int descuento)
         {
-            id = i;
-            anno = a;
-            versionD = v;
-            consecutivo = c;
-            nd = n;
+            this.id = id;
+            this.anno = anno;
+            this.versionDocumento = versionDocumento;
+            this.consecutivo = consecutivo;
+            this.nombreDocumento = nombreDocumento;
+            this.gastosAdmin = gastosAdmin;
+            this.descuento = descuento;
             InitializeComponent();
         }
 
@@ -34,10 +38,12 @@ namespace CELEQ
 
             this.vistaCotizacionTableAdapter.FillBy(this.CotizacionDataSet.vistaCotizacion, id, anno);
 
-            ReportParameter[] parametros = new ReportParameter[3];
-            parametros[0] = new ReportParameter("versionDocumento", versionD);
+            ReportParameter[] parametros = new ReportParameter[5];
+            parametros[0] = new ReportParameter("versionDocumento", versionDocumento);
             parametros[1] = new ReportParameter("Consecutivo", consecutivo);
-            parametros[2] = new ReportParameter("nombreDocumento", nd);
+            parametros[2] = new ReportParameter("nombreDocumento", nombreDocumento);
+            parametros[3] = new ReportParameter("gastosAdmin", gastosAdmin.ToString());
+            parametros[4] = new ReportParameter("descuento", descuento.ToString());
             this.reportViewer1.LocalReport.SetParameters(parametros);
             
             this.reportViewer1.RefreshReport();

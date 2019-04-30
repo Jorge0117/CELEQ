@@ -324,6 +324,8 @@ namespace CELEQ {
             
             private global::System.Data.DataColumn columnatencionDe;
             
+            private global::System.Data.DataColumn columnnumeroMuestras;
+            
             private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnanno;
@@ -416,6 +418,14 @@ namespace CELEQ {
             public global::System.Data.DataColumn atencionDeColumn {
                 get {
                     return this.columnatencionDe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn numeroMuestrasColumn {
+                get {
+                    return this.columnnumeroMuestras;
                 }
             }
             
@@ -550,6 +560,7 @@ namespace CELEQ {
                         string telefono2, 
                         string correo, 
                         string atencionDe, 
+                        int numeroMuestras, 
                         int id, 
                         int anno, 
                         double precioMuestreo, 
@@ -568,6 +579,7 @@ namespace CELEQ {
                         telefono2,
                         correo,
                         atencionDe,
+                        numeroMuestras,
                         id,
                         anno,
                         precioMuestreo,
@@ -606,6 +618,7 @@ namespace CELEQ {
                 this.columntelefono2 = base.Columns["telefono2"];
                 this.columncorreo = base.Columns["correo"];
                 this.columnatencionDe = base.Columns["atencionDe"];
+                this.columnnumeroMuestras = base.Columns["numeroMuestras"];
                 this.columnid = base.Columns["id"];
                 this.columnanno = base.Columns["anno"];
                 this.columnprecioMuestreo = base.Columns["precioMuestreo"];
@@ -632,6 +645,8 @@ namespace CELEQ {
                 base.Columns.Add(this.columncorreo);
                 this.columnatencionDe = new global::System.Data.DataColumn("atencionDe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnatencionDe);
+                this.columnnumeroMuestras = new global::System.Data.DataColumn("numeroMuestras", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroMuestras);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
                 this.columnanno = new global::System.Data.DataColumn("anno", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1184,6 +1199,22 @@ namespace CELEQ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int numeroMuestras {
+                get {
+                    try {
+                        return ((int)(this[this.tablevistaCotizacion.numeroMuestrasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'numeroMuestras\' in table \'vistaCotizacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevistaCotizacion.numeroMuestrasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int id {
                 get {
                     return ((int)(this[this.tablevistaCotizacion.idColumn]));
@@ -1382,6 +1413,18 @@ namespace CELEQ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcorreoNull() {
                 this[this.tablevistaCotizacion.correoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsnumeroMuestrasNull() {
+                return this.IsNull(this.tablevistaCotizacion.numeroMuestrasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetnumeroMuestrasNull() {
+                this[this.tablevistaCotizacion.numeroMuestrasColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1795,6 +1838,7 @@ namespace CELEQ.CotizacionDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("telefono2", "telefono2");
             tableMapping.ColumnMappings.Add("correo", "correo");
             tableMapping.ColumnMappings.Add("atencionDe", "atencionDe");
+            tableMapping.ColumnMappings.Add("numeroMuestras", "numeroMuestras");
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("anno", "anno");
             tableMapping.ColumnMappings.Add("precioMuestreo", "precioMuestreo");
@@ -1822,15 +1866,16 @@ namespace CELEQ.CotizacionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nombre, telefono, telefono2, correo, atencionDe, id, anno, precioMuestreo," +
-                " precioMuestra, descuento, gastosAdm, saldoAfavor, diasEntregaRes, granTotal, ob" +
-                "servaciones, subTotal FROM vistaCotizacion";
+            this._commandCollection[0].CommandText = "SELECT        nombre, telefono, telefono2, correo, atencionDe, numeroMuestras, id" +
+                ", anno, precioMuestreo, precioMuestra, descuento, gastosAdm, saldoAfavor, diasEn" +
+                "tregaRes, granTotal, observaciones, subTotal\r\nFROM            vistaCotizacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT anno, atencionDe, correo, descuento, diasEntregaRes, gastosAdm, granTotal," +
-                " id, nombre, observaciones, precioMuestra, precioMuestreo, saldoAfavor, subTotal" +
-                ", telefono, telefono2 FROM vistaCotizacion WHERE (id = @id) AND (anno = @anno)";
+                " id, nombre, numeroMuestras, observaciones, precioMuestra, precioMuestreo, saldo" +
+                "Afavor, subTotal, telefono, telefono2 FROM vistaCotizacion WHERE (id = @id) AND " +
+                "(anno = @anno)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@anno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "anno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
