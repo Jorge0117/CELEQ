@@ -44,13 +44,22 @@ namespace CELEQ
             try
             {
                 textConsecutivo.Text = ("####-####");
+                /*
                 SqlDataReader cotizador = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario ='" + Globals.usuario + "'");
                 cotizador.Read();
+                textCotizador.Text = cotizador[0].ToString();
+                */
+                comboCotizador.DisplayMember = "Text";
+                comboCotizador.ValueMember = "Value";
+
+                SqlDataReader cotizadores = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Secretaria Vinculo Externo'");
+                while (cotizadores.Read())
+                {
+                    comboCotizador.Items.Add(new { Text = cotizadores[0], Value = cotizadores[1] });
+                }
 
                 comboUnidad.Items.Add("ml");
                 comboUnidad.Items.Add("g");
-
-                textCotizador.Text = cotizador[0].ToString();
                 SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
                 while (provincias.Read())
                 {
@@ -452,12 +461,23 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            /*if (bd.agregarCotizacion(0, DateTime.Now.Year, checkBoxLicitacion.Checked ? 1:0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text), 
-                float.Parse(textDescuento.Text), float.Parse(textGastos.Text),dateTimeFecha.Value.ToShortTimeString(), dateTimeFechaSolicitud.Value.ToShortTimeString(), 
-                dateTimeFechaRespuesta.Value.ToShortTimeString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', textCotizador.Text, comboCliente.Text,
-                float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days) == 0)
+            int anno = DateTime.Now.Year;
+            int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text),
+                float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                comboCliente.Text, float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text));
+
+            if (id != -1)
             {
-        
+                foreach(DataGridViewRow analisis in dgvAnalisis.Rows)
+                {
+                    bd.ejecutarConsulta("insert into CotizacionAnalisis values(" + id + ", " + anno + ", '" + 
+                        analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
+                }
+
+                ReporteCotizacion reporte = new ReporteCotizacion();
+                reporte.ShowDialog();
+                reporte.Dispose();
             }
             else
             {

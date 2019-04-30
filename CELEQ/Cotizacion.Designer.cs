@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textCotizador = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -120,6 +119,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
+            this.comboCotizador = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -144,7 +144,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textCotizador);
+            this.groupBox1.Controls.Add(this.comboCotizador);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimeFecha);
             this.groupBox1.Controls.Add(this.label1);
@@ -155,15 +155,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1072, 46);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // textCotizador
-            // 
-            this.textCotizador.Location = new System.Drawing.Point(382, 14);
-            this.textCotizador.Margin = new System.Windows.Forms.Padding(4);
-            this.textCotizador.Name = "textCotizador";
-            this.textCotizador.ReadOnly = true;
-            this.textCotizador.Size = new System.Drawing.Size(399, 22);
-            this.textCotizador.TabIndex = 3;
             // 
             // label2
             // 
@@ -1155,6 +1146,15 @@
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
+            // comboCotizador
+            // 
+            this.comboCotizador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCotizador.FormattingEnabled = true;
+            this.comboCotizador.Location = new System.Drawing.Point(377, 14);
+            this.comboCotizador.Name = "comboCotizador";
+            this.comboCotizador.Size = new System.Drawing.Size(399, 24);
+            this.comboCotizador.TabIndex = 15;
+            // 
             // Cotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1217,7 +1217,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textCotizador;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Label label1;
@@ -1308,5 +1307,6 @@
         private System.Windows.Forms.TextBox textPrecioMuestreo;
         private System.Windows.Forms.TextBox textPrecioUnitario;
         private System.Windows.Forms.CheckBox checkGira;
+        private System.Windows.Forms.ComboBox comboCotizador;
     }
 }
