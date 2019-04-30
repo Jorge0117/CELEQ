@@ -92,8 +92,7 @@
             this.mantenimientoToolStripMenuItem,
             this.regimenBecarioToolStripMenuItem,
             this.vínculoExternoToolStripMenuItem,
-            this.listaMaestraToolStripMenuItem,
-            this.pruebaToolStripMenuItem});
+            this.listaMaestraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
