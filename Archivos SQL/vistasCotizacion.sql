@@ -1,7 +1,7 @@
 CREATE VIEW vistaCotizacion 
 AS
 SELECT        C.nombre, C.telefono, C.telefono2, C.correo, Con.atencionDe, Co.id, Co.anno, Co.precioMuestreo, Co.precioMuestra, Co.descuento, Co.gastosAdm, Co.saldoAfavor, Co.diasEntregaRes, Co.granTotal, 
-                         Co.observaciones, Co.subTotal
+                         Co.observaciones, Co.subTotal, Co.numeroMuestras
 FROM            dbo.ClienteCotizacion AS C INNER JOIN
                          dbo.ContactoCotizacion AS Con ON C.nombre = Con.nombreCliente INNER JOIN
                          dbo.Cotizacion AS Co ON Co.cliente = C.nombre INNER JOIN

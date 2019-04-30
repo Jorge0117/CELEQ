@@ -413,7 +413,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!precio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -794,7 +796,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Precio por muestro:</Value>
+                    <Value>Precio por muestra:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -827,7 +829,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!precioMuestra.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -891,7 +895,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!numeroMuestras.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -955,7 +961,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!precioMuestreo.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1019,7 +1027,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!subTotal.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1091,7 +1101,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!descuento.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1163,7 +1175,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!gastosAdm.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1227,7 +1241,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!saldoAfavor.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1293,7 +1309,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!granTotal.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1621,7 +1639,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>7.10417in</Height>
+        <Height>4.70834in</Height>
         <Style />
       </Body>
       <Width>7.668in</Width>
