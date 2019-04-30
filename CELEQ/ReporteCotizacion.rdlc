@@ -1050,11 +1050,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Value>Descuento </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
                     <Value>=Parameters!descuento.Value</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value> de descuento:</Value>
+                    <Value>%:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
