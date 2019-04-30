@@ -826,7 +826,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!precioMuestra.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!precioMuestra.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -890,7 +890,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!numeroMuestras.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!numeroMuestras.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -954,7 +954,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!precioMuestreo.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!precioMuestreo.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1018,7 +1018,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!subTotal.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!subTotal.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1050,7 +1050,11 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Descuento:</Value>
+                    <Value>=Parameters!descuento.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value> de descuento:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1061,9 +1065,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>6.18529cm</Top>
-            <Left>13.62142cm</Left>
+            <Left>11.85636cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.20818cm</Width>
+            <Width>4.97324cm</Width>
             <ZIndex>19</ZIndex>
             <Style>
               <Border>
@@ -1082,7 +1086,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!descuento.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!descuento.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1114,7 +1118,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Gastos Administrativos 5%:</Value>
+                    <Value>Gastos Administrativos </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!gastosAdmin.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>%:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1125,9 +1137,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>6.78529cm</Top>
-            <Left>11.8778cm</Left>
+            <Left>10.01804cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.9518cm</Width>
+            <Width>6.81156cm</Width>
             <ZIndex>21</ZIndex>
             <Style>
               <Border>
@@ -1146,7 +1158,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!gastosAdm.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!gastosAdm.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1210,7 +1222,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!saldoAfavor.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!saldoAfavor.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1276,7 +1288,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!granTotal.Value, "CotizacionDataSet")</Value>
+                    <Value>=First(Fields!granTotal.Value, "CotizacionDataSet")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -2021,6 +2033,14 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="gastosAdmin">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="descuento">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -2041,6 +2061,16 @@
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>nombreDocumento</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>gastosAdmin</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>descuento</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

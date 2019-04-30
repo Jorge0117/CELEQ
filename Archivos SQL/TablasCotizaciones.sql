@@ -68,7 +68,7 @@ drop table tipoAnalisis
 CREATE TABLE Muestra
 (
 	id					INT		IDENTITY(1,1)	PRIMARY KEY,
-	especifique			VARCHAR(100),
+	especifique			VARCHAR(500),
 	empaque				BIT,
 	sellada				BIT,
 	numeroMuestras		INT,

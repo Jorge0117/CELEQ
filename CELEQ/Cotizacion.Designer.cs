@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboCotizador = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -119,7 +120,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.butAceptar = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
-            this.comboCotizador = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -155,6 +155,15 @@
             this.groupBox1.Size = new System.Drawing.Size(1072, 46);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboCotizador
+            // 
+            this.comboCotizador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCotizador.FormattingEnabled = true;
+            this.comboCotizador.Location = new System.Drawing.Point(377, 14);
+            this.comboCotizador.Name = "comboCotizador";
+            this.comboCotizador.Size = new System.Drawing.Size(399, 24);
+            this.comboCotizador.TabIndex = 15;
             // 
             // label2
             // 
@@ -645,6 +654,7 @@
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
             this.comboLocalidad.TabIndex = 36;
+            this.comboLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboLocalidad_TextChanged);
             // 
             // label35
             // 
@@ -1145,15 +1155,6 @@
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
-            // 
-            // comboCotizador
-            // 
-            this.comboCotizador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboCotizador.FormattingEnabled = true;
-            this.comboCotizador.Location = new System.Drawing.Point(377, 14);
-            this.comboCotizador.Name = "comboCotizador";
-            this.comboCotizador.Size = new System.Drawing.Size(399, 24);
-            this.comboCotizador.TabIndex = 15;
             // 
             // Cotizacion
             // 
