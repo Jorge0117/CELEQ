@@ -56,11 +56,11 @@ go
 
 create procedure agregarCotizacion(@anno int, @licitacion bit, @observaciones varchar(600), @precioMuestreo float ,@descuento float, 
 									@gastosAdm float, @fechaLimite date, @fechaSolicitud date, @fechaRespuesta date, @saldoAfavor float ,@granTotal float, @moneda char(1),
-									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @idgenerado int output)
+									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @numMuestras int, @idgenerado int output)
 as 
-	insert into Cotizacion(id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal)
+	insert into Cotizacion(id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras)
 	values(0, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
-			@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal)
+			@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal, @numMuestras)
 
 	select @idgenerado = @@IDENTITY
 go
@@ -100,6 +100,7 @@ declare @cliente varchar(255)
 declare @precioMuestra float
 declare @diasEntregaRes int
 declare @subTotal float
+declare @numMuestras int
 
 select @anno = anno from inserted
 
@@ -119,21 +120,30 @@ select @cliente  = cliente  from inserted
 select @precioMuestra  = precioMuestra  from inserted
 select @diasEntregaRes = diasEntregaRes from inserted
 select @subTotal = subTotal from inserted
+select @numMuestras = numeroMuestras from inserted
 
 if not exists (select id, anno from Cotizacion where anno = @anno)
 	set @id = 1
 else
 	select @id =  max(id)+1 from Cotizacion where anno = @anno
 
-insert into Cotizacion (id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal)
+insert into Cotizacion (id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras)
 values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
-@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal)
+@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal, @numMuestras)
 
 go
+
+drop trigger consecutivoCotizacion
 
 delete from CotizacionAnalisis
 delete from Cotizacion
 select * from Cotizacion order by anno, id
+select * from CotizacionAnalisis
+select * from Analisis
+select * from tipoAnalisis
+
+insert into CotizacionAnalisis values(9, 2019, 'Contenido de plomo', 'ASTM D3237')
+
 
 
 insert into Cotizacion(id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal)

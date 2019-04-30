@@ -1776,7 +1776,7 @@ namespace CELEQ
 
         public int agregarCotizacion(int anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
             float gastosAdm, string fechaLimite, string fechaSolicitud, string fechaRespuesta, float saldoAfavor,
-            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal)
+            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal, int numMuestras)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
@@ -1809,6 +1809,7 @@ namespace CELEQ
                         cmd.Parameters.Add("@precioMuestra", SqlDbType.Float).Value = precioMuestra;
                         cmd.Parameters.Add("@diasEntregaRes", SqlDbType.Int).Value = diasEntregaRes;
                         cmd.Parameters.Add("@subTotal", SqlDbType.Float).Value = subTotal;
+                        cmd.Parameters.Add("@numMuestras", SqlDbType.Int).Value = numMuestras;
 
                         //Valor de retorno
                         cmd.Parameters.Add("@idgenerado", SqlDbType.Int).Direction = ParameterDirection.Output;
