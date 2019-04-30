@@ -465,7 +465,7 @@ namespace CELEQ
             int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text),
                 float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
                 dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                comboCliente.Text, float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text));
+                comboCliente.Text, float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value));
 
             if (id != -1)
             {
@@ -475,14 +475,15 @@ namespace CELEQ
                         analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
                 }
 
-                ReporteCotizacion r = new ReporteCotizacion(id, anno, "P-03:F01 Versión 01 Fecha: 25/04/2019", "CELEQ-1418-2018", "COTIZACIÓN", Convert.ToInt32(numGastosAdm.Value), Convert.ToInt32(numDescuento.Value));
-                r.ShowDialog();
-                r.Dispose();
+                ReporteCotizacion reporte = new ReporteCotizacion(id, anno, "P-03:F-01", "CELEQ-VE-" + id + "-" + anno, "Cotización");
+                reporte.ShowDialog();
+                reporte.Dispose();
             }
             else
             {
                 MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }

@@ -78,7 +78,7 @@
             this.labelCeleq = new System.Windows.Forms.Label();
             this.pictureCeleq = new System.Windows.Forms.PictureBox();
             this.pictureUcr = new System.Windows.Forms.PictureBox();
-            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCeleq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUcr)).BeginInit();
@@ -505,7 +505,13 @@
             this.pictureUcr.TabIndex = 6;
             this.pictureUcr.TabStop = false;
             // 
-
+            // puestosToolStripMenuItem
+            // 
+            this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
+            this.puestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puestosToolStripMenuItem.Text = "Puestos";
+            this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -589,7 +595,6 @@
         private System.Windows.Forms.ToolStripMenuItem listaMaestraToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem feriadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
     }
 }
 
