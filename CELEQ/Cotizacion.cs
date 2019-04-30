@@ -475,7 +475,7 @@ namespace CELEQ
                         analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
                 }
 
-                ReporteCotizacion reporte = new ReporteCotizacion(id, anno, "P-03:F-01", "CELEQ-VE-" + id + "-" + anno, "Cotización");
+                ReporteCotizacion reporte = new ReporteCotizacion(id, anno, "P-03:F-01", "CELEQ-VE-" + id + "-" + anno, "Cotización", Convert.ToInt32(numGastosAdm.Value), Convert.ToInt32(numDescuento.Value));
                 reporte.ShowDialog();
                 reporte.Dispose();
             }
