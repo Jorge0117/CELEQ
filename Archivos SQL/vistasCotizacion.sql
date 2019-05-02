@@ -12,10 +12,12 @@ drop VIEW vistaCotizacion
 
 CREATE VIEW vistaAnalisis
 AS
-SELECT        Co.id, Co.anno, A.descripcion, A.metodo, A.precio
+SELECT        Co.id, Co.anno, A.descripcion, A.metodo, A.precio, A.acreditacion
 FROM            dbo.Analisis AS A INNER JOIN
                          dbo.CotizacionAnalisis AS C ON A.descripcion = C.descripcion AND A.tipoAnalisis = C.tipoAnalisis INNER JOIN
                          dbo.Cotizacion AS Co ON Co.id = C.idCotizacion AND Co.anno = C.annoCotizacion
 
 CREATE VIEW vistaTransferenciaDeMuestras
 AS
+
+select * from Cotizacion
