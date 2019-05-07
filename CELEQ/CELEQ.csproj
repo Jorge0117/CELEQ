@@ -538,6 +538,9 @@
     <EmbeddedResource Include="ReporteDesignacionesResponsable.rdlc" />
     <EmbeddedResource Include="ReporteDesignacionEstudiante.rdlc" />
     <EmbeddedResource Include="ReporteTransferenciaDeMuestras.rdlc" />
+    <EmbeddedResource Include="ReporteTransferenciaDeMuestras.resx">
+      <DependentUpon>ReporteTransferenciaDeMuestras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SeleccionarAnalisisCotizacion.resx">
       <DependentUpon>SeleccionarAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>

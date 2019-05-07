@@ -458,7 +458,7 @@ namespace CELEQ
         {
             generarObservaciones();
         }
-
+        //Muestreo y precio muestra van al revez
         private void butAceptar_Click(object sender, EventArgs e)
         {
             if (textObservaciones.Text == "" || comboCotizador.Text == "" || comboCliente.Text == "" || comboQuimico.Text == "" ||

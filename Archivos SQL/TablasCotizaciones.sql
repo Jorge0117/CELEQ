@@ -38,6 +38,7 @@ CREATE TABLE Cotizacion
 	precioMuestra	FLOAT,
 	diasEntregaRes	INT,
 	subTotal		FLOAT,
+	numerMuestras	INT,
 
 	PRIMARY KEY(id, anno),
 	FOREIGN KEY(cotizador)	REFERENCES Usuarios(nombreUsuario),

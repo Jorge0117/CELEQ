@@ -343,7 +343,7 @@
             <Top>1.75052cm</Top>
             <Left>4.3905cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.09661cm</Width>
+            <Width>15.09662cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1410,7 +1410,7 @@
             </Style>
           </Line>
         </ReportItems>
-        <Height>9.02436in</Height>
+        <Height>8.9688in</Height>
         <Style />
       </Body>
       <Width>7.69167in</Width>

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace CELEQ
 {
-    public partial class ReporteTransferenciaDeMuestras : Form
+    public partial class listarCotizaciones : Form
     {
-        public ReporteTransferenciaDeMuestras()
+        public listarCotizaciones()
         {
             InitializeComponent();
-        }
-
-        private void ReporteTransferenciaDeMuestras_Load(object sender, EventArgs e)
-        {
-
-            this.reportViewer1.RefreshReport();
         }
     }
 }

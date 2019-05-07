@@ -1,7 +1,7 @@
 CREATE VIEW vistaCotizacion 
 AS
 SELECT        C.nombre, C.telefono, C.telefono2, C.correo, Con.atencionDe, Co.id, Co.anno, Co.precioMuestreo, Co.precioMuestra, Co.descuento, Co.gastosAdm, Co.saldoAfavor, Co.diasEntregaRes, Co.granTotal, 
-                         Co.observaciones, Co.subTotal
+                         Co.observaciones, Co.subTotal, Co.numeroMuestras
 FROM            dbo.ClienteCotizacion AS C INNER JOIN
                          dbo.ContactoCotizacion AS Con ON C.nombre = Con.nombreCliente INNER JOIN
                          dbo.Cotizacion AS Co ON Co.cliente = C.nombre INNER JOIN
@@ -12,10 +12,12 @@ drop VIEW vistaCotizacion
 
 CREATE VIEW vistaAnalisis
 AS
-SELECT        Co.id, Co.anno, A.descripcion, A.metodo, A.precio
+SELECT        Co.id, Co.anno, A.descripcion, A.metodo, A.precio, A.acreditacion
 FROM            dbo.Analisis AS A INNER JOIN
                          dbo.CotizacionAnalisis AS C ON A.descripcion = C.descripcion AND A.tipoAnalisis = C.tipoAnalisis INNER JOIN
                          dbo.Cotizacion AS Co ON Co.id = C.idCotizacion AND Co.anno = C.annoCotizacion
 
 CREATE VIEW vistaTransferenciaDeMuestras
 AS
+
+select * from Cotizacion

@@ -37,6 +37,10 @@
           <DataField>precio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="acreditacion">
+          <DataField>acreditacion</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>CotizacionDataSet</rd:DataSetName>
@@ -72,10 +76,6 @@
         <Field Name="atencionDe">
           <DataField>atencionDe</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="numeroMuestras">
-          <DataField>numeroMuestras</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="id">
           <DataField>id</DataField>
@@ -120,6 +120,10 @@
         <Field Name="subTotal">
           <DataField>subTotal</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="numeroMuestras">
+          <DataField>numeroMuestras</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -352,7 +356,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!descripcion.Value</Value>
+                                  <Value>=Switch(
+    Fields!acreditacion.Value = 1, "*", 
+    Fields!acreditacion.Value = 2, "**", 
+	Fields!acreditacion.Value = 3, "***"
+    ) + " " + Fields!descripcion.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -413,7 +421,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!precio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -794,7 +804,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Precio por muestro:</Value>
+                    <Value>Precio por muestra:</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -827,7 +837,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!precioMuestra.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -891,7 +903,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!numeroMuestras.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -955,7 +969,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!precioMuestreo.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1019,7 +1035,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!subTotal.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1091,7 +1109,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!descuento.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1141,7 +1161,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>6.78529cm</Top>
-            <Left>10.01804cm</Left>
+            <Left>10.01803cm</Left>
             <Height>0.6cm</Height>
             <Width>6.81156cm</Width>
             <ZIndex>21</ZIndex>
@@ -1163,7 +1183,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!gastosAdm.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1173,7 +1195,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>6.78529cm</Top>
-            <Left>16.8296cm</Left>
+            <Left>16.82959cm</Left>
             <Height>0.6cm</Height>
             <Width>2.58538cm</Width>
             <ZIndex>22</ZIndex>
@@ -1205,7 +1227,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>7.38529cm</Top>
-            <Left>13.62142cm</Left>
+            <Left>13.62141cm</Left>
             <Height>0.6cm</Height>
             <Width>3.20818cm</Width>
             <ZIndex>23</ZIndex>
@@ -1227,7 +1249,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!saldoAfavor.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1237,7 +1261,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>7.38529cm</Top>
-            <Left>16.8296cm</Left>
+            <Left>16.82959cm</Left>
             <Height>0.6cm</Height>
             <Width>2.58538cm</Width>
             <ZIndex>24</ZIndex>
@@ -1271,7 +1295,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>7.98529cm</Top>
-            <Left>13.62142cm</Left>
+            <Left>13.62141cm</Left>
             <Height>0.6cm</Height>
             <Width>3.20818cm</Width>
             <ZIndex>25</ZIndex>
@@ -1293,7 +1317,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!granTotal.Value, "CotizacionDataSet")</Value>
-                    <Style />
+                    <Style>
+                      <Format>0.00;(0.00)</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1303,7 +1329,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
             <Top>7.98529cm</Top>
-            <Left>16.8296cm</Left>
+            <Left>16.82959cm</Left>
             <Height>0.6cm</Height>
             <Width>2.58538cm</Width>
             <ZIndex>26</ZIndex>
@@ -1621,7 +1647,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>7.10417in</Height>
+        <Height>4.70834in</Height>
         <Style />
       </Body>
       <Width>7.668in</Width>
@@ -1827,7 +1853,7 @@
               <rd:DefaultName>Textbox53</rd:DefaultName>
               <Top>2.60357cm</Top>
               <Left>6.4702cm</Left>
-              <Height>0.6cm</Height>
+              <Height>0.83164cm</Height>
               <Width>6.53632cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
