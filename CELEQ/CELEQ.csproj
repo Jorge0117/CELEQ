@@ -258,6 +258,12 @@
     <Compile Include="ListaPuestos.Designer.cs">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </Compile>
+    <Compile Include="listarCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listarCotizaciones.Designer.cs">
+      <DependentUpon>listarCotizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Localizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
