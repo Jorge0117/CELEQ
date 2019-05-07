@@ -487,6 +487,9 @@
     <EmbeddedResource Include="ListaPuestos.resx">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="listarCotizaciones.resx">
+      <DependentUpon>listarCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Localizaciones.resx">
       <DependentUpon>Localizaciones.cs</DependentUpon>
     </EmbeddedResource>
