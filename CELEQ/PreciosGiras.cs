@@ -49,5 +49,10 @@ namespace CELEQ
                 MessageBox.Show("Ha ocurrido un error modificando los precios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

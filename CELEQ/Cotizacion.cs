@@ -58,7 +58,7 @@ namespace CELEQ
                     comboCotizador.Items.Add(new { Text = cotizadores[0], Value = cotizadores[1] });
                 }
 
-                comboUnidad.Items.Add("ml");
+                comboUnidad.Items.Add("mL");
                 comboUnidad.Items.Add("g");
                 SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
                 while (provincias.Read())
@@ -461,27 +461,37 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            int anno = DateTime.Now.Year;
-            int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioUnitario.Text),
-                float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
-                dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                comboCliente.Text, float.Parse(textPrecioMuestreo.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value));
-
-            if (id != -1)
+            if (textObservaciones.Text == "" || comboCotizador.Text == "" || comboCliente.Text == "" || comboQuimico.Text == "" ||
+                comboFirmantes.Text == "" || dgvAnalisis.Rows.Count == 0 || comboTipoMuestra.Text == "" || textMuestra.Text == "" ||
+                numericMuestras.Value == 0 || numericDias.Value == 0 || numericCantidad.Value == 0 || comboUnidad.Text == "")
             {
-                foreach(DataGridViewRow analisis in dgvAnalisis.Rows)
-                {
-                    bd.ejecutarConsulta("insert into CotizacionAnalisis values(" + id + ", " + anno + ", '" + 
-                        analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
-                }
-
-                ReporteCotizacion reporte = new ReporteCotizacion(id, anno, "P-03:F-01", "CELEQ-VE-" + id + "-" + anno, "Cotización", Convert.ToInt32(numGastosAdm.Value), Convert.ToInt32(numDescuento.Value));
-                reporte.ShowDialog();
-                reporte.Dispose();
+                MessageBox.Show("Por favor llene los campos requeridos", "Cotización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int anno = DateTime.Now.Year;
+                int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
+                    float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                    dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                    comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value));
+
+                if (id != -1)
+                {
+                    foreach (DataGridViewRow analisis in dgvAnalisis.Rows)
+                    {
+                        bd.ejecutarConsulta("insert into CotizacionAnalisis values(" + id + ", " + anno + ", '" +
+                            analisis.Cells[0].Value.ToString() + "', '" + comboTipoMuestra.SelectedItem.ToString() + "')");
+                    }
+
+                    ReporteCotizacion reporte = new ReporteCotizacion(id, anno, "P-03:F-01", "CELEQ-VE-" + id.ToString("D4") + "-" + anno, "Cotización", Convert.ToInt32(numGastosAdm.Value), Convert.ToInt32(numDescuento.Value));
+                    reporte.ShowDialog();
+                    reporte.saveToPdf();
+                    reporte.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
