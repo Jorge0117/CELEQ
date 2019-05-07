@@ -73,88 +73,88 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
-    <Compile Include="AgregarAnalisisCotizacion.cs">
+    <Compile Include="Vinculo externo\AgregarAnalisisCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarAnalisisCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\AgregarAnalisisCotizacion.Designer.cs">
       <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarClienteCotizacion.cs">
+    <Compile Include="Vinculo externo\AgregarClienteCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarClienteCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\AgregarClienteCotizacion.Designer.cs">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarContactoCotizacion.cs">
+    <Compile Include="Vinculo externo\AgregarContactoCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarContactoCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\AgregarContactoCotizacion.Designer.cs">
       <DependentUpon>AgregarContactoCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarEncargado.cs">
+    <Compile Include="Regimen becario\AgregarEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarEncargado.Designer.cs">
+    <Compile Include="Regimen becario\AgregarEncargado.Designer.cs">
       <DependentUpon>AgregarEncargado.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarFeriado.cs">
+    <Compile Include="Vinculo externo\AgregarFeriado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarFeriado.Designer.cs">
+    <Compile Include="Vinculo externo\AgregarFeriado.Designer.cs">
       <DependentUpon>AgregarFeriado.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarListaMaestra.cs">
+    <Compile Include="Lista maestra\AgregarListaMaestra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarListaMaestra.Designer.cs">
+    <Compile Include="Lista maestra\AgregarListaMaestra.Designer.cs">
       <DependentUpon>AgregarListaMaestra.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarLocalizacion.cs">
+    <Compile Include="Vinculo externo\AgregarLocalizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarLocalizacion.Designer.cs">
+    <Compile Include="Vinculo externo\AgregarLocalizacion.Designer.cs">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarPresupuesto.cs">
+    <Compile Include="Regimen becario\AgregarPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarPresupuesto.Designer.cs">
+    <Compile Include="Regimen becario\AgregarPresupuesto.Designer.cs">
       <DependentUpon>AgregarPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarPuesto.cs">
+    <Compile Include="Usuarios\AgregarPuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarPuesto.Designer.cs">
+    <Compile Include="Usuarios\AgregarPuesto.Designer.cs">
       <DependentUpon>AgregarPuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarReactivoCristaleria.cs">
+    <Compile Include="Regencia\AgregarReactivoCristaleria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarReactivoCristaleria.Designer.cs">
+    <Compile Include="Regencia\AgregarReactivoCristaleria.Designer.cs">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarUsuario.cs">
+    <Compile Include="Usuarios\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarUsuario.Designer.cs">
+    <Compile Include="Usuarios\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnalizarSolicitudMantenimiento.cs">
+    <Compile Include="UMI\AnalizarSolicitudMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnalizarSolicitudMantenimiento.Designer.cs">
+    <Compile Include="UMI\AnalizarSolicitudMantenimiento.Designer.cs">
       <DependentUpon>AnalizarSolicitudMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Aranceles.cs">
+    <Compile Include="Regimen becario\Aranceles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Aranceles.Designer.cs">
+    <Compile Include="Regimen becario\Aranceles.Designer.cs">
       <DependentUpon>Aranceles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cotizacion.cs">
+    <Compile Include="Vinculo externo\Cotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\Cotizacion.Designer.cs">
       <DependentUpon>Cotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="CotizacionDataSet.Designer.cs">
@@ -162,46 +162,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatosSolicitud.cs">
+    <Compile Include="Regencia\DatosSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatosSolicitud.Designer.cs">
+    <Compile Include="Regencia\DatosSolicitud.Designer.cs">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
     </Compile>
-    <Compile Include="Designacion.cs">
+    <Compile Include="Regimen becario\Designacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Designacion.Designer.cs">
+    <Compile Include="Regimen becario\Designacion.Designer.cs">
       <DependentUpon>Designacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="DesignacionesFiltrarResponsble.cs">
+    <Compile Include="Regimen becario\DesignacionesFiltrarResponsble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DesignacionesFiltrarResponsble.Designer.cs">
+    <Compile Include="Regimen becario\DesignacionesFiltrarResponsble.Designer.cs">
       <DependentUpon>DesignacionesFiltrarResponsble.cs</DependentUpon>
     </Compile>
-    <Compile Include="DesignacionFiltrarEstudiantes.cs">
+    <Compile Include="Regimen becario\DesignacionFiltrarEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DesignacionFiltrarEstudiantes.Designer.cs">
+    <Compile Include="Regimen becario\DesignacionFiltrarEstudiantes.Designer.cs">
       <DependentUpon>DesignacionFiltrarEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetallesSolicitud.cs">
+    <Compile Include="Regencia\DetallesSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetallesSolicitud.Designer.cs">
+    <Compile Include="Regencia\DetallesSolicitud.Designer.cs">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encargados.cs">
+    <Compile Include="Regimen becario\Encargados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Encargados.Designer.cs">
+    <Compile Include="Regimen becario\Encargados.Designer.cs">
       <DependentUpon>Encargados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Feriados.cs">
+    <Compile Include="Vinculo externo\Feriados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Feriados.Designer.cs">
+    <Compile Include="Vinculo externo\Feriados.Designer.cs">
       <DependentUpon>Feriados.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -210,52 +210,52 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarUnidad.cs">
+    <Compile Include="Unidad\AgregarUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarUnidad.Designer.cs">
+    <Compile Include="Unidad\AgregarUnidad.Designer.cs">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenerarReporteDesignaciones.cs">
+    <Compile Include="Regimen becario\GenerarReporteDesignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerarReporteDesignaciones.Designer.cs">
+    <Compile Include="Regimen becario\GenerarReporteDesignaciones.Designer.cs">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaAnalisisCotizacion.cs">
+    <Compile Include="Vinculo externo\ListaAnalisisCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaAnalisisCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\ListaAnalisisCotizacion.Designer.cs">
       <DependentUpon>ListaAnalisisCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaClientesCotizacion.cs">
+    <Compile Include="Vinculo externo\ListaClientesCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaClientesCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\ListaClientesCotizacion.Designer.cs">
       <DependentUpon>ListaClientesCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaDesignaciones.cs">
+    <Compile Include="Regimen becario\ListaDesignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaDesignaciones.Designer.cs">
+    <Compile Include="Regimen becario\ListaDesignaciones.Designer.cs">
       <DependentUpon>ListaDesignaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaEstudiantes.cs">
+    <Compile Include="Regimen becario\ListaEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaEstudiantes.Designer.cs">
+    <Compile Include="Regimen becario\ListaEstudiantes.Designer.cs">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaMaestra.cs">
+    <Compile Include="Lista maestra\ListaMaestra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaMaestra.Designer.cs">
+    <Compile Include="Lista maestra\ListaMaestra.Designer.cs">
       <DependentUpon>ListaMaestra.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaPuestos.cs">
+    <Compile Include="Usuarios\ListaPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaPuestos.Designer.cs">
+    <Compile Include="Usuarios\ListaPuestos.Designer.cs">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="listarCotizaciones.cs">
@@ -264,77 +264,77 @@
     <Compile Include="listarCotizaciones.Designer.cs">
       <DependentUpon>listarCotizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Localizaciones.cs">
+    <Compile Include="Vinculo externo\Localizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Localizaciones.Designer.cs">
+    <Compile Include="Vinculo externo\Localizaciones.Designer.cs">
       <DependentUpon>Localizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarContra.cs">
+    <Compile Include="Usuarios\ModificarContra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarContra.Designer.cs">
+    <Compile Include="Usuarios\ModificarContra.Designer.cs">
       <DependentUpon>ModificarContra.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReacCris.cs">
+    <Compile Include="Regencia\FormReacCris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReacCris.Designer.cs">
+    <Compile Include="Regencia\FormReacCris.Designer.cs">
       <DependentUpon>FormReacCris.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistoricoSolicitudesMantenimiento.cs">
+    <Compile Include="UMI\HistoricoSolicitudesMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistoricoSolicitudesMantenimiento.Designer.cs">
+    <Compile Include="UMI\HistoricoSolicitudesMantenimiento.Designer.cs">
       <DependentUpon>HistoricoSolicitudesMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="InformeFinalSolicitudes.cs">
+    <Compile Include="UMI\InformeFinalSolicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InformeFinalSolicitudes.Designer.cs">
+    <Compile Include="UMI\InformeFinalSolicitudes.Designer.cs">
       <DependentUpon>InformeFinalSolicitudes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventario.cs">
+    <Compile Include="Regencia\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario.Designer.cs">
+    <Compile Include="Regencia\Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaSolicitudes.cs">
+    <Compile Include="Regencia\ListaSolicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaSolicitudes.Designer.cs">
+    <Compile Include="Regencia\ListaSolicitudes.Designer.cs">
       <DependentUpon>ListaSolicitudes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaSolicitudMantenimiento.cs">
+    <Compile Include="UMI\ListaSolicitudMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaSolicitudMantenimiento.Designer.cs">
+    <Compile Include="UMI\ListaSolicitudMantenimiento.Designer.cs">
       <DependentUpon>ListaSolicitudMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaUsuarios.cs">
+    <Compile Include="Usuarios\ListaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaUsuarios.Designer.cs">
+    <Compile Include="Usuarios\ListaUsuarios.Designer.cs">
       <DependentUpon>ListaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Usuarios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Usuarios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pdf.cs" />
-    <Compile Include="Permisos.cs">
+    <Compile Include="Regencia\Pdf.cs" />
+    <Compile Include="Usuarios\Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Permisos.Designer.cs">
+    <Compile Include="Usuarios\Permisos.Designer.cs">
       <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presupuesto.cs">
+    <Compile Include="Regimen becario\Presupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presupuesto.Designer.cs">
+    <Compile Include="Regimen becario\Presupuesto.Designer.cs">
       <DependentUpon>Presupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -344,13 +344,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReporteCotizacion.cs">
+    <Compile Include="Vinculo externo\ReporteCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\ReporteCotizacion.Designer.cs">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteDesignacionesPresupuesto.cs">
+    <Compile Include="Regimen becario\ReporteDesignacionesPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RepDesignacionesResponsable.Designer.cs">
@@ -358,41 +358,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesResponsable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ReporteDesignacionesPresupuesto.Designer.cs">
+    <Compile Include="Regimen becario\ReporteDesignacionesPresupuesto.Designer.cs">
       <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteTransferenciaDeMuestras.cs">
+    <Compile Include="Vinculo externo\ReporteTransferenciaDeMuestras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteTransferenciaDeMuestras.Designer.cs">
+    <Compile Include="Vinculo externo\ReporteTransferenciaDeMuestras.Designer.cs">
       <DependentUpon>ReporteTransferenciaDeMuestras.cs</DependentUpon>
     </Compile>
-    <Compile Include="SeleccionarAnalisisCotizacion.cs">
+    <Compile Include="Vinculo externo\SeleccionarAnalisisCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeleccionarAnalisisCotizacion.Designer.cs">
+    <Compile Include="Vinculo externo\SeleccionarAnalisisCotizacion.Designer.cs">
       <DependentUpon>SeleccionarAnalisisCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="SolicitudMantenimiento.cs">
+    <Compile Include="UMI\SolicitudMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SolicitudMantenimiento.Designer.cs">
+    <Compile Include="UMI\SolicitudMantenimiento.Designer.cs">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Unidad.cs">
+    <Compile Include="Unidad\Unidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Unidad.Designer.cs">
+    <Compile Include="Unidad\Unidad.Designer.cs">
       <DependentUpon>Unidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="PreciosGiras.cs">
+    <Compile Include="Vinculo externo\PreciosGiras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PreciosGiras.Designer.cs">
+    <Compile Include="Vinculo externo\PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarAnalisisCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\AgregarAnalisisCotizacion.resx">
       <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Web References\banco\Reference.cs">
@@ -400,130 +400,130 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarClienteCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\AgregarClienteCotizacion.resx">
       <DependentUpon>AgregarClienteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarContactoCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\AgregarContactoCotizacion.resx">
       <DependentUpon>AgregarContactoCotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarEncargado.resx">
+    <EmbeddedResource Include="Regimen becario\AgregarEncargado.resx">
       <DependentUpon>AgregarEncargado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarFeriado.resx">
+    <EmbeddedResource Include="Vinculo externo\AgregarFeriado.resx">
       <DependentUpon>AgregarFeriado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarListaMaestra.resx">
+    <EmbeddedResource Include="Lista maestra\AgregarListaMaestra.resx">
       <DependentUpon>AgregarListaMaestra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarLocalizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\AgregarLocalizacion.resx">
       <DependentUpon>AgregarLocalizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarPresupuesto.resx">
+    <EmbeddedResource Include="Regimen becario\AgregarPresupuesto.resx">
       <DependentUpon>AgregarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarPuesto.resx">
+    <EmbeddedResource Include="Usuarios\AgregarPuesto.resx">
       <DependentUpon>AgregarPuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarReactivoCristaleria.resx">
+    <EmbeddedResource Include="Regencia\AgregarReactivoCristaleria.resx">
       <DependentUpon>AgregarReactivoCristaleria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarUsuario.resx">
+    <EmbeddedResource Include="Usuarios\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnalizarSolicitudMantenimiento.resx">
+    <EmbeddedResource Include="UMI\AnalizarSolicitudMantenimiento.resx">
       <DependentUpon>AnalizarSolicitudMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Aranceles.resx">
+    <EmbeddedResource Include="Regimen becario\Aranceles.resx">
       <DependentUpon>Aranceles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\Cotizacion.resx">
       <DependentUpon>Cotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatosSolicitud.resx">
+    <EmbeddedResource Include="Regencia\DatosSolicitud.resx">
       <DependentUpon>DatosSolicitud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Designacion.resx">
+    <EmbeddedResource Include="Regimen becario\Designacion.resx">
       <DependentUpon>Designacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DesignacionesFiltrarResponsble.resx">
+    <EmbeddedResource Include="Regimen becario\DesignacionesFiltrarResponsble.resx">
       <DependentUpon>DesignacionesFiltrarResponsble.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DesignacionFiltrarEstudiantes.resx">
+    <EmbeddedResource Include="Regimen becario\DesignacionFiltrarEstudiantes.resx">
       <DependentUpon>DesignacionFiltrarEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetallesSolicitud.resx">
+    <EmbeddedResource Include="Regencia\DetallesSolicitud.resx">
       <DependentUpon>DetallesSolicitud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Encargados.resx">
+    <EmbeddedResource Include="Regimen becario\Encargados.resx">
       <DependentUpon>Encargados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Feriados.resx">
+    <EmbeddedResource Include="Vinculo externo\Feriados.resx">
       <DependentUpon>Feriados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarUnidad.resx">
+    <EmbeddedResource Include="Unidad\AgregarUnidad.resx">
       <DependentUpon>AgregarUnidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenerarReporteDesignaciones.resx">
+    <EmbeddedResource Include="Regimen becario\GenerarReporteDesignaciones.resx">
       <DependentUpon>GenerarReporteDesignaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaAnalisisCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\ListaAnalisisCotizacion.resx">
       <DependentUpon>ListaAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaClientesCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\ListaClientesCotizacion.resx">
       <DependentUpon>ListaClientesCotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaDesignaciones.resx">
+    <EmbeddedResource Include="Regimen becario\ListaDesignaciones.resx">
       <DependentUpon>ListaDesignaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaEstudiantes.resx">
+    <EmbeddedResource Include="Regimen becario\ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaMaestra.resx">
+    <EmbeddedResource Include="Lista maestra\ListaMaestra.resx">
       <DependentUpon>ListaMaestra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaPuestos.resx">
+    <EmbeddedResource Include="Usuarios\ListaPuestos.resx">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listarCotizaciones.resx">
       <DependentUpon>listarCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localizaciones.resx">
+    <EmbeddedResource Include="Vinculo externo\Localizaciones.resx">
       <DependentUpon>Localizaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarContra.resx">
+    <EmbeddedResource Include="Usuarios\ModificarContra.resx">
       <DependentUpon>ModificarContra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReacCris.resx">
+    <EmbeddedResource Include="Regencia\FormReacCris.resx">
       <DependentUpon>FormReacCris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistoricoSolicitudesMantenimiento.resx">
+    <EmbeddedResource Include="UMI\HistoricoSolicitudesMantenimiento.resx">
       <DependentUpon>HistoricoSolicitudesMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InformeFinalSolicitudes.resx">
+    <EmbeddedResource Include="UMI\InformeFinalSolicitudes.resx">
       <DependentUpon>InformeFinalSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventario.resx">
+    <EmbeddedResource Include="Regencia\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaSolicitudes.resx">
+    <EmbeddedResource Include="Regencia\ListaSolicitudes.resx">
       <DependentUpon>ListaSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaSolicitudMantenimiento.resx">
+    <EmbeddedResource Include="UMI\ListaSolicitudMantenimiento.resx">
       <DependentUpon>ListaSolicitudMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaUsuarios.resx">
+    <EmbeddedResource Include="Usuarios\ListaUsuarios.resx">
       <DependentUpon>ListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Permisos.resx">
+    <EmbeddedResource Include="Usuarios\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presupuesto.resx">
+    <EmbeddedResource Include="Regimen becario\Presupuesto.resx">
       <DependentUpon>Presupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -537,29 +537,29 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReporteCotizacion.rdlc" />
-    <EmbeddedResource Include="ReporteCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\ReporteCotizacion.resx">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDesignacionesPresupuesto.rdlc" />
-    <EmbeddedResource Include="ReporteDesignacionesPresupuesto.resx">
+    <EmbeddedResource Include="Regimen becario\ReporteDesignacionesPresupuesto.resx">
       <DependentUpon>ReporteDesignacionesPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDesignacionesResponsable.rdlc" />
     <EmbeddedResource Include="ReporteDesignacionEstudiante.rdlc" />
     <EmbeddedResource Include="ReporteTransferenciaDeMuestras.rdlc" />
-    <EmbeddedResource Include="ReporteTransferenciaDeMuestras.resx">
+    <EmbeddedResource Include="Vinculo externo\ReporteTransferenciaDeMuestras.resx">
       <DependentUpon>ReporteTransferenciaDeMuestras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeleccionarAnalisisCotizacion.resx">
+    <EmbeddedResource Include="Vinculo externo\SeleccionarAnalisisCotizacion.resx">
       <DependentUpon>SeleccionarAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SolicitudMantenimiento.resx">
+    <EmbeddedResource Include="UMI\SolicitudMantenimiento.resx">
       <DependentUpon>SolicitudMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Unidad.resx">
+    <EmbeddedResource Include="Unidad\Unidad.resx">
       <DependentUpon>Unidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreciosGiras.resx">
+    <EmbeddedResource Include="Vinculo externo\PreciosGiras.resx">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CotizacionDataSet.xsc">
@@ -600,7 +600,7 @@
     <None Include="bin\Debug\LogoCeleq.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="RepDesignacionesDataSet.datasource" />
+    <None Include="Regimen becario\RepDesignacionesDataSet.datasource" />
     <None Include="RepDesignacionesDataSet.xsc">
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </None>
@@ -669,5 +669,6 @@
       <CachedSettingsPropName>CELEQ_banco_wsIndicadoresEconomicos</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
