@@ -19,9 +19,9 @@ namespace CELEQ
             InitializeComponent();
             bd = new AccesoBaseDatos();
             //Solo permite seleccionar filas en el dgv
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.MultiSelect = false;
-            dgvClientes.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
+            dgvCotizaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCotizaciones.MultiSelect = false;
+            dgvCotizaciones.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgv_RowPrePaint);
         }
 
         //Pinta la fila completa en el dgv
@@ -38,7 +38,9 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select CONCAT('CELEQ-VE-',FORMAT(id, 'D4'),'-',anno) as 'Consecutivo' from Cotizacion order by anno, id");
+                    tabla = bd.ejecutarConsultaTabla("select Co.id, FORMAT(Co.id, 'D4'), Co.anno, CONCAT('CELEQ-VE-',FORMAT(Co.id, 'D4'),'-',Co.anno) as 'Consecutivo', C.nombre as Cliente," +
+                        " Co.fechaCotizacion as 'Fecha de emisión' from Cotizacion Co" +
+                        " join ClienteCotizacion C on Co.cliente = C.nombre order by anno, id");
                 }
                 catch (SqlException ex)
                 {
@@ -49,8 +51,11 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select CONCAT('CELEQ-VE-',FORMAT(id, 'D4'),'-',anno) as 'Consecutivo' from Cotizacion where " +
-                        "CONCAT('CELEQ-VE-',FORMAT(id, 'D4'),'-',anno) like '%" + filtro + "%' order by anno, id ");
+                    tabla = bd.ejecutarConsultaTabla("select Co.id, FORMAT(Co.id, 'D4'), Co.anno, CONCAT('CELEQ-VE-',FORMAT(Co.id, 'D4'),'-',Co.anno) as 'Consecutivo', C.nombre as Cliente, " +
+                        "Co.fechaCotizacion as 'Fecha de emisión' from Cotizacion Co" +
+                        " join ClienteCotizacion C on Co.cliente = C.nombre where " +
+                        "CONCAT('CELEQ-VE-',FORMAT(Co.id, 'D4'),'-',Co.anno) like '%" + filtro + "%' or C.nombre like '%" + filtro + "%' or Co.fechaCotizacion like '%" +
+                        filtro + "%' order by anno, id ");
                 }
                 catch (SqlException ex)
                 {
@@ -60,11 +65,21 @@ namespace CELEQ
 
             BindingSource bs = new BindingSource();
             bs.DataSource = tabla;
-            dgvClientes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            dgvClientes.DataSource = bs;
-            for (int i = 0; i < dgvClientes.ColumnCount; ++i)
-            {
-                dgvClientes.Columns[i].Width = dgvClientes.Width / dgvClientes.ColumnCount - 1;
+            dgvCotizaciones.DataSource = bs;
+            dgvCotizaciones.Columns[0].Visible = false;
+            dgvCotizaciones.Columns[1].Visible = false;
+            dgvCotizaciones.Columns[2].Visible = false;
+            dgvCotizaciones.Columns[3].Width = (dgvCotizaciones.Width / 3) + 30;
+            dgvCotizaciones.Columns[4].Width = (dgvCotizaciones.Width / 3) ;
+            dgvCotizaciones.Columns[5].Width = (dgvCotizaciones.Width / 3) - 50;
+
+            if (dgvCotizaciones.Rows.Count > 0){
+                butModificar.Enabled = true;
+                butVer.Enabled = true;
+            }
+            else{
+                butModificar.Enabled = false;
+                butVer.Enabled = false;
             }
 
         }
@@ -81,17 +96,23 @@ namespace CELEQ
 
         private void butVer_Click(object sender, EventArgs e)
         {
-
+            Cotizacion c = new Cotizacion(2, dgvCotizaciones.SelectedRows[0]);
+            c.ShowDialog();
+            c.Dispose();
         }
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-
+            Cotizacion c = new Cotizacion(0);
+            c.ShowDialog();
+            c.Dispose();
         }
 
         private void butModificar_Click(object sender, EventArgs e)
         {
-
+            Cotizacion c = new Cotizacion(1, dgvCotizaciones.SelectedRows[0]);
+            c.ShowDialog();
+            c.Dispose();
         }
     }
 }

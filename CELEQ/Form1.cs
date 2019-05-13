@@ -260,7 +260,7 @@ namespace CELEQ
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cotizacion cotizacion = new Cotizacion();
+            Cotizacion cotizacion = new Cotizacion(0);
             cotizacion.ShowDialog();
             cotizacion.Dispose();
         }

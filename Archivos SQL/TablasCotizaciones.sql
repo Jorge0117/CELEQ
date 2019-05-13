@@ -18,6 +18,7 @@ CREATE TABLE ContactoCotizacion
 	FOREIGN KEY(nombreCliente)	REFERENCES ClienteCotizacion(nombre) on update cascade
 )
 drop table ContactoCotizacion
+/*Revisar las foraneas de usuarioQuimico y usuarioFirmante*/
 CREATE TABLE Cotizacion
 (
 	id				INT	IDENTITY(1,1) NOT NULL,
@@ -38,13 +39,22 @@ CREATE TABLE Cotizacion
 	precioMuestra	FLOAT,
 	diasEntregaRes	INT,
 	subTotal		FLOAT,
-	numerMuestras	INT,
+	numeroMuestras	INT,
+	quimico			VARCHAR(200),
+	firmante		VARCHAR(200),
+	usuarioQuimico	NVARCHAR(50),
+	usuarioFirmante	NVARCHAR(50),
 
 	PRIMARY KEY(id, anno),
 	FOREIGN KEY(cotizador)	REFERENCES Usuarios(nombreUsuario),
+	FOREIGN KEY(usuarioQuimico)	REFERENCES Usuarios(nombreUsuario),
+	FOREIGN KEY(usuarioFirmante)	REFERENCES Usuarios(nombreUsuario),
 	FOREIGN KEY(cliente)	REFERENCES ClienteCotizacion(nombre)
 )
 drop table Cotizacion
+
+select * from Usuarios
+
 CREATE TABLE Gira
 (
 	id						INT		IDENTITY(1,1)	PRIMARY KEY,
@@ -54,6 +64,7 @@ CREATE TABLE Gira
 	cantidadTecnicos		INT,
 	gastoTotal				FLOAT,
 	provincia				VARCHAR(100),
+	canton					VARCHAR(100),
 	localidad				VARCHAR(100),
 	idCotizacion			INT,
 	annoCotizacion			INT,
@@ -61,6 +72,10 @@ CREATE TABLE Gira
 	FOREIGN KEY(idCotizacion, annoCotizacion)	REFERENCES Cotizacion(id, anno)	
 )
 drop table Gira
+select * from Cotizacion where id = '1' and anno = '2019'
+
+select * from Cotizacion where id = 1 and anno = 2019
+
 CREATE TABLE tipoAnalisis
 (
 	tipo	VARCHAR(100)	PRIMARY KEY NOT NULL
