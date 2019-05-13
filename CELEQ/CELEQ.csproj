@@ -338,6 +338,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepDesignacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vinculo externo\RecepcionMuestrasCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vinculo externo\RecepcionMuestrasCotizacion.Designer.cs">
+      <DependentUpon>RecepcionMuestrasCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vinculo externo\ReporteCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -528,6 +534,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReporteCotizacion.rdlc" />
+    <EmbeddedResource Include="Vinculo externo\RecepcionMuestrasCotizacion.resx">
+      <DependentUpon>RecepcionMuestrasCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vinculo externo\ReporteCotizacion.resx">
       <DependentUpon>ReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>

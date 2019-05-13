@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CELEQ.Vinculo_externo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -314,6 +315,12 @@ namespace CELEQ
             puestos.Dispose();
         }
 
+        private void recepciónDeMuestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecepcionMuestrasCotizacion recepcionMuestras = new RecepcionMuestrasCotizacion();
+            recepcionMuestras.ShowDialog();
+            recepcionMuestras.Dispose();
+        }
     }
 
     public static class Globals

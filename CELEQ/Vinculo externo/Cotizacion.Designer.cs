@@ -163,7 +163,7 @@
             this.comboCotizador.Location = new System.Drawing.Point(377, 14);
             this.comboCotizador.Name = "comboCotizador";
             this.comboCotizador.Size = new System.Drawing.Size(399, 24);
-            this.comboCotizador.TabIndex = 15;
+            this.comboCotizador.TabIndex = 1;
             // 
             // label2
             // 
@@ -182,7 +182,7 @@
             this.dateTimeFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(143, 22);
-            this.dateTimeFecha.TabIndex = 1;
+            this.dateTimeFecha.TabIndex = 0;
             // 
             // label1
             // 
@@ -227,7 +227,7 @@
             this.comboAtencion.Margin = new System.Windows.Forms.Padding(4);
             this.comboAtencion.Name = "comboAtencion";
             this.comboAtencion.Size = new System.Drawing.Size(339, 24);
-            this.comboAtencion.TabIndex = 14;
+            this.comboAtencion.TabIndex = 2;
             // 
             // butAgregar
             // 
@@ -235,7 +235,7 @@
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(100, 28);
-            this.butAgregar.TabIndex = 13;
+            this.butAgregar.TabIndex = 1;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
             this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
@@ -343,7 +343,7 @@
             this.comboCliente.Margin = new System.Windows.Forms.Padding(4);
             this.comboCliente.Name = "comboCliente";
             this.comboCliente.Size = new System.Drawing.Size(372, 24);
-            this.comboCliente.TabIndex = 1;
+            this.comboCliente.TabIndex = 0;
             this.comboCliente.TextChanged += new System.EventHandler(this.comboCliente_TextChanged);
             // 
             // label4
@@ -399,7 +399,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(1365, 53);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
             // comboUnidad
@@ -410,7 +410,7 @@
             this.comboUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.comboUnidad.Name = "comboUnidad";
             this.comboUnidad.Size = new System.Drawing.Size(71, 24);
-            this.comboUnidad.TabIndex = 22;
+            this.comboUnidad.TabIndex = 5;
             this.comboUnidad.SelectedIndexChanged += new System.EventHandler(this.comboUnidad_SelectedIndexChanged);
             // 
             // numericCantidad
@@ -424,7 +424,7 @@
             0});
             this.numericCantidad.Name = "numericCantidad";
             this.numericCantidad.Size = new System.Drawing.Size(52, 22);
-            this.numericCantidad.TabIndex = 21;
+            this.numericCantidad.TabIndex = 4;
             this.numericCantidad.ValueChanged += new System.EventHandler(this.numericCantidad_ValueChanged);
             // 
             // label15
@@ -453,7 +453,7 @@
             this.numericDias.Margin = new System.Windows.Forms.Padding(4);
             this.numericDias.Name = "numericDias";
             this.numericDias.Size = new System.Drawing.Size(52, 22);
-            this.numericDias.TabIndex = 18;
+            this.numericDias.TabIndex = 3;
             this.numericDias.ValueChanged += new System.EventHandler(this.numericDias_ValueChanged);
             // 
             // label13
@@ -472,7 +472,7 @@
             this.numericMuestras.Margin = new System.Windows.Forms.Padding(4);
             this.numericMuestras.Name = "numericMuestras";
             this.numericMuestras.Size = new System.Drawing.Size(52, 22);
-            this.numericMuestras.TabIndex = 16;
+            this.numericMuestras.TabIndex = 2;
             this.numericMuestras.ValueChanged += new System.EventHandler(this.numericMuestras_ValueChanged);
             // 
             // label12
@@ -491,7 +491,7 @@
             this.textMuestra.Margin = new System.Windows.Forms.Padding(4);
             this.textMuestra.Name = "textMuestra";
             this.textMuestra.Size = new System.Drawing.Size(139, 22);
-            this.textMuestra.TabIndex = 13;
+            this.textMuestra.TabIndex = 1;
             this.textMuestra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textMuestra_KeyUp);
             // 
             // label11
@@ -512,7 +512,7 @@
             this.comboTipoMuestra.Margin = new System.Windows.Forms.Padding(4);
             this.comboTipoMuestra.Name = "comboTipoMuestra";
             this.comboTipoMuestra.Size = new System.Drawing.Size(164, 24);
-            this.comboTipoMuestra.TabIndex = 13;
+            this.comboTipoMuestra.TabIndex = 0;
             this.comboTipoMuestra.TextChanged += new System.EventHandler(this.comboTipoMuestra_TextChanged);
             // 
             // label10
@@ -537,7 +537,7 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(1365, 258);
-            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Análisis";
             // 
@@ -548,7 +548,7 @@
             this.butBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.butBorrar.Name = "butBorrar";
             this.butBorrar.Size = new System.Drawing.Size(111, 49);
-            this.butBorrar.TabIndex = 4;
+            this.butBorrar.TabIndex = 3;
             this.butBorrar.Text = "Borrar";
             this.butBorrar.UseVisualStyleBackColor = true;
             this.butBorrar.Click += new System.EventHandler(this.butBorrar_Click);
@@ -560,7 +560,7 @@
             this.butTexto.Margin = new System.Windows.Forms.Padding(4);
             this.butTexto.Name = "butTexto";
             this.butTexto.Size = new System.Drawing.Size(111, 49);
-            this.butTexto.TabIndex = 3;
+            this.butTexto.TabIndex = 2;
             this.butTexto.Text = "Editor de Texto";
             this.butTexto.UseVisualStyleBackColor = true;
             // 
@@ -571,7 +571,7 @@
             this.butMetales.Margin = new System.Windows.Forms.Padding(4);
             this.butMetales.Name = "butMetales";
             this.butMetales.Size = new System.Drawing.Size(111, 49);
-            this.butMetales.TabIndex = 2;
+            this.butMetales.TabIndex = 1;
             this.butMetales.Text = "Metales";
             this.butMetales.UseVisualStyleBackColor = true;
             this.butMetales.Click += new System.EventHandler(this.butMetales_Click);
@@ -583,7 +583,7 @@
             this.butAnalisis.Margin = new System.Windows.Forms.Padding(4);
             this.butAnalisis.Name = "butAnalisis";
             this.butAnalisis.Size = new System.Drawing.Size(111, 49);
-            this.butAnalisis.TabIndex = 1;
+            this.butAnalisis.TabIndex = 0;
             this.butAnalisis.Text = "Análisis";
             this.butAnalisis.UseVisualStyleBackColor = true;
             this.butAnalisis.Click += new System.EventHandler(this.butAnalisis_Click);
@@ -631,7 +631,7 @@
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(507, 222);
-            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             // 
             // checkGira
@@ -640,7 +640,7 @@
             this.checkGira.Location = new System.Drawing.Point(23, 17);
             this.checkGira.Name = "checkGira";
             this.checkGira.Size = new System.Drawing.Size(109, 20);
-            this.checkGira.TabIndex = 39;
+            this.checkGira.TabIndex = 0;
             this.checkGira.Text = "Requiere gira";
             this.checkGira.UseVisualStyleBackColor = true;
             this.checkGira.CheckedChanged += new System.EventHandler(this.checkGira_CheckedChanged);
@@ -653,7 +653,7 @@
             this.comboLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.comboLocalidad.Name = "comboLocalidad";
             this.comboLocalidad.Size = new System.Drawing.Size(283, 24);
-            this.comboLocalidad.TabIndex = 36;
+            this.comboLocalidad.TabIndex = 7;
             this.comboLocalidad.SelectedIndexChanged += new System.EventHandler(this.comboLocalidad_TextChanged);
             // 
             // label35
@@ -680,7 +680,7 @@
             this.butCalcular.Margin = new System.Windows.Forms.Padding(4);
             this.butCalcular.Name = "butCalcular";
             this.butCalcular.Size = new System.Drawing.Size(115, 28);
-            this.butCalcular.TabIndex = 35;
+            this.butCalcular.TabIndex = 8;
             this.butCalcular.Text = "Calcular total";
             this.butCalcular.UseVisualStyleBackColor = true;
             this.butCalcular.Click += new System.EventHandler(this.butCalcular_Click);
@@ -703,7 +703,7 @@
             this.comboCanton.Margin = new System.Windows.Forms.Padding(4);
             this.comboCanton.Name = "comboCanton";
             this.comboCanton.Size = new System.Drawing.Size(283, 24);
-            this.comboCanton.TabIndex = 32;
+            this.comboCanton.TabIndex = 6;
             this.comboCanton.TextChanged += new System.EventHandler(this.comboCanton_TextChanged);
             // 
             // comboProvincia
@@ -714,7 +714,7 @@
             this.comboProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboProvincia.Name = "comboProvincia";
             this.comboProvincia.Size = new System.Drawing.Size(283, 24);
-            this.comboProvincia.TabIndex = 23;
+            this.comboProvincia.TabIndex = 5;
             this.comboProvincia.TextChanged += new System.EventHandler(this.comboProvincia_TextChanged);
             // 
             // label21
@@ -743,7 +743,7 @@
             this.numHoras.Margin = new System.Windows.Forms.Padding(4);
             this.numHoras.Name = "numHoras";
             this.numHoras.Size = new System.Drawing.Size(52, 22);
-            this.numHoras.TabIndex = 29;
+            this.numHoras.TabIndex = 2;
             // 
             // numNoches
             // 
@@ -751,7 +751,7 @@
             this.numNoches.Margin = new System.Windows.Forms.Padding(4);
             this.numNoches.Name = "numNoches";
             this.numNoches.Size = new System.Drawing.Size(52, 22);
-            this.numNoches.TabIndex = 28;
+            this.numNoches.TabIndex = 4;
             // 
             // label19
             // 
@@ -779,7 +779,7 @@
             this.numTecnicos.Margin = new System.Windows.Forms.Padding(4);
             this.numTecnicos.Name = "numTecnicos";
             this.numTecnicos.Size = new System.Drawing.Size(52, 22);
-            this.numTecnicos.TabIndex = 25;
+            this.numTecnicos.TabIndex = 3;
             // 
             // label17
             // 
@@ -797,7 +797,7 @@
             this.numProfesionales.Margin = new System.Windows.Forms.Padding(4);
             this.numProfesionales.Name = "numProfesionales";
             this.numProfesionales.Size = new System.Drawing.Size(52, 22);
-            this.numProfesionales.TabIndex = 23;
+            this.numProfesionales.TabIndex = 1;
             // 
             // label16
             // 
@@ -819,7 +819,7 @@
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(461, 222);
-            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             // 
             // textObservaciones
@@ -830,7 +830,7 @@
             this.textObservaciones.Multiline = true;
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(424, 100);
-            this.textObservaciones.TabIndex = 2;
+            this.textObservaciones.TabIndex = 1;
             // 
             // label23
             // 
@@ -877,7 +877,7 @@
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox8.Size = new System.Drawing.Size(381, 222);
-            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabIndex = 6;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Precio";
             // 
@@ -893,7 +893,7 @@
             0});
             this.numSaldoFavor.Name = "numSaldoFavor";
             this.numSaldoFavor.Size = new System.Drawing.Size(171, 22);
-            this.numSaldoFavor.TabIndex = 38;
+            this.numSaldoFavor.TabIndex = 2;
             this.numSaldoFavor.ValueChanged += new System.EventHandler(this.numSaldoFavor_ValueChanged);
             // 
             // numGastosAdm
@@ -902,7 +902,7 @@
             this.numGastosAdm.Margin = new System.Windows.Forms.Padding(4);
             this.numGastosAdm.Name = "numGastosAdm";
             this.numGastosAdm.Size = new System.Drawing.Size(52, 22);
-            this.numGastosAdm.TabIndex = 37;
+            this.numGastosAdm.TabIndex = 1;
             this.numGastosAdm.ValueChanged += new System.EventHandler(this.numGastosAdm_ValueChanged);
             // 
             // numDescuento
@@ -911,7 +911,7 @@
             this.numDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.numDescuento.Name = "numDescuento";
             this.numDescuento.Size = new System.Drawing.Size(52, 22);
-            this.numDescuento.TabIndex = 36;
+            this.numDescuento.TabIndex = 0;
             this.numDescuento.ValueChanged += new System.EventHandler(this.numDescuento_ValueChanged);
             // 
             // textTotal
@@ -1053,7 +1053,7 @@
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(1365, 52);
-            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabIndex = 7;
             this.groupBox9.TabStop = false;
             // 
             // comboFirmantes
@@ -1064,7 +1064,7 @@
             this.comboFirmantes.Margin = new System.Windows.Forms.Padding(4);
             this.comboFirmantes.Name = "comboFirmantes";
             this.comboFirmantes.Size = new System.Drawing.Size(189, 24);
-            this.comboFirmantes.TabIndex = 42;
+            this.comboFirmantes.TabIndex = 3;
             // 
             // label34
             // 
@@ -1083,7 +1083,7 @@
             this.dateTimeFechaRespuesta.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaRespuesta.Name = "dateTimeFechaRespuesta";
             this.dateTimeFechaRespuesta.Size = new System.Drawing.Size(143, 22);
-            this.dateTimeFechaRespuesta.TabIndex = 40;
+            this.dateTimeFechaRespuesta.TabIndex = 2;
             // 
             // label33
             // 
@@ -1103,7 +1103,7 @@
             this.comboQuimico.Margin = new System.Windows.Forms.Padding(4);
             this.comboQuimico.Name = "comboQuimico";
             this.comboQuimico.Size = new System.Drawing.Size(181, 24);
-            this.comboQuimico.TabIndex = 36;
+            this.comboQuimico.TabIndex = 1;
             // 
             // label32
             // 
@@ -1122,7 +1122,7 @@
             this.dateTimeFechaSolicitud.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeFechaSolicitud.Name = "dateTimeFechaSolicitud";
             this.dateTimeFechaSolicitud.Size = new System.Drawing.Size(143, 22);
-            this.dateTimeFechaSolicitud.TabIndex = 37;
+            this.dateTimeFechaSolicitud.TabIndex = 0;
             // 
             // label31
             // 
@@ -1140,7 +1140,7 @@
             this.butAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.butAceptar.Name = "butAceptar";
             this.butAceptar.Size = new System.Drawing.Size(100, 28);
-            this.butAceptar.TabIndex = 18;
+            this.butAceptar.TabIndex = 8;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
             this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
@@ -1151,7 +1151,7 @@
             this.butCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.butCancelar.Name = "butCancelar";
             this.butCancelar.Size = new System.Drawing.Size(100, 28);
-            this.butCancelar.TabIndex = 17;
+            this.butCancelar.TabIndex = 9;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
             this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
