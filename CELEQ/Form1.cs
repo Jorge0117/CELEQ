@@ -261,7 +261,7 @@ namespace CELEQ
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cotizacion cotizacion = new Cotizacion();
+            Cotizacion cotizacion = new Cotizacion(0);
             cotizacion.ShowDialog();
             cotizacion.Dispose();
         }
@@ -320,6 +320,12 @@ namespace CELEQ
             RecepcionMuestrasCotizacion recepcionMuestras = new RecepcionMuestrasCotizacion();
             recepcionMuestras.ShowDialog();
             recepcionMuestras.Dispose();
+        }
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listarCotizaciones l = new listarCotizaciones();
+            l.ShowDialog();
+            l.Dispose();
         }
     }
 

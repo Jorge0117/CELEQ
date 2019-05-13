@@ -21,3 +21,8 @@ CREATE VIEW vistaTransferenciaDeMuestras
 AS
 
 select * from Cotizacion
+select CONCAT('CELEQ-VE-',FORMAT(Co.id, 'D4'),'-',Co.anno) as 'Consecutivo', C.nombre, Co.fechaCotizacion from Cotizacion Co
+join ClienteCotizacion C on Co.cliente = C.nombre
+where CONCAT('CELEQ-VE-',FORMAT(Co.id, 'D4'),'-',anno) like '%001-2019%' 
+order by anno, id
+

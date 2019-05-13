@@ -42,7 +42,6 @@ namespace CELEQ
 
         private void butAceptar_Click(object sender, EventArgs e)
         {
-            string[] nombre;
             SqlDataReader nombreUsuario;
             nombreUsuario = null;
 
