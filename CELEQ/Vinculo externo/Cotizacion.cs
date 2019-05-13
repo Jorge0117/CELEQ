@@ -17,16 +17,18 @@ namespace CELEQ
     {
         float dolar;
         AccesoBaseDatos bd;
-        DataGridViewRow dgvRow;
+        int? idCotizacion;
+        int? annoCotizacion;
         string tipoMuestra;
         int tipoAccion; // 0 es agregar, 1 es modificar, 2 es ver
-        public Cotizacion(int tipo, DataGridViewRow dgvw = null)
+        public Cotizacion(int tipo, int? idCotizacion = null, int? annoCotizacion = null)
         {
             InitializeComponent();
             bd = new AccesoBaseDatos();
 
             tipoAccion = tipo;
-            dgvRow = dgvw;
+            this.idCotizacion = idCotizacion;
+            this.annoCotizacion = annoCotizacion;
             numDescuento.Controls.RemoveAt(0);
             numGastosAdm.Controls.RemoveAt(0);
             numSaldoFavor.Controls.RemoveAt(0);
@@ -47,16 +49,68 @@ namespace CELEQ
         {
             try
             {
+                comboCotizador.DisplayMember = "Text";
+                comboCotizador.ValueMember = "Value";
+
+                SqlDataReader cotizadores = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Secretaria Vinculo Externo'");
+                while (cotizadores.Read())
+                {
+                    comboCotizador.Items.Add(new { Text = cotizadores[0], Value = cotizadores[1] });
+                }
+
+                comboQuimico.DisplayMember = "Text";
+                comboQuimico.ValueMember = "Value";
+
+                SqlDataReader quimicos = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Químico'");
+                while (quimicos.Read())
+                {
+                    comboQuimico.Items.Add(new { Text = quimicos[0], Value = quimicos[1] });
+                }
+
+                comboFirmantes.DisplayMember = "Text";
+                comboFirmantes.ValueMember = "Value";
+
+                SqlDataReader firmantes = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Director' or p.puesto = 'Subdirector'");
+                while (firmantes.Read())
+                {
+                    comboFirmantes.Items.Add(new { Text = firmantes[0], Value = firmantes[1] });
+                }
+
+                comboUnidad.Items.Add("mL");
+                comboUnidad.Items.Add("g");
+
+                SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
+                while (provincias.Read())
+                {
+                    comboProvincia.Items.Add(provincias[0].ToString());
+                }
+                SqlDataReader clientes = bd.ejecutarConsulta("select nombre from clienteCotizacion");
+                while (clientes.Read())
+                {
+                    comboCliente.Items.Add(clientes[0].ToString());
+                }
+                textTotalGira.Enabled = false;
+
+                SqlDataReader tipoMuestra = bd.ejecutarConsulta("select tipo from tipoAnalisis");
+                while (tipoMuestra.Read())
+                {
+                    comboTipoMuestra.Items.Add(tipoMuestra[0].ToString());
+                }
+
+                dgvAnalisis.Columns.Add("descripcion", "Análisis");
+                dgvAnalisis.Columns.Add("metodo", "Método");
+                dgvAnalisis.Columns.Add("precio", "Precio");
+
+                for (int i = 0; i < dgvAnalisis.ColumnCount; ++i)
+                {
+                    dgvAnalisis.Columns[i].Width = dgvAnalisis.Width / dgvAnalisis.ColumnCount - 1;
+                }
+
+
+
                 if (tipoAccion == 0)
                 {
                     textConsecutivo.Text = ("####-####");
-                    /*
-                    SqlDataReader cotizador = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ' , apellido2) from Usuarios where nombreUsuario ='" + Globals.usuario + "'");
-                    cotizador.Read();
-                    textCotizador.Text = cotizador[0].ToString();
-                    */
-                    comboCotizador.DisplayMember = "Text";
-                    comboCotizador.ValueMember = "Value";
 
                     textMuestra.Enabled = false;
                     numericMuestras.Enabled = false;
@@ -68,6 +122,7 @@ namespace CELEQ
                     butTexto.Enabled = false;
                     butBorrar.Enabled = false;
 
+
                     textPrecioUnitario.Text = "0";
                     textPrecioMuestreo.Text = "0";
                     textSubtotal.Text = "0";
@@ -75,140 +130,100 @@ namespace CELEQ
                     textGastos.Text = "0";
                     textTotal.Text = "0";
 
+                    textTotalGira.Enabled = false;
+                    numProfesionales.Enabled = false;
+                    numHoras.Enabled = false;
+                    numTecnicos.Enabled = false;
+                    numNoches.Enabled = false;
+                    comboProvincia.Enabled = false;
+                    comboCanton.Enabled = false;
+                    comboLocalidad.Enabled = false;
+                    butCalcular.Enabled = false;
 
                 }
-                else if(tipoAccion == 1 || tipoAccion == 2)
+                //Si se va a consultar o modificar
+                else
                 {
-                    // Ni idea de porque se hace la consulta mal.
-                    SqlDataReader cotizacion = bd.ejecutarConsulta("select licitacion,observaciones,precioMuestreo,descuento,gastosAdm,fechaCotizacion,fechaSolicitud,fechaRespuesta,saldoAfavor," +
-                    "granTotal, moneda, cotizador,cliente,precioMuestra,diasEntregaRes,subTotal,numeroMuestras from Cotizacion where id = " + dgvRow.Cells[0].Value + " and anno = " + dgvRow.Cells[2].Value);
-                    cotizacion.Read();
-                    comboAtencion.Items.Clear();
-                    //SqlDataReader gira = bd.ejecutarConsulta("select * from Gira where idCotizacion = '" + dgvRow.Cells[0].Value.ToString() + "' and annoCotizacion = '" + dgvRow.Cells[2].Value.ToString() + "'");
-                    
-                    SqlDataReader datos = bd.ejecutarConsulta("select C.telefono, C.telefono2, C.correo, C.fax, C.direccion from ClienteCotizacion C where nombre = '" + cotizacion[12].ToString() + "'");
-                    SqlDataReader atencion = bd.ejecutarConsulta("select atencionDe, ultimoAgregado from contactoCotizacion where nombreCliente = '" + cotizacion[12].ToString() + "'");
-                    while (atencion.Read())
+                    SqlDataReader datosCotizacion = bd.ejecutarConsulta("select licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion," +
+                        "fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras, " +
+                        "usuarioQuimico, usuarioFirmante from Cotizacion where id = " + idCotizacion + " and anno = " + annoCotizacion);
+                    datosCotizacion.Read();
+
+                    if (Convert.ToInt32(datosCotizacion[0]) == 1)
                     {
-                        comboAtencion.Items.Add(atencion[0].ToString());
-                        if (atencion[1].ToString() == "True")
-                        {
-                            comboAtencion.SelectedIndex = comboAtencion.FindStringExact(atencion[0].ToString());
-                        }
-                    }
-                    datos.Read();
-                    textTelefono1.Text = datos[0].ToString();
-                    textTelefono2.Text = datos[1].ToString();
-                    textCorreo.Text = datos[2].ToString();
-                    textFax.Text = datos[3].ToString();
-                    textDireccion.Text = datos[4].ToString();
-                    comboCliente.Items.Add(cotizacion[12].ToString());
-
-                    textConsecutivo.Text = (dgvRow.Cells[1].Value.ToString() + "-" + dgvRow.Cells[2].Value.ToString());
-
-                    checkBoxLicitacion.Checked = Convert.ToBoolean(cotizacion[2]);
-                    textObservaciones.Text = cotizacion[1].ToString();
-                    textPrecioMuestreo.Text = cotizacion[2].ToString();
-                    textDescuento.Text = cotizacion[3].ToString();
-                    textGastos.Text = cotizacion[4].ToString();
-                    dateTimeFecha.Text = cotizacion[5].ToString();
-                    dateTimeFechaSolicitud.Text = cotizacion[6].ToString();
-                    dateTimeFechaRespuesta.Text = cotizacion[7].ToString();
-                    numSaldoFavor.Value = Convert.ToDecimal(cotizacion[8].ToString());
-                    textTotal.Text = cotizacion[9].ToString();
-                    comboCotizador.Text = cotizacion[11].ToString();
-                    comboCliente.SelectedIndex = 0;
-                    textPrecioUnitario.Text = cotizacion[13].ToString();
-                    textSubtotal.Text = cotizacion[15].ToString();
-                    numericMuestras.Value = Convert.ToInt32(cotizacion[16].ToString());
-
-                    comboAtencion.Enabled = false;
-                    textTelefono1.Enabled = false;
-                    textDireccion.Enabled = false;
-                    textTelefono2.Enabled = false;
-                    textCorreo.Enabled = false;
-                    textFax.Enabled = false;
-                    comboCliente.Enabled = false;
-
-                    if(tipoAccion == 1)
-                    {
-                        comboCliente.Items.RemoveAt(0);
-                        SqlDataReader clientes = bd.ejecutarConsulta("select nombre from clienteCotizacion");
-                        while (clientes.Read())
-                        {
-                            comboCliente.Items.Add(clientes[0].ToString());
-                        }
+                        checkBoxLicitacion.Checked = true;
                     }
 
-                    /*if(Convert.ToDecimal(cotizacion[4]) <= 0)
+                    textObservaciones.Text = datosCotizacion[1].ToString();
+                    textPrecioMuestreo.Text = datosCotizacion[2].ToString();
+                    textDescuento.Text = datosCotizacion[3].ToString();
+                    textGastos.Text = datosCotizacion[4].ToString();
+                    dateTimeFecha.Value = DateTime.Parse(datosCotizacion[5].ToString());
+                    dateTimeFechaSolicitud.Value = DateTime.Parse(datosCotizacion[6].ToString());
+                    dateTimeFechaRespuesta.Value = DateTime.Parse(datosCotizacion[7].ToString());
+
+                    /*
+                     *
+                     * NI IDEA PORQUE MUERE
+                     *          |
+                     *          |
+                     *          |
+                     *          V
+                     * 
+                     */
+
+                    //numSaldoFavor.Value = Convert.ToDecimal(datosCotizacion[8]);
+                    textTotal.Text = datosCotizacion[9].ToString();
+
+                    /*
+                     * 
+                     * 
+                     * FALTA MOSTRAR LOS COMBOBOX DINAMICOS. NPI COMO
+                     * 
+                     * 
+                     */
+                    comboCotizador.SelectedIndex = comboCotizador.FindString(datosCotizacion[11].ToString());
+                    comboCliente.SelectedIndex = comboCliente.FindString(datosCotizacion[12].ToString());
+                    textPrecioUnitario.Text = datosCotizacion[13].ToString();
+                    numericDias.Value = Convert.ToDecimal(datosCotizacion[14]);
+                    textSubtotal.Text = datosCotizacion[15].ToString();
+                    numericMuestras.Value = Convert.ToDecimal(datosCotizacion[16].ToString());
+                    comboQuimico.SelectedIndex = comboQuimico.FindString(datosCotizacion[17].ToString());
+                    comboFirmantes.SelectedIndex = comboFirmantes.FindString(datosCotizacion[18].ToString());
+
+                    SqlDataReader datosAnalisis;
+                    SqlDataReader cotizacionAnalisis = bd.ejecutarConsulta("select descripcion, tipoAnalisis from CotizacionAnalisis where idCotizacion = " + idCotizacion + " and annoCotizacion = " + annoCotizacion);
+                    var index = 0;
+                    while (cotizacionAnalisis.Read())
                     {
-                        checkGira.Checked = true;
-                        textTotalGira.Text= gira[5].ToString();
-                        numProfesionales.Value = Convert.ToInt32(gira[2]);
-                        numHoras.Value = Convert.ToInt32(gira[1]);
-                        numTecnicos.Value = Convert.ToInt32(gira[4]);
-                        numNoches.Value = Convert.ToInt32(gira[3]);
-                        comboProvincia.Text = gira[6].ToString();
-                        comboCanton.Text = gira[7].ToString();
-                        comboLocalidad.Text = gira[8].ToString();
-                        butCalcular.Enabled = false;
+                        comboTipoMuestra.SelectedIndex = comboTipoMuestra.FindStringExact(cotizacionAnalisis[1].ToString());
 
-                    }*/
-                    
-                }
+                        datosAnalisis = bd.ejecutarConsulta("select metodo, precio from Analisis where descripcion = '" + cotizacionAnalisis[0] + "' and tipoAnalisis = '" + cotizacionAnalisis[1] + "'");
+                        datosAnalisis.Read();
+                        index = dgvAnalisis.Rows.Add();
+                        dgvAnalisis.Rows[index].Cells[0].Value = cotizacionAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[1].Value = datosAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[2].Value = datosAnalisis[1];
+                    }
 
-                SqlDataReader cotizadores = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Secretaria Vinculo Externo'");
-                while (cotizadores.Read())
-                {
-                    comboCotizador.Items.Add(new { Text = cotizadores[0], Value = cotizadores[1] });
-                }
+                    /*
+                     * 
+                     * 
+                     * FALTA LLENAR LOS CIENTES Y LAS GIRAS PERO YA ME ABURRIS
+                     * 
+                     * 
+                     */
 
-                dgvAnalisis.Columns.Add("descripcion", "Análisis");
-                dgvAnalisis.Columns.Add("metodo", "Método");
-                dgvAnalisis.Columns.Add("precio", "Precio");
+                    if(tipoAccion == 2)
+                    {
+                        foreach (Control control in this.Controls)
+                        {
+                            control.Enabled = false;
+                        }
+                        butAceptar.Visible = false;
+                        butCancelar.Enabled = true;
+                    }
 
-                comboUnidad.Items.Add("mL");
-                comboUnidad.Items.Add("g");
-
-                for (int i = 0; i < dgvAnalisis.ColumnCount; ++i)
-                {
-                    dgvAnalisis.Columns[i].Width = dgvAnalisis.Width / dgvAnalisis.ColumnCount - 1;
-                }
-
-                SqlDataReader provincias = bd.ejecutarConsulta("select distinct provincia from Localizaciones");
-                while (provincias.Read())
-                {
-                    comboProvincia.Items.Add(provincias[0].ToString());
-                }
-              
-                textTotalGira.Enabled = false;
-
-                SqlDataReader tipoMuestra = bd.ejecutarConsulta("select tipo from tipoAnalisis");
-                while (tipoMuestra.Read())
-                {
-                    comboTipoMuestra.Items.Add(tipoMuestra[0].ToString());
-                }
-                
-                textTotalGira.Enabled = false;
-                numProfesionales.Enabled = false;
-                numHoras.Enabled = false;
-                numTecnicos.Enabled = false;
-                numNoches.Enabled = false;
-                comboProvincia.Enabled = false;
-                comboCanton.Enabled = false;
-                comboLocalidad.Enabled = false;
-                butCalcular.Enabled = false;
-
-                SqlDataReader quimicos = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Químico'");
-                while (quimicos.Read())
-                {
-                    comboQuimico.Items.Add(quimicos[0].ToString());
-                }
-
-                SqlDataReader firmantes = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios u join puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Director' or p.puesto = 'Subdirector'");
-                while (firmantes.Read())
-                {
-                    comboFirmantes.Items.Add(firmantes[0].ToString());
                 }
             }
             catch
@@ -216,7 +231,6 @@ namespace CELEQ
                 MessageBox.Show("Ha ocurrido un error al cargar la cotizacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
             }
-            
         }
 
         private void comboProvincia_TextChanged(object sender, EventArgs e)
@@ -561,7 +575,8 @@ namespace CELEQ
                     int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
                         float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
                         dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),"","","","");
+                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
+                        (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
 
                     if (id != -1)
                     {
@@ -583,10 +598,11 @@ namespace CELEQ
                 }
                 else if(tipoAccion == 1)
                 {
-                    error = bd.modificarCotizacion(Convert.ToInt32(dgvRow.Cells[0].Value), Convert.ToInt32(dgvRow.Cells[1].Value), checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
+                    error = bd.modificarCotizacion(idCotizacion, annoCotizacion, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
                         float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
                         dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value));
+                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
+                        (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
                     if (error == 0)
                     {
                         MessageBox.Show("Cotización modificada de manera correcta", "Unidades", MessageBoxButtons.OK, MessageBoxIcon.None);

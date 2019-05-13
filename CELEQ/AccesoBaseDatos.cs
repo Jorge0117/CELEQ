@@ -48,7 +48,7 @@ namespace CELEQ
                 comando = new SqlCommand(consulta, sqlConnection);
                 datos = comando.ExecuteReader();
             }
-            catch (SqlException ex)
+            catch
             {
 
             }
@@ -231,7 +231,7 @@ namespace CELEQ
                         }
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         return false;
                     }
@@ -369,7 +369,7 @@ namespace CELEQ
                         cmd.ExecuteNonQuery();
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         error = -1;
@@ -405,7 +405,7 @@ namespace CELEQ
                         cmd.ExecuteNonQuery();
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         error = -1;
@@ -1048,7 +1048,6 @@ namespace CELEQ
 
         public int agregarEstudiante(string id, string tipoId, string nombre, string apellido1, string apellido2, string correo, string celular, string telefono, string carrera)
         {
-            int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 using (SqlCommand cmd = new SqlCommand("agregarEstudiante", con))
@@ -1075,7 +1074,7 @@ namespace CELEQ
                         cmd.ExecuteNonQuery();
                         return 1;
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1086,7 +1085,6 @@ namespace CELEQ
 
         public int modificarEstudiante(string id, string tipoId, string nombre, string apellido1, string apellido2, string correo, string celular, string telefono, string carrera)
         {
-            int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 using (SqlCommand cmd = new SqlCommand("modificarEstudiante", con))
@@ -1113,7 +1111,7 @@ namespace CELEQ
                         cmd.ExecuteNonQuery();
                         return 1;
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1228,7 +1226,6 @@ namespace CELEQ
 
         public int agregarUnidad(string nombre, string encargado)
         {
-            int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
@@ -1258,7 +1255,7 @@ namespace CELEQ
                         return Convert.ToInt32(cmd.Parameters["@estado"].Value);
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1433,7 +1430,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1471,7 +1468,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1482,7 +1479,6 @@ namespace CELEQ
 
         public int eliminarResponsable(string nombre)
         {
-            int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
@@ -1505,7 +1501,7 @@ namespace CELEQ
 
                         return 0;
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo eliminar*/
                         return -1;
@@ -1548,7 +1544,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1591,7 +1587,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1629,7 +1625,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -1765,8 +1761,8 @@ namespace CELEQ
 
         public int agregarCotizacion(int anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
             float gastosAdm, string fechaLimite, string fechaSolicitud, string fechaRespuesta, float saldoAfavor,
-            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal, int numMuestras, string quimico,
-            string firmante, string usuarioQuimico, string usuarioFirmante)
+            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal, int numMuestras, 
+            string usuarioQuimico, string usuarioFirmante)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
@@ -1800,8 +1796,6 @@ namespace CELEQ
                         cmd.Parameters.Add("@diasEntregaRes", SqlDbType.Int).Value = diasEntregaRes;
                         cmd.Parameters.Add("@subTotal", SqlDbType.Float).Value = subTotal;
                         cmd.Parameters.Add("@numMuestras", SqlDbType.Int).Value = numMuestras;
-                        cmd.Parameters.Add("@quimico", SqlDbType.VarChar).Value = quimico;
-                        cmd.Parameters.Add("@firmante", SqlDbType.VarChar).Value = firmante;
                         cmd.Parameters.Add("@usuarioQuimico", SqlDbType.NVarChar).Value = usuarioQuimico;
                         cmd.Parameters.Add("@usuarioFirmante", SqlDbType.NVarChar).Value = usuarioFirmante;
 
@@ -1821,7 +1815,7 @@ namespace CELEQ
 
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
 
                         return -1;
@@ -1830,10 +1824,10 @@ namespace CELEQ
             }
         }
 
-        public int modificarCotizacion(int id, int anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
+        public int modificarCotizacion(int? id, int? anno, int licitacion, string observaciones, float precioMuestreo, float descuento,
             float gastosAdm, string fechaLimite, string fechaSolicitud, string fechaRespuesta, float saldoAfavor,
-            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal, int numMuestras, string quimico, 
-            string firmante, string usuarioQuimico, string usuarioFirmante)
+            float granTotal, char moneda, string cotizador, string cliente, float precioMuestra, int diasEntregaRes, float subTotal, int numMuestras,
+            string usuarioQuimico, string usuarioFirmante)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
@@ -1866,8 +1860,6 @@ namespace CELEQ
                         cmd.Parameters.Add("@diasEntregaRes", SqlDbType.Int).Value = diasEntregaRes;
                         cmd.Parameters.Add("@subTotal", SqlDbType.Float).Value = subTotal;
                         cmd.Parameters.Add("@numMuestras", SqlDbType.Int).Value = numMuestras;
-                        cmd.Parameters.Add("@quimico", SqlDbType.VarChar).Value = quimico;
-                        cmd.Parameters.Add("@firmante", SqlDbType.VarChar).Value = firmante;
                         cmd.Parameters.Add("@usuarioQuimico", SqlDbType.NVarChar).Value = usuarioQuimico;
                         cmd.Parameters.Add("@usuarioFirmante", SqlDbType.NVarChar).Value = usuarioFirmante;
                         
@@ -1880,7 +1872,7 @@ namespace CELEQ
                         return 1;
                         
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         return -1;
                     }
@@ -1961,7 +1953,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         return -1;
                     }
@@ -1997,7 +1989,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2039,7 +2031,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2079,7 +2071,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2116,7 +2108,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2159,7 +2151,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2201,7 +2193,7 @@ namespace CELEQ
                         return error;
 
                     }
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;
@@ -2212,7 +2204,6 @@ namespace CELEQ
 
         public int actualizarEnListaMaestra(string codigo, string versionv, string version, string nombre, string fecha)
         {
-            int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
@@ -2247,7 +2238,7 @@ namespace CELEQ
 						return resultado;
 
 					}
-                    catch (SqlException ex)
+                    catch
                     {
                         /*Se capta el número de error si no se pudo insertar*/
                         return -1;

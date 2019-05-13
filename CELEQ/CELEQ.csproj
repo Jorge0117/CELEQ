@@ -258,10 +258,10 @@
     <Compile Include="Usuarios\ListaPuestos.Designer.cs">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </Compile>
-    <Compile Include="listarCotizaciones.cs">
+    <Compile Include="Vinculo externo\listarCotizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listarCotizaciones.Designer.cs">
+    <Compile Include="Vinculo externo\listarCotizaciones.Designer.cs">
       <DependentUpon>listarCotizaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Vinculo externo\Localizaciones.cs">
@@ -487,7 +487,7 @@
     <EmbeddedResource Include="Usuarios\ListaPuestos.resx">
       <DependentUpon>ListaPuestos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listarCotizaciones.resx">
+    <EmbeddedResource Include="Vinculo externo\listarCotizaciones.resx">
       <DependentUpon>listarCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vinculo externo\Localizaciones.resx">

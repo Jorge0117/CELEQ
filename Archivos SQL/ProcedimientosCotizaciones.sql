@@ -56,14 +56,14 @@ go
 
 create procedure agregarCotizacion(@anno int, @licitacion bit, @observaciones varchar(600), @precioMuestreo float ,@descuento float, 
 									@gastosAdm float, @fechaLimite date, @fechaSolicitud date, @fechaRespuesta date, @saldoAfavor float ,@granTotal float, @moneda char(1),
-									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @numMuestras int, @quimico varchar(200), @firmante varchar(200),
+									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @numMuestras int,
 									@usuarioQuimico nvarchar(50), @usuarioFirmante nvarchar(50), @idgenerado int output)
 as 
 	insert into Cotizacion(id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor, granTotal, moneda, cotizador,
-	cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras, quimico, firmante, usuarioQuimico, usuarioFirmante)
+	cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras, usuarioQuimico, usuarioFirmante)
 	values(0, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
 			@fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal, @numMuestras,
-			@quimico, @firmante, @usuarioQuimico, @usuarioFirmante)
+			@usuarioQuimico, @usuarioFirmante)
 
 	select @idgenerado = @@IDENTITY
 go
@@ -71,14 +71,13 @@ drop procedure agregarCotizacion
 
 CREATE PROCEDURE modificarCotizacion(@id int, @anno int, @licitacion bit, @observaciones varchar(600), @precioMuestreo float ,@descuento float, 
 									@gastosAdm float, @fechaCotizacion date, @fechaSolicitud date, @fechaRespuesta date, @saldoAfavor float ,@granTotal float, @moneda char(1),
-									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @numMuestras int, @quimico varchar(200), @firmante varchar(200),
+									@cotizador nvarchar(50), @cliente varchar(255), @precioMuestra float, @diasEntregaRes int, @subTotal float, @numMuestras int,
 									@usuarioQuimico nvarchar(50), @usuarioFirmante nvarchar(50))
 AS
 	Update Cotizacion set licitacion = @licitacion, observaciones = @observaciones, precioMuestreo = @precioMuestreo, descuento = @descuento,
 	gastosAdm = @gastosAdm, fechaCotizacion = @fechaCotizacion, fechaSolicitud = @fechaSolicitud, fechaRespuesta = @fechaRespuesta,
 	saldoAfavor = @saldoAfavor, granTotal = @granTotal, moneda = @moneda, cotizador = @cotizador, cliente = @cliente, precioMuestra = @precioMuestra,
-	diasEntregaRes = @diasEntregaRes, subTotal = @subTotal, numeroMuestras = @numMuestras, quimico = @quimico, firmante = @firmante, 
-	usuarioQuimico = @usuarioQuimico, usuarioFirmante = @usuarioFirmante
+	diasEntregaRes = @diasEntregaRes, subTotal = @subTotal, numeroMuestras = @numMuestras, usuarioQuimico = @usuarioQuimico, usuarioFirmante = @usuarioFirmante
 	WHERE id = @id AND anno = @anno
 GO
 drop procedure modificarCotizacion
@@ -119,8 +118,6 @@ declare @precioMuestra float
 declare @diasEntregaRes int
 declare @subTotal float
 declare @numMuestras int
-declare @quimico varchar(200)
-declare @firmante varchar(200)
 declare @usuarioQuimico nvarchar(50)
 declare @usuarioFirmante nvarchar(50)
 
@@ -143,8 +140,6 @@ select @precioMuestra  = precioMuestra  from inserted
 select @diasEntregaRes = diasEntregaRes from inserted
 select @subTotal = subTotal from inserted
 select @numMuestras = numeroMuestras from inserted
-select @quimico = quimico from inserted
-select @firmante = firmante from inserted
 select @usuarioQuimico = usuarioQuimico from inserted
 select @usuarioFirmante = usuarioFirmante from inserted
 
@@ -154,10 +149,10 @@ else
 	select @id =  max(id)+1 from Cotizacion where anno = @anno
 
 insert into Cotizacion (id, anno, licitacion, observaciones, precioMuestreo, descuento, gastosAdm, fechaCotizacion, fechaSolicitud, fechaRespuesta, saldoAfavor,
-granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras, quimico, firmante, usuarioQuimico, usuarioFirmante)
+granTotal, moneda, cotizador, cliente, precioMuestra, diasEntregaRes, subTotal, numeroMuestras, usuarioQuimico, usuarioFirmante)
 values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @gastosAdm, @fechaLimite, @fechaSolicitud, 
 @fechaRespuesta, @saldoAfavor, @granTotal, @moneda, @cotizador, @cliente, @precioMuestra, @diasEntregaRes, @subTotal, @numMuestras,
-@quimico, @firmante, @usuarioQuimico,@usuarioFirmante)
+@usuarioQuimico,@usuarioFirmante)
 
 go
 
