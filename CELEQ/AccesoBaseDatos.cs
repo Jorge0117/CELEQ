@@ -2247,5 +2247,99 @@ namespace CELEQ
             }
         }
 
+        ///////////////////////////////////////// GIRAS ////////////////////////////////////////////////
+
+        public int agregarGira(int horasMuestreo, int cantidadProfesionales, int nochesAlojamiento, int cantidadTecnicos, float gastoTotal,
+            string provincia, string canton, string localidad, int idCotizacion, int annoCotizacion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarGira", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@horasMuestreo", SqlDbType.Int).Value = horasMuestreo;
+                        cmd.Parameters.Add("@cantidadProfesionales", SqlDbType.Int).Value = cantidadProfesionales;
+                        cmd.Parameters.Add("@nochesAlojamiento", SqlDbType.Int).Value = nochesAlojamiento;
+                        cmd.Parameters.Add("@cantidadTecnicos", SqlDbType.Int).Value = cantidadTecnicos;
+                        cmd.Parameters.Add("@gastoTotal", SqlDbType.Float).Value = gastoTotal;
+                        cmd.Parameters.Add("@provincia", SqlDbType.VarChar).Value = provincia;
+                        cmd.Parameters.Add("@canton", SqlDbType.VarChar).Value = canton;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
+                        cmd.Parameters.Add("@idCotizacion", SqlDbType.Int).Value = idCotizacion;
+                        cmd.Parameters.Add("@annoCotizacion", SqlDbType.Int).Value = annoCotizacion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int modificarGira(int horasMuestreo, int cantidadProfesionales, int nochesAlojamiento, int cantidadTecnicos, float gastoTotal,
+            string provincia, string canton, string localidad, int idCotizacion, int annoCotizacion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("modificarGira", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@horasMuestreo", SqlDbType.Int).Value = horasMuestreo;
+                        cmd.Parameters.Add("@cantidadProfesionales", SqlDbType.Int).Value = cantidadProfesionales;
+                        cmd.Parameters.Add("@nochesAlojamiento", SqlDbType.Int).Value = nochesAlojamiento;
+                        cmd.Parameters.Add("@cantidadTecnicos", SqlDbType.Int).Value = cantidadTecnicos;
+                        cmd.Parameters.Add("@gastoTotal", SqlDbType.Float).Value = gastoTotal;
+                        cmd.Parameters.Add("@provincia", SqlDbType.VarChar).Value = provincia;
+                        cmd.Parameters.Add("@canton", SqlDbType.VarChar).Value = canton;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
+                        cmd.Parameters.Add("@idCotizacion", SqlDbType.Int).Value = idCotizacion;
+                        cmd.Parameters.Add("@annoCotizacion", SqlDbType.Int).Value = annoCotizacion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
     }
 }
