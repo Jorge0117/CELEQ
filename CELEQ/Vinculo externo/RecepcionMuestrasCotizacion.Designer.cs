@@ -574,6 +574,7 @@
             this.dgvMuestras.Name = "dgvMuestras";
             this.dgvMuestras.Size = new System.Drawing.Size(1041, 171);
             this.dgvMuestras.TabIndex = 1;
+            this.dgvMuestras.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMuestras_RowPostPaint);
             // 
             // label15
             // 

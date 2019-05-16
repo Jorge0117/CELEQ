@@ -65,11 +65,6 @@ namespace CELEQ.Vinculo_externo
                 dgvMuestras.Columns[3].Width = Convert.ToInt32(dgvMuestras.Width * 0.15) - 1;
                 dgvMuestras.Columns[4].Width = Convert.ToInt32(dgvMuestras.Width * 0.15) - 1;
 
-                foreach (DataGridViewRow row in dgvMuestras.Rows)
-                {
-                    row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
-                }
-
                 comboLaboratorio.Items.Add("Hidrocarburos");
                 comboLaboratorio.Items.Add("UMAQ");
                 comboLaboratorio.Items.Add("Soplado de vidrio");
@@ -189,6 +184,21 @@ namespace CELEQ.Vinculo_externo
                 textLinea.Enabled = false;
                 comboInstitucion.Enabled = false;
             }
+        }
+
+        private void dgvMuestras_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            var rowIdx = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
     }
 

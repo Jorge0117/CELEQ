@@ -84,11 +84,11 @@ drop table tipoAnalisis
 CREATE TABLE Muestra
 (
 	id					INT		IDENTITY(1,1)	PRIMARY KEY,
-	especifique			VARCHAR(500),
-	empaque				BIT,
-	sellada				BIT,
-	numeroMuestras		INT,
+	descripcion			VARCHAR(500),
+	lote				VARCHAR(100),
 	cantidadNecesaria	VARCHAR(50),
+	empaque				varchar(100),
+	sellada				BIT,	
 	idCotizacion		INT,
 	annoCotizacion		INT,
 
@@ -146,6 +146,30 @@ CREATE TABLE Feriados
 	fechaFinal		DATE
 )
 drop table Feriados
+
+CREATE TABLE RecepcionMuestras
+(
+	id							INT	IDENTITY(1,1)	NOT NULL,
+	anno						INT					NOT NULL,
+	fecha						DATE,
+	Receptor					NVARCHAR(50),
+	idCotizacion				INT,
+	annoCotizacion				INT,
+	muestreador					varchar(20),
+	personaTraeMuestra			varchar(255),
+	licitacion					BIT,
+	numLicitacion				varchar(100),
+	lineaLicitacion				varchar(10),
+	intitucion					varchar(255),
+	laboratorio					varchar(20),
+	observacionesEspeciales		varchar(500),
+	observacionesLaboratorio	varchar(500),
+	informacionTextualInforme	varchar(500),
+
+	PRIMARY KEY(id, anno),
+	FOREIGN KEY(Receptor) REFERENCES Usuarios(nombreUsuario),
+	FOREIGN KEY(idCotizacion, annoCotizacion) REFERENCES Cotizacion(id, anno)
+)
 
 insert into Feriados VALUES('D�a 1','2019/04/03', '2019/04/03')
 insert into Feriados VALUES('D�a 2','2019/04/03', '2019/04/15')
