@@ -89,10 +89,10 @@ CREATE TABLE Muestra
 	cantidadNecesaria	VARCHAR(50),
 	empaque				varchar(100),
 	sellada				BIT,	
-	idCotizacion		INT,
-	annoCotizacion		INT,
+	idRecepcion			INT,
+	annoRecepcion		INT,
 
-	FOREIGN KEY(idCotizacion,annoCotizacion) REFERENCES Cotizacion(id,anno)
+	FOREIGN KEY(idRecepcion,annoRecepcion) REFERENCES RecepcionMuestras(id,anno)
 )
 drop table Muestra
 CREATE TABLE Analisis
