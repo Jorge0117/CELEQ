@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CELEQ.Vinculo_externo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -312,6 +313,13 @@ namespace CELEQ
             ListaPuestos puestos = new ListaPuestos(false);
             puestos.ShowDialog();
             puestos.Dispose();
+        }
+
+        private void recepciónDeMuestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecepcionMuestrasCotizacion recepcionMuestras = new RecepcionMuestrasCotizacion();
+            recepcionMuestras.ShowDialog();
+            recepcionMuestras.Dispose();
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)

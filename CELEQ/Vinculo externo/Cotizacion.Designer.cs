@@ -903,7 +903,7 @@
             this.numGastosAdm.Name = "numGastosAdm";
             this.numGastosAdm.Size = new System.Drawing.Size(52, 22);
             this.numGastosAdm.TabIndex = 37;
-            this.numGastosAdm.ValueChanged += new System.EventHandler(this.numGastosAdm_ValueChanged);
+            this.numGastosAdm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numGastosAdm_ValueChanged);
             // 
             // numDescuento
             // 
@@ -912,7 +912,7 @@
             this.numDescuento.Name = "numDescuento";
             this.numDescuento.Size = new System.Drawing.Size(52, 22);
             this.numDescuento.TabIndex = 36;
-            this.numDescuento.ValueChanged += new System.EventHandler(this.numDescuento_ValueChanged);
+            this.numDescuento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.numDescuento_ValueChanged);
             // 
             // textTotal
             // 

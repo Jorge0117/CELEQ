@@ -646,5 +646,10 @@ namespace CELEQ
                 }
             }
         }
+
+        private void numSaldoFavor_ValueChanged(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
