@@ -321,6 +321,7 @@ namespace CELEQ
             recepcionMuestras.ShowDialog();
             recepcionMuestras.Dispose();
         }
+
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listarCotizaciones l = new listarCotizaciones();
