@@ -41,6 +41,11 @@ namespace CELEQ
             InitializeComponent();
         }
 
+        private void ReporteCotizacion_Shown(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+
         private void ReporteCotizacion_Load(object sender, EventArgs e)
         {
              this.vistaAnalisisTableAdapter.FillBy(this.CotizacionDataSet.vistaAnalisis, id, anno);

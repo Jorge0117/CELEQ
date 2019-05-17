@@ -449,6 +449,7 @@ namespace CELEQ
             if(dgvAnalisis.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvAnalisis.SelectedRows[0];
+                // Se cae si el valor es 0 NPI por qué
                 textPrecioUnitario.Text = Convert.ToString(float.Parse(textPrecioUnitario.Text) - float.Parse(row.Cells[2].Value.ToString().Remove(0, 1)));
                 calcularPrecio();
                 dgvAnalisis.Rows.Remove(row);
@@ -588,10 +589,10 @@ namespace CELEQ
                 if (tipoAccion == 0)    
                 {
                     int anno = DateTime.Now.Year;
-                    int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
-                        float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
-                        dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
+                    int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioMuestreo.Text), 2).ToString()),
+                        float.Parse(Math.Round(Convert.ToDouble(textDescuento.Text), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textGastos.Text), 2).ToString()), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(Math.Round(Convert.ToDouble(numSaldoFavor.Value), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textTotal.Text), 2).ToString()), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                        comboCliente.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioUnitario.Text), 2).ToString()), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(Math.Round(Convert.ToDouble(textSubtotal.Text), 2).ToString()), Convert.ToInt32(numericMuestras.Value),
                         (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
 
                     if (id != -1)
@@ -603,7 +604,7 @@ namespace CELEQ
                         }
                         if(checkGira.Checked == true)
                         {
-                            int errorGira = bd.agregarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value),float.Parse(textTotalGira.Text),comboProvincia.Text,
+                            int errorGira = bd.agregarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(Math.Round(Convert.ToDouble(textTotalGira.Text), 2).ToString()), comboProvincia.Text,
                                 comboCanton.Text,comboLocalidad.Text,id,anno);
                             if(errorGira == -1)
                             {
@@ -623,14 +624,14 @@ namespace CELEQ
                 }
                 else if(tipoAccion == 1)
                 {
-                    error = bd.modificarCotizacion(idCotizacion, annoCotizacion, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
-                        float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
-                        dateTimeFechaRespuesta.Value.ToShortDateString(), (float)numSaldoFavor.Value, float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
+                    error = bd.modificarCotizacion(idCotizacion, annoCotizacion, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioMuestreo.Text), 2).ToString()),
+                        float.Parse(Math.Round(Convert.ToDouble(textDescuento.Text), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textGastos.Text), 2).ToString()), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(Math.Round(Convert.ToDouble(numSaldoFavor.Value), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textTotal.Text), 2).ToString()), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                        comboCliente.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioUnitario.Text), 2).ToString()), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(Math.Round(Convert.ToDouble(textSubtotal.Text), 2).ToString()), Convert.ToInt32(numericMuestras.Value),
                         (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
-                    int errorGira = bd.modificarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(textTotalGira.Text), comboProvincia.Text,
+                    int errorGira = bd.modificarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(Math.Round(Convert.ToDouble(textTotalGira.Text), 2).ToString()), comboProvincia.Text,
                                 comboCanton.Text, comboLocalidad.Text, Convert.ToInt32(idCotizacion), Convert.ToInt32(annoCotizacion));
-                    if (error == 0 && errorGira != -1)
+                    if (error == 0 && errorGira != -1)  
                     {
                         MessageBox.Show("Cotización modificada de manera correcta", "Unidades", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();
@@ -640,10 +641,7 @@ namespace CELEQ
                         MessageBox.Show("Error al modificar cotización\nNúmero de error: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else if (tipoAccion == 2)
-                {
-                    this.Close();
-                }
+                this.Close();
             }
         }
 

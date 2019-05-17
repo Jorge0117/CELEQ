@@ -29,18 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.vistaCotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CotizacionDataSet = new CELEQ.CotizacionDataSet();
+            this.vistaAnalisisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistaAnalisisTableAdapter = new CELEQ.CotizacionDataSetTableAdapters.vistaAnalisisTableAdapter();
             this.vistaCotizacionTableAdapter = new CELEQ.CotizacionDataSetTableAdapters.vistaCotizacionTableAdapter();
-            this.vistaAnalisisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CotizacionDataSet = new CELEQ.CotizacionDataSet();
-            this.vistaCotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vistaCotizacionBindingSource
+            // 
+            this.vistaCotizacionBindingSource.DataMember = "vistaCotizacion";
+            this.vistaCotizacionBindingSource.DataSource = this.CotizacionDataSet;
+            // 
+            // CotizacionDataSet
+            // 
+            this.CotizacionDataSet.DataSetName = "CotizacionDataSet";
+            this.CotizacionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vistaAnalisisBindingSource
+            // 
+            this.vistaAnalisisBindingSource.DataMember = "vistaAnalisis";
+            this.vistaAnalisisBindingSource.DataSource = this.CotizacionDataSet;
             // 
             // vistaAnalisisTableAdapter
             // 
@@ -50,30 +65,15 @@
             // 
             this.vistaCotizacionTableAdapter.ClearBeforeFill = true;
             // 
-            // vistaAnalisisBindingSource
-            // 
-            this.vistaAnalisisBindingSource.DataMember = "vistaAnalisis";
-            this.vistaAnalisisBindingSource.DataSource = this.CotizacionDataSet;
-            // 
-            // CotizacionDataSet
-            // 
-            this.CotizacionDataSet.DataSetName = "CotizacionDataSet";
-            this.CotizacionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vistaCotizacionBindingSource
-            // 
-            this.vistaCotizacionBindingSource.DataMember = "vistaCotizacion";
-            this.vistaCotizacionBindingSource.DataSource = this.CotizacionDataSet;
-            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "CotizacionDataSet";
-            reportDataSource1.Value = this.vistaCotizacionBindingSource;
-            reportDataSource2.Name = "AnalisisDataSet";
-            reportDataSource2.Value = this.vistaAnalisisBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "CotizacionDataSet";
+            reportDataSource3.Value = this.vistaCotizacionBindingSource;
+            reportDataSource4.Name = "AnalisisDataSet";
+            reportDataSource4.Value = this.vistaAnalisisBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.ReporteCotizacion.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -88,11 +88,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReporteCotizacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteCotizacion";
             this.Load += new System.EventHandler(this.ReporteCotizacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).EndInit();
+            this.Shown += new System.EventHandler(this.ReporteCotizacion_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.vistaCotizacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaAnalisisBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
