@@ -16,5 +16,11 @@ namespace CELEQ.Regencia
         {
             InitializeComponent();
         }
+
+        private void ReporteCristaleria_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

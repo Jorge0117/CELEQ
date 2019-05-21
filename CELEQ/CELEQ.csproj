@@ -73,6 +73,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="InventarioCristaleria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioReactivos.cs">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioReactivos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Regencia\ReporteCristaleria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,6 +417,9 @@
     <Compile Include="Vinculo externo\PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Regencia\ReporteCristaleria.resx">
+      <DependentUpon>ReporteCristaleria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCristaleria.rdlc" />
     <EmbeddedResource Include="Vinculo externo\AgregarAnalisisCotizacion.resx">
       <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
@@ -588,6 +604,28 @@
     </None>
     <None Include="CotizacionDataSet.xss">
       <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioCristaleria.xsc">
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioCristaleria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioCristaleria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InventarioCristaleria.xss">
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioReactivos.xsc">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioReactivos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioReactivos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InventarioReactivos.xss">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RepDesignacionesResponsable.datasource" />

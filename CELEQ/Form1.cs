@@ -328,6 +328,11 @@ namespace CELEQ
             l.ShowDialog();
             l.Dispose();
         }
+
+        private void reporteCristaleríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 
     public static class Globals
