@@ -880,7 +880,7 @@ namespace CELEQ.InventarioReactivosTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Reactivo] WHERE (([Nombre] = @Original_Nombre) AND ([Pureza] = @Original_Pureza) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Estante = 1 AND [Estante] IS NULL) OR ([Estante] = @Original_Estante)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Reactivo] WHERE (([Nombre] = @Original_Nombre) AND ([Pureza] = @Original_Pureza) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Estante = 1 AND [Estante] IS NULL) OR ([Estante] = @Original_Estante)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pureza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pureza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -892,10 +892,8 @@ namespace CELEQ.InventarioReactivosTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Reactivo] ([Nombre], [Pureza], [Cantidad], [Estado], [Estante]" +
-                ") VALUES (@Nombre, @Pureza, @Cantidad, @Estado, @Estante);\r\nSELECT Nombre, Purez" +
-                "a, Cantidad, Estado, Estante FROM Reactivo WHERE (Nombre = @Nombre) AND (Pureza " +
-                "= @Pureza)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Reactivo] ([Nombre], [Pureza], [Cantidad], [Estado], [Estante]) VALUES (@Nombre, @Pureza, @Cantidad, @Estado, @Estante);
+SELECT Nombre, Pureza, Cantidad, Estado, Estante FROM Reactivo WHERE (Nombre = @Nombre) AND (Pureza = @Pureza) ORDER BY Estante";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pureza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pureza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -904,8 +902,8 @@ namespace CELEQ.InventarioReactivosTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estante", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Reactivo] SET [Nombre] = @Nombre, [Pureza] = @Pureza, [Cantidad] = @Cantidad, [Estado] = @Estado, [Estante] = @Estante WHERE (([Nombre] = @Original_Nombre) AND ([Pureza] = @Original_Pureza) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Estante = 1 AND [Estante] IS NULL) OR ([Estante] = @Original_Estante)));
-SELECT Nombre, Pureza, Cantidad, Estado, Estante FROM Reactivo WHERE (Nombre = @Nombre) AND (Pureza = @Pureza)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Reactivo] SET [Nombre] = @Nombre, [Pureza] = @Pureza, [Cantidad] = @Cantidad, [Estado] = @Estado, [Estante] = @Estante WHERE (([Nombre] = @Original_Nombre) AND ([Pureza] = @Original_Pureza) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ((@IsNull_Estante = 1 AND [Estante] IS NULL) OR ([Estante] = @Original_Estante)));
+SELECT Nombre, Pureza, Cantidad, Estado, Estante FROM Reactivo WHERE (Nombre = @Nombre) AND (Pureza = @Pureza) ORDER BY Estante";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pureza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pureza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -935,7 +933,8 @@ SELECT Nombre, Pureza, Cantidad, Estado, Estante FROM Reactivo WHERE (Nombre = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Nombre, Pureza, Cantidad, Estado, Estante FROM dbo.Reactivo";
+            this._commandCollection[0].CommandText = "SELECT        Nombre, Pureza, Cantidad, Estado, Estante\r\nFROM            Reactivo" +
+                "\r\nORDER BY Estante";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

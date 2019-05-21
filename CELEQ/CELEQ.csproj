@@ -92,6 +92,12 @@
     <Compile Include="Regencia\ReporteCristaleria.Designer.cs">
       <DependentUpon>ReporteCristaleria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Regencia\ReporteReactivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regencia\ReporteReactivos.Designer.cs">
+      <DependentUpon>ReporteReactivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vinculo externo\AgregarAnalisisCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,10 +423,14 @@
     <Compile Include="Vinculo externo\PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Regencia\ReporteReactivos.resx">
+      <DependentUpon>ReporteReactivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCristaleria.rdlc" />
     <EmbeddedResource Include="Regencia\ReporteCristaleria.resx">
       <DependentUpon>ReporteCristaleria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteCristaleria.rdlc" />
+    <EmbeddedResource Include="ReporteReactivos.rdlc" />
     <EmbeddedResource Include="Vinculo externo\AgregarAnalisisCotizacion.resx">
       <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>

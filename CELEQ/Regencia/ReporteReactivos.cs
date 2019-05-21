@@ -7,24 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
 
 namespace CELEQ
 {
-    public partial class ReporteCristaleria : Form
+    public partial class ReporteReactivos : Form
     {
         string nombreDocumento;
         string versionDocumento;
-        public ReporteCristaleria(string nombreDocumento, string versionDocumento)
+        public ReporteReactivos(string nombreDocumento, string versionDocumento)
         {
             this.nombreDocumento = nombreDocumento;
             this.versionDocumento = versionDocumento;
             InitializeComponent();
         }
 
-        private void ReporteCristaleria_Load(object sender, EventArgs e)
+        private void ReporteReactivos_Load(object sender, EventArgs e)
         {
-            this.CristaleriaTableAdapter.Fill(this.InventarioCristaleria.Cristaleria);
+            this.ReactivoTableAdapter.Fill(this.InventarioReactivos.Reactivo);
 
             /*ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("nombreDocumento", nombreDocumento);

@@ -331,7 +331,16 @@ namespace CELEQ
 
         private void reporteCristaleríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ReporteCristaleria rc = new ReporteCristaleria("Inventario de cristalería","P-05:PC-01:F01");
+            rc.ShowDialog();
+            rc.Dispose();
+        }
+
+        private void reporteReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteReactivos rr = new ReporteReactivos("Inventario de reactivos", "P-05:PC-01:F01");
+            rr.ShowDialog();
+            rr.Dispose();
         }
     }
 
