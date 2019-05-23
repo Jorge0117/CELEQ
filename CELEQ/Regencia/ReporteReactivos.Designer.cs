@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.InventarioReactivos = new CELEQ.InventarioReactivos();
             this.ReactivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -41,9 +41,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ReactivosDataSet";
-            reportDataSource1.Value = this.ReactivoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "ReactivosDataSet";
+            reportDataSource2.Value = this.ReactivoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.ReporteReactivos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -75,6 +75,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteReactivos";
             this.Load += new System.EventHandler(this.ReporteReactivos_Load);
+            this.Shown += new System.EventHandler(this.ReporteCotizacion_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.InventarioReactivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReactivoBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -156,10 +156,25 @@ namespace CELEQ
                         checkBoxLicitacion.Checked = true;
                     }
 
+                    SqlDataReader datosAnalisis;
+                    SqlDataReader cotizacionAnalisis = bd.ejecutarConsulta("select descripcion, tipoAnalisis from CotizacionAnalisis where idCotizacion = " + idCotizacion + " and annoCotizacion = " + annoCotizacion);
+                    var index = 0;
+                    while (cotizacionAnalisis.Read())
+                    {
+                        comboTipoMuestra.SelectedItem = comboTipoMuestra.FindStringExact(cotizacionAnalisis[1].ToString());
+
+                        datosAnalisis = bd.ejecutarConsulta("select metodo, precio from Analisis where descripcion = '" + cotizacionAnalisis[0] + "' and tipoAnalisis = '" + cotizacionAnalisis[1] + "'");
+                        datosAnalisis.Read();
+                        index = dgvAnalisis.Rows.Add();
+                        dgvAnalisis.Rows[index].Cells[0].Value = cotizacionAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[1].Value = datosAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[2].Value = "$" + datosAnalisis[1];
+                    }
+
                     textObservaciones.Text = datosCotizacion[1].ToString();
-                    textPrecioMuestreo.Text = datosCotizacion[2].ToString();
-                    textDescuento.Text = datosCotizacion[3].ToString();
-                    textGastos.Text = datosCotizacion[4].ToString();
+                    textPrecioMuestreo.Text = String.Format("{0:0.00}", datosCotizacion[2]);
+                    textDescuento.Text = String.Format("{0:0.00}", datosCotizacion[3]);
+                    textGastos.Text = String.Format("{0:0.00}", datosCotizacion[4]);
                     dateTimeFecha.Value = DateTime.Parse(datosCotizacion[5].ToString());
                     dateTimeFechaSolicitud.Value = DateTime.Parse(datosCotizacion[6].ToString());
                     dateTimeFechaRespuesta.Value = DateTime.Parse(datosCotizacion[7].ToString());
@@ -177,7 +192,7 @@ namespace CELEQ
                     numSaldoFavor.Value = Convert.ToDecimal(datosCotizacion[8]);
                     hacerCambioSaldoAfavor = true;
 
-                    textTotal.Text = datosCotizacion[9].ToString();
+                    textTotal.Text = String.Format("{0:0.00}", datosCotizacion[9]);
 
                     SqlDataReader nombreQuimico = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios where nombreUsuario = '" + datosCotizacion[17].ToString() + "'");
                     nombreQuimico.Read();
@@ -187,27 +202,13 @@ namespace CELEQ
 
                     comboCotizador.SelectedIndex = comboCotizador.FindString(datosCotizacion[11].ToString());
                     comboCliente.SelectedIndex = comboCliente.FindString(datosCotizacion[12].ToString());
-                    textPrecioUnitario.Text = datosCotizacion[13].ToString();
+                    textPrecioUnitario.Text = String.Format("{0:0.00}", datosCotizacion[13]);
                     numericDias.Value = Convert.ToDecimal(datosCotizacion[14]);
-                    textSubtotal.Text = datosCotizacion[15].ToString();
+                    textSubtotal.Text = String.Format("{0:0.00}", datosCotizacion[15]);
                     numericMuestras.Value = Convert.ToDecimal(datosCotizacion[16].ToString());
                     comboQuimico.SelectedIndex = comboQuimico.FindString(nombreQuimico[0].ToString());
                     comboFirmantes.SelectedIndex = comboFirmantes.FindString(nombreFirmante[0].ToString());
-
-                    SqlDataReader datosAnalisis;
-                    SqlDataReader cotizacionAnalisis = bd.ejecutarConsulta("select descripcion, tipoAnalisis from CotizacionAnalisis where idCotizacion = " + idCotizacion + " and annoCotizacion = " + annoCotizacion);
-                    var index = 0;
-                    while (cotizacionAnalisis.Read())
-                    {
-                        comboTipoMuestra.SelectedIndex = comboTipoMuestra.FindStringExact(cotizacionAnalisis[1].ToString());
-
-                        datosAnalisis = bd.ejecutarConsulta("select metodo, precio from Analisis where descripcion = '" + cotizacionAnalisis[0] + "' and tipoAnalisis = '" + cotizacionAnalisis[1] + "'");
-                        datosAnalisis.Read();
-                        index = dgvAnalisis.Rows.Add();
-                        dgvAnalisis.Rows[index].Cells[0].Value = cotizacionAnalisis[0];
-                        dgvAnalisis.Rows[index].Cells[1].Value = datosAnalisis[0];
-                        dgvAnalisis.Rows[index].Cells[2].Value = datosAnalisis[1];
-                    }
+                    
 
                     SqlDataReader datosGira = bd.ejecutarConsulta("select horasMuestreo,cantidadProfesionales,nochesAlojamiento,cantidadTecnicos,gastoTotal,provincia,canton,localidad from Gira WHERE idCotizacion = " + idCotizacion + "and annoCotizacion = " + annoCotizacion);
                     datosGira.Read();
@@ -216,10 +217,30 @@ namespace CELEQ
                         numProfesionales.Value = Convert.ToDecimal(datosGira[1]);
                         numNoches.Value = Convert.ToDecimal(datosGira[2]);
                         numTecnicos.Value = Convert.ToDecimal(datosGira[3]);
-                        textTotalGira.Text = datosGira[4].ToString();
+                        textTotalGira.Text = String.Format("{0:0.00}", datosGira[4]);
                         comboProvincia.Text = datosGira[5].ToString();
                         comboCanton.Text = datosGira[6].ToString();
                         comboLocalidad.Text = datosGira[7].ToString();
+                        checkGira.Checked = true;
+
+                        numDescuento.Value = Convert.ToDecimal(textDescuento.Text)/ (Convert.ToDecimal(textTotalGira.Text) + Convert.ToDecimal(textPrecioUnitario.Text)) * 100;
+                        numGastosAdm.Value = Convert.ToDecimal(textGastos.Text) / (Convert.ToDecimal(textTotalGira.Text) + Convert.ToDecimal(textPrecioUnitario.Text)) * 100;
+                    }
+                    else
+                    {
+                        checkGira.Checked = false;
+                        textTotalGira.Enabled = false;
+                        numProfesionales.Enabled = false;
+                        numHoras.Enabled = false;
+                        numTecnicos.Enabled = false;
+                        numNoches.Enabled = false;
+                        comboProvincia.Enabled = false;
+                        comboCanton.Enabled = false;
+                        comboLocalidad.Enabled = false;
+                        butCalcular.Enabled = false;
+
+                        numDescuento.Value = Convert.ToDecimal(textDescuento.Text) / Convert.ToDecimal(textPrecioUnitario.Text);
+                        numGastosAdm.Value = Convert.ToDecimal(textGastos.Text) / Convert.ToDecimal(textPrecioUnitario.Text);
                     }
                     /*
                      * 
@@ -589,10 +610,10 @@ namespace CELEQ
                 if (tipoAccion == 0)    
                 {
                     int anno = DateTime.Now.Year;
-                    int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioMuestreo.Text), 2).ToString()),
-                        float.Parse(Math.Round(Convert.ToDouble(textDescuento.Text), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textGastos.Text), 2).ToString()), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
-                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(Math.Round(Convert.ToDouble(numSaldoFavor.Value), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textTotal.Text), 2).ToString()), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioUnitario.Text), 2).ToString()), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(Math.Round(Convert.ToDouble(textSubtotal.Text), 2).ToString()), Convert.ToInt32(numericMuestras.Value),
+                    int id = bd.agregarCotizacion(anno, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
+                        float.Parse(textDescuento.Text.ToString()), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(numSaldoFavor.Value.ToString()), float.Parse(textTotal.Text.ToString()), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
                         (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
 
                     if (id != -1)
@@ -604,7 +625,7 @@ namespace CELEQ
                         }
                         if(checkGira.Checked == true)
                         {
-                            int errorGira = bd.agregarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(Math.Round(Convert.ToDouble(textTotalGira.Text), 2).ToString()), comboProvincia.Text,
+                            int errorGira = bd.agregarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(textTotalGira.Text), comboProvincia.Text,
                                 comboCanton.Text,comboLocalidad.Text,id,anno);
                             if(errorGira == -1)
                             {
@@ -624,12 +645,12 @@ namespace CELEQ
                 }
                 else if(tipoAccion == 1)
                 {
-                    error = bd.modificarCotizacion(idCotizacion, annoCotizacion, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioMuestreo.Text), 2).ToString()),
-                        float.Parse(Math.Round(Convert.ToDouble(textDescuento.Text), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textGastos.Text), 2).ToString()), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
-                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(Math.Round(Convert.ToDouble(numSaldoFavor.Value), 2).ToString()), float.Parse(Math.Round(Convert.ToDouble(textTotal.Text), 2).ToString()), 'D', (comboCotizador.SelectedItem as dynamic).Value,
-                        comboCliente.Text, float.Parse(Math.Round(Convert.ToDouble(textPrecioUnitario.Text), 2).ToString()), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(Math.Round(Convert.ToDouble(textSubtotal.Text), 2).ToString()), Convert.ToInt32(numericMuestras.Value),
+                    error = bd.modificarCotizacion(idCotizacion, annoCotizacion, checkBoxLicitacion.Checked ? 1 : 0, textObservaciones.Text, float.Parse(textPrecioMuestreo.Text),
+                        float.Parse(textDescuento.Text), float.Parse(textGastos.Text), dateTimeFecha.Value.ToShortDateString(), dateTimeFechaSolicitud.Value.ToShortDateString(),
+                        dateTimeFechaRespuesta.Value.ToShortDateString(), float.Parse(numSaldoFavor.Value.ToString()), float.Parse(textTotal.Text), 'D', (comboCotizador.SelectedItem as dynamic).Value,
+                        comboCliente.Text, float.Parse(textPrecioUnitario.Text), (dateTimeFechaRespuesta.Value - dateTimeFecha.Value).Days, float.Parse(textSubtotal.Text), Convert.ToInt32(numericMuestras.Value),
                         (comboQuimico.SelectedItem as dynamic).Value, (comboFirmantes.SelectedItem as dynamic).Value);
-                    int errorGira = bd.modificarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(Math.Round(Convert.ToDouble(textTotalGira.Text), 2).ToString()), comboProvincia.Text,
+                    int errorGira = bd.modificarGira(Convert.ToInt32(numHoras.Value), Convert.ToInt32(numProfesionales.Value), Convert.ToInt32(numNoches.Value), Convert.ToInt32(numTecnicos.Value), float.Parse(textTotalGira.Text), comboProvincia.Text,
                                 comboCanton.Text, comboLocalidad.Text, Convert.ToInt32(idCotizacion), Convert.ToInt32(annoCotizacion));
                     if (error == 0 && errorGira != -1)  
                     {

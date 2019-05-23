@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+
 
 namespace CELEQ
 {
@@ -21,14 +23,19 @@ namespace CELEQ
             InitializeComponent();
         }
 
+        private void ReporteCotizacion_Shown(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+
         private void ReporteReactivos_Load(object sender, EventArgs e)
         {
             this.ReactivoTableAdapter.Fill(this.InventarioReactivos.Reactivo);
 
-            /*ReportParameter[] parametros = new ReportParameter[2];
+            ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("nombreDocumento", nombreDocumento);
-            parametros[1] = new ReportParameter("versionDocumento", versionDocumento);*/
-
+            parametros[1] = new ReportParameter("versionDocumento", versionDocumento);
+            this.reportViewer1.LocalReport.SetParameters(parametros);
             this.reportViewer1.RefreshReport();
         }
     }

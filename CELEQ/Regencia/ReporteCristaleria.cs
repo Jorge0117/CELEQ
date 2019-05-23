@@ -22,14 +22,19 @@ namespace CELEQ
             InitializeComponent();
         }
 
+        private void ReporteCotizacion_Shown(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+
         private void ReporteCristaleria_Load(object sender, EventArgs e)
         {
             this.CristaleriaTableAdapter.Fill(this.InventarioCristaleria.Cristaleria);
 
-            /*ReportParameter[] parametros = new ReportParameter[2];
+            ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("nombreDocumento", nombreDocumento);
-            parametros[1] = new ReportParameter("versionDocumento", versionDocumento);*/
-
+            parametros[1] = new ReportParameter("versionDocumento", versionDocumento);
+            this.reportViewer1.LocalReport.SetParameters(parametros);
             this.reportViewer1.RefreshReport();
         }
     }

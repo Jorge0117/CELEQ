@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.CristaleriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.InventarioCristaleria = new CELEQ.InventarioCristaleria();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.CristaleriaTableAdapter = new CELEQ.InventarioCristaleriaTableAdapters.CristaleriaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CristaleriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InventarioCristaleria)).BeginInit();
             this.SuspendLayout();
+            // 
+            // CristaleriaBindingSource
+            // 
+            this.CristaleriaBindingSource.DataMember = "Cristaleria";
+            this.CristaleriaBindingSource.DataSource = this.InventarioCristaleria;
+            // 
+            // InventarioCristaleria
+            // 
+            this.InventarioCristaleria.DataSetName = "InventarioCristaleria";
+            this.InventarioCristaleria.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.ReporteCristaleria_Load);
             // 
-            // CristaleriaBindingSource
-            // 
-            this.CristaleriaBindingSource.DataMember = "Cristaleria";
-            this.CristaleriaBindingSource.DataSource = this.InventarioCristaleria;
-            // 
-            // InventarioCristaleria
-            // 
-            this.InventarioCristaleria.DataSetName = "InventarioCristaleria";
-            this.InventarioCristaleria.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // CristaleriaTableAdapter
             // 
             this.CristaleriaTableAdapter.ClearBeforeFill = true;
@@ -75,6 +75,7 @@
             this.Name = "ReporteCristaleria";
             this.Text = "ReporteCristaleria";
             this.Load += new System.EventHandler(this.ReporteCristaleria_Load);
+            this.Shown += new System.EventHandler(this.ReporteCotizacion_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.CristaleriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InventarioCristaleria)).EndInit();
             this.ResumeLayout(false);
