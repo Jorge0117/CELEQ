@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.vistaCotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CotizacionDataSet = new CELEQ.CotizacionDataSet();
             this.vistaAnalisisBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,12 +68,12 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "CotizacionDataSet";
-            reportDataSource3.Value = this.vistaCotizacionBindingSource;
-            reportDataSource4.Name = "AnalisisDataSet";
-            reportDataSource4.Value = this.vistaAnalisisBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "CotizacionDataSet";
+            reportDataSource1.Value = this.vistaCotizacionBindingSource;
+            reportDataSource2.Name = "AnalisisDataSet";
+            reportDataSource2.Value = this.vistaAnalisisBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CELEQ.ReporteCotizacion.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -87,7 +87,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ReporteCotizacion";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteCotizacion";
             this.Load += new System.EventHandler(this.ReporteCotizacion_Load);

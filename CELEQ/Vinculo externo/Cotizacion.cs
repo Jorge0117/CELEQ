@@ -157,20 +157,8 @@ namespace CELEQ
                     }
 
                     SqlDataReader datosAnalisis;
-                    SqlDataReader cotizacionAnalisis = bd.ejecutarConsulta("select descripcion, tipoAnalisis from CotizacionAnalisis where idCotizacion = " + idCotizacion + " and annoCotizacion = " + annoCotizacion);
-                    var index = 0;
-                    while (cotizacionAnalisis.Read())
-                    {
-                        comboTipoMuestra.SelectedItem = comboTipoMuestra.FindStringExact(cotizacionAnalisis[1].ToString());
 
-                        datosAnalisis = bd.ejecutarConsulta("select metodo, precio from Analisis where descripcion = '" + cotizacionAnalisis[0] + "' and tipoAnalisis = '" + cotizacionAnalisis[1] + "'");
-                        datosAnalisis.Read();
-                        index = dgvAnalisis.Rows.Add();
-                        dgvAnalisis.Rows[index].Cells[0].Value = cotizacionAnalisis[0];
-                        dgvAnalisis.Rows[index].Cells[1].Value = datosAnalisis[0];
-                        dgvAnalisis.Rows[index].Cells[2].Value = "$" + datosAnalisis[1];
-                    }
-
+                    numericDias.Value = Convert.ToDecimal(datosCotizacion[14].ToString());
                     textObservaciones.Text = datosCotizacion[1].ToString();
                     textPrecioMuestreo.Text = String.Format("{0:0.00}", datosCotizacion[2]);
                     textDescuento.Text = String.Format("{0:0.00}", datosCotizacion[3]);
@@ -199,7 +187,6 @@ namespace CELEQ
                     SqlDataReader nombreFirmante = bd.ejecutarConsulta("select concat(nombre, ' ', apellido1, ' ', apellido2) from Usuarios where nombreUsuario = '" + datosCotizacion[18].ToString() + "'");
                     nombreFirmante.Read();
 
-
                     comboCotizador.SelectedIndex = comboCotizador.FindString(datosCotizacion[11].ToString());
                     comboCliente.SelectedIndex = comboCliente.FindString(datosCotizacion[12].ToString());
                     textPrecioUnitario.Text = String.Format("{0:0.00}", datosCotizacion[13]);
@@ -214,6 +201,7 @@ namespace CELEQ
                     datosGira.Read();
                     if(datosGira.HasRows == true) { 
                         numHoras.Value = Convert.ToDecimal(datosGira[0]);
+
                         numProfesionales.Value = Convert.ToDecimal(datosGira[1]);
                         numNoches.Value = Convert.ToDecimal(datosGira[2]);
                         numTecnicos.Value = Convert.ToDecimal(datosGira[3]);
@@ -249,6 +237,20 @@ namespace CELEQ
                      * 
                      * 
                      */
+                    SqlDataReader cotizacionAnalisis = bd.ejecutarConsulta("select descripcion, tipoAnalisis from CotizacionAnalisis where idCotizacion = " + idCotizacion + " and annoCotizacion = " + annoCotizacion);
+                    var index = 0;
+
+                    while (cotizacionAnalisis.Read())
+                    {
+                        comboTipoMuestra.SelectedIndex = comboTipoMuestra.FindStringExact(cotizacionAnalisis[1].ToString());
+
+                        datosAnalisis = bd.ejecutarConsulta("select metodo, precio from Analisis where descripcion = '" + cotizacionAnalisis[0] + "' and tipoAnalisis = '" + cotizacionAnalisis[1] + "'");
+                        datosAnalisis.Read();
+                        index = dgvAnalisis.Rows.Add();
+                        dgvAnalisis.Rows[index].Cells[0].Value = cotizacionAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[1].Value = datosAnalisis[0];
+                        dgvAnalisis.Rows[index].Cells[2].Value = "$" + datosAnalisis[1];
+                    }
 
                     if (tipoAccion == 2)
                     {
