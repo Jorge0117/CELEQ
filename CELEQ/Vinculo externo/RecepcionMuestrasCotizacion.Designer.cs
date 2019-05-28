@@ -51,7 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textPersonaMuestra = new System.Windows.Forms.TextBox();
-            this.comboInstitucion = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textLinea = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -89,6 +88,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.numAnnoCotizacion = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
+            this.textInstitucion = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -326,8 +326,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.textInstitucion);
             this.groupBox4.Controls.Add(this.textPersonaMuestra);
-            this.groupBox4.Controls.Add(this.comboInstitucion);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.textLinea);
             this.groupBox4.Controls.Add(this.label13);
@@ -352,16 +352,6 @@
             this.textPersonaMuestra.Name = "textPersonaMuestra";
             this.textPersonaMuestra.Size = new System.Drawing.Size(368, 22);
             this.textPersonaMuestra.TabIndex = 15;
-            // 
-            // comboInstitucion
-            // 
-            this.comboInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboInstitucion.FormattingEnabled = true;
-            this.comboInstitucion.Location = new System.Drawing.Point(689, 47);
-            this.comboInstitucion.Margin = new System.Windows.Forms.Padding(4);
-            this.comboInstitucion.Name = "comboInstitucion";
-            this.comboInstitucion.Size = new System.Drawing.Size(368, 24);
-            this.comboInstitucion.TabIndex = 23;
             // 
             // label14
             // 
@@ -594,6 +584,7 @@
             this.butAceptar.TabIndex = 20;
             this.butAceptar.Text = "Aceptar";
             this.butAceptar.UseVisualStyleBackColor = true;
+            this.butAceptar.Click += new System.EventHandler(this.butAceptar_Click);
             // 
             // butCancelar
             // 
@@ -604,6 +595,7 @@
             this.butCancelar.TabIndex = 19;
             this.butCancelar.Text = "Cancelar";
             this.butCancelar.UseVisualStyleBackColor = true;
+            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
             // 
             // groupBox7
             // 
@@ -730,6 +722,14 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Año:";
             // 
+            // textInstitucion
+            // 
+            this.textInstitucion.Location = new System.Drawing.Point(689, 47);
+            this.textInstitucion.Margin = new System.Windows.Forms.Padding(4);
+            this.textInstitucion.Name = "textInstitucion";
+            this.textInstitucion.Size = new System.Drawing.Size(368, 22);
+            this.textInstitucion.TabIndex = 23;
+            // 
             // RecepcionMuestrasCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -801,7 +801,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboInstitucion;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textLinea;
         private System.Windows.Forms.Label label13;
@@ -839,5 +838,6 @@
         private System.Windows.Forms.TextBox textAtencion;
         private System.Windows.Forms.TextBox textCliente;
         private System.Windows.Forms.TextBox textPersonaMuestra;
+        private System.Windows.Forms.TextBox textInstitucion;
     }
 }

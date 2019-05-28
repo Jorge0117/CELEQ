@@ -1999,6 +1999,109 @@ namespace CELEQ
         }
 
 
+        public int agregarRecepcionMuestras(int anno, string fecha, string receptor, int idCotizacion, int annoCotizacion, string muestreador,
+            string personaTraeMuestra, int licitacion, string numLicitacion, string lineaLicitacion, string institucion, string laboratorio,
+            string observacionesEspeciales, string observacionesLaboratorio, string informacionTextualInforme)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarRecepcionMuestras", con))
+                {
+                    try
+                    {
+                        SqlCommand identity = new SqlCommand("SET IDENTITY_INSERT CELEQ.dbo.RecepcionMuestras ON", con);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@anno", SqlDbType.Int).Value = anno;
+                        cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = fecha;
+                        cmd.Parameters.Add("@Receptor", SqlDbType.VarChar).Value = receptor;
+                        cmd.Parameters.Add("@idCotizacion", SqlDbType.Int).Value = idCotizacion;
+                        cmd.Parameters.Add("@annoCotizacion", SqlDbType.Int).Value = annoCotizacion;
+                        cmd.Parameters.Add("@muestreador", SqlDbType.VarChar).Value = muestreador;
+                        cmd.Parameters.Add("@personaTraeMuestra", SqlDbType.VarChar).Value = personaTraeMuestra;
+                        cmd.Parameters.Add("@licitacion", SqlDbType.Bit).Value = licitacion;
+                        cmd.Parameters.Add("@numLicitacion", SqlDbType.VarChar).Value = numLicitacion;
+                        cmd.Parameters.Add("@lineaLicitacion", SqlDbType.VarChar).Value = lineaLicitacion;
+                        cmd.Parameters.Add("@institucion", SqlDbType.VarChar).Value = institucion;
+                        cmd.Parameters.Add("@laboratorio", SqlDbType.VarChar).Value = laboratorio;
+                        cmd.Parameters.Add("@observacionesEspeciales", SqlDbType.VarChar).Value = observacionesEspeciales;
+                        cmd.Parameters.Add("@observacionesLaboratorio", SqlDbType.VarChar).Value = observacionesLaboratorio;
+                        cmd.Parameters.Add("@informacionTextualInforme", SqlDbType.VarChar).Value = informacionTextualInforme;
+
+                        //Valor de retorno
+                        cmd.Parameters.Add("@idgenerado", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        identity.ExecuteNonQuery();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return Convert.ToInt32(cmd.Parameters["@idgenerado"].Value);
+
+
+                    }
+                    catch
+                    {
+
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int agregarMuestra(string descripcion, string lote, string cantidadNecesaria, string empaque, int sellada, int idRecepcion, int annoRecepcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("agregarMuestra", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = lote;
+                        cmd.Parameters.Add("@cantidadNecesaria", SqlDbType.VarChar).Value = cantidadNecesaria;
+                        cmd.Parameters.Add("@empaque", SqlDbType.VarChar).Value = empaque;
+                        cmd.Parameters.Add("@sellada", SqlDbType.Bit).Value = sellada;
+                        cmd.Parameters.Add("@idRecepcion", SqlDbType.Int).Value = idRecepcion;
+                        cmd.Parameters.Add("@annoRecepcion", SqlDbType.Int).Value = annoRecepcion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
+
+
         ////////////////////////////////  FERIADOS  /////////////////////////////////////////////////////
 
         public int agregarFeriado(string descripcion, string fechaI, string fechaF)

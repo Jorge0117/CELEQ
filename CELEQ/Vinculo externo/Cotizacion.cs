@@ -631,7 +631,7 @@ namespace CELEQ
                                 comboCanton.Text,comboLocalidad.Text,id,anno);
                             if(errorGira == -1)
                             {
-                                MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Ha ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
 
@@ -642,7 +642,7 @@ namespace CELEQ
                     }
                     else
                     { 
-                        MessageBox.Show("a ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ha ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if(tipoAccion == 1)

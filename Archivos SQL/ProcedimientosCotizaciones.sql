@@ -91,6 +91,22 @@ select * from Cotizacion
 select * from Gira
 go
 
+create procedure agregarRecepcionMuestras(@anno INT, @fecha DATE, @Receptor NVARCHAR(50), @idCotizacion INT, @annoCotizacion INT, @muestreador varchar(20), 
+											@personaTraeMuestra varchar(255), @licitacion BIT, @numLicitacion varchar(100), @lineaLicitacion varchar(10),
+											@institucion varchar(255), @laboratorio varchar(20), @observacionesEspeciales	varchar(500), 
+											@observacionesLaboratorio varchar(500), @informacionTextualInforme varchar(500), @idgenerado int output)
+as
+	insert into RecepcionMuestras(id, anno, fecha, receptor, idCotizacion, annoCotizacion, muestreador, personaTraeMuestra, licitacion, numLicitacion, linealicitacion, institucion, laboratorio, observacionesEspeciales, observacionesLaboratorio, informacionTextualInforme)
+	values(0, @anno, @fecha, @receptor, @idCotizacion, @annoCotizacion, @muestreador, @personaTraeMuestra, @licitacion, @numLicitacion, @linealicitacion, @institucion, @laboratorio, @observacionesEspeciales, @observacionesLaboratorio, @informacionTextualInforme)
+	select @idgenerado = @@IDENTITY
+
+go
+
+create procedure agregarMuestra(@descripcion varchar(500), @lote varchar(100), @cantidadNecesaria varchar(50), @empaque varchar(100), @sellada bit, @idRecepcion int, @annoRecepcion int)
+as
+	insert into Muestra values (@descripcion, @lote, @cantidadNecesaria, @empaque, @sellada, @idRecepcion, @annoRecepcion)
+go
+
 SET IDENTITY_INSERT CELEQ.dbo.Cotizacion ON
 go
 
@@ -157,6 +173,58 @@ values(@id, @anno, @licitacion, @observaciones, @precioMuestreo, @descuento, @ga
 go
 
 drop trigger consecutivoCotizacion
+SET IDENTITY_INSERT CELEQ.dbo.RecepcionMuestras ON
+
+go
+
+create trigger consecutivoRecepcionMuestras
+on RecepcionMuestras
+instead of insert
+as
+declare @id							INT	
+declare @anno						INT			
+declare @fecha						DATE
+declare @Receptor					NVARCHAR(50)
+declare @idCotizacion				INT
+declare @annoCotizacion				INT
+declare @muestreador				varchar(20)
+declare @personaTraeMuestra			varchar(255)
+declare @licitacion					BIT
+declare @numLicitacion				varchar(100)
+declare @lineaLicitacion			varchar(10)
+declare @institucion				varchar(255)
+declare @laboratorio				varchar(20)
+declare @observacionesEspeciales	varchar(500)
+declare @observacionesLaboratorio	varchar(500)
+declare @informacionTextualInforme	varchar(500)
+
+
+select @anno						= anno from inserted
+select @fecha						= fecha from inserted
+select @Receptor					= Receptor from inserted
+select @idCotizacion				= idCotizacion from inserted
+select @annoCotizacion				= annoCotizacion from inserted
+select @muestreador					= muestreador from inserted
+select @personaTraeMuestra			= personaTraeMuestra from inserted
+select @licitacion					= licitacion from inserted
+select @numLicitacion				= numLicitacion from inserted
+select @lineaLicitacion				= lineaLicitacion from inserted
+select @institucion					= institucion from inserted
+select @laboratorio					= laboratorio from inserted
+select @observacionesEspeciales		= observacionesEspeciales from inserted
+select @observacionesLaboratorio	= observacionesLaboratorio from inserted
+select @informacionTextualInforme	= informacionTextualInforme from inserted
+
+if not exists (select id, anno from RecepcionMuestras where anno = @anno)
+	set @id = 1
+else
+	select @id =  max(id)+1 from RecepcionMuestras where anno = @anno
+
+insert into RecepcionMuestras(id, anno, fecha, receptor, idCotizacion, annoCotizacion, muestreador, personaTraeMuestra, licitacion, numLicitacion, linealicitacion, institucion, laboratorio, observacionesEspeciales, observacionesLaboratorio, informacionTextualInforme)
+values(@id, @anno, @fecha, @receptor, @idCotizacion, @annoCotizacion, @muestreador, @personaTraeMuestra, @licitacion, @numLicitacion, @linealicitacion, @institucion, @laboratorio, @observacionesEspeciales, @observacionesLaboratorio, @informacionTextualInforme)
+go
+
+drop trigger consecutivoRecepcionMuestras 
 
 delete from CotizacionAnalisis
 delete from Cotizacion
@@ -186,3 +254,5 @@ delete from ClienteCotizacion
 select * from puestos
 
 insert into puestos values('Técnico')
+
+delete from RecepcionMuestras
