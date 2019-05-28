@@ -42,6 +42,7 @@ namespace CELEQ.Vinculo_externo
         {
             try
             {
+                textConsecutivo.Text = "####-####";
                 comboConsecutivo.DisplayMember = "Text";
                 comboConsecutivo.ValueMember = "Value";
 
@@ -56,7 +57,19 @@ namespace CELEQ.Vinculo_externo
                 dgvMuestras.Columns.Add("muestra", "Muestra");
                 dgvMuestras.Columns.Add("lote", "Lote");
                 dgvMuestras.Columns.Add("cantidad", "Cantidad");
-                dgvMuestras.Columns.Add("sellada", "Sellada");
+
+                /*
+                DataGridViewComboBoxColumn sellada = new DataGridViewComboBoxColumn();
+                var opcionesSellada = new List<string>() { "Sí", "No" };
+                sellada.DataSource = opcionesSellada;
+                */
+
+                DataGridViewCheckBoxColumn sellada = new DataGridViewCheckBoxColumn();
+                sellada.HeaderText = "Sellada";
+                sellada.DataPropertyName = "Sellada";
+                dgvMuestras.Columns.Add(sellada);
+
+
                 dgvMuestras.Columns.Add("empaque", "Empaque");
 
                 dgvMuestras.Columns[0].Width = Convert.ToInt32(dgvMuestras.Width * 0.37) - 1;
@@ -74,7 +87,7 @@ namespace CELEQ.Vinculo_externo
                 comboMuestreador.Items.Add("NA");
 
                 SqlDataReader receptores = bd.ejecutarConsulta("select CONCAT(nombre, ' ', apellido1, ' ', apellido2), u.nombreUsuario from usuarios u join " +
-                    "puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Secretaria Vinculo Externo'");
+                    "puestosUsuarios p on u.nombreUsuario = p.nombreUsuario where p.puesto = 'Secretaria Vinculo Externo' or p.puesto = 'Director Técnico'");
                 while (receptores.Read())
                 {
                     comboReceptor.Items.Add(new { Text = receptores[0], Value = receptores[1] });
@@ -82,7 +95,7 @@ namespace CELEQ.Vinculo_externo
 
                 textNumLicitacion.Enabled = false;
                 textLinea.Enabled = false;
-                comboInstitucion.Enabled = false;
+                textInstitucion.Enabled = false;
             }
             catch
             {
@@ -172,17 +185,17 @@ namespace CELEQ.Vinculo_externo
             {
                 textNumLicitacion.Enabled = true;
                 textLinea.Enabled = true;
-                comboInstitucion.Enabled = true;
+                textInstitucion.Enabled = true;
             }
             else
             {
                 textNumLicitacion.Text = "";
                 textLinea.Text = "";
-                comboInstitucion.SelectedIndex = -1;
+                textInstitucion.Text= "";
 
                 textNumLicitacion.Enabled = false;
                 textLinea.Enabled = false;
-                comboInstitucion.Enabled = false;
+                textInstitucion.Enabled = false;
             }
         }
 
@@ -199,6 +212,35 @@ namespace CELEQ.Vinculo_externo
 
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void butAceptar_Click(object sender, EventArgs e)
+        {
+            int idRecepcion = bd.agregarRecepcionMuestras(DateTime.Now.Year, dateTimeFecha.Value.ToShortDateString(), (comboReceptor.SelectedItem as dynamic).Value,
+                (comboConsecutivo.SelectedItem as dynamic).Value, Convert.ToInt32(numAnnoCotizacion.Value), comboMuestreador.Text,
+                textPersonaMuestra.Text, checkLicitacion.Checked ? 1 : 0, textNumLicitacion.Text, textLinea.Text, textInstitucion.Text,
+                comboLaboratorio.Text, textObservacionesEspeciales.Text, textObservacionesLab.Text, textObservacionesTextual.Text);
+
+            if (idRecepcion != -1)
+            {
+                foreach (DataGridViewRow row in dgvMuestras.Rows)
+                {
+                    if(row.Cells[0].Value != null)
+                    {
+                        bd.agregarMuestra(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(),
+                        row.Cells[4].Value.ToString(), (bool)row.Cells[3].Value ? 1 : 0, idRecepcion, dateTimeFecha.Value.Year);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error realizando la solicitd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

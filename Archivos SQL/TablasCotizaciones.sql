@@ -54,6 +54,7 @@ CREATE TABLE Cotizacion
 drop table Cotizacion
 
 select * from Usuarios
+select * from puestos
 
 CREATE TABLE Gira
 (
@@ -152,7 +153,7 @@ CREATE TABLE RecepcionMuestras
 	id							INT	IDENTITY(1,1)	NOT NULL,
 	anno						INT					NOT NULL,
 	fecha						DATE,
-	Receptor					NVARCHAR(50),
+	receptor					NVARCHAR(50),
 	idCotizacion				INT,
 	annoCotizacion				INT,
 	muestreador					varchar(20),
@@ -160,7 +161,7 @@ CREATE TABLE RecepcionMuestras
 	licitacion					BIT,
 	numLicitacion				varchar(100),
 	lineaLicitacion				varchar(10),
-	intitucion					varchar(255),
+	institucion					varchar(255),
 	laboratorio					varchar(20),
 	observacionesEspeciales		varchar(500),
 	observacionesLaboratorio	varchar(500),
@@ -170,6 +171,7 @@ CREATE TABLE RecepcionMuestras
 	FOREIGN KEY(Receptor) REFERENCES Usuarios(nombreUsuario),
 	FOREIGN KEY(idCotizacion, annoCotizacion) REFERENCES Cotizacion(id, anno)
 )
+drop table RecepcionMuestras
 
 insert into Feriados VALUES('D�a 1','2019/04/03', '2019/04/03')
 insert into Feriados VALUES('D�a 2','2019/04/03', '2019/04/15')
