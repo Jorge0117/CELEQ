@@ -342,6 +342,20 @@ namespace CELEQ
             rr.ShowDialog();
             rr.Dispose();
         }
+
+        private void listarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Permisos p = new Permisos();
+            p.ShowDialog();
+            p.Dispose();
+        }
+
+        private void listarGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Grupos g = new Grupos();
+            g.ShowDialog();
+            g.Dispose();
+        }
     }
 
     public static class Globals

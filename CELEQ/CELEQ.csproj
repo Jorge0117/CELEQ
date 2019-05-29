@@ -73,6 +73,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="Administracion\Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Grupos.Designer.cs">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AgregarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\AgregarGrupo.Designer.cs">
+      <DependentUpon>AgregarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AgregarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\AgregarPermiso.Designer.cs">
+      <DependentUpon>AgregarPermiso.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventarioCristaleria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -350,10 +368,10 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Regencia\Pdf.cs" />
-    <Compile Include="Usuarios\Permisos.cs">
+    <Compile Include="Administracion\Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Permisos.Designer.cs">
+    <Compile Include="Administracion\Permisos.Designer.cs">
       <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Regimen becario\Presupuesto.cs">
@@ -423,6 +441,15 @@
     <Compile Include="Vinculo externo\PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Administracion\AgregarGrupo.resx">
+      <DependentUpon>AgregarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\AgregarPermiso.resx">
+      <DependentUpon>AgregarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Grupos.resx">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Regencia\ReporteReactivos.resx">
       <DependentUpon>ReporteReactivos.cs</DependentUpon>
     </EmbeddedResource>
@@ -559,7 +586,7 @@
     <EmbeddedResource Include="Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Permisos.resx">
+    <EmbeddedResource Include="Administracion\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Regimen becario\Presupuesto.resx">

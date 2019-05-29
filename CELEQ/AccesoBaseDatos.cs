@@ -137,7 +137,7 @@ namespace CELEQ
                  Modifica: Agrega en la base de datos un nuevo usuario
                  Retorna: 1 si se pudo guardar el nuevo usuario, un número diferente a cero que corresponde al número de error
                  si no se pudo insertar*/
-        public int agregarUsuario(string usuario, string password, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2)
+        public int agregarUsuario(string usuario, string password, string correo, string unidad, string nombre, string apellido1, string apellido2)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -155,7 +155,6 @@ namespace CELEQ
                         cmd.Parameters.Add("@pLogin", SqlDbType.VarChar).Value = usuario;
                         cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
-                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
                         cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
                         cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
@@ -281,13 +280,6 @@ namespace CELEQ
             return correo[0].ToString();
         }
 
-        public string getCategoria(string usuario)
-        {
-            SqlDataReader categoria = ejecutarConsulta("select categoria from Usuarios where nombreUsuario = '" + usuario + "'");
-            categoria.Read();
-            return categoria[0].ToString();
-        }
-
         public string getUnidad(string usuario)
         {
             SqlDataReader unidad = ejecutarConsulta("select unidad from Usuarios where nombreUsuario = '" + usuario + "'");
@@ -295,7 +287,7 @@ namespace CELEQ
             return unidad[0].ToString();
         }
 
-        public int modificarUsuario(string usuario, string correo, string categoria, string unidad, string nombre, string apellido1, string apellido2, List<string> puestos)
+        public int modificarUsuario(string usuario, string correo, string unidad, string nombre, string apellido1, string apellido2, List<string> puestos)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -312,7 +304,6 @@ namespace CELEQ
                         //Se preparan los parámetros que recibe el procedimiento almacenado
                         cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
                         cmd.Parameters.Add("@correo", SqlDbType.VarChar).Value = correo;
-                        cmd.Parameters.Add("@categoria", SqlDbType.VarChar).Value = categoria;
                         cmd.Parameters.Add("@unidad", SqlDbType.VarChar).Value = unidad;
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
                         cmd.Parameters.Add("@apellido1", SqlDbType.VarChar).Value = apellido1;
@@ -2424,6 +2415,226 @@ namespace CELEQ
                         cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidad;
                         cmd.Parameters.Add("@idCotizacion", SqlDbType.Int).Value = idCotizacion;
                         cmd.Parameters.Add("@annoCotizacion", SqlDbType.Int).Value = annoCotizacion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        ///////////////// PERMISOS ///////////////////////////////////////
+
+        public int agregarPermiso(string descripcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("AgregarPermiso", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int modificarPermiso(int id, string descripcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("ModificarPermiso", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int eliminarPermiso(int id)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("EliminarPermiso", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int agregarGrupo(string descripcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("AgregarGrupo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int modificarGrupo(int id, string descripcion)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("ModificarGrupo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return error;
+
+                    }
+                    catch
+                    {
+                        /*Se capta el número de error si no se pudo insertar*/
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int eliminarGrupo(int id)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("EliminarGrupo", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
                         /*Se abre la conexión*/
                         con.Open();
