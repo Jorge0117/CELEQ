@@ -29,6 +29,11 @@ namespace CELEQ
             e.PaintParts &= ~DataGridViewPaintParts.Focus;
         }
 
+        private void Permisos_Load(object sender, EventArgs e)
+        {
+            llenarTabla();
+        }
+
         public void llenarTabla(string filtro = "")
         {
             DataTable tabla = null;
@@ -62,7 +67,7 @@ namespace CELEQ
             dgvPermisos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
             dgvPermisos.DataSource = bs;
             dgvPermisos.Columns[0].Visible = false;
-            dgvPermisos.Columns[1].Width = dgvPermisos.Width;
+            dgvPermisos.Columns[1].Width = dgvPermisos.Width - 4;
 
             if (dgvPermisos.Rows.Count > 0)
             {
@@ -87,7 +92,7 @@ namespace CELEQ
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que quiere borrar el responsable?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que quiere borrar el permiso?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(dgvPermisos.SelectedRows[0].Cells[0].Value);
                 if (bd.eliminarPermiso(id) == 0)
@@ -101,6 +106,11 @@ namespace CELEQ
                 }
             }
             llenarTabla();
+        }
+
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            llenarTabla(textBuscar.Text);
         }
 
         private void butModificar_Click(object sender, EventArgs e)

@@ -80,6 +80,7 @@
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(387, 22);
             this.textBuscar.TabIndex = 9;
+            this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // labelPermisos
             // 
@@ -147,6 +148,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar Accesos";
+            this.Load += new System.EventHandler(this.Permisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

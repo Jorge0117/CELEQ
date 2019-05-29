@@ -48,7 +48,7 @@ namespace CELEQ
                     error = bd.agregarPermiso(textNombre.Text);
                     if(error != -1)
                     {
-                        MessageBox.Show("Permiso agregado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        MessageBox.Show("Permiso agregado de manera correcta", "Permisos", MessageBoxButtons.OK, MessageBoxIcon.None);
                         this.Close();
                     }
                     else
