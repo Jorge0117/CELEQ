@@ -39,7 +39,7 @@ create table puestosUsuarios
 	foreign key(puesto) references puestos(puesto)
 )
 go
-CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255),@categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
+CREATE PROCEDURE dbo.agregarUsuario(@pLogin NVARCHAR(50), @pPassword NVARCHAR(50), @correo varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255), @estado bit OUTPUT)
 AS
 BEGIN
 	SET NOCOUNT ON
@@ -49,11 +49,11 @@ BEGIN
 	/*Se inserta en la tabla Usuarios los datos de un nuevo usuario, se encripta la contraseña con un HASHBYTES con el algoritmo SHA2_512
 	con la unión del password digitado y el salt (notese que este salt es único para cada usuario sin importar que tengan la misma contraseña,
 	este se almacena diferente para cada uno)*/
-		INSERT INTO dbo.[Usuarios] (correo, nombreUsuario, passwordHash, Salt, Categoria, unidad, nombre, apellido1, apellido2)
-		VALUES(@correo, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt, @categoria, @unidad ,@nombre, @apellido1, @apellido2)
+		INSERT INTO dbo.[Usuarios] (correo, nombreUsuario, passwordHash, Salt, unidad, nombre, apellido1, apellido2)
+		VALUES(@correo, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt, @unidad ,@nombre, @apellido1, @apellido2)
 		/*si lacinserción se pudo realizar se devuelve un 1*/
 		SET @estado=1 
-		INSERT INTO permisos(usuario) values(@pLogin)
+		INSERT INTO permiso(usuario) values(@pLogin)
 	END TRY
 	BEGIN CATCH
 		/*En cualquier otro caso se devuelve el mensaje de error*/
@@ -61,6 +61,8 @@ BEGIN
 	END CATCH
 END
 go
+
+drop procedure dbo.agregarUsuario
 
 drop procedure agregarUsuario
 
@@ -89,17 +91,19 @@ AS
 	END
 go
 
-create procedure modificarUsuario(@usuario Nvarchar(50), @correo varchar(255), @categoria varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
+create procedure modificarUsuario(@usuario Nvarchar(50), @correo varchar(255), @unidad varchar(100), @nombre varchar(100), @apellido1 varchar(255), @apellido2 varchar(255)) as
 	begin
 
 		declare @salt uniqueidentifier
 		select @salt = salt from Usuarios where nombreUsuario = @usuario
 
 		update Usuarios
-		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36))), correo = @correo, categoria = @categoria, unidad = @unidad, nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2
+		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36))), correo = @correo, unidad = @unidad, nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2
 		where nombreUsuario = @usuario
 	end
 go
+
+drop procedure modificarUsuario
 
 create procedure modificarContrasena(@usuario Nvarchar(50), @pass nvarchar(50)) as
 	begin
