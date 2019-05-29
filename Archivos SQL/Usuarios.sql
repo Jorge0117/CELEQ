@@ -98,7 +98,7 @@ create procedure modificarUsuario(@usuario Nvarchar(50), @correo varchar(255), @
 		select @salt = salt from Usuarios where nombreUsuario = @usuario
 
 		update Usuarios
-		set passwordHash = HASHBYTES('SHA2_512', @pass+CAST(@salt AS NVARCHAR(36))), correo = @correo, unidad = @unidad, nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2
+		SET correo = @correo, unidad = @unidad, nombre = @nombre, apellido1 = @apellido1, apellido2 = @apellido2
 		where nombreUsuario = @usuario
 	end
 go

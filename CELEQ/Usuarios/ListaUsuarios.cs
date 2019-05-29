@@ -38,7 +38,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio', idRol as 'Categoría'  from Usuarios");
+                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio' from Usuarios");
                 }
                 catch (SqlException ex)
                 {
@@ -49,7 +49,7 @@ namespace CELEQ
             {
                 try
                 {
-                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio', idRol as 'Categoría'  from Usuarios where nombreUsuario like '%" +
+                    tabla = bd.ejecutarConsultaTabla("select nombreUsuario as 'Usuario', concat(nombre, ' ' ,apellido1, ' ', apellido2) as 'Nombre', correo as 'Correo', unidad as 'Unidad o laboratorio' from Usuarios where nombreUsuario like '%" +
                         filtro + "%' or correo like '%" + filtro + "%' or categoria like '%" + filtro + "%' or nombre like '%" + filtro + "%' or apellido1 like '%" + filtro +
                         "%' or apellido2 like '%" + filtro + "%' or unidad like '%" + filtro + "%'");
                 }
@@ -69,7 +69,6 @@ namespace CELEQ
             dgvUsuarios.Columns[1].Width = tamCelda + 35;
             dgvUsuarios.Columns[2].Width = tamCelda + 34;
             dgvUsuarios.Columns[3].Width = tamCelda - 25;
-            dgvUsuarios.Columns[4].Width = tamCelda - 25;
 
             if (dgvUsuarios.Rows.Count > 0)
             {
