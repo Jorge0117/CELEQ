@@ -328,6 +328,34 @@ namespace CELEQ
             l.ShowDialog();
             l.Dispose();
         }
+
+        private void reporteCristaleríaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteCristaleria rc = new ReporteCristaleria("Inventario de cristalería","P-05:PC-01:F01");
+            rc.ShowDialog();
+            rc.Dispose();
+        }
+
+        private void reporteReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteReactivos rr = new ReporteReactivos("Inventario de reactivos", "P-05:PC-01:F01");
+            rr.ShowDialog();
+            rr.Dispose();
+        }
+
+        private void listarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Permisos p = new Permisos();
+            p.ShowDialog();
+            p.Dispose();
+        }
+
+        private void listarGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Grupos g = new Grupos();
+            g.ShowDialog();
+            g.Dispose();
+        }
     }
 
     public static class Globals

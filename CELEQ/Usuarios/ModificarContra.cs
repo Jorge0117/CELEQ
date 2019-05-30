@@ -23,8 +23,7 @@ namespace CELEQ
         public bool aceptar;
         List<string> puestos;
 
-        public ModificarContra(string user = null, string mail = null, 
-            string perm = null, string unid = null, string name = null, string lastn1 = null, 
+        public ModificarContra(string user = null, string mail = null, string unid = null, string name = null, string lastn1 = null, 
             string lastn2 = null, List<string> puestos = null)
         {
             InitializeComponent();
@@ -32,7 +31,6 @@ namespace CELEQ
 
             usuario = user;
             correo = mail;
-            permisos = perm;
             unidad = unid;
             nombre = name;
             apellido1 = lastn1;
@@ -56,7 +54,7 @@ namespace CELEQ
                 //Se va a agregar
                 if (correo != null)
                 {
-                    int error = bd.agregarUsuario(usuario, nuevaContra.Text, correo, permisos, unidad, nombre, apellido1, apellido2);
+                    int error = bd.agregarUsuario(usuario, nuevaContra.Text, correo, unidad, nombre, apellido1, apellido2);
                     if (error == 1)
                     {
                         for(int i = 0; i<puestos.Count; ++i)

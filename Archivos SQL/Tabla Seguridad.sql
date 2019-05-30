@@ -1,4 +1,4 @@
-CREATE TABLE permisos 
+CREATE TABLE permiso 
 (
 	usuario										NVARCHAR(50)	PRIMARY KEY		NOT NULL,
 	archivoUnidades								BIT		DEFAULT 0,

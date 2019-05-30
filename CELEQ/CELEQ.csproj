@@ -73,6 +73,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBaseDatos.cs" />
+    <Compile Include="Administracion\Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Grupos.Designer.cs">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AgregarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\AgregarGrupo.Designer.cs">
+      <DependentUpon>AgregarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AgregarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\AgregarPermiso.Designer.cs">
+      <DependentUpon>AgregarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioCristaleria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioReactivos.cs">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioReactivos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Regencia\ReporteCristaleria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regencia\ReporteCristaleria.Designer.cs">
+      <DependentUpon>ReporteCristaleria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regencia\ReporteReactivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regencia\ReporteReactivos.Designer.cs">
+      <DependentUpon>ReporteReactivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vinculo externo\AgregarAnalisisCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,10 +368,10 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Regencia\Pdf.cs" />
-    <Compile Include="Usuarios\Permisos.cs">
+    <Compile Include="Administracion\Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Permisos.Designer.cs">
+    <Compile Include="Administracion\Permisos.Designer.cs">
       <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Regimen becario\Presupuesto.cs">
@@ -398,6 +441,23 @@
     <Compile Include="Vinculo externo\PreciosGiras.Designer.cs">
       <DependentUpon>PreciosGiras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Administracion\AgregarGrupo.resx">
+      <DependentUpon>AgregarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\AgregarPermiso.resx">
+      <DependentUpon>AgregarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Grupos.resx">
+      <DependentUpon>Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regencia\ReporteReactivos.resx">
+      <DependentUpon>ReporteReactivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCristaleria.rdlc" />
+    <EmbeddedResource Include="Regencia\ReporteCristaleria.resx">
+      <DependentUpon>ReporteCristaleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteReactivos.rdlc" />
     <EmbeddedResource Include="Vinculo externo\AgregarAnalisisCotizacion.resx">
       <DependentUpon>AgregarAnalisisCotizacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,7 +586,7 @@
     <EmbeddedResource Include="Usuarios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Permisos.resx">
+    <EmbeddedResource Include="Administracion\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Regimen becario\Presupuesto.resx">
@@ -581,6 +641,28 @@
     </None>
     <None Include="CotizacionDataSet.xss">
       <DependentUpon>CotizacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioCristaleria.xsc">
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioCristaleria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioCristaleria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InventarioCristaleria.xss">
+      <DependentUpon>InventarioCristaleria.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioReactivos.xsc">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
+    </None>
+    <None Include="InventarioReactivos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioReactivos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InventarioReactivos.xss">
+      <DependentUpon>InventarioReactivos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RepDesignacionesResponsable.datasource" />

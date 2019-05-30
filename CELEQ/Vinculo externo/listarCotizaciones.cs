@@ -106,6 +106,7 @@ namespace CELEQ
             Cotizacion c = new Cotizacion(0);
             c.ShowDialog();
             c.Dispose();
+            llenarTabla();
         }
 
         private void butModificar_Click(object sender, EventArgs e)
@@ -113,6 +114,7 @@ namespace CELEQ
             Cotizacion c = new Cotizacion(1, Convert.ToInt32(dgvCotizaciones.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dgvCotizaciones.SelectedRows[0].Cells[2].Value));
             c.ShowDialog();
             c.Dispose();
+            llenarTabla();
         }
     }
 }

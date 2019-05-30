@@ -54,7 +54,6 @@ namespace CELEQ
                 textUsuario.Text = dgvRow.Cells[0].Value.ToString();
                 textUsuario.Enabled = false;
                 textCorreo.Text = dgvRow.Cells[2].Value.ToString();
-                cbPermisos.Text = dgvRow.Cells[4].Value.ToString();
                 comboUnidad.Text = dgvRow.Cells[3].Value.ToString();
 
                 SqlDataReader nombre = bd.ejecutarConsulta("select nombre, apellido1, apellido2 from usuarios where nombreUsuario = '" + textUsuario.Text + "'");
@@ -89,7 +88,7 @@ namespace CELEQ
                     {
                         puestos.Add(row.Cells[0].Value.ToString());
                     }
-                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
+                    ModificarContra mc = new ModificarContra(textUsuario.Text, textCorreo.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
                     mc.ShowDialog();
                     bool cerrar = mc.aceptar;
                     mc.Dispose();
@@ -107,7 +106,7 @@ namespace CELEQ
                         puestos.Add(row.Cells[0].Value.ToString());
                     }
 
-                    error = bd.modificarUsuario(textUsuario.Text, textCorreo.Text, cbPermisos.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
+                    error = bd.modificarUsuario(textUsuario.Text, textCorreo.Text, comboUnidad.Text, textNombre.Text, textApellido1.Text, textApellido2.Text, puestos);
                     if (error == 0)
                     {
                         MessageBox.Show("Usuario modificado de manera correcta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.None);

@@ -15,4 +15,4 @@ cantidadTecnicos = @cantidadTecnicos, gastoTotal = @gastoTotal, provincia = @pro
 Where idCotizacion = @idCotizacion and annoCotizacion = @annoCotizacion
 GO
 
-select * from Gira
+select * from Cotizacion

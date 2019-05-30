@@ -30,7 +30,6 @@ namespace CELEQ
                     logged = true;
                     Globals.usuario = textUsuario.Text;
                     Globals.correo = abu.getCorreo(textUsuario.Text);
-                    Globals.categoria = abu.getCategoria(textUsuario.Text);
                     this.Close();
                 }
                 else

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.labelUsuarios = new System.Windows.Forms.Label();
             this.textBuscar = new System.Windows.Forms.TextBox();
@@ -36,7 +36,6 @@
             this.butModificar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
             this.cambiarContra = new System.Windows.Forms.Button();
-            this.butPermisos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,14 +46,14 @@
             this.dgvUsuarios.AllowUserToResizeColumns = false;
             this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(29, 71);
             this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4);
@@ -127,24 +126,12 @@
             this.cambiarContra.UseVisualStyleBackColor = true;
             this.cambiarContra.Click += new System.EventHandler(this.cambiarContra_Click);
             // 
-            // butPermisos
-            // 
-            this.butPermisos.Location = new System.Drawing.Point(984, 209);
-            this.butPermisos.Margin = new System.Windows.Forms.Padding(4);
-            this.butPermisos.Name = "butPermisos";
-            this.butPermisos.Size = new System.Drawing.Size(167, 38);
-            this.butPermisos.TabIndex = 14;
-            this.butPermisos.Text = "Modificar Permisos";
-            this.butPermisos.UseVisualStyleBackColor = true;
-            this.butPermisos.Click += new System.EventHandler(this.butPermisos_Click);
-            // 
             // ListaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(204)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1174, 511);
-            this.Controls.Add(this.butPermisos);
             this.Controls.Add(this.cambiarContra);
             this.Controls.Add(this.butModificar);
             this.Controls.Add(this.butAgregar);
@@ -176,6 +163,5 @@
         private System.Windows.Forms.Button butModificar;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Button cambiarContra;
-        private System.Windows.Forms.Button butPermisos;
     }
 }
